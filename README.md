@@ -1,2 +1,2 @@
-# CONTEST-Higgsfield-Movie-Aug-26
+# CONTEST-Higgsfield-Movie-2026
 CONTEST-Higgsfield-Movie-Aug-26
