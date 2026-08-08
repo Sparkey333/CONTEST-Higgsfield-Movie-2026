@@ -36,30 +36,48 @@ At session end, update `memory/STATE.md` and append to `memory/COUNCIL-LOG.md`.
 
 ---
 
-## The council — five elements
+## The jury — three judges, three different films
 
-Five persistent agents in `.claude/agents/`. Invoke by name via the Agent tool.
+| Juror | Judges | Wants |
+|---|---|---|
+| **Edwin Catmull** — Pixar co-founder, 5× Oscar, Turing Award | Story, character | **Heart** |
+| **Phedon Papamichael** — 2× Oscar-nominated DP (*Nebraska*, *Ford v Ferrari*) | Light, lens, blocking | **Craft** |
+| **Paul W. S. Anderson** — *Mortal Kombat*, *Resident Evil*, *Event Horizon* | Pacing, attention | **Propulsion** |
 
-| Element | Kanji | Owns | Call it for |
-|---|---|---|---|
-| **Earth** | 地 Chi | Compliance, rules, structure, logistics, budget, deadline | "Are we allowed to?" "Does it hold?" "Can we afford it?" |
-| **Water** | 水 Sui | Continuity, character consistency, editing, pacing, salvage | "Why did the face change?" "Does this cut?" |
-| **Fire** | 火 Ka | Emotion, concept, hook, ending, performance, empathy | "Do we care?" "Does this land?" |
-| **Wind** | 風 Fū | Sound, music, engagement (30% of score), Audience Choice | "Who sees this?" "How does it sound?" |
-| **Void** | 空 Kū | Red team, originality, jury psychology, meta-strategy | "What are we missing?" "Break this." |
+⚠️ **They do not want the same film.** A quiet, beautiful, static short wins Catmull
+and loses Anderson. The winning concept must carry **feeling through momentum.**
+
+---
+
+## The council — five elements, named for the jury
+
+Five persistent agents in `.claude/agents/`, each embodying one juror's worldview.
+Invoke by name via the Agent tool.
+
+| Agent | Element | Patron juror | Owns | Call it for |
+|---|---|---|---|---|
+| **`catmull`** | 地 Earth | Catmull *(the President)* | Compliance, rules, structure, logistics, budget, deadline | "Are we allowed to?" "Does it hold?" |
+| **`phedon`** | 水 Water | Papamichael | Continuity, character consistency, lens & light, editing, salvage | "Why did the face change?" "Does this cut?" |
+| **`edwin`** | 火 Fire | Catmull *(the Storyteller)* | Emotion, concept, hook, ending, empathy | "Do we care?" "Does this land?" |
+| **`anderson`** | 風 Wind | Paul W. S. Anderson | Propulsion, sound, music, engagement (30%), Audience Choice | "Why are they still watching at 2:30?" |
+| **`braintrust`** | 空 Void | The Pixar Braintrust | Red team, originality, jury psychology, meta-strategy | "What are we missing?" "Break this." |
+
+Catmull holds two seats because he contains two opposed instincts — the executive who
+builds the structure, and the storyteller the structure exists to protect. **Braintrust**
+is named for his own candid-feedback council at Pixar.
 
 **Operating protocol:** `docs/05-council-protocol.md`.
 
 ### Hard rules of the council
 
-- **Earth holds veto.** No concept enters production before clearing the compliance
+- **Catmull holds veto.** No concept enters production before clearing the compliance
   gate. A disqualified film is worth $0 regardless of quality.
-- **Void speaks last** on any lock decision. Nothing is called finished until Void has
-  attacked it.
-- **Fire holds the spine.** Water may change any shot; it may not lose the feeling.
-- **Wind is not optional.** 30% of the rubric is engagement. Treating it as marketing
-  fluff forfeits a third of the score.
-- **If all five agree instantly, something is wrong.** Void must say so.
+- **Braintrust speaks last** on any lock decision. Nothing is finished until it has
+  been attacked. Candor above comfort — but it must ship, not merely object.
+- **Edwin holds the spine.** Phedon may change any shot; he may not lose the feeling.
+- **Anderson is not optional.** 30% of the rubric is engagement, and his patron is on
+  the jury. Treating either as marketing fluff forfeits a third of the score and a vote.
+- **If all five agree instantly, something is wrong.** Braintrust must say so.
 
 ---
 

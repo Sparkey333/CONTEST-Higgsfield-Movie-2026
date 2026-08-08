@@ -1,7 +1,8 @@
 # Reference Films — What to Study and Exactly What to Steal
 
 Curated against our actual problem: **a 3–5 minute, wordless-or-near-wordless,
-emotionally decisive short, judged by Edwin Catmull and Phedon Papamichael.**
+emotionally decisive short that never loses momentum — judged by Edwin Catmull
+(heart), Phedon Papamichael (craft), and Paul W. S. Anderson (propulsion).**
 
 > **Link note.** Several of these are widely re-uploaded. Where a link is a
 > third-party upload rather than the rights-holder's official channel, it is marked.
@@ -47,12 +48,12 @@ can out-reach studio output — directly relevant to our 30% engagement problem.
 
 **Steal this:**
 - **Make the feeling a character.** The heart *is* the emotion, given a body, so the
-  film never has to explain anything. Fire should apply this to whatever our
+  film never has to explain anything. Edwin should apply this to whatever our
   through-line is.
 - **Zero dialogue, total clarity.** Not one word, not one confusing beat.
 - **Physical comedy carrying emotional weight** — buys goodwill before the ache.
 - **Virality mechanics.** One-sentence premise, immediately shareable, no context
-  required. This is the Wind template.
+  required. This is the Anderson template.
 
 ---
 
@@ -126,7 +127,7 @@ methodology it considers award-grade, which is the strongest available signal of
 its judging apparatus rewards. The breakdown covers **character design, crowd scale,
 and the battle sequence**, with real prompts on screen.
 
-**Void's first assignment:** extract the reusable methodology — especially the
+**Braintrust's first assignment:** extract the reusable methodology — especially the
 character-consistency workflow — and report it to the full council before we spend a
 single credit.
 

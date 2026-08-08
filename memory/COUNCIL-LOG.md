@@ -39,7 +39,7 @@ Higgsfield MCP.
 2. **MCP credit balance is 0** on an Ultra plan. Hard blocker on all generation.
 
 ### What was built
-- Five-element council (Earth/Water/Fire/Wind/Void) in `.claude/agents/` — persistent
+- Five-element council (Catmull/Phedon/Edwin/Anderson/Braintrust) in `.claude/agents/` — persistent
 - `CLAUDE.md` project memory with session-start protocol
 - `memory/` ledger: STATE, DECISIONS, COUNCIL-LOG
 - Full docs set: dossier, verification queue, scoring model, production plan,
@@ -60,8 +60,71 @@ D-004 wordless film · D-005 runtime 3:15–4:30
 ### Next session
 1. Unblock credits
 2. Full council review → ratify the concept (Gate 1, Aug 12)
-3. Wind starts posting
-4. Void mines the Hell Grind breakdown
+3. Anderson starts posting
+4. Braintrust mines the Hell Grind breakdown
 5. **Aug 10: enter the official project, verify everything, update the dossier**
+
+---
+
+## 2026-08-08 · Session 002 · The Third Juror
+
+**Phase:** Pre-production · **T-23 days** · **Level:** 🟢 GREEN
+
+### What happened
+
+A screenshot of the official contest page surfaced a fact no text source had given us:
+**there is a third judge — Paul W. S. Anderson.** *Mortal Kombat*, the *Resident Evil*
+franchise, *Alien vs. Predator*, *Event Horizon*. The page bills him as "the man who
+brought video games to the big screen."
+
+Confirmed via search: the festival describes a juror as a "billion dollar franchise
+director… director of Mortal Kombat, Resident Evil franchise and Alien vs. Predator."
+
+**Also captured from the page:**
+- Entry flow framed as **"Four steps from idea to award"** — shape the idea and gather
+  a crew → **create in Cinema Studio** → submit the film → judging begins.
+- **Cinema Studio** is named explicitly as the creation environment. It exposes camera
+  type, lens, movement, and style anchors including **ARRI and Panavision** — which is
+  precisely the vocabulary Papamichael judges in.
+- A tutorial track: *"Learn to make movies, not just generations."*
+- Confirms $1,000,000 / fourteen winners / Audience Choice / 10 Honorable Mentions.
+
+### Why it mattered
+
+Our entire concept ranking had assumed a two-person jury: Catmull (story) and
+Papamichael (light). On that basis we recommended the quietest, most intimate concept —
+a wordless puppeteer film. **That was a one-vote-of-three strategy.**
+
+Anderson has spent thirty years on the one discipline most festival filmmakers never
+learn: holding an audience against its will. A beautiful, static, contemplative short
+loses his vote outright.
+
+### Decisions made
+
+- **D-006** — the council is renamed for the jury. Each agent now argues the way its
+  patron judges, so internal review rehearses the real one:
+  **CATMULL** (地) · **PHEDON** (水) · **EDWIN** (火) · **ANDERSON** (風) ·
+  **BRAINTRUST** (空). Catmull holds two seats; Braintrust is named for his own Pixar
+  candid-feedback council.
+- **D-007** — concept ranking revised. **C · *Tidewalker*** becomes primary: the only
+  concept scoring ★★★★+ with all three jurors, with a built-in ticking clock, the
+  strongest Audience Choice hook, and a double-dip into *Make Your Action Scene*.
+  *Understudy* moves to secondary; *The Keeper* stays the reserve pivot.
+
+### Open at session end
+
+- 🔴 Credits still 0 — blocks all generation
+- 🔴 Campaign still not started
+- 🟡 Concept revision not yet ratified through the full gate
+- 🟡 Deadline reminder Routines not yet created
+
+### Next session
+
+1. Unblock credits
+2. Ratify *Tidewalker* through the full council gate (Gate 1, Aug 12)
+3. **Phedon: test a returning-tide shot before Gate 1** — if it can't be made to work,
+   pivot to *The Keeper* now, not at day 15
+4. Anderson starts posting
+5. Aug 10: enter the project, verify Cinema Studio submission mechanics
 
 ---

@@ -21,18 +21,18 @@
 
 | Workstream | Owner | Status |
 |---|---|---|
-| Contest intelligence | Earth | ✅ Dossier complete, 11 sources |
+| Contest intelligence | Catmull | ✅ Dossier complete, 11 sources |
 | Council established | — | ✅ All five elements live in `.claude/agents/` |
 | Memory + soul system | — | ✅ Operational |
-| Scoring strategy | Void | ✅ Rubric decoded, exploits identified |
-| Concepts | Fire | 🟡 Three drafted — **not yet ratified** |
-| Reference study | Void | ✅ Delivered |
-| Production plan | Earth | ✅ 23-day schedule set |
-| Script | Fire | ⬜ Not started |
-| Character refs | Water | ⬜ Not started |
-| Sound / music | Wind | ⬜ Not started |
-| Campaign | Wind | 🔴 **Not started — should already be running** |
-| Generation | Water | 🔴 **Blocked on credits** |
+| Scoring strategy | Braintrust | ✅ Rubric decoded, exploits identified |
+| Concepts | Edwin | 🟡 Three drafted — **not yet ratified** |
+| Reference study | Braintrust | ✅ Delivered |
+| Production plan | Catmull | ✅ 23-day schedule set |
+| Script | Edwin | ⬜ Not started |
+| Character refs | Phedon | ⬜ Not started |
+| Sound / music | Anderson | ⬜ Not started |
+| Campaign | Anderson | 🔴 **Not started — should already be running** |
+| Generation | Phedon | 🔴 **Blocked on credits** |
 
 ---
 
@@ -51,8 +51,11 @@
 
 ## Decisions pending
 
-- [ ] **Which concept is primary?** Council recommends A · *Understudy*.
-      Needs: Earth compliance gate → Fire spine test → Void red team → ratify.
+- [ ] **Which concept is primary?** Council now recommends **C · *Tidewalker*** —
+      revised after the third juror (Paul W. S. Anderson) was confirmed. It is the only
+      concept scoring ★★★★+ with all three judges. *Understudy* drops to secondary.
+      Needs: Catmull compliance gate → Edwin spine test → Anderson propulsion test →
+      Braintrust red team → ratify.
 - [ ] **Portfolio or single film?** Entries are unlimited; 14 prizes exist.
 - [ ] **Do we enter *Make Your Action Scene*** ($500K, same deadline)?
 - [ ] Credit budget ceiling.
@@ -63,7 +66,7 @@
 
 1. **Unblock credits.** Nothing generates until this is done.
 2. **Ratify the concept.** Full council review of `docs/06-concepts.md`.
-3. **Start the campaign today.** Wind posts the process from day one.
+3. **Start the campaign today.** Anderson posts the process from day one.
 4. **Aug 10:** enter the official project, confirm real submission mechanics, update
    the dossier immediately.
-5. **Void:** mine the Hell Grind breakdown for the character-consistency workflow.
+5. **Braintrust:** mine the Hell Grind breakdown for the character-consistency workflow.

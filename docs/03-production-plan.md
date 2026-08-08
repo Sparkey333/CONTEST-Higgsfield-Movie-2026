@@ -23,33 +23,33 @@ AUG 8 ─── 12 ────── 16 ─────────── 23 �
 
 | Task | Owner | Gate |
 |---|---|---|
-| 🔴 **Unblock credits** — auto-refill or top-up | Earth | **Blocks everything** |
+| 🔴 **Unblock credits** — auto-refill or top-up | Catmull | **Blocks everything** |
 | Ratify primary concept (full council review) | All | Required for Gate 1 |
-| **Launch the campaign — day one** | Wind | Every silent day is forfeited score |
-| Mine Hell Grind breakdown for the consistency workflow | Void | Feeds all production |
-| Verify rubric weights against live page | Earth | `[VERIFY]` risk |
+| **Launch the campaign — day one** | Anderson | Every silent day is forfeited score |
+| Mine Hell Grind breakdown for the consistency workflow | Braintrust | Feeds all production |
+| Verify rubric weights against live page | Catmull | `[VERIFY]` risk |
 
-> **Wind starts today.** 30% of the rubric is engagement and it compounds daily. The
+> **Anderson starts today.** 30% of the rubric is engagement and it compounds daily. The
 > audience must exist before the film does.
 
 ---
 
 ## PHASE 1 · DESIGN — Aug 10–16 (T-21 to T-15)
 
-**Aug 10 — the official project opens.** Earth's first job that morning: enter it,
+**Aug 10 — the official project opens.** Catmull's first job that morning: enter it,
 confirm the real submission mechanics, aspect-ratio/format requirements, and watermark
 process. Update the dossier the same day. Everything downstream depends on this.
 
 | Task | Owner | Due |
 |---|---|---|
-| **GATE 1 · Concept locked + compliance cleared** | Earth | **Aug 12** |
-| Script / beat sheet — one idea, turn at 60–70% | Fire | Aug 13 |
-| Character reference sheets, identity locked with seeds | Water | Aug 14 |
-| Continuity bible — light direction, palette, lens grammar | Water | Aug 15 |
-| Shotlist with model assignment per shot | Earth + Water | Aug 15 |
-| Sound and music direction | Wind | Aug 15 |
-| **Red team the whole design package** | Void | Aug 16 |
-| **GATE 2 · Script, shotlist, character refs locked** | Earth | **Aug 16** |
+| **GATE 1 · Concept locked + compliance cleared** | Catmull | **Aug 12** |
+| Script / beat sheet — one idea, turn at 60–70% | Edwin | Aug 13 |
+| Character reference sheets, identity locked with seeds | Phedon | Aug 14 |
+| Continuity bible — light direction, palette, lens grammar | Phedon | Aug 15 |
+| Shotlist with model assignment per shot | Catmull + Phedon | Aug 15 |
+| Sound and music direction | Anderson | Aug 15 |
+| **Red team the whole design package** | Braintrust | Aug 16 |
+| **GATE 2 · Script, shotlist, character refs locked** | Catmull | **Aug 16** |
 
 > **Character consistency is decided here, not in production.** Drift discovered at
 > day 15 is a project-killer. Lock identity before the first sequence shoot.
@@ -63,13 +63,13 @@ end to discover it doesn't cut together.
 
 | Days | Work | Owner |
 |---|---|---|
-| Aug 16–17 | **Hook sequence first** (first 15s) — highest-value, most re-rolled | Water + Fire |
-| Aug 18–20 | Middle sequences | Water |
-| Aug 20–22 | **Ending sequence** — the last 20s are what gets scored | Water + Fire |
-| Daily | Rolling assembly + drift check | Water |
-| Daily | Campaign posts from real production material | Wind |
-| Aug 22 | Upscale / deflicker / cleanup pass | Water |
-| **Aug 23** | **GATE 3 · Rough cut assembled end-to-end** | Earth |
+| Aug 16–17 | **Hook sequence first** (first 15s) — highest-value, most re-rolled | Phedon + Edwin |
+| Aug 18–20 | Middle sequences | Phedon |
+| Aug 20–22 | **Ending sequence** — the last 20s are what gets scored | Phedon + Edwin |
+| Daily | Rolling assembly + drift check | Phedon |
+| Daily | Campaign posts from real production material | Anderson |
+| Aug 22 | Upscale / deflicker / cleanup pass | Phedon |
+| **Aug 23** | **GATE 3 · Rough cut assembled end-to-end** | Catmull |
 
 **Rules of the grind:**
 - Never re-roll blindly. Diagnose *why* it missed: prompt, reference, or model choice.
@@ -84,11 +84,11 @@ end to discover it doesn't cut together.
 | Task | Owner | Due |
 |---|---|---|
 | Full council review of the rough cut | All | Aug 24 |
-| **Void red team — timecoded failure list** | Void | Aug 24 |
-| Pickup shots for identified failures | Water | Aug 25–26 |
-| Runtime verification — **≥3:00 hard, target 3:15–4:30** | Earth | Aug 26 |
-| Color / grade consistency pass | Water | Aug 26 |
-| **GATE 4 · Picture lock** | Void (binding) | **Aug 27** |
+| **Braintrust red team — timecoded failure list** | Braintrust | Aug 24 |
+| Pickup shots for identified failures | Phedon | Aug 25–26 |
+| Runtime verification — **≥3:00 hard, target 3:15–4:30** | Catmull | Aug 26 |
+| Color / grade consistency pass | Phedon | Aug 26 |
+| **GATE 4 · Picture lock** | Braintrust (binding) | **Aug 27** |
 
 ⚠️ **Adathon closes Aug 24, 11:59 PM ET** — separate concurrent contest.
 
@@ -98,13 +98,13 @@ end to discover it doesn't cut together.
 
 | Task | Owner | Due |
 |---|---|---|
-| Final sound design + music + mix | Wind | Aug 28 |
-| `virality_predictor` on hook and final cut | Wind | Aug 28 |
-| Final render at max quality | Water | Aug 29 |
-| **Higgsfield watermark applied and verified** | Earth | Aug 29 |
-| Prompt + generation-history document finalized | Earth | Aug 29 |
-| Public post drafted — title, thumbnail, description, first comment | Wind | Aug 29 |
-| **GATE 5 · Sound locked, final render, watermark verified** | Earth | **Aug 29** |
+| Final sound design + music + mix | Anderson | Aug 28 |
+| `virality_predictor` on hook and final cut | Anderson | Aug 28 |
+| Final render at max quality | Phedon | Aug 29 |
+| **Higgsfield watermark applied and verified** | Catmull | Aug 29 |
+| Prompt + generation-history document finalized | Catmull | Aug 29 |
+| Public post drafted — title, thumbnail, description, first comment | Anderson | Aug 29 |
+| **GATE 5 · Sound locked, final render, watermark verified** | Catmull | **Aug 29** |
 
 > Sound locks **72 hours** before submission. Never a last-minute pass — it is half the
 > experience and explicitly part of what this jury judges.
@@ -115,19 +115,19 @@ end to discover it doesn't cut together.
 
 | Task | Owner |
 |---|---|
-| Final compliance checklist — every item | Earth |
-| Upload final cut with watermark, inside the official project | Earth |
-| Publish prompts + generation history | Earth |
-| **Public post live** | Wind |
-| Confirm the entry is registered and visible | Earth |
-| Launch the Audience Choice push | Wind |
-| **GATE 6 · SUBMITTED** | Earth + Void |
+| Final compliance checklist — every item | Catmull |
+| Upload final cut with watermark, inside the official project | Catmull |
+| Publish prompts + generation history | Catmull |
+| **Public post live** | Anderson |
+| Confirm the entry is registered and visible | Catmull |
+| Launch the Audience Choice push | Anderson |
+| **GATE 6 · SUBMITTED** | Catmull + Braintrust |
 
 **Aug 31 is buffer only.** If we are uploading on Aug 31, something went wrong.
 
 ---
 
-## Final compliance checklist — Earth, before submit
+## Final compliance checklist — Catmull, before submit
 
 - [ ] Runtime ≥ 3:00 (verified on the final file, not the timeline)
 - [ ] Official Higgsfield watermark present
@@ -167,4 +167,4 @@ for pickups after Gate 3 — the rough cut always exposes shots that must be red
 - Test cheap, finish expensive. Block sequences on Seedance 2.0 Mini or Veo 3.1 Lite,
   then commit final shots on the premium models.
 - Never re-roll without a diagnosis.
-- Track spend daily. Earth raises the alarm at 60% burn before Gate 3.
+- Track spend daily. Catmull raises the alarm at 60% burn before Gate 3.

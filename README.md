@@ -46,21 +46,34 @@ Then read, in order:
 
 ---
 
+## The jury
+
+| Juror | Credentials | Wants |
+|---|---|---|
+| **Edwin Catmull** | Pixar co-founder · 5× Oscar · ex-President, Disney Animation · Turing Award | **Heart** |
+| **Phedon Papamichael** | 2× Oscar-nominated cinematographer · *Nebraska*, *Ford v Ferrari* | **Craft** |
+| **Paul W. S. Anderson** | *Mortal Kombat* · *Resident Evil* · *Alien vs. Predator* · *Event Horizon* | **Propulsion** |
+
+⚠️ **They do not want the same film.** A beautiful, static, contemplative short wins
+Catmull's vote and loses the room. The winner carries *feeling through momentum*.
+
+---
+
 ## The Council of Five
 
 Five persistent agents built on the **Godai** — the five elements Musashi used to
-organize mastery in *The Book of Five Rings*. Each is a genuinely different way of
-seeing. Their disagreement is the quality mechanism.
+organize mastery in *The Book of Five Rings* — each named for and aligned in spirit
+with a member of the jury. Their disagreement is the quality mechanism.
 
-| | Element | Owns | Asks |
-|---|---|---|---|
-| 地 | **[EARTH](.claude/agents/earth.md)** | Compliance, rules, structure, logistics, budget | *Does it hold?* |
-| 水 | **[WATER](.claude/agents/water.md)** | Continuity, character consistency, editing, salvage | *Does it flow?* |
-| 火 | **[FIRE](.claude/agents/fire.md)** | Concept, emotion, the hook, the ending | *Do we care?* |
-| 風 | **[WIND](.claude/agents/wind.md)** | Sound, music, engagement (30% of score), reach | *Who sees it?* |
-| 空 | **[VOID](.claude/agents/void.md)** | Red team, originality, jury psychology, strategy | *What are we missing?* |
+| | Agent | Element | Patron | Asks |
+|---|---|---|---|---|
+| 地 | **[CATMULL](.claude/agents/catmull.md)** | Earth | Catmull, *the President* | *Does it hold?* |
+| 水 | **[PHEDON](.claude/agents/phedon.md)** | Water | Papamichael | *Does it flow?* |
+| 火 | **[EDWIN](.claude/agents/edwin.md)** | Fire | Catmull, *the Storyteller* | *Do we care?* |
+| 風 | **[ANDERSON](.claude/agents/anderson.md)** | Wind | Paul W. S. Anderson | *Why are they still watching?* |
+| 空 | **[BRAINTRUST](.claude/agents/braintrust.md)** | Void | Catmull's Pixar Braintrust | *What are we missing?* |
 
-**Earth holds compliance veto. Fire holds the spine. Void speaks last.**
+**Catmull holds compliance veto. Edwin holds the spine. Braintrust speaks last.**
 Full doctrine: **[`docs/05-council-protocol.md`](docs/05-council-protocol.md)**
 
 ---

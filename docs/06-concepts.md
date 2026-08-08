@@ -41,7 +41,7 @@ empty room, walks upstage, and lies down carefully beside the coat he left on th
 - ✅ Miniature scale suits AI generation
 - 🔴 **Hands.** Puppeteering is entirely hands, and hands remain AI's worst subject.
   **Mitigation:** silhouette, shallow focus, shoot past the hands to the puppet, cut
-  on the shake rather than holding on fingers. Water owns this from day one.
+  on the shake rather than holding on fingers. Phedon owns this from day one.
 - 🟡 Old man's face consistency across ~25 shots → reference-locked identity required
 
 **Risk rating: MEDIUM** (hands) · **Ceiling: HIGHEST**
@@ -76,7 +76,7 @@ shot: he turns and goes back down. He will do this again next year.
 - ✅ **Lowest AI-failure risk** — machines, not faces or hands
 - ✅ Spectacle sells the first 15 seconds → strong Screening survival
 - 🟡 Single human character; needs identity lock but has limited close-ups
-- 🟡 **Void's warning:** "lone figure tending vast machinery" flirts with the
+- 🟡 **Braintrust's warning:** "lone figure tending vast machinery" flirts with the
   crowded dieselpunk/solarpunk lane. Differentiation must come from the *ending*,
   not the production design.
 
@@ -119,23 +119,51 @@ small, and worth it.
 
 ---
 
-## Council recommendation
+## Council recommendation — REVISED after the third juror
 
-| | Story | Cinema | Technical | Engagement | Overall |
-|---|---|---|---|---|---|
-| **A · Understudy** | ★★★★★ | ★★★★ | ★★★ | ★★★★ | **Highest ceiling** |
-| **B · The Keeper** | ★★★★ | ★★★★★ | ★★★★★ | ★★★★ | **Safest** |
-| **C · Tidewalker** | ★★★★ | ★★★★ | ★★★ | ★★★★★ | **Most viral** |
+> **2026-08-08 — strategy change.** The official page confirms a **third judge: Paul
+> W. S. Anderson** (*Mortal Kombat*, *Resident Evil*, *Alien vs. Predator*, *Event
+> Horizon*). Our original ranking assumed a two-person jury of Catmull (story) and
+> Papamichael (light) and recommended the quietest, most intimate concept. **That was
+> a one-vote-of-three strategy.** Anderson has spent thirty years holding audience
+> attention against its will. A beautiful static film loses his vote outright.
 
-**Recommended play — the portfolio:**
+### Scoring against all three jurors
 
-- **PRIMARY: A · *Understudy*.** It is the film that wins a jury containing Edwin
-  Catmull. The hand problem is real but solvable with disciplined coverage, and the
-  emotional ceiling is meaningfully above the other two.
-- **SECONDARY: C · *Tidewalker*.** Entries are unlimited. Tidewalker carries the
-  Audience Choice campaign and double-dips into Make Your Action Scene.
-- **RESERVE: B · *The Keeper*.** If early tests show the hand problem is
-  unrecoverable, B is the pivot — lowest technical risk, highest photographic ceiling.
+| | **Catmull** *(heart)* | **Papamichael** *(craft)* | **Anderson** *(propulsion)* | Engagement |
+|---|---|---|---|---|
+| **A · Understudy** | ★★★★★ | ★★★★ | ★★ | ★★★★ |
+| **B · The Keeper** | ★★★★ | ★★★★★ | ★★★★ | ★★★★ |
+| **C · Tidewalker** | ★★★★ | ★★★★ | ★★★★★ | ★★★★★ |
 
-> **Not yet ratified.** This goes to full council review — Earth's compliance gate,
-> Fire's spine test, Void's red team — before it is logged in `memory/DECISIONS.md`.
+*Understudy* is still the best pure-Catmull film we have — and it is the only one that
+scores **two stars** with a juror. A marionette film with no propulsion is exactly the
+festival short Anderson has professionally spent his career being the opposite of.
+
+### Revised play
+
+- **🥇 PRIMARY: C · *Tidewalker*.** The only concept that scores ★★★★ or better with
+  **all three** jurors. It has a real emotional core (what he's retrieving), genuine
+  photographic beauty (low sun, wet sand, mirror reflections), and a **built-in
+  ticking clock with an action set-piece** — Anderson's exact register. It also
+  carries the strongest hook for the $100K Audience Choice and **double-dips into
+  *Make Your Action Scene*** ($500K, same deadline).
+  **Three independent reasons now point at the same film.**
+- **🥈 SECONDARY: A · *Understudy*.** Entries are unlimited. This stays in the
+  portfolio as the pure-heart play — if the shortlist skews toward Catmull's taste, it
+  is our best entry. Build it second, from surplus craft.
+- **🛟 RESERVE: B · *The Keeper*.** Lowest technical risk and the best balance across
+  all three jurors after C. Pivot here if *Tidewalker*'s water simulation proves
+  unrecoverable in early tests.
+
+### What this changes in production
+
+*Tidewalker*'s risk profile is water and exteriors, not hands. That moves the hardest
+generation problem from **anatomy** (unsolvable) to **simulation and continuity**
+(solvable with reference chaining and shot design). Phedon should test a returning-tide
+shot **before Gate 1** — if it can't be made to work, we pivot to B immediately rather
+than discovering it at day 15.
+
+> **Not yet ratified.** Goes to full council review — Catmull's compliance gate,
+> Edwin's spine test, Anderson's propulsion test, Braintrust's red team — before it is
+> logged in `memory/DECISIONS.md`.

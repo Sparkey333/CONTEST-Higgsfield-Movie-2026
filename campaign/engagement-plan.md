@@ -70,7 +70,7 @@ independent of the film.
 | TikTok publishing | `tiktok_connect` → `tiktok_prepare_publish` → `tiktok_publish` |
 
 ⚠️ **Trending audio is a disqualification trap.** Licensed music is banned in the
-film. Earth clears every audio decision, including promo clips.
+film. Catmull clears every audio decision, including promo clips.
 
 ---
 

@@ -49,7 +49,7 @@ not a default.
 
 ---
 
-## The continuity workflow — Water's core loop
+## The continuity workflow — Phedon's core loop
 
 **This is the single highest-value technique on the platform.**
 
@@ -84,7 +84,7 @@ Deliver the highest resolution the pipeline supports. 4K is available on Cinema 
 
 ---
 
-## Audio — Wind's toolkit
+## Audio — Anderson's toolkit
 
 | Need | Tool |
 |---|---|
@@ -100,19 +100,19 @@ Deliver the highest resolution the pipeline supports. 4K is available on Cinema 
 
 ---
 
-## Campaign tools — Wind
+## Campaign tools — Anderson
 
 | Need | Tool |
 |---|---|
 | **Predict performance before posting** | `virality_predictor` |
 | Analyze a cut | `video_analysis_create` |
 | TikTok publishing | `tiktok_connect`, `tiktok_prepare_publish`, `tiktok_publish` |
-| Trending audio | `tiktok_music_trending`, `tiktok_music_tune` ⚠️ *music rights — Earth must clear* |
+| Trending audio | `tiktok_music_trending`, `tiktok_music_tune` ⚠️ *music rights — Catmull must clear* |
 | Vertical cutdowns | `shorts_studio_create`, `personal_clipper_create` |
 
 ⚠️ **Trending audio is a disqualification trap.** Licensed music is banned. Use
 platform trending audio for *promo clips only if the rules permit it there* — never in
-the film. Earth clears every audio decision.
+the film. Catmull clears every audio decision.
 
 ---
 
@@ -130,6 +130,6 @@ sequential calls.
 |---|---|
 | Resolution | 480p → 4K is the biggest multiplier. Test at 480p/720p. |
 | `mode: fast` vs `std` | Seedance fast is materially cheaper (480p/720p only) |
-| `generate_audio: false` | Cheaper when Wind is scoring the shot anyway |
+| `generate_audio: false` | Cheaper when Anderson is scoring the shot anyway |
 | Mini/Lite variants for blocking | Same references, fraction of the cost |
 | Duration | Bill scales with seconds — generate the shot, not the scene |

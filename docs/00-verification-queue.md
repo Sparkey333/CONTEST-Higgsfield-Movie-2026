@@ -6,7 +6,7 @@ fact was reconstructed from search-engine extractions of that page plus corrobor
 coverage.
 
 Most of it is well-corroborated. Some of it is **load-bearing and unconfirmed**. This
-file tracks the difference. **Earth owns it. Void audits it.**
+file tracks the difference. **Catmull owns it. Braintrust audits it.**
 
 ---
 
@@ -17,7 +17,7 @@ file tracks the difference. **Earth owns it. Void audits it.**
 > Platform Engagement 15% · Social Media Engagement 15%
 
 **Why it matters:** our entire strategy — especially the 30%-engagement thesis in
-`docs/02-scoring-model.md` — rests on this. If engagement is *not* 30%, Wind's
+`docs/02-scoring-model.md` — rests on this. If engagement is *not* 30%, Anderson's
 priority drops sharply and resources should shift to craft.
 
 **Appeared in:** one search extraction attributed to the official page.
@@ -48,11 +48,14 @@ Assume 5 minutes is the practical maximum; target 3:15–4:30 regardless.
 
 ### 5. Audience Choice voting mechanics
 $100,000 is confirmed. **How it's decided is not** — who votes, when, on what
-platform, and whether views/likes/comments are weighted. Wind's campaign can be
+platform, and whether views/likes/comments are weighted. Anderson's campaign can be
 targeted much more precisely once known.
 
-### 6. Full jury roster
-Confirmed: **Edwin Catmull**, **Phedon Papamichael**. Others may be unannounced.
+### 6. ~~Full jury roster~~ ✅ RESOLVED 2026-08-08
+Confirmed from the official page (screenshot): **Edwin Catmull**, **Phedon
+Papamichael**, and **Paul W. S. Anderson**. Three judges. Anderson's confirmation
+triggered a concept-ranking revision — see `memory/DECISIONS.md` D-007.
+*Still open:* whether further jurors are added before judging begins.
 
 ### 7. Cross-entry rules with concurrent contests
 **Make Your Action Scene** ($500K) shares our Aug 31 deadline. Can one film — or a
@@ -93,7 +96,7 @@ These appeared consistently across multiple independent sources. Treat as reliab
 
 | Date | Item | Result | By |
 |---|---|---|---|
-| 2026-08-08 | Subscription = **Ultra** | ✅ Confirmed live via MCP `balance` | Earth |
-| 2026-08-08 | MCP credits = **0** | ✅ Confirmed live via MCP `balance` | Earth |
-| 2026-08-08 | Model roster + capabilities | ✅ Confirmed live via MCP `models_explore` | Water |
+| 2026-08-08 | Subscription = **Ultra** | ✅ Confirmed live via MCP `balance` | Catmull |
+| 2026-08-08 | MCP credits = **0** | ✅ Confirmed live via MCP `balance` | Catmull |
+| 2026-08-08 | Model roster + capabilities | ✅ Confirmed live via MCP `models_explore` | Phedon |
 | | *P0 items pending* | ⬜ | |

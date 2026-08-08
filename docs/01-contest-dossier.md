@@ -84,13 +84,27 @@ margin; never cut it close to 3:00.
 
 ## 5. How to enter
 
-1. **Create your film** — any story, any genre, solo or with a team of up to 4.
-2. **Work inside the official project**, which **opens August 10**. Generate your
-   shots there, from first try through final cut.
-3. **Upload the final cut with the Higgsfield watermark.**
-4. **Share it in a public post.** Submission is via public post — *not* a private form.
-5. **Publish your prompts and generation histories.** Entrants are required to make
-   the process behind the short film public.
+The official page frames this as **"Four steps from idea to award"**:
+
+1. **Shape your idea, gather your crew** — any story, any genre, solo or team of ≤4.
+2. **Create in Cinema Studio.** Work inside the official project, which **opens
+   August 10**. Generate your shots there, from first try through final cut.
+3. **Submit your film** — upload the final cut **with the Higgsfield watermark**, then
+   share it in a **public post**. Submission is via public post, *not* a private form.
+4. **The judging begins** — Screening → Shortlist → Jury verdict. Then the prize.
+
+Plus: **publish your prompts and generation histories.** Entrants are required to make
+the process behind the film public.
+
+> **Cinema Studio is named explicitly as the creation environment.** It exposes
+> **camera type, lens selection, movement, and style anchors including ARRI and
+> Panavision** — which is, not coincidentally, exactly the vocabulary Papamichael
+> judges in. Using those controls deliberately is a craft signal, not a preset choice.
+> Corresponds to the `cinematic_studio_3_0` / Cinema Studio Video models in the MCP
+> roster (`docs/04-platform-playbook.md`).
+
+The page also promotes a tutorial track — **"Learn to make movies, not just
+generations"** — covering AI realism, AI short film, and AI filmmaking. Worth mining.
 
 > ⚠️ Two implications people will miss:
 > - Because the work is expected to happen **inside the festival project**, generating
@@ -113,7 +127,7 @@ margin; never cut it close to 3:00.
 
 **Most entries are eliminated at Screening.** Screening is a filter, not a ranking.
 Our first job is not to be brilliant — it is to be *un-eliminatable*: correct runtime,
-correct watermark, correct rights, published prompts, public post. See the Earth
+correct watermark, correct rights, published prompts, public post. See the Catmull
 agent's compliance gate.
 
 ### Published weighted criteria `[VERIFY — highest priority]`
@@ -129,32 +143,46 @@ agent's compliance gate.
 This rubric is the most valuable single piece of intelligence we have. Full
 exploitation analysis in `docs/02-scoring-model.md`.
 
-### Jury
+### Jury — three judges, three different films
 
-| Juror | Credentials |
-|---|---|
-| **Edwin Catmull** | Pixar co-founder. **5× Oscar winner.** Ex-President, Walt Disney Animation Studios & Pixar. Executive producer, *Toy Story*. Turing Award laureate. |
-| **Phedon Papamichael** | **2× Oscar-nominated cinematographer** (*Nebraska*, *Ford v Ferrari*). |
+Confirmed from the official contest page (screenshot, 2026-08-08):
 
-Additional jurors may be unannounced. `[VERIFY]`
+| Juror | Credentials | What they judge |
+|---|---|---|
+| **Edwin Catmull** | Pixar co-founder. **5× Oscar winner.** Ex-President of Pixar & Walt Disney Animation Studios. Executive producer, *Toy Story*. Turing Award laureate. | **Story. Character. Heart.** |
+| **Phedon Papamichael** | **2× Oscar-nominated cinematographer** — *Nebraska*, *Ford v Ferrari*, *Sideways*, *Walk the Line*, *The Descendants*. | **Light. Lens. Craft. Restraint.** |
+| **Paul W. S. Anderson** | Billion-dollar franchise director. *Mortal Kombat*, the *Resident Evil* franchise, *Alien vs. Predator*, *Event Horizon*, *Monster Hunter*. Described on the page as *"the man who brought video games to the big screen."* | **Propulsion. Spectacle. Attention.** |
 
-**This is the strategic crux.** Reporting consistently notes this is the first contest
-from an AI-video vendor whose jury is *not* internal marketing staff. These are career
-craftspeople who judge **story, pacing, and sound** — the same things they judged for
-forty years before AI existed. Multiple sources state the jury **prioritizes
+**This is the strategic crux, and it changed when the third name appeared.**
+
+Reporting consistently notes this is the first contest from an AI-video vendor whose
+jury is *not* internal marketing staff. These are career craftspeople who judge
+**story, pacing, and sound**. Multiple sources state the jury **prioritizes
 storytelling and directorial intent over technical polish**, and that *"a technically
 flashy AI reel with nothing underneath it is not the play here, no matter how good the
 render looks in isolation."*
 
-Read the room:
+But the three of them **do not want the same film**:
+
 - **Catmull** built his career on the conviction that *story is king* and that
-  technology exists to serve it. He wrote the book (*Creativity, Inc.*) on protecting
-  the story from the tech. He will not be impressed by a render. He will be impressed
-  by a **character he cares about**.
+  technology serves it. He wrote *Creativity, Inc.* on protecting story from tech. He
+  will not be impressed by a render. He will be impressed by a **character he cares
+  about**.
 - **Papamichael** is a *cinematographer*. He reads **lensing, blocking, motivated
-  light, and coverage grammar**. He will instantly clock whether shots were *designed*
-  or merely *generated*. Consistent eyelines, consistent light direction, and
-  deliberate lens language will register with him more than spectacle.
+  light, and coverage grammar** instantly, and will clock whether shots were *designed*
+  or merely *generated*. He shot *Nebraska* in black and white — he is impressed by
+  **right**, not by more.
+- **Anderson** has spent thirty years mastering the discipline most art-house
+  filmmakers never learn: **holding an audience's attention against its will.** He
+  knows to the second where a viewer checks out. He builds set-pieces with legible
+  geography. He is not sentimental and not fooled by prettiness.
+
+> ⚠️ **Anderson's presence is the strongest signal we have that a beautiful, static,
+> purely contemplative film will not sweep this contest.** A quiet festival short may
+> win Catmull's vote and lose the room. The winning concept must carry **feeling
+> through momentum** — heart *and* craft *and* propulsion.
+
+This directly re-ranked our concepts. See `docs/06-concepts.md`.
 
 ---
 
@@ -173,7 +201,7 @@ contests**:
 > ⚠️ **The political/religious ban is a serious creative constraint and is easy to
 > trip accidentally.** A film about war, protest, a nation-state, a flag, a cross, a
 > mosque, an election, or a named real-world conflict is at risk even if the intent is
-> apolitical. Every concept must clear the Earth agent's compliance gate before a
+> apolitical. Every concept must clear the Catmull agent's compliance gate before a
 > single credit is spent. Allegory and invented worlds are the safe harbor: universal
 > human stakes, no real-world referents.
 
@@ -210,7 +238,7 @@ design, crowd scale, and the battle sequence**, with real prompts on screen.
 
 **This is the answer key.** Higgsfield published the exact production methodology that
 its own team considers award-grade — which is, transitively, a strong signal of what
-its judging apparatus rewards. Mining these is the Void agent's first assignment.
+its judging apparatus rewards. Mining these is the Braintrust agent's first assignment.
 
 ---
 
@@ -227,7 +255,7 @@ craft developed for the festival may be reusable, and because deadlines collide:
 
 > **"Make Your Action Scene" shares our exact deadline and is worth $500K.** If our
 > festival film contains a strong action sequence, that sequence may be separately
-> submittable. Wind agent to assess double-dipping. `[VERIFY]` cross-entry rules.
+> submittable. Anderson agent to assess double-dipping. `[VERIFY]` cross-entry rules.
 
 ---
 
