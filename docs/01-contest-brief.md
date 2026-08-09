@@ -22,6 +22,8 @@
 | Eligibility | Worldwide, 18+, **active Higgsfield subscription** | Confirmed |
 | Team size | Solo or team of **up to 4** | Confirmed |
 | Entries per entrant | **Unlimited** — each must be a standalone film | Medium-high |
+| **Prizes per entrant** | **One.** Higher placement wins; the other slot cascades | Medium-high |
+| Disqualifiers | Copyrighted IP, licensed music, NSFW, **political statements**, **religious statements** | Medium-high |
 | Runtime | **3 min minimum**, 3–5 min recommended | Medium-high |
 | Watermark | Official Higgsfield watermark **required** on every upload | Medium-high |
 | Submission mechanic | **Public post** on the platform, not a private form | Medium-high |
@@ -112,8 +114,14 @@ Higgsfield open-sourced their 95-minute feature. The numbers are the useful part
 
 ## 5. Strategic Gotchas
 
-**1. Unlimited entries means the correct play is a slate, not a film.**
-Two well-differentiated films aimed at *different prizes* beats one film aimed at all of them. See the recommended portfolio in `docs/05-slate-b-contenders.md`.
+**1. Unlimited entries — but only one prize per entrant.**
+You may submit as many standalone films as you like, and a slate is still worth running: two films means two chances at landing in the fourteen, and the probability of at least one placing is higher than either alone. But **the prizes do not stack** — if two of your films place, you take the higher one and the other cascades to someone else. So the second film has to cost you very little, and it must never come out of the flagship's quality. See the revised portfolio logic in `docs/05-slate-b-contenders.md`.
+
+**1a. Ten of the fourteen prizes are $10,000 Honorable Mentions.**
+71% of the winning slots are HMs. The realistic target is *landing in the fourteen*, not winning outright. Design for that; let the top three be upside.
+
+**1b. The disqualifier list is stricter than most entrants expect.**
+No copyrighted IP (characters, logos, trademarks), no licensed music, no NSFW, **no political statements, and no religious statements.** Serious violations can mean a permanent ban. The religious clause is a live risk for the DarkHearts esoterica material — Enoch, Goetia and Hekhalot sit right on that line. A myth is fine; a theological argument is a removal. Full list in `docs/09-one-pager.md`.
 
 **2. Audience Choice ($100,000) is a separate, winnable game.**
 It is very likely popularity-driven, and it pays the same as third place. A wordless, universal, high-shareability short is a completely different optimization from a jury film — and it is the cheapest film in this package to produce.
@@ -137,7 +145,8 @@ I could not reach the rules page from this environment. These five answers chang
 2. **External editing.** Confirmed you may cut in external software but may not *create new content* there. Does that permit grade, grain, sound mix, and titles? Assume yes; verify.
 3. **Exact runtime bounds.** Min 3:00 confirmed-ish. Is there a hard max? Does it include credits?
 4. **Delivery spec.** Resolution, aspect ratio, frame rate, codec, and whether the Higgsfield watermark must be visible on the final export or is applied by the platform.
-5. **Entry cap and eligibility window.** Confirm entries are genuinely unlimited, and confirm your subscription tier covers festival entry.
+5. **Entry cap and eligibility window.** Confirm entries are genuinely unlimited. *(Subscription is settled — the account is on Ultra; see `docs/10-tiers-and-pipeline.md`.)*
+6. **Does the one-prize-per-entrant cap include Audience Choice,** or does Audience Choice sit outside the jury placements? **This is the one that decides whether a second film is upside or insurance.**
 
 Log the answers at the top of `docs/08-production-plan.md` before Day 1.
 

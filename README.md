@@ -37,6 +37,9 @@ Entries are unlimited, so the correct play is a **small slate aimed at different
 | [`screenplay/SILT.md`](screenplay/SILT.md) | The screenplay |
 | [`docs/07-score-and-sound.md`](docs/07-score-and-sound.md) | Metal/EDM score bible — the frequency spine, cue sheet, and the rule that governs the mix |
 | [`docs/08-production-plan.md`](docs/08-production-plan.md) | 23-day calendar, generation budget, the open-source package, the campaign, risk register |
+| [`docs/09-one-pager.md`](docs/09-one-pager.md) | **Print this.** Everything to avoid (disqualifiers, craft killers, production traps) and the Hero's Journey compressed to nine beats with timecodes |
+| [`docs/10-tiers-and-pipeline.md`](docs/10-tiers-and-pipeline.md) | Prize tiers, entry rules, live account state, credit tiers, and the model pipeline mapped to each film |
+| [`docs/11-genre-strategy.md`](docs/11-genre-strategy.md) | Which genres and sub-niches actually win, derived from what the medium does well and where the field is crowded |
 | [`templates/`](templates/) | Blank Snowflake template, shot card, submission checklist |
 
 ---

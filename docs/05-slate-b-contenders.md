@@ -144,7 +144,13 @@ Entries are unlimited. The correct play is **not one film aimed at every prize**
 | 3 | ROLL | Honorable Mention + technical credibility | ~15%, only if 1 & 2 are locked by Aug 24 |
 | 4 | CEPHAS | Next cycle. Build it properly, not in 23 days. | — |
 
-**Why this shape.** SILT and DOG do not compete: one is a jury film about landscape and physics, the other is a wordless interior about waiting. They share a studio signature (`stone remembers, water carries, sound gets it out` — DOG's version is silence) but they will never be compared to each other. Running both roughly doubles your surface area on the prize table for about a 20% increase in workload, because DOG is so cheap.
+**Why this shape.** SILT and DOG do not compete: one is a jury film about landscape and physics, the other is a wordless interior about waiting. They share a studio signature (`stone remembers, water carries, sound gets it out` — DOG's version is silence) but they will never be compared to each other.
+
+> **Correction to an earlier version of this recommendation.** Entries are unlimited, but **prizes are not** — one prize per participant, with the higher placement winning and the other cascading. Running two films therefore does **not** double your expected payout. What it does is raise the probability of landing *anywhere* in the fourteen, which is the actual goal given that ten of the fourteen slots are $10,000 Honorable Mentions.
+>
+> That still justifies the slate — DOG costs roughly 20% of your capacity and buys a second, uncorrelated shot at the board — **provided** it never eats into SILT's quality. If look dev slips past Aug 16, cut DOG without hesitation.
+>
+> The open question is whether **Audience Choice** falls inside or outside that cap. Outside, and the slate is straightforwardly excellent. Inside, and DOG is insurance rather than upside. Verify it (`01-contest-brief.md` §6, question 6) before you commit capacity on Aug 22.
 
 **Do not attempt all four.** Twenty-three days, ~1.6% keep rates, and a solo operator. Two finished films beat four unfinished ones, and an unfinished film scores zero.
 
