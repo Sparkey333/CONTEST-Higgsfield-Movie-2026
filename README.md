@@ -31,6 +31,23 @@ published by public post, with all prompts and generation history made public.
 
 ---
 
+## 🎟 The Void Room — our theater
+
+Everything in this repo is also a **single self-contained web app**:
+**[`app/index.html`](app/index.html)** — a small repertory cinema with four rooms.
+
+| Room | What's in it |
+|---|---|
+| **01 · The Mission** | Live countdown, prize ladder, the three-judge jury, rubric, milestone gates, open blockers |
+| **02 · The Council** | The five agents, their patrons, and the one line each would die on |
+| **03 · The Library** | The short-film library — **drag any title to re-rank it or move it between tiers.** Saves to your browser |
+| **04 · The Theater** | A 3D auditorium. Drag to look around, hang a poster on the screen, watch from the seats |
+
+Open it locally, or share the published link (see below). No build step, no
+dependencies, no network calls — one file.
+
+---
+
 ## Start here
 
 ```bash
