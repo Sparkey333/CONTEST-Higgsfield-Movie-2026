@@ -34,7 +34,9 @@ Entries are unlimited, so the correct play is a **small slate aimed at different
 | [`docs/04-slate-a-personal.md`](docs/04-slate-a-personal.md) | **Five** personal-fusion concepts, each to Snowflake Step 4, with disposition |
 | [`docs/05-slate-b-contenders.md`](docs/05-slate-b-contenders.md) | **Four** judge-triangulated contenders with score projections against the rubric |
 | [`docs/06-silt-full-build.md`](docs/06-silt-full-build.md) | **SILT** — the complete build, Snowflake Steps 1–8, including the 61-shot list |
-| [`screenplay/SILT.md`](screenplay/SILT.md) | The screenplay |
+| [`screenplay/SILT.md`](screenplay/SILT.md) | The SILT screenplay |
+| [`docs/12-dog-full-build.md`](docs/12-dog-full-build.md) | **THE DOG AT THE DOOR** — the complete build, Snowflake Steps 1–8, including the 43-shot list, cue sheet, and the eleven prohibitions that keep it from becoming a greeting card |
+| [`screenplay/THE-DOG-AT-THE-DOOR.md`](screenplay/THE-DOG-AT-THE-DOOR.md) | The DOG screenplay — no dialogue, not one word |
 | [`docs/07-score-and-sound.md`](docs/07-score-and-sound.md) | Metal/EDM score bible — the frequency spine, cue sheet, and the rule that governs the mix |
 | [`docs/08-production-plan.md`](docs/08-production-plan.md) | 23-day calendar, generation budget, the open-source package, the campaign, risk register |
 | [`docs/09-one-pager.md`](docs/09-one-pager.md) | **Print this.** Everything to avoid (disqualifiers, craft killers, production traps) and the Hero's Journey compressed to nine beats with timecodes |
@@ -66,8 +68,10 @@ And a second thesis, which is worth as much:
 
 1. Answer the five rules questions in [`docs/01-contest-brief.md`](docs/01-contest-brief.md) §6 — they gate everything else
 2. Read [`docs/05-slate-b-contenders.md`](docs/05-slate-b-contenders.md) and confirm or overrule the greenlight
-3. Read [`screenplay/SILT.md`](screenplay/SILT.md)
+3. Read [`screenplay/SILT.md`](screenplay/SILT.md), then [`screenplay/THE-DOG-AT-THE-DOOR.md`](screenplay/THE-DOG-AT-THE-DOOR.md)
 4. Work [`docs/08-production-plan.md`](docs/08-production-plan.md) from Aug 8
+
+**Both films are now built to Snowflake Step 8 with locked screenplays.** DOG's four camera plates are stills, so build them during SILT's look dev on Aug 12–14 at near-zero marginal cost — that de-risks the entire back half of the calendar.
 
 ---
 

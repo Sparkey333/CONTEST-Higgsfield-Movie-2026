@@ -46,7 +46,8 @@ You will do better than 1.6% because your shot design is disciplined, but plan c
 - [ ] Read the *Hell Grind* breakdown end to end; note their prompt structure
 - [ ] SILT screenplay locked — no rewrites after Aug 11
 - [ ] Snowflake Step 7 consistency sheet finalized; locked fragments frozen
-- [ ] DOG shot list drafted
+- [x] **DOG shot list drafted** — done. Full build in `12-dog-full-build.md`, screenplay in `screenplay/THE-DOG-AT-THE-DOOR.md`. 43 shots, 4:12, four locked camera plates.
+- [ ] DOG screenplay locked — same deadline as SILT, no rewrites after Aug 11
 - [ ] **Studio setup:** DarkHearts profile, bio, socials live. Post #1 goes up Aug 11.
 
 ### Aug 12–14 · Look Dev
@@ -55,6 +56,8 @@ You will do better than 1.6% because your shot design is disciplined, but plan c
 - [ ] The 1961 plat asset — generate once, reuse in all 6 inserts
 - [ ] **Six test shots**: 4, 22, 37, 40, 56, 60. If 56 and 60 don't work, restructure now, not on Aug 25.
 - [ ] Lens/grain/grade LUT established and frozen
+- [ ] **DOG's four camera plates (A/B/C/D) — build them now, not on Aug 22.** They are *stills*, so the marginal cost during look dev is near zero, and freezing them here converts DOG's two production days into pure relight-and-redress work. This is the single cheapest de-risking move on the calendar.
+- [ ] **Test Soul Cast on the dog.** It is described as consistent character *identity* and may be tuned for humans. If it won't hold an animal, fall back to Seedance 2.0 with `image_references` — see `12-dog-full-build.md`. This is the one unverified assumption in DOG's build and it costs nothing to answer on Aug 12.
 
 **Gate:** if the four 85mm faces are not consistent by end of Aug 14, **cut to a shot design where the face is never clean** and rebuild the beat map. Better a stylistic constraint than a broken film.
 
@@ -67,7 +70,7 @@ Work in beat order, not shot order — finish Beat 1 completely before starting 
 | 17–18 | SILT Beat 2 (14–26) — includes the steps reveal |
 | 19–20 | SILT Beat 3 (27–43) — the tower, hardest interior block |
 | 21 | SILT Beats 4–5 (44–61) — includes the strike and the refill |
-| 22–23 | DOG, entire film (43 shots, one camera position — this is why it's cheap) |
+| 22–23 | DOG, entire film (43 shots across **four locked plates already built in look dev** — this is why it's cheap). Shots 26, 31, 36, 40 first; they're the film. Per `12-dog-full-build.md` §8. |
 
 **Daily, non-negotiable:** one build-in-public post. See §4.
 
@@ -116,7 +119,7 @@ Cut these *deliberately*, don't harvest them.
 
 - **SILT — "The Water" (12s).** Shot 60. The valley filling, the tower going under. Works silent. Works on a phone. Needs zero context. **This is the clip.**
 - **SILT — "The Bell" (9s).** Shots 40–41: the beam finding the bell, his hand on the bronze, the hum. Sound-on hook.
-- **DOG — "The Chair" (15s).** The recliner leaving; the dog lying down in its empty shape. This one is going to travel on its own.
+- **DOG — "The Chair" (15s).** Shots 26 → 29 → 31: the recliner carried past him, the dog standing, the dog lying down in its empty shape. This one is going to travel on its own. **Cut it 9:16 first and 21:9 second** — Audience Choice is decided on phones, and the vertical is the one that travels. Compose for the center crop from the first generation; it is unfixable afterward.
 
 ### Build in public, starting Aug 11
 Daily. Short. One artifact per post.
@@ -150,6 +153,8 @@ That is a story a journalist can file. Nobody else in this contest has one.
 | Credit exhaustion | Medium | Budget checked Aug 12; DOG is the cut-line, not SILT |
 | Runtime under 3:00 after trims | Medium | 4:22 target gives 82 seconds of headroom. Measure at picture lock. |
 | Scope creep to 3–4 films | **High** | **Two films. SILT and DOG. ROLL only if both are locked by Aug 24.** Unfinished films score zero. |
+| DOG turns sentimental | **High** | Eleven prohibitions decided in pre-production, not in the edit room — `12-dog-full-build.md`, "What Is Deliberately Absent." No photograph of the man, no dissolves, no score before 3:12, no sad-dog performance. |
+| Visible trademark in DOG (a house full of boxes and a moving truck) | Medium | Negative branding clause in every locked fragment. Blank cardboard, unmarked truck, no legible printed matter. This is DOG's disqualifier risk the way the religious clause is SILT's. |
 | Submission-day server load | Low | Ship Aug 29 |
 
 ---
@@ -158,7 +163,9 @@ That is a story a journalist can file. Nobody else in this contest has one.
 
 If everything goes wrong and you have one week left:
 
-**Make DOG.** 43 shots, one hallway, one camera position, no dialogue, four minutes. It is a complete film, it is genuinely moving, it targets a $100,000 prize on its own axis, and you can produce it in five days.
+**Make DOG.** 43 shots, one hallway, four locked camera positions, no dialogue, 4:12. It is a complete film, it is genuinely moving, it targets a $100,000 prize on its own axis, and you can produce it in five days.
+
+**It is built and ready to shoot** — Snowflake Steps 1–8 in `12-dog-full-build.md`, screenplay in `screenplay/THE-DOG-AT-THE-DOOR.md`. There is nothing left to decide, which is the entire value of a fallback.
 
 Then make SILT next cycle, properly.
 

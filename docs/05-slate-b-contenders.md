@@ -106,6 +106,8 @@ Audience Choice pays **$100,000** — level with third place — and it is almos
 
 **Score projection:** modest jury scores, **highest Social Media Engagement of anything here**, and a genuine shot at the $100K audience prize.
 
+**→ Full build in `docs/12-dog-full-build.md`, screenplay in `screenplay/THE-DOG-AT-THE-DOOR.md`.** Built at 4:12 / 43 shots across **four locked camera plates**, which is why it stays the cut-line film and the fallback film simultaneously.
+
 ---
 
 # B4 · CEPHAS — FIRST DREAM

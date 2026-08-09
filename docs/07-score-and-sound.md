@@ -95,7 +95,7 @@ This is the technical conceit and it is *actually correct*, which is the point.
 
 The spine transfers, which is what makes DarkHearts a studio and not a series of one-offs:
 
-- **THE DOG AT THE DOOR** — the inverse. Near-total silence, no score until 3:00, then one sustained E2 drone under the last minute and nothing else. Same root note, opposite deployment.
+- **THE DOG AT THE DOOR** — the inverse. Near-total silence, no score until 3:12, then one sustained E2 drone under the last minute and nothing else. Same root note, opposite deployment. *(Full cue sheet in `docs/12-dog-full-build.md`. The refinement worth knowing: the house hums at ~120 Hz until the power is cut at 1:43, and the E2 arrives at 3:12 to fill the hole the refrigerator left. **The house's own hum is replaced by the studio's root note.**)*
 - **ROLL** — same drop-E root, but the loop structure means the score is *literally* a loop that degrades: each restart, the same four bars with one more element wrong. By loop six it's barely holding together. The score tells you something's broken before the character notices.
 - **CEPHAS** — the Creation Stones each get a pitch. The Stone of Matter is E2. Of course it is.
 

@@ -166,7 +166,7 @@ These are chosen for *authorial truth* first — they are the films only you can
 
 **Verdict.** **This is the Audience Choice film.** No dialogue, no language barrier, universally legible, devastating in four minutes, and by a wide margin the cheapest thing on either slate to produce — one hallway, one dog, one lighting geometry, changing only in light and set dressing. That constraint is *also* an AI-consistency dream: locking a single camera position across sixteen shots is trivially achievable, and the film's whole aesthetic is "the camera never moves."
 
-Audience Choice pays **$100,000** — the same as third place — and is a completely different competition from the jury prize. Promoted to Slate B as **B3**.
+Audience Choice pays **$100,000** — the same as third place — and is a completely different competition from the jury prize. Promoted to Slate B as **B3**, and built out in full in `docs/12-dog-full-build.md` (runtime revised 4:00 → **4:12** to sit inside the brief's target band; shot count unchanged at 43).
 
 ---
 
