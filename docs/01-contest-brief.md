@@ -137,9 +137,9 @@ Target **4:10–4:40** including titles and end card. Long enough to be unambigu
 
 ---
 
-## 6. Verify These Five Things Yourself — Before Any Production
+## 6. Verify These Six Things Yourself — Before Any Production
 
-I could not reach the rules page from this environment. These five answers change the plan:
+I could not reach the rules page from this environment. These six answers change the plan:
 
 1. **Music.** Can the score be composed off-platform in your DAW and married in edit, or must audio be generated in Higgsfield? *(This determines whether DarkHearts scores it live or you build the metal/EDM bed with on-platform audio generation. Both paths are written in `docs/07-score-and-sound.md`.)*
 2. **External editing.** Confirmed you may cut in external software but may not *create new content* there. Does that permit grade, grain, sound mix, and titles? Assume yes; verify.

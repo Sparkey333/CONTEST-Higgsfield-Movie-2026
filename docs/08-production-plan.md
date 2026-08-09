@@ -14,7 +14,10 @@ Fill this in before Day 1. Nothing below is safe until it is.
 | 2 | External edit/grade/mix/titles — allowed? Confirm "no new content created externally." | | ☐ |
 | 3 | Exact runtime min/max. Do credits count? | | ☐ |
 | 4 | Delivery spec: resolution, aspect, fps, codec, watermark handling | | ☐ |
-| 5 | Entries genuinely unlimited? Subscription tier covers entry? | | ☐ |
+| 5 | Entries genuinely unlimited? *(Subscription is settled — Ultra.)* | | ☐ |
+| **6** | **Does the one-prize-per-entrant cap include Audience Choice, or does it sit outside the jury placements?** | | ☐ |
+
+> **Question 6 is the one that decides whether DOG is upside or insurance.** Answer it before you commit capacity on Aug 22 — `05-slate-b-contenders.md` and `09-one-pager.md` both hang on it.
 
 ---
 
