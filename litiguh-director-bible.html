@@ -471,6 +471,59 @@ footer a{color:var(--ink-2)}
 .rung .rb span b{color:var(--ink)}
 @media (max-width:660px){.rung{grid-template-columns:1fr;gap:8px}.rung .rl{justify-self:start;padding:5px 14px}}
 
+/* ============ VERSUS ============ */
+.vs{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--surface)}
+.vs-head{display:grid;grid-template-columns:minmax(0,190px) 1fr 1fr;gap:0;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.vs-head > div{padding:16px 18px;border-right:1px solid var(--line-soft)}
+.vs-head > div:last-child{border-right:0}
+.vs-head .vh{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.vs-head strong{display:block;font-family:var(--display);font-size:17px;color:var(--ink);margin-top:5px;line-height:1.25}
+.vs-head em{display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--ink-3);margin-top:5px;letter-spacing:.06em}
+.vs-row{display:grid;grid-template-columns:minmax(0,190px) 1fr 1fr;border-bottom:1px solid var(--line-soft)}
+.vs-row:last-child{border-bottom:0}
+.vs-row > div{padding:15px 18px;border-right:1px solid var(--line-soft);font-size:14px;color:var(--ink-2);line-height:1.55}
+.vs-row > div:last-child{border-right:0}
+.vs-crit{color:var(--ink)!important;font-weight:600;display:flex;flex-direction:column;gap:4px}
+.vs-crit span{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-weight:400}
+.vs-cell{position:relative}
+.vs-cell.w{background:var(--gold-soft)}
+.vs-cell.w::before{
+  content:"WINS";position:absolute;top:15px;right:14px;font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.16em;color:var(--gold);border:1px solid var(--gold-line);border-radius:2px;padding:1px 5px;
+}
+.vs-cell.w{padding-right:64px!important}
+.vs-tally{display:grid;grid-template-columns:minmax(0,190px) 1fr 1fr;background:var(--surface-2);border-top:1px solid var(--line)}
+.vs-tally > div{padding:16px 18px;border-right:1px solid var(--line-soft);font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.vs-tally > div:last-child{border-right:0}
+.vs-tally b{font-size:22px;color:var(--ink);display:block;font-variant-numeric:tabular-nums}
+@media (max-width:820px){
+  .vs-head,.vs-row,.vs-tally{grid-template-columns:1fr}
+  .vs-head > div,.vs-row > div,.vs-tally > div{border-right:0;border-bottom:1px solid var(--line-soft)}
+  .vs-row .vs-crit{background:var(--surface-2)}
+}
+.evidence{
+  border-left:2px solid var(--coral);background:var(--coral-soft);
+  border-radius:0 4px 4px 0;padding:16px 20px;display:flex;flex-direction:column;gap:8px;
+}
+.evidence .eq{font-family:var(--display);font-style:italic;font-size:15.5px;color:var(--ink);line-height:1.5}
+.evidence .er{font-size:14.2px;color:var(--ink-2);line-height:1.58}
+.evidence .er b{color:var(--ink)}
+.evidence .el{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.judges{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.judge{border:1px solid var(--line);border-radius:5px;background:var(--surface);padding:20px;display:flex;flex-direction:column;gap:9px}
+.judge .jn{font-family:var(--display);font-size:18px;color:var(--ink)}
+.judge .jc{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.05em;line-height:1.5}
+.judge .jv{font-size:14.2px;color:var(--ink-2);line-height:1.58}
+.judge .jv b{color:var(--ink)}
+.judge .jr{
+  align-self:flex-start;margin-top:2px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;padding:4px 9px;border-radius:3px;
+}
+.judge.cur .jr{background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-line)}
+.judge.alt .jr{background:var(--void-soft);color:var(--void);border:1px solid var(--void-line)}
+.judge.cur{border-color:var(--gold-line)}
+.judge.alt{border-color:var(--void-line)}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -500,6 +553,7 @@ footer a{color:var(--ink-2)}
   <a href="#brief">The Brief</a>
   <a href="#doctrine">Doctrine</a>
   <a href="#blend">Blend Options</a>
+  <a href="#versus">Structural Test</a>
   <a href="#shots">Shot List</a>
   <a href="#pipeline">Pipeline &amp; Gates</a>
   <a href="#frames">Frame String</a>
@@ -625,6 +679,126 @@ footer a{color:var(--ink-2)}
       <p>Chapter III contains one throwaway line: <em>"One dark cloud watched them from afar."</em> Make that the connective tissue. The camera becomes the darkness &mdash; it finds Gwendolyn's island, it follows her over the ocean, and in the final movement it is simply <b>sitting behind Ammon's shoulder, out of focus</b>, while he decides what he wants.</p>
       <p>Cheap, reusable, and it converts three separate stories into one continuous act of surveillance. Layer it under Option B rather than choosing between them.</p>
     </div>
+  </div>
+</div></section>
+
+<!-- ================= VERSUS ================= -->
+<section id="versus"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Structural test</span>
+    <h2>Tested: causal interlace vs. framed prophecy</h2>
+    <p>The proposal: interlace Movements II and III with rising action, so the hidden battle bleeds into the boys' world &mdash; as Gwendolyn gains ground the bombardment recedes, and as she lets go the boys are safe. Run honestly against the current structure, it <b style="color:var(--ink)">wins three criteria and loses five</b>, and the three it wins are all fixable inside the current structure. The five it loses are not.</p>
+  </div>
+
+  <div class="vs">
+    <div class="vs-head">
+      <div><span class="vh">Criterion</span></div>
+      <div><span class="vh">Option B &mdash; current</span><strong>Framed prophecy</strong><em>Linear · 23 shots · 13.0s mean</em></div>
+      <div><span class="vh">Option C+ &mdash; proposed</span><strong>Causal interlace</strong><em>Cross-cut · ~40 shots · ~7s mean</em></div>
+    </div>
+
+    <div class="vs-row">
+      <div class="vs-crit">Forward pull<span>Tension</span></div>
+      <div class="vs-cell">Three discrete movements. Escalates <i>within</i> each, but the film's overall shape is quiet&ndash;loud&ndash;quiet rather than a rise.</div>
+      <div class="vs-cell w">Cross-cutting is the most reliable tension engine ever found. Two clocks running at once always pulls harder than one.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">Emotional continuity<span>The baton</span></div>
+      <div class="vs-cell">Gwendolyn dies at 3:18 and two strangers arrive cold. A real weakness, correctly identified.</div>
+      <div class="vs-cell w">The boys are established before she dies, so nothing is dropped. No dead-protagonist gap at all.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">Rising action<span>Shape</span></div>
+      <div class="vs-cell">Peaks at the vortex (2:50) then runs two minutes of falling action. Structurally the current version's weakest point.</div>
+      <div class="vs-cell w">One continuous build across three and a half minutes to a single convergent climax.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">Source fidelity<span>Causality</span></div>
+      <div class="vs-cell w">Chapter III opens <i>"The next day&hellip;"</i>. Separate events, separate threats, one day apart &mdash; exactly as written.</div>
+      <div class="vs-cell">Requires inventing simultaneity and a causal link the text explicitly denies. See the evidence below.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">Shot economy<span>The whole brief</span></div>
+      <div class="vs-cell w">23 generations, 13.0s mean. Long holds are possible precisely <i>because</i> nothing is cross-cutting.</div>
+      <div class="vs-cell">Cross-cutting needs 6&ndash;10 alternations minimum, and they must <i>shorten</i> toward the climax. That is ~40 shots at ~7s &mdash; the ad-collage rhythm, arrived at structurally.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">One-viewing legibility<span>$100k Audience Choice</span></div>
+      <div class="vs-cell w">Asks the viewer to hold three simple things in sequence: a conversation, a battle, a memory.</div>
+      <div class="vs-cell">Asks them to infer that a void-vortex three thousand miles away is causing cannon fire &mdash; in a world whose rules they met ninety seconds ago.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">Ending<span>Last 15 seconds</span></div>
+      <div class="vs-cell w">Ends on a <i>revelation</i>: one brother is already infected. Opens outward &mdash; correct for a prelude.</div>
+      <div class="vs-cell">Ends on a <i>resolution</i>: the boys are safe. Closes the story, and closes off the novel it is meant to introduce.</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-crit">Production risk<span>24 days</span></div>
+      <div class="vs-cell w">23 generations, chains build forward in strict order, 39 anchors.</div>
+      <div class="vs-cell">~40 generations and ~60 anchors, with intercut pairs that must match in light and grade across two locations.</div>
+    </div>
+
+    <div class="vs-tally">
+      <div>Tally</div>
+      <div><b>5</b>criteria won</div>
+      <div><b>3</b>criteria won</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:24px;margin:38px 0 8px">What the text actually says</h3>
+  <p style="font-size:15.5px;color:var(--ink-2);line-height:1.62;max-width:78ch;margin-bottom:18px">Three passages decide this, and all three cut against causal interlacing &mdash; not on taste, on fact.</p>
+  <div class="grid" style="gap:14px">
+    <div class="evidence">
+      <span class="el">Evidence 01 &mdash; they are not simultaneous</span>
+      <p class="eq">"And then she disintegrated&hellip; never to return to this side of the veil. &nbsp;CHAPTER III &mdash; BROTHERS. &nbsp;<b>The next day&hellip;</b>"</p>
+      <p class="er">The two events are <b>a day apart</b>, and the film would have to either fabricate simultaneity or run a card that lies. Not fatal on its own &mdash; adaptations compress time constantly &mdash; but it means the interlace starts by overriding the text rather than serving it.</p>
+    </div>
+    <div class="evidence">
+      <span class="el">Evidence 02 &mdash; different enemy entirely</span>
+      <p class="eq">"&hellip;not mythical sea monsters, but wooden ships with billowing sails. There were twelve of them. <b>Foreign ships</b> approaching rapidly from the west&hellip; Ammon had heard stories of <b>pirates</b> before that day."</p>
+      <p class="er">The attackers are mundane human raiders, not Morningstar's wielders. Gwendolyn is fighting void-wielders and a possessed leviathan; the boys are watching a pirate raid. <b>Linking them causally requires inventing a metaphysics the source does not have</b> &mdash; and inventing it fast enough that a first-time viewer follows.</p>
+    </div>
+    <div class="evidence">
+      <span class="el">Evidence 03 &mdash; there was never any jeopardy</span>
+      <p class="eq">"The Sector Guard had done it. They had defended their home from an ominous threat. Not only that, but they had done it <b>with ease</b>, remaining shrouded in cloaks and composed with peaceful calm."</p>
+      <p class="er">This is the one that ends the argument. <b>The outcome was never in doubt</b> &mdash; only the boys thought it was. Movement III is a child's-eye experience of an event that was always going to be fine. Interlacing converts a scene about <i>witnessing</i> into a scene about <i>rescue</i>, and there is nothing to rescue.</p>
+    </div>
+  </div>
+
+  <div class="verdict" style="margin-top:26px">
+    <b>And the version in the text is bleaker and better than the proposed one.</b> Gwendolyn gives up her Stone, her body and her existence to hide Cephas Island from the Morningstar &mdash; <i>"leading the darkness away from the Stone of Matter"</i> &mdash; and she succeeds. Then the island is attacked anyway, the very next morning, from the west, by something she never knew existed. Her sacrifice bought the island its <i>future</i>, not its next day. "As Gwen wins, the attack recedes" is a tidier story and a smaller one.
+  </div>
+
+  <h3 style="font-size:24px;margin:38px 0 8px">How the three judges split</h3>
+  <p style="font-size:15.5px;color:var(--ink-2);line-height:1.62;max-width:78ch;margin-bottom:18px">This is not a neutral panel, and the structure should be chosen partly on who is watching.</p>
+  <div class="judges">
+    <div class="judge cur">
+      <span class="jn">Ed Catmull</span>
+      <span class="jc">Co-founder, Pixar · former President, Walt Disney Animation · Turing Award</span>
+      <span class="jv">Pixar's entire story doctrine is character-first: what does this person want, and what do they learn? <i>Creativity, Inc.</i> is largely an account of the Braintrust killing plot-mechanical fixes in favour of character truth. <b>"The boys are safe" is a plot resolution</b> &mdash; precisely the note a Braintrust gives as "you solved the plot, not the character."</span>
+      <span class="jr">Favours current</span>
+    </div>
+    <div class="judge cur">
+      <span class="jn">Phedon Papamichael</span>
+      <span class="jc">Cinematographer · Ford v Ferrari · Nebraska · The Trial of the Chicago 7</span>
+      <span class="jv">A career built on long lenses, held frames and coverage restraint &mdash; he shot <i>Nebraska</i> in black and white with locked-off compositions. He is exactly the judge who rewards a fourteen-second hold. <b>Accelerating cross-cut rhythm costs you this vote outright</b>, and he is the judge most likely to notice the difference in the first thirty seconds.</span>
+      <span class="jr">Favours current</span>
+    </div>
+    <div class="judge alt">
+      <span class="jn">Paul W. S. Anderson</span>
+      <span class="jc">Director · Resident Evil · Mortal Kombat · Event Horizon</span>
+      <span class="jv">Kinetic spectacle, convergent set-pieces, parallel threats resolving together. <b>The interlaced version is built for him.</b> Worth noting even so: his own signature is sustained, legible set-piece geography &mdash; he cuts fast <i>within</i> a space the audience always understands, which is closer to the current Movement II than to a two-location intercut.</span>
+      <span class="jr">Favours proposed</span>
+    </div>
+  </div>
+
+  <h3 style="font-size:24px;margin:38px 0 8px">The synthesis &mdash; take the three wins, pay none of the costs</h3>
+  <p style="font-size:15.5px;color:var(--ink-2);line-height:1.62;max-width:78ch;margin-bottom:18px">The instinct behind the proposal is right and the diagnosis is right. The mechanism is the only thing that needs changing &mdash; and the text already supplies a better one. <b style="color:var(--ink)">Rising action through infection, not through jeopardy.</b> Four changes, +1 generation, no loss of shot economy.</p>
+  <div class="rules">
+    <div class="rule-item"><div class="rk">Seed the boys inside Movement II<em>Fixes the baton · +1 shot</em></div><div class="rv">One insert during the ocean battle &mdash; not a cross-cut, a single 4-second image: the dark cloud crossing an ordinary tropical shoreline where two small figures are playing. No context, no dialogue, no card. The audience files it away. <b>The boys now exist before Gwendolyn dies</b>, so nothing is dropped at 3:18 &mdash; and it costs one generation instead of forty.</div></div>
+    <div class="rule-item"><div class="rk">Let her death arrive in their sky<em>Fixes connection · 0 shots</em></div><div class="rv">The Creation Stone is thrown "thousands of miles away." Make the green streak <b>visible over Coral Beach</b> at the top of Movement III &mdash; Mikael points at it, neither boy knows what it is, nobody explains. Her sacrifice is now physically present in their world without being causally responsible for their safety. Already half-built as Transition B.</div></div>
+    <div class="rule-item"><div class="rk">Make the mountain bigger than the vortex<em>Fixes rising action · 0 shots</em></div><div class="rv">The real structural flaw is that the film peaks at 2:50 and then descends. Fix it by re-weighting rather than restructuring: <b>S20's floating mountain becomes the largest image in the film</b>, exceeding the vortex. The shape becomes conversation &rarr; battle &rarr; miracle &rarr; revelation. That is a rise, and it costs nothing but scale in one prompt.</div></div>
+    <div class="rule-item"><div class="rk">Escalate the dark cloud three times<em>The real answer · 0 shots</em></div><div class="rv">This is what the proposal was reaching for, and the text hands it over: <i>"<b>A dark cloud overcame Ammon's feelings, amplifying his inner fears.</b> Doubts swarmed in every corner of his mind, consuming him."</i> The hidden battle <b>does</b> reach the boys &mdash; not through cannon fire, through Ammon's interior. Stage the cloud three times, escalating: distant over the water in Movement II, directly overhead during the bombardment, and finally out of focus behind his shoulder as he decides what he wants. The spiritual war is won and lost inside one child's head, which is both faithful and far more frightening than ships turning back.</div></div>
   </div>
 </div></section>
 
