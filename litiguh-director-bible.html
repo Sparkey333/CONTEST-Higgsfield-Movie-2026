@@ -1,0 +1,1141 @@
+<title>LITIGUH — Director's Bible</title>
+<style>
+/* ============ TOKENS: light is the bare :root, dark redefines ============ */
+:root{
+  --ground:#F1F2F6; --surface:#FFFFFF; --surface-2:#E7E9F0; --surface-3:#DDE0EA;
+  --line:#CBD0DD; --line-soft:#DFE3EC;
+  --ink:#13151D; --ink-2:#474E62; --ink-3:#6F7688;
+  --gold:#8A6210; --gold-soft:#F0E3C6; --gold-line:#D9BE7E;
+  --void:#4340C4; --void-soft:#E0DFFA; --void-line:#A6A3EC;
+  --coral:#AC432B; --coral-soft:#F8DED5; --coral-line:#E0A18C;
+  --jade:#1F7A56; --rust:#A83E38;
+  --shadow:0 1px 2px rgba(16,18,28,.06),0 8px 24px -12px rgba(16,18,28,.18);
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0A0B11; --surface:#12141C; --surface-2:#191C26; --surface-3:#212533;
+    --line:#2A2F3F; --line-soft:#1E2230;
+    --ink:#EDE8DC; --ink-2:#9BA0B4; --ink-3:#6B7185;
+    --gold:#D9A441; --gold-soft:#2A2113; --gold-line:#54401C;
+    --void:#8286F0; --void-soft:#1A1B33; --void-line:#33356B;
+    --coral:#E57B5E; --coral-soft:#2E1A14; --coral-line:#5C3125;
+    --jade:#5CB98E; --rust:#D2695F;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0A0B11; --surface:#12141C; --surface-2:#191C26; --surface-3:#212533;
+  --line:#2A2F3F; --line-soft:#1E2230;
+  --ink:#EDE8DC; --ink-2:#9BA0B4; --ink-3:#6B7185;
+  --gold:#D9A441; --gold-soft:#2A2113; --gold-line:#54401C;
+  --void:#8286F0; --void-soft:#1A1B33; --void-line:#33356B;
+  --coral:#E57B5E; --coral-soft:#2E1A14; --coral-line:#5C3125;
+  --jade:#5CB98E; --rust:#D2695F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.narrow{max-width:70ch}
+h1,h2,h3,h4{text-wrap:balance;margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+a{color:var(--gold)}
+code,kbd{font-family:var(--mono);font-size:.88em}
+
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* ============ MASTHEAD ============ */
+.mast{
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(120% 90% at 50% -20%, var(--gold-soft) 0%, transparent 62%),
+    var(--surface);
+}
+.mast-inner{padding:56px 0 40px;display:flex;flex-direction:column;gap:26px}
+.brackets{
+  font-family:var(--display);color:var(--gold);
+  font-size:13px;letter-spacing:.34em;text-transform:uppercase;
+}
+.title{
+  font-size:clamp(52px,11vw,124px);line-height:.86;letter-spacing:.02em;
+  font-weight:600;margin:0;
+}
+.title small{
+  display:block;font-family:var(--mono);font-size:12px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-3);margin-top:18px;font-weight:400;
+}
+.logline{font-size:19px;line-height:1.55;color:var(--ink-2);max-width:62ch}
+.logline strong{color:var(--ink);font-weight:600}
+
+/* ============ STAT STRIP ============ */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--surface);
+}
+.stat{padding:18px 20px;border-right:1px solid var(--line-soft);display:flex;flex-direction:column;gap:5px}
+.stat:last-child{border-right:0}
+.stat .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--mono);font-size:21px;font-variant-numeric:tabular-nums;color:var(--ink);letter-spacing:-.01em}
+.stat .v.warn{color:var(--coral)}
+.stat .n{font-size:12px;color:var(--ink-3);line-height:1.4}
+
+/* ============ NAV ============ */
+nav.toc{
+  position:sticky;top:0;z-index:40;background:var(--surface);
+  border-bottom:1px solid var(--line);
+}
+.toc-inner{display:flex;gap:2px;overflow-x:auto;scrollbar-width:thin}
+.toc a{
+  flex:0 0 auto;padding:13px 15px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);
+  text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;
+}
+.toc a:hover{color:var(--ink);background:var(--surface-2)}
+.toc a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+
+/* ============ SECTIONS ============ */
+section{padding:66px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:34px;max-width:74ch}
+.sec-head h2{font-size:clamp(28px,4vw,40px);line-height:1.1}
+.sec-head p{color:var(--ink-2);font-size:16.5px}
+
+/* ============ RIBBON (the thesis graphic) ============ */
+.ribbon-block{display:flex;flex-direction:column;gap:30px}
+.ribbon-row{display:flex;flex-direction:column;gap:9px}
+.ribbon-label{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.ribbon-label .lt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.ribbon-label .lr{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.ribbon{display:flex;width:100%;height:46px;gap:2px;border-radius:2px;overflow:hidden}
+.ribbon.thin{height:20px;gap:1px}
+.seg{
+  position:relative;min-width:1px;border-radius:1px;
+  transition:transform .12s ease, filter .12s ease;
+}
+.seg[data-mv="1"]{background:var(--gold)}
+.seg[data-mv="2"]{background:var(--void)}
+.seg[data-mv="3"]{background:var(--coral)}
+.seg.ghost{background:var(--ink-3);opacity:.42}
+.ribbon .seg:hover{filter:brightness(1.25);transform:scaleY(1.09);z-index:2}
+.seg-tip{
+  position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--surface-3);color:var(--ink);border:1px solid var(--line);
+  padding:6px 9px;border-radius:4px;font-family:var(--mono);font-size:11px;
+  white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .12s;box-shadow:var(--shadow);z-index:5;
+}
+.seg:hover .seg-tip{opacity:1}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.06em}
+.legend span{display:flex;align-items:center;gap:7px}
+.dot{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.verdict{
+  margin-top:6px;padding:18px 20px;border:1px solid var(--gold-line);background:var(--gold-soft);
+  border-radius:4px;font-size:15.5px;color:var(--ink);
+}
+.verdict b{font-family:var(--mono);font-size:14px;letter-spacing:.02em}
+
+/* ============ CARDS / GRID ============ */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:5px;
+  padding:22px;display:flex;flex-direction:column;gap:11px;
+}
+.card h3{font-size:19px;line-height:1.25}
+.card p{font-size:14.5px;color:var(--ink-2);line-height:1.58}
+.card .tag{
+  align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;
+  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-soft);
+}
+.card.pick{border-color:var(--gold-line);background:linear-gradient(180deg,var(--gold-soft),var(--surface) 70%)}
+.card.pick .tag{background:var(--gold);color:var(--ground);border-color:var(--gold)}
+
+/* ============ RULE LIST ============ */
+.rules{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--surface)}
+.rule-item{display:grid;grid-template-columns:minmax(0,180px) 1fr;gap:22px;padding:20px 22px;border-bottom:1px solid var(--line-soft)}
+.rule-item:last-child{border-bottom:0}
+.rule-item .rk{font-family:var(--display);font-size:17px;color:var(--ink);line-height:1.3}
+.rule-item .rk em{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.rule-item .rv{font-size:14.8px;color:var(--ink-2);line-height:1.6}
+.rule-item .rv b{color:var(--ink);font-weight:600}
+@media (max-width:660px){.rule-item{grid-template-columns:1fr;gap:8px}}
+
+/* ============ SHOT LIST ============ */
+.mv-head{
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding:22px 0 14px;margin-top:26px;border-top:2px solid var(--line);
+}
+.mv-head .num{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--ink-3)}
+.mv-head h3{font-size:26px}
+.mv-head .gram{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:3px;
+}
+.mv1 .gram{background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-line)}
+.mv2 .gram{background:var(--void-soft);color:var(--void);border:1px solid var(--void-line)}
+.mv3 .gram{background:var(--coral-soft);color:var(--coral);border:1px solid var(--coral-line)}
+.mv-note{font-size:14.5px;color:var(--ink-2);max-width:74ch;margin-bottom:18px;line-height:1.6}
+
+.shot{
+  border:1px solid var(--line);border-radius:5px;background:var(--surface);
+  margin-bottom:10px;overflow:hidden;
+}
+.shot-top{
+  display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:start;
+  padding:16px 18px;cursor:pointer;background:none;border:0;width:100%;text-align:left;
+  font-family:inherit;color:inherit;
+}
+.shot-top:hover{background:var(--surface-2)}
+.shot-top:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.tc{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;color:var(--ink-3);line-height:1.5;padding-top:2px}
+.tc b{display:block;color:var(--ink);font-size:13px}
+.shot-mid{display:flex;flex-direction:column;gap:6px;min-width:0}
+.shot-mid h4{font-size:16.5px;font-family:var(--body);font-weight:600;letter-spacing:0;line-height:1.35}
+.shot-meta{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  font-family:var(--mono);font-size:10px;letter-spacing:.07em;padding:3px 7px;border-radius:3px;
+  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-soft);white-space:nowrap;
+}
+.chip.mdl{color:var(--ink-2);border-color:var(--line)}
+.chip.seam{background:var(--void-soft);color:var(--void);border-color:var(--void-line)}
+.chip.hold{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+.dur{
+  font-family:var(--mono);font-size:19px;font-variant-numeric:tabular-nums;color:var(--ink);
+  display:flex;align-items:center;gap:8px;padding-top:1px;
+}
+.dur span{font-size:10px;color:var(--ink-3);letter-spacing:.1em}
+.caret{color:var(--ink-3);font-size:12px;transition:transform .15s}
+.shot[open] .caret{transform:rotate(90deg)}
+.shot-body{padding:0 18px 18px 112px;display:flex;flex-direction:column;gap:14px}
+@media (max-width:700px){
+  .shot-top{grid-template-columns:64px 1fr;gap:12px}
+  .dur{grid-column:1/-1;padding-top:4px}
+  .shot-body{padding:0 16px 16px}
+}
+.field{display:flex;flex-direction:column;gap:6px}
+.field .fk{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.field .fv{font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.field .fv b{color:var(--ink);font-weight:600}
+.prompt{
+  font-family:var(--mono);font-size:12.5px;line-height:1.72;color:var(--ink);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:4px;
+  padding:14px 15px;white-space:pre-wrap;overflow-x:auto;
+}
+.copy{
+  align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--surface-3);color:var(--ink-2);border:1px solid var(--line);border-radius:3px;
+  padding:7px 13px;cursor:pointer;
+}
+.copy:hover{color:var(--ink);border-color:var(--ink-3)}
+.copy:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.copy.done{color:var(--jade);border-color:var(--jade)}
+
+.transition{
+  display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:center;
+  padding:16px 18px;margin:14px 0;border-left:2px solid var(--gold);
+  background:var(--surface-2);border-radius:0 4px 4px 0;
+}
+.transition .tl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.transition .tv{font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.transition .tv b{color:var(--ink)}
+@media (max-width:700px){.transition{grid-template-columns:1fr;gap:6px}}
+
+/* ============ TABLE ============ */
+.tbl-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.fbtn{
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  padding:7px 13px;border-radius:3px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink-3);cursor:pointer;
+}
+.fbtn:hover{color:var(--ink)}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.fbtn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:5px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1080px;font-size:13.5px}
+thead th{
+  position:sticky;top:0;background:var(--surface-2);z-index:2;
+  font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-weight:400;
+}
+tbody td{padding:13px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--ink-2);line-height:1.5}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--surface-2)}
+td.name{color:var(--ink);font-weight:600;white-space:nowrap}
+td.name em{display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--ink-3);font-weight:400;margin-top:3px}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+td.pro{color:var(--jade)}
+td.con{color:var(--rust)}
+td.use{color:var(--ink-2)}
+td.use b{color:var(--gold);font-family:var(--mono);font-size:11.5px}
+.badge{
+  display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 6px;border-radius:2px;margin-right:4px;
+  background:var(--surface-3);color:var(--ink-3);border:1px solid var(--line);
+}
+.badge.key{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+.yes{color:var(--jade);font-family:var(--mono)}
+.no{color:var(--ink-3);font-family:var(--mono)}
+
+/* ============ TRUTHS ============ */
+.truths{display:flex;flex-direction:column;gap:0;counter-reset:t}
+.truth{
+  display:grid;grid-template-columns:56px 1fr;gap:22px;padding:24px 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.truth:last-child{border-bottom:0}
+.truth .tn{
+  font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.1em;padding-top:6px;
+}
+.truth .tb{display:flex;flex-direction:column;gap:9px}
+.truth h4{font-size:20px;line-height:1.25}
+.truth .quote{
+  font-family:var(--display);font-size:16px;font-style:italic;color:var(--gold);line-height:1.5;
+  padding-left:16px;border-left:2px solid var(--gold-line);
+}
+.truth .car{font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.truth .car b{color:var(--ink);font-weight:600}
+@media (max-width:660px){.truth{grid-template-columns:1fr;gap:8px}}
+
+/* ============ BYOK ============ */
+.vault{
+  border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden;
+}
+.vault-note{
+  padding:16px 20px;background:var(--void-soft);border-bottom:1px solid var(--void-line);
+  font-size:14px;color:var(--ink-2);line-height:1.6;
+}
+.vault-note b{color:var(--ink)}
+.keyrow{
+  display:grid;grid-template-columns:190px 1fr auto;gap:14px;align-items:center;
+  padding:14px 20px;border-bottom:1px solid var(--line-soft);
+}
+.keyrow:last-of-type{border-bottom:0}
+.keyrow .kn{display:flex;flex-direction:column;gap:3px;min-width:0}
+.keyrow .kn strong{font-size:14.5px;color:var(--ink);font-weight:600}
+.keyrow .kn span{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.keyrow input{
+  width:100%;font-family:var(--mono);font-size:13px;padding:9px 11px;border-radius:4px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+}
+.keyrow input:focus{outline:2px solid var(--gold);outline-offset:-1px;border-color:var(--gold)}
+.keyrow input::placeholder{color:var(--ink-3)}
+.klink{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  padding:8px 12px;border:1px solid var(--line);border-radius:3px;color:var(--ink-2);
+  text-decoration:none;white-space:nowrap;
+}
+.klink:hover{color:var(--gold);border-color:var(--gold-line)}
+.klink:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:760px){.keyrow{grid-template-columns:1fr;gap:8px}.klink{justify-self:start}}
+.vault-foot{display:flex;gap:10px;flex-wrap:wrap;padding:18px 20px;background:var(--surface-2);border-top:1px solid var(--line);align-items:center}
+.abtn{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:10px 16px;border-radius:3px;border:1px solid var(--gold);background:var(--gold);color:var(--ground);
+  cursor:pointer;font-weight:600;
+}
+.abtn.ghost{background:none;color:var(--ink-2);border-color:var(--line)}
+.abtn.ghost:hover{color:var(--ink);border-color:var(--ink-3)}
+.abtn:focus-visible{outline:2px solid var(--void);outline-offset:2px}
+.vault-status{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-left:auto}
+.vault-status.ok{color:var(--jade)}
+
+/* ============ CHECKLIST ============ */
+.checks{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:5px;background:var(--surface);overflow:hidden}
+.check{display:grid;grid-template-columns:auto 42px 1fr;gap:14px;align-items:start;padding:15px 18px;border-bottom:1px solid var(--line-soft)}
+.check:last-child{border-bottom:0}
+.check input{width:17px;height:17px;margin-top:3px;accent-color:var(--gold);cursor:pointer}
+.check .cn{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:4px}
+.check .cb{display:flex;flex-direction:column;gap:3px}
+.check .cb strong{font-size:14.5px;color:var(--ink);font-weight:600}
+.check .cb span{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.check.done .cb strong{text-decoration:line-through;color:var(--ink-3)}
+
+footer{padding:44px 0 60px;color:var(--ink-3);font-size:13px;line-height:1.7}
+footer a{color:var(--ink-2)}
+.sources{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-family:var(--mono);font-size:11px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="mast">
+  <div class="wrap mast-inner">
+    <div class="brackets">&#123; Higgsfield Global Film Festival &nbsp;·&nbsp; Entry Bible &#125;</div>
+    <h1 class="title">LITIGUH
+      <small>Prelude &mdash; The Greater War &nbsp;·&nbsp; adapted from Chapters I&ndash;III</small>
+    </h1>
+    <p class="logline">A creator stands on the surface of the Sun and decides to release his brother, knowing it will probably end everything. A hundred and eight years later a guardian burns her own mind to ash to keep one island hidden. The next morning two boys watch a mountain fall out of the sky &mdash; and <strong>only one of them learns the right lesson from it.</strong></p>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><span class="k">Runtime</span><span class="v">5:00</span><span class="n">Festival floor is 3:00</span></div>
+      <div class="stat"><span class="k">Generations</span><span class="v">23</span><span class="n">Not 70</span></div>
+      <div class="stat"><span class="k">Mean shot length</span><span class="v">13.0s</span><span class="n">Feature-grade</span></div>
+      <div class="stat"><span class="k">Longest hold</span><span class="v">18s</span><span class="n">Two of them</span></div>
+      <div class="stat"><span class="k">Deadline</span><span class="v warn">Sep 3</span><span class="n">Opens Aug 10</span></div>
+      <div class="stat"><span class="k">Aspect</span><span class="v">21:9</span><span class="n">2.39 scope</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap toc-inner">
+  <a href="#thesis">The Thesis</a>
+  <a href="#brief">The Brief</a>
+  <a href="#doctrine">Doctrine</a>
+  <a href="#blend">Blend Options</a>
+  <a href="#shots">Shot List</a>
+  <a href="#matrix">Model Matrix</a>
+  <a href="#technique">Techniques</a>
+  <a href="#truths">Layered Truths</a>
+  <a href="#vault">Key Vault</a>
+  <a href="#build">Build Order</a>
+</div></nav>
+
+<!-- ================= THESIS ================= -->
+<section id="thesis"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Why this wins on sight</span>
+    <h2>The whole argument is visible before a single frame plays.</h2>
+    <p>Every segment below is one generation, drawn to scale by duration. The top strip is this film. The bottom strip is what a five-minute AI short normally looks like &mdash; and what a jury will have watched forty times that day.</p>
+  </div>
+  <div class="ribbon-block">
+    <div class="ribbon-row">
+      <div class="ribbon-label"><span class="lt">LITIGUH &mdash; 23 shots</span><span class="lr" id="ribbon-stat">mean 13.0s &nbsp;/&nbsp; longest 18s</span></div>
+      <div class="ribbon" id="ribbon-ours"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--gold)"></i> I. The Sun &mdash; sustained oner</span>
+        <span><i class="dot" style="background:var(--void)"></i> II. The Ocean &mdash; travelling</span>
+        <span><i class="dot" style="background:var(--coral)"></i> III. The Island &mdash; locked-off</span>
+      </div>
+    </div>
+    <div class="ribbon-row">
+      <div class="ribbon-label"><span class="lt">Typical AI short &mdash; 71 shots</span><span class="lr">mean 4.2s &nbsp;/&nbsp; longest 6s</span></div>
+      <div class="ribbon thin" id="ribbon-theirs"></div>
+    </div>
+    <div class="verdict">
+      <b>The rule that makes it a film instead of a reel:</b> at four seconds a shot, five minutes costs you seventy-one generations and reads as a sizzle reel. At thirteen seconds a shot it costs twenty-three and reads as cinema. Same runtime, same budget bracket, completely different object. Phedon Papamichael has spent forty years lighting shots that hold &mdash; he will clock the difference in the first thirty seconds.
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= BRIEF ================= -->
+<section id="brief"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Constraints, verified</span>
+    <h2>What the festival actually requires</h2>
+    <p>Pulled from the festival listing and Higgsfield's own timeline announcement. Two of these are disqualifiers, so treat them as hard walls rather than guidance.</p>
+  </div>
+  <div class="rules">
+    <div class="rule-item"><div class="rk">Three minutes, minimum<em>Hard wall</em></div><div class="rv">A standalone short film of <b>at least 3:00</b>. Our 5:00 sits comfortably clear of the floor without wandering into the territory where a jury starts checking the scrubber.</div></div>
+    <div class="rule-item"><div class="rk">Built in the festival project<em>Hard wall</em></div><div class="rv">The entry must be created through the <b>festival project inside Cinema Studio</b>. Generate the spine there. Outside software may be used to <b>edit</b> &mdash; assembly, grade, sound &mdash; but not to <b>create new content</b>. No stock, no external generators for picture.</div></div>
+    <div class="rule-item"><div class="rk">Everything becomes public<em>Consequence</em></div><div class="rv">After the deadline, submitted projects open to the community <b>with prompts and generation history included</b>. Write every prompt as if it will be read, because it will be. This is also a creative opportunity &mdash; see Truth 05.</div></div>
+    <div class="rule-item"><div class="rk">Who can enter<em>Eligibility</em></div><div class="rv">18+, active Higgsfield subscriber, solo or <b>teams up to four</b>, open where legally permitted.</div></div>
+    <div class="rule-item"><div class="rk">The calendar<em>Timeline</em></div><div class="rv">Opens <b>Aug 10</b> &middot; submissions close <b>Sep 3</b> &middot; shortlist <b>Sep 24</b> &middot; jury reviews <b>Sep 25 &ndash; Oct 1</b> &middot; winners <b>first week of October</b>. That is roughly <b>24 days</b> of production from open to close.</div></div>
+    <div class="rule-item"><div class="rk">The pool<em>Prizes</em></div><div class="rv">$1,000,000 across <b>14 winners</b> &mdash; $500k / $200k / $100k, a $100k Audience Choice, and ten Honorable Mentions at $10k. The Audience Choice award means a film that is <b>legible on one viewing</b> matters as much as one that is clever on the third.</div></div>
+  </div>
+</div></section>
+
+<!-- ================= DOCTRINE ================= -->
+<section id="doctrine"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The direction</span>
+    <h2>Three chapters, three camera grammars, one contract</h2>
+    <p>You asked to avoid a collection of small clips cut together like a long advertisement. The fix is not "use longer clips" &mdash; it is to give each movement a <em>rule the camera obeys</em>, and to make the rules different enough that the audience feels the change even if they never name it.</p>
+  </div>
+  <div class="grid g3" style="margin-bottom:22px">
+    <div class="card" style="border-color:var(--gold-line)">
+      <span class="tag" style="color:var(--gold)">Movement I &mdash; The Sun</span>
+      <h3>Sustained oner</h3>
+      <p>The first 34 seconds contain <b style="color:var(--ink)">zero cuts</b>. The camera rises out of fire and drifts through a courtyard of worlds before it finds the two figures. This is the contract with the audience: <em>this film breathes.</em> Everything after it is read against this opening.</p>
+      <p>Five shots for eighty seconds. Dialogue plays in wide. One 14-second unbroken hold on a face &mdash; no coverage, no reverse, no safety.</p>
+    </div>
+    <div class="card" style="border-color:var(--void-line)">
+      <span class="tag" style="color:var(--void)">Movement II &mdash; The Ocean</span>
+      <h3>Travelling, not cutting</h3>
+      <p>Action does not require fast cutting; it requires <b style="color:var(--ink)">continuous motion</b>. The camera flies <em>with</em> Gwendolyn at her speed, so the world blurs while she stays stable in frame.</p>
+      <p>Cuts here are earned by <b style="color:var(--ink)">perspective reassignment</b> &mdash; we leave her only twice, and both times to occupy someone else's eyes. Inside a shot, speed ramps do the work a cut would normally do.</p>
+    </div>
+    <div class="card" style="border-color:var(--coral-line)">
+      <span class="tag" style="color:var(--coral)">Movement III &mdash; The Island</span>
+      <h3>Locked-off witness</h3>
+      <p>The boys are children watching something they don't understand. So the camera <b style="color:var(--ink)">stops moving entirely</b>. Twelve ships bombard a temple inside a static frame &mdash; far more frightening than a shaking one.</p>
+      <p>The miracle is one unbroken 14-second wide. Then, at the very end, the only push-in in the movement, and it lands on the thesis of the film.</p>
+    </div>
+  </div>
+  <div class="rules">
+    <div class="rule-item"><div class="rk">Shot economy<em>Rule 01</em></div><div class="rv">Budget <b>generations</b>, not seconds. Twenty-three is the number. Every time you want to add a shot, extend an existing one instead and ask what the cut was actually buying you.</div></div>
+    <div class="rule-item"><div class="rk">Motivated cuts only<em>Rule 02</em></div><div class="rv">A cut is permitted for exactly three reasons: <b>a new point of view</b>, <b>a jump in time or place</b>, or <b>a revelation the current frame cannot hold</b>. "The clip ran out" is not one of them &mdash; that is what extension and frame-chaining are for.</div></div>
+    <div class="rule-item"><div class="rk">Hide the seams the story gives you<em>Rule 03</em></div><div class="rv">The source text hands over its own wipes. Movement II: the wall of water, the translucent warping void-bubbles, the leviathan's flank filling frame, disintegrating bodies, the black centre of the vortex. Movement III: <b>"a great dust storm stirred up, obscuring all shapes into dark-brown shadows"</b> &mdash; that is a written-in cut point &mdash; plus the "bright void" of the Temple doors and the mists rushing the brothers. Chain your clips so the seam always lands inside one of these.</div></div>
+    <div class="rule-item"><div class="rk">Ramp instead of cut<em>Rule 04</em></div><div class="rv">Cinema Studio v2 exposes <code>speedramp</code> with <code>slowmo</code>, <code>speedup</code> and <code>impact</code>. A ramp inside a single generation delivers the same accent a cut would &mdash; without breaking the world, the light, or the face.</div></div>
+    <div class="rule-item"><div class="rk">Cut inside the generation<em>Rule 05</em></div><div class="rv">When you genuinely need coverage &mdash; the bombardment, the Guardians emerging &mdash; use <code>multi_shots</code> with <code>multi_prompt</code>. The cuts happen <b>inside one generation</b>, so lighting, costume, geography and faces stay locked across them. Editorial cuts between separate generations are where continuity dies.</div></div>
+    <div class="rule-item"><div class="rk">Silence at the climax<em>Rule 06</em></div><div class="rv">The vortex resolves with <b>no sound</b>, in wide, from orbit. Killing the audio at the biggest moment is the single strongest tool available and it costs nothing. Everyone else's climax will be loud.</div></div>
+    <div class="rule-item"><div class="rk">Hold two beats past comfortable<em>Rule 07</em></div><div class="rv">After Gwendolyn disintegrates, stay on the empty frame. After the mountain falls, stay on the flat ocean. The held empty frame is the most reliable signal of authorship in the entire medium, and it is one of the few things a model cannot accidentally produce.</div></div>
+  </div>
+</div></section>
+
+<!-- ================= BLEND ================= -->
+<section id="blend"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Structure</span>
+    <h2>Four ways to blend the three chapters</h2>
+    <p>The document gives you a conversation, a battle, and a childhood memory &mdash; in that order, separated by 108 years and one day. Straight chronology is the weakest of the four options, because your protagonist dies at minute three and the film then has to introduce two strangers cold.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <span class="tag">Option A</span>
+      <h3>Linear relay</h3>
+      <p>Chapter I, then II, then III, as written, with time cards between. Most faithful, simplest to produce, easiest to sequence.</p>
+      <p><b style="color:var(--rust)">The problem:</b> the emotional baton hits the floor at 3:18. Gwendolyn dies and the film restarts with two characters we have no reason to care about yet.</p>
+    </div>
+    <div class="card pick">
+      <span class="tag">Option B &mdash; recommended</span>
+      <h3>The framed prophecy</h3>
+      <p>Torin's scene is not a prologue, it is the <b>spine</b>. His voice carries across both other movements. Gwendolyn's death intercuts with him watching from the Sun &mdash; and the text explicitly supports this: <em>"She looked up to the Sun where she knew Torin was watching."</em></p>
+      <p>Then the boys' chapter becomes the <b>answer to Gwen's opening question</b>. She asked why release him. Torin's reply &mdash; <em>"there must be risk if there is to be growth"</em> &mdash; plays over an eight-year-old's face as he decides he wants to raise mountains over his enemies. Close on the frozen tear from minute one, now revealed as the last image.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Option C</span>
+      <h3>The two witnesses</h3>
+      <p>Cross-cut Gwendolyn's last stand against the boys' swim, so her sacrifice and their innocent adventure run in parallel. Her Stone launches "thousands of miles away" exactly as they surface at Guardian Isle.</p>
+      <p><b style="color:var(--rust)">The problem:</b> parallel action <em>wants</em> cutting. It fights the long-hold mandate directly. Powerful, but it costs you the thing that makes this film distinct.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Option D &mdash; layer onto B</span>
+      <h3>The dark cloud POV</h3>
+      <p>Chapter III contains one throwaway line: <em>"One dark cloud watched them from afar."</em> Make that the connective tissue. The camera becomes the darkness &mdash; it finds Gwendolyn's island, it follows her over the ocean, and in the final movement it is simply <b>sitting behind Ammon's shoulder, out of focus</b>, while he decides what he wants.</p>
+      <p>Cheap, reusable, and it converts three separate stories into one continuous act of surveillance. Layer it under Option B rather than choosing between them.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= SHOTS ================= -->
+<section id="shots"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The build</span>
+    <h2>Shot list &mdash; 23 generations</h2>
+    <p>Every row is one generation. Open a shot for its camera direction, the seam that gets it into the next shot, and a prompt written to be read in public. Model choices are drawn from the live Higgsfield catalogue &mdash; cross-reference the matrix below.</p>
+  </div>
+  <div id="shotlist"></div>
+</div></section>
+
+<!-- ================= MATRIX ================= -->
+<section id="matrix"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Reference</span>
+    <h2>Model matrix &mdash; what to reach for, and when</h2>
+    <p>Durations, resolutions and frame roles are read straight off the live catalogue, not from marketing pages. <b>Max length</b> and <b>end-frame support</b> are the two columns that decide whether a model can serve a long-take film at all &mdash; a model without an end frame cannot be chained, which rules it out of any sequence that must feel continuous.</p>
+  </div>
+  <div class="tbl-tools" id="tbl-filters">
+    <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+    <button class="fbtn" data-f="long" aria-pressed="false">Long-take capable</button>
+    <button class="fbtn" data-f="chain" aria-pressed="false">Chainable (end frame)</button>
+    <button class="fbtn" data-f="perf" aria-pressed="false">Performance &amp; faces</button>
+    <button class="fbtn" data-f="cheap" aria-pressed="false">Previz &amp; budget</button>
+    <button class="fbtn" data-f="finish" aria-pressed="false">Finishing</button>
+  </div>
+  <div class="tbl-scroll">
+    <table>
+      <thead><tr>
+        <th style="min-width:190px">Model</th>
+        <th>Max len</th>
+        <th>Max res</th>
+        <th>Start&nbsp;/&nbsp;End</th>
+        <th>Refs</th>
+        <th style="min-width:210px">Strength</th>
+        <th style="min-width:210px">Cost of using it</th>
+        <th style="min-width:190px">Use here</th>
+      </tr></thead>
+      <tbody id="matrix-body"></tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px;font-size:13.5px;color:var(--ink-3);max-width:78ch;line-height:1.6">Images feed everything above. For character identity: <b style="color:var(--ink-2)">Soul V2</b> locks one trained person per generation and works only with Soul-compatible models &mdash; use it for Gwendolyn and for Torin. <b style="color:var(--ink-2)">Reference Elements</b> accept multiple subjects in a single frame and work across Nano Banana Pro, GPT Image 2, Seedream, Cinema Studio Image and Seedance &mdash; use it for the two brothers, who are almost always in frame together.</p>
+</div></section>
+
+<!-- ================= TECHNIQUE ================= -->
+<section id="technique"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Craft</span>
+    <h2>Seven techniques that buy you length</h2>
+    <p>Long takes on this platform are assembled, not generated. These are the mechanisms, ranked by how much continuous screen time each one actually returns.</p>
+  </div>
+  <div class="tbl-scroll">
+    <table style="min-width:900px">
+      <thead><tr>
+        <th style="min-width:180px">Technique</th>
+        <th style="min-width:230px">How it works</th>
+        <th>Buys you</th>
+        <th style="min-width:200px">Fails when</th>
+        <th style="min-width:150px">Used in</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="name">Forward extension<em>seedance_2_5</em></td>
+          <td>Feed a finished clip back in with <code>mode: video_extension</code> and <code>extension_mode: forward</code>. The model continues the take rather than starting a new one.</td>
+          <td class="num pro">+30s</td>
+          <td class="con">720p ceiling &mdash; every extended take must be upscaled before the grade, or it will sit visibly softer than the shots around it.</td>
+          <td class="use"><b>S1&rarr;S2</b> the courtyard drift</td>
+        </tr>
+        <tr>
+          <td class="name">Frame chaining<em>end_image &rarr; start_image</em></td>
+          <td>The last frame of shot N becomes the literal start frame of shot N+1, so the model begins exactly where the previous clip ended.</td>
+          <td class="num pro">Unlimited</td>
+          <td class="con">Drift accumulates over four or more links, and asking for a big change across a short clip forces unstable motion. Keep each link modest.</td>
+          <td class="use"><b>S7&rarr;S8</b>, <b>S11&rarr;S12</b></td>
+        </tr>
+        <tr>
+          <td class="name">Multi-shot in one generation<em>multi_shots + multi_prompt</em></td>
+          <td>One generation produces several angles internally. The model holds world, wardrobe, light and face constant across its own cuts.</td>
+          <td class="num pro">3&ndash;4 angles</td>
+          <td class="con">12s ceiling on v2, and you surrender precise control of where each internal cut lands.</td>
+          <td class="use"><b>S18</b> the bombardment</td>
+        </tr>
+        <tr>
+          <td class="name">Speed ramp as punctuation<em>speedramp: impact / slowmo</em></td>
+          <td>Time bends inside the shot. The accent a cut would deliver arrives without leaving the frame.</td>
+          <td class="num pro">Cuts saved</td>
+          <td class="con">Overuse turns the film into a trailer. Twice per movement, maximum.</td>
+          <td class="use"><b>S8</b>, <b>S12</b></td>
+        </tr>
+        <tr>
+          <td class="name">Body wipe seam<em>staging, not a setting</em></td>
+          <td>Stage a dark mass &mdash; a leviathan flank, a dust wall, a wave &mdash; to fill frame completely. Cut on the black. Next clip pulls off a matching mass.</td>
+          <td class="num pro">Invisible cut</td>
+          <td class="con">Needs the frame to go genuinely near-black. A 70&#37; obscured frame reads as a cut you tried to hide, which is worse than an honest one.</td>
+          <td class="use"><b>S11&rarr;S12</b>, <b>S19</b></td>
+        </tr>
+        <tr>
+          <td class="name">Motion control<em>kling 3.0</em></td>
+          <td>Drive a still character with the motion and camera move of a reference video. Choreography becomes repeatable instead of rerolled.</td>
+          <td class="num pro">Consistency</td>
+          <td class="con">You need a driving clip that already has the move, and the background follows either the image or the video, never a blend.</td>
+          <td class="use"><b>S8&ndash;S12</b> combat</td>
+        </tr>
+        <tr>
+          <td class="name">Deflicker, then upscale<em>video_deflicker &rarr; topaz</em></td>
+          <td>Long and extended takes shimmer at the seams. Deflicker first, then upscale to 2K/4K with the <code>aigc</code> preset.</td>
+          <td class="num pro">Finish</td>
+          <td class="con">Order matters &mdash; upscaling before deflicking sharpens the flicker into the master and you cannot take it back out.</td>
+          <td class="use">All 23, final pass</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<!-- ================= TRUTHS ================= -->
+<section id="truths"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Payload</span>
+    <h2>The layered truths, and where each one lands</h2>
+    <p>You asked for multiple truths delivered in layers. These are already in the source &mdash; the work is making sure each one has a frame to live in, so the film can be watched five times and give something different each pass.</p>
+  </div>
+  <div class="truths">
+    <div class="truth"><div class="tn">01</div><div class="tb">
+      <h4>Trust is asked for before the reason is given</h4>
+      <div class="quote">"Leave the 'whys' to me, child. That is trust. If you trust me first, the answers will come after."</div>
+      <p class="car"><b>Carried by:</b> S5, in an unbroken hold with his hands on her face. No cutaway, no music swell. If the camera stays put, the line has to survive on its own &mdash; which is the same demand the line is making.</p>
+    </div></div>
+    <div class="truth"><div class="tn">02</div><div class="tb">
+      <h4>Risk is the price of growth, and the bill is real</h4>
+      <div class="quote">"He will almost surely annihilate everything. But it is the way. Balance. There must be risk if there is to be growth."</div>
+      <p class="car"><b>Carried by:</b> S3 as dialogue, then <b>repeated in voice-over across S22</b> &mdash; over Ammon's face. Heard at minute one it sounds like wisdom. Heard at minute five, over a child discovering he wants power, it sounds like a cost estimate.</p>
+    </div></div>
+    <div class="truth"><div class="tn">03</div><div class="tb">
+      <h4>Godhood is a position on a ladder, not a category</h4>
+      <div class="quote">"To a firefly, the eagle is a god&hellip; You are the seed who can become the tree. The pebble, the mountain."</div>
+      <p class="car"><b>Carried by:</b> the pebble-to-mountain image is <b>literalised in S20</b> &mdash; the Guardians raise sand and dead coral into a floating mountain. Torin's metaphor from minute one becomes a physical object in minute four. Never point at it.</p>
+    </div></div>
+    <div class="truth"><div class="tn">04</div><div class="tb">
+      <h4>The discipline of power is refusal</h4>
+      <div class="quote">"It was powerful and effective, yes. But more than this, it was addicting."</div>
+      <p class="car"><b>Carried by:</b> S12&ndash;S13. Gwendolyn's greatest technique is the one she swore never to use, and she is <b>smiling</b> when she breaks the promise &mdash; the text is explicit that she enjoys it. She only breaks it for something other than herself, and it still destroys her. Play the joy, not the sacrifice; the sacrifice reads on its own.</p>
+    </div></div>
+    <div class="truth"><div class="tn">05</div><div class="tb">
+      <h4>Knowing the secret spoils nothing</h4>
+      <div class="quote">"She remembered wishing as a child that novels would come out and share the secret from the start. She promised to do just this if she ever wrote one."</div>
+      <p class="car"><b>Carried by:</b> the film tells you its ending early and dares you to still care. This also happens to be an argument about <b>this exact festival</b> &mdash; every prompt is published afterwards, the whole method goes open, and the work is still the work. A film whose theme is "revealing the method costs you nothing" entering a contest that publishes your method is not a coincidence you should waste.</p>
+    </div></div>
+    <div class="truth"><div class="tn">06</div><div class="tb">
+      <h4>The same miracle plants two different seeds</h4>
+      <div class="quote">"Mum and Dad would be so proud." &mdash; "I want to move mountains. To raise them up high over the heads of my enemies."</div>
+      <p class="car"><b>Carried by:</b> S22, and this is <b>the film</b>. Two brothers watch the identical event from the identical patch of grass. Mikael sees belonging. Ammon sees dominion. The Greater War is not fought between armies, it is fought in the half-second where a person decides what they just saw meant. Everything preceding this exists so this lands.</p>
+    </div></div>
+    <div class="truth"><div class="tn">07</div><div class="tb">
+      <h4>Darkness enters by invitation</h4>
+      <div class="quote">"The outsiders never would've found them if dark hearts had remained absent from her island."</div>
+      <p class="car"><b>Carried by:</b> the dark cloud of Option D. It is never attacked and never explained. It is simply present in Movement III, out of focus behind a child, having already been let in.</p>
+    </div></div>
+    <div class="truth"><div class="tn">08</div><div class="tb">
+      <h4>Death is a door; erasure is the actual stake</h4>
+      <div class="quote">"It would mean not just death, but erasure. The erasing of ever having existed at all."</div>
+      <p class="car"><b>Carried by:</b> the held empty frame after S14. Gwendolyn is gone and the frame keeps running. The film has already established that nothing truly ends &mdash; so the two extra seconds of nothing are not grief, they are a question about whether that was true.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- ================= VAULT ================= -->
+<section id="vault"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Bring your own keys</span>
+    <h2>Key vault</h2>
+    <p>Keys are stored in this browser's local storage on your machine and nowhere else. Export them as a <code>.env</code> for the local runner when you want to drive generation from a script.</p>
+  </div>
+  <div class="vault">
+    <div class="vault-note"><b>Read this before pasting anything.</b> A published artifact page is sandboxed &mdash; it cannot make network requests to any outside host, so nothing typed here can be transmitted even by accident. That also means this page cannot call these APIs itself. It stores keys for convenience and exports a <code>.env</code> file; the <b>local app build</b> reads that file and does the actual calls. Treat browser storage as convenience, not a secret manager &mdash; on a shared machine, use Clear.</div>
+    <div id="keyrows"></div>
+    <div class="vault-foot">
+      <button class="abtn" id="save-keys">Save keys</button>
+      <button class="abtn ghost" id="export-env">Export .env</button>
+      <button class="abtn ghost" id="export-json">Export config.json</button>
+      <button class="abtn ghost" id="clear-keys">Clear</button>
+      <span class="vault-status" id="vault-status">Nothing stored</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= BUILD ================= -->
+<section id="build"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Production</span>
+    <h2>Build order &mdash; 24 days</h2>
+    <p>Sequenced so the highest-risk work happens while there is still time to re-roll it. Ticks are saved locally.</p>
+  </div>
+  <div class="checks" id="checklist"></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b style="color:var(--ink-2)">LITIGUH</b> &mdash; director's bible, adapted from Chapters I&ndash;III. Contest facts verified against the festival listing and Higgsfield's published timeline; model capabilities read from the live catalogue at time of writing. Confirm the rules page before submitting &mdash; timelines on this festival have already moved once.</p>
+  <div class="sources">
+    <a href="https://higgsfield.ai/contests/higgsfield-global-film-festival">Festival listing</a>
+    <a href="https://x.com/higgsfield_ai/status/2085853524878078290">Revised timeline</a>
+    <a href="https://higgsfield.ai/blog/cinema-studio-guide">Cinema Studio guide</a>
+    <a href="https://higgsfield.ai/blog/ai-video-camera-control">Camera control</a>
+    <a href="https://higgsfield.ai/camera-controls">Motion presets</a>
+    <a href="https://nofilmschool.com/oner-with-cuts">Oners with disguised cuts</a>
+    <a href="https://nofilmschool.com/children-of-men-long-take">Children of Men</a>
+    <a href="https://offscreen.com/view/1917-the-hard-work-of-the-digital-long-take">1917 long take</a>
+  </div>
+</div></footer>
+
+<script>
+/* ================= DATA ================= */
+const SHOTS=[
+{id:"S1",mv:1,d:16,t:"Rise out of the fire",cam:"Slow vertical crane out of liquid flame; no horizon until the last third.",model:"wan3_0 · 16s · 1080p · 21:9",chips:["No cut","Opening"],
+ seam:"Continuous into S2 — do not render these separately unless you must.",
+ prompt:`Cinematic 2.39:1. Open in total black. A slow vertical crane rises out of a churning ocean of liquid white-gold flame — the surface of a star, treated as landscape rather than sphere. Plasma moves like weather, not fire. The camera keeps rising, unhurried, for the full duration. In the final third, structures resolve out of the glare: a courtyard built from solidified beams of light, standing untouched in the flame, casting hard-edged shadows that should be impossible. No people yet. No cuts. Anamorphic flare, deep blacks, heavy atmospheric haze. Sound: low sub-bass and a distant choir of stars, no music.`},
+{id:"S2",mv:1,d:18,t:"The courtyard of worlds",cam:"Continuous forward drift, chest height, through the garden; the two figures found from behind.",model:"seedance_2_5 · video_extension forward · 18s",chips:["Extension","No cut"],
+ seam:"Extend S1 forward. The seam is inside the glare — invisible.",
+ prompt:`Continue the same unbroken move. The camera drifts forward at walking pace through a luxurious courtyard whose flowerbeds are planted with worlds — small living planets on stems, each turning slowly, clouds visible on their surfaces. Light beams read as architecture: solid, load-bearing, faintly humming. At the far end, two figures stand with their backs to us, looking down at something below. One wears robes woven from light. The other is a woman encased in a faceted crystal shell that refracts the star beneath her. She shivers once. The camera keeps approaching and does not stop. Same lens, same grade, same haze as before.`},
+{id:"S3",mv:1,d:14,t:"“There must be risk”",cam:"The film's first cut — a reverse, arriving into a slow lateral dolly. Both in frame, wide.",model:"cinematic_studio_3_0 · 14s · genre drama · audio on",chips:["First cut","Dialogue"],
+ seam:"Cut on her turning her head. Motivated: new point of view.",
+ prompt:`Two-shot, wide, 40mm. Reverse angle from the previous move: we are now in front of them. Slow lateral dolly, left to right, never settling. TORIN, an ageless man in robes of light, calm to the point of stillness. GWENDOLYN, a woman inside a crystal shell, luminous and visibly afraid. The burning star fills the background out of focus. She speaks first, quietly, and he answers without raising his voice. Neither gestures. Performance is held entirely in the eyes. Natural dialogue audio, no score. Grade: warm highlights, cold shadows, gold on black.`},
+{id:"S4",mv:1,d:14,t:"“He's your brother”",cam:"Locked. Static single on Gwendolyn. Fourteen seconds. The camera does not move at all.",model:"minimax_hailuo (2.3) · 10s + hold, or cinematic_studio_3_0 · 14s",chips:["Locked","14s hold"],
+ seam:"No seam. This shot's job is to make the audience feel the film stop moving.",
+ prompt:`Static locked-off medium close-up, 75mm, absolutely no camera movement for the full duration. GWENDOLYN inside her crystal shell, lit from below by the star. She is arguing and losing. Micro-expression only: the jaw, the eyes going wet and not spilling, one slow blink. Her lips barely move. Refraction crawls across the crystal as the plasma shifts beneath her — the only motion in frame besides her face. Photoreal skin, visible pores through crystal distortion. No score. Room tone: distant stellar roar.`},
+{id:"S5",mv:1,d:18,t:"“Tomorrow” — the tear freezes",cam:"Two-shot, then a slow push past them to the world below, then down to the floor.",model:"cinematic_studio_3_0 · 15s · 4K + 3s extension",chips:["Push","Transition out"],
+ seam:"Ends on the frozen tear in macro. That facet becomes the ocean.",
+ prompt:`Continuous 18-second move. Open on TORIN holding GWENDOLYN's face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds.`},
+{id:"S6",mv:2,d:14,t:"108 years later — the run",cam:"Travelling beside her at her exact speed. World blurs, she is stable.",model:"cinematic_studio_video_v2 · 12s pro · speedramp auto",chips:["Travelling","Card"],
+ seam:"Match cut in from the tear's facet: blue interior becomes ocean water.",
+ prompt:`Match cut from a frozen tear's blue facet into open ocean. Card: "108 years later." Aerial tracking shot flying alongside a woman skimming the surface of a storm ocean at impossible speed, camera locked to her velocity so she sits stable in frame while the water tears past in horizontal streaks. Wind rips her hair sideways. Her body is faintly crystalline, catching lightning from above. She does not look back. Far behind her on the horizon the sky is the wrong colour — bruised violet, wrong-shaped clouds converging. 2.39:1, long lens compression, spray on the lens, desaturated except for the crystal. Sound: wind and water only.`},
+{id:"S7",mv:2,d:12,t:"Sixteen behind her, and a wall of ice",cam:"Camera swings from beside to behind in one move — reveals the pursuit.",model:"kling3_0 · 12s · pro · start+end frame",chips:["One move","Chain out"],
+ seam:"End frame: her body flat against the ice wall. That frame starts S8.",
+ prompt:`Unbroken continuation. The camera swings in a single arcing move from alongside the running woman to directly behind her, and the move reveals what she has not looked back at: sixteen dark human figures pursuing across the water in a loose, disciplined formation, some carried by others. Ahead of her, a wall of ocean rises vertically and solidifies into grey ice, cutting off her line. She veers left; the wall extends to meet her. She braces. Impact — she hits the ice hard and does not break. Hold the final frame on her body pressed flat against the ice, hair spread, unhurt. Storm light, heavy rain, sea spray.`},
+{id:"S8",mv:2,d:14,t:"Up the wall",cam:"Crane rising with her up the vertical face; ramp on the kill.",model:"cinematic_studio_video_v2 · 12s · speedramp impact + 2s ext",chips:["Ramp not cut","Chain in"],
+ seam:"Starts on S7's end frame. Ends as the ice wall collapses into the sea.",
+ prompt:`Begin exactly on the previous frame — the woman flat against a vertical ice wall. Space bends around her and the atmosphere throws her upward. Her bare feet blur up the vertical face as she runs straight up it, camera craning to keep pace, the ice streaking past. Behind her a pursuer is ripped violently backward mid-air as if yanked by the spine; his neck breaks and he falls away. Speed ramps hard on the break, then returns to normal. The wall loses cohesion and collapses into a mountain of seawater below. Do not cut. Storm, rain, violet lightning.`},
+{id:"S9",mv:2,d:12,t:"The puppeteer's eyes",cam:"Perspective reassignment 1 of 2. We leave Gwendolyn for the first time.",model:"veo3_1 · 8s ultra + 4s ext, or cinematic_studio_3_0 · 12s",chips:["POV shift","Motivated cut"],
+ seam:"Motivated cut: a new point of view. The only reason a cut is allowed here.",
+ prompt:`Over-the-shoulder from behind a woman in dark rippling cloth, hovering above the storm ocean, watching. Far ahead of her and small in frame, her quarry runs across the water — distant, fast, hard to hold in the eye. The watching woman's hands move in small precise gestures at her sides, and every dark figure in the middle distance moves as her fingers move: marionettes on invisible string. She is not hurrying. She is enjoying it. Her face is never fully shown. Long lens, heavy compression, rain in the foreground out of focus. Cold blue-grey grade, no warmth anywhere in frame.`},
+{id:"S10",mv:2,d:16,t:"The leviathan",cam:"Low, wide, held. Camera small beneath it. Do not cut inside this.",model:"seedance_2_0 · 15s · 4K · genre epic + ext",chips:["16s hold","Scale"],
+ seam:"None. Awe requires duration; a cut here destroys the shot's only job.",
+ prompt:`Low wide angle, camera near the water looking up. A leviathan the size of a city block erupts from the deep and hangs in the air, held aloft by something unseen. Its natural plating is armoured with centuries of dead coral, sheeting off it in slabs. Dozens of fins span outward and inflate like leather balloons. Fused into the flesh of its skull, pierced through and still living, is a man in dark cloth. The flesh around him is cracked and grey and oozing. The woman threads between its opening jaws in the final seconds, tiny against it. Hold the wide the entire time — no cutaways, no inserts. Overcast storm light, immense scale, photoreal.`},
+{id:"S11",mv:2,d:10,t:"Running the flank",cam:"Lateral tracking along the beast's skin at her speed. Spears cross frame.",model:"kling3_0 · 10s · motion_control from a driving clip",chips:["Tracking","Body wipe out"],
+ seam:"Ends with the leviathan's flank filling frame to near-black. Hidden cut.",
+ prompt:`Lateral tracking shot moving with her as she runs barefoot along the flank of the airborne leviathan, passing fin after fin. The skin is crusted and spongelike; her feet find purchase on it. Iron spears whip past her from behind, trailing electricity between raindrops. She kicks two of them out of the air and back — both punch through pursuing figures and pin them into the beast's flesh. The camera stays with her the whole way. In the last second the leviathan's flank swings across the lens and fills the frame completely, going to near-black. Rain, spray, hard side light.`},
+{id:"S12",mv:2,d:12,t:"The lightning river",cam:"Pull off the black. Slow motion inside the shot, no cut.",model:"cinematic_studio_video_v2 · 12s · speedramp slowmo · pro",chips:["Body wipe in","Slowmo"],
+ seam:"Pull off matching darkness. The audience will not register a cut occurred.",
+ prompt:`Pull back off a wall of dark wet flesh into open air. Extreme slow motion. A bolt of lightning connects with the crystalline woman and does not pass through her — it is caught in a shell of bent space around her body and forced to circulate, coursing around her limbs like a river held in a channel. She is lit from inside. She smiles, and arcs of electricity spark between her teeth. Two dark figures in front of her register the sight and are visibly afraid. Time returns to normal in the final second as she launches at them. Photoreal, volumetric, blue-white key on a black storm.`},
+{id:"S13",mv:2,d:15,t:"The vortex, from the Sun",cam:"Perspective reassignment 2 of 2. Orbital. Silent. The climax has no sound.",model:"wan3_0 · 15s · 1080p · generate_audio false",chips:["Silence","Orbital"],
+ seam:"Hard cut to scale. The film's biggest moment is its quietest.",
+ prompt:`Extreme wide orbital shot looking down through the exosphere at a storm system on a blue-green planet. Total silence — no music, no effect, nothing. In the centre of the storm an eye has opened, and it is not weather: it is a puncture, a black pupil reaching up out of the atmosphere toward space. Sixteen specks of matter spiral inward along the wall of the vortex and are gone. A soundless bloom of pale flame spreads across the eye and collapses inward. Then the storm begins, slowly, to close. The camera does not move. Cold, clinical, immense. No score, no diegetic sound, absolute silence for the full duration.`},
+{id:"S14",mv:2,d:13,t:"The Stone leaves her",cam:"Back to intimate. Then hold the empty frame two beats after she's gone.",model:"cinematic_studio_3_0 · 13s · 4K · genre drama",chips:["Empty frame","Death"],
+ seam:"The Stone's streak across the sky is the transition into Movement III.",
+ prompt:`Close, intimate, back at her level, upside-down as she falls upward out of the atmosphere. Her crystal shell is fracturing and the fractures are filling with light. A green-white stone the size of a fist emerges from her chest — not torn out, released. She holds it a moment, says something we do not hear, and throws it. It leaves as a green streak across the curve of the world and is gone. She looks up toward the star. Then her body comes apart into particles that fall upward and disperse. HOLD THE EMPTY FRAME for the last two and a half seconds — sky, curvature, nothing else. Sound returns only as wind.`},
+{id:"S15",mv:3,d:12,t:"Coral Beach — the next day",cam:"Locked-off wide. The camera has not moved and will not.",model:"cinematic_studio_3_0 · 12s · 4K",chips:["Locked","Card"],
+ seam:"Green streak becomes a falling star over night ocean, then dawn wipes in.",
+ prompt:`Card: "The next day." Locked-off wide, absolutely static, 32mm, low. Dawn on a tropical beach whose sand is faintly iridescent — pinks and pale greens in the grain. Jungle fills the left third. Two boys, roughly eight and six, burst out of the treeline laughing and run flat-out across the sand toward the water, small in a very wide frame. They stop hard at the tide line and stand there, breathing, looking out. Beyond them across three miles of reef, a white temple is just visible on a distant isle. The camera does not move at any point. Golden hour, long shadows, warm and completely peaceful.`},
+{id:"S16",mv:3,d:12,t:"Over the abyss",cam:"Held underwater wide. Something below is never clearly shown.",model:"kling2_6 · 10s + ext, or seedance_2_0 · 12s (water physics)",chips:["Held","Dread"],
+ seam:"Straight cut, time passing. Permitted: a jump in place.",
+ prompt:`Underwater, held wide, camera drifting almost imperceptibly. A living coral reef in full colour — fish, stingray, eels, urchins — occupying the top half of frame. Two small silhouetted bodies swim across the surface far above, backlit by sun. Below and ahead, the reef shelf ends abruptly and drops into total blackness. The camera holds as the boys pass over the edge of the drop. Deep in the black, something very large moves and is never resolved into a shape. Do not reveal it. Caustics, particulate, shafts of light. Muffled underwater sound only.`},
+{id:"S17",mv:3,d:10,t:"Twelve ships",cam:"Static wide. Violence enters a still frame — more frightening than a shaking one.",model:"cinematic_studio_3_0 · 10s · 4K · genre epic",chips:["Static","Attack"],
+ seam:"Cut on the tremor — a revelation the current frame cannot hold.",
+ prompt:`Locked-off wide, static, no camera shake at any point. Two soaked boys stagger up a beach out of the surf, arms out, exhausted and happy. The ground jolts — sand leaps from the surface. They drop flat. Behind them and to the left, entering the static frame from the sea, twelve tall wooden sailing ships with billowing sails advance in line and open fire. Metal shot tears overhead. The camera does not react, does not pan, does not shake. Setting sun behind the ships, everything backlit and hazed red. The stillness of the frame against the violence inside it is the entire point.`},
+{id:"S18",mv:3,d:10,t:"The Temple does not answer",cam:"Coverage without breaking the world — three angles inside one generation.",model:"cinematic_studio_video_v2 · 10s · multi_shots · multi_prompt",chips:["Multi-shot","One gen"],
+ seam:"Internal cuts only. Nothing leaves the generation.",
+ prompt:`Three shots inside one generation, world and light locked across all three. [1] Wide: a white stone temple taking direct hits, sand and torn flowers raining down its face, lit blood-red by the setting sun. It does not react. [2] Closer, low: the temple doors — shut. Debris strikes and falls away. Still shut. [3] Wide from behind the temple looking out to sea: twelve ships firing into a structure that is simply standing there. No people in any of the three. No movement except falling debris and drifting smoke. The refusal to respond is the subject.`},
+{id:"S19",mv:3,d:10,t:"The Guardians kneel",cam:"Emerge from a dust wall — the story's own written-in cut point.",model:"seedance_2_0 · 10s · 4K · start_image from dust",chips:["Dust seam","Reveal"],
+ seam:"Dust wall obscures everything to brown shadow. Cut inside the dust.",
+ prompt:`Open inside a churning wall of brown dust that has obscured everything into flat shadow — no shapes legible for the first second. The dust thins. Out of it: the temple doors standing open on a rectangle of blank white light, and two parallel lines of figures walking out in white robes with entirely blank, calm faces. Their pace is fluid and completely unhurried. Metal shot pummels the sand around them and none of it touches them. They form up facing the sea, then all of them take a knee at once and bow their heads — refusing to look at what is happening. Locked-off wide. No camera movement.`},
+{id:"S20",mv:3,d:14,t:"The mountain",cam:"ONE unbroken wide. Fourteen seconds. Only a slow rise. The Guardians never look up.",model:"wan3_0 · 14s · 1080p · enable_thinking",chips:["14s · no cut","The miracle"],
+ seam:"None permitted. Cutting this shot is the single worst decision available.",
+ prompt:`One continuous wide shot, fourteen seconds, no cuts, camera rising very slowly and doing nothing else. Every projectile in the air stops and hangs suspended. The sand of the beach lifts and converges on the floating metal. Rock and dead coral erupt out of the ocean and ascend to join it. The gathering mass merges into a single floating mountain the size of a hill, turning slowly. It glides out over the twelve ships and stops above them. Figures leap from the decks into the water. Then the mountain comes apart into a million particles and they fall — faster than gravity should allow — pounding the ships down under the surface. Throughout, the kneeling Guardians never raise their heads. Photoreal, immense, unhurried.`},
+{id:"S21",mv:3,d:8,t:"The garden replants itself",cam:"Locked wide. Aftermath. Hold on flat water.",model:"veo3_1_lite · 8s, or cinematic_studio_3_0 · 8s",chips:["Locked","Aftermath"],
+ seam:"Straight cut on stillness.",
+ prompt:`Locked-off wide, static. Flat open ocean where twelve ships were. No wreckage. No particles left in the sky. Waves move up the beach and back. The two lines of white-robed figures rise, turn, and walk back into the temple in file. Three remain behind and move their hands, and the craters in the beach fill themselves in with sand and soil; a trampled garden bed re-grows in seconds, flowers opening in fast motion. Then they follow the others in and the doors close. Golden hour, calm, almost boring — which is the point.`},
+{id:"S22",mv:3,d:14,t:"What Ammon saw",cam:"The only push-in in the movement. Slow, relentless, into an eight-year-old's face.",model:"veo3_1 · 8s ultra + ext, or minimax_hailuo 2.3 · 10s (emotion)",chips:["The thesis","Only push"],
+ seam:"Mikael's voice fades under. This is the film's actual ending.",
+ prompt:`Two boys lying in beach grass, filthy, staring out at flat water. The younger one is ecstatic, talking fast, hands moving — about his parents, about being proud, about both of them making it in. The camera begins a slow relentless push toward the OLDER boy's face and does not stop for the rest of the shot. His brother's voice drops away under the sound of surf. The older boy is not excited. He is calculating. Somewhere in the push his expression settles into something that does not belong on an eight-year-old. Far behind him, deep out of focus, a single dark cloud sits low over the water, motionless while every other cloud moves. Hold on his eyes. Golden hour, shallow focus, photoreal child performance.`},
+{id:"S23",mv:3,d:12,t:"Tomorrow, again",cam:"Hard cut to the Sun. Torin alone. Crane away from the frozen tear. Black.",model:"cinematic_studio_3_0 · 12s · 4K · genre drama",chips:["Bookend","End"],
+ seam:"Closes the loop opened in S1. The last image is the first image's residue.",
+ prompt:`Hard cut back to the courtyard of light on the star. TORIN stands alone at the edge where two people stood at the start, looking down at the planet. He does not move. Over this, two lines of dialogue from the film's opening return as voice-over — a woman asking whether he could erase everything, and his answer that there must be risk if there is to be growth. The camera tilts down to the floor of light and finds the frozen tear still lying there, unchanged. Slow crane straight up and away from it until it is a single point of light on a vast luminous floor. Cut to black. Title card: LITIGUH.`}
+];
+
+const MATRIX=[
+{n:"Cinema Studio Video 3.0",id:"cinematic_studio_3_0",len:"15s",res:"4K",fr:"both",refs:"no",tags:["chain","perf"],key:1,
+ pro:"The festival spine, and the highest resolution ceiling with genre control (drama / epic / noir / action). Start and end frames both supported.",
+ con:"No reference-image identity lock — faces drift across shots unless you feed a locked start frame every time.",
+ use:"<b>S3 S5 S14 S15 S17 S21 S23</b> — dialogue and locked-off plates"},
+{n:"Cinema Studio Video v2",id:"cinematic_studio_video_v2",len:"12s",res:"pro",fr:"both",refs:"no",tags:["chain"],key:1,
+ pro:"The only model that cuts <i>inside</i> a generation — <code>multi_shots</code> + <code>multi_prompt</code>. Also carries <code>speedramp</code> and <code>cfg_scale</code>.",
+ con:"12-second ceiling, and internal cut placement is the model's call, not yours.",
+ use:"<b>S6 S8 S12 S18</b> — ramps and internal coverage"},
+{n:"Seedance 2.5",id:"seedance_2_5",len:"30s",res:"720p",fr:"both",refs:"yes",tags:["long","chain"],key:1,
+ pro:"Longest single generation available, plus true <code>video_extension</code> forward and backward, plus <code>video_edit</code>. This is the oner engine.",
+ con:"720p ceiling. Every shot from it must be deflicked and upscaled or it will sit visibly soft next to 4K neighbours.",
+ use:"<b>S2</b> — the 18s courtyard drift"},
+{n:"Wan 3.0",id:"wan3_0",len:"30s",res:"1080p",fr:"both",refs:"yes",tags:["long","chain"],key:1,
+ pro:"30 seconds at 1080p with first/last frame, references, native audio and <code>enable_thinking</code> for prompt adherence. Best length-to-quality ratio on the platform.",
+ con:"Smart duration (<code>-1</code>) is billed as 10s regardless of what it returns. Thinking mode is slower.",
+ use:"<b>S1 S13 S20</b> — the three shots that must not be cut"},
+{n:"FLUX 3 Video",id:"flux_3_video",len:"20s",res:"1080p",fr:"both",refs:"yes",tags:["long","chain"],key:0,
+ pro:"20s at 1080p with start and end frames, image references and native video continuation. A solid middle option when Wan misses.",
+ con:"Fewer cinematic controls than Cinema Studio — no genre hint, no ramp, no internal shots.",
+ use:"Fallback for any 15&ndash;20s hold"},
+{n:"Kling v3.0",id:"kling3_0",len:"15s",res:"4K",fr:"both",refs:"no",tags:["chain","perf"],key:1,
+ pro:"4K mode, start <i>and</i> end frame, multi-shot and motion transfer. Accepts unlimited-trial generations.",
+ con:"No image references, so identity comes only from your start frame.",
+ use:"<b>S7 S11</b> — chained combat, motion control"},
+{n:"Seedance 2.0",id:"seedance_2_0",len:"15s",res:"4K",fr:"both",refs:"yes",tags:["chain","perf"],key:0,
+ pro:"Identity lock via image references at 4K, with genre hints and audio references. Accepts unlimited-trial generations.",
+ con:"4K requires <code>mode: std</code>; <code>fast</code> caps at 720p.",
+ use:"<b>S10 S19</b> — leviathan, Guardians"},
+{n:"MiniMax H3",id:"minimax_h3",len:"15s",res:"2K",fr:"both",refs:"yes",tags:["chain"],key:0,
+ pro:"Keyframes plus image, video and audio references, and <code>batch_size</code> up to 4 — four takes of a hard shot in one call.",
+ con:"2K only, and no genre or ramp control.",
+ use:"Batch-rolling any shot that fails twice"},
+{n:"Google Veo 3.1",id:"veo3_1",len:"8s",res:"ultra",fr:"start",refs:"no",tags:["perf"],key:1,
+ pro:"The best photoreal human performance available — micro-expression, eyelines, child faces.",
+ con:"<b>8-second ceiling and no end frame</b>, so it cannot be chained. Use it where a cut is already legal.",
+ use:"<b>S9 S22</b> — the two faces that carry the film"},
+{n:"Minimax Hailuo 2.3",id:"minimax_hailuo",len:"10s",res:"1080p",fr:"both",refs:"no",tags:["perf","chain"],key:0,
+ pro:"Natural physics and the strongest facial emotion in the 10s bracket, with end-frame support Veo lacks.",
+ con:"Fixed durations (6s / 10s only) and 512p is incompatible with end frames.",
+ use:"<b>S4</b> — the 14s locked hold"},
+{n:"Kling 2.6",id:"kling2_6",len:"10s",res:"—",fr:"start",refs:"no",tags:["perf"],key:0,
+ pro:"Advanced physics — the best water, cloth and particulate behaviour for the price.",
+ con:"Start frame only, fixed 5s / 10s.",
+ use:"<b>S16</b> — underwater reef"},
+{n:"Wan 2.7",id:"wan2_7",len:"15s",res:"1080p",fr:"both",refs:"audio",tags:["chain","perf"],key:0,
+ pro:"Character-consistent with synchronised audio and audio references. Accepts unlimited-trial generations.",
+ con:"No image references — consistency comes from frames, not a locked identity.",
+ use:"Dialogue coverage if lipsync drifts"},
+{n:"Grok Video 1.5",id:"grok_video_v15",len:"15s",res:"1080p",fr:"start",refs:"yes",tags:["perf"],key:0,
+ pro:"Strong physics and camera-motion adherence, with image and audio reference inputs.",
+ con:"Start frame only — breaks chaining. Preview-tier stability.",
+ use:"Alternate takes on storm plates"},
+{n:"Gemini Omni Flash",id:"gemini_omni",len:"10s",res:"720p",fr:"refs",fr2:1,refs:"yes",tags:["cheap"],key:0,
+ pro:"Reference-driven with native audio, and accepts unlimited-trial generations — effectively free iteration.",
+ con:"720p, 10s, 16:9 or 9:16 only. No 21:9, so it cannot deliver scope natively.",
+ use:"Free look-development passes"},
+{n:"Seedance 2.0 Mini",id:"seedance_2_0_mini",len:"15s",res:"720p",fr:"both",refs:"yes",tags:["cheap","chain"],key:0,
+ pro:"Same reference and frame architecture as Seedance 2.0 at a fraction of the cost. Accepts unlimited-trial generations.",
+ con:"720p ceiling — previz only, never final.",
+ use:"Blocking the whole film before spending"},
+{n:"Kling 3.0 Turbo",id:"kling3_0_turbo",len:"15s",res:"1080p",fr:"start",refs:"no",tags:["cheap"],key:0,
+ pro:"Fastest way to see whether a shot idea reads at all. 15s at 1080p for very little.",
+ con:"Start frame only, no end frame, no refs.",
+ use:"Animatic pass, day 1&ndash;3"},
+{n:"Veo 3.1 Lite",id:"veo3_1_lite",len:"8s",res:"—",fr:"both",refs:"no",tags:["cheap","chain"],key:0,
+ pro:"Cheap batch clips with end-frame support, unlike full Veo 3.1.",
+ con:"8s ceiling; audio costs extra credits.",
+ use:"<b>S21</b> — aftermath plate"},
+{n:"Seedance 1.5 Pro",id:"seedance1_5",len:"12s",res:"1080p",fr:"both",refs:"no",tags:["chain"],key:0,
+ pro:"Reliable, unfussy motion at 1080p with start and end frames. Rarely spectacular, rarely broken.",
+ con:"Fixed 4 / 8 / 12s. No references.",
+ use:"Safety takes"},
+{n:"Wan 2.6",id:"wan2_6",len:"15s",res:"1080p",fr:"refs",refs:"yes",tags:["cheap"],key:0,
+ pro:"Open-weight and genuinely stylised — useful if any sequence wants to leave photoreal.",
+ con:"Reference roles only, no start/end frames. Experimental output.",
+ use:"Not used — noted for completeness"},
+{n:"Topaz",id:"topaz_video",len:"—",res:"2160p",fr:"—",refs:"video",tags:["finish"],key:1,
+ pro:"Upscale to 2160p with frame interpolation. The rescue for every 720p extended take.",
+ con:"Interpolation on fast void-combat can smear. Test per shot rather than batch-applying.",
+ use:"Final pass on <b>S2 S6 S8 S12</b>"},
+{n:"Bytedance Video Upscale",id:"bytedance_video_upscale",len:"—",res:"4K",fr:"—",refs:"video",tags:["finish"],key:1,
+ pro:"Up to 4K at 24&ndash;60fps with an <code>aigc</code> preset built specifically for generated footage.",
+ con:"Pro tier costs meaningfully more than standard; the difference only shows on faces.",
+ use:"Master upscale, all 23"},
+{n:"Video Deflicker",id:"video_deflicker",len:"—",res:"—",fr:"—",refs:"video",tags:["finish"],key:1,
+ pro:"Removes the frame-to-frame shimmer that extended and chained takes always develop.",
+ con:"Must run <i>before</i> upscaling — the reverse order bakes flicker into the master permanently.",
+ use:"Every extended or chained shot"},
+{n:"Motion Control",id:"kling3_0 motion",len:"—",res:"1080p",fr:"—",refs:"video",tags:["perf"],key:0,
+ pro:"Transfers motion and camera move from a driving clip onto a still character — repeatable choreography.",
+ con:"Background follows either the image or the video, never a blend; you need a driving clip that already has the move.",
+ use:"<b>S8&ndash;S12</b> combat continuity"},
+{n:"Sync Lipsync 3",id:"sync_so",len:"—",res:"—",fr:"—",refs:"a/v",tags:["finish","perf"],key:0,
+ pro:"Repairs dialogue sync after the fact, with five strategies for duration mismatch.",
+ con:"A repair tool, not a performance tool — it will not fix a bad read.",
+ use:"Torin and Gwendolyn, if needed"},
+{n:"Reframe",id:"reframe",len:"—",res:"—",fr:"—",refs:"video",tags:["finish"],key:0,
+ pro:"Converts aspect ratio after the fact — 16:9 masters into 21:9 scope.",
+ con:"Reframing loses information; compose for 21:9 from the start where the model supports it.",
+ use:"Rescue only"}
+];
+
+const KEYS=[
+{k:"HIGGSFIELD_API_KEY",n:"Higgsfield",d:"Picture, motion, upscale — the whole spine",u:"https://higgsfield.ai/",l:"Account → API"},
+{k:"ANTHROPIC_API_KEY",n:"Claude",d:"Prompt drafting, shot-list logic, continuity passes",u:"https://console.anthropic.com/settings/keys",l:"Console keys"},
+{k:"GOOGLE_AI_API_KEY",n:"Google AI Studio",d:"Gemini — script analysis, storyboard descriptions",u:"https://aistudio.google.com/apikey",l:"Get API key"},
+{k:"OLLAMA_BASE_URL",n:"Ollama",d:"Local models. No key needed on localhost — leave the default",u:"https://ollama.com/",l:"Download / keys",ph:"http://localhost:11434"},
+{k:"LOVABLE_API_KEY",n:"Lovable",d:"Building the companion app around this bible",u:"https://lovable.dev/",l:"Settings"},
+{k:"ELEVENLABS_API_KEY",n:"ElevenLabs",d:"Torin's voice, Gwendolyn's VO, the Ammon internal monologue",u:"https://elevenlabs.io/app/settings/api-keys",l:"API keys"},
+{k:"OPENAI_API_KEY",n:"OpenAI",d:"Optional — alternate drafting and image passes",u:"https://platform.openai.com/api-keys",l:"API keys"}
+];
+
+const CHECKS=[
+{d:"Aug 10–12",t:"Lock characters before anything else",n:"Train Soul V2 for Gwendolyn and for Torin. Build a Reference Element for the two brothers together — they share frame in every shot they appear in, and Soul only carries one identity per generation."},
+{d:"Aug 12–14",t:"Animatic the whole film in Kling 3.0 Turbo",n:"All 23 shots, cheapest tier, no notes on quality. You are testing whether 13-second average shot length holds attention for five minutes. If it drags at minute three, fix it here, not at minute twenty of the grade."},
+{d:"Aug 14–16",t:"Build the three transition assets first",n:"The frozen tear facet, the green Stone streak, the dust wall. Every movement boundary depends on them, and they are the shots most likely to need re-rolling."},
+{d:"Aug 16–21",t:"Movement I — the opening 34 seconds unbroken",n:"S1 in Wan 3.0, then extend forward into S2. This is the highest-risk sequence in the film because it has no cuts to hide behind. Budget re-rolls generously."},
+{d:"Aug 21–27",t:"Movement II — chain the combat",n:"Work strictly in order. S7's end frame is S8's start frame; S11 ends on the body wipe that opens S12. Do not generate these out of sequence — the chain is the shot."},
+{d:"Aug 27–30",t:"Movement III — hold the locked frames",n:"S20 is the one that cannot be cut. Give it the most attempts of any shot in the film. If it needs eight rolls, it gets eight rolls."},
+{d:"Aug 30–31",t:"Deflicker, then upscale — in that order",n:"Deflicker every extended and chained shot first. Upscale after. Reversing this bakes shimmer into the master and there is no way back."},
+{d:"Sep 1–2",t:"Sound, and the silence",n:"Score everything except S13. Protect the silence at the vortex from every instinct you will have to fill it."},
+{d:"Sep 2",t:"Read your own prompts as a stranger",n:"They are published after the deadline. Anything lazy, anything contradictory, anything you would not want quoted — fix it now."},
+{d:"Sep 3",t:"Submit through the festival project",n:"Confirm the entry sits inside the Cinema Studio festival project. Leave a full day of margin; do not discover a project-scope problem on deadline night."}
+];
+
+/* ================= RIBBON ================= */
+const MV_TOTAL=SHOTS.reduce((a,s)=>a+s.d,0);
+(function(){
+  const el=document.getElementById("ribbon-ours");
+  SHOTS.forEach(s=>{
+    const d=document.createElement("div");
+    d.className="seg"; d.dataset.mv=s.mv;
+    d.style.flex=s.d+" 0 0";
+    d.innerHTML='<span class="seg-tip">'+s.id+' · '+s.d+'s · '+s.t+'</span>';
+    el.appendChild(d);
+  });
+  const t=document.getElementById("ribbon-theirs");
+  for(let i=0;i<71;i++){
+    const d=document.createElement("div");
+    d.className="seg ghost"; d.style.flex="1 0 0";
+    t.appendChild(d);
+  }
+  const mean=(MV_TOTAL/SHOTS.length).toFixed(1);
+  const max=Math.max(...SHOTS.map(s=>s.d));
+  document.getElementById("ribbon-stat").textContent="total "+fmt(MV_TOTAL)+" · mean "+mean+"s · longest "+max+"s";
+})();
+
+function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).padStart(2,"0")}
+
+/* ================= SHOT LIST ================= */
+(function(){
+  const MOV=[
+    {n:1,num:"Movement I",t:"Tomorrow",g:"Sustained oner",cls:"mv1",
+     note:"Eighty seconds, five shots, and the first thirty-four of them contain no cut at all. This is where the audience learns what kind of film they are in. If the opening works, every long hold afterwards reads as confidence rather than as a model that could not manage a cut."},
+    {n:2,num:"Movement II",t:"The Last of Her Island",g:"Travelling · perspective",cls:"mv2",
+     note:"A hundred and eighteen seconds of continuous action with only two point-of-view changes in it. The camera flies with her. Where a conventional action cut would go, a speed ramp or a body wipe goes instead — and the climax happens in total silence, from orbit, so far away that the whole battle resolves as a dot closing."},
+    {n:3,num:"Movement III",t:"Brothers",g:"Locked-off witness",cls:"mv3",
+     note:"The camera stops moving. Twelve ships bombard a temple inside a frame that refuses to react, a mountain is raised and dropped in one unbroken fourteen-second wide, and then — once, at the very end — the camera pushes in on a child's face and the film says what it came to say."}
+  ];
+  const host=document.getElementById("shotlist");
+  let clock=0;
+  MOV.forEach(m=>{
+    const sub=SHOTS.filter(s=>s.mv===m.n);
+    const dur=sub.reduce((a,s)=>a+s.d,0);
+    const h=document.createElement("div");
+    h.className="mv-head "+m.cls;
+    h.innerHTML='<span class="num">'+m.num+'</span><h3>'+m.t+'</h3><span class="gram">'+m.g+'</span>'+
+      '<span class="num" style="margin-left:auto">'+sub.length+' shots · '+fmt(dur)+'</span>';
+    host.appendChild(h);
+    const note=document.createElement("p");
+    note.className="mv-note"; note.textContent=m.note; host.appendChild(note);
+
+    sub.forEach(s=>{
+      const start=clock, end=clock+s.d; clock=end;
+      const det=document.createElement("details");
+      det.className="shot";
+      det.innerHTML=
+        '<summary class="shot-top">'+
+          '<span class="tc"><b>'+fmt(start)+'</b>'+fmt(end)+'</span>'+
+          '<span class="shot-mid">'+
+            '<h4>'+s.id+' &middot; '+s.t+'</h4>'+
+            '<span class="shot-meta">'+
+              '<span class="chip mdl">'+s.model+'</span>'+
+              s.chips.map(c=>'<span class="chip '+(c.includes("hold")||c.includes("Locked")||c.includes("no cut")||c.includes("No cut")?"hold":c.includes("seam")||c.includes("Chain")||c.includes("wipe")||c.includes("Extension")?"seam":"")+'">'+c+'</span>').join("")+
+            '</span>'+
+          '</span>'+
+          '<span class="dur">'+s.d+'<span>SEC</span><i class="caret">&#9654;</i></span>'+
+        '</summary>'+
+        '<div class="shot-body">'+
+          '<div class="field"><span class="fk">Camera</span><span class="fv">'+s.cam+'</span></div>'+
+          '<div class="field"><span class="fk">Seam into next</span><span class="fv">'+s.seam+'</span></div>'+
+          '<div class="field"><span class="fk">Generation prompt</span><pre class="prompt">'+esc(s.prompt)+'</pre></div>'+
+          '<button class="copy" data-p="'+s.id+'">Copy prompt</button>'+
+        '</div>';
+      host.appendChild(det);
+    });
+
+    if(m.n===1){host.appendChild(trans("Transition A","The frozen tear rotates until one facet fills the frame; the moving blue inside that facet <b>becomes open ocean</b>. A match cut on shape and colour, so the 108-year jump costs the audience nothing."))}
+    if(m.n===2){host.appendChild(trans("Transition B","The Creation Stone's green streak crosses the curve of the world, <b>becomes a falling star</b> over a night ocean, and dawn wipes up into Coral Beach. One object carries us across a day and three thousand miles."))}
+  });
+
+  function trans(l,v){
+    const d=document.createElement("div");
+    d.className="transition";
+    d.innerHTML='<span class="tl">'+l+'</span><span class="tv">'+v+'</span>';
+    return d;
+  }
+  function esc(t){return t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+  host.addEventListener("click",e=>{
+    const b=e.target.closest(".copy"); if(!b)return;
+    e.preventDefault();
+    const s=SHOTS.find(x=>x.id===b.dataset.p);
+    navigator.clipboard.writeText(s.prompt).then(()=>{
+      b.textContent="Copied"; b.classList.add("done");
+      setTimeout(()=>{b.textContent="Copy prompt";b.classList.remove("done")},1600);
+    }).catch(()=>{b.textContent="Select and copy manually"});
+  });
+})();
+
+/* ================= MATRIX ================= */
+(function(){
+  const body=document.getElementById("matrix-body");
+  function frame(f){
+    if(f==="both")return '<span class="yes">start + end</span>';
+    if(f==="start")return '<span class="no">start only</span>';
+    if(f==="refs")return '<span class="no">refs only</span>';
+    return '<span class="no">&mdash;</span>';
+  }
+  function refs(r){
+    if(r==="yes")return '<span class="yes">yes</span>';
+    if(r==="no")return '<span class="no">no</span>';
+    return '<span class="no">'+r+'</span>';
+  }
+  function render(f){
+    body.innerHTML="";
+    MATRIX.filter(m=>f==="all"||m.tags.includes(f)).forEach(m=>{
+      const tr=document.createElement("tr");
+      tr.innerHTML=
+        '<td class="name">'+(m.key?'<span class="badge key">core</span>':'')+m.n+'<em>'+m.id+'</em></td>'+
+        '<td class="num">'+m.len+'</td>'+
+        '<td class="num">'+m.res+'</td>'+
+        '<td>'+frame(m.fr)+'</td>'+
+        '<td>'+refs(m.refs)+'</td>'+
+        '<td class="pro">'+m.pro+'</td>'+
+        '<td class="con">'+m.con+'</td>'+
+        '<td class="use">'+m.use+'</td>';
+      body.appendChild(tr);
+    });
+  }
+  render("all");
+  document.getElementById("tbl-filters").addEventListener("click",e=>{
+    const b=e.target.closest(".fbtn"); if(!b)return;
+    [...e.currentTarget.querySelectorAll(".fbtn")].forEach(x=>x.setAttribute("aria-pressed",x===b));
+    render(b.dataset.f);
+  });
+})();
+
+/* ================= VAULT ================= */
+(function(){
+  const host=document.getElementById("keyrows");
+  const store="litiguh.keys";
+  KEYS.forEach(k=>{
+    const r=document.createElement("div");
+    r.className="keyrow";
+    r.innerHTML=
+      '<span class="kn"><strong>'+k.n+'</strong><span>'+k.k+'</span></span>'+
+      '<input type="password" id="in-'+k.k+'" placeholder="'+(k.ph||k.d)+'" autocomplete="off" spellcheck="false" aria-label="'+k.n+' key">'+
+      '<a class="klink" href="'+k.u+'" target="_blank" rel="noopener noreferrer">'+k.l+' &#8599;</a>';
+    host.appendChild(r);
+  });
+  const status=document.getElementById("vault-status");
+  function read(){try{return JSON.parse(localStorage.getItem(store)||"{}")}catch(e){return{}}}
+  function paint(){
+    const v=read(), n=Object.values(v).filter(Boolean).length;
+    KEYS.forEach(k=>{const el=document.getElementById("in-"+k.k); if(v[k.k])el.value=v[k.k]});
+    status.textContent=n?n+" key"+(n===1?"":"s")+" stored in this browser":"Nothing stored";
+    status.className="vault-status"+(n?" ok":"");
+  }
+  paint();
+  document.getElementById("save-keys").onclick=()=>{
+    const v={}; KEYS.forEach(k=>{const t=document.getElementById("in-"+k.k).value.trim(); if(t)v[k.k]=t});
+    localStorage.setItem(store,JSON.stringify(v)); paint();
+    status.textContent="Saved"; status.className="vault-status ok";
+    setTimeout(paint,1400);
+  };
+  document.getElementById("clear-keys").onclick=()=>{
+    localStorage.removeItem(store);
+    KEYS.forEach(k=>{document.getElementById("in-"+k.k).value=""});
+    paint();
+  };
+  function dl(name,text,mime){
+    const b=new Blob([text],{type:mime});
+    const u=URL.createObjectURL(b);
+    const a=document.createElement("a"); a.href=u; a.download=name; a.click();
+    setTimeout(()=>URL.revokeObjectURL(u),800);
+  }
+  document.getElementById("export-env").onclick=()=>{
+    const v={}; KEYS.forEach(k=>{const t=document.getElementById("in-"+k.k).value.trim(); v[k.k]=t});
+    const out=["# LITIGUH — local runner environment",
+      "# Generated from the director's bible key vault.",
+      "# Do not commit this file. Add .env to .gitignore.",""]
+      .concat(KEYS.map(k=>"# "+k.n+" — "+k.d+"\n"+k.k+"="+(v[k.k]||(k.ph||""))))
+      .join("\n")+"\n";
+    dl(".env",out,"text/plain");
+  };
+  document.getElementById("export-json").onclick=()=>{
+    const v={}; KEYS.forEach(k=>{const t=document.getElementById("in-"+k.k).value.trim(); if(t)v[k.k]=t});
+    const cfg={project:"LITIGUH",runtime_seconds:MV_TOTAL,shots:SHOTS.length,aspect:"21:9",
+      providers:KEYS.map(k=>({name:k.n,env:k.k,configured:!!v[k.k],console:k.u})),
+      shot_manifest:SHOTS.map(s=>({id:s.id,movement:s.mv,seconds:s.d,title:s.t,model:s.model,prompt:s.prompt}))};
+    dl("litiguh.config.json",JSON.stringify(cfg,null,2),"application/json");
+  };
+})();
+
+/* ================= CHECKLIST ================= */
+(function(){
+  const host=document.getElementById("checklist"), store="litiguh.checks";
+  let done=[]; try{done=JSON.parse(localStorage.getItem(store)||"[]")}catch(e){}
+  CHECKS.forEach((c,i)=>{
+    const row=document.createElement("label");
+    row.className="check"+(done.includes(i)?" done":"");
+    row.innerHTML='<input type="checkbox" '+(done.includes(i)?"checked":"")+' data-i="'+i+'">'+
+      '<span class="cn">'+c.d+'</span>'+
+      '<span class="cb"><strong>'+c.t+'</strong><span>'+c.n+'</span></span>';
+    host.appendChild(row);
+  });
+  host.addEventListener("change",e=>{
+    const i=+e.target.dataset.i;
+    e.target.closest(".check").classList.toggle("done",e.target.checked);
+    done=e.target.checked?[...new Set([...done,i])]:done.filter(x=>x!==i);
+    localStorage.setItem(store,JSON.stringify(done));
+  });
+})();
+</script>
