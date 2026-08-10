@@ -367,6 +367,110 @@ footer{padding:44px 0 60px;color:var(--ink-3);font-size:13px;line-height:1.7}
 footer a{color:var(--ink-2)}
 .sources{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-family:var(--mono);font-size:11px}
 
+/* ============ PIPELINE ============ */
+.phases{display:flex;flex-direction:column;gap:0}
+.phase{
+  display:grid;grid-template-columns:112px 1fr;gap:24px;
+  padding:22px 0;border-top:1px solid var(--line-soft);
+}
+.phase:first-child{border-top:0}
+.phase-k{display:flex;flex-direction:column;gap:5px}
+.phase-k .pn{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.phase-k .pd{font-family:var(--mono);font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums}
+.phase-k .pw{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.phase-b{display:flex;flex-direction:column;gap:10px;min-width:0}
+.phase-b h4{font-size:19px;line-height:1.25}
+.phase-b .pdesc{font-size:14.8px;color:var(--ink-2);line-height:1.6}
+.phase-b .pdesc b{color:var(--ink);font-weight:600}
+.outputs{display:flex;gap:7px;flex-wrap:wrap}
+.out{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;padding:4px 9px;border-radius:3px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);
+}
+.out.img{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+.out.vid{background:var(--void-soft);color:var(--void);border-color:var(--void-line)}
+.gate{
+  display:grid;grid-template-columns:112px 1fr;gap:24px;align-items:start;
+  padding:18px 20px 18px 0;margin:6px 0;
+  background:linear-gradient(90deg,var(--coral-soft),transparent 70%);
+  border-top:1px solid var(--coral-line);border-bottom:1px solid var(--coral-line);
+}
+.gate .gk{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);padding-left:0}
+.gate .gb{display:flex;flex-direction:column;gap:6px}
+.gate .gb strong{font-size:16px;color:var(--ink);font-family:var(--display);font-weight:600}
+.gate .gb span{font-size:14.2px;color:var(--ink-2);line-height:1.58}
+.gate .gb span b{color:var(--ink)}
+@media (max-width:700px){.phase,.gate{grid-template-columns:1fr;gap:10px}.gate{padding:16px}}
+
+/* ============ FRAME STRING ============ */
+.fs-tools{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.fs-legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--ink-2);letter-spacing:.05em}
+.fs-legend span{display:flex;align-items:center;gap:6px}
+.fs-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:5px;background:var(--surface);padding:18px}
+.fs-track{display:flex;gap:0;min-width:min-content;align-items:stretch}
+.fcell{
+  flex:0 0 116px;display:flex;flex-direction:column;gap:0;border-right:1px dashed var(--line);
+  padding:0 9px;
+}
+.fcell:last-child{border-right:0}
+.fcell .fslot{
+  height:66px;border-radius:3px;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:3px;font-family:var(--mono);cursor:pointer;
+  border:1px solid var(--line);background:var(--surface-2);text-align:center;padding:4px;
+  transition:transform .12s ease;
+}
+.fcell .fslot:hover{transform:translateY(-2px)}
+.fcell .fslot:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.fslot .fid{font-size:10.5px;color:var(--ink);letter-spacing:.03em}
+.fslot .frole{font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.fslot[data-r="shared"]{background:var(--gold-soft);border-color:var(--gold);border-width:2px}
+.fslot[data-r="shared"] .frole{color:var(--gold)}
+.fslot[data-r="bridge"]{background:var(--void-soft);border-color:var(--void);border-width:2px;border-style:dashed}
+.fslot[data-r="bridge"] .frole{color:var(--void)}
+.fslot[data-r="match"]{background:var(--coral-soft);border-color:var(--coral-line)}
+.fslot[data-r="match"] .frole{color:var(--coral)}
+.fcell .fshot{
+  margin-top:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+  text-align:center;padding:5px 3px;border-radius:3px;color:var(--ground);
+}
+.fcell .fshot[data-mv="1"]{background:var(--gold)}
+.fcell .fshot[data-mv="2"]{background:var(--void)}
+.fcell .fshot[data-mv="3"]{background:var(--coral)}
+.fcell.spanner{flex:0 0 116px}
+.fdetail{
+  margin-top:16px;padding:18px 20px;border:1px solid var(--line);border-radius:5px;
+  background:var(--surface-2);min-height:96px;
+}
+.fdetail .fdh{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:9px}
+.fdetail .fdh strong{font-family:var(--mono);font-size:15px;color:var(--ink)}
+.fdetail .fdh em{font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.fdetail p{font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.fdetail p b{color:var(--ink)}
+.fdetail .placeholder{color:var(--ink-3);font-style:italic}
+.fs-counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.fcount{border:1px solid var(--line);border-radius:4px;padding:14px 16px;background:var(--surface);display:flex;flex-direction:column;gap:3px}
+.fcount .v{font-family:var(--mono);font-size:24px;color:var(--ink);font-variant-numeric:tabular-nums}
+.fcount .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.fcount .n{font-size:12.5px;color:var(--ink-3);line-height:1.45}
+
+/* ============ REVISION LADDER ============ */
+.ladder{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--surface)}
+.rung{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:18px 20px;border-bottom:1px solid var(--line-soft);align-items:start}
+.rung:last-child{border-bottom:0}
+.rung .rl{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ground);background:var(--ink-3);border-radius:3px;padding:5px 0;text-align:center;
+}
+.rung:nth-child(1) .rl{background:var(--jade)}
+.rung:nth-child(2) .rl{background:var(--gold)}
+.rung:nth-child(3) .rl{background:var(--coral)}
+.rung:nth-child(4) .rl{background:var(--rust)}
+.rung .rb{display:flex;flex-direction:column;gap:5px}
+.rung .rb strong{font-size:15.5px;color:var(--ink);font-weight:600}
+.rung .rb span{font-size:14.3px;color:var(--ink-2);line-height:1.58}
+.rung .rb span b{color:var(--ink)}
+@media (max-width:660px){.rung{grid-template-columns:1fr;gap:8px}.rung .rl{justify-self:start;padding:5px 14px}}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -384,6 +488,7 @@ footer a{color:var(--ink-2)}
       <div class="stat"><span class="k">Generations</span><span class="v">23</span><span class="n">Not 70</span></div>
       <div class="stat"><span class="k">Mean shot length</span><span class="v">13.0s</span><span class="n">Feature-grade</span></div>
       <div class="stat"><span class="k">Longest hold</span><span class="v">18s</span><span class="n">Two of them</span></div>
+      <div class="stat"><span class="k">Anchor frames</span><span class="v">39</span><span class="n">Images lead, video follows</span></div>
       <div class="stat"><span class="k">Deadline</span><span class="v warn">Sep 3</span><span class="n">Opens Aug 10</span></div>
       <div class="stat"><span class="k">Aspect</span><span class="v">21:9</span><span class="n">2.39 scope</span></div>
     </div>
@@ -396,6 +501,9 @@ footer a{color:var(--ink-2)}
   <a href="#doctrine">Doctrine</a>
   <a href="#blend">Blend Options</a>
   <a href="#shots">Shot List</a>
+  <a href="#pipeline">Pipeline &amp; Gates</a>
+  <a href="#frames">Frame String</a>
+  <a href="#revision">Revision Rules</a>
   <a href="#matrix">Model Matrix</a>
   <a href="#technique">Techniques</a>
   <a href="#truths">Layered Truths</a>
@@ -528,6 +636,71 @@ footer a{color:var(--ink-2)}
     <p>Every row is one generation. Open a shot for its camera direction, the seam that gets it into the next shot, and a prompt written to be read in public. Model choices are drawn from the live Higgsfield catalogue &mdash; cross-reference the matrix below.</p>
   </div>
   <div id="shotlist"></div>
+</div></section>
+
+<!-- ================= PIPELINE ================= -->
+<section id="pipeline"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">How it gets made</span>
+    <h2>Eight phases, five gates</h2>
+    <p>The pipeline is inverted from the obvious one. You do not generate shots and then fix them &mdash; you build the film as a <b style="color:var(--ink)">string of still anchor frames</b>, approve it while it is still cheap, and only then spend video credits interpolating between images you have already signed off on. Roughly <b style="color:var(--ink)">200 images to 76 video generations</b>.</p>
+    <p>A gate is a hard stop. Nothing downstream of it begins until it locks. Gates exist because the failure mode on a 24-day schedule is not bad work &mdash; it is <em>endless tweaking of work that was already good enough</em>, on day nineteen, while three shots remain ungenerated.</p>
+  </div>
+  <div class="phases" id="phases"></div>
+</div></section>
+
+<!-- ================= FRAME STRING ================= -->
+<section id="frames"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The core asset</span>
+    <h2>The frame string</h2>
+    <p>Every shot has an <b style="color:var(--ink)">A-frame</b> and a <b style="color:var(--ink)">B-frame</b>. Where two shots join continuously, they <em>share one image</em> &mdash; shot N's B-frame is literally shot N+1's A-frame, one file, used twice. That is why 23 shots need 46 slots but only <b style="color:var(--ink)">39 images</b>.</p>
+    <p>Click any slot for what that frame has to contain. Gold slots are shared joins; dashed indigo slots are <b style="color:var(--ink)">bridge frames</b> &mdash; authored images of the seam itself; coral slots are matched pairs designed together across a transition.</p>
+  </div>
+  <div class="fs-tools">
+    <div class="fs-legend">
+      <span><i class="dot" style="background:var(--surface-2);border:1px solid var(--line)"></i> Single-use anchor</span>
+      <span><i class="dot" style="background:var(--gold-soft);border:2px solid var(--gold)"></i> Shared join &mdash; one image, two shots</span>
+      <span><i class="dot" style="background:var(--void-soft);border:2px dashed var(--void)"></i> Bridge frame &mdash; the seam, authored</span>
+      <span><i class="dot" style="background:var(--coral-soft);border:1px solid var(--coral-line)"></i> Matched pair across a transition</span>
+    </div>
+  </div>
+  <div class="fs-scroll"><div class="fs-track" id="fstrack"></div></div>
+  <div class="fdetail" id="fdetail"><p class="placeholder">Select a frame slot above.</p></div>
+  <div class="fs-counts" id="fcounts"></div>
+
+  <div style="margin-top:34px">
+    <h3 style="font-size:23px;margin-bottom:8px">Why this makes rearranging nearly free</h3>
+    <p style="font-size:15.5px;color:var(--ink-2);line-height:1.62;max-width:76ch;margin-bottom:18px">Once the film exists as a string of anchors, structure becomes an editing problem instead of a regeneration problem. Every operation below costs images, not video.</p>
+    <div class="rules">
+      <div class="rule-item"><div class="rk">Reorder two shots<em>Costs: 2 images</em></div><div class="rv">Swap them in the ledger. Only the <b>two new joins</b> need frames &mdash; everything inside each shot is untouched. The old join frames go in the bin, not the bonfire.</div></div>
+      <div class="rule-item"><div class="rk">Insert a shot<em>Costs: 3 images</em></div><div class="rv">Generate its A and B frames plus one bridge into the neighbour. The shots on either side keep their existing anchors and never regenerate.</div></div>
+      <div class="rule-item"><div class="rk">Cut a shot<em>Costs: 1 image</em></div><div class="rv">Delete it and generate a single bridge frame joining its former neighbours. If those neighbours already shared a look, often even that is unnecessary.</div></div>
+      <div class="rule-item"><div class="rk">Split a shot that keeps failing<em>Costs: 1 image</em></div><div class="rv">Generate one mid-frame and turn a 14s generation into two chained 7s generations against the same outer anchors. <b>Shorter spans are dramatically more reliable</b> &mdash; this is the standard rescue, not a compromise.</div></div>
+      <div class="rule-item"><div class="rk">Change the whole grade<em>Costs: 0 images</em></div><div class="rv">Colour lives in the finish, not the generation. Do not re-roll anchors to chase a look you can reach in the grade &mdash; a mistake that has eaten more AI-film schedules than any other.</div></div>
+      <div class="rule-item"><div class="rk">Promote a discovered frame<em>Costs: 0 images</em></div><div class="rv">When a video generation produces something better than the anchor you fed it, <b>extract its final frame and promote it into the ledger</b> as the new B-frame. The film improves by harvesting its own accidents. Do this during the cheap motion pass, before anything is final.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= REVISION ================= -->
+<section id="revision"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Discipline</span>
+    <h2>Revision rules &mdash; when to re-roll and when to stop</h2>
+    <p>Re-rolling is the most expensive habit in AI filmmaking because it feels like progress. These rules exist so a bad shot resolves in hours rather than consuming a week. <b style="color:var(--ink)">Three attempts, then you stop changing the dice and start changing the input.</b></p>
+  </div>
+  <div class="ladder">
+    <div class="rung"><span class="rl">1st</span><div class="rb"><strong>Re-roll unchanged, up to three times</strong><span>Same anchors, same prompt, same model. Generation is stochastic and the third roll is often the one. If a shot has not landed in three, the dice are not the problem &mdash; <b>stop rolling</b>.</span></div></div>
+    <div class="rung"><span class="rl">2nd</span><div class="rb"><strong>Change the anchor frames, not the prompt</strong><span>Three failures means the model cannot get from your A-frame to your B-frame in the time allowed. Usually the two frames are <b>too far apart</b>. Move them closer together, or re-generate the B-frame nearer the A. This fixes more failures than prompt rewriting ever will.</span></div></div>
+    <div class="rung"><span class="rl">3rd</span><div class="rb"><strong>Split the span</strong><span>Generate one mid-frame and run two shorter chained generations against the same outer anchors. A 14-second ask becomes two 7-second asks. <b>The cut is invisible because both halves share a real frame</b> &mdash; you have not added a cut, you have added an anchor.</span></div></div>
+    <div class="rung"><span class="rl">Last</span><div class="rb"><strong>Change what the shot is</strong><span>If a span fails after splitting, the shot is asking for something the tools cannot do. Re-stage it: a locked-off frame instead of a move, a reaction instead of an event, a body wipe instead of a reveal. <b>Do this before the final generation phase, never during it</b> &mdash; by then the schedule has no room for it.</span></div></div>
+  </div>
+  <div class="grid g3" style="margin-top:22px">
+    <div class="card"><span class="tag">Tweak budget</span><h3>Two passes, then it ships</h3><p>Each shot gets one revision pass after its first accepted version, and one after picture lock. A third pass requires cutting something else &mdash; time is conserved, not created.</p></div>
+    <div class="card"><span class="tag">Batch, don't iterate</span><h3>Four variants beats four attempts</h3><p>Generate anchor frames in batches of four at once and pick, rather than rolling one at a time and judging in isolation. Choosing between options is fast; evaluating a single image against an imagined ideal is not.</p></div>
+    <div class="card"><span class="tag">Note discipline</span><h3>Notes name the frame, not the feeling</h3><p>"Movement II feels flat" cannot be actioned. "<b style="color:var(--ink)">FRAME-14</b> reads warm; the puppeteer's world has no warmth in it" can be, in one image, in four minutes.</p></div>
+  </div>
 </div></section>
 
 <!-- ================= MATRIX ================= -->
@@ -916,17 +1089,99 @@ const KEYS=[
 {k:"OPENAI_API_KEY",n:"OpenAI",d:"Optional — alternate drafting and image passes",u:"https://platform.openai.com/api-keys",l:"API keys"}
 ];
 
+const PHASES=[
+{p:"Phase 0",d:"Aug 10–12",w:"2 days",t:"Continuity kit",
+ o:[["img","~24 images"]],
+ x:"Nothing from the film is generated yet. You are building the reference set that every later image points at. Train <b>Soul V2</b> for Gwendolyn and for Torin separately. Build one <b>Reference Element</b> for the two brothers <i>together</i> — Soul carries a single identity per generation and the brothers share frame in every shot they appear in. Then three lighting plates per movement (key direction, colour temperature, haze density) and prop plates for the crystal shell, the Creation Stone, the white robes and the leviathan's coral plating."},
+{g:"Gate A",t:"Identity lock",
+ x:"Every character, palette and lighting reference is final. <b>No anchor frame is generated before this locks</b> — an anchor built on an unlocked face has to be rebuilt, and you will have made thirty-nine of them."},
+{p:"Phase 1",d:"Aug 12–17",w:"5 days",t:"The frame string",
+ o:[["img","~156 images"],["img","39 selected"]],
+ x:"The bulk of the entire production, and it is <b>all stills</b>. Generate every anchor in the ledger below in batches of four, then select. Work in film order so shared joins are generated once and inherited. This is the phase where the movie is actually decided; everything after it is execution."},
+{g:"Gate B",t:"String lock",
+ x:"All 39 anchors on one contact sheet, reviewed together. Any face, costume, light direction or grade that jumps between neighbouring frames is <b>drift you catch for the price of an image instead of a video</b>. Fix here or accept it forever."},
+{p:"Phase 2",d:"Aug 17–18",w:"1 day",t:"Stills reel",
+ o:[["","1 edit"]],
+ x:"Cut the 39 anchors to their exact shot durations as a stills animatic — each frame held for its real length — with temp sound and the dialogue read aloud. Then <b>watch all five minutes without stopping</b>. This is the only honest test of whether a 13-second average holds attention, and it costs one day."},
+{g:"Gate C",t:"Timing lock",
+ x:"Runtime, shot order and shot count freeze. <b>This is the last cheap moment to rearrange anything.</b> After this gate a structural change costs video generations instead of images, and the schedule stops absorbing it."},
+{p:"Phase 3",d:"Aug 18–21",w:"3 days",t:"Cheap motion pass",
+ o:[["vid","23 video, budget tier"]],
+ x:"Every shot at Kling 3.0 Turbo or Seedance 2.0 Mini. <b>You are not judging quality here</b> — you are answering two questions: does each join actually read as continuous, and can the model get from this A-frame to this B-frame at all? Shots that fail this pass have an anchor problem, and you find it for pennies."},
+{g:"Gate D",t:"Motion lock",
+ x:"Every seam confirmed. Any frame the cheap pass produced that beats your anchor gets <b>extracted and promoted into the ledger</b>. The final pass then inherits an improved string rather than repeating a known failure at full price."},
+{p:"Phase 4",d:"Aug 21–29",w:"8 days",t:"Final generation",
+ o:[["vid","23 video, final tier"]],
+ x:"Movement by movement, in strict shot order so chains build forward correctly. Movement II must be generated in sequence — S7's end frame is S8's start frame. Give <b>S20</b>, the mountain, more attempts than any other shot in the film; it is fourteen unbroken seconds and it cannot be rescued in the edit."},
+{p:"Phase 5",d:"rolling",w:"inside P4",t:"Frame rescue",
+ o:[["img","~20 images"],["vid","~30 video"]],
+ x:"The revision segment, running concurrently rather than after. Any shot that fails three times <b>leaves the main queue immediately</b> and enters the escalation ladder below. It does not block the shots behind it, and it does not get quietly retried a fourth time."},
+{p:"Phase 6",d:"Aug 29–31",w:"2 days",t:"Finish",
+ o:[["","deflicker → upscale → grade"]],
+ x:"In that order, without exception. Deflicker every extended and chained shot first, then upscale to 2K/4K with the <code>aigc</code> preset, then grade. <b>Upscaling before deflicking sharpens the shimmer into the master permanently</b> and there is no route back from it."},
+{g:"Gate E",t:"Picture lock",
+ x:"No further generation. Anything still wrong is now a sound or grade problem, and if it is neither, it ships as it is."},
+{p:"Phase 7",d:"Sep 1–3",w:"3 days",t:"Sound and submit",
+ o:[["","mix + delivery"]],
+ x:"Score everything except S13 — and protect that silence from every instinct you will have to fill it. Then <b>read all 23 prompts as a stranger would</b>, because they are published after the deadline. Submit through the Cinema Studio festival project with a full day of margin; deadline night is not when you want to discover a project-scope problem."}
+];
+
+const FRAMES=[
+{f:"F01",r:"single",mv:1,s:"S1 A",d:"Total black with the first suggestion of plasma at the bottom edge. The film's first frame should be almost nothing — everything the opening does, it does by revealing."},
+{f:"F02",r:"shared",mv:1,s:"S1 B / S2 A",d:"The courtyard of solidified light just resolving out of the star's glare, no figures yet. The forward-extension seam lives inside this glare, which is why the glare has to be genuinely blinding."},
+{f:"F03",r:"single",mv:1,s:"S2 B",d:"Two figures from behind at the courtyard's far edge. Worlds on stems in the foreground, the crystal shell refracting the star beneath her."},
+{f:"F04",r:"single",mv:1,s:"S3 A",d:"Reverse two-shot, 40mm, both faces legible, star bokeh behind. This frame has to feel like a different lens on the same room — not a different room."},
+{f:"F05",r:"single",mv:1,s:"S3 B",d:"Gwendolyn turning her head. The motivated cut out; the movement is the edit point."},
+{f:"F06",r:"single",mv:1,s:"S4 A",d:"Locked medium close-up, 75mm, lit from below, refraction crawling across the crystal. Composition must survive fourteen seconds of no camera movement."},
+{f:"F07",r:"single",mv:1,s:"S4 B",d:"Identical framing fourteen seconds later. Wet eyes that have not spilled. Only the face has changed — prove it by matching everything else exactly."},
+{f:"F08",r:"single",mv:1,s:"S5 A",d:"Torin's hands on her face. Tender, unhurried, both fully in frame."},
+{f:"F09",r:"match",mv:1,s:"S5 B",d:"Macro on the frozen tear, one facet filling frame, the interior a moving blue. <b>Design this together with F10</b> — the match cut is made in the pairing, not in the edit."},
+{f:"F10",r:"match",mv:2,s:"S6 A",d:"Open storm ocean at the exact scale, colour and shape of F09's facet. If these two images are made independently the 108-year jump costs the audience a beat it should not cost."},
+{f:"F11",r:"shared",mv:2,s:"S6 B / S7 A",d:"Gwendolyn running, camera locked beside her, the world streaked horizontal behind. Her body stable, everything else destroyed by speed."},
+{f:"F12",r:"shared",mv:2,s:"S7 B / S8 A",d:"Her body flat against the grey ice wall, hair spread, entirely unhurt. The impact frame and the launch frame are the same frame."},
+{f:"F13",r:"single",mv:2,s:"S8 B",d:"The ice wall losing cohesion and collapsing into a mountain of seawater."},
+{f:"F14",r:"single",mv:2,s:"S9 A",d:"Over the puppeteer's shoulder, quarry small and distant. <b>No warmth anywhere in frame</b> — this is the only shot in the film shot from the dark side and it should feel colour-graded differently."},
+{f:"F15",r:"single",mv:2,s:"S9 B",d:"Her fingers mid-gesture, the marionettes in the middle distance answering the movement exactly."},
+{f:"F16",r:"single",mv:2,s:"S10 A",d:"The leviathan erupting, camera near the water looking up, dead coral sheeting off its plating in slabs."},
+{f:"F17",r:"shared",mv:2,s:"S10 B / S11 A",d:"Gwendolyn tiny between the opening jaws. Scale is the whole point of the shot and this frame has to carry it alone."},
+{f:"B01",r:"bridge",mv:2,s:"S11 B / S12 A",d:"<b>Bridge frame.</b> The leviathan's flank filling frame to near-black. Must go <i>genuinely</i> near-black — a 70&#37; obscured frame reads as a hidden cut that failed, which is worse than an honest cut."},
+{f:"F18",r:"single",mv:2,s:"S12 B",d:"She launches forward, lightning still circulating in the shell around her."},
+{f:"F19",r:"single",mv:2,s:"S13 A",d:"Orbital, from the exosphere. The vortex eye open in the storm system. Cold, clinical, no human scale anywhere."},
+{f:"F20",r:"single",mv:2,s:"S13 B",d:"The eye beginning to close. Still silent. Nothing in frame suggests anything happened."},
+{f:"F21",r:"single",mv:2,s:"S14 A",d:"Gwendolyn falling upward, crystal fracturing, the fractures filling with light rather than dark."},
+{f:"F22",r:"match",mv:2,s:"S14 B",d:"Empty sky, planetary curvature, the green streak crossing it. <b>Paired with F23</b> — one object carries the audience across a day and three thousand miles."},
+{f:"F23",r:"match",mv:3,s:"S15 A",d:"Coral Beach at dawn, wide and static, with the streak's residue still fading as a low star. Warm for the first time in three minutes."},
+{f:"F24",r:"single",mv:3,s:"S15 B",d:"Two boys stopped at the tide line, small in a very wide frame that has not moved and will not."},
+{f:"F25",r:"single",mv:3,s:"S16 A",d:"Underwater reef in full colour, two silhouettes crossing the surface far above, backlit."},
+{f:"F26",r:"single",mv:3,s:"S16 B",d:"The shelf edge and the black past it. <b>Never resolve what is down there</b> — the frame's job is to withhold."},
+{f:"F27",r:"single",mv:3,s:"S17 A",d:"The boys staggering up the beach out of the surf, static wide, sun low and behind."},
+{f:"F28",r:"single",mv:3,s:"S17 B",d:"Boys flat on the sand, twelve ships inside the same unmoving frame, everything backlit red. The stillness against the violence is the shot."},
+{f:"F29",r:"single",mv:3,s:"S18 A",d:"The white temple taking direct hits, sand and torn flowers falling down its face, no reaction of any kind."},
+{f:"B02",r:"bridge",mv:3,s:"S18 B / S19 A",d:"<b>Bridge frame.</b> The dust wall — everything flattened to brown shadow, no legible shapes at all. The source text wrote this cut for you; the frame just has to honour it."},
+{f:"F30",r:"shared",mv:3,s:"S19 B / S20 A",d:"Two lines of Guardians kneeling, heads bowed, metal shot still falling around them and not touching them."},
+{f:"F31",r:"single",mv:3,s:"S20 B",d:"The mountain's particles falling faster than gravity, ships going under. The Guardians still have not raised their heads."},
+{f:"F32",r:"single",mv:3,s:"S21 A",d:"Flat open ocean. No wreckage, nothing left in the sky. Almost boring, which is exactly the intent."},
+{f:"F33",r:"single",mv:3,s:"S21 B",d:"Temple doors closing, the garden bed replanted, craters filled. Order restored at unsettling speed."},
+{f:"F34",r:"single",mv:3,s:"S22 A",d:"Both boys in the beach grass, Mikael mid-sentence and delighted, Ammon already elsewhere."},
+{f:"F35",r:"single",mv:3,s:"S22 B",d:"Ammon in close-up at the end of the push, a single dark cloud deep out of focus behind him. <b>The most important single image in the film</b> — give it the largest batch and the longest look."},
+{f:"F36",r:"single",mv:1,s:"S23 A",d:"Torin alone at the courtyard edge, standing where two people stood four minutes earlier."},
+{f:"F37",r:"single",mv:1,s:"S23 B",d:"The frozen tear as one point of light on a vast luminous floor. Last frame of the film; it should rhyme with F01's emptiness."}
+];
+
 const CHECKS=[
-{d:"Aug 10–12",t:"Lock characters before anything else",n:"Train Soul V2 for Gwendolyn and for Torin. Build a Reference Element for the two brothers together — they share frame in every shot they appear in, and Soul only carries one identity per generation."},
-{d:"Aug 12–14",t:"Animatic the whole film in Kling 3.0 Turbo",n:"All 23 shots, cheapest tier, no notes on quality. You are testing whether 13-second average shot length holds attention for five minutes. If it drags at minute three, fix it here, not at minute twenty of the grade."},
-{d:"Aug 14–16",t:"Build the three transition assets first",n:"The frozen tear facet, the green Stone streak, the dust wall. Every movement boundary depends on them, and they are the shots most likely to need re-rolling."},
-{d:"Aug 16–21",t:"Movement I — the opening 34 seconds unbroken",n:"S1 in Wan 3.0, then extend forward into S2. This is the highest-risk sequence in the film because it has no cuts to hide behind. Budget re-rolls generously."},
-{d:"Aug 21–27",t:"Movement II — chain the combat",n:"Work strictly in order. S7's end frame is S8's start frame; S11 ends on the body wipe that opens S12. Do not generate these out of sequence — the chain is the shot."},
-{d:"Aug 27–30",t:"Movement III — hold the locked frames",n:"S20 is the one that cannot be cut. Give it the most attempts of any shot in the film. If it needs eight rolls, it gets eight rolls."},
-{d:"Aug 30–31",t:"Deflicker, then upscale — in that order",n:"Deflicker every extended and chained shot first. Upscale after. Reversing this bakes shimmer into the master and there is no way back."},
-{d:"Sep 1–2",t:"Sound, and the silence",n:"Score everything except S13. Protect the silence at the vortex from every instinct you will have to fill it."},
-{d:"Sep 2",t:"Read your own prompts as a stranger",n:"They are published after the deadline. Anything lazy, anything contradictory, anything you would not want quoted — fix it now."},
-{d:"Sep 3",t:"Submit through the festival project",n:"Confirm the entry sits inside the Cinema Studio festival project. Leave a full day of margin; do not discover a project-scope problem on deadline night."}
+{d:"Aug 10–12",t:"Phase 0 — build the continuity kit",n:"Soul V2 for Gwendolyn and Torin separately. One Reference Element for both brothers together. Lighting plates and prop plates. Nothing from the film itself gets generated yet."},
+{d:"Aug 12",t:"Gate A — identity lock",n:"Faces, palette and lighting are final. Do not generate a single anchor frame before this closes."},
+{d:"Aug 12–17",t:"Phase 1 — generate the frame string",n:"All 39 anchors, four variants each, selected in film order so shared joins are made once and inherited. Roughly 156 image generations and zero video."},
+{d:"Aug 17",t:"Gate B — string lock",n:"All 39 anchors on one contact sheet. Hunt for drift in faces, costume, light direction and grade between neighbours. Fixing it here costs an image; fixing it later costs a shot."},
+{d:"Aug 17–18",t:"Phase 2 — cut the stills reel",n:"Anchors held for their real durations, temp sound, dialogue read aloud. Watch all five minutes without stopping. This is the only honest test of whether the pacing holds."},
+{d:"Aug 18",t:"Gate C — timing lock",n:"Order, runtime and shot count freeze. This is the last cheap moment to rearrange anything at all."},
+{d:"Aug 18–21",t:"Phase 3 — cheap motion pass",n:"Every shot at budget tier. Not judging quality — confirming the joins read continuous and each A-frame can actually reach its B-frame."},
+{d:"Aug 21",t:"Gate D — motion lock",n:"Seams confirmed. Promote any discovered frame that beats its anchor back into the ledger before the final pass inherits a known failure."},
+{d:"Aug 21–29",t:"Phase 4 — final generation",n:"Movement by movement, strict shot order. Movement II must run in sequence because the chain is the shot. S20 gets the most attempts of anything in the film."},
+{d:"rolling",t:"Phase 5 — frame rescue",n:"Runs concurrently. Three failures and a shot leaves the queue for the escalation ladder rather than blocking everything behind it."},
+{d:"Aug 29–31",t:"Phase 6 — deflicker, upscale, grade",n:"In that order, without exception. Reversing the first two bakes shimmer into the master permanently."},
+{d:"Aug 31",t:"Gate E — picture lock",n:"No further generation. Whatever is still wrong is now a sound or grade problem, or it ships."},
+{d:"Sep 1–3",t:"Phase 7 — sound, prompt review, submit",n:"Score everything except S13. Read all 23 prompts as a stranger — they get published. Submit inside the Cinema Studio festival project with a full day of margin."}
 ];
 
 /* ================= RIBBON ================= */
@@ -1021,6 +1276,65 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
       b.textContent="Copied"; b.classList.add("done");
       setTimeout(()=>{b.textContent="Copy prompt";b.classList.remove("done")},1600);
     }).catch(()=>{b.textContent="Select and copy manually"});
+  });
+})();
+
+/* ================= PIPELINE ================= */
+(function(){
+  const host=document.getElementById("phases");
+  PHASES.forEach(p=>{
+    const el=document.createElement("div");
+    if(p.g){
+      el.className="gate";
+      el.innerHTML='<span class="gk">'+p.g+'</span>'+
+        '<span class="gb"><strong>'+p.t+'</strong><span>'+p.x+'</span></span>';
+    }else{
+      el.className="phase";
+      el.innerHTML='<span class="phase-k"><span class="pn">'+p.p+'</span><span class="pd">'+p.d+'</span><span class="pw">'+p.w+'</span></span>'+
+        '<span class="phase-b"><h4>'+p.t+'</h4><span class="pdesc">'+p.x+'</span>'+
+        '<span class="outputs">'+p.o.map(o=>'<span class="out '+o[0]+'">'+o[1]+'</span>').join("")+'</span></span>';
+    }
+    host.appendChild(el);
+  });
+})();
+
+/* ================= FRAME STRING ================= */
+(function(){
+  const track=document.getElementById("fstrack");
+  const detail=document.getElementById("fdetail");
+  const ROLE={single:"anchor",shared:"shared join",bridge:"bridge",match:"matched pair"};
+  FRAMES.forEach(fr=>{
+    const cell=document.createElement("div");
+    cell.className="fcell";
+    cell.innerHTML=
+      '<button class="fslot" data-r="'+fr.r+'" data-f="'+fr.f+'" aria-label="'+fr.f+' — '+fr.s+'">'+
+        '<span class="fid">'+fr.f+'</span><span class="frole">'+ROLE[fr.r]+'</span>'+
+      '</button>'+
+      '<span class="fshot" data-mv="'+fr.mv+'">'+fr.s+'</span>';
+    track.appendChild(cell);
+  });
+  track.addEventListener("click",e=>{
+    const b=e.target.closest(".fslot"); if(!b)return;
+    const fr=FRAMES.find(x=>x.f===b.dataset.f);
+    detail.innerHTML='<div class="fdh"><strong>'+fr.f+'</strong><em>'+ROLE[fr.r]+'</em><em>serves '+fr.s+'</em><em>Movement '+["","I","II","III"][fr.mv]+'</em></div><p>'+fr.d+'</p>';
+  });
+
+  const shared=FRAMES.filter(f=>f.r==="shared"||f.r==="bridge").length;
+  const slots=SHOTS.length*2;
+  const counts=[
+    ["39","Anchor images","Not 46 — seven joins share a single image between two shots"],
+    [String(slots),"Frame slots","23 shots &times; A-frame and B-frame"],
+    [String(shared),"Shared joins","Including 2 authored bridge frames"],
+    ["~156","Image generations","39 anchors at four variants each, then select"],
+    ["~200","Total images","Anchors plus continuity kit plus rescue"],
+    ["~76","Video generations","23 final, 23 cheap pass, ~30 re-rolls"]
+  ];
+  const cwrap=document.getElementById("fcounts");
+  counts.forEach(c=>{
+    const d=document.createElement("div");
+    d.className="fcount";
+    d.innerHTML='<span class="v">'+c[0]+'</span><span class="k">'+c[1]+'</span><span class="n">'+c[2]+'</span>';
+    cwrap.appendChild(d);
   });
 })();
 
