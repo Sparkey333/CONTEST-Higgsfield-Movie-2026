@@ -2,7 +2,7 @@
 
 > **Read this first, every session. Update it last, every session.**
 
-**Last updated:** 2026-08-08 · **Phase:** Pre-production · **Warning level:** 🟢 GREEN
+**Last updated:** 2026-08-10 · **Phase:** Pre-production · **Warning level:** 🟢 GREEN
 
 ---
 
@@ -11,9 +11,9 @@
 | | |
 |---|---|
 | **Deadline** | Aug 31, 2026 · 11:59 PM PT |
-| **Days remaining** | **23** |
-| Festival project opens | Aug 10 (T-2) |
-| Next gate | **GATE 1 — concept locked + compliance cleared, Aug 12** |
+| **Days remaining** | **21** |
+| Festival project opens | **TODAY, Aug 10** |
+| Next gate | **GATE 1 — concept locked + compliance cleared, Aug 12 (T-2)** |
 
 ---
 
@@ -28,6 +28,8 @@
 | Concepts | Edwin | 🟡 Three drafted — **not yet ratified** |
 | Reference study | Braintrust | ✅ Delivered |
 | Production plan | Catmull | ✅ 23-day schedule set |
+| The Void Room (app) | — | ✅ Built and **published** — see below |
+| Early-warning system | Catmull | 🟡 Scripts + cron live; **Routines not yet created** |
 | Script | Edwin | ⬜ Not started |
 | Character refs | Phedon | ⬜ Not started |
 | Sound / music | Anderson | ⬜ Not started |
@@ -46,6 +48,32 @@
    reconstructed via search. See `docs/00-verification-queue.md`.
 3. **Campaign has not started.** 30% of the rubric is engagement and the clock is
    already running. Every silent day is forfeited score.
+
+---
+
+## Published
+
+**The Void Room** — the whole project as one shareable page:
+https://claude.ai/code/artifact/6cc9a223-2104-418d-9ac3-de09167d3f07
+
+Private until shared from the page's share menu. Rooms link directly by hash:
+`#mission` · `#council` · `#library` · `#theater`.
+
+Source is `app/index.html`. After editing it, run `bash scripts/build-artifact.sh`
+and re-publish **to the same URL** — do not mint a new one, the link is shared.
+
+---
+
+## Reminders
+
+Three layers, documented in `docs/09-reminders.md`:
+
+1. `bash scripts/standup.sh` — on demand, always works
+2. `bash scripts/install-reminders.sh --install` — cron alerts on every gate
+3. **Claude Routines — NOT YET CREATED.** They need interactive approval, which the
+   headless session that built this could not give. In an interactive session, say
+   *"create the festival Routines from docs/09-reminders.md"* — the specs and prompts
+   are written and ready.
 
 ---
 

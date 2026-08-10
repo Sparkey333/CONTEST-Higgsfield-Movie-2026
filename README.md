@@ -16,7 +16,8 @@
 
 Win the **Higgsfield Global Film Festival** — a $1,000,000 AI film contest judged by
 **Edwin Catmull** (5× Oscar winner, Pixar co-founder, ex-President of Walt Disney
-Animation) and **Phedon Papamichael** (2× Oscar-nominated cinematographer).
+Animation), **Phedon Papamichael** (2× Oscar-nominated cinematographer), and
+**Paul W. S. Anderson** (*Mortal Kombat*, *Resident Evil*, *Event Horizon*).
 
 **Deliverable:** a 3–5 minute AI short film. Any story, any genre. Watermarked,
 published by public post, with all prompts and generation history made public.
@@ -36,6 +37,10 @@ published by public post, with all prompts and generation history made public.
 Everything in this repo is also a **single self-contained web app**:
 **[`app/index.html`](app/index.html)** — a small repertory cinema with four rooms.
 
+### ▶ **[Open The Void Room](https://claude.ai/code/artifact/6cc9a223-2104-418d-9ac3-de09167d3f07)**
+
+*Published and shareable. Private until shared from the page's share menu.*
+
 | Room | What's in it |
 |---|---|
 | **01 · The Mission** | Live countdown, prize ladder, the three-judge jury, rubric, milestone gates, open blockers |
@@ -43,8 +48,19 @@ Everything in this repo is also a **single self-contained web app**:
 | **03 · The Library** | The short-film library — **drag any title to re-rank it or move it between tiers.** Saves to your browser |
 | **04 · The Theater** | A 3D auditorium. Drag to look around, hang a poster on the screen, watch from the seats |
 
-Open it locally, or share the published link (see below). No build step, no
-dependencies, no network calls — one file.
+Every room is hash-routed, so any room links directly — `…/artifact/…#library`,
+`#theater`, `#council`, `#mission`.
+
+No dependencies, no network calls, one file. Two forms of it:
+
+| File | For |
+|---|---|
+| [`app/index.html`](app/index.html) | **The source.** A complete HTML document — open it locally, or serve it |
+| [`app/void-room.artifact.html`](app/void-room.artifact.html) | Generated fragment for publishing. Never hand-edit |
+
+```bash
+bash scripts/build-artifact.sh   # regenerate the fragment after editing app/index.html
+```
 
 ---
 
@@ -52,6 +68,7 @@ dependencies, no network calls — one file.
 
 ```bash
 bash scripts/deadline.sh        # countdown, warning level, milestone gates
+bash scripts/standup.sh         # the above + today's focus + live blockers
 ```
 
 Then read, in order:
@@ -122,8 +139,14 @@ Full analysis: **[`docs/02-scoring-model.md`](docs/02-scoring-model.md)**
 | [`docs/05-council-protocol.md`](docs/05-council-protocol.md) | Roles, responsibilities, memory, soul |
 | [`docs/06-concepts.md`](docs/06-concepts.md) | The three candidate films |
 | [`docs/07-reference-films.md`](docs/07-reference-films.md) | Exemplar shorts + what to steal |
+| [`docs/08-film-library.md`](docs/08-film-library.md) | The 16-film library, flat mirror of The Library room |
+| [`docs/09-reminders.md`](docs/09-reminders.md) | The three-layer early-warning system |
 | [`memory/`](memory/) | State, decisions, session log |
-| [`scripts/deadline.sh`](scripts/deadline.sh) | Countdown + early-warning system |
+| [`app/index.html`](app/index.html) | The Void Room — the whole repo as one web app |
+| [`scripts/deadline.sh`](scripts/deadline.sh) | Countdown, warning level, milestone gates |
+| [`scripts/standup.sh`](scripts/standup.sh) | Daily standup — countdown + focus + live blockers |
+| [`scripts/install-reminders.sh`](scripts/install-reminders.sh) | Install the gate ladder into cron |
+| [`scripts/build-artifact.sh`](scripts/build-artifact.sh) | Rebuild the publishable fragment from the app |
 
 ---
 
@@ -138,6 +161,16 @@ Full analysis: **[`docs/02-scoring-model.md`](docs/02-scoring-model.md)**
 | **4** | Aug 27 | Picture lock |
 | **5** | Aug 29 | Sound locked, final render, watermark verified |
 | **6** | **Aug 30** | **SUBMIT** — Aug 31 is buffer only |
+
+Make the calendar speak up on its own:
+
+```bash
+bash scripts/install-reminders.sh            # dry run — shows what it would add
+bash scripts/install-reminders.sh --install  # desktop alerts on every gate above
+```
+
+Full ladder, including the Claude Routines that run the standup for you:
+**[`docs/09-reminders.md`](docs/09-reminders.md)**
 
 ---
 

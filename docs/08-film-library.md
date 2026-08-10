@@ -141,3 +141,9 @@ Add it to the `FILMS` array in [`app/index.html`](../app/index.html) with an `id
 we are stealing from it**. A film with no stealable decision does not belong here.
 Rankings already saved in a browser survive the addition — new films drop into their
 default tier.
+
+Then rebuild the published copy and re-publish it so the shared link matches:
+
+```bash
+bash scripts/build-artifact.sh
+```

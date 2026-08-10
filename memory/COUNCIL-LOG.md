@@ -128,3 +128,54 @@ loses his vote outright.
 5. Aug 10: enter the project, verify Cinema Studio submission mechanics
 
 ---
+
+## 2026-08-10 · Session 003 · The Void Room opens
+
+**Phase:** Pre-production · **T-21 days** · **Level:** 🟢 GREEN
+
+### What happened
+
+Two pieces of infrastructure that had been outstanding since Session 001 got finished:
+the project became a **place** you can walk into, and the calendar learned to speak.
+
+**The Void Room shipped.** The whole repo — mission, jury, council, library, theater —
+is now one self-contained page with no dependencies and no network calls. The film
+library grew from 8 titles to **16 across four tiers**, top tier preserved as
+instructed; every entry can be dragged to re-rank or moved between tiers, and the
+order persists in the browser. The fourth room is a CSS-3D auditorium with procedural
+SVG posters for our own three concepts.
+
+Published and shareable:
+**https://claude.ai/code/artifact/6cc9a223-2104-418d-9ac3-de09167d3f07**
+
+Split into a source document and a generated publish fragment (`scripts/build-artifact.sh`)
+so there is exactly one place to edit and no chance of the two drifting apart.
+
+**The early-warning system was built out to three layers** (`docs/09-reminders.md`):
+`standup.sh` on demand, a cron ladder covering all six gates, and Claude Routines that
+wake a session in the repo and actually run the standup.
+
+### What did not happen
+
+**The Routines were not created.** Creating one requires interactive approval and this
+session ran headless — two attempts, both refused at the permission layer. This is
+called out rather than buried: layers 1 and 2 are live and layer 3 is written, specced,
+and one sentence away in any interactive session. Reported to the human directly.
+
+### Open at session end
+
+- 🔴 Credits still 0 — blocks all generation
+- 🔴 Campaign still not started — T-21 and every silent day is forfeited score
+- 🟡 Concept revision (*Tidewalker*) not yet ratified through the full gate
+- 🟡 Routines pending human approval
+- 🟡 **Aug 10 is today** — the official project opens; submission mechanics unverified
+
+### Next session
+
+1. Unblock credits
+2. **Enter the official project and verify submission mechanics** — this is today's job
+3. Ratify *Tidewalker* through the full council gate (Gate 1, Aug 12 — T-2)
+4. Anderson starts posting
+5. Create the Routines
+
+---
