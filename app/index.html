@@ -352,6 +352,48 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
 
 footer{border-top:1px solid var(--edge);padding:30px 0 50px;color:var(--dust);font-size:13px}
 
+/* ---------- CREDO ----------
+   The house thesis. Three beats, and the house lights come up across them:
+   nothing sits unlit in --dust, something resolves to --screen, All-Thing
+   arrives fully lit in --brass. The colour IS the argument — a film emerging
+   out of the dark is the whole metaphor this room is built on.
+   Padding is set per-side so it cannot clobber .wrap's horizontal padding. */
+.credo{
+  border-bottom:1px solid var(--edge);
+  background:linear-gradient(180deg,rgba(21,17,23,.92),var(--ink));
+}
+.credo-inner{
+  padding-top:17px;padding-bottom:19px;
+  display:flex;flex-wrap:wrap;align-items:center;
+  gap:clamp(9px,2.2vw,24px);
+}
+.beat{display:flex;align-items:baseline;gap:9px}
+.beat-k{font-family:var(--display);font-size:clamp(19px,2.6vw,26px);line-height:1}
+.beat-t{font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase}
+.beat-1 .beat-k,.beat-1 .beat-t{color:var(--dust)}
+.beat-2 .beat-k,.beat-2 .beat-t{color:var(--screen)}
+.beat-3 .beat-k{color:var(--brass);text-shadow:0 0 22px rgba(212,165,55,.34)}
+.beat-3 .beat-t{color:var(--brass)}
+.beat-sep{color:var(--dust);opacity:.4;font-size:13px;line-height:1}
+.credo-line{
+  flex:1 1 280px;min-width:0;margin:0;
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(13px,1.5vw,16px);line-height:1.5;
+  color:var(--dust);text-wrap:balance;
+}
+.credo-line em{color:var(--screen);font-style:italic}
+
+/* One orchestrated moment on load — the lights coming up, in order.
+   Neutralised wholesale by the reduced-motion block below. */
+@keyframes lightsUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.credo-inner > *{animation:lightsUp .7s ease-out backwards}
+.credo-inner > *:nth-child(1){animation-delay:.06s}
+.credo-inner > *:nth-child(2){animation-delay:.20s}
+.credo-inner > *:nth-child(3){animation-delay:.34s}
+.credo-inner > *:nth-child(4){animation-delay:.48s}
+.credo-inner > *:nth-child(5){animation-delay:.62s}
+.credo-inner > *:nth-child(6){animation-delay:.86s}
+
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
@@ -374,6 +416,18 @@ footer{border-top:1px solid var(--edge);padding:30px 0 50px;color:var(--dust);fo
     </div>
   </div>
 </header>
+
+<div class="credo">
+  <div class="wrap credo-inner">
+    <div class="beat beat-1"><span class="beat-k">&#28961;</span><span class="beat-t">Nothing</span></div>
+    <span class="beat-sep" aria-hidden="true">&rarr;</span>
+    <div class="beat beat-2"><span class="beat-k">&#26377;</span><span class="beat-t">Something</span></div>
+    <span class="beat-sep" aria-hidden="true">&rarr;</span>
+    <div class="beat beat-3"><span class="beat-k">&#19975;&#29289;</span><span class="beat-t">All-Thing</span></div>
+    <p class="credo-line">The Void Room &mdash; where we turn nothing into something, then refine it into
+    <em>All-Thing</em>: a resonant whole.</p>
+  </div>
+</div>
 
 <nav class="stubs wrap" role="tablist" aria-label="Rooms" style="max-width:none">
   <button class="stub" role="tab" aria-selected="true" data-room="mission"><span class="stub-n">01</span>The Mission</button>
