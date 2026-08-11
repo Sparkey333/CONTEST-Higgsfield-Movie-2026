@@ -1,0 +1,1251 @@
+<!-- Generated from index.html by build-artifact.mjs — do not edit directly.
+     Edit index.html, then re-run: node build-artifact.mjs -->
+<style>
+:root{
+  --bg:#0b0c0e; --panel:#141519; --panel2:#1a1c21; --panel3:#212429;
+  --border:#26282f; --border2:#33363f;
+  --text:#e9e9ec; --dim:#8b8d97; --dim2:#5f626d;
+  --accent:#d9a441; --accent-dim:#8a6a2b;
+  --ok:#4ade80; --warn:#f59e0b; --bad:#ef4444; --info:#60a5fa;
+  --mono:"SF Mono",SFMono-Regular,ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  display:flex;min-height:100vh;
+}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- sidebar ---------- */
+#sidebar{
+  width:212px;flex:0 0 212px;background:var(--panel);
+  border-right:1px solid var(--border);display:flex;flex-direction:column;
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+}
+.brand{padding:18px 16px 14px;border-bottom:1px solid var(--border)}
+.brand h1{font-size:14px;font-weight:650;letter-spacing:.2px}
+.brand .sub{font-size:11px;color:var(--dim);margin-top:2px}
+nav{padding:8px;flex:1}
+nav button{
+  display:flex;align-items:center;gap:9px;width:100%;text-align:left;
+  background:none;border:0;border-radius:6px;padding:8px 10px;
+  color:var(--dim);cursor:pointer;font-size:13px;margin-bottom:1px;
+}
+nav button:hover{background:var(--panel2);color:var(--text)}
+nav button.active{background:var(--panel3);color:var(--accent);font-weight:600}
+nav button .ico{width:16px;text-align:center;font-size:13px;flex:0 0 16px}
+nav .navgroup{font-size:10px;text-transform:uppercase;letter-spacing:.9px;
+  color:var(--dim2);padding:12px 10px 5px;font-weight:600}
+.sidefoot{padding:10px;border-top:1px solid var(--border);display:flex;gap:6px}
+.sidefoot button{flex:1;font-size:11px;padding:6px;background:var(--panel2);
+  border:1px solid var(--border2);border-radius:5px;color:var(--dim);cursor:pointer}
+.sidefoot button:hover{color:var(--text);border-color:var(--accent-dim)}
+
+/* ---------- main ---------- */
+main{flex:1;min-width:0;padding:26px 30px 80px;max-width:1180px}
+.page{display:none}
+.page.active{display:block}
+h2.ptitle{font-size:21px;font-weight:650;margin-bottom:3px;letter-spacing:-.2px}
+.psub{color:var(--dim);font-size:13px;margin-bottom:22px;max-width:78ch}
+
+/* ---------- cards / grid ---------- */
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1000px){.g4,.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.g4,.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:15px 17px}
+.card h3{font-size:11px;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--dim);font-weight:600;margin-bottom:9px}
+.stat{font-size:29px;font-weight:660;letter-spacing:-1px;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat.sm{font-size:22px}
+.statsub{font-size:11.5px;color:var(--dim);margin-top:4px}
+.acc{color:var(--accent)} .ok{color:var(--ok)} .bad{color:var(--bad)}
+.warn{color:var(--warn)} .info{color:var(--info)} .dim{color:var(--dim)}
+
+.section{margin-top:26px}
+.section>h3{font-size:12px;text-transform:uppercase;letter-spacing:1px;
+  color:var(--dim);font-weight:650;margin-bottom:11px;
+  padding-bottom:7px;border-bottom:1px solid var(--border)}
+
+/* ---------- bars ---------- */
+.bar{height:6px;background:var(--panel3);border-radius:3px;overflow:hidden;margin-top:9px}
+.bar>i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.bar>i.ok{background:var(--ok)} .bar>i.bad{background:var(--bad)} .bar>i.warn{background:var(--warn)}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.7px;
+  color:var(--dim);font-weight:600;padding:7px 9px;border-bottom:1px solid var(--border2);white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--border)}
+tbody tr:hover{background:var(--panel2)}
+.tablewrap{background:var(--panel);border:1px solid var(--border);
+  border-radius:9px;overflow-x:auto}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td input,td select{background:var(--panel2);border:1px solid var(--border2);border-radius:4px;
+  padding:4px 6px;font-size:12px;width:100%;min-width:0}
+td input[type=number]{padding-right:2px}
+#shotBody{min-width:1180px}
+td input:focus,td select:focus{outline:1px solid var(--accent-dim);border-color:var(--accent-dim)}
+
+/* ---------- pills ---------- */
+.pill{display:inline-block;padding:2px 8px;border-radius:11px;font-size:10.5px;
+  font-weight:600;letter-spacing:.3px;white-space:nowrap}
+.pill.p-plan{background:#2a2d35;color:#9aa0ae}
+.pill.p-iter{background:#3d3011;color:var(--warn)}
+.pill.p-lock{background:#13341f;color:var(--ok)}
+.pill.p-rest{background:#3a1618;color:var(--bad)}
+.pill.p-ok{background:#13341f;color:var(--ok)}
+.pill.p-bad{background:#3a1618;color:var(--bad)}
+.pill.p-info{background:#16283f;color:var(--info)}
+
+/* ---------- buttons ---------- */
+.btn{background:var(--panel2);border:1px solid var(--border2);border-radius:6px;
+  padding:7px 13px;font-size:12.5px;cursor:pointer;color:var(--text)}
+.btn:hover{border-color:var(--accent-dim);background:var(--panel3)}
+.btn.primary{background:var(--accent);color:#1a1408;border-color:var(--accent);font-weight:620}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.sm{padding:4px 9px;font-size:11.5px}
+.btn.danger:hover{border-color:var(--bad);color:var(--bad)}
+.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.row.end{justify-content:flex-end}
+.spacer{flex:1}
+
+/* ---------- forms ---------- */
+label.f{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;
+  color:var(--dim);margin-bottom:4px;font-weight:600}
+.field{margin-bottom:12px}
+input[type=text],input[type=number],input[type=date],select,textarea{
+  width:100%;background:var(--panel2);border:1px solid var(--border2);
+  border-radius:6px;padding:8px 10px;font-size:13px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent-dim)}
+textarea{resize:vertical;min-height:70px;font-family:var(--mono);font-size:12px;line-height:1.55}
+input[type=range]{width:100%;accent-color:var(--accent);background:transparent;padding:0}
+
+/* ---------- checklist ---------- */
+.chk{display:flex;gap:9px;align-items:flex-start;padding:6px 0;font-size:13px}
+.chk input{margin-top:3px;accent-color:var(--accent);flex:0 0 auto;width:14px;height:14px}
+.chk.done span{text-decoration:line-through;color:var(--dim2)}
+.phase{background:var(--panel);border:1px solid var(--border);border-radius:9px;
+  padding:14px 17px;margin-bottom:11px}
+.phase h4{font-size:13.5px;font-weight:640;margin-bottom:2px}
+.phase .meta{font-size:11.5px;color:var(--dim);margin-bottom:9px}
+.phase.cur{border-color:var(--accent-dim);box-shadow:0 0 0 1px rgba(217,164,65,.13)}
+
+/* ---------- concept cards ---------- */
+.ccard{background:var(--panel);border:1px solid var(--border);border-radius:9px;
+  padding:15px 17px;margin-bottom:11px}
+.ccard.top{border-color:var(--accent-dim)}
+.ccard .chead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.ccard h4{font-size:15px;font-weight:640}
+.ccard .ol{font-size:13px;color:var(--dim);margin-top:5px;max-width:72ch;font-style:italic}
+.score{font-size:25px;font-weight:680;letter-spacing:-.8px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sbreak{display:flex;gap:16px;margin-top:11px;flex-wrap:wrap;font-size:11.5px;color:var(--dim)}
+.sbreak b{color:var(--text);font-weight:620;font-variant-numeric:tabular-nums}
+
+/* ---------- prompt out ---------- */
+pre.out{background:#08090b;border:1px solid var(--border2);border-radius:8px;
+  padding:14px 16px;font-family:var(--mono);font-size:11.5px;line-height:1.62;
+  white-space:pre-wrap;word-break:break-word;max-height:520px;overflow-y:auto;color:#cfd2d8}
+
+/* ---------- misc ---------- */
+.alert{border-radius:8px;padding:11px 14px;font-size:12.5px;margin-bottom:11px;
+  border:1px solid;display:flex;gap:9px;align-items:flex-start}
+.alert.bad{background:#25121400;border-color:#5a2226;background:#1d1214}
+.alert.warn{background:#1d1810;border-color:#5a4520}
+.alert.ok{background:#0f1d15;border-color:#1f4630}
+.alert b{font-weight:640}
+.empty{text-align:center;padding:34px 16px;color:var(--dim2);font-size:13px}
+.mono{font-family:var(--mono);font-size:11.5px}
+.judgecard{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:16px 18px}
+.judgecard h4{font-size:15px;font-weight:650;margin-bottom:2px}
+.judgecard .role{font-size:11px;color:var(--accent);text-transform:uppercase;
+  letter-spacing:.8px;font-weight:600;margin-bottom:10px}
+.judgecard ul{list-style:none;font-size:12.5px}
+.judgecard li{padding:3px 0 3px 15px;position:relative;color:var(--dim)}
+.judgecard li:before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;
+  border-radius:50%;background:var(--accent-dim)}
+.judgecard li b{color:var(--text);font-weight:600}
+blockquote{border-left:2px solid var(--accent-dim);padding-left:12px;margin:10px 0;
+  font-size:12.5px;color:var(--dim);font-style:italic}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#1a1408;padding:9px 18px;border-radius:7px;
+  font-size:13px;font-weight:620;opacity:0;pointer-events:none;transition:opacity .2s;z-index:99}
+.toast.show{opacity:1}
+.hint{font-size:11.5px;color:var(--dim2);margin-top:5px}
+</style>
+<aside id="sidebar">
+  <div class="brand">
+    <h1>Production Control</h1>
+    <div class="sub">Higgsfield Festival 2026</div>
+  </div>
+  <nav id="nav">
+    <div class="navgroup">Command</div>
+    <button data-p="dash" class="active"><span class="ico">◈</span>Dashboard</button>
+    <button data-p="schedule"><span class="ico">▤</span>Schedule</button>
+    <button data-p="log"><span class="ico">◷</span>Daily Log</button>
+    <div class="navgroup">Development</div>
+    <button data-p="concepts"><span class="ico">✦</span>Concepts</button>
+    <button data-p="wargame"><span class="ico">⚖</span>Wargame</button>
+    <button data-p="ideas"><span class="ico">✎</span>Ideas Inbox</button>
+    <div class="navgroup">Production</div>
+    <button data-p="ledger"><span class="ico">▦</span>Shot Ledger</button>
+    <button data-p="prompt"><span class="ico">⌘</span>Prompt Builder</button>
+    <div class="navgroup">Reference</div>
+    <button data-p="judges"><span class="ico">☰</span>The Jury</button>
+    <button data-p="models"><span class="ico">▶</span>Models</button>
+  </nav>
+  <div class="sidefoot">
+    <button id="btnExport">Export</button>
+    <button id="btnImport">Import</button>
+    <button id="btnReset" title="Reset all data">Reset</button>
+  </div>
+</aside>
+
+<main>
+
+<!-- ============ DASHBOARD ============ -->
+<section class="page active" id="p-dash">
+  <h2 class="ptitle">Dashboard</h2>
+  <p class="psub">One coherent space. One motivated light source. Long held takes. A face allowed to carry a scene. Real weight. A story that turns.</p>
+
+  <div id="blockers"></div>
+
+  <div class="grid g4">
+    <div class="card"><h3>Days to submit</h3>
+      <div class="stat acc" id="dDays">—</div>
+      <div class="statsub" id="dDaysSub">internal deadline</div>
+      <div class="bar"><i id="dDaysBar" style="width:0%"></i></div>
+    </div>
+    <div class="card"><h3>Runtime planned</h3>
+      <div class="stat" id="dRun">—</div>
+      <div class="statsub" id="dRunSub">of target</div>
+      <div class="bar"><i id="dRunBar" style="width:0%"></i></div>
+    </div>
+    <div class="card"><h3>Shots locked</h3>
+      <div class="stat" id="dShots">—</div>
+      <div class="statsub" id="dShotsSub">of planned</div>
+      <div class="bar"><i id="dShotsBar" style="width:0%"></i></div>
+    </div>
+    <div class="card"><h3>Acceptance rate</h3>
+      <div class="stat" id="dAcc">—</div>
+      <div class="statsub" id="dAccSub">benchmark ~1.5%</div>
+      <div class="bar"><i id="dAccBar" style="width:0%"></i></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Gates</h3>
+    <div class="grid g2" id="gates"></div>
+  </div>
+
+  <div class="section">
+    <h3>Credit burn</h3>
+    <div class="grid g3">
+      <div class="card"><h3>Generations spent</h3>
+        <div class="stat sm" id="dGen">0</div><div class="statsub">logged to date</div></div>
+      <div class="card"><h3>Budget</h3>
+        <div class="stat sm dim" id="dBudget">4,100</div><div class="statsub">planned envelope</div></div>
+      <div class="card"><h3>Projected total</h3>
+        <div class="stat sm" id="dProj">—</div><div class="statsub" id="dProjSub">at current pace</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Top concept</h3>
+    <div id="dTop"></div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section class="page" id="p-schedule">
+  <h2 class="ptitle">24-Day Schedule</h2>
+  <p class="psub">Phase 1 gets every shot present, even if rough. Phase 2 concentrates all remaining iteration on the shots that carry the weight. Without the split, iteration cost runs the project over before the ending exists.</p>
+  <div id="schedule"></div>
+</section>
+
+<!-- ============ DAILY LOG ============ -->
+<section class="page" id="p-log">
+  <h2 class="ptitle">Daily Log</h2>
+  <p class="psub">Track the acceptance rate. If it runs far below 1.5%, the problem is upstream — usually the assets. Stop generating and fix the asset.</p>
+  <div class="card" style="margin-bottom:16px">
+    <div class="row">
+      <div style="flex:0 0 148px"><label class="f">Date</label><input type="date" id="lgDate"></div>
+      <div style="flex:0 0 110px"><label class="f">Generations</label><input type="number" id="lgGen" min="0" placeholder="0"></div>
+      <div style="flex:0 0 110px"><label class="f">Kept</label><input type="number" id="lgKept" min="0" placeholder="0"></div>
+      <div style="flex:1;min-width:180px"><label class="f">Note</label><input type="text" id="lgNote" placeholder="shots advanced, blockers…"></div>
+      <button class="btn primary" id="lgAdd" style="margin-top:17px">Log day</button>
+    </div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Date</th><th class="num">Gens</th><th class="num">Kept</th><th class="num">Rate</th><th>Note</th><th></th></tr></thead>
+    <tbody id="logBody"></tbody>
+  </table></div>
+</section>
+
+<!-- ============ CONCEPTS ============ -->
+<section class="page" id="p-concepts">
+  <h2 class="ptitle">Concepts</h2>
+  <p class="psub">Ranked by the harness. A jury of three converges on the film nobody objects to before it converges on the film someone loves — so a concept with no weak axis beats one with a peak and a hole.</p>
+  <div class="row" style="margin-bottom:14px">
+    <button class="btn primary" id="cNew">+ New concept</button>
+    <div class="spacer"></div>
+    <span class="dim mono" id="cCount"></span>
+  </div>
+  <div id="conceptList"></div>
+</section>
+
+<!-- ============ WARGAME ============ -->
+<section class="page" id="p-wargame">
+  <h2 class="ptitle">Wargame</h2>
+  <p class="psub">Score a concept twice: as a short film, and as a thing these three specific people will watch on a specific afternoon in late September. Those are different questions.</p>
+  <div class="row" style="margin-bottom:15px">
+    <div style="flex:1;max-width:340px">
+      <label class="f">Concept under review</label>
+      <select id="wgPick"></select>
+    </div>
+    <button class="btn danger sm" id="wgDel" style="margin-top:17px">Delete concept</button>
+  </div>
+  <div id="wgForm"></div>
+</section>
+
+<!-- ============ IDEAS ============ -->
+<section class="page" id="p-ideas">
+  <h2 class="ptitle">Ideas Inbox</h2>
+  <p class="psub">Drop ideas in any state — a sentence, an image, a feeling. Write it badly. Promote the ones with legs into scored concepts.</p>
+  <div class="card" style="margin-bottom:16px">
+    <label class="f">New idea</label>
+    <textarea id="ideaText" placeholder="A light source that is also the threat…"></textarea>
+    <div class="row end" style="margin-top:9px"><button class="btn primary" id="ideaAdd">Add idea</button></div>
+  </div>
+  <div id="ideaList"></div>
+  <div class="section">
+    <h3>Prompts to shake ideas loose</h3>
+    <div class="grid g2" id="sparks"></div>
+  </div>
+</section>
+
+<!-- ============ LEDGER ============ -->
+<section class="page" id="p-ledger">
+  <h2 class="ptitle">Shot Ledger</h2>
+  <p class="psub">The single source of truth. One row per generation. The two gates below catch errors that are invisible until the timeline.</p>
+
+  <div id="gateSum"></div>
+  <div id="gateMono"></div>
+
+  <div class="row" style="margin:14px 0">
+    <button class="btn primary" id="shotAdd">+ Add shot</button>
+    <button class="btn" id="shotSeed">Load 3-act skeleton</button>
+    <div class="spacer"></div>
+    <span class="dim mono" id="shotStats"></span>
+  </div>
+
+  <div class="tablewrap"><table>
+    <thead><tr>
+      <th style="width:58px">ID</th><th style="width:48px">Sc</th><th style="width:74px" class="num">Sec</th>
+      <th style="width:120px">Model</th><th style="width:104px">Framing</th><th style="width:126px">Camera</th>
+      <th style="min-width:190px">Beat</th><th style="width:126px">Trans out</th><th style="width:62px" class="num">Takes</th>
+      <th style="width:126px">Status</th><th style="width:32px"></th>
+    </tr></thead>
+    <tbody id="shotBody"></tbody>
+  </table></div>
+
+  <div class="section">
+    <h3>Shot-length distribution</h3>
+    <div class="grid g4" id="dist"></div>
+  </div>
+</section>
+
+<!-- ============ PROMPT BUILDER ============ -->
+<section class="page" id="p-prompt">
+  <h2 class="ptitle">Prompt Builder</h2>
+  <p class="psub">The Hell Grind block scaffold. The model has no memory between generations — consistency is not a setting, it is repetition. Descriptors go in verbatim, every time, never shortened.</p>
+  <div class="grid g2">
+    <div>
+      <div class="card">
+        <h3>Scene context</h3>
+        <div class="field"><label class="f">Characters in frame (comma separated)</label>
+          <input type="text" id="pbChars" placeholder="KEEPER"></div>
+        <div class="field"><label class="f">Shot ID · duration · model</label>
+          <div class="row">
+            <input type="text" id="pbId" placeholder="1a" style="flex:0 0 72px">
+            <input type="number" id="pbDur" placeholder="15" style="flex:0 0 80px">
+            <select id="pbModel" style="flex:1">
+              <option>Wan 3.0</option><option selected>Seedance 2.0</option>
+              <option>FLUX 3 Video</option><option>Kling v3.0</option><option>Cinema Studio v2</option>
+            </select>
+          </div></div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Geo spatial layout <span class="dim" style="text-transform:none;letter-spacing:0">— locked per scene</span></h3>
+        <div class="field"><label class="f">Landmarks &amp; axis</label>
+          <textarea id="pbGeo" placeholder="— LAMP = single tungsten desk lamp, CENTER of the map table.&#10;— WINDOW WALL: frame-LEFT, 2 m from the table.&#10;— 180° AXIS: camera ALWAYS stays door-side — it NEVER crosses to the window.&#10;— LIGHT LOGIC: the lamp is the ONLY source. Shadows radiate outward from it."></textarea></div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Character descriptor <span class="dim" style="text-transform:none;letter-spacing:0">— verbatim, never shortened</span></h3>
+        <div class="field"><textarea id="pbCharDesc" placeholder="KEEPER — weathered field jacket over a wool shirt, sleeves pushed to the elbow; short hair pushed back; a burn scar across the left forearm. Build: compact, square-shouldered."></textarea></div>
+        <div class="field"><label class="f">Voice (locked)</label>
+          <input type="text" id="pbVoice" placeholder="dry, worn alto; slow deliberate pacing; flat vowels; speaks as if continuing a conversation"></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Action timing <span class="dim" style="text-transform:none;letter-spacing:0">— present tense, ≤3 sentences per beat</span></h3>
+        <div class="field"><textarea id="pbAction" placeholder="0.0–4.0s — she holds the handset against her jaw, eyes down on the map; the chest lifts twice, shallow.&#10;4.0–9.0s — the jaw sets and releases; one lazy blink, a quick DOUBLE-BLINK, one HARD reset-blink.&#10;9.0–15.0s — the gaze lifts to the window and holds; the hand finds the pencil without looking."></textarea></div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Character acting</h3>
+        <div class="field"><textarea id="pbActing" placeholder="KEEPER — emotional state: steady, running on procedure. What she wants: one more clean report before the wind turns. What she hides: that she already knows the road is gone. Dominant body rhythm: economical, still, everything held. Visible habits: the thumb on the transmit key, the pencil turned end over end. What changes: the stillness stops being calm and becomes effort."></textarea></div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Audio</h3>
+        <div class="field"><label class="f">Line (quoted, this character only)</label>
+          <input type="text" id="pbLine" placeholder="Ridge line's gone. Move them west."></div>
+        <div class="field"><label class="f">Ambience / mix</label>
+          <input type="text" id="pbAmb" placeholder="radio hiss, wind against glass, the lamp's faint hum; ambience dips under the line"></div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Positive locks</h3>
+        <div class="field"><textarea id="pbLocks" placeholder="Exactly ONE lamp, never a second light source. One handset, one pencil, one folded map. The left half of the face falls to black; no fill."></textarea></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin:16px 0 11px">
+    <button class="btn primary" id="pbGen">Build prompt</button>
+    <button class="btn" id="pbCopy">Copy</button>
+    <div class="spacer"></div>
+    <span class="dim mono" id="pbCount"></span>
+  </div>
+  <pre class="out" id="pbOut">Fill the blocks and press <b>Build prompt</b>.</pre>
+</section>
+
+<!-- ============ JUDGES ============ -->
+<section class="page" id="p-judges">
+  <h2 class="ptitle">The Jury</h2>
+  <p class="psub">All three independently want the same film. That is not a compromise between three tastes — it is a genuine intersection, and it happens to be what AI video is currently best at.</p>
+  <div class="grid g3" id="judges"></div>
+  <div class="section">
+    <h3>What loses</h3>
+    <div class="card">
+      <p style="font-size:13px;color:var(--dim);margin-bottom:11px">The modal entry: a 3-minute montage, 50+ four-second clips, constant camera movement, orange-and-teal, trailer score, portentous VO, no character you could name afterwards. There will be thousands. Their notes would read:</p>
+      <blockquote><b style="color:var(--text)">Catmull</b> — "Extremely accomplished images. I could not tell you what happened or to whom."</blockquote>
+      <blockquote><b style="color:var(--text)">Papamichael</b> — "Every shot is lit from everywhere. There's no time of day. Nobody made a choice."</blockquote>
+      <blockquote><b style="color:var(--text)">Anderson</b> — "It's cut so fast I never worked out where anyone was standing."</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section class="page" id="p-models">
+  <h2 class="ptitle">Model Routing</h2>
+  <p class="psub">Only two models exceed 15 seconds. If the rules require all generation inside Cinema Studio, the ceiling drops to 12 and the anchor takes must be built by continuation chaining instead.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Model</th><th>Duration</th><th>Max res</th><th>Start/end</th><th>Continue</th><th>Audio</th><th>Use for</th></tr></thead>
+    <tbody id="modelBody"></tbody>
+  </table></div>
+  <div class="section">
+    <h3>The Papamichael filter</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th style="width:210px">Tell</th><th>Countermeasure</th></tr></thead>
+      <tbody id="filterBody"></tbody>
+    </table></div>
+  </div>
+</section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+<input type="file" id="fileIn" accept="application/json" style="display:none">
+
+<script>
+"use strict";
+
+/* ============================ CONSTANTS ============================ */
+const DEADLINE   = "2026-09-03";
+const INTERNAL   = "2026-09-01";
+const START      = "2026-08-10";
+const BUDGET     = 4100;
+const LS_KEY     = "hff2026.v1";
+
+const MODELS = [
+  ["Wan 3.0","2–30s","1080p","first/last","refs","yes","Anchor long takes; establishing wides with atmospheric motion"],
+  ["FLUX 3 Video","5–20s","1080p","start+end","video-continuation","yes","The long-take workhorse. Chain for 40s+ oners"],
+  ["Seedance 2.0","4–15s","4K","start+end","video refs","yes","Sustained performance. Best identity lock"],
+  ["Kling v3.0","3–15s","4K","start+end","—","yes","Faces, skin, emotional close-ups"],
+  ["MiniMax H3","4–15s","2K","start+end","refs","—","Batch-of-4 take culling"],
+  ["Cinema Studio v2","3–12s","—","yes","—","yes","Fallback if rules confine generation to Cinema Studio"],
+  ["Gemini Omni Flash","4–10s","720p","refs only","yes","yes","Short connective tissue"],
+];
+
+const FILTERS = [
+  ["Two suns","One named source in the GEO block, restated every prompt: “the lamp is the ONLY source; shadows radiate outward from it.”"],
+  ["Sourceless glow / AI sheen","Name the source, its direction, its quality, its colour temperature — and what it does <i>not</i> reach."],
+  ["Over-lighting","Declare the dark side explicitly: “the left half of the face falls to black; no fill.”"],
+  ["Plastic skin","“Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light.”"],
+  ["Waxy faces","Route close-ups to Kling v3.0. Never run an image through a model twice in full — use masked point-edits."],
+  ["Floaty physics","“Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props.”"],
+  ["Unmotivated camera","One move per shot, justified by blocking or emphasis."],
+  ["Dead-eye stare","Phased blinking + clear gaze direction + one micro-event every 1–2s."],
+  ["Film-grain trap","Never trail <span class='mono'>film grain</span> / <span class='mono'>soft focus</span> unattached — they land on the whole frame. Content may be imperfect; image quality must be sharp."],
+];
+
+const JUDGES = [
+  {name:"Ed Catmull", role:"Story & emotional truth",
+   bio:"Pixar co-founder, president 33 years. Invented texture mapping and the Z-buffer. Five Oscars, 2019 Turing Award.",
+   quote:"Every film starts bad. The craft is the honest, iterative work of making it not bad.",
+   rewards:["A protagonist who <b>wants</b> and <b>changes</b>","Setups that pay off","Restraint — knowing what to leave out","A film that would work as a storyboard"],
+   punishes:["Vibes with no spine","Beats announced rather than earned","First-idea execution, however polished"],
+   edge:"He is taking reputational damage for sitting on this jury. He needs a winner that vindicates being here. Give him the film that justifies his presence."},
+  {name:"Phedon Papamichael ASC", role:"Photography & light logic",
+   bio:"Two-time Oscar nominee. Seven features with Mangold incl. Ford v Ferrari and A Complete Unknown; Nebraska and Sideways with Payne; The Trial of the Chicago 7.",
+   quote:"I never want anybody to perceive that I'm lighting something.",
+   rewards:["One motivated source, consistent shadow direction","Skin with pores and asymmetry","Held frames; confidence in a composition","Faces allowed to carry a scene"],
+   punishes:["Two suns, sourceless glow","Push-in on everything","Orange-and-teal defaults"],
+   edge:"The most dangerous judge for an AI film, and the most winnable. Every classic AI tell is a lighting-logic failure — and all of them are fixable at the prompt level."},
+  {name:"Paul W. S. Anderson", role:"Spectacle, space & scale",
+   bio:"Mortal Kombat, Event Horizon, the Resident Evil franchise. Over $1B worldwide. In the Lost Lands (2025) — actively working in virtual production now.",
+   quote:"Story is often synonymous with setting.",
+   rewards:["A coherent, legible, awesome <b>space</b>","Depth staging: FG / MG / BG","Small human against vast environment","Real weight and inertia"],
+   punishes:["Geography you can't hold in your head","Frantic cutting","Flat wallpapered backgrounds"],
+   edge:"He deliberately avoids fast cutting — it destroys stereoscopic legibility. His taste and AI's limitations point at the same film."},
+];
+
+const SPARKS = [
+  ["From constraint","One room. One person. One light source. What is the most dramatic thing that can happen?"],
+  ["From constraint","A job that requires absolute stillness. What interrupts it?"],
+  ["From image","A light source that is also the threat."],
+  ["From image","What is the most beautiful image you can think of that is also bad news?"],
+  ["From truth","A true thing that would be cruel to say out loud."],
+  ["From truth","A time being wrong turned out to be necessary."],
+  ["From structure","First and last shot are the same image and mean opposite things."],
+  ["From structure","One continuous shot, and the single cut is the climax."],
+];
+
+const PHASES = [
+  {n:"Phase 0 — Decide", days:"Days 1–3", dates:"Aug 10–12", gate:"Ledger sums exactly to target runtime",
+   tasks:["Read the official rules page end to end","Resolve: maximum runtime","Resolve: must ALL generation happen inside Cinema Studio?","Resolve: entries per person","Resolve: rights granted","Confirm subscription + credit headroom","Create the festival project in Cinema Studio","Score every concept through the harness","Apply the kill criteria honestly","LOCK ONE CONCEPT — no revisiting","Finalise the script","Run the five-pass breakdown","Fill the shot ledger completely","Run the tempo gate"]},
+  {n:"Phase 1 — Assets", days:"Days 4–7", dates:"Aug 13–16", gate:"Characters + locations survive a three-lighting stress test",
+   tasks:["Freeze the Style Prefix","Model bake-off at 480p","Verify the long-take route (one 20s FLUX, one 30s Wan)","Character sheet: face CU 3/4, body front HEADLESS, body back","Budget ~800 generations for the lead","Build every state variant now","Lock the voice descriptor","Lock the behaviour paragraph","Stress-test across three lighting setups","Location sheet in 3/4, never frontal","Named anchor object in every location","One light logic per location","Reverse angles via empty-location walkthrough","Write and freeze the GEO blocks"]},
+  {n:"Phase 2 — Assembly", days:"Days 8–16", dates:"Aug 17–25", gate:"A complete rough cut exists, start to finish",
+   tasks:["Act I — establish the space and the want","Act II-a","The Turn — anchor take (two full days)","The action burst","Act III","Cold open + last image","Assemble on the timeline as you go","Hold the 10–15 rule: simplify the shot, not the words","One variable per iteration, logged","Cull at 480p, commit at 4K"]},
+  {n:"Phase 3 — Refinement", days:"Days 17–20", dates:"Aug 26–29", gate:"No new scope added",
+   tasks:["The turn — the anchor take","Cold open + final image (one unit)","Action peak + one remaining weak shot","Re-run the monotony audit on the actual cut","Buffer — fix, don't extend"]},
+  {n:"Phase 4 — Finish", days:"Days 21–22", dates:"Aug 30–31", gate:"Sound bridges on every seam",
+   tasks:["Sound bridges on every seam","Continuous ambient bed under the whole film","Diegetic SFX with real weight","Score last, sparingly — consider none","Grade for one light logic across the film","Match grain to a reference plate","Best-second splices on hero shots","Titles: minimal, late, quiet","Export at the required spec"]},
+  {n:"Phase 5 — Submit", days:"Day 23", dates:"Sept 1", gate:"Submitted with 48h to spare",
+   tasks:["Final watch, uninterrupted, largest screen","Runtime ≥ 3:00 and within any maximum","Re-read the rules against the finished file","SUBMIT","Confirm receipt","Post the vertical cut for Audience Choice"]},
+];
+
+const SEED_CONCEPTS = [
+  {id:"c-vantage", name:"Vantage",
+   ol:"A fire lookout, alone in a tower, keeps calling positions on the radio as the fire that will reach her becomes the only light she has left to see by.",
+   loc:1, cast:1, light:"Tungsten desk lamp → the fire itself",
+   f:{turn:8,emotion:8,orig:8,layers:9,last:8}, j:{cat:10,pap:9,and:8},
+   m:{loc:5,cast:5,light:5,risk:4}, x:{hook:true,meta:false,dialogue:false,crowd:false}},
+  {id:"c-salvage", name:"Salvage",
+   ol:"A deep-sea welder is sent to cut open a wreck and recover what's inside, and recognises the ship.",
+   loc:1, cast:1, light:"Helmet lamp — the only light in the film",
+   f:{turn:9,emotion:9,orig:9,layers:8,last:8}, j:{cat:11,pap:9,and:8},
+   m:{loc:5,cast:5,light:5,risk:2}, x:{hook:false,meta:false,dialogue:false,crowd:false}},
+  {id:"c-tenant", name:"Tenant",
+   ol:"The last resident of a condemned tower block refuses to leave, and the building comes down around her one floor at a time.",
+   loc:1, cast:1, light:"One window, hard shaft, heavy particulate",
+   f:{turn:9,emotion:10,orig:8,layers:9,last:8}, j:{cat:11,pap:10,and:6},
+   m:{loc:5,cast:5,light:5,risk:4}, x:{hook:false,meta:false,dialogue:false,crowd:false}},
+  {id:"c-ghost", name:"The Ghost Light",
+   ol:"An old actor rehearses, alone in a dark theatre, for a part he has already been replaced in.",
+   loc:1, cast:1, light:"One bare practical bulb, in frame, all film",
+   f:{turn:8,emotion:9,orig:8,layers:9,last:8}, j:{cat:11,pap:10,and:5},
+   m:{loc:5,cast:5,light:5,risk:5}, x:{hook:false,meta:true,dialogue:false,crowd:false}},
+  {id:"c-second", name:"Second Language",
+   ol:"A court interpreter is the only person in the room who understands both sides, and she has four seconds to decide whether to translate what was actually said.",
+   loc:1, cast:2, light:"High institutional windows, cold, no fill",
+   f:{turn:9,emotion:8,orig:9,layers:10,last:4}, j:{cat:11,pap:10,and:2},
+   m:{loc:5,cast:3,light:5,risk:5}, x:{hook:false,meta:false,dialogue:true,crowd:false}},
+  {id:"c-listening", name:"The Listening",
+   ol:"In the rubble of a collapsed building, a rescue worker calls for silence and puts her ear to the concrete — and something answers.",
+   loc:1, cast:3, light:"Portable work lights, hard and low",
+   f:{turn:9,emotion:10,orig:9,layers:9,last:8}, j:{cat:11,pap:9,and:7},
+   m:{loc:3,cast:1,light:4,risk:3}, x:{hook:true,meta:false,dialogue:false,crowd:true}},
+];
+
+/* 26 shots · 270s (4:30) · matches the three-act spine in docs/04 §5.
+   Distribution lands inside every target band, and the monotony audit is clean. */
+const SKELETON = [
+  // Cold open — 25s
+  ["1a",1,25,"Wan 3.0","WIDE","static hold","Cold open — the loaded still. An arresting image and an unanswered question. No explanation.","sound bridge","⬜"],
+  // Act I — 55s
+  ["2a",2,18,"Seedance 2.0","MEDIUM","slow dolly-in","Establish the want. Depth staging FG/MG/BG.","match-on-action","⬜"],
+  ["2b",2,14,"Kling v3.0","CLOSE","static hold","The face. Micro-life every 1–2s.","body wipe","⬜"],
+  ["3a",3,13,"Seedance 2.0","WIDE","slow arc","Make the space real. One source doing all the work.","sound bridge","⬜"],
+  ["3b",3,10,"Seedance 2.0","MEDIUM","static hold","Connective tissue. Geography.","through-object","⬜"],
+  // Act II-a — 60s
+  ["4a",4,16,"Seedance 2.0","MEDIUM","handheld drift","The world resists. Blocking reframes; the camera doesn't.","match-on-action","⬜"],
+  ["4b",4,15,"Wan 3.0","WIDE","slow crane down","Scale counterpoint — the figure against the space.","sound bridge","⬜"],
+  ["4c",4,12,"Kling v3.0","CLOSE","static hold","The decision forming. Nothing said.","body wipe","⬜"],
+  ["5a",5,9,"Seedance 2.0","MEDIUM","lateral track","Movement through the space. Object through-line insert.","match-on-action","⬜"],
+  ["5b",5,8,"Seedance 2.0","WIDE","static hold","The last calm frame before the turn.","hard cut (the one)","⬜"],
+  // The Turn — 30s anchor
+  ["6a",6,30,"FLUX 3 Video","MEDIUM","imperceptible push","THE TURN — anchor take, chained. No cuts. The face carries it.","sound bridge","⬜"],
+  // Act II-b — the quarantined burst, then the hold — 45s
+  ["7a",7,2,"Seedance 2.0","CLOSE","whip pan","Burst 1/7","cut","⬜"],
+  ["7b",7,2,"Seedance 2.0","WIDE","static","Burst 2/7","cut","⬜"],
+  ["7c",7,2,"Seedance 2.0","ECU","static","Burst 3/7","cut","⬜"],
+  ["7d",7,1.5,"Seedance 2.0","MEDIUM","whip pan","Burst 4/7","cut","⬜"],
+  ["7e",7,1.5,"Seedance 2.0","WIDE","crash zoom","Burst 5/7","cut","⬜"],
+  ["7f",7,1.5,"Seedance 2.0","ECU","static","Burst 6/7","cut","⬜"],
+  ["7g",7,1.5,"Seedance 2.0","CLOSE","whip pan","Burst 7/7","cut","⬜"],
+  ["7h",7,7,"Seedance 2.0","MEDIUM","static hold","HOLD through the aftermath. Never cut on the peak.","sound bridge","⬜"],
+  ["7i",7,6,"Seedance 2.0","WIDE","slow push-out","The emotional tail begins. Breath still uneven.","match-on-action","⬜"],
+  ["7j",7,20,"FLUX 3 Video","WIDE","slow crane down","Anchor — the cost made visible. Slowest shot so far.","repeated frame","⬜"],
+  // Act III — 45s
+  ["8a",8,15,"Kling v3.0","CLOSE","static hold","The cost, paid. The face, uninterrupted.","sound bridge","⬜"],
+  ["8b",8,12,"Seedance 2.0","MEDIUM","slow dolly-in","Consequence settles.","rhyme cut","⬜"],
+  ["8c",8,12,"Wan 3.0","WIDE","locked off","The space without them in it yet.","match-on-action","⬜"],
+  ["8d",8,6,"Seedance 2.0","CLOSE","static hold","Object through-line, final appearance — meaning reversed.","sound bridge","⬜"],
+  // Last image — 10s
+  ["9a",9,10,"Wan 3.0","WIDE","static hold","The recontextualised opening. No cut. No music sting.","—","⬜"],
+];
+
+/* ============================ STATE ============================ */
+let S = load();
+
+function blank(){
+  return {
+    meta:{target:270},
+    concepts: JSON.parse(JSON.stringify(SEED_CONCEPTS)),
+    shots: [],
+    days: [],
+    sched: {},
+    ideas: [],
+    active: "c-vantage",
+  };
+}
+function load(){
+  try{
+    const raw = localStorage.getItem(LS_KEY);
+    if(!raw) return blank();
+    const d = JSON.parse(raw);
+    const b = blank();
+    return Object.assign(b, d, {meta:Object.assign(b.meta, d.meta||{})});
+  }catch(e){ return blank(); }
+}
+function save(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(S)); }catch(e){}
+}
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove("show"), 1700);
+}
+
+/* ============================ HELPERS ============================ */
+const $  = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = v => { const n = parseFloat(v); return isNaN(n) ? 0 : n; };
+
+function daysBetween(a,b){
+  return Math.round((new Date(b+"T00:00:00Z") - new Date(a+"T00:00:00Z"))/86400000);
+}
+function today(){
+  // Fixed to the project clock so the dashboard is deterministic in test + demo.
+  const real = new Date().toISOString().slice(0,10);
+  return real < START ? START : real;
+}
+function fmtTime(sec){
+  const s = Math.round(sec);
+  return Math.floor(s/60) + ":" + String(s%60).padStart(2,"0");
+}
+
+/* ---- concept scoring ---- */
+function scoreConcept(c){
+  const film   = c.f.turn + c.f.emotion + c.f.orig + c.f.layers + c.f.last;   // /50
+  const judges = c.j.cat + c.j.pap + c.j.and;                                  // /30
+  const make   = c.m.loc + c.m.cast + c.m.light + c.m.risk;                    // /20
+  const raw    = film + judges + make;
+  let mult = 1;
+  if(c.x.hook)     mult *= 1.10;
+  if(c.x.meta)     mult *= 0.85;
+  if(c.x.dialogue) mult *= 0.90;
+  if(c.x.crowd)    mult *= 0.85;
+  return {film, judges, make, raw, mult, final: raw*mult};
+}
+function ranked(){
+  return S.concepts.map(c => ({c, s:scoreConcept(c)}))
+                   .sort((a,b) => b.s.final - a.s.final);
+}
+
+/* ---- ledger gates ---- */
+function runtimeSum(){ return S.shots.reduce((t,s)=>t+num(s.dur), 0); }
+
+function monotony(){
+  const hits = [];
+  for(let i=2;i<S.shots.length;i++){
+    const a=S.shots[i-2], b=S.shots[i-1], c=S.shots[i];
+    const key = x => (x.framing||"").trim().toLowerCase()+"|"+(x.camera||"").trim().toLowerCase();
+    if(key(a) && key(a)===key(b) && key(b)===key(c)) hits.push([a.sid,b.sid,c.sid]);
+  }
+  return hits;
+}
+function distribution(){
+  const band = {anchor:0, sustained:0, connective:0, burst:0};
+  S.shots.forEach(s=>{
+    const d = num(s.dur);
+    if(d >= 20) band.anchor++;
+    else if(d >= 12) band.sustained++;
+    else if(d >= 4) band.connective++;
+    else if(d > 0) band.burst++;
+  });
+  return band;
+}
+function acceptance(){
+  const g = S.days.reduce((t,d)=>t+num(d.gen),0);
+  const k = S.days.reduce((t,d)=>t+num(d.kept),0);
+  return {gen:g, kept:k, rate: g ? (k/g*100) : null};
+}
+
+/* ============================ NAV ============================ */
+$$("#nav button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    $$("#nav button").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    $$(".page").forEach(p=>p.classList.remove("active"));
+    $("#p-"+b.dataset.p).classList.add("active");
+    window.scrollTo(0,0);
+    renderAll();
+  });
+});
+
+/* ============================ DASHBOARD ============================ */
+function renderDash(){
+  const t = today();
+  const left = daysBetween(t, INTERNAL);
+  const total = daysBetween(START, INTERNAL);
+  const elapsed = Math.max(0, total-left);
+  $("#dDays").textContent = left;
+  $("#dDays").className = "stat " + (left<=5?"bad":left<=10?"warn":"acc");
+  $("#dDaysSub").textContent = `to ${INTERNAL} · hard deadline ${DEADLINE}`;
+  $("#dDaysBar").style.width = Math.min(100, elapsed/total*100)+"%";
+  $("#dDaysBar").className = left<=5?"bad":left<=10?"warn":"";
+
+  const run = runtimeSum(), tgt = S.meta.target;
+  $("#dRun").textContent = fmtTime(run);
+  const runPct = tgt ? run/tgt*100 : 0;
+  const exact = Math.abs(run-tgt) < 0.5 && S.shots.length>0;
+  $("#dRun").className = "stat " + (exact?"ok":run>tgt?"bad":"");
+  $("#dRunSub").textContent = `target ${fmtTime(tgt)} · ${exact?"sum check passes":(run>tgt?"over by "+Math.round(run-tgt)+"s":Math.round(tgt-run)+"s short")}`;
+  $("#dRunBar").style.width = Math.min(100, runPct)+"%";
+  $("#dRunBar").className = exact?"ok":run>tgt?"bad":"";
+
+  const locked = S.shots.filter(s=>s.status==="🟢").length;
+  $("#dShots").textContent = locked;
+  $("#dShotsSub").textContent = `of ${S.shots.length} planned`;
+  $("#dShotsBar").style.width = S.shots.length ? locked/S.shots.length*100+"%" : "0%";
+  $("#dShotsBar").className = "ok";
+
+  const a = acceptance();
+  $("#dAcc").textContent = a.rate===null ? "—" : a.rate.toFixed(1)+"%";
+  $("#dAcc").className = "stat " + (a.rate===null?"dim":a.rate>=1.5?"ok":a.rate>=0.8?"warn":"bad");
+  $("#dAccSub").textContent = a.rate===null ? "no days logged" : `${a.kept} kept of ${a.gen}`;
+  $("#dAccBar").style.width = a.rate===null?"0%":Math.min(100, a.rate/3*100)+"%";
+  $("#dAccBar").className = a.rate===null?"":a.rate>=1.5?"ok":"warn";
+
+  $("#dGen").textContent = a.gen.toLocaleString();
+  $("#dBudget").textContent = BUDGET.toLocaleString();
+  const dayCount = S.days.length;
+  const proj = dayCount ? Math.round(a.gen/dayCount * total) : 0;
+  $("#dProj").textContent = dayCount ? proj.toLocaleString() : "—";
+  $("#dProj").className = "stat sm " + (!dayCount?"dim":proj>BUDGET*1.15?"bad":proj>BUDGET?"warn":"ok");
+  $("#dProjSub").textContent = dayCount ? (proj>BUDGET? Math.round((proj/BUDGET-1)*100)+"% over envelope" : "inside envelope") : "log a day to project";
+
+  /* gates */
+  const mono = monotony();
+  const gates = [
+    ["Contest rules verified", S.sched["0-0"]&&S.sched["0-1"]&&S.sched["0-2"],
+     "Maximum runtime and the Cinema-Studio-only question gate every model decision."],
+    ["Concept locked", !!S.sched["0-9"], "Every day spent choosing is a day not spent iterating."],
+    ["Ledger sums exactly", exact, "A budget that doesn't add up ships dead air or an impossible cut."],
+    ["Monotony audit clean", mono.length===0 && S.shots.length>0,
+     "No three consecutive shots sharing shot size AND camera move."],
+    ["Assets stress-tested", !!S.sched["1-8"], "Do not generate a narrative shot until the sheets survive three lighting setups."],
+    ["Rough cut complete", S.shots.length>0 && locked>=S.shots.length*0.9,
+     "Every shot present by Day 16, at whatever quality."],
+  ];
+  $("#gates").innerHTML = gates.map(([n,pass,why])=>`
+    <div class="card"><div class="row" style="align-items:flex-start">
+      <span class="pill ${pass?"p-ok":"p-plan"}">${pass?"PASS":"OPEN"}</span>
+      <div style="flex:1"><div style="font-weight:600;font-size:13px">${esc(n)}</div>
+      <div style="font-size:11.5px;color:var(--dim);margin-top:3px">${esc(why)}</div></div>
+    </div></div>`).join("");
+
+  /* blockers */
+  const bl = [];
+  if(!(S.sched["0-1"]&&S.sched["0-2"]))
+    bl.push(["bad","Contest rules unverified","Maximum runtime and whether ALL generation must happen inside Cinema Studio. The second answer decides whether the 20–30s long-take models are legal."]);
+  if(!S.sched["0-9"])
+    bl.push(["warn","No concept locked","Selection deadline is Aug 12. Score everything in the Wargame and commit."]);
+  if(S.shots.length===0)
+    bl.push(["warn","Shot ledger empty","Load the 3-act skeleton or add shots to activate the tempo gates."]);
+  else if(!exact)
+    bl.push(["warn","Sum check failing", `Planned runtime is ${fmtTime(run)} against a ${fmtTime(tgt)} target.`]);
+  if(mono.length)
+    bl.push(["bad","Monotony audit failing", mono.length+" run(s) of three consecutive shots share shot size and camera move — the most common tell of a generated shotlist."]);
+  $("#blockers").innerHTML = bl.length ? bl.map(([k,t,d])=>
+    `<div class="alert ${k}"><b>${esc(t)}</b><span style="color:var(--dim)">${esc(d)}</span></div>`).join("")
+    : `<div class="alert ok"><b>No blockers.</b><span style="color:var(--dim)">All gates either passing or not yet due.</span></div>`;
+
+  /* top concept */
+  const r = ranked();
+  $("#dTop").innerHTML = r.length ? conceptCard(r[0].c, r[0].s, 0) : `<div class="empty">No concepts yet.</div>`;
+}
+
+/* ============================ SCHEDULE ============================ */
+function renderSchedule(){
+  const t = today();
+  $("#schedule").innerHTML = PHASES.map((p,pi)=>{
+    const done = p.tasks.filter((_,ti)=>S.sched[pi+"-"+ti]).length;
+    const cur = t >= "2026-08-10";
+    return `<div class="phase ${done<p.tasks.length && done>0 ? "cur":""}">
+      <div class="row"><div style="flex:1">
+        <h4>${esc(p.n)}</h4>
+        <div class="meta">${esc(p.days)} · ${esc(p.dates)} &nbsp;·&nbsp; <span class="acc">Gate:</span> ${esc(p.gate)}</div>
+      </div><span class="pill ${done===p.tasks.length?"p-lock":"p-plan"}">${done}/${p.tasks.length}</span></div>
+      ${p.tasks.map((tk,ti)=>{
+        const k = pi+"-"+ti, on = !!S.sched[k];
+        return `<label class="chk ${on?"done":""}">
+          <input type="checkbox" data-sched="${k}" ${on?"checked":""}><span>${esc(tk)}</span></label>`;
+      }).join("")}
+    </div>`;
+  }).join("");
+  $$("[data-sched]").forEach(cb=>cb.addEventListener("change",()=>{
+    S.sched[cb.dataset.sched] = cb.checked; save(); renderSchedule(); renderDash();
+  }));
+}
+
+/* ============================ DAILY LOG ============================ */
+function renderLog(){
+  const b = $("#logBody");
+  if(!S.days.length){ b.innerHTML = `<tr><td colspan="6" class="empty">No days logged yet.</td></tr>`; return; }
+  b.innerHTML = S.days.slice().sort((x,y)=>x.date<y.date?1:-1).map((d,i)=>{
+    const r = num(d.gen) ? (num(d.kept)/num(d.gen)*100) : 0;
+    const cls = r>=1.5?"ok":r>=0.8?"warn":"bad";
+    return `<tr>
+      <td class="mono">${esc(d.date)}</td>
+      <td class="num">${num(d.gen)}</td>
+      <td class="num">${num(d.kept)}</td>
+      <td class="num ${cls}">${r.toFixed(1)}%</td>
+      <td style="color:var(--dim)">${esc(d.note||"")}</td>
+      <td><button class="btn sm danger" data-delday="${esc(d.date)}">×</button></td></tr>`;
+  }).join("");
+  $$("[data-delday]").forEach(x=>x.addEventListener("click",()=>{
+    S.days = S.days.filter(d=>d.date!==x.dataset.delday); save(); renderLog(); renderDash();
+  }));
+}
+$("#lgAdd").addEventListener("click",()=>{
+  const date = $("#lgDate").value || today();
+  const gen = num($("#lgGen").value), kept = num($("#lgKept").value);
+  if(!gen){ toast("Enter a generation count"); return; }
+  S.days = S.days.filter(d=>d.date!==date);
+  S.days.push({date, gen, kept, note:$("#lgNote").value});
+  save(); $("#lgGen").value=""; $("#lgKept").value=""; $("#lgNote").value="";
+  renderLog(); renderDash(); toast("Day logged");
+});
+
+/* ============================ CONCEPTS ============================ */
+function conceptCard(c, s, i){
+  const cls = s.final>=90?"ok":s.final>=80?"acc":s.final>=70?"warn":"bad";
+  return `<div class="ccard ${i===0?"top":""}">
+    <div class="chead">
+      <div style="flex:1">
+        <h4>${i===0?'<span class="acc">▲ </span>':""}${esc(c.name)}</h4>
+        <div class="ol">${esc(c.ol)}</div>
+      </div>
+      <div style="text-align:right">
+        <div class="score ${cls}">${s.final.toFixed(1)}</div>
+        <div style="font-size:10px;color:var(--dim2);letter-spacing:.5px">/ 100</div>
+      </div>
+    </div>
+    <div class="sbreak">
+      <span>Film <b>${s.film}</b>/50</span>
+      <span>Judges <b>${s.judges}</b>/30</span>
+      <span>Make <b>${s.make}</b>/20</span>
+      <span>Mult <b>×${s.mult.toFixed(2)}</b></span>
+      <span>Cat <b>${c.j.cat}</b>/12</span>
+      <span>Pap <b>${c.j.pap}</b>/10</span>
+      <span>And <b class="${c.j.and<=3?"bad":""}">${c.j.and}</b>/8</span>
+      <span class="dim">${c.loc} loc · ${c.cast} cast · ${esc(c.light)}</span>
+    </div>
+  </div>`;
+}
+function renderConcepts(){
+  const r = ranked();
+  $("#cCount").textContent = r.length + " scored";
+  $("#conceptList").innerHTML = r.length
+    ? r.map((x,i)=>conceptCard(x.c,x.s,i)).join("")
+    : `<div class="empty">No concepts. Add one from the Wargame.</div>`;
+}
+$("#cNew").addEventListener("click",()=>{
+  const id = "c-"+Date.now();
+  S.concepts.push({id, name:"Untitled concept", ol:"", loc:1, cast:1, light:"",
+    f:{turn:5,emotion:5,orig:5,layers:5,last:5}, j:{cat:6,pap:5,and:4},
+    m:{loc:5,cast:5,light:3,risk:3}, x:{hook:false,meta:false,dialogue:false,crowd:false}});
+  S.active = id; save();
+  $$("#nav button").forEach(x=>x.classList.remove("active"));
+  document.querySelector('[data-p="wargame"]').classList.add("active");
+  $$(".page").forEach(p=>p.classList.remove("active"));
+  $("#p-wargame").classList.add("active");
+  renderAll(); window.scrollTo(0,0);
+});
+
+/* ============================ WARGAME ============================ */
+const SLIDERS = [
+  ["f","turn","Want & Turn",10,"Is there a clear want, and a real turn where the film becomes about something else?"],
+  ["f","emotion","Emotional payload",10,"Does the ending cost the protagonist something the audience feels?"],
+  ["f","orig","Originality",10,"Against 15,000 entries — has the jury seen this shape before today?"],
+  ["f","layers","Layered truth",10,"Does it say ≥2 things at once, without stating either?"],
+  ["f","last","The last image",10,"Does the final shot recontextualise, land, and stay?"],
+  ["j","cat","Catmull",12,"Story spine, interiority, restraint, evidence of revision."],
+  ["j","pap","Papamichael",10,"One motivated source, faces, held frames, no AI tells."],
+  ["j","and","Anderson",8,"Coherent space, depth, scale, weight, atmospherics."],
+  ["m","loc","Locations",5,"1 loc = 5 · 2 = 3 · 3+ = 1"],
+  ["m","cast","Character sheets",5,"1 = 5 · 2 = 3 · 3+ = 1"],
+  ["m","light","Light simplicity",5,"One source, high contrast, lots of black = 5"],
+  ["m","risk","Low-risk shots",5,"No crowds, fights, reflections, doubles"],
+];
+function renderWargame(){
+  const sel = $("#wgPick");
+  sel.innerHTML = S.concepts.map(c=>`<option value="${esc(c.id)}" ${c.id===S.active?"selected":""}>${esc(c.name)}</option>`).join("");
+  const c = S.concepts.find(x=>x.id===S.active) || S.concepts[0];
+  if(!c){ $("#wgForm").innerHTML = `<div class="empty">No concepts. Create one from the Concepts page.</div>`; return; }
+  S.active = c.id;
+  const s = scoreConcept(c);
+
+  $("#wgForm").innerHTML = `
+    <div class="grid g2">
+      <div class="card">
+        <h3>Identity</h3>
+        <div class="field"><label class="f">Name</label><input type="text" id="wgName" value="${esc(c.name)}"></div>
+        <div class="field"><label class="f">One-liner</label><textarea id="wgOl" style="min-height:56px">${esc(c.ol)}</textarea></div>
+        <div class="row">
+          <div style="flex:0 0 88px"><label class="f">Locations</label><input type="number" id="wgLoc" min="1" value="${c.loc}"></div>
+          <div style="flex:0 0 88px"><label class="f">Cast</label><input type="number" id="wgCast" min="1" value="${c.cast}"></div>
+          <div style="flex:1;min-width:150px"><label class="f">Light source</label><input type="text" id="wgLight" value="${esc(c.light)}"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Result</h3>
+        <div class="row" style="align-items:flex-end;gap:22px">
+          <div><div class="score ${s.final>=90?"ok":s.final>=80?"acc":s.final>=70?"warn":"bad"}" style="font-size:44px">${s.final.toFixed(1)}</div>
+            <div class="statsub">final / 100</div></div>
+          <div style="flex:1">
+            <div class="sbreak" style="flex-direction:column;gap:5px">
+              <span>Film grade <b>${s.film}</b> / 50</span>
+              <span>Judge fit <b>${s.judges}</b> / 30</span>
+              <span>Make-ability <b>${s.make}</b> / 20</span>
+              <span>Raw <b>${s.raw}</b> → multiplier <b>×${s.mult.toFixed(2)}</b></span>
+            </div>
+          </div>
+        </div>
+        <div class="bar" style="height:8px;margin-top:14px"><i class="${s.final>=90?"ok":s.final>=70?"":"bad"}" style="width:${Math.min(100,s.final)}%"></i></div>
+        <div class="hint">${
+          c.j.and<=3 ? "⚠ Anderson score is the ceiling here — no spectacle, no scale, no space."
+          : s.make<12 ? "⚠ Make-ability below 12/20 working alone. This is the trap: the best idea you cannot execute in the time available."
+          : s.final>=90 ? "No weak axis. This is the shape that survives a three-person jury."
+          : "Solid. Check which axis is dragging and whether one change fixes it."}</div>
+      </div>
+    </div>
+
+    <div class="section"><h3>Film grade · judge fit · make-ability</h3>
+      <div class="grid g2">${SLIDERS.map(([g,k,label,max,why])=>`
+        <div class="card" style="padding:12px 15px">
+          <div class="row" style="margin-bottom:5px">
+            <span style="font-size:12.5px;font-weight:600;flex:1">${esc(label)}</span>
+            <span class="mono acc" style="font-variant-numeric:tabular-nums">${c[g][k]} / ${max}</span>
+          </div>
+          <input type="range" min="0" max="${max}" value="${c[g][k]}" data-g="${g}" data-k="${k}">
+          <div class="hint">${esc(why)}</div>
+        </div>`).join("")}
+      </div>
+    </div>
+
+    <div class="section"><h3>Multipliers</h3>
+      <div class="card"><div class="grid g4">
+        ${[["hook","Audience hook ×1.10","Survives 15 seconds on a feed"],
+           ["meta","Meta-risk ×0.85","Comments on AI/replacement — jury may bounce"],
+           ["dialogue","Dialogue-heavy ×0.90",">8 spoken lines — AI's weakest capability"],
+           ["crowd","Crowd ×0.85","Any shot requiring >5 people"]]
+          .map(([k,l,w])=>`<label class="chk"><input type="checkbox" data-x="${k}" ${c.x[k]?"checked":""}>
+            <span><b style="font-size:12.5px">${esc(l)}</b><br><span style="font-size:11px;color:var(--dim)">${esc(w)}</span></span></label>`).join("")}
+      </div></div>
+    </div>
+
+    <div class="section"><h3>Kill criteria</h3>
+      <div class="card"><div style="font-size:12.5px;color:var(--dim)">
+        ${["You cannot state the turn in one sentence","It needs more than 3 locations","It needs more than 2 locked character sheets",
+           "The light source changes without a story reason","It requires a fight, a crowd, or a vehicle chase to work",
+           "The ending explains itself in dialogue","You cannot name the last image","Make-ability below 12/20 working alone"]
+          .map(x=>`<div style="padding:3px 0">✕ &nbsp;${esc(x)}</div>`).join("")}
+        <div style="margin-top:13px;padding-top:12px;border-top:1px solid var(--border);color:var(--text);font-size:13px">
+          <b>The single most important question:</b> if you removed every generated image and told this story out loud in ninety seconds, would anyone care?
+          <div style="color:var(--dim);margin-top:5px">If yes, the technology will make it better. If no, the technology will make it <i>longer</i>, and Ed Catmull will know inside thirty seconds.</div>
+        </div>
+      </div></div>
+    </div>`;
+
+  $("#wgName").addEventListener("input", e=>{ c.name=e.target.value; save(); renderWargame(); });
+  $("#wgOl").addEventListener("input", e=>{ c.ol=e.target.value; save(); });
+  $("#wgLoc").addEventListener("input", e=>{ c.loc=num(e.target.value); save(); });
+  $("#wgCast").addEventListener("input", e=>{ c.cast=num(e.target.value); save(); });
+  $("#wgLight").addEventListener("input", e=>{ c.light=e.target.value; save(); });
+  $$("#wgForm input[type=range]").forEach(r=>r.addEventListener("input", e=>{
+    c[e.target.dataset.g][e.target.dataset.k] = num(e.target.value); save(); renderWargame();
+  }));
+  $$("#wgForm [data-x]").forEach(cb=>cb.addEventListener("change", e=>{
+    c.x[e.target.dataset.x] = e.target.checked; save(); renderWargame();
+  }));
+}
+$("#wgPick").addEventListener("change", e=>{ S.active = e.target.value; save(); renderWargame(); });
+$("#wgDel").addEventListener("click", ()=>{
+  if(S.concepts.length<=1){ toast("Keep at least one concept"); return; }
+  S.concepts = S.concepts.filter(c=>c.id!==S.active);
+  S.active = S.concepts[0].id; save(); renderAll(); toast("Concept deleted");
+});
+
+/* ============================ IDEAS ============================ */
+function renderIdeas(){
+  $("#ideaList").innerHTML = S.ideas.length ? S.ideas.map((it,i)=>`
+    <div class="card" style="margin-bottom:9px"><div class="row" style="align-items:flex-start">
+      <div style="flex:1;white-space:pre-wrap;font-size:13px">${esc(it.text)}</div>
+      <button class="btn sm" data-promote="${i}">Promote →</button>
+      <button class="btn sm danger" data-delidea="${i}">×</button>
+    </div></div>`).join("") : `<div class="empty">Nothing here yet. Write it badly — that's the point.</div>`;
+
+  $("#sparks").innerHTML = SPARKS.map(([k,q])=>`
+    <div class="card" style="padding:12px 15px">
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);font-weight:600;margin-bottom:4px">${esc(k)}</div>
+      <div style="font-size:12.5px;color:var(--dim)">${esc(q)}</div></div>`).join("");
+
+  $$("[data-delidea]").forEach(b=>b.addEventListener("click",()=>{
+    S.ideas.splice(+b.dataset.delidea,1); save(); renderIdeas();
+  }));
+  $$("[data-promote]").forEach(b=>b.addEventListener("click",()=>{
+    const it = S.ideas[+b.dataset.promote];
+    const id = "c-"+Date.now();
+    S.concepts.push({id, name: it.text.split(/[.\n]/)[0].slice(0,42) || "Untitled", ol: it.text,
+      loc:1, cast:1, light:"", f:{turn:5,emotion:5,orig:5,layers:5,last:5}, j:{cat:6,pap:5,and:4},
+      m:{loc:5,cast:5,light:3,risk:3}, x:{hook:false,meta:false,dialogue:false,crowd:false}});
+    S.active = id; S.ideas.splice(+b.dataset.promote,1); save();
+    toast("Promoted to concept"); renderAll();
+  }));
+}
+$("#ideaAdd").addEventListener("click",()=>{
+  const v = $("#ideaText").value.trim();
+  if(!v){ toast("Write something first"); return; }
+  S.ideas.unshift({text:v, at:today()}); $("#ideaText").value="";
+  save(); renderIdeas(); toast("Idea added");
+});
+
+/* ============================ LEDGER ============================ */
+const STATUSES = [["⬜","planned","p-plan"],["🟡","in iteration","p-iter"],["🟢","locked","p-lock"],["🔴","restructure","p-rest"]];
+
+function renderLedger(){
+  const b = $("#shotBody");
+  if(!S.shots.length){
+    b.innerHTML = `<tr><td colspan="11" class="empty">No shots. Load the 3-act skeleton to start.</td></tr>`;
+  } else {
+    b.innerHTML = S.shots.map((s,i)=>`<tr>
+      <td><input value="${esc(s.sid)}" data-i="${i}" data-f="sid"></td>
+      <td><input value="${esc(s.scene)}" data-i="${i}" data-f="scene"></td>
+      <td><input type="number" step="0.5" value="${s.dur}" data-i="${i}" data-f="dur" class="num"></td>
+      <td><select data-i="${i}" data-f="model">${MODELS.map(m=>`<option ${m[0]===s.model?"selected":""}>${esc(m[0])}</option>`).join("")}</select></td>
+      <td><input value="${esc(s.framing)}" data-i="${i}" data-f="framing"></td>
+      <td><input value="${esc(s.camera)}" data-i="${i}" data-f="camera"></td>
+      <td><input value="${esc(s.beat)}" data-i="${i}" data-f="beat"></td>
+      <td><input value="${esc(s.transOut)}" data-i="${i}" data-f="transOut"></td>
+      <td><input type="number" value="${s.takes||0}" data-i="${i}" data-f="takes" class="num"></td>
+      <td><select data-i="${i}" data-f="status">${STATUSES.map(([e,l])=>`<option value="${e}" ${e===s.status?"selected":""}>${e} ${l}</option>`).join("")}</select></td>
+      <td><button class="btn sm danger" data-delshot="${i}">×</button></td>
+    </tr>`).join("");
+  }
+
+  $$("#shotBody [data-f]").forEach(el=>el.addEventListener("input", e=>{
+    const i = +e.target.dataset.i, f = e.target.dataset.f;
+    S.shots[i][f] = (f==="dur"||f==="takes") ? num(e.target.value) : e.target.value;
+    save();
+    if(f==="dur"||f==="framing"||f==="camera"||f==="status") renderGates();
+    renderDash();
+  }));
+  $$("[data-delshot]").forEach(x=>x.addEventListener("click",()=>{
+    S.shots.splice(+x.dataset.delshot,1); save(); renderLedger(); renderDash();
+  }));
+  renderGates();
+}
+
+function renderGates(){
+  const run = runtimeSum(), tgt = S.meta.target;
+  const exact = Math.abs(run-tgt) < 0.5 && S.shots.length>0;
+  $("#gateSum").innerHTML = `<div class="alert ${exact?"ok":"warn"}">
+    <b>Sum check</b><span style="color:var(--dim)">
+    Planned <b class="${exact?"ok":"warn"}">${fmtTime(run)}</b> (${run}s) against a target of
+    <b>${fmtTime(tgt)}</b> (<input type="number" id="tgtIn" value="${tgt}" style="width:66px;display:inline-block;padding:2px 5px;font-size:12px"> s).
+    ${exact ? "Adds up exactly." : "Stated durations must add up to the requested runtime exactly, or the cut ships dead air."}
+    </span></div>`;
+  $("#tgtIn").addEventListener("input", e=>{ S.meta.target = num(e.target.value); save(); renderGates(); renderDash(); });
+
+  const mono = monotony();
+  $("#gateMono").innerHTML = `<div class="alert ${mono.length?"bad":"ok"}">
+    <b>Monotony audit</b><span style="color:var(--dim)">
+    ${mono.length
+      ? `<b class="bad">${mono.length} failing run(s)</b> — ${mono.map(h=>h.join(" → ")).join(", ")} share both shot size and camera move. This is the single most common tell of a generated shotlist, and it is invisible when you review shot by shot.`
+      : (S.shots.length ? "No run of three consecutive shots shares shot size and camera move." : "Add shots to run the audit.")}
+    </span></div>`;
+
+  const d = distribution();
+  const bands = [["Anchors","20s+",d.anchor,"3–4"],["Sustained","12–18s",d.sustained,"8–10"],
+                 ["Connective","4–10s",d.connective,"6–8"],["Bursts","<4s",d.burst,"6–10"]];
+  $("#dist").innerHTML = bands.map(([n,r,v,t])=>`
+    <div class="card"><h3>${esc(n)}</h3>
+      <div class="stat sm">${v}</div>
+      <div class="statsub">${esc(r)} · target ${esc(t)}</div></div>`).join("");
+
+  const locked = S.shots.filter(s=>s.status==="🟢").length;
+  const takes = S.shots.reduce((t,s)=>t+num(s.takes),0);
+  $("#shotStats").textContent = `${S.shots.length} shots · ${fmtTime(run)} · ${locked} locked · ${takes} takes logged`;
+}
+
+$("#shotAdd").addEventListener("click",()=>{
+  S.shots.push({sid:"", scene:"", dur:12, model:"Seedance 2.0", framing:"MEDIUM",
+    camera:"static hold", beat:"", transOut:"", takes:0, status:"⬜"});
+  save(); renderLedger(); renderDash();
+});
+$("#shotSeed").addEventListener("click",()=>{
+  if(S.shots.length && !confirm("Replace the current ledger with the 3-act skeleton?")) return;
+  S.shots = SKELETON.map(r=>({sid:r[0],scene:r[1],dur:r[2],model:r[3],framing:r[4],
+    camera:r[5],beat:r[6],transOut:r[7],takes:0,status:r[8]}));
+  S.meta.target = 270;   // 4:30 — the skeleton is built to hit this exactly
+  save(); renderLedger(); renderDash(); toast("Skeleton loaded");
+});
+
+/* ============================ PROMPT BUILDER ============================ */
+$("#pbGen").addEventListener("click", buildPrompt);
+function buildPrompt(){
+  const v = id => ($("#"+id).value||"").trim();
+  const chars = v("pbChars").split(",").map(s=>s.trim()).filter(Boolean);
+  const dur = v("pbDur") || "15";
+  const out =
+`SCENE CONTEXT
+EXACT ${chars.length||1} CHARACTER${chars.length===1?"":"S"} — NO DUPLICATES: ${chars.join(", ")||"[NAME]"}.
+Shot ${v("pbId")||"[id]"} · ${dur}s · ${v("pbModel")}.
+
+GEO SPATIAL LAYOUT (locked across every shot in this scene — pure spatial map):
+${v("pbGeo")||"— [LANDMARK] = [what it is], [position]\n— 180° AXIS: camera ALWAYS stays [side] — it NEVER crosses [line]\n— LIGHT LOGIC: [the ONE source], [direction], [what it does not reach]"}
+
+CHARACTERS (verbatim, never shortened)
+${v("pbCharDesc")||"[full physical descriptor — clothing, build, posture, hair. No age.]"}
+
+SPATIAL LAYOUT BLOCK (this shot)
+${chars[0]||"[NAME]"} at [landmark], [n] metres from [landmark 2], facing frame-[left/right].
+Occupies [screen position]. Eye-line to [target].
+
+ACTION TIMING
+${v("pbAction")||"0.0–[n]s — [beat, present tense, ≤3 sentences]"}
+
+CHARACTER ACTING
+${v("pbActing")||"[NAME] — emotional state: [ ]. What they want in this moment: [ ]. What they are hiding: [ ]. Dominant body rhythm: [ ]. Visible habits in this beat: [ ]. What changes across the shot: [ ]."}
+
+MICRO-LIFE
+One visible micro-event every one to two seconds — the breath lifts the chest, a nostril moves, a brow tenses and relaxes. Phased blinking: one lazy blink, a quick DOUBLE-BLINK, one HARD reset-blink. Stillness is held tension, never a freeze.
+
+AUDIO
+${v("pbAmb")||"[ambience]"}. ${chars[0]||"[NAME]"} voice (verbatim): "${v("pbVoice")||"[register, tempo, accent, manner]"}". ${
+  v("pbLine") ? `Their line, and nothing else: "${v("pbLine")}".` : "No lines in this shot."} Nobody else speaks; anyone without a line stays completely silent, lips at rest, jaw closed, listening. Any half-laugh written in the action is a facial expression with no sound. Voices clean and close to the microphone, ambience beneath them, ambience dips when someone speaks. No music.
+
+POSITIVE LOCKS
+${v("pbLocks")||"[counted objects, scale laws, what IS in frame — phrased as what is, never as what is not]"}
+Anatomically correct, all limbs naturally positioned. Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props.
+
+STYLE
+Photoreal live-action — no 3D render, no game engine, no animated-film aesthetic. Physical cine lens, 180° shutter motion blur, subtle motivated moves only. Skin: pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Composition: staged in depth — foreground, midground and background occupied. Continuity: characters, props and environment locked to references across every cut. No identity drift.
+
+QUALITY
+8K detail, pore-level skin, no jitter, no flicker. The face stays exactly its reference at every distance. Subject in sharp focus.
+
+Photoreal. NON-IP. 2.39:1. ${dur}s. SFX only. No music. NO CGI. Cinematic.`;
+  $("#pbOut").textContent = out;
+  const words = out.trim().split(/\s+/).length;
+  $("#pbCount").textContent = `${words} words · ${out.length} chars${words<400?" — thin; Hell Grind prompts ran 3,000–4,000 words":""}`;
+}
+$("#pbCopy").addEventListener("click", async ()=>{
+  const t = $("#pbOut").textContent;
+  try{ await navigator.clipboard.writeText(t); toast("Copied"); }
+  catch(e){
+    const ta=document.createElement("textarea"); ta.value=t; document.body.appendChild(ta);
+    ta.select(); try{document.execCommand("copy"); toast("Copied");}catch(_){toast("Copy failed");}
+    document.body.removeChild(ta);
+  }
+});
+
+/* ============================ REFERENCE ============================ */
+function renderReference(){
+  $("#modelBody").innerHTML = MODELS.map(m=>`<tr>
+    <td><b>${esc(m[0])}</b></td><td class="mono acc">${esc(m[1])}</td><td class="mono">${esc(m[2])}</td>
+    <td class="mono dim">${esc(m[3])}</td><td class="mono dim">${esc(m[4])}</td><td class="mono dim">${esc(m[5])}</td>
+    <td style="color:var(--dim)">${esc(m[6])}</td></tr>`).join("");
+  $("#filterBody").innerHTML = FILTERS.map(f=>`<tr>
+    <td><b class="bad">${esc(f[0])}</b></td><td style="color:var(--dim)">${f[1]}</td></tr>`).join("");
+  $("#judges").innerHTML = JUDGES.map(j=>`
+    <div class="judgecard">
+      <h4>${esc(j.name)}</h4>
+      <div class="role">${esc(j.role)}</div>
+      <div style="font-size:12px;color:var(--dim);margin-bottom:9px">${esc(j.bio)}</div>
+      <blockquote>${esc(j.quote)}</blockquote>
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--ok);font-weight:600;margin:11px 0 3px">Rewards</div>
+      <ul>${j.rewards.map(r=>`<li>${r}</li>`).join("")}</ul>
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--bad);font-weight:600;margin:9px 0 3px">Punishes</div>
+      <ul>${j.punishes.map(r=>`<li>${esc(r)}</li>`).join("")}</ul>
+      <div style="margin-top:11px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--accent)">${esc(j.edge)}</div>
+    </div>`).join("");
+}
+
+/* ============================ IO ============================ */
+$("#btnExport").addEventListener("click",()=>{
+  const blob = new Blob([JSON.stringify(S,null,2)],{type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "hff2026-production-state.json";
+  a.click(); URL.revokeObjectURL(a.href); toast("Exported");
+});
+$("#btnImport").addEventListener("click",()=>$("#fileIn").click());
+$("#fileIn").addEventListener("change", e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try{ S = Object.assign(blank(), JSON.parse(r.result)); save(); renderAll(); toast("Imported"); }
+    catch(err){ toast("Bad file"); }
+  };
+  r.readAsText(f); e.target.value="";
+});
+$("#btnReset").addEventListener("click",()=>{
+  if(!confirm("Reset all data to defaults? This cannot be undone.")) return;
+  S = blank(); save(); renderAll(); toast("Reset");
+});
+
+/* ============================ BOOT ============================ */
+function renderAll(){
+  renderDash(); renderSchedule(); renderLog();
+  renderConcepts(); renderWargame(); renderIdeas();
+  renderLedger(); renderReference();
+}
+$("#lgDate").value = today();
+renderAll();
+window.__S = () => S;   // test hook
+</script>
