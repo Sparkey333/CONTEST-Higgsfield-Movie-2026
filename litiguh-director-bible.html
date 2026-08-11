@@ -525,6 +525,118 @@ footer a{color:var(--ink-2)}
 .judge.alt{border-color:var(--void-line)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+/* ============ CONTROL ROOM ============ */
+#control{background:var(--surface);border-bottom:1px solid var(--line)}
+.cr-now{
+  display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;
+  background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:14px;
+  padding:20px 24px;margin-bottom:28px;
+}
+.cr-now .badge{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-line);border-radius:999px;padding:6px 12px;white-space:nowrap;
+}
+.cr-now h3{font-size:20px;margin:0 0 3px}
+.cr-now .sub{font-size:13.5px;color:var(--ink-2)}
+.cr-now .prog{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-align:right;white-space:nowrap}
+.cr-now .prog b{display:block;font-size:22px;color:var(--ink);font-family:var(--display)}
+@media(max-width:760px){.cr-now{grid-template-columns:1fr;gap:12px}.cr-now .prog{text-align:left}}
+
+.lanes{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.lane-btn{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line);
+  border-radius:999px;padding:8px 16px;cursor:pointer;transition:.15s;
+}
+.lane-btn:hover{color:var(--ink-2)}
+.lane-btn.on{background:var(--void-soft);color:var(--void);border-color:var(--void-line)}
+.lane-note{font-size:13px;color:var(--ink-3);margin:0 0 22px;max-width:74ch}
+
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{
+  display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
+  background:var(--surface-2);border:1px solid var(--line-soft);border-radius:12px;padding:16px 18px;
+  transition:.15s;
+}
+.step.cur{background:var(--surface);border-color:var(--gold-line);box-shadow:var(--shadow)}
+.step.done{opacity:.5}
+.step.done .step-body{display:none}
+.step-n{
+  font-family:var(--mono);font-size:13px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:8px;width:44px;height:34px;
+  display:flex;align-items:center;justify-content:center;
+}
+.step.cur .step-n{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft)}
+.step.done .step-n{color:var(--jade);border-color:var(--jade)}
+.step-hd{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.step-hd h4{font-size:17px}
+.step-ph{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:4px;padding:2px 7px;
+}
+.step-ph.gate{color:var(--coral);border-color:var(--coral-line);background:var(--coral-soft)}
+.step-body{margin-top:12px;display:flex;flex-direction:column;gap:11px}
+.rowk{display:grid;grid-template-columns:96px 1fr;gap:14px;font-size:14px;align-items:start}
+.rowk .k{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);padding-top:3px;
+}
+.rowk .v{color:var(--ink-2)}
+.rowk .v b{color:var(--ink)}
+.rowk .v code{background:var(--surface-3);padding:1px 5px;border-radius:4px;color:var(--ink)}
+@media(max-width:620px){.rowk{grid-template-columns:1fr;gap:2px}}
+.go{
+  display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;
+  color:var(--void);border:1px solid var(--void-line);background:var(--void-soft);
+  border-radius:6px;padding:5px 11px;text-decoration:none;
+}
+.go:hover{filter:brightness(1.06)}
+.paste{
+  font-family:var(--mono);font-size:12.5px;line-height:1.62;white-space:pre-wrap;
+  background:var(--surface-3);border:1px solid var(--line);border-left:2px solid var(--void);
+  border-radius:8px;padding:12px 14px;margin:0;color:var(--ink);max-height:220px;overflow:auto;
+}
+.step-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:3px}
+.doneb{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--ink);color:var(--ground);border:1px solid var(--ink);
+  border-radius:6px;padding:8px 15px;cursor:pointer;
+}
+.doneb:hover{filter:brightness(1.25)}
+.undob{
+  font-family:var(--mono);font-size:11px;background:none;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer;
+}
+.undob:hover{color:var(--ink-2)}
+.cr-tools{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+
+/* asset prompt vault */
+.prep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.prep{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:12px;padding:15px 17px}
+.prep-hd{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;margin-bottom:9px}
+.prep-hd h4{font-size:15.5px}
+.prep-tag{
+  font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:4px;padding:2px 6px;color:var(--ink-3);
+}
+.prep-tag.c{color:var(--void);border-color:var(--void-line)}
+.prep-tag.l{color:var(--gold);border-color:var(--gold-line)}
+.prep-tag.p{color:var(--jade);border-color:var(--jade)}
+.prep-meta{font-size:12px;color:var(--ink-3);font-family:var(--mono);margin-bottom:9px}
+.prep .paste{max-height:150px;font-size:12px}
+.prep .copy{margin-top:9px}
+
+/* dials */
+.dials{width:100%;border-collapse:collapse;font-size:14px}
+.dials th{
+  text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:400;padding:0 14px 9px 0;border-bottom:1px solid var(--line);
+}
+.dials td{padding:12px 14px 12px 0;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--ink-2)}
+.dials td:first-child{color:var(--ink);width:29%}
+.dials td code{background:var(--surface-3);padding:1px 5px;border-radius:4px;color:var(--ink);font-size:.9em}
+.dials tr:last-child td{border-bottom:0}
+@media(max-width:700px){.dials,.dials tbody,.dials tr,.dials td{display:block;width:auto}.dials thead{display:none}.dials td:first-child{font-weight:600;padding-bottom:2px;border:0}.dials tr{border-bottom:1px solid var(--line-soft);padding:10px 0;display:block}}
 </style>
 
 <header class="mast">
@@ -549,6 +661,9 @@ footer a{color:var(--ink-2)}
 </header>
 
 <nav class="toc"><div class="wrap toc-inner">
+  <a href="#control">▶ Control Room</a>
+  <a href="#assets">Asset Prompts</a>
+  <a href="#dials">Tweaks &amp; Export</a>
   <a href="#thesis">The Thesis</a>
   <a href="#brief">The Brief</a>
   <a href="#doctrine">Doctrine</a>
@@ -566,6 +681,85 @@ footer a{color:var(--ink-2)}
 </div></nav>
 
 <!-- ================= THESIS ================= -->
+<!-- ================= CONTROL ROOM ================= -->
+<section id="control"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Start here</span>
+    <h2>Control room</h2>
+    <p>One screen that remembers where you stopped. Everything below is a single ordered queue &mdash; do the highlighted step, press <b>Done</b>, and the next one lights up. Nothing else on this page needs your attention until it does.</p>
+  </div>
+
+  <div class="cr-now">
+    <span class="badge" id="now-ph">Phase 0</span>
+    <div>
+      <h3 id="now-t">Loading&hellip;</h3>
+      <p class="sub" id="now-s"></p>
+    </div>
+    <div class="prog"><b id="now-n">0/0</b><span id="now-left">steps left</span></div>
+  </div>
+
+  <div class="lanes">
+    <button class="lane-btn on" data-lane="a">Lane A &mdash; Claude drives it</button>
+    <button class="lane-btn" data-lane="b">Lane B &mdash; I click it myself</button>
+  </div>
+  <p class="lane-note" id="lane-note"></p>
+
+  <div class="steps" id="runsheet"></div>
+
+  <div class="cr-tools">
+    <button class="undob" id="cr-reset">Reset all progress</button>
+    <button class="undob" id="cr-back">Un-do last step</button>
+  </div>
+</div></section>
+
+<!-- ================= ASSET PROMPTS ================= -->
+<section id="assets"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Phase 0 &mdash; before a single film frame</span>
+    <h2>Asset prompts</h2>
+    <p>Characters, lighting plates and props. These are <b>not</b> shots &mdash; they are the reference set that every one of the 39 anchor frames points back at. Generate all of them first, on plain backgrounds, and the faces stop drifting for the rest of the production.</p>
+  </div>
+  <div class="prep-grid" id="prepgrid"></div>
+</div></section>
+
+<!-- ================= DIALS ================= -->
+<section id="dials"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">When it comes out wrong</span>
+    <h2>Tweaks &amp; export</h2>
+    <p>Symptom on the left, the one dial that fixes it on the right. Try the dial before you re-roll &mdash; a re-roll on a prompt problem just buys the same failure twice.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th>Symptom</th><th>The dial</th></tr></thead>
+    <tbody>
+      <tr><td>Face changed between two neighbouring shots</td><td>The start frame is doing all the identity work. Switch that shot to a model with true image references &mdash; <code>seedance_2_0</code>, <code>wan3_0</code>, <code>minimax_h3</code> &mdash; and feed the Soul reference alongside the frame. Do not fix this by re-rolling.</td></tr>
+      <tr><td>Camera moves when you said locked-off</td><td>Put the movement instruction <b>first and last</b> in the prompt, in plain words: <i>&ldquo;Static locked-off shot, no camera movement at any point&hellip;&rdquo;</i> then close with <i>&ldquo;The camera does not move.&rdquo;</i> On <code>wan3_0</code> turn on <code>enable_thinking</code>. Affects <b>S4 S15 S17 S19</b>.</td></tr>
+      <tr><td>Motion is frantic / too much happens</td><td>Lower <code>cfg_scale</code> and raise the duration. A 14s shot with one event reads as confidence; a 6s shot with four events reads as a trailer. Add the word <b>unhurried</b> &mdash; it works on every model here.</td></tr>
+      <tr><td>The chain seam is visible</td><td>The shared anchor is not doing its job. A hidden cut needs <i>genuine</i> near-black or genuine blinding glare &mdash; 70&#37; obscured reads as a failed cut, which is worse than an honest one. Rebuild <b>B01</b> / <b>B02</b> darker, not the video.</td></tr>
+      <tr><td>Shimmer / crawling texture on long shots</td><td>Deflicker <b>before</b> upscaling, always. Extended and chained generations shimmer at the join; upscaling first bakes it in permanently and there is no route back.</td></tr>
+      <tr><td>Model refuses the 21:9 frame</td><td>Not every model does scope. <code>gemini_omni</code> is 16:9 / 9:16 only. Generate at the model's native ratio and use <b>reframe</b> in finishing rather than fighting the generator.</td></tr>
+      <tr><td>Shot has failed three times</td><td>Stop. It leaves the queue and goes to the escalation ladder in <a href="#revision">Revision rules</a> &mdash; it does not get a quiet fourth attempt, and it does not block the shots behind it.</td></tr>
+      <tr><td>Credits vanishing faster than expected</td><td>Smart duration (<code>-1</code>) on <code>wan3_0</code> bills as 10s whatever it returns. Set durations explicitly. Do look-development on <code>gemini_omni</code> and the unlimited-trial models, which cost nothing.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head" style="margin-top:52px">
+    <span class="eyebrow">Delivery</span>
+    <h3 style="font-size:26px">Exporting, in the only order that works</h3>
+  </div>
+  <table class="dials">
+    <tbody>
+      <tr><td>1 &middot; Deflicker</td><td>Every extended or chained shot, individually, before anything else touches it.</td></tr>
+      <tr><td>2 &middot; Upscale</td><td>To 2K/4K with the <code>aigc</code> preset. Bring the 720p Seedance 2.5 material (<b>S2</b>) up here or it will sit visibly soft beside its 4K neighbours.</td></tr>
+      <tr><td>3 &middot; Grade</td><td>Three looks, one per movement: gold-on-black, cold blue-grey with no warmth anywhere, then golden hour. The grade is what makes 23 separate generations read as one film.</td></tr>
+      <tr><td>4 &middot; Assemble</td><td>Cinema Studio, in shot order, at 2.39:1. Cut each shot to the exact duration in the shot list &mdash; the timing was already proved on the stills reel at Gate C.</td></tr>
+      <tr><td>5 &middot; Sound</td><td>Score everything <b>except S13</b>. That shot is 15 seconds of orbital silence and every instinct you have will be to fill it. Do not.</td></tr>
+      <tr><td>6 &middot; Master</td><td>Export the full 4:53 at the festival's stated spec. Keep the per-shot masters &mdash; if one shot gets a note, you re-export one shot, not the film.</td></tr>
+      <tr><td>7 &middot; Submit</td><td>Through the Cinema Studio festival project, with <b>a full day of margin</b>. Re-read all 23 prompts first as a stranger would: they are published after the deadline. Confirm the rules page again &mdash; this festival's timeline has already moved once.</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
 <section id="thesis"><div class="wrap">
   <div class="sec-head">
     <span class="eyebrow">Why this wins on sight</span>
@@ -1625,5 +1819,273 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
     done=e.target.checked?[...new Set([...done,i])]:done.filter(x=>x!==i);
     localStorage.setItem(store,JSON.stringify(done));
   });
+})();
+
+/* ================= ASSET PROMPTS ================= */
+const LOOK={
+ 1:"Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture.",
+ 2:"Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame.",
+ 3:"Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events."
+};
+
+const PREP=[
+{k:"gwen",n:"Gwendolyn",tag:"c",tl:"Character",w:"Image → Soul V2 → train a character",sv:"REF-gwendolyn-##",
+ p:`Character reference sheet, photoreal, neutral studio lighting, plain mid-grey background. A woman in her early thirties encased from the neck down in a faceted crystal shell that refracts whatever light falls on it. Her face is uncovered, bare, luminous, unmistakably human — high cheekbones, dark eyes, hair loose and dark. The crystal is not armour and not clothing; it is grown, like quartz, with visible internal fracture planes. Six views on one sheet: front, three-quarter left, profile, three-quarter right, back, and a head-only close-up. Identical face, identical crystal geometry across all six. No background elements, no props, no text, no watermark.`},
+{k:"torin",n:"Torin",tag:"c",tl:"Character",w:"Image → Soul V2 → train a character",sv:"REF-torin-##",
+ p:`Character reference sheet, photoreal, neutral studio lighting, plain mid-grey background. An ageless man, calm to the point of stillness — could be thirty-five, could be a thousand. He wears robes woven from light itself: the fabric emits rather than reflects, with visible warm filaments running through the weave. Face is serene, symmetrical, entirely unremarkable in expression — the stillness is the character. Six views on one sheet: front, three-quarter left, profile, three-quarter right, back, and a head-only close-up. Identical face and identical robe construction across all six. No background elements, no props, no text, no watermark.`},
+{k:"bros",n:"Ammon &amp; Mikael — the brothers",tag:"c",tl:"Character",w:"Image → Reference Element (both boys in one)",sv:"REF-brothers-##",
+ p:`Character reference sheet, photoreal, neutral daylight, plain sand-coloured background. Two brothers, together in every view. AMMON is eight — watchful, still, holds eye contact a beat too long, the older by two years and visibly the one who thinks. MIKAEL is six — open-faced, delighted, always mid-motion, always talking. Both are island children: sun-darkened skin, salt-stiff dark hair, bare feet, simple undyed cloth wraps. Four paired views on one sheet: both front-on, both three-quarter, both in profile facing each other, and a paired head-and-shoulders close-up. The two faces must remain distinct and consistent across every view. No background elements, no text, no watermark.`},
+{k:"pup",n:"The Puppeteer",tag:"c",tl:"Character",w:"Image → Soul V2 → train a character",sv:"REF-puppeteer-##",
+ p:`Character reference sheet, photoreal, cold blue-grey light, plain dark background. A woman in dark rippling cloth that moves as though underwater regardless of the air around it. Her face is never fully revealed in any view — always turned, always shadowed, always partially occluded by the cloth or by her own hair. What reads instead is posture and hands: unhurried, precise, fingers held mid-gesture as if working invisible strings. Five views on one sheet: back, three-quarter from behind, profile in shadow, hands in isolated close-up, and full figure hovering. No warmth in any part of the frame. No text, no watermark.`},
+{k:"guard",n:"The Guardians",tag:"c",tl:"Character",w:"Image → Reference Element",sv:"REF-guardian-##",
+ p:`Character reference sheet, photoreal, flat white light, plain white background. Temple Guardians: adult figures of mixed build in unadorned white robes that fall straight and heavy with no ornament, no belt, no insignia. Their faces are calm and entirely blank — not masked, not empty-eyed, simply absent of any expression whatsoever, which should read as unsettling rather than peaceful. Views: single figure front, single figure walking in profile, single figure kneeling with head bowed, a line of four standing, and a robe-fabric detail. Identical robe construction and identical facial blankness across all views. No text, no watermark.`},
+
+{k:"l1",n:"Movement I — the Sun",tag:"l",tl:"Lighting plate",w:"Image → any model → plate only",sv:"PLATE-mv1-light",
+ p:`Empty lighting plate, no characters, no story. Cinematic 2.39:1. The surface of a star treated as landscape rather than sphere — an ocean of liquid white-gold plasma moving like weather. Above it, a courtyard built from solidified beams of light, standing untouched in the flame, casting hard-edged shadows that should be impossible. Key light comes from below. Warm gold highlights, genuinely cold shadows, heavy atmospheric haze, anamorphic flare, deep blacks. This plate defines the colour and key direction for every Movement I frame. No people, no text, no watermark.`},
+{k:"l2",n:"Movement II — the Ocean",tag:"l",tl:"Lighting plate",w:"Image → any model → plate only",sv:"PLATE-mv2-light",
+ p:`Empty lighting plate, no characters, no story. Cinematic 2.39:1. A storm ocean under a bruised violet sky, wrong-shaped clouds converging on the horizon. Violet lightning, driving rain, sea spray hanging in the air. Long-lens compression, spray on the lens, water tearing past in horizontal streaks. Fully desaturated — there is no warm colour anywhere in this frame and there must not be. This plate defines the colour and key direction for every Movement II frame. No people, no text, no watermark.`},
+{k:"l3",n:"Movement III — the Island",tag:"l",tl:"Lighting plate",w:"Image → any model → plate only",sv:"PLATE-mv3-light",
+ p:`Empty lighting plate, no characters, no story. Cinematic 2.39:1. A tropical beach at golden hour: sand faintly iridescent with pinks and pale greens in the grain, jungle treeline on the left, flat calm water, a low sun throwing long shadows toward camera. Warm, peaceful, entirely still. Locked-off wide, 32mm, low to the ground, no camera movement implied. This plate defines the colour and key direction for every Movement III frame. No people, no text, no watermark.`},
+
+{k:"shell",n:"The crystal shell",tag:"p",tl:"Prop",w:"Image → plate, plain background",sv:"PROP-shell",
+ p:`Isolated prop study on a plain neutral background. A faceted crystal shell that encases a human body from the neck down — grown rather than manufactured, with visible internal fracture planes and a refractive index that bends whatever is behind it. Four studies: full shell empty and freestanding, a shoulder-and-collar detail, a macro of the fracture planes with light passing through, and the shell mid-fracture with the cracks filling with light rather than dark. Photoreal, physically plausible refraction. No text, no watermark.`},
+{k:"stone",n:"The Creation Stone",tag:"p",tl:"Prop",w:"Image → plate, plain background",sv:"PROP-stone",
+ p:`Isolated prop study on a plain dark background. A green-white stone roughly the size of a closed fist — irregular, unpolished, lit from within by a slow-moving green light that is clearly not reflection. Four studies: held in an open palm for scale, freestanding lit from within, a macro of the interior light in motion, and the stone in flight leaving a green streak. Photoreal, heavy in the hand, ancient rather than magical-looking. No text, no watermark.`},
+{k:"coral",n:"Leviathan coral plating",tag:"p",tl:"Prop",w:"Image → plate, texture study",sv:"PROP-coral",
+ p:`Texture and material study on a plain background. The hide of an enormous sea creature: natural armoured plating overgrown by centuries of dead coral, the coral sheeting off in heavy slabs to reveal crusted grey-brown flesh beneath. Surface is spongelike and crusted enough to take a bare human footfall. Four studies: a wide sheet of the plating, coral slabs mid-detachment, a macro of the crusted flesh surface, and a section where the flesh is cracked, grey and oozing. Photoreal, wet, overcast light. No text, no watermark.`},
+{k:"courtyard",n:"Courtyard of worlds",tag:"p",tl:"Background",w:"Image → establishing plate",sv:"BG-courtyard",
+ p:`Establishing background plate, no characters. Cinematic 2.39:1. A luxurious courtyard whose flowerbeds are planted with worlds — small living planets on stems, each turning slowly with visible cloud systems on their surfaces. The courtyard's structure is made of solid beams of light: load-bearing, faintly humming, casting hard-edged shadows. Beyond its edge, an ocean of white-gold plasma. Key light from below, warm highlights, cold shadows, heavy haze, anamorphic flare. No people, no text, no watermark.`},
+{k:"beach",n:"Coral Beach",tag:"p",tl:"Background",w:"Image → establishing plate",sv:"BG-beach",
+ p:`Establishing background plate, no characters. Cinematic 2.39:1, locked-off wide, 32mm, low. A tropical beach at dawn whose sand is faintly iridescent — pinks and pale greens visible in the grain. Dense jungle fills the left third. Flat water, gentle surf. Across three miles of reef, a white stone temple is just visible on a distant isle. Golden hour, long shadows, warm and completely peaceful. No people, no text, no watermark.`},
+{k:"temple",n:"The white temple",tag:"p",tl:"Background",w:"Image → establishing plate",sv:"BG-temple",
+ p:`Establishing background plate, no characters. Cinematic 2.39:1. A white stone temple on a small isle, plain and unornamented, with tall doors that are shut. Flower beds and a tended garden run along its face. Photograph it three ways on one sheet: intact in calm daylight, taking direct cannon fire with sand and torn flowers raining down its face and lit blood-red by a setting sun, and from behind looking out to open sea. In all three the building simply stands there and does not react. No people, no text, no watermark.`}
+];
+
+/* ================= RUN SHEET ================= */
+const HF="https://higgsfield.ai/";
+const RUN=[
+{ph:"Phase 0",t:"Confirm the workspace and the credit balance",
+ s:"Thirty seconds. Do it now so you never discover a wrong workspace forty frames in.",
+ a:"Check my Higgsfield balance and tell me which workspace is active.",
+ b:"Top-right avatar for the workspace picker; <b>Buy Credits</b> in the nav shows the balance.",
+ w:"Anywhere on higgsfield.ai",u:HF,
+ set:"You want the Ultra plan active and 21:9 available before anything else."},
+{ph:"Phase 0",t:"Gwendolyn — train Soul V2",
+ s:"Her face has to be identical across nine shots spread over three minutes. That comes from a trained identity, not from luck.",
+ a:"Generate the Gwendolyn character sheet from the bible, then train a Soul on the best four.",
+ b:"<b>Image</b> → Soul V2 → train a character. Paste the Gwendolyn prompt from Asset Prompts below.",
+ w:"Image",u:HF+"image",pk:"gwen",
+ set:"Batch of 4. Plain background. Keep every view that holds the same face.",sv:"REF-gwendolyn-##"},
+{ph:"Phase 0",t:"Torin — train Soul V2",
+ s:"He opens the film and closes it. Same face at 0:00 and 4:41 or the bookend does not land.",
+ a:"Generate the Torin character sheet and train a second Soul on it.",
+ b:"<b>Image</b> → Soul V2 → train a second character. Paste the Torin prompt below.",
+ w:"Image",u:HF+"image",pk:"torin",
+ set:"Batch of 4. Separate Soul from Gwendolyn — one identity per Soul.",sv:"REF-torin-##"},
+{ph:"Phase 0",t:"The brothers — one Reference Element, both boys",
+ s:"Soul carries a single identity per generation and these two share the frame in every shot they are in. So they train together, as one element.",
+ a:"Generate the brothers reference sheet and set it up as a Reference Element.",
+ b:"<b>Image</b> → Reference Element. Paste the brothers prompt below. Do <i>not</i> train them as two Souls.",
+ w:"Image",u:HF+"image",pk:"bros",
+ set:"Batch of 4. Both boys visible in every view.",sv:"REF-brothers-##"},
+{ph:"Phase 0",t:"Puppeteer and Guardians",
+ s:"Two more identities. The Puppeteer's face is never fully shown — that is a rule, not a limitation.",
+ a:"Generate the Puppeteer and Guardian reference sheets.",
+ b:"<b>Image</b> → same flow. Two more prompts below.",
+ w:"Image",u:HF+"image",
+ set:"Guardians need identical robe construction and identical facial blankness.",sv:"REF-puppeteer-## · REF-guardian-##"},
+{ph:"Phase 0",t:"Three lighting plates, one per movement",
+ s:"These three images decide the grade of the whole film. Every anchor frame afterwards gets told to match one of them.",
+ a:"Generate the three movement lighting plates.",
+ b:"<b>Image</b> → three plates. Prompts below, tagged Lighting plate.",
+ w:"Image",u:HF+"image",
+ set:"No characters in any of them. Plates only.",sv:"PLATE-mv1-light · PLATE-mv2-light · PLATE-mv3-light"},
+{ph:"Phase 0",t:"Props and background plates",
+ s:"Six studies: crystal shell, Creation Stone, coral plating, courtyard, beach, temple.",
+ a:"Generate all six prop and background plates.",
+ b:"<b>Image</b> → six more. Prompts below, tagged Prop and Background.",
+ w:"Image",u:HF+"image",
+ set:"Plain backgrounds on props. Full 2.39:1 on the three background plates.",sv:"PROP-* · BG-*"},
+{ph:"Gate A",g:1,t:"Identity lock",
+ s:"Every character, palette and lighting reference is now final. No anchor frame gets generated before this holds — an anchor built on an unlocked face has to be rebuilt, and there are thirty-nine of them.",
+ a:"Show me all the Phase 0 references together so I can check them in one pass.",
+ b:"<b>Assets</b> → view everything from Phase 0 side by side. Look for a face that moved.",
+ w:"Assets",u:HF+"assets"},
+{ph:"Phase 1",t:"Movement I look — 11 anchors",
+ s:"F01–F09, and the two S23 bookend frames with them. S23 returns to the courtyard and has to match the opening exactly, so its anchors are made in this session under the same lighting plate — not three weeks later in the Movement III pass.",
+ a:"Generate the Movement I anchor frames, batches of four, and show me the selects.",
+ b:"<b>Image</b> → work down the list in order. One button below copies all eleven prompts at once.",
+ w:"Image",u:HF+"image",anc:1,
+ set:"Batch of 4 per anchor, then select 1. Attach the Movement I lighting plate + the relevant Soul every time.",sv:"F01 … F09 · F36 · F37"},
+{ph:"Phase 1",t:"Movement II look — 14 anchors",
+ s:"F10–F22 plus the B01 bridge. Both match-cut pairs are decided here: F09/F10 carries the 108-year jump, F22/F23 carries a day and three thousand miles. Design each pair together or the audience pays for it.",
+ a:"Generate the Movement II anchors. Do F09 and F10 as a matched pair.",
+ b:"<b>Image</b> → same flow. B01 is the bridge frame and must go genuinely near-black.",
+ w:"Image",u:HF+"image",anc:2,
+ set:"Shared joins are generated once and inherited — F11, F12 and F17 each serve two shots.",sv:"F10 … F22 · B01"},
+{ph:"Phase 1",t:"Movement III look — 14 anchors",
+ s:"F23–F35 plus the B02 dust bridge. F35 — Ammon's face at the end of the push — gets the biggest batch and the longest look of anything in the film.",
+ a:"Generate the Movement III anchors, and give F35 a batch of eight.",
+ b:"<b>Image</b> → same flow. B02 is the dust wall; the source text wrote that cut for you.",
+ w:"Image",u:HF+"image",anc:3,
+ set:"F35 is the single most important image in the film. Do not settle on it.",sv:"F23 … F35 · B02"},
+{ph:"Gate B",g:1,t:"String lock — the contact sheet",
+ s:"All 39 anchors on one sheet, reviewed together. Any face, costume, light direction or grade that jumps between neighbours is drift you are catching for the price of an image instead of a video.",
+ a:"Lay out all 39 anchors in film order as one contact sheet.",
+ b:"<b>Assets</b> → select all 39 → contact sheet view. Read it left to right, twice.",
+ w:"Assets",u:HF+"assets"},
+{ph:"Phase 2",t:"Stills reel — watch all five minutes",
+ s:"Each anchor held for its real duration, temp sound, dialogue read aloud. The only honest test of whether a 13-second average holds attention.",
+ a:"Build the shot-duration list so I can cut the stills reel to exact timings.",
+ b:"<b>Cinema Studio</b> → new project → drop the 39 stills, set each to its shot duration from the shot list.",
+ w:"Cinema Studio",u:HF+"cinema-studio",
+ set:"Watch it start to finish without pausing. If you reach for your phone, note the timecode."},
+{ph:"Gate C",g:1,t:"Timing lock",
+ s:"Runtime, shot order and shot count freeze here. This is the last cheap moment to rearrange anything — after this a structural change costs video generations instead of images.",
+ a:"I want to change the order — tell me what that costs now.",
+ b:"Reorder two shots = 2 images. Insert one = 3. Cut one = 1. After this gate, multiply by roughly forty."},
+{ph:"Phase 3",t:"Cheap motion pass — all 23 shots",
+ s:"Budget tier, every shot. You are not judging quality — only whether each join reads as continuous and whether the model can get from A to B at all.",
+ a:"Run all 23 shots at budget tier so we can test the seams.",
+ b:"<b>Video</b> → Kling 3.0 Turbo or Seedance 2.0 Mini. Prompts are in the shot list, one Copy button each.",
+ w:"Video",u:HF+"video",
+ set:"Lowest tier available. Shots that fail here have an anchor problem, and you just found it for pennies.",sv:"DRAFT-S##"},
+{ph:"Gate D",g:1,t:"Motion lock",
+ s:"Every seam confirmed. Any frame the cheap pass produced that beats your anchor gets extracted and promoted into the ledger, so the final pass inherits an improved string.",
+ a:"Which draft shots produced a better frame than the anchor we fed them?",
+ b:"Extract the better frames, rename them over the old anchors, and note the swap."},
+{ph:"Phase 4",t:"Final — Movement I (S1 to S5)",
+ s:"Eighty seconds, five shots, and the first thirty-four contain no cut at all. S1 and S2 are one continuous move — extend, do not re-generate.",
+ a:"Generate Movement I final, in shot order, at final tier.",
+ b:"<b>Video</b> → per the model column in the shot list. S2 is a forward <code>video_extension</code> of S1.",
+ w:"Video",u:HF+"video",
+ set:"Strict shot order. The chain builds forward and will not survive being done out of sequence.",sv:"FINAL-S01 … S05"},
+{ph:"Phase 4",t:"Final — Movement II (S6 to S14)",
+ s:"The hardest stretch. S7's end frame is S8's start frame; generate in sequence or the chain breaks.",
+ a:"Generate Movement II final, strictly in sequence.",
+ b:"<b>Video</b> → S13 must have audio generation <i>off</i>. That silence is the climax.",
+ w:"Video",u:HF+"video",
+ set:"S13: <code>generate_audio: false</code>. Do not let a model score it.",sv:"FINAL-S06 … S14"},
+{ph:"Phase 4",t:"Final — Movement III (S15 to S23)",
+ s:"S20 — the mountain — gets more attempts than any other shot in the film. Fourteen unbroken seconds that cannot be rescued in the edit.",
+ a:"Generate Movement III final. Give S20 as many attempts as it takes.",
+ b:"<b>Video</b> → S20 on <code>wan3_0</code> with <code>enable_thinking</code> on. Budget for six attempts minimum.",
+ w:"Video",u:HF+"video",
+ set:"Any shot failing three times leaves the queue for the escalation ladder. It does not get a quiet fourth try.",sv:"FINAL-S15 … S23"},
+{ph:"Phase 6",t:"Finish — deflicker, then upscale, then grade",
+ s:"In that order, without exception. Upscaling before deflicking sharpens the shimmer into the master permanently and there is no route back from it.",
+ a:"Deflicker every extended and chained shot, then upscale to 4K.",
+ b:"<b>Video</b> → per-shot tools. Upscale with the <code>aigc</code> preset. S2 is 720p and needs the most lift.",
+ w:"Video",u:HF+"video",
+ set:"Three grades, one per movement: gold-on-black, cold blue-grey, golden hour.",sv:"MASTER-S##"},
+{ph:"Gate E",g:1,t:"Picture lock",
+ s:"No further generation. Anything still wrong is now a sound or grade problem — and if it is neither, it ships as it is.",
+ a:"Assemble the final cut order with exact durations.",
+ b:"<b>Cinema Studio</b> → assemble in shot order at 2.39:1. Timing was already proved at Gate C."},
+{ph:"Phase 7",t:"Sound, then submit",
+ s:"Score everything except S13. Then read all 23 prompts as a stranger would — they get published after the deadline.",
+ a:"Give me the final submission checklist and re-read the prompts for anything that reads badly out of context.",
+ b:"<b>Cinema Studio</b> → festival project → submit. Leave a full day of margin.",
+ w:"Cinema Studio",u:HF+"cinema-studio",
+ set:"Confirm the rules page one more time. This festival's timeline has already moved once."}
+];
+
+/* ================= CONTROL ROOM ================= */
+(function(){
+  const STORE="litiguh.run", LSTORE="litiguh.lane";
+  const host=document.getElementById("runsheet");
+  const clean=t=>t.replace(/<[^>]+>/g,"").replace(/&#37;/g,"%").replace(/&mdash;/g,"—").replace(/&amp;/g,"&").replace(/&ldquo;|&rdquo;/g,'"').replace(/&nbsp;/g," ");
+
+  function anchorPrompt(f){
+    return "["+f.f+" — "+clean(f.s)+"]\n"+
+      "Still frame, cinematic 2.39:1, 21:9, photoreal. "+clean(f.d)+" "+LOOK[f.mv]+
+      " Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame — the composition has to survive being held. No text, no watermark.";
+  }
+  const anchorsFor=mv=>FRAMES.filter(f=>f.mv===mv).map(anchorPrompt).join("\n\n");
+
+  let cur=0; try{cur=Math.min(RUN.length,Math.max(0,+JSON.parse(localStorage.getItem(STORE)||"0")||0))}catch(e){}
+  let lane=localStorage.getItem(LSTORE)||"a";
+
+  const LANE_NOTE={
+    a:"The Higgsfield MCP is connected to this session, so you do not have to touch the web UI for generation at all. Say the line in each step to Claude and the generation runs here — prompts, model choice, references and batching are already known from this bible. Use this lane by default; it is the one that survives being interrupted.",
+    b:"Every step names the exact screen, the exact prompt to paste and the filename to save it under. Use this lane when you want to see the result in Higgsfield's own gallery as you go, or when you are working away from this session."
+  };
+
+  function paint(){
+    host.innerHTML="";
+    RUN.forEach((r,i)=>{
+      const st=i<cur?"done":i===cur?"cur":"";
+      const el=document.createElement("div");
+      el.className="step "+st;
+      let body="";
+      if(st!=="done"){
+        body='<div class="step-body">'+
+          '<div class="rowk"><span class="k">Why</span><span class="v">'+r.s+'</span></div>'+
+          (lane==="a"
+            ? '<div class="rowk"><span class="k">Say this</span><span class="v"><pre class="paste">'+r.a+'</pre></span></div>'
+            : '<div class="rowk"><span class="k">Where</span><span class="v">'+(r.w?'<a class="go" href="'+r.u+'" target="_blank" rel="noopener">'+r.w+' ↗</a> ':'')+r.b+'</span></div>')+
+          (r.set?'<div class="rowk"><span class="k">Settings</span><span class="v">'+r.set+'</span></div>':'')+
+          (r.sv?'<div class="rowk"><span class="k">Save as</span><span class="v"><code>'+r.sv+'</code></span></div>':'')+
+          '<div class="step-foot">'+
+            '<button class="doneb" data-done="'+i+'">Done &rarr; next</button>'+
+            (lane==="a"?'<button class="copy" data-say="'+i+'">Copy the line</button>':'')+
+            (r.pk?'<button class="copy" data-prep="'+r.pk+'">Copy the prompt</button>':'')+
+            (r.anc?'<button class="copy" data-anc="'+r.anc+'">Copy all Movement '+"I".repeat(r.anc)+' anchor prompts</button>':'')+
+          '</div>'+
+        '</div>';
+      }
+      el.innerHTML='<div class="step-n">'+(st==="done"?"&#10003;":i+1)+'</div>'+
+        '<div><div class="step-hd"><span class="step-ph'+(r.g?" gate":"")+'">'+r.ph+'</span><h4>'+r.t+'</h4></div>'+body+'</div>';
+      host.appendChild(el);
+    });
+    const r=RUN[cur];
+    document.getElementById("now-ph").textContent=r?r.ph:"Complete";
+    document.getElementById("now-t").textContent=r?r.t:"Every step is done.";
+    document.getElementById("now-s").innerHTML=r?(lane==="a"?"Say: &ldquo;"+r.a+"&rdquo;":clean(r.b)):"Submit it.";
+    document.getElementById("now-n").textContent=cur+"/"+RUN.length;
+    document.getElementById("now-left").textContent=(RUN.length-cur)+" steps left";
+    document.querySelectorAll(".lane-btn").forEach(b=>b.classList.toggle("on",b.dataset.lane===lane));
+    document.getElementById("lane-note").textContent=LANE_NOTE[lane];
+  }
+
+  function flash(b,msg){
+    const o=b.textContent; b.textContent=msg; b.classList.add("done");
+    setTimeout(()=>{b.textContent=o;b.classList.remove("done")},1600);
+  }
+
+  host.addEventListener("click",e=>{
+    const d=e.target.closest("[data-done]");
+    if(d){cur=Math.min(RUN.length,+d.dataset.done+1);localStorage.setItem(STORE,cur);paint();
+      const n=host.querySelector(".step.cur"); if(n)n.scrollIntoView({behavior:"smooth",block:"center"}); return;}
+    const c=e.target.closest(".copy"); if(!c)return;
+    let txt="";
+    if(c.dataset.say) txt=RUN[+c.dataset.say].a;
+    else if(c.dataset.prep){const p=PREP.find(x=>x.k===c.dataset.prep); txt=p?p.p:"";}
+    else if(c.dataset.anc) txt=anchorsFor(+c.dataset.anc);
+    navigator.clipboard.writeText(txt).then(()=>flash(c,"Copied")).catch(()=>flash(c,"Copy failed"));
+  });
+
+  document.querySelectorAll(".lane-btn").forEach(b=>b.onclick=()=>{lane=b.dataset.lane;localStorage.setItem(LSTORE,lane);paint()});
+  document.getElementById("cr-reset").onclick=()=>{cur=0;localStorage.setItem(STORE,0);paint()};
+  document.getElementById("cr-back").onclick=()=>{cur=Math.max(0,cur-1);localStorage.setItem(STORE,cur);paint()};
+
+  /* asset prompt cards */
+  const pg=document.getElementById("prepgrid");
+  PREP.forEach(p=>{
+    const el=document.createElement("div");
+    el.className="prep";
+    el.innerHTML='<div class="prep-hd"><span class="prep-tag '+p.tag+'">'+p.tl+'</span><h4>'+p.n+'</h4></div>'+
+      '<div class="prep-meta">'+p.w+' &middot; save as <b>'+p.sv+'</b></div>'+
+      '<pre class="paste">'+p.p.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</pre>'+
+      '<button class="copy" data-pn="'+p.k+'">Copy prompt</button>';
+    pg.appendChild(el);
+  });
+  pg.addEventListener("click",e=>{
+    const b=e.target.closest(".copy"); if(!b)return;
+    const p=PREP.find(x=>x.k===b.dataset.pn); if(!p)return;
+    navigator.clipboard.writeText(p.p).then(()=>flash(b,"Copied")).catch(()=>flash(b,"Copy failed"));
+  });
+
+  paint();
 })();
 </script>

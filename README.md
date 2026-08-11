@@ -12,6 +12,9 @@ It contains:
 
 | Section | What's in it |
 | --- | --- |
+| **Control Room** | **A 22-step run sheet that remembers where you stopped. One step is highlighted at a time; press Done and the next lights up. Two lanes — let Claude drive generation over MCP, or click it yourself with the exact screen, prompt and filename named per step.** |
+| Asset Prompts | 14 copyable Phase 0 prompts — 5 character sheets, 3 lighting plates, 6 prop and background plates |
+| Tweaks & Export | Symptom → the one dial that fixes it, plus the seven-step delivery order |
 | The Thesis | Shot-density ribbon: 23 generations at 13.0s mean vs. a typical AI short's 71 at 4.2s |
 | The Brief | Verified festival constraints — 3:00 floor, Cinema Studio festival project, Sep 3 deadline |
 | Doctrine | Seven rules for avoiding the ad-collage cut rhythm; three camera grammars, one per movement |
