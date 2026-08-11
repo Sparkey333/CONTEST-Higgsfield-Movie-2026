@@ -582,50 +582,32 @@ footer a{color:var(--ink-2)}
 .rail i.c{background:var(--signal);border-color:var(--signal);transform:scaleY(2.1);border-radius:1px}
 .rail i.g{background:var(--coral-soft);border-color:var(--coral-line)}
 
-.lanes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-@media(max-width:700px){.lanes{grid-template-columns:1fr}}
-.lane-btn{
-  text-align:left;font-family:var(--body);background:var(--surface-2);border:1px solid var(--line);
-  border-radius:12px;padding:15px 18px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:5px;
+/* the one rule the whole run sheet obeys */
+.compliance{
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;
+  background:var(--surface-2);border:1px solid var(--jade);border-left:4px solid var(--jade);
+  border-radius:12px;padding:17px 22px;margin:0 0 14px;
 }
-.lane-btn .lb-k{
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink-3);border:1px solid var(--line);border-radius:3px;padding:2px 7px;align-self:flex-start;
+.compliance .cm-k{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--jade);color:var(--ground);border-radius:3px;padding:4px 9px;white-space:nowrap;
 }
-.lane-btn .lb-t{font-size:16px;font-weight:600;color:var(--ink-2);font-family:var(--display)}
-.lane-btn .lb-s{font-size:12.5px;color:var(--ink-3);line-height:1.5}
-.lane-btn:hover{border-color:var(--ink-3)}
-.lane-btn[data-lane="f"].on{
-  background:var(--signal-soft);border:2px solid var(--signal);padding:14px 17px;
+.compliance .cm-v{font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.compliance .cm-v b{color:var(--ink)}
+@media(max-width:700px){.compliance{grid-template-columns:1fr;gap:10px}.compliance .cm-k{justify-self:start}}
+.assist{
+  font-size:13px;color:var(--ink-3);margin:0 0 24px;max-width:80ch;line-height:1.6;padding-left:4px;
 }
-.lane-btn[data-lane="f"].on .lb-k{background:var(--signal);color:var(--signal-ink);border-color:var(--signal)}
-.lane-btn[data-lane="f"].on .lb-t{color:var(--ink)}
-.lane-btn[data-lane="s"].on{
-  background:var(--void-soft);border:2px dashed var(--void);padding:14px 17px;
+.assist b{color:var(--ink-2);font-weight:600}
+
+/* the ask-Claude rail inside a step — help, never generation */
+.rowk.ask .k{color:var(--void)}
+.rowk.ask .v{color:var(--ink-3)}
+.askline{
+  font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--ink-2);
+  background:var(--void-soft);border:1px solid var(--void-line);border-radius:8px;
+  padding:10px 13px;margin:0;
 }
-.lane-btn[data-lane="s"].on .lb-k{background:var(--void);color:var(--ground);border-color:var(--void)}
-.lane-btn[data-lane="s"].on .lb-t{color:var(--ink)}
-.lane-note{font-size:13px;color:var(--ink-3);margin:0 0 22px;max-width:78ch;line-height:1.6}
-.pathwarn{
-  display:none;gap:14px;align-items:flex-start;
-  background:var(--coral-soft);border:1px solid var(--coral-line);border-left:4px solid var(--coral);
-  border-radius:10px;padding:16px 20px;margin:0 0 22px;font-size:14px;color:var(--ink-2);line-height:1.6;
-}
-.pathwarn.show{display:flex}
-.pathwarn b{color:var(--ink)}
-.pathwarn .pw-k{
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);
-  border:1px solid var(--coral-line);border-radius:3px;padding:3px 8px;white-space:nowrap;flex:0 0 auto;
-}
-/* scratch-lane steps read as provisional */
-.steps.scratch .step.cur{
-  border:1px dashed var(--void-line);border-left:4px dashed var(--void);
-  box-shadow:0 0 0 4px var(--void-soft),var(--shadow);
-}
-.steps.scratch .step.cur .step-n{background:var(--void);border-color:var(--void);color:var(--ground)}
-.steps.scratch .nowtag{background:var(--void);color:var(--ground)}
-.steps.scratch .doneb{background:var(--void);border-color:var(--void);color:var(--ground)}
-.steps.scratch .paste{border-left-color:var(--void)}
 
 .steps{display:flex;flex-direction:column;gap:8px}
 .step{
@@ -794,23 +776,11 @@ footer a{color:var(--ink-2)}
 
   <div class="rail" id="rail"></div>
 
-  <div class="lanes">
-    <button class="lane-btn on" data-lane="f">
-      <span class="lb-k">Path 1 &middot; Submitted picture</span>
-      <span class="lb-t">Generate inside Higgsfield</span>
-      <span class="lb-s">Everything that ends up in the film, made in the Cinema Studio festival project. The eligible path.</span>
-    </button>
-    <button class="lane-btn" data-lane="s">
-      <span class="lb-k">Path 2 &middot; Scratch only</span>
-      <span class="lb-t">Let Claude drive it over MCP</span>
-      <span class="lb-s">Look-development, tests, throwaway explorations. Nothing from here goes into the cut.</span>
-    </button>
+  <div class="compliance">
+    <span class="cm-k">Rule 7, verbatim</span>
+    <span class="cm-v"><b>&ldquo;All assets and generations used in your film must remain inside the submission project &mdash; that is how we verify your generation history.&rdquo;</b> Generation itself only has to happen on higgsfield.ai, and any model on the platform counts. But the footage has to be accounted for by the project's own generation history, and <b>an entry whose final footage does not match that history can be investigated and disqualified.</b> So every asset that reaches the cut is generated <i>in the submission project</i> and left there. That is the single constraint this run sheet is built around.</span>
   </div>
-  <div class="pathwarn" id="pathwarn">
-    <span class="pw-k">Not for the cut</span>
-    <span>The festival requires the entry to be <b>created through the festival project inside Cinema Studio</b>. MCP generations run on the same account and the same models, but they land in your general Assets, not in that project &mdash; and nothing published tells us whether a rules check would accept them. <b>The downside is disqualification and the upside is convenience, so the trade is not worth taking.</b> Use this path to learn what a prompt does, then make the real frame in Path 1.</span>
-  </div>
-  <p class="lane-note" id="lane-note"></p>
+  <p class="assist"><b>Where Claude fits:</b> writing and sharpening the prompts you paste, keeping the frame ledger, telling you what is next, and reading back what returns. Generating over MCP is <i>on-platform</i> and clears Rule 7's first test &mdash; but those assets land in your general Assets rather than the submission project, so anything made that way cannot be in the film unless you can confirm it writes into the project. Treat MCP as a sketchpad; press generate in the project.</p>
 
   <div class="steps" id="runsheet"></div>
 
@@ -863,7 +833,27 @@ footer a{color:var(--ink-2)}
       <tr><td>4 &middot; Assemble</td><td>Cinema Studio, in shot order, at 2.39:1. Cut each shot to the exact duration in the shot list &mdash; the timing was already proved on the stills reel at Gate C.</td></tr>
       <tr><td>5 &middot; Sound</td><td>Score everything <b>except S13</b>. That shot is 15 seconds of orbital silence and every instinct you have will be to fill it. Do not.</td></tr>
       <tr><td>6 &middot; Master</td><td>Export the full 4:53 at the festival's stated spec. Keep the per-shot masters &mdash; if one shot gets a note, you re-export one shot, not the film.</td></tr>
-      <tr><td>7 &middot; Submit</td><td>Through the Cinema Studio festival project, with <b>a full day of margin</b>. Re-read all 23 prompts first as a stranger would: they are published after the deadline. Confirm the rules page again &mdash; this festival's timeline has already moved once.</td></tr>
+      <tr><td>7 &middot; Submit</td><td>Through the Cinema Studio festival project, with <b>a full day of margin</b>. Re-read all 23 shot prompts and all 39 composed anchor prompts first as a stranger would: they are published after the deadline. Confirm the rules page again &mdash; this festival's timeline has already moved once.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head" style="margin-top:52px">
+    <span class="eyebrow">Section 7, verified against the rules page</span>
+    <h3 style="font-size:26px">The rules that actually disqualify</h3>
+    <p>Nobody loses a film festival on cinematography. They lose it on a private social account and an asset that was not in the project. These are the clauses with teeth.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th>Rule</th><th>What it means here</th></tr></thead>
+    <tbody>
+      <tr><td><b>MVS &mdash; both parts</b></td><td>Every entry needs (1) the final video carrying the <b>official Higgsfield watermark and packshot</b>, and (2) a <b>public social post</b> on Instagram, YouTube, X or Reddit showing the film with both intact. <b>An entry missing either component is marked incomplete &mdash; it does not compete and it is not published.</b></td></tr>
+      <tr><td><b>The account, not just the post</b></td><td>Post and account must both be public and stay public through the end of the festival, viewable without logging in or requesting to follow. The rules name this as <b>the most common reason a strong entry is marked non-eligible.</b> Check it from a logged-out window.</td></tr>
+      <tr><td><b>Assets stay in the project</b></td><td>Everything used in the film must remain inside the submission project &mdash; that is how generation history is verified. A project that does not retain enough underlying assets can be marked non-eligible, and <b>footage that does not match its own generation history can be investigated and disqualified.</b> Delete nothing.</td></tr>
+      <tr><td><b>From scratch, in-window</b></td><td>All visual assets generated new, on the platform, inside the Generation Window. <b>Reuse of previously generated assets is not allowed &mdash; including from your own earlier Higgsfield projects.</b> Official Higgsfield material (open-source packs, Academy drops) is exempt.</td></tr>
+      <tr><td>Where generation happens</td><td>On higgsfield.ai. <b>Any model on the platform counts</b> &mdash; the aggregation is the point, so the model matrix is fully available to you. Generating on any other platform or tool is not allowed.</td></tr>
+      <tr><td>External tools</td><td>Editing only: cutting, assembly, colour grading, mask-based retouching, titles, transitions. <b>AI upscaling, frame interpolation, generative fill and any VFX that generates new imagery must be done with Higgsfield tools</b> &mdash; so the finishing pass stays on-platform.</td></tr>
+      <tr><td>Audio is exempt</td><td>Music, voice, lipsync and sound design may be made anywhere, with any tool, at any time. But <b>every external audio file must be uploaded into the submission project</b>, and you must own it or hold a sufficient licence.</td></tr>
+      <tr><td>Spec</td><td>Minimum <b>3:00</b>, hard. Up to 5:00 recommended, longer fully eligible. <b>MP4 or MOV, up to 4K. 16:9 or 21:9</b> &mdash; our 21:9 is compliant. Any language with English subtitles or voice-over. Upload by <b>11:59 PM PT</b> on the deadline day.</td></tr>
+      <tr><td>Everything publishes</td><td>After the deadline the project, film, prompts, generation history and retained assets all become publicly viewable, and other users can inspect exactly how the film was made.</td></tr>
     </tbody>
   </table>
 
@@ -1417,7 +1407,7 @@ const SHOTS=[
 {id:"S5",mv:1,d:18,t:"“Tomorrow” — the tear freezes",cam:"Two-shot, then a slow push past them to the world below, then down to the floor.",model:"cinematic_studio_3_0 · 15s · 4K + 3s extension",chips:["Push","Transition out"],
  seam:"Ends on the frozen tear in macro. That facet becomes the ocean.",
  prompt:`Continuous 18-second move. Open on TORIN holding GWENDOLYN's face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds.`},
-{id:"S6",mv:2,d:14,t:"108 years later — the run",cam:"Travelling beside her at her exact speed. World blurs, she is stable.",model:"cinematic_studio_video_v2 · 12s pro · speedramp auto",chips:["Travelling","Card"],
+{id:"S6",mv:2,d:14,t:"108 years later — the run",cam:"Travelling beside her at her exact speed. World blurs, she is stable.",model:"cinematic_studio_video_v2 · 12s pro · speedramp auto + 2s ext",chips:["Travelling","Card"],
  seam:"Match cut in from the tear's facet: blue interior becomes ocean water.",
  prompt:`Match cut from a frozen tear's blue facet into open ocean. Card: "108 years later." Aerial tracking shot flying alongside a woman skimming the surface of a storm ocean at impossible speed, camera locked to her velocity so she sits stable in frame while the water tears past in horizontal streaks. Wind rips her hair sideways. Her body is faintly crystalline, catching lightning from above. She does not look back. Far behind her on the horizon the sky is the wrong colour — bruised violet, wrong-shaped clouds converging. 2.39:1, long lens compression, spray on the lens, desaturated except for the crystal. Sound: wind and water only.`},
 {id:"S7",mv:2,d:12,t:"Sixteen behind her, and a wall of ice",cam:"Camera swings from beside to behind in one move — reveals the pursuit.",model:"kling3_0 · 12s · pro · start+end frame",chips:["One move","Chain out"],
@@ -1620,49 +1610,49 @@ const PHASES=[
  x:"No further generation. Anything still wrong is now a sound or grade problem, and if it is neither, it ships as it is."},
 {p:"Phase 7",d:"Sep 1–3",w:"3 days",t:"Sound and submit",
  o:[["","mix + delivery"]],
- x:"Score everything except S13 — and protect that silence from every instinct you will have to fill it. Then <b>read all 23 prompts as a stranger would</b>, because they are published after the deadline. Submit through the Cinema Studio festival project with a full day of margin; deadline night is not when you want to discover a project-scope problem."}
+ x:"Score everything except S13 — and protect that silence from every instinct you will have to fill it. Then <b>read all 23 shot prompts and all 39 composed anchor prompts as a stranger would</b>, because they are published after the deadline. Submit through the Cinema Studio festival project with a full day of margin; deadline night is not when you want to discover a project-scope problem."}
 ];
 
 const FRAMES=[
-{f:"F01",r:"single",mv:1,s:"S1 A",d:"Total black with the first suggestion of plasma at the bottom edge. The film's first frame should be almost nothing — everything the opening does, it does by revealing."},
-{f:"F02",r:"shared",mv:1,s:"S1 B / S2 A",d:"The courtyard of solidified light just resolving out of the star's glare, no figures yet. The forward-extension seam lives inside this glare, which is why the glare has to be genuinely blinding."},
+{f:"F01",r:"single",mv:1,s:"S1 A", p:"Almost total black. A single low band of white-gold plasma glow along the very bottom edge of frame, its light falling off to nothing within the lower sixth. No horizon, no structure, no figure — ninety percent of the frame is empty black with fine grain. The composition reads as a held void with one ember at the base.",d:"Total black with the first suggestion of plasma at the bottom edge. The film's first frame should be almost nothing — everything the opening does, it does by revealing."},
+{f:"F02",r:"shared",mv:1,s:"S1 B / S2 A", p:"A courtyard of solidified light resolving out of blinding glare — colonnades and a flat floor built from load-bearing beams of luminance, edges just legible through a blown-out white core that fills the centre of frame. No figures. The glare is genuinely blinding at the centre and falls to deep shadow at the frame edges.",d:"The courtyard of solidified light just resolving out of the star's glare, no figures yet. The forward-extension seam lives inside this glare, which is why the glare has to be genuinely blinding."},
 {f:"F03",r:"single",mv:1,s:"S2 B",d:"Two figures from behind at the courtyard's far edge. Worlds on stems in the foreground, the crystal shell refracting the star beneath her."},
-{f:"F04",r:"single",mv:1,s:"S3 A",d:"Reverse two-shot, 40mm, both faces legible, star bokeh behind. This frame has to feel like a different lens on the same room — not a different room."},
+{f:"F04",r:"single",mv:1,s:"S3 A", p:"Reverse two-shot, 40mm, chest height, both faces legible and in focus. On the left a man in robes of light; on the right a woman encased from the collarbone down in a faceted crystal shell. Behind them the burning star fills the background as soft out-of-focus bokeh. Same room, same light direction, different lens from the preceding move.",d:"Reverse two-shot, 40mm, both faces legible, star bokeh behind. This frame has to feel like a different lens on the same room — not a different room."},
 {f:"F05",r:"single",mv:1,s:"S3 B",d:"Gwendolyn turning her head. The motivated cut out; the movement is the edit point."},
-{f:"F06",r:"single",mv:1,s:"S4 A",d:"Locked medium close-up, 75mm, lit from below, refraction crawling across the crystal. Composition must survive fourteen seconds of no camera movement."},
-{f:"F07",r:"single",mv:1,s:"S4 B",d:"Identical framing fourteen seconds later. Wet eyes that have not spilled. Only the face has changed — prove it by matching everything else exactly."},
+{f:"F06",r:"single",mv:1,s:"S4 A", p:"Locked medium close-up, 75mm, camera at her eye level and dead centre. Gwendolyn inside her crystal shell, key light thrown from below by the star. Refraction crawls across the crystal facets. Generous headroom, her face slightly off centre, composition balanced to sit still for a long hold.",d:"Locked medium close-up, 75mm, lit from below, refraction crawling across the crystal. Composition must survive fourteen seconds of no camera movement."},
+{f:"F07",r:"single",mv:1,s:"S4 B", p:"Locked medium close-up, 75mm, camera at her eye level and dead centre, key light from below thrown by the star. Gwendolyn inside her crystal shell — identical headroom, identical framing and identical crystal refraction pattern to the preceding frame, with the plasma glow unchanged beneath her. The only difference is the face: eyes wet and not spilled, jaw set, one slow blink just finished.",d:"Identical framing fourteen seconds later. Wet eyes that have not spilled. Only the face has changed — prove it by matching everything else exactly."},
 {f:"F08",r:"single",mv:1,s:"S5 A",d:"Torin's hands on her face. Tender, unhurried, both fully in frame."},
-{f:"F09",r:"match",mv:1,s:"S5 B",d:"Macro on the frozen tear, one facet filling frame, the interior a moving blue. <b>Design this together with F10</b> — the match cut is made in the pairing, not in the edit."},
-{f:"F10",r:"match",mv:2,s:"S6 A",d:"Open storm ocean at the exact scale, colour and shape of F09's facet. If these two images are made independently the 108-year jump costs the audience a beat it should not cost."},
+{f:"F09",r:"match",mv:1,s:"S5 B", p:"Extreme macro on a frozen tear resting on a floor of light. One faceted plane fills the entire frame, its interior a moving luminous blue with soft internal caustics. The facet's edges are hard and angular; the blue inside is bright at centre and falls off toward the corners. No other object in frame.",d:"Macro on the frozen tear, one facet filling frame, the interior a moving blue. <b>Design this together with F10</b> — the match cut is made in the pairing, not in the edit."},
+{f:"F10",r:"match",mv:2,s:"S6 A", p:"Open storm ocean shot from low altitude, water filling the entire frame with no horizon in the upper third. Cold luminous blue-grey chop broken into hard angular planes that read as crystal facets, brightest at the centre of frame and falling off toward the edges. Bruised violet sky reflected in the troughs. The centre of frame holds the same shape, scale and blue as a single facet of a frozen tear seen in macro, so the cut carries through without a beat.",d:"Open storm ocean at the exact scale, colour and shape of F09's facet. If these two images are made independently the 108-year jump costs the audience a beat it should not cost."},
 {f:"F11",r:"shared",mv:2,s:"S6 B / S7 A",d:"Gwendolyn running, camera locked beside her, the world streaked horizontal behind. Her body stable, everything else destroyed by speed."},
-{f:"F12",r:"shared",mv:2,s:"S7 B / S8 A",d:"Her body flat against the grey ice wall, hair spread, entirely unhurt. The impact frame and the launch frame are the same frame."},
+{f:"F12",r:"shared",mv:2,s:"S7 B / S8 A", p:"A woman pressed flat against a vertical grey ice wall that fills the frame, seen from the side at her level. Her body is spread against the ice, hair fanned out, entirely unhurt. The ice is fractured white-grey with deep internal cracks. Rain drives across frame; the wall runs out of frame top and bottom.",d:"Her body flat against the grey ice wall, hair spread, entirely unhurt. The impact frame and the launch frame are the same frame."},
 {f:"F13",r:"single",mv:2,s:"S8 B",d:"The ice wall losing cohesion and collapsing into a mountain of seawater."},
-{f:"F14",r:"single",mv:2,s:"S9 A",d:"Over the puppeteer's shoulder, quarry small and distant. <b>No warmth anywhere in frame</b> — this is the only shot in the film shot from the dark side and it should feel colour-graded differently."},
+{f:"F14",r:"single",mv:2,s:"S9 A", p:"Over-the-shoulder from behind a woman in dark rippling cloth hovering above a storm ocean, her back and shoulder filling the left third in silhouette. Far ahead and small in frame, a distant running figure crosses open water. Long lens, heavy compression, out-of-focus rain in the foreground.",d:"Over the puppeteer's shoulder, quarry small and distant. <b>No warmth anywhere in frame</b> — this is the only shot in the film shot from the dark side and it should feel colour-graded differently."},
 {f:"F15",r:"single",mv:2,s:"S9 B",d:"Her fingers mid-gesture, the marionettes in the middle distance answering the movement exactly."},
 {f:"F16",r:"single",mv:2,s:"S10 A",d:"The leviathan erupting, camera near the water looking up, dead coral sheeting off its plating in slabs."},
-{f:"F17",r:"shared",mv:2,s:"S10 B / S11 A",d:"Gwendolyn tiny between the opening jaws. Scale is the whole point of the shot and this frame has to carry it alone."},
-{f:"B01",r:"bridge",mv:2,s:"S11 B / S12 A",d:"<b>Bridge frame.</b> The leviathan's flank filling frame to near-black. Must go <i>genuinely</i> near-black — a 70&#37; obscured frame reads as a hidden cut that failed, which is worse than an honest cut."},
+{f:"F17",r:"shared",mv:2,s:"S10 B / S11 A", p:"Low wide angle. A woman is tiny in frame, threading between the opening jaws of a leviathan the size of a city block that fills nearly the entire image. The creature's coral-crusted plating and rows of teeth dominate; she is a small bright speck against it. Scale is the only subject.",d:"Gwendolyn tiny between the opening jaws. Scale is the whole point of the shot and this frame has to carry it alone."},
+{f:"B01",r:"bridge",mv:2,s:"S11 B / S12 A", p:"The wet flank of an enormous sea creature swung fully across the lens, filling one hundred percent of frame. Crusted grey-brown hide with dead coral, rendered so dark it is almost pure black — legible only as faint texture in the deepest shadow. No sky, no horizon, no figure, no light source visible. Effectively a black frame with a trace of surface detail.",d:"<b>Bridge frame.</b> The leviathan's flank filling frame to near-black. Must go <i>genuinely</i> near-black — a 70&#37; obscured frame reads as a hidden cut that failed, which is worse than an honest cut."},
 {f:"F18",r:"single",mv:2,s:"S12 B",d:"She launches forward, lightning still circulating in the shell around her."},
-{f:"F19",r:"single",mv:2,s:"S13 A",d:"Orbital, from the exosphere. The vortex eye open in the storm system. Cold, clinical, no human scale anywhere."},
-{f:"F20",r:"single",mv:2,s:"S13 B",d:"The eye beginning to close. Still silent. Nothing in frame suggests anything happened."},
+{f:"F19",r:"single",mv:2,s:"S13 A", p:"Extreme wide orbital plate looking down through the exosphere at a blue-green planet. A storm system fills the lower frame, and at its centre an eye has opened that is not weather: a black puncture reaching up out of the atmosphere toward space, hard-edged against the cloud spiral. The planet's limb curves across the top of frame against absolute black. Cold, clinical, no human scale anywhere.", look:"Look: cold blue-grey, seen from orbit. No rain, no sea spray, no water or droplets on the lens, no haze between camera and planet — vacuum-clean edges, a hard terminator and an absolutely black sky above the limb. Storm weather exists only far below, inside the planet's atmosphere. Desaturated, no warmth anywhere in frame.", tail:"Anamorphic, deep blacks, clean vacuum foreground, no atmospheric haze in front of the camera.",d:"Orbital, from the exosphere. The vortex eye open in the storm system. Cold, clinical, no human scale anywhere."},
+{f:"F20",r:"single",mv:2,s:"S13 B", p:"Extreme wide orbital plate, identical altitude and framing to the preceding frame. The black puncture at the storm's centre has begun to close, the spiral tightening around it. Nothing else in the frame suggests anything happened. The planet's limb curves against absolute black. Cold, clinical, still.", look:"Look: cold blue-grey, seen from orbit. No rain, no sea spray, no water or droplets on the lens, no haze between camera and planet — vacuum-clean edges, a hard terminator and an absolutely black sky above the limb. Storm weather exists only far below, inside the planet's atmosphere. Desaturated, no warmth anywhere in frame.", tail:"Anamorphic, deep blacks, clean vacuum foreground, no atmospheric haze in front of the camera.",d:"The eye beginning to close. Still silent. Nothing in frame suggests anything happened."},
 {f:"F21",r:"single",mv:2,s:"S14 A",d:"Gwendolyn falling upward, crystal fracturing, the fractures filling with light rather than dark."},
-{f:"F22",r:"match",mv:2,s:"S14 B",d:"Empty sky, planetary curvature, the green streak crossing it. <b>Paired with F23</b> — one object carries the audience across a day and three thousand miles."},
+{f:"F22",r:"match",mv:2,s:"S14 B", p:"Extreme wide plate from just outside the atmosphere. Empty sky above a planetary curvature that runs across the lower frame, absolute black above the limb. A single thin green streak crosses the frame at a shallow angle, already fading. Nothing else in frame — no figure, no debris, no cloud detail.", look:"Look: cold blue-grey, seen from orbit. No rain, no sea spray, no water or droplets on the lens, no haze between camera and planet — vacuum-clean edges, a hard terminator and an absolutely black sky above the limb. Storm weather exists only far below, inside the planet's atmosphere. Desaturated, no warmth anywhere in frame.", tail:"Anamorphic, deep blacks, clean vacuum foreground, no atmospheric haze in front of the camera.",d:"Empty sky, planetary curvature, the green streak crossing it. <b>Paired with F23</b> — one object carries the audience across a day and three thousand miles."},
 {f:"F23",r:"match",mv:3,s:"S15 A",d:"Coral Beach at dawn, wide and static, with the streak's residue still fading as a low star. Warm for the first time in three minutes."},
 {f:"F24",r:"single",mv:3,s:"S15 B",d:"Two boys stopped at the tide line, small in a very wide frame that has not moved and will not."},
 {f:"F25",r:"single",mv:3,s:"S16 A",d:"Underwater reef in full colour, two silhouettes crossing the surface far above, backlit."},
-{f:"F26",r:"single",mv:3,s:"S16 B",d:"The shelf edge and the black past it. <b>Never resolve what is down there</b> — the frame's job is to withhold."},
+{f:"F26",r:"single",mv:3,s:"S16 B", p:"Underwater, wide. A coral reef shelf runs across the lower third and ends abruptly at a vertical drop-off into total blackness that occupies the entire right half of frame. Shafts of sunlight fall from above and stop at the shelf edge. The black is unbroken and holds no discernible shape.",d:"The shelf edge and the black past it. <b>Never resolve what is down there</b> — the frame's job is to withhold."},
 {f:"F27",r:"single",mv:3,s:"S17 A",d:"The boys staggering up the beach out of the surf, static wide, sun low and behind."},
 {f:"F28",r:"single",mv:3,s:"S17 B",d:"Boys flat on the sand, twelve ships inside the same unmoving frame, everything backlit red. The stillness against the violence is the shot."},
 {f:"F29",r:"single",mv:3,s:"S18 A",d:"The white temple taking direct hits, sand and torn flowers falling down its face, no reaction of any kind."},
-{f:"B02",r:"bridge",mv:3,s:"S18 B / S19 A",d:"<b>Bridge frame.</b> The dust wall — everything flattened to brown shadow, no legible shapes at all. The source text wrote this cut for you; the frame just has to honour it."},
+{f:"B02",r:"bridge",mv:3,s:"S18 B / S19 A", p:"A churning wall of brown dust filling one hundred percent of frame, everything flattened to featureless brown shadow. No legible shapes, no edges, no figures, no light source. Fine particulate and grit suspended throughout. Effectively an opaque dust field.",d:"<b>Bridge frame.</b> The dust wall — everything flattened to brown shadow, no legible shapes at all. The source text wrote this cut for you; the frame just has to honour it."},
 {f:"F30",r:"shared",mv:3,s:"S19 B / S20 A",d:"Two lines of Guardians kneeling, heads bowed, metal shot still falling around them and not touching them."},
 {f:"F31",r:"single",mv:3,s:"S20 B",d:"The mountain's particles falling faster than gravity, ships going under. The Guardians still have not raised their heads."},
-{f:"F32",r:"single",mv:3,s:"S21 A",d:"Flat open ocean. No wreckage, nothing left in the sky. Almost boring, which is exactly the intent."},
+{f:"F32",r:"single",mv:3,s:"S21 A", p:"Locked-off wide, static, 32mm, low. Flat open ocean under a low sun, calm to the horizon. Empty beach in the near foreground with waves running up and back. No wreckage, no debris, no ships, nothing in the sky. Golden hour, warm, deliberately uneventful.",d:"Flat open ocean. No wreckage, nothing left in the sky. Almost boring, which is exactly the intent."},
 {f:"F33",r:"single",mv:3,s:"S21 B",d:"Temple doors closing, the garden bed replanted, craters filled. Order restored at unsettling speed."},
 {f:"F34",r:"single",mv:3,s:"S22 A",d:"Both boys in the beach grass, Mikael mid-sentence and delighted, Ammon already elsewhere."},
-{f:"F35",r:"single",mv:3,s:"S22 B",d:"Ammon in close-up at the end of the push, a single dark cloud deep out of focus behind him. <b>The most important single image in the film</b> — give it the largest batch and the longest look."},
+{f:"F35",r:"single",mv:3,s:"S22 B", p:"Close-up on an eight-year-old boy's face at the end of a slow push, 85mm, shallow focus. Sun-darkened skin, salt-stiff dark hair, level unblinking gaze slightly off camera. His expression is calculating rather than delighted — too still for his age. Far behind him, deep out of focus, a single dark low cloud sits over flat water. Golden hour backlight, photoreal child skin with visible texture, no smoothing.",d:"Ammon in close-up at the end of the push, a single dark cloud deep out of focus behind him. <b>The most important single image in the film</b> — give it the largest batch and the longest look."},
 {f:"F36",r:"single",mv:1,s:"S23 A",d:"Torin alone at the courtyard edge, standing where two people stood four minutes earlier."},
-{f:"F37",r:"single",mv:1,s:"S23 B",d:"The frozen tear as one point of light on a vast luminous floor. Last frame of the film; it should rhyme with F01's emptiness."}
+{f:"F37",r:"single",mv:1,s:"S23 B", p:"A floor of solid light seen from directly above, with a single frozen tear lying on it as one small bright point. The camera is high and rising; the floor is vast and luminous and otherwise completely empty, falling off toward black at the frame edges. No figure in frame.",d:"The frozen tear as one point of light on a vast luminous floor. Last frame of the film; it should rhyme with F01's emptiness."}
 ];
 
 const CHECKS=[
@@ -1993,136 +1983,160 @@ const PREP=[
 /* ================= RUN SHEET ================= */
 const HF="https://higgsfield.ai/";
 const RUN=[
+{ph:"Phase 0",t:"Read the from-scratch rule before you make anything",
+ s:"Every visual asset in the film must be generated from scratch, on the platform, inside the Generation Window. Reuse of previously generated assets is not allowed \u2014 including from your own earlier Higgsfield projects. Nothing you already have counts. Official Higgsfield material (open-source packs, Academy drops) is the one exemption. Audio is exempt too: that can be made any time, anywhere.",
+ a:"Confirm what I am allowed to reuse and what I have to remake.",
+ b:"Check the Generation Window dates on the rules page. Then assume every image and video in this production gets made new, in this project, from today.",
+ w:"Festival rules",u:"https://higgsfield.ai/contests/higgsfield-global-film-festival",
+ set:"An old Soul, an old plate or a favourite frame from a previous project cannot go in the film."},
 {ph:"Phase 0",t:"Open the Cinema Studio festival project",
  s:"Do this before generating anything. The rules require the entry to be created through the festival project, so that project has to exist first and every frame that ends up in the film has to be made inside it. A frame generated somewhere else is a frame you may have to make twice.",
- a:"Check my Higgsfield balance and tell me which workspace is active.",
+ a:"Read me the festival's licence clause and tell me what it means if I take the rest of the novel to series.",
  b:"<b>Cinema Studio</b> → join the festival → create the project. Then check the workspace picker under your avatar, and the balance under <b>Buy Credits</b>.",
  w:"Cinema Studio",u:HF+"cinema-studio",
  set:"Read the festival's own rules page while you are there — including the licence clause. Confirm 21:9 is available on your plan.",sv:"Project: LITIGUH"},
 {ph:"Phase 0",t:"Gwendolyn — train Soul V2",
  s:"Her face has to be identical across nine shots spread over three minutes. That comes from a trained identity, not from luck.",
- a:"Generate the Gwendolyn character sheet from the bible, then train a Soul on the best four.",
+ a:"Sharpen the Gwendolyn prompt — I want more visible skin texture and a harder jawline.",
  b:"<b>Image</b> → Soul V2 → train a character. Paste the Gwendolyn prompt from Asset Prompts below.",
  w:"Image",u:HF+"image",pk:"gwen",
  set:"Batch of 4. Plain background. Keep every view that holds the same face.",sv:"REF-gwendolyn-##"},
 {ph:"Phase 0",t:"Torin — train Soul V2",
  s:"He opens the film and closes it. Same face at 0:00 and 4:41 or the bookend does not land.",
- a:"Generate the Torin character sheet and train a second Soul on it.",
+ a:"Torin's robe is reading as a glow effect instead of fabric. Rewrite that part of the prompt.",
  b:"<b>Image</b> → Soul V2 → train a second character. Paste the Torin prompt below.",
  w:"Image",u:HF+"image",pk:"torin",
  set:"Batch of 4. Separate Soul from Gwendolyn — one identity per Soul.",sv:"REF-torin-##"},
 {ph:"Phase 0",t:"The brothers — one Reference Element, both boys",
  s:"Soul carries a single identity per generation and these two share the frame in every shot they are in. So they train together, as one element.",
- a:"Generate the brothers reference sheet and set it up as a Reference Element.",
+ a:"The two boys are coming out too similar. Push their faces further apart in the prompt.",
  b:"<b>Image</b> → Reference Element. Paste the brothers prompt below. Do <i>not</i> train them as two Souls.",
  w:"Image",u:HF+"image",pk:"bros",
  set:"Batch of 4. Both boys visible in every view.",sv:"REF-brothers-##"},
 {ph:"Phase 0",t:"Puppeteer and Guardians",
  s:"Two more identities. The Puppeteer's face is never fully shown — that is a rule, not a limitation.",
- a:"Generate the Puppeteer and Guardian reference sheets.",
+ a:"The Guardian faces read as peaceful rather than blank. Fix the wording.",
  b:"<b>Image</b> → same flow. Two more prompts below.",
  w:"Image",u:HF+"image",
  set:"Guardians need identical robe construction and identical facial blankness.",sv:"REF-puppeteer-## · REF-guardian-##"},
 {ph:"Phase 0",t:"Three lighting plates, one per movement",
  s:"These three images decide the grade of the whole film. Every anchor frame afterwards gets told to match one of them.",
- a:"Generate the three movement lighting plates.",
+ a:"Compare my three lighting plates — is one of them fighting the other two?",
  b:"<b>Image</b> → three plates. Prompts below, tagged Lighting plate.",
  w:"Image",u:HF+"image",
  set:"No characters in any of them. Plates only.",sv:"PLATE-mv1-light · PLATE-mv2-light · PLATE-mv3-light"},
 {ph:"Phase 0",t:"Props and background plates",
  s:"Six studies: crystal shell, Creation Stone, coral plating, courtyard, beach, temple.",
- a:"Generate all six prop and background plates.",
+ a:"Write me a prop prompt for something in the shot list I have not made a plate for.",
  b:"<b>Image</b> → six more. Prompts below, tagged Prop and Background.",
  w:"Image",u:HF+"image",
  set:"Plain backgrounds on props. Full 2.39:1 on the three background plates.",sv:"PROP-* · BG-*"},
 {ph:"Gate A",g:1,t:"Identity lock",
  s:"Every character, palette and lighting reference is now final. No anchor frame gets generated before this holds — an anchor built on an unlocked face has to be rebuilt, and there are thirty-nine of them.",
- a:"Show me all the Phase 0 references together so I can check them in one pass.",
+ a:"Here are my Phase 0 references. What is inconsistent between them?",
  b:"<b>Assets</b> → view everything from Phase 0 side by side. Look for a face that moved.",
  w:"Assets",u:HF+"assets"},
 {ph:"Phase 1",t:"Movement I look — 11 anchors",
  s:"F01–F09, and the two S23 bookend frames with them. S23 returns to the courtyard and has to match the opening exactly, so its anchors are made in this session under the same lighting plate — not three weeks later in the Movement III pass.",
- a:"Generate the Movement I anchor frames, batches of four, and show me the selects.",
+ a:"F03 keeps coming back as a wide shot. Rewrite that anchor prompt.",
  b:"<b>Image</b> → work down the list in order. One button below copies all eleven prompts at once.",
  w:"Image",u:HF+"image",anc:1,
  set:"Batch of 4 per anchor, then select 1. Attach the Movement I lighting plate + the relevant Soul every time.",sv:"F01 … F09 · F36 · F37"},
 {ph:"Phase 1",t:"Movement II look — 14 anchors",
  s:"F10–F22 plus the B01 bridge. Both match-cut pairs are decided here: F09/F10 carries the 108-year jump, F22/F23 carries a day and three thousand miles. Design each pair together or the audience pays for it.",
- a:"Generate the Movement II anchors. Do F09 and F10 as a matched pair.",
+ a:"F09 and F10 are not matching on shape and colour. Rewrite them as a designed pair.",
  b:"<b>Image</b> → same flow. B01 is the bridge frame and must go genuinely near-black.",
  w:"Image",u:HF+"image",anc:2,
  set:"Shared joins are generated once and inherited — F11, F12 and F17 each serve two shots.",sv:"F10 … F22 · B01"},
 {ph:"Phase 1",t:"Movement III look — 14 anchors",
  s:"F23–F35 plus the B02 dust bridge. F35 — Ammon's face at the end of the push — gets the biggest batch and the longest look of anything in the film.",
- a:"Generate the Movement III anchors, and give F35 a batch of eight.",
+ a:"Give me eight variations on the F35 prompt — this is the one that matters.",
  b:"<b>Image</b> → same flow. B02 is the dust wall; the source text wrote that cut for you.",
  w:"Image",u:HF+"image",anc:3,
  set:"F35 is the single most important image in the film. Do not settle on it.",sv:"F23 … F35 · B02"},
 {ph:"Gate B",g:1,t:"String lock — the contact sheet",
  s:"All 39 anchors on one sheet, reviewed together. Any face, costume, light direction or grade that jumps between neighbours is drift you are catching for the price of an image instead of a video.",
- a:"Lay out all 39 anchors in film order as one contact sheet.",
+ a:"Here is my contact sheet in film order. Where does it drift?",
  b:"<b>Assets</b> → select all 39 → contact sheet view. Read it left to right, twice.",
  w:"Assets",u:HF+"assets"},
 {ph:"Phase 2",t:"Stills reel — watch all five minutes",
  s:"Each anchor held for its real duration, temp sound, dialogue read aloud. The only honest test of whether a 13-second average holds attention.",
- a:"Build the shot-duration list so I can cut the stills reel to exact timings.",
+ a:"Give me the 39 anchors with their exact hold durations, in cut order.",
  b:"<b>Cinema Studio</b> → new project → drop the 39 stills, set each to its shot duration from the shot list.",
  w:"Cinema Studio",u:HF+"cinema-studio",
  set:"Watch it start to finish without pausing. If you reach for your phone, note the timecode."},
 {ph:"Gate C",g:1,t:"Timing lock",
  s:"Runtime, shot order and shot count freeze here. This is the last cheap moment to rearrange anything — after this a structural change costs video generations instead of images.",
- a:"I want to change the order — tell me what that costs now.",
+ a:"I want to move S16 earlier. What does that cost me at this gate?",
  b:"Reorder two shots = 2 images. Insert one = 3. Cut one = 1. After this gate, multiply by roughly forty."},
 {ph:"Phase 3",t:"Cheap motion pass — all 23 shots",
  s:"Budget tier, every shot. You are not judging quality — only whether each join reads as continuous and whether the model can get from A to B at all.",
- a:"Run all 23 shots at budget tier so we can test the seams.",
+ a:"Which seams should I be watching hardest in the draft pass?",
  b:"<b>Video</b> → Kling 3.0 Turbo or Seedance 2.0 Mini. Prompts are in the shot list, one Copy button each.",
  w:"Video",u:HF+"video",
  set:"Lowest tier available. Shots that fail here have an anchor problem, and you just found it for pennies.",sv:"DRAFT-S##"},
 {ph:"Gate D",g:1,t:"Motion lock",
  s:"Every seam confirmed. Any frame the cheap pass produced that beats your anchor gets extracted and promoted into the ledger, so the final pass inherits an improved string.",
- a:"Which draft shots produced a better frame than the anchor we fed them?",
+ a:"Should I promote any of these draft frames over my existing anchors?",
  b:"Extract the better frames, rename them over the old anchors, and note the swap."},
 {ph:"Phase 4",t:"Final — Movement I (S1 to S5)",
  s:"Eighty seconds, five shots, and the first thirty-four contain no cut at all. S1 and S2 are one continuous move — extend, do not re-generate.",
- a:"Generate Movement I final, in shot order, at final tier.",
+ a:"S2's extension seam is visible. What do I change about the anchor?",
  b:"<b>Video</b> → per the model column in the shot list. S2 is a forward <code>video_extension</code> of S1.",
  w:"Video",u:HF+"video",
  set:"Strict shot order. The chain builds forward and will not survive being done out of sequence.",sv:"FINAL-S01 … S05"},
 {ph:"Phase 4",t:"Final — Movement II (S6 to S14)",
  s:"The hardest stretch. S7's end frame is S8's start frame; generate in sequence or the chain breaks.",
- a:"Generate Movement II final, strictly in sequence.",
+ a:"S8 has failed three times. Walk me down the escalation ladder.",
  b:"<b>Video</b> → S13 must have audio generation <i>off</i>. That silence is the climax.",
  w:"Video",u:HF+"video",
  set:"S13: <code>generate_audio: false</code>. Do not let a model score it.",sv:"FINAL-S06 … S14"},
 {ph:"Phase 4",t:"Final — Movement III (S15 to S23)",
  s:"S20 — the mountain — gets more attempts than any other shot in the film. Fourteen unbroken seconds that cannot be rescued in the edit.",
- a:"Generate Movement III final. Give S20 as many attempts as it takes.",
+ a:"S20 is not holding for the full fourteen seconds. What is the prompt doing wrong?",
  b:"<b>Video</b> → S20 on <code>wan3_0</code> with <code>enable_thinking</code> on. Budget for six attempts minimum.",
  w:"Video",u:HF+"video",
  set:"Any shot failing three times leaves the queue for the escalation ladder. It does not get a quiet fourth try.",sv:"FINAL-S15 … S23"},
 {ph:"Phase 6",t:"Finish — deflicker, then upscale, then grade",
  s:"In that order, without exception. Upscaling before deflicking sharpens the shimmer into the master permanently and there is no route back from it.",
- a:"Deflicker every extended and chained shot, then upscale to 4K.",
+ a:"Remind me the exact finishing order and which shots need the most lift.",
  b:"<b>Video</b> → per-shot tools. Upscale with the <code>aigc</code> preset. S2 is 720p and needs the most lift.",
  w:"Video",u:HF+"video",
  set:"Three grades, one per movement: gold-on-black, cold blue-grey, golden hour.",sv:"MASTER-S##"},
 {ph:"Gate E",g:1,t:"Picture lock",
  s:"No further generation. Anything still wrong is now a sound or grade problem — and if it is neither, it ships as it is.",
- a:"Assemble the final cut order with exact durations.",
+ a:"Give me the assembly order with exact per-shot durations.",
  b:"<b>Cinema Studio</b> → assemble in shot order at 2.39:1. Timing was already proved at Gate C."},
 {ph:"Phase 7",t:"Rights and attribution pass",
  s:"The entry publishes your prompts and generation history. You own the source novel, so nothing needs renaming — but the festival's licence clause needs reading before you upload, not after.",
- a:"Walk me through the rights checklist and check the prompts for anything that shouldn't be public.",
+ a:"Walk me through the rights checklist and flag anything in my prompts that should not be public.",
  b:"Read the festival's licence clause. Add &ldquo;Adapted from the novel <i>Stone of Matter</i>&rdquo; to the end card and the submission description.",
  w:"Festival rules",u:"https://higgsfield.ai/contests/higgsfield-global-film-festival",
  set:"Character names stay identical to the book. Full detail in Rights &amp; attribution below."},
-{ph:"Phase 7",t:"Sound, then submit",
- s:"Score everything except S13. Then read all 23 prompts as a stranger would — they get published after the deadline.",
- a:"Give me the final submission checklist and re-read the prompts for anything that reads badly out of context.",
- b:"<b>Cinema Studio</b> → festival project → submit. Leave a full day of margin.",
+{ph:"Phase 7",t:"Sound — and upload every audio file into the project",
+ s:"Audio is the one exemption: music, voice, lipsync and sound design may be made anywhere, with any tool, at any time. But every external audio file has to be uploaded into the submission project, and you must own it or hold a sufficient licence. Score everything except S13 — and protect that silence from every instinct you will have to fill it.",
+ a:"Draft the sound design brief per movement, and remind me what S13 must not have.",
+ b:"Make or licence the audio anywhere you like, then <b>upload every file into the submission project</b>. Do not leave a track sitting in an external tool.",
  w:"Cinema Studio",u:HF+"cinema-studio",
- set:"Confirm the rules page one more time. This festival's timeline has already moved once."}
+ set:"S13 stays silent for its full 15 seconds. Keep proof of licence for anything you did not make.",sv:"AUDIO-* inside the project"},
+{ph:"Phase 7",t:"Watermark and packshot — MVS component 1",
+ s:"The official Higgsfield watermark and packshot live inside your submission project and must appear on the final video. This is not a style note: an entry missing an MVS component is marked incomplete, does not compete, and is not published.",
+ a:"Give me the final delivery spec and the MVS checklist in order.",
+ b:"<b>Cinema Studio</b> → submission project → apply the official watermark and packshot to the finished cut.",
+ w:"Cinema Studio",u:HF+"cinema-studio",
+ set:"MP4 or MOV, up to 4K, 21:9. Runtime clears the 3:00 floor. English subtitles or voice-over for all dialogue.",sv:"MASTER-litiguh-watermarked"},
+{ph:"Phase 7",t:"Social post — MVS component 2, and the classic way to lose",
+ s:"A public post on Instagram, YouTube, X or Reddit showing the film with watermark and packshot intact. Mandatory, not optional. The post and the account must both be public and stay public through the end of the festival — a private account is the single most common reason an otherwise-strong entry gets marked non-eligible.",
+ a:"Write the social copy for the film, with the novel credited.",
+ b:"Post the watermarked film publicly. Then <b>open the link in a logged-out browser window</b> and confirm it loads without signing in or requesting to follow.",
+ w:"Festival rules",u:"https://higgsfield.ai/contests/higgsfield-global-film-festival",
+ set:"Check the account itself is public, not just the post. Do not set it private later. Keep the link.",sv:"Public post URL"},
+{ph:"Phase 7",t:"Verify the project, then submit",
+ s:"Every asset used in the film has to still be inside the submission project — that is how the generation history gets verified, and footage that does not match its own history can be investigated and disqualified. Delete nothing.",
+ a:"Run the full pre-submission checklist against my project and tell me what is missing.",
+ b:"<b>Cinema Studio</b> → confirm every generation is still in the project → attach the public post link → submit.",
+ w:"Cinema Studio",u:HF+"cinema-studio",
+ set:"Upload by 11:59 PM PT on the deadline day, with a full day of margin. A project cover and brief are optional but help the Audience Choice Award."}
 ];
 
 /* ================= CONTROL ROOM ================= */
@@ -2132,20 +2146,17 @@ const RUN=[
   const clean=t=>t.replace(/<[^>]+>/g,"").replace(/&#37;/g,"%").replace(/&mdash;/g,"—").replace(/&amp;/g,"&").replace(/&ldquo;|&rdquo;/g,'"').replace(/&nbsp;/g," ");
 
   function anchorPrompt(f){
-    return "["+f.f+" — "+clean(f.s)+"]\n"+
-      "Still frame, cinematic 2.39:1, 21:9, photoreal. "+clean(f.d)+" "+LOOK[f.mv]+
-      " Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame — the composition has to survive being held. No text, no watermark.";
+    return "Still frame, cinematic 2.39:1, 21:9, photoreal. "+clean(f.p||f.d)+" "+
+      (f.look||LOOK[f.mv])+" "+
+      (f.tail||"Anamorphic, deep blacks, heavy atmospheric haze.")+
+      " This is an anchor frame — the composition has to survive being held. No text, no watermark.";
   }
-  const anchorsFor=mv=>FRAMES.filter(f=>f.mv===mv).map(anchorPrompt).join("\n\n");
+  const anchorsFor=mv=>FRAMES.filter(f=>f.mv===mv)
+    .map(f=>"### "+f.f+" · "+clean(f.s)+" — label, not part of the prompt\n"+anchorPrompt(f))
+    .join("\n\n");
 
   let cur=0; try{cur=Math.min(RUN.length,Math.max(0,+JSON.parse(localStorage.getItem(STORE)||"0")||0))}catch(e){}
-  let lane=localStorage.getItem(LSTORE)||"f";
-  if(lane!=="f"&&lane!=="s")lane="f";
-
-  const LANE_NOTE={
-    f:"Every step names the exact screen, the exact prompt to paste, the settings to set and the filename to save it under. This is the path that produces the submitted film, so it is the default and it stays the default — the eligibility question is not worth a shortcut.",
-    s:"Claude runs the generation directly over MCP, so a look can be tested in one sentence instead of eight clicks. Treat everything it produces as a sketch: decide what you want here, then build the real frame in Path 1 so the film's provenance is entirely inside Higgsfield."
-  };
+  try{localStorage.removeItem(LSTORE)}catch(e){}
 
   let peek=new Set();
 
@@ -2160,16 +2171,15 @@ const RUN=[
       if(st==="cur"||(st==="next"&&peek.has(i))){
         body='<div class="step-body">'+
           '<div class="rowk"><span class="k">Why</span><span class="v">'+r.s+'</span></div>'+
-          (lane==="s"
-            ? '<div class="rowk"><span class="k">Say this</span><span class="v"><pre class="paste">'+r.a+'</pre></span></div>'
-            : '<div class="rowk"><span class="k">Where</span><span class="v">'+(r.w?'<a class="go" href="'+r.u+'" target="_blank" rel="noopener">'+r.w+' ↗</a> ':'')+r.b+'</span></div>')+
+          '<div class="rowk"><span class="k">Do this</span><span class="v">'+(r.w?'<a class="go" href="'+r.u+'" target="_blank" rel="noopener">'+r.w+' ↗</a> ':'')+r.b+'</span></div>'+
           (r.set?'<div class="rowk"><span class="k">Settings</span><span class="v">'+r.set+'</span></div>':'')+
           (r.sv?'<div class="rowk"><span class="k">Save as</span><span class="v"><code>'+r.sv+'</code></span></div>':'')+
+          '<div class="rowk ask"><span class="k">Stuck?</span><span class="v"><pre class="askline">'+r.a+'</pre></span></div>'+
           '<div class="step-foot">'+
             '<button class="doneb" data-done="'+i+'">Done &rarr; next</button>'+
-            (lane==="s"?'<button class="copy" data-say="'+i+'">Copy the line</button>':'')+
             (r.pk?'<button class="copy" data-prep="'+r.pk+'">Copy the prompt</button>':'')+
             (r.anc?'<button class="copy" data-anc="'+r.anc+'">Copy all Movement '+"I".repeat(r.anc)+' anchor prompts</button>':'')+
+            '<button class="copy" data-say="'+i+'">Copy the ask</button>'+
           '</div>'+
         '</div>';
       }
@@ -2191,16 +2201,12 @@ const RUN=[
     const r=RUN[cur], nx=RUN[cur+1];
     document.getElementById("now-ph").textContent=r?r.ph:"Complete";
     document.getElementById("now-t").textContent=r?r.t:"Every step is done.";
-    document.getElementById("now-s").innerHTML=r?(lane==="s"?"Say: &ldquo;"+r.a+"&rdquo;":clean(r.b)):"Submit it.";
-    host.classList.toggle("scratch",lane==="s");
-    document.getElementById("pathwarn").classList.toggle("show",lane==="s");
+    document.getElementById("now-s").innerHTML=r?clean(r.b):"Submit it.";
     document.getElementById("now-n").textContent=cur+"/"+RUN.length;
     document.getElementById("now-left").textContent=(RUN.length-cur)+" steps left";
     document.getElementById("now-then").innerHTML=nx?"Then &rarr; <b>"+nx.t+"</b>":"";
     document.getElementById("res-l").textContent="Step "+Math.min(cur+1,RUN.length)+"/"+RUN.length;
     document.getElementById("res-t").textContent=r?r.t:"All steps complete";
-    document.querySelectorAll(".lane-btn").forEach(b=>b.classList.toggle("on",b.dataset.lane===lane));
-    document.getElementById("lane-note").textContent=LANE_NOTE[lane];
   }
 
   function flash(b,msg){
@@ -2229,7 +2235,6 @@ const RUN=[
     navigator.clipboard.writeText(txt).then(()=>flash(c,"Copied")).catch(()=>flash(c,"Copy failed"));
   });
 
-  document.querySelectorAll(".lane-btn").forEach(b=>b.onclick=()=>{lane=b.dataset.lane;localStorage.setItem(LSTORE,lane);paint()});
   document.getElementById("cr-reset").onclick=()=>{cur=0;peek.clear();localStorage.setItem(STORE,0);paint()};
   document.getElementById("cr-back").onclick=()=>{cur=Math.max(0,cur-1);localStorage.setItem(STORE,cur);paint()};
   document.getElementById("res-j").onclick=jump;
