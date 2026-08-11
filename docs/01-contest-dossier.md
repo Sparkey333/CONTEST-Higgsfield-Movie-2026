@@ -150,7 +150,7 @@ Confirmed from the official contest page (screenshot, 2026-08-08):
 | Juror | Credentials | What they judge |
 |---|---|---|
 | **Edwin Catmull** | Pixar co-founder. **5× Oscar winner.** Ex-President of Pixar & Walt Disney Animation Studios. Executive producer, *Toy Story*. Turing Award laureate. | **Story. Character. Heart.** |
-| **Phedon Papamichael** | **2× Oscar-nominated cinematographer** — *Nebraska*, *Ford v Ferrari*, *Sideways*, *Walk the Line*, *The Descendants*. | **Light. Lens. Craft. Restraint.** |
+| **Phedon Papamichael** | **2× Oscar-nominated cinematographer** — *Nebraska* (2014) and *The Trial of the Chicago 7* (2021). Also *Ford v Ferrari* (BAFTA + ASC nominations, not an Oscar nomination), *Sideways*, *Walk the Line*, *3:10 to Yuma*, *The Descendants*, *Indiana Jones and the Dial of Destiny*. | **Light. Lens. Craft. Restraint.** |
 | **Paul W. S. Anderson** | Billion-dollar franchise director. *Mortal Kombat*, the *Resident Evil* franchise, *Alien vs. Predator*, *Event Horizon*, *Monster Hunter*. Described on the page as *"the man who brought video games to the big screen."* | **Propulsion. Spectacle. Attention.** |
 
 **This is the strategic crux, and it changed when the third name appeared.**

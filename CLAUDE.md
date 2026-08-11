@@ -41,7 +41,7 @@ At session end, update `memory/STATE.md` and append to `memory/COUNCIL-LOG.md`.
 | Juror | Judges | Wants |
 |---|---|---|
 | **Edwin Catmull** — Pixar co-founder, 5× Oscar, Turing Award | Story, character | **Heart** |
-| **Phedon Papamichael** — 2× Oscar-nominated DP (*Nebraska*, *Ford v Ferrari*) | Light, lens, blocking | **Craft** |
+| **Phedon Papamichael** — 2× Oscar-nominated DP (*Nebraska*, *Chicago 7*) | Light, lens, blocking | **Craft** |
 | **Paul W. S. Anderson** — *Mortal Kombat*, *Resident Evil*, *Event Horizon* | Pacing, attention | **Propulsion** |
 
 ⚠️ **They do not want the same film.** A quiet, beautiful, static short wins Catmull
@@ -67,6 +67,7 @@ builds the structure, and the storyteller the structure exists to protect. **Bra
 is named for his own candid-feedback council at Pixar.
 
 **Operating protocol:** `docs/05-council-protocol.md`.
+**Wargame protocol:** `docs/10-wargame.md` — how a concept gets tested before a credit is spent.
 
 ### Hard rules of the council
 

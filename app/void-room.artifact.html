@@ -387,6 +387,48 @@ footer{border-top:1px solid var(--edge);padding:30px 0 50px;color:var(--dust);fo
 .credo-inner > *:nth-child(5){animation-delay:.62s}
 .credo-inner > *:nth-child(6){animation-delay:.86s}
 
+/* ---------- JURY ROOM ----------
+   Frame plates are drawn, not photographed. Real posters and real faces are
+   copyrighted works and real likenesses, and embedding them would break the same
+   rule the film itself has to clear. A plate isolates the transferable decision —
+   where the key is, where the horizon sits, what the palette does — which is the
+   part you can actually steal. */
+.seat-block{border-top:1px solid var(--edge);padding-top:26px;margin-top:30px}
+.seat-block:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.seat-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 16px;margin-bottom:5px}
+.seat-kanji{font-family:var(--display);font-size:clamp(28px,4vw,40px);color:var(--brass);line-height:1}
+.seat-name{font-family:var(--display);font-size:clamp(19px,2.5vw,25px);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--screen);line-height:1}
+.seat-el{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dust)}
+.seat-weight{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.seat-patron{font-size:13.5px;color:var(--dust);margin:0 0 4px}
+.seat-sim{font-family:var(--display);font-style:italic;font-size:15px;color:var(--screen);margin:0 0 16px}
+
+.plates{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:18px}
+.plate{background:var(--velvet);border:1px solid var(--edge);border-radius:var(--rad);overflow:hidden}
+.plate svg{display:block;width:100%;height:auto;background:#070606}
+.plate-cap{padding:8px 10px 10px}
+.plate-t{font-family:var(--mono);font-size:8.6px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.plate-l{font-size:12px;line-height:1.42;color:var(--dust);margin-top:3px}
+
+.seat-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.seat-lbl{font-family:var(--mono);font-size:8.6px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dust);margin-bottom:7px}
+.filmo{list-style:none;margin:0;padding:0}
+.filmo li{display:flex;gap:9px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--edge);font-size:13px}
+.filmo li:last-child{border-bottom:0}
+.filmo .yr{font-family:var(--mono);font-size:10.5px;color:var(--dust);
+  font-variant-numeric:tabular-nums;flex:0 0 34px}
+.filmo .ti{color:var(--screen)}
+.filmo .why{color:var(--dust);font-size:12px}
+.tells{list-style:none;margin:0;padding:0}
+.tells li{position:relative;padding:4px 0 4px 17px;font-size:13px;line-height:1.45;color:var(--dust)}
+.tells li::before{content:"\00D7";position:absolute;left:0;top:3px;color:var(--crit);font-size:14px}
+.dial{display:flex;gap:4px;margin-top:11px}
+.dial span{flex:1;height:4px;background:var(--edge);border-radius:2px}
+.dial span.on{background:var(--brass)}
+
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
@@ -424,6 +466,7 @@ footer{border-top:1px solid var(--edge);padding:30px 0 50px;color:var(--dust);fo
   <button class="stub" role="tab" aria-selected="false" data-room="council"><span class="stub-n">02</span>The Council</button>
   <button class="stub" role="tab" aria-selected="false" data-room="library"><span class="stub-n">03</span>The Library</button>
   <button class="stub" role="tab" aria-selected="false" data-room="theater"><span class="stub-n">04</span>The Theater</button>
+  <button class="stub" role="tab" aria-selected="false" data-room="jury"><span class="stub-n">05</span>The Jury Room</button>
 </nav>
 
 <main class="wrap">
@@ -543,6 +586,34 @@ footer{border-top:1px solid var(--edge);padding:30px 0 50px;color:var(--dust);fo
   <div class="reel" id="reel"></div>
 </section>
 
+
+<!-- ================= JURY ROOM ================= -->
+<section class="panel" id="jury" role="tabpanel">
+  <div class="eyebrow">Five seats &middot; wargaming the room before it judges us</div>
+  <h2 class="h2">The Jury Room</h2>
+  <p class="lede">Each seat argues the way its patron judges, so an internal review rehearses the real
+  one. Below each: the frame plates that carry that juror&rsquo;s signature, the work worth watching,
+  and the specific things that make them vote no. Full protocol in
+  <code>docs/10-wargame.md</code>.</p>
+
+  <div class="card" style="margin:18px 0 6px">
+    <h3>Why these are drawings, not posters</h3>
+    <p>Real posters are copyrighted works and real stills are somebody&rsquo;s photograph &mdash; the
+    same rule our film has to clear governs this page. Each plate is drawn from scratch to isolate the
+    part of a reference that is actually transferable: where the key is, where the horizon sits, what
+    the palette does at the turn. Watch the real films at the links; steal the decisions from here.</p>
+  </div>
+
+  <div id="juryseats"></div>
+
+  <hr class="rule">
+  <div class="grid g3">
+    <div class="card"><h3>They do not want the same film</h3><p>A beautiful, static, contemplative short wins Edwin and loses Anderson outright. The winner carries feeling <em>through</em> momentum &mdash; that is the whole design constraint.</p></div>
+    <div class="card"><h3>Anderson carries the most weight</h3><p>Platform and social engagement together are 30% &mdash; more than any single craft criterion. Treating his seat as marketing forfeits the largest block on the board.</p></div>
+    <div class="card"><h3>Unanimity is a red flag</h3><p>Five agreeing seats usually means the concept is invisible, or four of them stopped doing their jobs. Braintrust has to say which.</p></div>
+  </div>
+</section>
+
 </main>
 
 <footer class="wrap">
@@ -574,7 +645,7 @@ const RUBRIC = [
 
 const JURY = [
   ["Edwin Catmull","Pixar co-founder. 5× Oscar winner. Ex-President of Pixar and Walt Disney Animation Studios. Executive producer, Toy Story. Turing Award laureate.","Wants heart"],
-  ["Phedon Papamichael","Two-time Oscar-nominated cinematographer — Nebraska, Ford v Ferrari, Sideways, Walk the Line, The Descendants.","Wants craft"],
+  ["Phedon Papamichael","Two-time Oscar-nominated cinematographer — Nebraska and The Trial of the Chicago 7. Also shot Ford v Ferrari, Sideways, Walk the Line, 3:10 to Yuma, The Descendants.","Wants craft"],
   ["Paul W. S. Anderson","Billion-dollar franchise director. Mortal Kombat, the Resident Evil franchise, Alien vs. Predator, Event Horizon.","Wants propulsion"]
 ];
 
@@ -1098,10 +1169,324 @@ $$("#reel button").forEach(b=> b.addEventListener("click", ()=>show(b.dataset.id
 show(current);
 
 /* ---------------------------------------------------------
+   JURY ROOM — frame plates
+   Original studies, drawn in SVG. Not posters: a poster is a copyrighted work
+   and a still is somebody's photograph, and the same rule that governs our film
+   governs this repo. A plate strips a juror's signature down to the decision —
+   key direction, horizon, palette, lens compression — which is the only part of
+   a reference that is actually transferable anyway.
+   --------------------------------------------------------- */
+const SV = b => `<svg viewBox="0 0 320 180" role="img" aria-label="frame study">${b}</svg>`;
+const FIG = (x, y, h, fill) =>
+  `<g fill="${fill}"><ellipse cx="${x}" cy="${y - h}" rx="${h * .17}" ry="${h * .2}"/>` +
+  `<path d="M${x - h * .19} ${y} L${x - h * .15} ${y - h * .82} Q${x} ${y - h * .95} ${x + h * .15} ${y - h * .82} L${x + h * .19} ${y} Z"/></g>`;
+
+const PLATES = {
+  /* ---- Papamichael: available light, real horizons, restraint ---- */
+  lowsun: {t: "Low sun, high sky", l: "The figure is tiny and the sky is enormous. Scale is a composition, not a caption.", d: () => SV(
+    `<defs><linearGradient id="pl-ls" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20303f"/><stop offset=".62" stop-color="#6d5636"/><stop offset="1" stop-color="#c99148"/>
+     </linearGradient></defs>
+     <rect width="320" height="132" fill="url(#pl-ls)"/>
+     <circle cx="238" cy="126" r="13" fill="#f4d9a0" opacity=".9"/>
+     <rect y="132" width="320" height="48" fill="#171310"/>
+     <path d="M0 132 Q90 126 160 133 T320 130 L320 138 L0 138 Z" fill="#221b15"/>
+     ${FIG(84, 134, 22, "#0b0908")}
+     <line x1="0" y1="132" x2="320" y2="132" stroke="#e9c88a" stroke-width=".6" opacity=".5"/>`)},
+
+  mono: {t: "Value before colour", l: "Strip the colour and the image still has to read. Nebraska was shot black and white for exactly this reason.", d: () => SV(
+    `<rect width="320" height="180" fill="#0d0d0d"/>
+     ${[0,1,2,3,4,5].map(i=>`<rect x="${i*53.3}" width="53.3" height="180" fill="#${['141414','2c2c2c','4a4a4a','6e6e6e','9a9a9a','d8d8d8'][i]}"/>`).join("")}
+     ${FIG(160, 150, 78, "#0a0a0a")}
+     <rect x="0" y="0" width="320" height="180" fill="none" stroke="#000" stroke-width="1"/>`)},
+
+  window: {t: "One source, named", l: "You should be able to point at where the light comes from in every frame. If you can't, neither can the model.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0d"/>
+     <defs><linearGradient id="pl-wn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f0e2c0" stop-opacity=".85"/><stop offset="1" stop-color="#f0e2c0" stop-opacity="0"/>
+     </linearGradient></defs>
+     <rect x="18" y="30" width="42" height="86" fill="#f2e6c8"/>
+     <line x1="39" y1="30" x2="39" y2="116" stroke="#100e0d" stroke-width="3"/>
+     <line x1="18" y1="70" x2="60" y2="70" stroke="#100e0d" stroke-width="3"/>
+     <path d="M60 30 L250 6 L250 168 L60 116 Z" fill="url(#pl-wn)"/>
+     ${FIG(150, 150, 62, "#241d17")}
+     <path d="M150 150 L214 168 L186 168 Z" fill="#000" opacity=".5"/>`)},
+
+  speed: {t: "Speed is a foreground problem", l: "The subject stays sharp; the world nearest the lens smears. Ford v Ferrari sells velocity in the bottom third of frame.", d: () => SV(
+    `<rect width="320" height="180" fill="#161a1e"/>
+     ${[24,42,60,148,162].map((y,i)=>`<rect x="0" y="${y}" width="320" height="${i>2?7:3}" fill="#8fa4b4" opacity="${i>2?.5:.22}"/>`).join("")}
+     <ellipse cx="168" cy="104" rx="62" ry="26" fill="#20262c"/>
+     <rect x="118" y="88" width="100" height="22" rx="7" fill="#c8452f"/>
+     <circle cx="140" cy="112" r="13" fill="#0c0e10"/><circle cx="200" cy="112" r="13" fill="#0c0e10"/>
+     <rect x="0" y="140" width="320" height="40" fill="#0d1013" opacity=".9"/>
+     ${[0,40,80,120,160,200,240,280].map(x=>`<rect x="${x}" y="156" width="26" height="5" fill="#7d8b97" opacity=".55"/>`).join("")}`)},
+
+  /* ---- Anderson: propulsion, geometry, hard light ---- */
+  silhouette: {t: "Black against hot", l: "If the figure reads as pure black shape it reads at any size, on any phone, muted, in a feed.", d: () => SV(
+    `<defs><radialGradient id="pl-si" cx=".5" cy=".5"><stop offset="0" stop-color="#ffd77a"/>
+      <stop offset=".45" stop-color="#d4671f"/><stop offset="1" stop-color="#180d08"/></radialGradient></defs>
+     <rect width="320" height="180" fill="#140d09"/>
+     <circle cx="160" cy="86" r="86" fill="url(#pl-si)"/>
+     ${FIG(160, 168, 104, "#000")}
+     <rect y="168" width="320" height="12" fill="#000"/>`)},
+
+  corridor: {t: "The vanishing point pulls", l: "One-point perspective drags the eye forward before anything moves. Geometry is free propulsion.", d: () => SV(
+    `<rect width="320" height="180" fill="#0a0d10"/>
+     ${[0,1,2,3,4,5,6].map(i=>{const s=1-i*.14;const w=140*s,h=88*s;
+       return `<rect x="${160-w/2}" y="${90-h/2}" width="${w}" height="${h}" fill="none" stroke="#2f4a5c" stroke-width="${1.4*s+.3}" opacity="${.35+i*.09}"/>`;}).join("")}
+     <rect x="146" y="80" width="28" height="20" fill="#7fd0e8" opacity=".85"/>
+     ${[[10,10],[310,10],[10,170],[310,170]].map(p=>`<line x1="${p[0]}" y1="${p[1]}" x2="160" y2="90" stroke="#1d2b35" stroke-width=".7"/>`).join("")}
+     ${FIG(160, 150, 46, "#04070a")}`)},
+
+  rimlight: {t: "Cut the subject out of the dark", l: "A hard rim separates figure from ground with almost no fill. Cheap, legible, and it never reads as flat.", d: () => SV(
+    `<rect width="320" height="180" fill="#080a0c"/>
+     <circle cx="252" cy="52" r="30" fill="#2b4756" opacity=".5"/>
+     ${FIG(150, 166, 118, "#111417")}
+     <path d="M170 166 L166 82 Q160 68 150 62" fill="none" stroke="#9fe0f5" stroke-width="2.4" stroke-linecap="round"/>
+     <path d="M162 54 Q172 58 172 70" fill="none" stroke="#9fe0f5" stroke-width="2" stroke-linecap="round"/>
+     <ellipse cx="150" cy="176" rx="70" ry="7" fill="#0e1114"/>`)},
+
+  diagonal: {t: "Diagonals move, horizontals rest", l: "Tilt the frame's dominant line and the shot has momentum before a single element animates.", d: () => SV(
+    `<rect width="320" height="180" fill="#12100e"/>
+     <path d="M0 180 L200 0 L320 0 L320 180 Z" fill="#1f1a16"/>
+     <path d="M0 180 L200 0" stroke="#d4a537" stroke-width="2" opacity=".8"/>
+     <path d="M60 180 L260 0" stroke="#d4a537" stroke-width="1" opacity=".35"/>
+     ${FIG(214, 118, 60, "#0a0908")}
+     <circle cx="96" cy="52" r="5" fill="#d4a537"/>`)},
+
+  /* ---- Catmull the President: structure, feasibility, the gate ---- */
+  oneidea: {t: "One idea, not three", l: "Three to five minutes holds exactly one idea. Three ideas fighting is the most common way a strong concept dies.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0c"/>
+     <line x1="160" y1="14" x2="160" y2="166" stroke="#2E2630" stroke-width="1"/>
+     <circle cx="80" cy="90" r="38" fill="#d4a537"/>
+     <text x="80" y="150" fill="#978B7C" font-size="10" font-family="monospace" text-anchor="middle">ONE</text>
+     <circle cx="222" cy="74" r="26" fill="#6d5a33" opacity=".8"/>
+     <circle cx="248" cy="100" r="26" fill="#5c4c2c" opacity=".8"/>
+     <circle cx="212" cy="108" r="26" fill="#4a3d24" opacity=".8"/>
+     <text x="235" y="150" fill="#978B7C" font-size="10" font-family="monospace" text-anchor="middle">THREE</text>`)},
+
+  arc: {t: "The ending is earned by the opening", l: "Setup and payoff are the same shape reflected. If the last frame does not answer the first, the structure is unfinished.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0c"/>
+     <path d="M22 130 Q160 24 298 130" fill="none" stroke="#d4a537" stroke-width="1.8"/>
+     <circle cx="22" cy="130" r="7" fill="#F0EAE0"/><circle cx="298" cy="130" r="7" fill="#F0EAE0"/>
+     <circle cx="160" cy="77" r="5" fill="#8FD3E8"/>
+     <line x1="22" y1="146" x2="22" y2="160" stroke="#978B7C" stroke-width=".8"/>
+     <line x1="298" y1="146" x2="298" y2="160" stroke="#978B7C" stroke-width=".8"/>
+     <text x="22" y="172" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">SETUP</text>
+     <text x="298" y="172" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">PAYOFF</text>
+     <text x="160" y="62" fill="#8FD3E8" font-size="9" font-family="monospace" text-anchor="middle">TURN</text>`)},
+
+  runtime: {t: "The clock is a hard edge", l: "The floor is 3:00 and it is measured on the delivered file. The turn belongs at 60–70%, leaving the consequence room to land.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0c"/>
+     <rect x="20" y="76" width="280" height="28" rx="3" fill="#1E1820" stroke="#2E2630"/>
+     <rect x="20" y="76" width="196" height="28" rx="3" fill="#3a2f1a"/>
+     <line x1="72" y1="66" x2="72" y2="114" stroke="#D9503F" stroke-width="2"/>
+     <text x="72" y="60" fill="#D9503F" font-size="9" font-family="monospace" text-anchor="middle">3:00 FLOOR</text>
+     <line x1="216" y1="66" x2="216" y2="114" stroke="#8FD3E8" stroke-width="2"/>
+     <text x="216" y="60" fill="#8FD3E8" font-size="9" font-family="monospace" text-anchor="middle">TURN 65%</text>
+     <text x="300" y="124" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="end">4:30</text>
+     <text x="20" y="124" fill="#978B7C" font-size="9" font-family="monospace">0:00</text>`)},
+
+  gate: {t: "What the gate is looking for", l: "Flags, crosses, logos, known faces. Generated backgrounds hallucinate these constantly — it is a live risk, not a theoretical one.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0c"/>
+     ${[["FLAG",52],["CROSS",118],["LOGO",184],["FACE",250]].map(([t,x])=>
+       `<rect x="${x-26}" y="52" width="52" height="52" rx="3" fill="#1E1820" stroke="#D9503F" stroke-width="1.2"/>
+        <line x1="${x-20}" y1="58" x2="${x+20}" y2="98" stroke="#D9503F" stroke-width="1.6"/>
+        <line x1="${x+20}" y1="58" x2="${x-20}" y2="98" stroke="#D9503F" stroke-width="1.6"/>
+        <text x="${x}" y="120" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">${t}</text>`).join("")}
+     <text x="160" y="150" fill="#D4A537" font-size="10" font-family="monospace" text-anchor="middle">DISQUALIFIED = $0 IN EVERY CRITERION</text>`)},
+
+  /* ---- Catmull the Storyteller: heart ---- */
+  keyfill: {t: "Warm key, cool fill", l: "Two colours of light on one face is the whole Pixar emotional grammar. Temperature does the feeling; the face just has to be readable.", d: () => SV(
+    `<rect width="320" height="180" fill="#0e0c10"/>
+     <ellipse cx="160" cy="96" rx="52" ry="60" fill="#5b4636"/>
+     <path d="M160 36 A52 60 0 0 0 160 156 Z" fill="#8a5f34"/>
+     <path d="M160 36 A52 60 0 0 1 160 156 Z" fill="#2f4657"/>
+     <circle cx="140" cy="86" r="6" fill="#0d0b0a"/><circle cx="180" cy="86" r="6" fill="#0d0b0a"/>
+     <path d="M142 122 Q160 132 178 122" fill="none" stroke="#0d0b0a" stroke-width="2.4" stroke-linecap="round"/>
+     <circle cx="52" cy="40" r="15" fill="#d99a45" opacity=".75"/>
+     <circle cx="268" cy="40" r="15" fill="#4f7f99" opacity=".7"/>`)},
+
+  negspace: {t: "Loneliness is a composition", l: "Put the figure small and low and let the emptiness do the work. No line of dialogue can buy what this buys for free.", d: () => SV(
+    `<rect width="320" height="180" fill="#141a20"/>
+     <rect y="150" width="320" height="30" fill="#0d1116"/>
+     ${FIG(58, 152, 26, "#070a0d")}
+     <circle cx="252" cy="44" r="3" fill="#F0EAE0" opacity=".8"/>
+     <circle cx="284" cy="66" r="2" fill="#F0EAE0" opacity=".5"/>
+     <circle cx="228" cy="72" r="1.6" fill="#F0EAE0" opacity=".4"/>`)},
+
+  eyeline: {t: "The story lives in the gap", l: "Two figures and the distance between them is the entire relationship. Close the gap and you have written a scene.", d: () => SV(
+    `<rect width="320" height="180" fill="#151119"/>
+     <rect y="146" width="320" height="34" fill="#0e0b11"/>
+     ${FIG(96, 148, 74, "#F0EAE0")}
+     ${FIG(224, 148, 52, "#8FD3E8")}
+     <line x1="112" y1="92" x2="208" y2="110" stroke="#D4A537" stroke-width=".9" stroke-dasharray="3 4"/>
+     <text x="160" y="132" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">THE GAP</text>`)},
+
+  recontext: {t: "The last frame re-writes the first", l: "Same composition, twice, meaning inverted. This is the most reliable structure in the short form and it costs nothing but discipline.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0c"/>
+     <rect x="8" y="24" width="146" height="132" fill="#1b2530"/>
+     ${FIG(80, 140, 56, "#0a0d11")}
+     <circle cx="126" cy="52" r="11" fill="#f2dfae" opacity=".8"/>
+     <rect x="166" y="24" width="146" height="132" fill="#2c1d1b"/>
+     ${FIG(238, 140, 56, "#0d0808")}
+     <circle cx="284" cy="52" r="11" fill="#d4664a" opacity=".85"/>
+     <text x="81" y="172" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">0:05</text>
+     <text x="239" y="172" fill="#D4A537" font-size="9" font-family="monospace" text-anchor="middle">3:40</text>`)},
+
+  /* ---- Braintrust: the kill ---- */
+  wall400: {t: "Entry #400", l: "A juror has watched six hours of these today. Everything on this wall is competent. Name the second yours gets skipped.", d: () => SV(
+    `<rect width="320" height="180" fill="#0b0a0c"/>
+     ${Array.from({length: 32}, (_, i) => {const x = 10 + (i % 8) * 38, y = 14 + Math.floor(i / 8) * 40;
+       const hot = i === 21;
+       return `<rect x="${x}" y="${y}" width="32" height="32" rx="2" fill="${hot ? '#D4A537' : '#1c1920'}" stroke="${hot ? '#F0EAE0' : '#262029'}"/>` +
+              (hot ? "" : `<circle cx="${x + 16}" cy="${y + 16}" r="6" fill="#2a242e"/>`);}).join("")}
+     <text x="160" y="174" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">ONE OF THESE IS REMEMBERED AT DINNER</text>`)},
+
+  drift: {t: "The tell", l: "The same character across four shots. A cinematographer spots the drift in three seconds — better that you spot it in August.", d: () => SV(
+    `<rect width="320" height="180" fill="#0f0d0c"/>
+     ${[0,1,2,3].map(i=>{const x=44+i*76, w=1+i*.13, sk=i*3.2;
+       return `<g transform="translate(${x} 84) scale(${w} 1) skewX(${sk})">
+         <ellipse cx="0" cy="0" rx="24" ry="29" fill="#5b4636"/>
+         <circle cx="${-9 - i}" cy="-6" r="3.4" fill="#0d0b0a"/><circle cx="${9 + i * 2}" cy="${-6 + i}" r="${3.4 + i * .3}" fill="#0d0b0a"/>
+         <path d="M-9 12 Q0 ${17 + i * 2} 9 12" fill="none" stroke="#0d0b0a" stroke-width="2"/></g>
+        <text x="${x}" y="150" fill="${i ? '#D9503F' : '#6FBF73'}" font-size="9" font-family="monospace" text-anchor="middle">${i ? 'SHOT ' + (i + 1) : 'REF'}</text>`;}).join("")}`)},
+
+  shrug: {t: "The shrug", l: "Grant that everything works. So what? If the honest answer is “it was impressively made”, that is what the other 399 are also going for.", d: () => SV(
+    `<rect width="320" height="180" fill="#100e0c"/>
+     <rect x="30" y="30" width="260" height="96" rx="3" fill="#1b1820" stroke="#2E2630"/>
+     <text x="160" y="76" fill="#6FBF73" font-size="13" font-family="monospace" text-anchor="middle">EVERY BOX TICKED</text>
+     <text x="160" y="98" fill="#978B7C" font-size="10" font-family="monospace" text-anchor="middle">craft · story · pacing · sound</text>
+     <text x="160" y="152" fill="#D9503F" font-size="17" font-family="monospace" text-anchor="middle">SO WHAT?</text>`)},
+
+  doppel: {t: "The doppelgänger", l: "Lonely machine. Lighthouse. Last tree. Memory as a room. These are the attractors every AI filmmaker lands on. Assume theirs is better.", d: () => SV(
+    `<rect width="320" height="180" fill="#0d0c10"/>
+     ${[0,1,2,3,4,5].map(i=>{const x=28+(i%3)*98, y=26+Math.floor(i/3)*74;
+       return `<rect x="${x}" y="${y}" width="80" height="58" rx="2" fill="#171520" stroke="#262029"/>
+        <rect x="${x+34}" y="${y+18}" width="12" height="30" fill="#3a3550"/>
+        <circle cx="${x+40}" cy="${y+14}" r="7" fill="#4a4468"/>`;}).join("")}
+     <text x="160" y="174" fill="#978B7C" font-size="9" font-family="monospace" text-anchor="middle">SIX PEOPLE MADE THIS THIS WEEK</text>`)}
+};
+
+const SEATS = [
+  {kanji: "地", agent: "CATMULL", el: "Earth · the Foundation",
+   patron: "Patron: <b>Edwin Catmull</b> — the President. Pixar co-founder, ex-President of Walt Disney Animation, five Oscars, a Turing Award, and the author of <i>Creativity, Inc.</i>",
+   sim: "Simulating the Screening reader and the studio president.",
+   weight: "Structure &amp; feasibility · 20%", dial: 2,
+   plates: ["oneidea", "arc", "runtime", "gate"],
+   films: [["1995", "Toy Story", "First fully CG feature — made under his presidency"],
+           ["2003", "Finding Nemo", "Structure as a chase with an emotional spine"],
+           ["2009", "Up", "Four wordless minutes that outperform most features"],
+           ["2015", "Inside Out", "One idea, executed without a second idea fighting it"],
+           ["2014", "Creativity, Inc.", "The book — process as the thing that protects art"]],
+   tells: ["Two ideas fighting for a three-minute runtime",
+           "An ending the opening did not earn",
+           "A schedule with no slack before Aug 30",
+           "A background that will generate a logo",
+           "Any political or religious read, however incidental"]},
+
+  {kanji: "水", agent: "PHEDON", el: "Water · Flow and Adaptation",
+   patron: "Patron: <b>Phedon Papamichael, ASC</b> — two-time Oscar-nominated cinematographer, for <i>Nebraska</i> (2014) and <i>The Trial of the Chicago 7</i> (2021).",
+   sim: "Simulating Papamichael watching the first thirty seconds.",
+   weight: "Craft · 25%", dial: 3,
+   plates: ["lowsun", "mono", "window", "speed"],
+   films: [["2004", "Sideways", "Natural light, unhurried, no showing off"],
+           ["2007", "3:10 to Yuma", "Hard sun, hard shadow, legible geography"],
+           ["2013", "Nebraska", "Black and white — Oscar nomination. Value structure over colour"],
+           ["2019", "Ford v Ferrari", "BAFTA + ASC nominations. Speed built in the foreground"],
+           ["2020", "The Trial of the Chicago 7", "Oscar nomination. Period light, zero nostalgia filter"],
+           ["2023", "Indiana Jones and the Dial of Destiny", "Large-scale coverage with a classical eye"]],
+   tells: ["A face that will not hold across the shot count",
+           "“Atmospheric” standing in for an actual light source",
+           "Every shot the same size — no coverage pattern, no rhythm",
+           "A camera move the story did not ask for",
+           "Water, hair, hands, crowds, reflections or text with no tested shot"]},
+
+  {kanji: "火", agent: "EDWIN", el: "Fire · Passion and Impact",
+   patron: "Patron: <b>Edwin Catmull</b> — the Storyteller. The half of him whose doctrine is that story is king and technology serves it.",
+   sim: "Simulating the only question a Pixar founder actually asks.",
+   weight: "Story · 25%", dial: 3,
+   plates: ["keyfill", "negspace", "eyeline", "recontext"],
+   films: [["2012", "Paperman", "Disney Animation — hand-drawn intent riding a CG pipeline"],
+           ["2016", "Piper", "Oscar winner, not one word. This is what his taste looks like"],
+           ["2018", "Bao", "A single metaphor carried to its conclusion without explanation"],
+           ["2019", "Kitbull", "Brutal then tender, wordless, made by a tiny team on a short clock"],
+           ["2000", "For the Birds", "Oscar winner — one gag, one rule, perfect payoff"]],
+   tells: ["Technically excellent and I feel nothing",
+           "A premise with nobody inside it",
+           "A character who is a camera subject, not a person",
+           "An ending that has to explain itself",
+           "Nothing changes — in the character or in what we understand"]},
+
+  {kanji: "風", agent: "ANDERSON", el: "Wind · Movement and Reach",
+   patron: "Patron: <b>Paul W. S. Anderson</b> — billion-dollar franchise director. Thirty years spent on the one discipline festival filmmakers never learn: holding an audience against its will.",
+   sim: "Simulating the juror who will know exactly when he got bored.",
+   weight: "Propulsion &amp; engagement · 30%", dial: 4,
+   plates: ["silhouette", "corridor", "rimlight", "diagonal"],
+   films: [["1995", "Mortal Kombat", "Video games to the big screen — the credit the festival page leads with"],
+           ["1997", "Event Horizon", "Corridor geometry and dread. His most-studied craft object"],
+           ["2002", "Resident Evil", "Franchise engine — rule, escalate, reveal, repeat"],
+           ["2004", "Alien vs. Predator", "Silhouette-first creature staging"],
+           ["2014", "Pompeii", "A ticking clock the audience can see from frame one"],
+           ["2020", "Monster Hunter", "Scale and kinetics over dialogue"]],
+   tells: ["No hook in the first five seconds",
+           "The rule still not established at 0:15",
+           "A sag at 2:10 that “builds”",
+           "No clock — nothing forcing the pace",
+           "No extractable clip, which forfeits 15% before we start",
+           "Silence that is an unfinished sound pass, not restraint"]},
+
+  {kanji: "空", agent: "BRAINTRUST", el: "Void · the Unseen",
+   patron: "Patron: <b>the Pixar Braintrust</b> — Catmull's own candid-feedback council, the mechanism he credits with saving every Pixar film that was in trouble.",
+   sim: "Simulating the tired juror on entry #400.",
+   weight: "Originality &amp; survival · holds the kill", dial: 5,
+   plates: ["wall400", "doppel", "drift", "shrug"],
+   films: [["1999", "Toy Story 2", "Rebuilt almost entirely in nine months after the Braintrust called it"],
+           ["2007", "Ratatouille", "Director change mid-production; the film survived the intervention"],
+           ["2009", "Up", "Rewritten repeatedly — the opening montage is what survived"],
+           ["2015", "Inside Out", "Restructured around what the Braintrust said was not landing"]],
+   tells: ["The concept everyone lands on",
+           "Instant unanimity — four seats stopped working",
+           "A repair that fixed the objection and killed the film",
+           "A tell that announces “AI” to a professional",
+           "“It was impressively made” as the honest verdict"]}
+];
+
+$("#juryseats").innerHTML = SEATS.map(s => `
+  <div class="seat-block">
+    <div class="seat-head">
+      <span class="seat-kanji">${s.kanji}</span>
+      <span><span class="seat-name">${s.agent}</span><br><span class="seat-el">${s.el}</span></span>
+      <span class="seat-weight">${s.weight}</span>
+    </div>
+    <p class="seat-patron">${s.patron}</p>
+    <p class="seat-sim">${s.sim}</p>
+    <div class="plates">
+      ${s.plates.map(k => `<figure class="plate">${PLATES[k].d()}
+         <figcaption class="plate-cap"><div class="plate-t">${PLATES[k].t}</div>
+         <div class="plate-l">${PLATES[k].l}</div></figcaption></figure>`).join("")}
+    </div>
+    <div class="seat-cols">
+      <div>
+        <div class="seat-lbl">Watch these · the patron's own work</div>
+        <ul class="filmo">${s.films.map(f =>
+          `<li><span class="yr">${f[0]}</span><span><span class="ti">${f[1]}</span><br>
+           <span class="why">${f[2]}</span></span></li>`).join("")}</ul>
+      </div>
+      <div>
+        <div class="seat-lbl">Votes no when — the wargame tells</div>
+        <ul class="tells">${s.tells.map(t => `<li>${t}</li>`).join("")}</ul>
+        <div class="seat-lbl" style="margin-top:14px">Weight on the board</div>
+        <div class="dial">${[1,2,3,4,5].map(i => `<span class="${i <= s.dial ? "on" : ""}"></span>`).join("")}</div>
+      </div>
+    </div>
+  </div>`).join("");
+
+/* ---------------------------------------------------------
    ROOMS (tabs) — hash-routed so links are shareable
    --------------------------------------------------------- */
 function goto(room, push){
-  const valid = ["mission","council","library","theater"];
+  const valid = ["mission","council","library","theater","jury"];
   if(valid.indexOf(room) === -1) room = "mission";
   $$(".panel").forEach(p=> p.classList.toggle("on", p.id===room));
   $$(".stub").forEach(s=> s.setAttribute("aria-selected", String(s.dataset.room===room)));

@@ -47,9 +47,10 @@ Everything in this repo is also a **single self-contained web app**:
 | **02 · The Council** | The five agents, their patrons, and the one line each would die on |
 | **03 · The Library** | The short-film library — **drag any title to re-rank it or move it between tiers.** Saves to your browser |
 | **04 · The Theater** | A 3D auditorium. Drag to look around, hang a poster on the screen, watch from the seats |
+| **05 · The Jury Room** | Each seat's frame plates, filmography, and the specific things that make them vote no |
 
 Every room is hash-routed, so any room links directly — `…/artifact/…#library`,
-`#theater`, `#council`, `#mission`.
+`#theater`, `#council`, `#mission`, `#jury`.
 
 No dependencies, no network calls, one file. Two forms of it:
 
@@ -124,7 +125,7 @@ Then read, in order:
 | Juror | Credentials | Wants |
 |---|---|---|
 | **Edwin Catmull** | Pixar co-founder · 5× Oscar · ex-President, Disney Animation · Turing Award | **Heart** |
-| **Phedon Papamichael** | 2× Oscar-nominated cinematographer · *Nebraska*, *Ford v Ferrari* | **Craft** |
+| **Phedon Papamichael** | 2× Oscar-nominated cinematographer · *Nebraska*, *The Trial of the Chicago 7* | **Craft** |
 | **Paul W. S. Anderson** | *Mortal Kombat* · *Resident Evil* · *Alien vs. Predator* · *Event Horizon* | **Propulsion** |
 
 ⚠️ **They do not want the same film.** A beautiful, static, contemplative short wins
@@ -180,6 +181,8 @@ Full analysis: **[`docs/02-scoring-model.md`](docs/02-scoring-model.md)**
 | [`docs/07-reference-films.md`](docs/07-reference-films.md) | Exemplar shorts + what to steal |
 | [`docs/08-film-library.md`](docs/08-film-library.md) | The 16-film library, flat mirror of The Library room |
 | [`docs/09-reminders.md`](docs/09-reminders.md) | The three-layer early-warning system |
+| [`docs/10-wargame.md`](docs/10-wargame.md) | Adversarial concept testing — five rounds, weighted scoring, the kill |
+| [`film/wargames/`](film/wargames/) | Wargame records, including the concepts we killed |
 | [`memory/`](memory/) | State, decisions, session log |
 | [`film/handbook/`](film/handbook/) | The Aperture Method — printable development handbook |
 | [`app/index.html`](app/index.html) | The Void Room — the whole repo as one web app |
