@@ -526,50 +526,136 @@ footer a{color:var(--ink-2)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 /* ============ CONTROL ROOM ============ */
-#control{background:var(--surface);border-bottom:1px solid var(--line)}
+:root{--signal:#00697F; --signal-soft:#D6F1F7; --signal-line:#7FCADA; --signal-ink:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--signal:#3DD6E8; --signal-soft:#0C2A31; --signal-line:#1C5A67; --signal-ink:#04191E}}
+:root[data-theme="dark"]{--signal:#3DD6E8; --signal-soft:#0C2A31; --signal-line:#1C5A67; --signal-ink:#04191E}
+
+#control{
+  background:
+    radial-gradient(120% 100% at 12% -10%, var(--signal-soft) 0%, transparent 55%),
+    var(--surface);
+  border-bottom:1px solid var(--line);
+}
+
+/* resume bar — sticks under the nav once you scroll past the control room */
+.resume{
+  position:sticky;top:43px;z-index:39;display:none;
+  background:var(--signal);color:var(--signal-ink);border-bottom:1px solid var(--signal-line);
+}
+.resume.show{display:block}
+.resume-in{display:flex;align-items:center;gap:14px;padding:9px 24px;max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.resume .rl{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid currentColor;border-radius:3px;padding:2px 7px;opacity:.85;white-space:nowrap;
+}
+.resume .rt{font-size:13.5px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.resume .rj{
+  margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--signal-ink);color:var(--signal);border:0;border-radius:4px;padding:6px 13px;cursor:pointer;white-space:nowrap;
+}
+.resume .rj:hover{filter:brightness(1.1)}
+
 .cr-now{
   display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;
-  background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:14px;
-  padding:20px 24px;margin-bottom:28px;
+  background:var(--surface);border:2px solid var(--signal);border-radius:14px;
+  padding:22px 26px;margin-bottom:14px;box-shadow:0 0 0 5px var(--signal-soft);
 }
 .cr-now .badge{
   font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold);border:1px solid var(--gold-line);border-radius:999px;padding:6px 12px;white-space:nowrap;
+  color:var(--signal-ink);background:var(--signal);border:1px solid var(--signal);
+  border-radius:999px;padding:6px 12px;white-space:nowrap;
 }
-.cr-now h3{font-size:20px;margin:0 0 3px}
+.cr-now h3{font-size:21px;margin:0 0 4px}
 .cr-now .sub{font-size:13.5px;color:var(--ink-2)}
-.cr-now .prog{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-align:right;white-space:nowrap}
-.cr-now .prog b{display:block;font-size:22px;color:var(--ink);font-family:var(--display)}
+.cr-now .prog{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:right;white-space:nowrap}
+.cr-now .prog b{display:block;font-size:26px;color:var(--signal);font-family:var(--display)}
+.cr-then{
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 0 24px;padding-left:4px;
+}
+.cr-then b{color:var(--ink-2);font-weight:400}
 @media(max-width:760px){.cr-now{grid-template-columns:1fr;gap:12px}.cr-now .prog{text-align:left}}
 
-.lanes{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-.lane-btn{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line);
-  border-radius:999px;padding:8px 16px;cursor:pointer;transition:.15s;
-}
-.lane-btn:hover{color:var(--ink-2)}
-.lane-btn.on{background:var(--void-soft);color:var(--void);border-color:var(--void-line)}
-.lane-note{font-size:13px;color:var(--ink-3);margin:0 0 22px;max-width:74ch}
+/* progress rail */
+.rail{display:flex;gap:3px;margin:0 0 26px;height:8px}
+.rail i{flex:1 1 0;border-radius:2px;background:var(--surface-3);border:1px solid var(--line-soft);transition:.15s}
+.rail i.d{background:var(--jade);border-color:var(--jade)}
+.rail i.c{background:var(--signal);border-color:var(--signal);transform:scaleY(2.1);border-radius:1px}
+.rail i.g{background:var(--coral-soft);border-color:var(--coral-line)}
 
-.steps{display:flex;flex-direction:column;gap:10px}
+.lanes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:700px){.lanes{grid-template-columns:1fr}}
+.lane-btn{
+  text-align:left;font-family:var(--body);background:var(--surface-2);border:1px solid var(--line);
+  border-radius:12px;padding:15px 18px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:5px;
+}
+.lane-btn .lb-k{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-3);border:1px solid var(--line);border-radius:3px;padding:2px 7px;align-self:flex-start;
+}
+.lane-btn .lb-t{font-size:16px;font-weight:600;color:var(--ink-2);font-family:var(--display)}
+.lane-btn .lb-s{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.lane-btn:hover{border-color:var(--ink-3)}
+.lane-btn[data-lane="f"].on{
+  background:var(--signal-soft);border:2px solid var(--signal);padding:14px 17px;
+}
+.lane-btn[data-lane="f"].on .lb-k{background:var(--signal);color:var(--signal-ink);border-color:var(--signal)}
+.lane-btn[data-lane="f"].on .lb-t{color:var(--ink)}
+.lane-btn[data-lane="s"].on{
+  background:var(--void-soft);border:2px dashed var(--void);padding:14px 17px;
+}
+.lane-btn[data-lane="s"].on .lb-k{background:var(--void);color:var(--ground);border-color:var(--void)}
+.lane-btn[data-lane="s"].on .lb-t{color:var(--ink)}
+.lane-note{font-size:13px;color:var(--ink-3);margin:0 0 22px;max-width:78ch;line-height:1.6}
+.pathwarn{
+  display:none;gap:14px;align-items:flex-start;
+  background:var(--coral-soft);border:1px solid var(--coral-line);border-left:4px solid var(--coral);
+  border-radius:10px;padding:16px 20px;margin:0 0 22px;font-size:14px;color:var(--ink-2);line-height:1.6;
+}
+.pathwarn.show{display:flex}
+.pathwarn b{color:var(--ink)}
+.pathwarn .pw-k{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);
+  border:1px solid var(--coral-line);border-radius:3px;padding:3px 8px;white-space:nowrap;flex:0 0 auto;
+}
+/* scratch-lane steps read as provisional */
+.steps.scratch .step.cur{
+  border:1px dashed var(--void-line);border-left:4px dashed var(--void);
+  box-shadow:0 0 0 4px var(--void-soft),var(--shadow);
+}
+.steps.scratch .step.cur .step-n{background:var(--void);border-color:var(--void);color:var(--ground)}
+.steps.scratch .nowtag{background:var(--void);color:var(--ground)}
+.steps.scratch .doneb{background:var(--void);border-color:var(--void);color:var(--ground)}
+.steps.scratch .paste{border-left-color:var(--void)}
+
+.steps{display:flex;flex-direction:column;gap:8px}
 .step{
   display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
-  background:var(--surface-2);border:1px solid var(--line-soft);border-radius:12px;padding:16px 18px;
+  background:var(--surface-2);border:1px solid var(--line-soft);border-radius:12px;padding:15px 18px;
   transition:.15s;
 }
-.step.cur{background:var(--surface);border-color:var(--gold-line);box-shadow:var(--shadow)}
-.step.done{opacity:.5}
+.step.cur{
+  background:var(--surface);border:1px solid var(--signal-line);border-left:4px solid var(--signal);
+  padding-left:15px;box-shadow:0 0 0 4px var(--signal-soft),var(--shadow);
+}
+.step.done{opacity:.44}
 .step.done .step-body{display:none}
+.step.next{opacity:.62;cursor:pointer}
+.step.next:hover{opacity:.9;border-color:var(--line)}
+.step.next.open{opacity:1;cursor:default}
 .step-n{
   font-family:var(--mono);font-size:13px;color:var(--ink-3);
   border:1px solid var(--line);border-radius:8px;width:44px;height:34px;
   display:flex;align-items:center;justify-content:center;
 }
-.step.cur .step-n{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft)}
+.step.cur .step-n{color:var(--signal-ink);border-color:var(--signal);background:var(--signal);font-weight:700}
 .step.done .step-n{color:var(--jade);border-color:var(--jade)}
 .step-hd{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .step-hd h4{font-size:17px}
+.step.cur .step-hd h4{font-size:19px}
+.nowtag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--signal);color:var(--signal-ink);border-radius:3px;padding:3px 8px;
+}
 .step-ph{
   font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
   border:1px solid var(--line);border-radius:4px;padding:2px 7px;
@@ -599,10 +685,11 @@ footer a{color:var(--ink-2)}
 .step-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:3px}
 .doneb{
   font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-  background:var(--ink);color:var(--ground);border:1px solid var(--ink);
-  border-radius:6px;padding:8px 15px;cursor:pointer;
+  background:var(--signal);color:var(--signal-ink);border:1px solid var(--signal);
+  border-radius:6px;padding:9px 17px;cursor:pointer;font-weight:600;
 }
-.doneb:hover{filter:brightness(1.25)}
+.doneb:hover{filter:brightness(1.12)}
+.doneb:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .undob{
   font-family:var(--mono);font-size:11px;background:none;color:var(--ink-3);
   border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer;
@@ -680,6 +767,12 @@ footer a{color:var(--ink-2)}
   <a href="#build">Build Order</a>
 </div></nav>
 
+<div class="resume" id="resume"><div class="resume-in">
+  <span class="rl" id="res-l">Step 1/22</span>
+  <span class="rt" id="res-t"></span>
+  <button class="rj" id="res-j">Back to it &uarr;</button>
+</div></div>
+
 <!-- ================= THESIS ================= -->
 <!-- ================= CONTROL ROOM ================= -->
 <section id="control"><div class="wrap">
@@ -697,10 +790,25 @@ footer a{color:var(--ink-2)}
     </div>
     <div class="prog"><b id="now-n">0/0</b><span id="now-left">steps left</span></div>
   </div>
+  <p class="cr-then" id="now-then"></p>
+
+  <div class="rail" id="rail"></div>
 
   <div class="lanes">
-    <button class="lane-btn on" data-lane="a">Lane A &mdash; Claude drives it</button>
-    <button class="lane-btn" data-lane="b">Lane B &mdash; I click it myself</button>
+    <button class="lane-btn on" data-lane="f">
+      <span class="lb-k">Path 1 &middot; Submitted picture</span>
+      <span class="lb-t">Generate inside Higgsfield</span>
+      <span class="lb-s">Everything that ends up in the film, made in the Cinema Studio festival project. The eligible path.</span>
+    </button>
+    <button class="lane-btn" data-lane="s">
+      <span class="lb-k">Path 2 &middot; Scratch only</span>
+      <span class="lb-t">Let Claude drive it over MCP</span>
+      <span class="lb-s">Look-development, tests, throwaway explorations. Nothing from here goes into the cut.</span>
+    </button>
+  </div>
+  <div class="pathwarn" id="pathwarn">
+    <span class="pw-k">Not for the cut</span>
+    <span>The festival requires the entry to be <b>created through the festival project inside Cinema Studio</b>. MCP generations run on the same account and the same models, but they land in your general Assets, not in that project &mdash; and nothing published tells us whether a rules check would accept them. <b>The downside is disqualification and the upside is convenience, so the trade is not worth taking.</b> Use this path to learn what a prompt does, then make the real frame in Path 1.</span>
   </div>
   <p class="lane-note" id="lane-note"></p>
 
@@ -758,6 +866,27 @@ footer a{color:var(--ink-2)}
       <tr><td>7 &middot; Submit</td><td>Through the Cinema Studio festival project, with <b>a full day of margin</b>. Re-read all 23 prompts first as a stranger would: they are published after the deadline. Confirm the rules page again &mdash; this festival's timeline has already moved once.</td></tr>
     </tbody>
   </table>
+
+  <div class="sec-head" style="margin-top:52px">
+    <span class="eyebrow">Because the entry goes public</span>
+    <h3 style="font-size:26px">Rights &amp; attribution</h3>
+    <p>The film adapts Chapters I&ndash;III of <i>Stone of Matter</i> &mdash; a novel the director wrote and self-published. That single fact answers most of the worry: there is no third party to hide from. <b>Do not rename anything.</b> The list below is what actually needs attention.</p>
+  </div>
+  <table class="dials">
+    <tbody>
+      <tr><td>Rename the characters?</td><td><b>No.</b> Torin, Gwendolyn, Ammon, Mikael and the Creation Stone are yours. Renaming them would sever the only link between the film and the book &mdash; which is a large part of the reason to enter at all. Keep the names identical to the novel, spelled the same way, so the two are searchable against each other.</td></tr>
+      <tr><td>Does self-publishing cost you the film rights?</td><td>No. A retail distribution agreement is not an assignment of copyright. Even the exclusive tier of Amazon's programme covers <i>digital distribution of that book</i> &mdash; it does not reach adaptation or audiovisual rights. Confirm which tier you are enrolled in and read the term you actually agreed to, rather than assuming either way.</td></tr>
+      <tr><td>The prompts become public &mdash; is that a problem?</td><td>Publishing does not cost you copyright; it never has. What it does do is put a beat-by-beat synopsis of three chapters into the open under your name. Copyright protects your <b>expression</b>, not the underlying ideas, so treat the plot beats as public from the deadline onward and enter with that understood.</td></tr>
+      <tr><td>What genuinely needs reading</td><td><b>The festival's terms.</b> Every contest takes some licence in your entry. A non-exclusive licence to display and promote the film is normal and harmless. An <b>exclusive</b> licence, or anything worded as an assignment, would sit on top of the series rights you want to keep. This is the one clause to read closely before submitting.</td></tr>
+      <tr><td>Registration</td><td>If you are in the US, register the novel with the Copyright Office if you have not. Statutory damages and legal fees are only available when registration precedes the infringement &mdash; it is cheap, and it is the step people skip.</td></tr>
+      <tr><td>AI output and authorship</td><td>US copyright requires human authorship, so the raw generated frames may not themselves be protectable. <b>Your novel, your screenplay, your shot design, and the selection and arrangement that make up the film are.</b> Worth knowing before the series plan: the story is protected, the individual pixels may not be.</td></tr>
+      <tr><td>Third-party IP inside the prompts</td><td>Already handled. Every character prompt closes with <i>original character not resembling any real person or existing property</i>, and no shot prompt names a living artist, a film, or a brand. Keep it that way &mdash; a prompt reading &ldquo;in the style of [director]&rdquo; is the one that would actually cause trouble once the generation history is public.</td></tr>
+      <tr><td>Turning the rest into a series</td><td>Nothing here blocks it, and the entry helps: a public, timestamped, credited adaptation of your own chapters is evidence of provenance and a proof of concept in one. Keep the same title convention across everything, and keep the per-shot masters &mdash; a five-minute proof cut is the asset you show, not the festival upload.</td></tr>
+    </tbody>
+  </table>
+  <div class="verdict" style="margin-top:22px">
+    <b>Three things to actually do:</b> put &ldquo;Adapted from the novel <i>Stone of Matter</i>&rdquo; on the end card <i>and</i> in the submission description; keep the character names identical to the book; read the festival's licence clause before you upload. That is the whole list. <span style="color:var(--ink-3)">This is practical guidance from someone who is not your lawyer &mdash; the licence clause is the one worth a professional read if a series deal is genuinely on the table.</span>
+  </div>
 </div></section>
 
 <section id="thesis"><div class="wrap">
@@ -1829,16 +1958,16 @@ const LOOK={
 };
 
 const PREP=[
-{k:"gwen",n:"Gwendolyn",tag:"c",tl:"Character",w:"Image → Soul V2 → train a character",sv:"REF-gwendolyn-##",
- p:`Character reference sheet, photoreal, neutral studio lighting, plain mid-grey background. A woman in her early thirties encased from the neck down in a faceted crystal shell that refracts whatever light falls on it. Her face is uncovered, bare, luminous, unmistakably human — high cheekbones, dark eyes, hair loose and dark. The crystal is not armour and not clothing; it is grown, like quartz, with visible internal fracture planes. Six views on one sheet: front, three-quarter left, profile, three-quarter right, back, and a head-only close-up. Identical face, identical crystal geometry across all six. No background elements, no props, no text, no watermark.`},
-{k:"torin",n:"Torin",tag:"c",tl:"Character",w:"Image → Soul V2 → train a character",sv:"REF-torin-##",
- p:`Character reference sheet, photoreal, neutral studio lighting, plain mid-grey background. An ageless man, calm to the point of stillness — could be thirty-five, could be a thousand. He wears robes woven from light itself: the fabric emits rather than reflects, with visible warm filaments running through the weave. Face is serene, symmetrical, entirely unremarkable in expression — the stillness is the character. Six views on one sheet: front, three-quarter left, profile, three-quarter right, back, and a head-only close-up. Identical face and identical robe construction across all six. No background elements, no props, no text, no watermark.`},
-{k:"bros",n:"Ammon &amp; Mikael — the brothers",tag:"c",tl:"Character",w:"Image → Reference Element (both boys in one)",sv:"REF-brothers-##",
- p:`Character reference sheet, photoreal, neutral daylight, plain sand-coloured background. Two brothers, together in every view. AMMON is eight — watchful, still, holds eye contact a beat too long, the older by two years and visibly the one who thinks. MIKAEL is six — open-faced, delighted, always mid-motion, always talking. Both are island children: sun-darkened skin, salt-stiff dark hair, bare feet, simple undyed cloth wraps. Four paired views on one sheet: both front-on, both three-quarter, both in profile facing each other, and a paired head-and-shoulders close-up. The two faces must remain distinct and consistent across every view. No background elements, no text, no watermark.`},
-{k:"pup",n:"The Puppeteer",tag:"c",tl:"Character",w:"Image → Soul V2 → train a character",sv:"REF-puppeteer-##",
- p:`Character reference sheet, photoreal, cold blue-grey light, plain dark background. A woman in dark rippling cloth that moves as though underwater regardless of the air around it. Her face is never fully revealed in any view — always turned, always shadowed, always partially occluded by the cloth or by her own hair. What reads instead is posture and hands: unhurried, precise, fingers held mid-gesture as if working invisible strings. Five views on one sheet: back, three-quarter from behind, profile in shadow, hands in isolated close-up, and full figure hovering. No warmth in any part of the frame. No text, no watermark.`},
-{k:"guard",n:"The Guardians",tag:"c",tl:"Character",w:"Image → Reference Element",sv:"REF-guardian-##",
- p:`Character reference sheet, photoreal, flat white light, plain white background. Temple Guardians: adult figures of mixed build in unadorned white robes that fall straight and heavy with no ornament, no belt, no insignia. Their faces are calm and entirely blank — not masked, not empty-eyed, simply absent of any expression whatsoever, which should read as unsettling rather than peaceful. Views: single figure front, single figure walking in profile, single figure kneeling with head bowed, a line of four standing, and a robe-fabric detail. Identical robe construction and identical facial blankness across all views. No text, no watermark.`},
+{k:"gwen",n:"Gwendolyn",tag:"c",tl:"Character",w:"Image → 16:9 → Soul V2 → train a character",sv:"REF-gwendolyn-##",
+ p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original female character on both sides, single subject only exactly one person with only the character in frame, pure white seamless studio background, professional character sheet presentation, a woman in her early thirties with fair olive skin, oval face with a defined angular jawline, high pronounced cheekbones, straight narrow nose, full lips with a natural rosy-nude tint and a soft matte finish, mature adult bone structure and adult facial proportions, dark almond eyes with a slight upward tilt, naturally muted catchlights, no oversized specular glare in the iris, eye colour muted rather than glowing, full dark brows with natural stray hairs, long dark brown hair worn loose and slightly disordered with a soft natural finish and a centre parting, visible fine skin texture with natural pores, fine lines, subtle asymmetries and texture irregularities, bare face with no makeup, faint natural flush across the cheeks, a few faint freckles across the nose, slight natural sheen rather than a glossy or dewy retouched finish, no digital smoothing, no beauty filter, no AI-airbrushed look, skin completely free of artificial glare, shine or highlight blooms, matte-to-natural complexion, lean athletic build with balanced proportions, the body from the collarbone down entirely encased in a grown faceted crystal shell — quartz-like rather than armour or clothing, with visible internal fracture planes, sharp irregular facets and a true refractive index that visibly bends and displaces whatever sits behind it, the shell continuous and seamless with no join at the neck, feet encased to the sole, no jewellery, no bag, natural anatomy, high-end but unretouched commercial photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture and crystal facet detail, single subject only, exactly one person, only the character in frame, no other people, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, left panel standing full-body head-to-toe not cropped not sitting, right panel tight close-up not full body, no babyface, no overly youthful rounded proportions, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, no glossy skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+{k:"torin",n:"Torin",tag:"c",tl:"Character",w:"Image → 16:9 → Soul V2 → train a character",sv:"REF-torin-##",
+ p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original male character on both sides, single subject only exactly one person with only the character in frame, pure white seamless studio background, professional character sheet presentation, a man who reads as ageless — anywhere between thirty-five and centuries old — with warm mid-brown skin, long face with a firm square jawline, high flat cheekbones, straight nose with a narrow bridge, thin lips held in complete repose, mature adult bone structure and adult facial proportions, deep-set grey-amber eyes with naturally muted catchlights, no oversized specular glare in the iris, eye colour muted rather than glowing, straight dark brows, short dark hair greying at the temples worn plain and close to the skull, visible fine skin texture with natural pores, fine lines around the eyes, subtle asymmetries and texture irregularities, weathered rather than smooth, slight natural sheen rather than a glossy retouched finish, no digital smoothing, no beauty filter, no AI-airbrushed look, skin completely free of artificial glare, shine or highlight blooms, matte-to-natural complexion, tall lean build with an upright and completely still posture, wearing a full-length robe woven from light itself — the fabric emits rather than reflects, with warm filaments running visibly through the weave, a soft luminous falloff at the hem and cuffs, and no cast shadow where the light-cloth meets skin, a plain wide sash at the waist, bare feet, no jewellery, no bag, natural anatomy, high-end but unretouched commercial photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture and fabric filament detail, single subject only, exactly one person, only the character in frame, no other people, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, left panel standing full-body head-to-toe not cropped not sitting, right panel tight close-up not full body, no babyface, no overly youthful rounded proportions, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, no glossy skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+{k:"bros",n:"Ammon and Mikael — the brothers",tag:"c",tl:"Character",w:"Image → 16:9 → Reference Element (both boys in one)",sv:"REF-brothers-##",
+ p:`Two-character reference sheet, four paired views of the same two brothers arranged evenly in a row — both boys front-on full body standing upright with feet flat and arms relaxed, both boys in three-quarter view, both boys in side profile facing each other, and a paired head-and-shoulders close-up of the two of them — identical original characters carried unchanged across every view, exactly two people in frame and no others, pure white seamless studio background, professional character sheet presentation, two brothers who are island children with sun-darkened brown skin, AMMON is the elder at eight years old with a longer face, a level steady gaze and a closed still mouth, MIKAEL is the younger at six with a rounder face, a wide open smile and a mouth caught mid-speech, both with dark brown eyes and naturally muted catchlights, no oversized specular glare in the iris, both with short black hair stiffened and lightened at the tips by salt and sun, visible fine skin texture with natural pores, sun-freckling across the nose and shoulders, minor scrapes and healed scars on the knees and shins, dry salt-dulled skin rather than a fresh clean finish, subtle asymmetries and texture irregularities, no digital smoothing, no beauty filter, no AI-airbrushed look, skin completely free of artificial glare, shine or highlight blooms, matte-to-natural complexion, both slight and wiry with normal healthy child proportions, both wearing simple undyed knee-length cloth wraps tied at the waist, no shirt, barefoot, no jewellery, no bag, natural anatomy, high-end but unretouched documentary photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture detail, exactly two people, only these two characters in frame, no third figure, no adults, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, the two faces clearly distinct from each other and consistent across all four views, full-body views head-to-toe not cropped not sitting, original characters not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+{k:"pup",n:"The Puppeteer",tag:"c",tl:"Character",w:"Image → 16:9 → Soul V2 → train a character",sv:"REF-puppeteer-##",
+ p:`Character reference sheet, five views of the same figure arranged evenly in a row — full figure standing seen from directly behind, full figure in three-quarter view from behind, full figure in side profile thrown into deep shadow, a tight isolated close-up of both hands held mid-gesture, and full figure hovering with the feet clear of the ground — identical original female character across every view, exactly one person in frame, her face never fully revealed in any single view, always turned away, shadowed, or partially occluded by cloth or by her own hair, seamless charcoal-grey studio background, professional character sheet presentation, an adult woman of average height and lean build with mature adult proportions, pale cool-toned skin visible only at the hands and the edge of the jaw, long black hair moving loose, visible fine skin texture on the hands with natural pores, prominent tendons, visible knuckle creases and short unpainted nails, subtle asymmetries and texture irregularities, no digital smoothing, no beauty filter, no AI-airbrushed look, skin completely free of artificial glare, shine or highlight blooms, matte complexion, wearing a full-length garment of dark rippling cloth that drifts and folds as though fully submerged in water regardless of the air around it, layered and open at the sleeves, hem trailing, barefoot, no jewellery, no bag, hands held low at the sides with the fingers precisely posed as if working invisible strings, unhurried and controlled posture throughout, cold blue-grey key light with a hard falloff and absolutely no warm tone anywhere in the frame, high-end but unretouched cinematic photography style, 4K quality, sharp focus on hand and fabric detail, exactly one person, only the character in frame, no other people, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, no clear frontal face, no direct eye contact with camera, no visible facial expression, no warm colour, no babyface, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+{k:"guard",n:"The Guardians",tag:"c",tl:"Character",w:"Image → 16:9 → Reference Element",sv:"REF-guardian-##",
+ p:`Character reference sheet for a uniformed order, five views arranged evenly in a row — one figure standing front-on full body, one figure walking in side profile, one figure kneeling on one knee with the head bowed, a line of four identical figures standing shoulder to shoulder facing camera, and a close detail of the robe fabric and hem — identical original adult figures with identical robe construction carried unchanged across every view, seamless pure white studio background, professional character sheet presentation, adults of mixed height and build with mature adult bone structure and adult facial proportions, mid-brown skin, dark hair cropped short, dark brown eyes open and focused on nothing with naturally muted catchlights and no oversized specular glare in the iris, the face fully normal and fully human but carrying no expression of any kind — not a mask, not a smooth featureless surface, not closed eyes, not serenity and not sadness, simply the complete absence of expression, which should read as unsettling rather than peaceful, visible fine skin texture with natural pores, fine lines, subtle asymmetries and texture irregularities so the blankness reads as a real face rather than a render, no digital smoothing, no beauty filter, no AI-airbrushed look, skin completely free of artificial glare, shine or highlight blooms, matte-to-natural complexion, wearing a full-length unadorned white robe of heavy undyed cloth that falls straight from the shoulder with no belt, no sash, no insignia, no ornament, no stitching detail and no pockets, sleeves long and loose, barefoot, no jewellery, no bag, flat even white lighting with soft shadowless falloff, high-end but unretouched commercial photography style, cinematic realism, 4K quality, sharp focus on skin and cloth texture detail, only these robed figures in frame, no other people, no children, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, full-body views head-to-toe not cropped, identical facial blankness and identical robe cut in every view, no babyface, no overly youthful rounded proportions, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, original characters not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
 
 {k:"l1",n:"Movement I — the Sun",tag:"l",tl:"Lighting plate",w:"Image → any model → plate only",sv:"PLATE-mv1-light",
  p:`Empty lighting plate, no characters, no story. Cinematic 2.39:1. The surface of a star treated as landscape rather than sphere — an ocean of liquid white-gold plasma moving like weather. Above it, a courtyard built from solidified beams of light, standing untouched in the flame, casting hard-edged shadows that should be impossible. Key light comes from below. Warm gold highlights, genuinely cold shadows, heavy atmospheric haze, anamorphic flare, deep blacks. This plate defines the colour and key direction for every Movement I frame. No people, no text, no watermark.`},
@@ -1864,12 +1993,12 @@ const PREP=[
 /* ================= RUN SHEET ================= */
 const HF="https://higgsfield.ai/";
 const RUN=[
-{ph:"Phase 0",t:"Confirm the workspace and the credit balance",
- s:"Thirty seconds. Do it now so you never discover a wrong workspace forty frames in.",
+{ph:"Phase 0",t:"Open the Cinema Studio festival project",
+ s:"Do this before generating anything. The rules require the entry to be created through the festival project, so that project has to exist first and every frame that ends up in the film has to be made inside it. A frame generated somewhere else is a frame you may have to make twice.",
  a:"Check my Higgsfield balance and tell me which workspace is active.",
- b:"Top-right avatar for the workspace picker; <b>Buy Credits</b> in the nav shows the balance.",
- w:"Anywhere on higgsfield.ai",u:HF,
- set:"You want the Ultra plan active and 21:9 available before anything else."},
+ b:"<b>Cinema Studio</b> → join the festival → create the project. Then check the workspace picker under your avatar, and the balance under <b>Buy Credits</b>.",
+ w:"Cinema Studio",u:HF+"cinema-studio",
+ set:"Read the festival's own rules page while you are there — including the licence clause. Confirm 21:9 is available on your plan.",sv:"Project: LITIGUH"},
 {ph:"Phase 0",t:"Gwendolyn — train Soul V2",
  s:"Her face has to be identical across nine shots spread over three minutes. That comes from a trained identity, not from luck.",
  a:"Generate the Gwendolyn character sheet from the bible, then train a Soul on the best four.",
@@ -1982,6 +2111,12 @@ const RUN=[
  s:"No further generation. Anything still wrong is now a sound or grade problem — and if it is neither, it ships as it is.",
  a:"Assemble the final cut order with exact durations.",
  b:"<b>Cinema Studio</b> → assemble in shot order at 2.39:1. Timing was already proved at Gate C."},
+{ph:"Phase 7",t:"Rights and attribution pass",
+ s:"The entry publishes your prompts and generation history. You own the source novel, so nothing needs renaming — but the festival's licence clause needs reading before you upload, not after.",
+ a:"Walk me through the rights checklist and check the prompts for anything that shouldn't be public.",
+ b:"Read the festival's licence clause. Add &ldquo;Adapted from the novel <i>Stone of Matter</i>&rdquo; to the end card and the submission description.",
+ w:"Festival rules",u:"https://higgsfield.ai/contests/higgsfield-global-film-festival",
+ set:"Character names stay identical to the book. Full detail in Rights &amp; attribution below."},
 {ph:"Phase 7",t:"Sound, then submit",
  s:"Score everything except S13. Then read all 23 prompts as a stranger would — they get published after the deadline.",
  a:"Give me the final submission checklist and re-read the prompts for anything that reads badly out of context.",
@@ -2004,46 +2139,66 @@ const RUN=[
   const anchorsFor=mv=>FRAMES.filter(f=>f.mv===mv).map(anchorPrompt).join("\n\n");
 
   let cur=0; try{cur=Math.min(RUN.length,Math.max(0,+JSON.parse(localStorage.getItem(STORE)||"0")||0))}catch(e){}
-  let lane=localStorage.getItem(LSTORE)||"a";
+  let lane=localStorage.getItem(LSTORE)||"f";
+  if(lane!=="f"&&lane!=="s")lane="f";
 
   const LANE_NOTE={
-    a:"The Higgsfield MCP is connected to this session, so you do not have to touch the web UI for generation at all. Say the line in each step to Claude and the generation runs here — prompts, model choice, references and batching are already known from this bible. Use this lane by default; it is the one that survives being interrupted.",
-    b:"Every step names the exact screen, the exact prompt to paste and the filename to save it under. Use this lane when you want to see the result in Higgsfield's own gallery as you go, or when you are working away from this session."
+    f:"Every step names the exact screen, the exact prompt to paste, the settings to set and the filename to save it under. This is the path that produces the submitted film, so it is the default and it stays the default — the eligibility question is not worth a shortcut.",
+    s:"Claude runs the generation directly over MCP, so a look can be tested in one sentence instead of eight clicks. Treat everything it produces as a sketch: decide what you want here, then build the real frame in Path 1 so the film's provenance is entirely inside Higgsfield."
   };
+
+  let peek=new Set();
 
   function paint(){
     host.innerHTML="";
     RUN.forEach((r,i)=>{
-      const st=i<cur?"done":i===cur?"cur":"";
+      const st=i<cur?"done":i===cur?"cur":"next";
       const el=document.createElement("div");
-      el.className="step "+st;
+      el.className="step "+st+(st==="next"&&peek.has(i)?" open":"");
+      if(st==="next")el.dataset.peek=i;
       let body="";
-      if(st!=="done"){
+      if(st==="cur"||(st==="next"&&peek.has(i))){
         body='<div class="step-body">'+
           '<div class="rowk"><span class="k">Why</span><span class="v">'+r.s+'</span></div>'+
-          (lane==="a"
+          (lane==="s"
             ? '<div class="rowk"><span class="k">Say this</span><span class="v"><pre class="paste">'+r.a+'</pre></span></div>'
             : '<div class="rowk"><span class="k">Where</span><span class="v">'+(r.w?'<a class="go" href="'+r.u+'" target="_blank" rel="noopener">'+r.w+' ↗</a> ':'')+r.b+'</span></div>')+
           (r.set?'<div class="rowk"><span class="k">Settings</span><span class="v">'+r.set+'</span></div>':'')+
           (r.sv?'<div class="rowk"><span class="k">Save as</span><span class="v"><code>'+r.sv+'</code></span></div>':'')+
           '<div class="step-foot">'+
             '<button class="doneb" data-done="'+i+'">Done &rarr; next</button>'+
-            (lane==="a"?'<button class="copy" data-say="'+i+'">Copy the line</button>':'')+
+            (lane==="s"?'<button class="copy" data-say="'+i+'">Copy the line</button>':'')+
             (r.pk?'<button class="copy" data-prep="'+r.pk+'">Copy the prompt</button>':'')+
             (r.anc?'<button class="copy" data-anc="'+r.anc+'">Copy all Movement '+"I".repeat(r.anc)+' anchor prompts</button>':'')+
           '</div>'+
         '</div>';
       }
       el.innerHTML='<div class="step-n">'+(st==="done"?"&#10003;":i+1)+'</div>'+
-        '<div><div class="step-hd"><span class="step-ph'+(r.g?" gate":"")+'">'+r.ph+'</span><h4>'+r.t+'</h4></div>'+body+'</div>';
+        '<div><div class="step-hd">'+(st==="cur"?'<span class="nowtag">You are here</span>':'')+
+        '<span class="step-ph'+(r.g?" gate":"")+'">'+r.ph+'</span><h4>'+r.t+'</h4></div>'+body+'</div>';
       host.appendChild(el);
     });
-    const r=RUN[cur];
+
+    const rail=document.getElementById("rail");
+    rail.innerHTML="";
+    RUN.forEach((r,i)=>{
+      const s=document.createElement("i");
+      s.className=i<cur?"d":i===cur?"c":r.g?"g":"";
+      s.title=(i+1)+" · "+r.ph+" · "+r.t;
+      rail.appendChild(s);
+    });
+
+    const r=RUN[cur], nx=RUN[cur+1];
     document.getElementById("now-ph").textContent=r?r.ph:"Complete";
     document.getElementById("now-t").textContent=r?r.t:"Every step is done.";
-    document.getElementById("now-s").innerHTML=r?(lane==="a"?"Say: &ldquo;"+r.a+"&rdquo;":clean(r.b)):"Submit it.";
+    document.getElementById("now-s").innerHTML=r?(lane==="s"?"Say: &ldquo;"+r.a+"&rdquo;":clean(r.b)):"Submit it.";
+    host.classList.toggle("scratch",lane==="s");
+    document.getElementById("pathwarn").classList.toggle("show",lane==="s");
     document.getElementById("now-n").textContent=cur+"/"+RUN.length;
     document.getElementById("now-left").textContent=(RUN.length-cur)+" steps left";
+    document.getElementById("now-then").innerHTML=nx?"Then &rarr; <b>"+nx.t+"</b>":"";
+    document.getElementById("res-l").textContent="Step "+Math.min(cur+1,RUN.length)+"/"+RUN.length;
+    document.getElementById("res-t").textContent=r?r.t:"All steps complete";
     document.querySelectorAll(".lane-btn").forEach(b=>b.classList.toggle("on",b.dataset.lane===lane));
     document.getElementById("lane-note").textContent=LANE_NOTE[lane];
   }
@@ -2053,11 +2208,20 @@ const RUN=[
     setTimeout(()=>{b.textContent=o;b.classList.remove("done")},1600);
   }
 
+  function jump(){
+    const n=host.querySelector(".step.cur");
+    if(n)n.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+
   host.addEventListener("click",e=>{
     const d=e.target.closest("[data-done]");
-    if(d){cur=Math.min(RUN.length,+d.dataset.done+1);localStorage.setItem(STORE,cur);paint();
-      const n=host.querySelector(".step.cur"); if(n)n.scrollIntoView({behavior:"smooth",block:"center"}); return;}
-    const c=e.target.closest(".copy"); if(!c)return;
+    if(d){cur=Math.min(RUN.length,+d.dataset.done+1);peek.clear();localStorage.setItem(STORE,cur);paint();jump();return;}
+    const c=e.target.closest(".copy");
+    if(!c){
+      const pk=e.target.closest("[data-peek]");
+      if(pk){const i=+pk.dataset.peek; peek.has(i)?peek.delete(i):peek.add(i); paint();}
+      return;
+    }
     let txt="";
     if(c.dataset.say) txt=RUN[+c.dataset.say].a;
     else if(c.dataset.prep){const p=PREP.find(x=>x.k===c.dataset.prep); txt=p?p.p:"";}
@@ -2066,8 +2230,18 @@ const RUN=[
   });
 
   document.querySelectorAll(".lane-btn").forEach(b=>b.onclick=()=>{lane=b.dataset.lane;localStorage.setItem(LSTORE,lane);paint()});
-  document.getElementById("cr-reset").onclick=()=>{cur=0;localStorage.setItem(STORE,0);paint()};
+  document.getElementById("cr-reset").onclick=()=>{cur=0;peek.clear();localStorage.setItem(STORE,0);paint()};
   document.getElementById("cr-back").onclick=()=>{cur=Math.max(0,cur-1);localStorage.setItem(STORE,cur);paint()};
+  document.getElementById("res-j").onclick=jump;
+
+  /* resume bar appears once the control room scrolls out of view */
+  const bar=document.getElementById("resume");
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(
+      es=>bar.classList.toggle("show",!es[0].isIntersecting),
+      {rootMargin:"-90px 0px 0px 0px"}
+    ).observe(document.getElementById("control"));
+  }
 
   /* asset prompt cards */
   const pg=document.getElementById("prepgrid");
