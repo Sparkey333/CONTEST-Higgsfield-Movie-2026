@@ -36,9 +36,16 @@ a trailer, with no character you could name afterwards. There will be thousands 
 | **05** | [Story Concepts](docs/05-STORY-CONCEPTS.md) | Six original concepts engineered for this jury |
 | **06** | [The Wargame](docs/06-WARGAME.md) | Scoring rubric, judge-by-judge predictions, **intake template for your ideas** |
 | **07** | [Production Schedule](docs/07-PRODUCTION-SCHEDULE.md) | Day-by-day for 24 days, credit budget, failure modes |
+| **08** | [**Production Pipeline**](docs/08-PRODUCTION-PIPELINE.md) | **The order of operations.** 8 stages, entry conditions, consistency checks, exit gates. Reusable for any short film |
 
-**Working files:** [`script/SCRIPT.md`](script/SCRIPT.md) ·
-[`script/IDEAS-INBOX.md`](script/IDEAS-INBOX.md) · [`log/SHOT-LEDGER.md`](log/SHOT-LEDGER.md)
+## ▶ To start generating
+
+**[`prompts/RUNBOOK.md`](prompts/RUNBOOK.md)** — every prompt, copy-paste ready, in the order you
+run it. Start at § 1.1.
+
+**Working files:** [`script/STORY-BIBLE.md`](script/STORY-BIBLE.md) (upload-ready grounding doc) ·
+[`script/SCRIPT.md`](script/SCRIPT.md) · [`script/IDEAS-INBOX.md`](script/IDEAS-INBOX.md) ·
+[`log/SHOT-LEDGER.md`](log/SHOT-LEDGER.md) · [`app/`](app/) (the dashboard)
 
 ---
 

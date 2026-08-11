@@ -22,8 +22,15 @@ replace §2–§6 and keep §1 and §7–§9 exactly as they are; those sections
    exists in exactly one 13-second passage and nowhere else.
 3. **One light source per location, named, never violated.** Every shadow in every frame resolves
    to it.
-4. **Never write age, in any language.** Give role, clothes, action. The content filter tightens
-   the moment it reads a minor.
+4. **Age: adult band on the character sheet, never in shot prompts.**
+   - *On the sheet:* state an explicitly **adult** age band ("a woman in her late thirties").
+     Higgsfield's own character-sheet workflow requires it, and it prevents the babyface drift
+     their guidance warns about.
+   - *In every shot prompt:* no age at all. Role, clothes, action — the locked reference carries
+     the face.
+   - What stays banned everywhere: young, ambiguous, or unstated age. The content filter tightens
+     the moment it can read a minor. (Reconciles Hell Grind's "never write age" with the platform
+     workflow — see [`../prompts/RUNBOOK.md`](../prompts/RUNBOOK.md) § 0.)
 5. **Positive form only.** The model ignores "does NOT fall backward" or does the opposite. Write
    "falls on her stomach."
 6. **Diegetic sound only.** No score in any generation. Music, if any, is added in post.
@@ -32,6 +39,9 @@ replace §2–§6 and keep §1 and §7–§9 exactly as they are; those sections
    colour. Point-edits go on with masks, over the original.
 9. **Describe everything, every time.** The model has no memory between generations. Descriptors
    are pasted verbatim, never shortened.
+10. **Decide on stills, execute in motion.** A still costs roughly a tenth of a clip. Framing,
+    blocking, wardrobe, light direction and composition are all settled as keyframes before any
+    video is generated. By the time motion runs, the only open question is the motion.
 
 ---
 
@@ -124,9 +134,21 @@ steady. That gap is the performance.
 - `@keeper` — clean, Act I
 - `@keeper_smoke` — soot on the jaw and neck, hair damp, eyes red-rimmed, Act III
 
-**Character sheet construction:** three panels — face CU in 3/4 view (large), full body front
-**HEADLESS**, full body back. Neutral grey background, flat light, real pores, no retouch, no
-baked-in film grain or cinematic lens.
+**Character sheet construction.** Built from Higgsfield's own `character-sheet` workflow — split
+screen, full body standing left, tight chest-up close-up right, pure white seamless studio
+background, flat even light, **no cinematic grade baked in**. The full prompt is in
+[`../prompts/RUNBOOK.md`](../prompts/RUNBOOK.md) § 2.1.
+
+**The headless question is open and gets settled by probe, not by opinion.** Hell Grind requires
+the front full-body panel be headless so the model can only source the face from the close-up;
+Higgsfield's workflow keeps both heads. Run the A/B in RUNBOOK § 1.4 — about 20 generations — and
+record the winner here before Stage 4:
+
+> **Headless A/B result:** ☐ not yet run · winner: ______
+
+**Why the sheet must be boring:** bake film grain or a cinematic lens into the reference and the
+character carries that look into every scene and **stops reacting to new light** — which would
+destroy the Act III fire-key change that is the whole photographic idea of this film.
 
 ---
 
