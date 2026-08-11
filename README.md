@@ -64,6 +64,45 @@ bash scripts/build-artifact.sh   # regenerate the fragment after editing app/ind
 
 ---
 
+## 📐 The Aperture Method — the development handbook
+
+**[`film/handbook/the-aperture-method.pdf`](film/handbook/the-aperture-method.pdf)** —
+27 pages, printable, fillable. Eighteen sheets in the order you actually work them.
+
+> *A snowflake grows outward from a seed. An aperture stops down — each stop admits
+> less, and the image gets sharper.*
+
+The Snowflake Method **expands**, because prose revises at zero marginal cost. Generated
+film does not: you cannot revise a shot, only re-roll it, paying credits with no
+guarantee the new roll matches the take you already cut around. The expensive failure
+is **drift**, not bad writing.
+
+So this method **narrows**. Each sheet removes freedom, and the sheets are ordered by
+*cost-of-change* — whatever is most expensive to fix after generation begins gets locked
+first. Every sheet ends in a gate you must clear before stopping down further.
+
+| | Part I — nine stops for a generated short | | Part II — the Long Aperture |
+|---|---|---|---|
+| f/1.4 | **The Ember** — the feeling | L/1 | **The Spine** — the argument |
+| f/2 | **The Turn** — the structure | L/2 | **The Dossier** — want, need, lie, ghost |
+| f/2.8 | **The Page** — the whole | L/3 | **The Four Movements** — shape |
+| f/4 | **The Subject** — identity | L/4 | **The Eight Sequences** — the real unit |
+| f/5.6 | **The World** — the look | L/5 | **The Scene Ledger** — one row per scene |
+| f/8 | **The Grammar** — the camera | L/6 | **The Script Builder** — page craft |
+| f/11 | **The Beat Board** — the clock | L/7 | **The Dialogue Pass** — voice |
+| f/16 | **The Shot Ledger** — the generation | L/8 | **The Revision Passes** — in order |
+| f/22 | **The Finish** — the delivery | L/9 | **The Production Bible** — handoff |
+
+Sheets 04, 05 and 06 are the ones that pay for themselves. The Beat Board, Shot Ledger
+and Scene Ledger each get a full-page worksheet. Two running sheets — the **Drift Log**
+and the **Compliance Gate** — sit at the back.
+
+```bash
+python3 scripts/build-handbook.py   # regenerate the PDF after editing the sheets
+```
+
+---
+
 ## Start here
 
 ```bash
@@ -142,11 +181,13 @@ Full analysis: **[`docs/02-scoring-model.md`](docs/02-scoring-model.md)**
 | [`docs/08-film-library.md`](docs/08-film-library.md) | The 16-film library, flat mirror of The Library room |
 | [`docs/09-reminders.md`](docs/09-reminders.md) | The three-layer early-warning system |
 | [`memory/`](memory/) | State, decisions, session log |
+| [`film/handbook/`](film/handbook/) | The Aperture Method — printable development handbook |
 | [`app/index.html`](app/index.html) | The Void Room — the whole repo as one web app |
 | [`scripts/deadline.sh`](scripts/deadline.sh) | Countdown, warning level, milestone gates |
 | [`scripts/standup.sh`](scripts/standup.sh) | Daily standup — countdown + focus + live blockers |
 | [`scripts/install-reminders.sh`](scripts/install-reminders.sh) | Install the gate ladder into cron |
 | [`scripts/build-artifact.sh`](scripts/build-artifact.sh) | Rebuild the publishable fragment from the app |
+| [`scripts/build-handbook.py`](scripts/build-handbook.py) | Rebuild the Aperture Method PDF |
 
 ---
 
