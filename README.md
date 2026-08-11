@@ -183,6 +183,7 @@ Full analysis: **[`docs/02-scoring-model.md`](docs/02-scoring-model.md)**
 | [`docs/09-reminders.md`](docs/09-reminders.md) | The three-layer early-warning system |
 | [`docs/10-wargame.md`](docs/10-wargame.md) | Adversarial concept testing — five rounds, weighted scoring, the kill |
 | [`film/wargames/`](film/wargames/) | Wargame records, including the concepts we killed |
+| [`film/briefs/`](film/briefs/) | Grounding briefs for Higgsfield's script tools — and which screen does what |
 | [`memory/`](memory/) | State, decisions, session log |
 | [`film/handbook/`](film/handbook/) | The Aperture Method — printable development handbook |
 | [`app/index.html`](app/index.html) | The Void Room — the whole repo as one web app |

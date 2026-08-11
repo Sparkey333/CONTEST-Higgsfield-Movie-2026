@@ -1,0 +1,162 @@
+TIDEWALKER — PRODUCTION BACKGROUND BRIEF
+Higgsfield Global Film Festival 2026 entry. Grounding document.
+
+STATUS: concept is PRIMARY but NOT YET RATIFIED through the compliance gate.
+Nothing in this brief is licence to generate. It exists to stop a script tool
+from inventing facts about a film that is already designed.
+
+================================================================
+0. HOW TO USE THIS DOCUMENT
+================================================================
+This is the "Background" upload for Higgsfield's script tools. Everything below
+is FIXED. Do not invent, extend, or improve on it. Where this document and a
+generated draft disagree, this document wins.
+
+If you are generating a script from this: the deliverable is a SHOT LIST with
+sound design, not narration. See section 3.
+
+================================================================
+1. THE FILM IN ONE PARAGRAPH
+================================================================
+In a coastal town the sea withdraws for exactly six minutes each day. A bell
+rings, the water pulls back, and miles of glistening seabed are exposed —
+wrecks, stranded things, a whole hidden landscape. Everyone stays behind the
+line. A boy does not. He runs out across the seabed to retrieve something.
+He reaches it and turns; the water is already returning. The run back is the
+action sequence. He makes it. What he was carrying is revealed: something
+small, and worth it.
+
+Runtime target: 3:45. Hard floor 3:00, measured on the delivered file.
+Register: kinetic, ticking clock, breathless — then still.
+
+================================================================
+2. THE LOCKS — these are decided, not open questions
+================================================================
+THE EMBER (the feeling at the last frame)
+  The ache of having risked everything for something only you understand the
+  value of. Not triumph. Recognition.
+
+THE TURN (one reversal, lands at 60-70% of runtime, approx. 2:20-2:40)
+  True at 0:15: the seabed is a place you can cross and come back from.
+  False by the end: he only just makes it, and the margin was never his.
+  The turn is the moment he TURNS AROUND and sees the water already moving.
+
+THE RULE (established by 0:15, no preamble)
+  Bell rings. Sea withdraws. Six minutes. Everyone stays behind the line.
+  This must be legible with no dialogue and no title card.
+
+THE ENDING
+  The last frame recontextualises the opening. What he retrieved re-writes why
+  he ran. Reveal it late — the film is shot AROUND this fact for three minutes.
+
+THE SUBJECT — identity invariants (must survive every shot)
+  One boy, roughly 10 years old. Non-negotiable across all shots:
+  - a red-brown oilskin coat, too big for him, sleeves rolled
+  - bare feet, always
+  - dark hair, always wet
+  - a canvas satchel worn across the body, left shoulder to right hip
+  - he never smiles until the final shot
+  Deliberately variable: exact hair length, background townspeople, cloud cover.
+  Silhouette test: readable in pure black at thumbnail size. The coat shape and
+  the satchel strap are the silhouette.
+
+THE WORLD — palette and light logic
+  Palette, four values only:
+  - wet-sand silver     #C9C3B4
+  - low-sun amber       #E0A356
+  - deep tidal blue     #24404F
+  - near-black rock     #14100E
+  Light logic: ONE source. Low sun, raking, from frame-left, near the horizon.
+  Long shadows across wet sand. Mirror reflections in standing water.
+  THE SHIFT: the palette cools hard at the turn — amber drains out, tidal blue
+  takes the frame — and returns to amber only in the final shot.
+  Texture floor: fine grain, slight halation on the sun. Keep it in every shot.
+  FORBIDDEN: teal-orange grading, lens flares, colour that is not in the four.
+
+THE GRAMMAR — what the camera may do
+  Lens set: 35mm for the town, 85mm compression for the run (the water reads
+  closer and faster on a long lens — this is the point).
+  Height: the boy's eye height in the town. Ground level on the seabed.
+  Permitted: locked-off wides, one slow push per act, tracking ONLY during the
+  run back.
+  THE PROHIBITION: no handheld, ever. No drifting camera on static beats.
+  The camera is still until the water moves. That contrast is the film.
+
+THE BEATS — approximate budget, 3:45 total
+  0:00-0:15  The bell. The sea withdraws. The rule, established.
+  0:15-0:45  The line. The town behind it. The boy at the edge.
+  0:45-1:10  He crosses the line. Nobody stops him.
+  1:10-2:20  The seabed. The hidden landscape. He finds it.
+  2:20-2:40  THE TURN. He turns. The water is already coming.
+  2:40-3:25  The run back. The action sequence.
+  3:25-3:45  He makes it. The reveal. The last frame.
+
+SOUND
+  Sound carries this film. The bell. Water withdrawing (a vast inhale).
+  Bare feet on wet sand. Breath. Then the returning water as a low wall of
+  pressure, not a crash.
+  ONE DELIBERATE SILENCE: the moment he turns. Everything drops out.
+  Music: original composition or royalty-free ONLY. Licence must be held.
+
+================================================================
+3. WHAT A SCRIPT FOR THIS FILM IS
+================================================================
+THIS FILM HAS NO DIALOGUE AND NO NARRATION. None. Not a voiceover, not a
+title card, not a whispered line at the end.
+
+A valid script for it is:
+  - a numbered shot list
+  - each shot: duration in seconds, framing, lens, what is in frame, what MOVES
+  - a parallel sound column
+  - continuity note: what must match the previous shot
+
+An INVALID script for it is:
+  - a hook line, a narrator, a "here's why this matters" structure
+  - anything that explains the premise in words
+  - anything that states the theme aloud
+  - a listicle, an essay, a retention-optimised talking-head format
+
+If the framework you are using requires narration, it is the wrong framework
+for this film. Say so rather than producing narration.
+
+================================================================
+4. HARD BANS — violating any of these scores zero in every criterion
+================================================================
+  - No copyrighted IP, no recognisable movie characters, no brand logos.
+    Generated coastal towns hallucinate signage and boat names. Watch for it.
+  - No licensed music. Original or royalty-free only.
+  - No NSFW.
+  - NO POLITICAL STATEMENT. No real nations, flags, borders, conflicts,
+    elections, uniforms that read as a real force. The town is invented and
+    unplaceable. It is not a real coast.
+  - NO RELIGIOUS STATEMENT. The bell is a civic bell, not a church bell.
+    No crosses, no spires, no prayer postures, no afterlife reading.
+    THIS IS A REAL RISK: a coastal town with a bell tower defaults to a church.
+    It must not.
+  - Runtime >= 3:00 on the delivered file.
+  - Official watermark required. Public post required. Prompts and generation
+    history must be published.
+
+================================================================
+5. KNOWN PRODUCTION RISKS
+================================================================
+  - Returning-tide water is the hardest generation in the film. It is
+    UNTESTED. If it cannot be made to hold, the concept pivots — do not write
+    around a shot that does not exist yet.
+  - Exteriors mean light and weather continuity across many shots. The single
+    low-sun source is what protects this.
+  - A running child is far easier to hold consistent than a face in dialogue.
+    That is a deliberate design choice, not an accident.
+
+================================================================
+6. WHAT WE ARE OPTIMISING
+================================================================
+Judged by three people who want different films:
+  - Edwin Catmull (Pixar co-founder) wants HEART.
+  - Phedon Papamichael (cinematographer, Nebraska) wants CRAFT and light.
+  - Paul W. S. Anderson (Mortal Kombat, Event Horizon) wants PROPULSION.
+Scoring: Cinematic 25 / Story 25 / Technical 20 / Platform engagement 15 /
+Social engagement 15.
+
+The film must carry feeling THROUGH momentum. A beautiful static short loses
+one of three votes outright.
