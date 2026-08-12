@@ -332,9 +332,25 @@ td.use b{color:var(--gold);font-family:var(--mono);font-size:11.5px}
 }
 .vault-note b{color:var(--ink)}
 .keyrow{
-  display:grid;grid-template-columns:190px 1fr auto;gap:14px;align-items:center;
-  padding:14px 20px;border-bottom:1px solid var(--line-soft);
+  display:grid;grid-template-columns:200px minmax(0,1fr) auto;
+  grid-template-areas:"n i l" "d d d";
+  gap:9px 14px;align-items:center;
+  padding:15px 20px;border-bottom:1px solid var(--line-soft);
 }
+.keyrow .kn{grid-area:n}
+.keyrow input{grid-area:i}
+.keyrow .klink{grid-area:l}
+.keyrow .kd{
+  grid-area:d;font-size:13px;line-height:1.55;color:var(--ink-2);
+  padding-left:2px;max-width:88ch;
+}
+.keyrow .kn strong{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.req{
+  font:600 9px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;
+  color:var(--coral);background:var(--coral-soft);border:1px solid var(--coral-line);
+  border-radius:3px;padding:3px 6px;
+}
+.klink.req{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft)}
 .keyrow:last-of-type{border-bottom:0}
 .keyrow .kn{display:flex;flex-direction:column;gap:3px;min-width:0}
 .keyrow .kn strong{font-size:14.5px;color:var(--ink);font-weight:600}
@@ -352,7 +368,10 @@ td.use b{color:var(--gold);font-family:var(--mono);font-size:11.5px}
 }
 .klink:hover{color:var(--gold);border-color:var(--gold-line)}
 .klink:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-@media (max-width:760px){.keyrow{grid-template-columns:1fr;gap:8px}.klink{justify-self:start}}
+@media (max-width:760px){
+  .keyrow{grid-template-columns:1fr;grid-template-areas:"n" "i" "l" "d";gap:8px}
+  .klink{justify-self:start}
+}
 .vault-foot{display:flex;gap:10px;flex-wrap:wrap;padding:18px 20px;background:var(--surface-2);border-top:1px solid var(--line);align-items:center}
 .abtn{
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
@@ -746,6 +765,25 @@ footer a{color:var(--ink-2)}
 .lane.b{color:var(--gold);background:var(--gold-soft);border:1px solid var(--gold-line)}
 .lane.c{color:var(--jade);background:var(--jade-soft);border:1px solid var(--jade-line)}
 .lane.d{color:var(--coral);background:var(--coral-soft);border:1px solid var(--coral-line)}
+
+/* ---- the three facts you need before you press generate ---- */
+.spec{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 4px}
+.spec .sp{
+  display:flex;flex-direction:column;gap:3px;flex:1 1 190px;min-width:0;
+  font-family:var(--mono);font-size:12px;line-height:1.4;
+  padding:9px 12px;border-radius:7px;border:1px solid var(--line-soft);background:var(--surface-2);
+  color:var(--ink);word-break:break-word;
+}
+.spec .sp i{
+  font-style:normal;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+}
+.spec .sp.m{background:var(--void-soft);border-color:var(--void-line)}
+.spec .sp.m i{color:var(--void)}
+.spec .sp.a{background:var(--gold-soft);border-color:var(--gold-line)}
+.spec .sp.a i{color:var(--gold)}
+.spec .sp.f{background:var(--jade-soft);border-color:var(--jade-line)}
+.spec .sp.f i{color:var(--jade)}
+#now-spec{margin-top:12px}
 .vbody.sv .prompt{margin-top:0}
 
 /* ---- movement colour coding: the film's three worlds, carried into the UI ---- */
@@ -845,6 +883,7 @@ footer a{color:var(--ink-2)}
     <div>
       <h3 id="now-t">Loading&hellip;</h3>
       <p class="sub" id="now-s"></p>
+      <div class="spec" id="now-spec" style="display:none"></div>
     </div>
     <div class="prog"><b id="now-n">0/0</b><span id="now-left">steps left</span></div>
   </div>
@@ -1894,13 +1933,14 @@ const MATRIX=[
 ];
 
 const KEYS=[
-{k:"HIGGSFIELD_API_KEY",n:"Higgsfield",d:"Picture, motion, upscale — the whole spine",u:"https://higgsfield.ai/",l:"Account → API"},
-{k:"ANTHROPIC_API_KEY",n:"Claude",d:"Prompt drafting, shot-list logic, continuity passes",u:"https://console.anthropic.com/settings/keys",l:"Console keys"},
-{k:"GOOGLE_AI_API_KEY",n:"Google AI Studio",d:"Gemini — script analysis, storyboard descriptions",u:"https://aistudio.google.com/apikey",l:"Get API key"},
-{k:"OLLAMA_BASE_URL",n:"Ollama",d:"Local models. No key needed on localhost — leave the default",u:"https://ollama.com/",l:"Download / keys",ph:"http://localhost:11434"},
-{k:"LOVABLE_API_KEY",n:"Lovable",d:"Building the companion app around this bible",u:"https://lovable.dev/",l:"Settings"},
-{k:"ELEVENLABS_API_KEY",n:"ElevenLabs",d:"Torin's voice, Gwendolyn's VO, the Ammon internal monologue",u:"https://elevenlabs.io/app/settings/api-keys",l:"API keys"},
-{k:"OPENAI_API_KEY",n:"OpenAI",d:"Optional — alternate drafting and image passes",u:"https://platform.openai.com/api-keys",l:"API keys"}
+{k:"HIGGSFIELD_API_KEY",n:"Higgsfield",req:1,d:"Picture, motion, upscale — the whole spine. Nothing else in this production can be substituted for it.",u:"https://higgsfield.ai/",l:"Account → API"},
+{k:"ELEVENLABS_API_KEY",n:"ElevenLabs",req:1,d:"Torin's voice, Gwendolyn's dialogue, Ammon's internal monologue, and the sound design. Audio is exempt from the from-scratch rule, so this is the one place you may reuse earlier work.",u:"https://elevenlabs.io/app/settings/api-keys",l:"API keys"},
+{k:"SUNO_API_KEY",n:"Suno",d:"Score. The film runs five minutes with long silent holds — the cue under Movement III is doing real structural work.",u:"https://suno.com/",l:"Account → API"},
+{k:"ANTHROPIC_API_KEY",n:"Claude",d:"Prompt drafting, shot-list logic, continuity passes, and the source backcheck.",u:"https://console.anthropic.com/settings/keys",l:"Console keys"},
+{k:"GOOGLE_AI_API_KEY",n:"Google AI Studio",d:"Gemini — script analysis and second-opinion storyboard descriptions.",u:"https://aistudio.google.com/apikey",l:"Get API key"},
+{k:"OPENAI_API_KEY",n:"OpenAI",d:"Optional — alternate drafting and image passes. Nothing in the build depends on it.",u:"https://platform.openai.com/api-keys",l:"API keys"},
+{k:"LOVABLE_API_KEY",n:"Lovable",d:"Optional — building a companion app around this bible.",u:"https://lovable.dev/",l:"Settings"},
+{k:"OLLAMA_BASE_URL",n:"Ollama",d:"Local models. No key needed on localhost — leave the default as it is.",u:"https://ollama.com/",l:"Download",ph:"http://localhost:11434"}
 ];
 
 const PHASES=[
@@ -2227,9 +2267,10 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
     const r=document.createElement("div");
     r.className="keyrow";
     r.innerHTML=
-      '<span class="kn"><strong>'+k.n+'</strong><span>'+k.k+'</span></span>'+
-      '<input type="password" id="in-'+k.k+'" placeholder="'+(k.ph||k.d)+'" autocomplete="off" spellcheck="false" aria-label="'+k.n+' key">'+
-      '<a class="klink" href="'+k.u+'" target="_blank" rel="noopener noreferrer">'+k.l+' &#8599;</a>';
+      '<span class="kn"><strong>'+k.n+(k.req?'<em class="req">Required</em>':'')+'</strong><span>'+k.k+'</span></span>'+
+      '<input type="password" id="in-'+k.k+'" placeholder="'+(k.ph||("paste your "+k.n+" key"))+'" autocomplete="off" spellcheck="false" aria-label="'+k.n+' key">'+
+      '<a class="klink'+(k.req?' req':'')+'" href="'+k.u+'" target="_blank" rel="noopener noreferrer">'+k.l+' &#8599;</a>'+
+      '<span class="kd">'+k.d+'</span>';
     host.appendChild(r);
   });
   const status=document.getElementById("vault-status");
@@ -2819,43 +2860,72 @@ const RUN=[
  a:"Read me the festival's licence clause and tell me what it means if I take the rest of the novel to series.",
  b:"<b>Cinema Studio</b> → join the festival → create the project. Then check the workspace picker under your avatar, and the balance under <b>Buy Credits</b>.",
  w:"Cinema Studio",u:HF+"cinema-studio",
- set:"Read the festival's own rules page while you are there — including the licence clause. Confirm 21:9 is available on your plan.",sv:"Project: LITIGUH"},
+ set:"Read the festival's own rules page while you are there — including the licence clause. Confirm 21:9 is available on your plan.",sv:"Project: LITIGUH",
+ mdl:"Cinema Studio — no generation yet",ar:"21:9 · crop to 2.39:1 on export",fld:"Light Sacrifice/ ← create this now"},
 {ph:"Phase 0",t:"Gwendolyn — train Soul V2",
  s:"Her face has to be identical across nine shots spread over three minutes. That comes from a trained identity, not from luck.",
  a:"Sharpen the Gwendolyn prompt — I want more visible skin texture and a harder jawline.",
  b:"<b>Image</b> → Soul V2 → train a character. Paste the Gwendolyn prompt from Asset Prompts below.",
  w:"Image",u:HF+"image",pk:"gwen",
- set:"Batch of 4. Plain background. Keep every view that holds the same face.",sv:"REF-gwendolyn-##"},
+ set:"Batch of 4. Plain background. Keep every view that holds the same face.",sv:"REF-gwendolyn-##",
+ mdl:"soul_2 · Soul V2, trained",ar:"16:9 — sheets only, never 21:9",fld:"00 · REFERENCES / Characters"},
+{ph:"Phase 0",
+ t:"Gwendolyn damaged — the same Soul, a second sheet",
+ s:"She is unmarked for six shots and damaged for four, and the damage has to be identical across all four. That is a separate reference sheet, generated from the same trained Soul so the face does not move when the crystal cracks.",
+ a:"My damaged sheet has drifted off the clean Gwendolyn. Which fields in the prompt are letting it move?",
+ b:"<b>Image</b> → Soul V2 → select the <i>same</i> soul_id you just trained. Paste the Gwendolyn — battle damage prompt. Do not train a second Soul for this.",
+ w:"Image",
+ u:HF+"image",
+ pk:"gwendmg",
+ set:"Batch of 4. Damage in exactly three places: right cheekbone, LEFT calf, torso scoring. Reject any frame with a fourth mark.",
+ sv:"REF-gwendolyn-damaged-A-##",
+ mdl:"soul_2 · reuse the Gwendolyn soul_id",ar:"16:9",fld:"00 · REFERENCES / Characters"},
 {ph:"Phase 0",t:"Torin — train Soul V2",
  s:"He opens the film and closes it. Same face at 0:00 and 4:41 or the bookend does not land.",
  a:"Torin's robe is reading as a glow effect instead of fabric. Rewrite that part of the prompt.",
  b:"<b>Image</b> → Soul V2 → train a second character. Paste the Torin prompt below.",
  w:"Image",u:HF+"image",pk:"torin",
- set:"Batch of 4. Separate Soul from Gwendolyn — one identity per Soul.",sv:"REF-torin-##"},
+ set:"Batch of 4. Separate Soul from Gwendolyn — one identity per Soul.",sv:"REF-torin-##",
+ mdl:"soul_2 · Soul V2, a second identity",ar:"16:9",fld:"00 · REFERENCES / Characters"},
 {ph:"Phase 0",t:"The brothers — one Reference Element, both boys",
  s:"Soul carries a single identity per generation and these two share the frame in every shot they are in. So they train together, as one element.",
  a:"The two boys are coming out too similar. Push their faces further apart in the prompt.",
  b:"<b>Image</b> → Reference Element. Paste the brothers prompt below. Do <i>not</i> train them as two Souls.",
  w:"Image",u:HF+"image",pk:"bros",
- set:"Batch of 4. Both boys visible in every view.",sv:"REF-brothers-##"},
+ set:"Batch of 4. Both boys visible in every view.",sv:"REF-brothers-##",
+ mdl:"soul_2 · Reference Element, not a Soul",ar:"16:9",fld:"00 · REFERENCES / Characters"},
 {ph:"Phase 0",t:"Puppeteer and Guardians",
  s:"Two more identities. The Puppeteer's face is never fully shown — that is a rule, not a limitation.",
  a:"The Guardian faces read as peaceful rather than blank. Fix the wording.",
  b:"<b>Image</b> → same flow. Two more prompts below.",
  w:"Image",u:HF+"image",
- set:"Guardians need identical robe construction and identical facial blankness.",sv:"REF-puppeteer-## · REF-guardian-##"},
-{ph:"Phase 0",t:"Three lighting plates, one per movement",
- s:"These three images decide the grade of the whole film. Every anchor frame afterwards gets told to match one of them.",
- a:"Compare my three lighting plates — is one of them fighting the other two?",
- b:"<b>Image</b> → three plates. Prompts below, tagged Lighting plate.",
+ set:"Guardians need identical robe construction and identical facial blankness.",sv:"REF-puppeteer-## · REF-guardian-##",
+ mdl:"soul_2 · one Soul, one Reference Element",ar:"16:9",fld:"00 · REFERENCES / Characters"},
+{ph:"Phase 0",
+ t:"The dark ones and the fused rider",
+ s:"Sixteen pursuers and the thing riding the leviathan. Neither needs a trained identity — no face repeats across shots — so these are reference sheets, which is faster and cheaper than a Soul you will never reuse.",
+ a:"The dark ones keep coming back as matching uniformed soldiers. Push them apart.",
+ b:"<b>Image</b> → plain generation, no Soul. Two sheets: the three-rank group sheet, and the fused rider detail study.",
+ w:"Image",
+ u:HF+"image",
+ pk:"darkones",
+ set:"No armour, no uniforms, no matching costume, no glowing eyes. They must read as individuals who went wrong separately.",
+ sv:"REF-darkones-A-## · LEV-rider-A-##",
+ mdl:"nano_banana_pro · group and detail sheets",ar:"16:9 group · 21:9 rider",fld:"00 · REFERENCES / Characters"},
+{ph:"Phase 0",t:"Four lighting plates — three movements and the bombardment",
+ s:"These four images decide the grade of the whole film. Every anchor frame afterwards gets told to match one of them. The fourth — the bombardment plate — replaces the calm island plate for the attack, and without it Movement III grades as one continuous afternoon when it should turn.",
+ a:"Compare my four lighting plates — is one of them fighting the other three?",
+ b:"<b>Image</b> → four plates. Prompts below, tagged Lighting plate. Generate the A variant of each; the B ladders and C look passes can wait.",
  w:"Image",u:HF+"image",
- set:"No characters in any of them. Plates only.",sv:"PLATE-mv1-light · PLATE-mv2-light · PLATE-mv3-light"},
-{ph:"Phase 0",t:"Props and background plates",
- s:"Twelve of them: the crystal, the Stone, the ore, the tear, the coral plating, the ships, the leviathan, and the five location plates. Generate the A variant of each; B and C wait until Gate A holds.",
+ set:"No characters in any of them. Plates only. Movement II must contain no warm colour at all — check it before you move on.",sv:"PLATE-mv1-light-A · PLATE-mv2-light-A · PLATE-mv3-light-A · PLATE-mv3b-A",
+ mdl:"nano_banana_pro · 4K, no characters",ar:"21:9 — these define the frame",fld:"00 · REFERENCES / Lighting Plates"},
+{ph:"Phase 0",t:"Seventeen props, backgrounds, creatures and effects",
+ s:"The crystal, the Stone, the ore, the tear, the coral plating, the ships, the leviathan — and the six location plates and four effect sheets. The effect sheets matter more than they look: the void is the most repeated image in the film and it is defined here as a lens rather than a glow, once, so it never has to be re-decided under pressure.",
  a:"Write me a prop prompt for something in the shot list I have not made a plate for.",
- b:"<b>Image</b> → six more. Prompts below, tagged Prop and Background.",
+ b:"<b>Image</b> → seventeen sheets. Prompts below, tagged Prop, Background and Asset. Generate the <b>A</b> variant of each and stop there.",
  w:"Image",u:HF+"image",
- set:"Plain backgrounds on props. Full 2.39:1 on the three background plates.",sv:"PROP-* · BG-*"},
+ set:"Plain backgrounds on props. Full 21:9 on every background plate. Do not generate B, C or D yet — they are worthless until Gate A locks the look.",sv:"PROP-* · BG-* · LEV-* · FX-*",
+ mdl:"nano_banana_pro · plates and studies",ar:"21:9 — all of them",fld:"00 · REFERENCES / Props & Creatures + Locations + Effects"},
 {ph:"Gate A",g:1,t:"Identity lock",
  s:"Every character, palette and lighting reference is now final. No anchor frame gets generated before this holds — an anchor built on an unlocked face has to be rebuilt, and there are thirty-nine of them.",
  a:"Here are my Phase 0 references. What is inconsistent between them?",
@@ -2866,19 +2936,22 @@ const RUN=[
  a:"F03 keeps coming back as a wide shot. Rewrite that anchor prompt.",
  b:"<b>Image</b> → work down the list in order. One button below copies all eleven prompts at once.",
  w:"Image",u:HF+"image",anc:1,
- set:"Batch of 4 per anchor, then select 1. Attach the Movement I lighting plate + the relevant Soul every time.",sv:"F01 … F09 · F36 · F37"},
+ set:"Batch of 4 per anchor, then select 1. Attach the Movement I lighting plate + the relevant Soul every time.",sv:"F01 … F09 · F36 · F37",
+ mdl:"soul_2 + soul_id · PLATE-mv1-light as reference",ar:"21:9 · 4K",fld:"01 · ANCHORS / MV1 The Sun"},
 {ph:"Phase 1",t:"Movement II look — 14 anchors",
  s:"F10–F22 plus the B01 bridge. Both match-cut pairs are decided here: F09/F10 carries the 108-year jump, F22/F23 carries a day and three thousand miles. Design each pair together or the audience pays for it.",
  a:"F09 and F10 are not matching on shape and colour. Rewrite them as a designed pair.",
  b:"<b>Image</b> → same flow. B01 is the bridge frame and must go genuinely near-black.",
  w:"Image",u:HF+"image",anc:2,
- set:"Shared joins are generated once and inherited — F11, F12 and F17 each serve two shots.",sv:"F10 … F22 · B01"},
+ set:"Shared joins are generated once and inherited — F11, F12 and F17 each serve two shots.",sv:"F10 … F22 · B01",
+ mdl:"soul_2 + soul_id · PLATE-mv2-light as reference",ar:"21:9 · 4K",fld:"01 · ANCHORS / MV2 The Ocean"},
 {ph:"Phase 1",t:"Movement III look — 14 anchors",
  s:"F23–F35 plus the B02 dust bridge. F35 — Ammon's face at the end of the push — gets the biggest batch and the longest look of anything in the film.",
  a:"Give me eight variations on the F35 prompt — this is the one that matters.",
  b:"<b>Image</b> → same flow. B02 is the dust wall; the source text wrote that cut for you.",
  w:"Image",u:HF+"image",anc:3,
- set:"F35 is the single most important image in the film. Do not settle on it.",sv:"F23 … F35 · B02"},
+ set:"F35 is the single most important image in the film. Do not settle on it.",sv:"F23 … F35 · B02",
+ mdl:"soul_2 + Reference Element · PLATE-mv3 / mv3b",ar:"21:9 · 4K",fld:"01 · ANCHORS / MV3 The Island"},
 {ph:"Gate B",g:1,t:"String lock — the contact sheet",
  s:"All 39 anchors on one sheet, reviewed together. Any face, costume, light direction or grade that jumps between neighbours is drift you are catching for the price of an image instead of a video.",
  a:"Here is my contact sheet in film order. Where does it drift?",
@@ -2889,7 +2962,8 @@ const RUN=[
  a:"Give me the 39 anchors with their exact hold durations, in cut order.",
  b:"<b>Cinema Studio</b> → new project → drop the 39 stills, set each to its shot duration from the shot list.",
  w:"Cinema Studio",u:HF+"cinema-studio",
- set:"Watch it start to finish without pausing. If you reach for your phone, note the timecode."},
+ set:"Watch it start to finish without pausing. If you reach for your phone, note the timecode.",
+ mdl:"No generation — an edit, not a render",ar:"21:9 timeline at 24fps",fld:"01 · ANCHORS (export the string)"},
 {ph:"Gate C",g:1,t:"Timing lock",
  s:"Runtime, shot order and shot count freeze here. This is the last cheap moment to rearrange anything — after this a structural change costs video generations instead of images.",
  a:"I want to move S16 earlier. What does that cost me at this gate?",
@@ -2899,7 +2973,8 @@ const RUN=[
  a:"Which seams should I be watching hardest in the draft pass?",
  b:"<b>Video</b> → Kling 3.0 Turbo or Seedance 2.0 Mini. Prompts are in the shot list, one Copy button each.",
  w:"Video",u:HF+"video",
- set:"Lowest tier available. Shots that fail here have an anchor problem, and you just found it for pennies.",sv:"DRAFT-S##"},
+ set:"Lowest tier available. Shots that fail here have an anchor problem, and you just found it for pennies.",sv:"DRAFT-S##",
+ mdl:"kling2_6 · veo3_1_lite — budget tier only",ar:"21:9 · 1080p, not 4K",fld:"02 · DRAFT MOTION"},
 {ph:"Gate D",g:1,t:"Motion lock",
  s:"Every seam confirmed. Any frame the cheap pass produced that beats your anchor gets extracted and promoted into the ledger, so the final pass inherits an improved string.",
  a:"Should I promote any of these draft frames over my existing anchors?",
@@ -2909,25 +2984,29 @@ const RUN=[
  a:"S2's extension seam is visible. What do I change about the anchor?",
  b:"<b>Video</b> → per the model column in the shot list. S2 is a forward <code>video_extension</code> of S1.",
  w:"Video",u:HF+"video",
- set:"Strict shot order. The chain builds forward and will not survive being done out of sequence.",sv:"FINAL-S01 … S05"},
+ set:"Strict shot order. The chain builds forward and will not survive being done out of sequence.",sv:"FINAL-S01 … S05",
+ mdl:"wan3_0 · seedance_2_5 · cinematic_studio_3_0",ar:"21:9 · 4K where the model allows",fld:"03 · FINAL SHOTS"},
 {ph:"Phase 4",t:"Final — Movement II (S6 to S14)",
  s:"The hardest stretch. S7's end frame is S8's start frame; generate in sequence or the chain breaks.",
  a:"S8 has failed three times. Walk me down the escalation ladder.",
  b:"<b>Video</b> → S13 must have audio generation <i>off</i>. That silence is the climax.",
  w:"Video",u:HF+"video",
- set:"S13: <code>generate_audio: false</code>. Do not let a model score it.",sv:"FINAL-S06 … S14"},
+ set:"S13: <code>generate_audio: false</code>. Do not let a model score it.",sv:"FINAL-S06 … S14",
+ mdl:"cinematic_studio_video_v2 · kling3_0 · veo3_1",ar:"21:9 · 4K",fld:"03 · FINAL SHOTS"},
 {ph:"Phase 4",t:"Final — Movement III (S15 to S23)",
  s:"S20 — the mountain — gets more attempts than any other shot in the film. Fourteen unbroken seconds that cannot be rescued in the edit.",
  a:"S20 is not holding for the full fourteen seconds. What is the prompt doing wrong?",
  b:"<b>Video</b> → S20 on <code>wan3_0</code> with <code>enable_thinking</code> on. Budget for six attempts minimum.",
  w:"Video",u:HF+"video",
- set:"Any shot failing three times leaves the queue for the escalation ladder. It does not get a quiet fourth try.",sv:"FINAL-S15 … S23"},
+ set:"Any shot failing three times leaves the queue for the escalation ladder. It does not get a quiet fourth try.",sv:"FINAL-S15 … S23",
+ mdl:"cinematic_studio_3_0 · wan3_0 · seedance_2_0",ar:"21:9 · 4K",fld:"03 · FINAL SHOTS"},
 {ph:"Phase 6",t:"Finish — deflicker, then upscale, then grade",
  s:"In that order, without exception. Upscaling before deflicking sharpens the shimmer into the master permanently and there is no route back from it.",
  a:"Remind me the exact finishing order and which shots need the most lift.",
  b:"<b>Video</b> → per-shot tools. Upscale with the <code>aigc</code> preset. S2 is 720p and needs the most lift.",
  w:"Video",u:HF+"video",
- set:"Three grades, one per movement: gold-on-black, cold blue-grey, golden hour.",sv:"MASTER-S##"},
+ set:"Three grades, one per movement: gold-on-black, cold blue-grey, golden hour.",sv:"MASTER-S##",
+ mdl:"upscale_video — 2K then 4K, in that order",ar:"21:9 · 4K master",fld:"04 · FINISHING"},
 {ph:"Gate E",g:1,t:"Picture lock",
  s:"No further generation. Anything still wrong is now a sound or grade problem — and if it is neither, it ships as it is.",
  a:"Give me the assembly order with exact per-shot durations.",
@@ -2943,19 +3022,22 @@ const RUN=[
  a:"Draft the sound design brief per movement, and remind me what S13 must not have.",
  b:"Make or licence the audio anywhere you like, then <b>upload every file into the submission project</b>. Do not leave a track sitting in an external tool.",
  w:"Cinema Studio",u:HF+"cinema-studio",
- set:"S13 stays silent for its full 15 seconds. Keep proof of licence for anything you did not make.",sv:"AUDIO-* inside the project"},
+ set:"S13 stays silent for its full 15 seconds. Keep proof of licence for anything you did not make.",sv:"AUDIO-* inside the project",
+ mdl:"generate_audio · ElevenLabs · Suno",ar:"— audio has no aspect ratio",fld:"05 · AUDIO — upload every file here"},
 {ph:"Phase 7",t:"Watermark and packshot — MVS component 1",
  s:"The official Higgsfield watermark and packshot live inside your submission project and must appear on the final video. This is not a style note: an entry missing an MVS component is marked incomplete, does not compete, and is not published.",
  a:"Give me the final delivery spec and the MVS checklist in order.",
  b:"<b>Cinema Studio</b> → submission project → apply the official watermark and packshot to the finished cut.",
  w:"Cinema Studio",u:HF+"cinema-studio",
- set:"MP4 or MOV, up to 4K, 21:9. Runtime clears the 3:00 floor. English subtitles or voice-over for all dialogue.",sv:"MASTER-litiguh-watermarked"},
+ set:"MP4 or MOV, up to 4K, 21:9. Runtime clears the 3:00 floor. English subtitles or voice-over for all dialogue.",sv:"MASTER-litiguh-watermarked",
+ mdl:"nano_banana_pro · still, or an export",ar:"21:9 master · 1:1 packshot",fld:"06 · DELIVERY"},
 {ph:"Phase 7",t:"Social post — MVS component 2, and the classic way to lose",
  s:"A public post on Instagram, YouTube, X or Reddit showing the film with watermark and packshot intact. Mandatory, not optional. The post and the account must both be public and stay public through the end of the festival — a private account is the single most common reason an otherwise-strong entry gets marked non-eligible.",
  a:"Write the social copy for the film, with the novel credited.",
  b:"Post the watermarked film publicly. Then <b>open the link in a logged-out browser window</b> and confirm it loads without signing in or requesting to follow.",
  w:"Festival rules",u:"https://higgsfield.ai/contests/higgsfield-global-film-festival",
- set:"Check the account itself is public, not just the post. Do not set it private later. Keep the link.",sv:"Public post URL"},
+ set:"Check the account itself is public, not just the post. Do not set it private later. Keep the link.",sv:"Public post URL",
+ mdl:"Any — a cut of the master, not a new render",ar:"9:16 vertical · 1:1 square",fld:"06 · DELIVERY"},
 {ph:"Phase 7",t:"Verify the project, then submit",
  s:"Every asset used in the film has to still be inside the submission project — that is how the generation history gets verified, and footage that does not match its own history can be investigated and disqualified. Delete nothing.",
  a:"Run the full pre-submission checklist against my project and tell me what is missing.",
@@ -2997,6 +3079,11 @@ const RUN=[
         body='<div class="step-body">'+
           '<div class="rowk"><span class="k">Why</span><span class="v">'+r.s+'</span></div>'+
           '<div class="rowk"><span class="k">Do this</span><span class="v">'+(r.w?'<a class="go" href="'+r.u+'" target="_blank" rel="noopener">'+r.w+' ↗</a> ':'')+r.b+'</span></div>'+
+          (r.mdl?'<div class="spec">'+
+            '<span class="sp m"><i>Model</i>'+r.mdl+'</span>'+
+            '<span class="sp a"><i>Aspect</i>'+r.ar+'</span>'+
+            '<span class="sp f"><i>Folder</i>'+r.fld+'</span>'+
+          '</div>':'')+
           (r.set?'<div class="rowk"><span class="k">Settings</span><span class="v">'+r.set+'</span></div>':'')+
           (r.sv?'<div class="rowk"><span class="k">Save as</span><span class="v"><code>'+r.sv+'</code></span></div>':'')+
           '<div class="rowk ask"><span class="k">Stuck?</span><span class="v"><pre class="askline">'+r.a+'</pre></span></div>'+
@@ -3029,6 +3116,11 @@ const RUN=[
     document.getElementById("now-s").innerHTML=r?clean(r.b):"Submit it.";
     document.getElementById("now-n").textContent=cur+"/"+RUN.length;
     document.getElementById("now-left").textContent=(RUN.length-cur)+" steps left";
+    const nowSpec=document.getElementById("now-spec");
+    nowSpec.innerHTML=(r&&r.mdl)?'<span class="sp m"><i>Model</i>'+r.mdl+'</span>'+
+      '<span class="sp a"><i>Aspect</i>'+r.ar+'</span>'+
+      '<span class="sp f"><i>Folder</i>'+r.fld+'</span>':'';
+    nowSpec.style.display=(r&&r.mdl)?'flex':'none';
     document.getElementById("now-then").innerHTML=nx?"Then &rarr; <b>"+nx.t+"</b>":"";
     document.getElementById("res-l").textContent="Step "+Math.min(cur+1,RUN.length)+"/"+RUN.length;
     document.getElementById("res-t").textContent=r?r.t:"All steps complete";
