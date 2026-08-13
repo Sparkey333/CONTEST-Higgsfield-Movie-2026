@@ -765,6 +765,18 @@ footer a{color:var(--ink-2)}
 .lane.b{color:var(--gold);background:var(--gold-soft);border:1px solid var(--gold-line)}
 .lane.c{color:var(--jade);background:var(--jade-soft);border:1px solid var(--jade-line)}
 .lane.d{color:var(--coral);background:var(--coral-soft);border:1px solid var(--coral-line)}
+.frag-g{font:600 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 10px}
+.frag-g:first-child{margin-top:0}
+.frag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.frag{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px}
+.frag-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:9px}
+.frag-hd code{
+  font:700 11px/1 var(--mono);color:var(--mv2);background:var(--mv2-soft);
+  border:1px solid var(--mv2-line);border-radius:5px;padding:5px 7px
+}
+.frag-hd b{font-size:14px}
+.frag .paste{max-height:132px;font-size:11.5px}
+.frag .copy{margin-top:9px}
 
 /* ---- the three facts you need before you press generate ---- */
 .spec{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 4px}
@@ -845,6 +857,7 @@ footer a{color:var(--ink-2)}
   <a href="#control">▶ Control Room</a>
   <a href="#backcheck">Source Backcheck</a>
   <a href="#assets">Asset Prompts</a>
+  <a href="#states">Power States</a>
   <a href="#folders">Folders</a>
   <a href="#dials">Tweaks &amp; Export</a>
   <a href="#thesis">The Thesis</a>
@@ -917,9 +930,9 @@ footer a{color:var(--ink-2)}
     <thead><tr><th style="width:20%">What the novel says</th><th style="width:26%">What the prompts said</th><th>Resolution</th></tr></thead>
     <tbody>
       <tr>
-        <td><b>&ldquo;Caedmon shivered.&rdquo;</b> Ch I, immediately before Oriane is introduced.</td>
+        <td><b>&ldquo;Caedom shivered.&rdquo;</b> Ch I, immediately before Oriane is introduced.</td>
         <td>S2 gave the shiver to Oriane &mdash; <i>&ldquo;She shivers once.&rdquo;</i></td>
-        <td><b>Fixed.</b> The attribution is now back on Caedmon, and it is worth more than a correction. The immortal who sees all of time is the one who flinches; the woman about to be told her world ends is not. Handing that beat to the frightened character makes it ordinary. S2 now says so explicitly so the model cannot quietly hand it back.</td>
+        <td><b>Fixed.</b> The attribution is now back on Caedom, and it is worth more than a correction. The immortal who sees all of time is the one who flinches; the woman about to be told her world ends is not. Handing that beat to the frightened character makes it ordinary. S2 now says so explicitly so the model cannot quietly hand it back.</td>
       </tr>
       <tr>
         <td>The Keepers kneel <b>after</b> the shot halts and the sand converges &mdash; &ldquo;as if to finally acknowledge the destruction before them.&rdquo;</td>
@@ -933,7 +946,7 @@ footer a{color:var(--ink-2)}
       </tr>
       <tr>
         <td>&ldquo;Both held bodies <b>garbed in robes of light</b>&rdquo; &mdash; both of them, in the opening paragraph.</td>
-        <td>Only Caedmon had a robe. Oriane had none in any prompt.</td>
+        <td>Only Caedom had a robe. Oriane had none in any prompt.</td>
         <td><b>Fixed.</b> She now wears one over the crystal, in the sheet and in both plates. It costs nothing and it restores the visual rhyme the scene is built on: two beings dressed identically, one of them complete.</td>
       </tr>
       <tr>
@@ -982,6 +995,100 @@ footer a{color:var(--ink-2)}
   <div class="prep-grid" id="prepgrid"></div>
 </div></section>
 
+<!-- ================= POWER STATES ================= -->
+<section id="states"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">How the fight escalates without a line of dialogue</span>
+    <h2>Power states &mdash; two ladders, one ceiling</h2>
+    <p>Movement II is a hundred and eighteen seconds of continuous escalation, and escalation only works if the audience can <i>see</i> the rung. The novel hands the whole system over in one line, spoken by Oriane about a wielder who understands hollows as well as she does:</p>
+  </div>
+
+  <div class="evidence" style="margin-bottom:30px">
+    <span class="el">Chapter II</span>
+    <span class="eq">&ldquo;He may understand, but he does not have the Stone itself. He lacks the core, the crux of it, the emanating essence. The fullness of it is mine alone.&rdquo;</span>
+    <span class="er">That is a hard ceiling and a visual tell in the same sentence. <b>Understanding climbs to six. The seventh is the core, and only a Stone-bearer has one.</b> So an adept's aura is bright at the rim and <b>black at the centre</b>; a bearer's is brightest at the centre and falls off outward with no edge at all. The hierarchy of the entire film is legible in a single frame, and nobody has to explain it.</span>
+  </div>
+
+  <div class="grid g2" style="margin-bottom:34px">
+    <div class="card">
+      <span class="tag" style="background:var(--mv2-soft);color:var(--mv2);border-color:var(--mv2-line)">Ladder A &middot; attunement</span>
+      <h3>What the Turned climb</h3>
+      <p><b>A1&ndash;A6.</b> Understanding of one element &mdash; water and its phases, energy, gravity, metals, hollows, dominion. It is earned, it is visible as aura structure, and it stops at six forever. Every pursuer in the film sits on this ladder, including the Threadwright at its top.</p>
+      <p><b>A7 does not exist for them.</b> That is the point of the chase: sixteen of them, escalating, and not one can reach what she already holds.</p>
+    </div>
+    <div class="card pick">
+      <span class="tag">Ladder M &middot; the mind</span>
+      <h3>What Oriane climbs</h3>
+      <p>She is <b>A7 in the first frame</b> and never climbs it &mdash; she has the Stone before the film starts. Putting her on the attunement ladder would be the obvious mistake and it would flatten the movement, because a character who begins at the ceiling has nowhere to go.</p>
+      <p>So her escalation is a <b>second, orthogonal axis</b>: how many pieces her mind is split into. <b>M1 &rarr; M2 &rarr; M10 &rarr; M16 &rarr; M32 &rarr; M64 &rarr; M128 &rarr; M200+</b>, exactly as the novel counts it. Every rung buys present-tense power and spends foresight, so the ladder is a cost curve, not a power-up.</p>
+    </div>
+  </div>
+
+  <div class="sec-head" style="margin-top:10px"><h3 style="font-size:22px">Why the two ladders must not look alike</h3></div>
+  <table class="dials" style="margin-bottom:34px">
+    <thead><tr><th style="width:22%">Axis</th><th style="width:39%">Reads as</th><th>Rendered as</th></tr></thead>
+    <tbody>
+      <tr><td><b>A &mdash; attunement</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">the Turned, the Threadwright</span></td><td>Structure gained from outside. Colder and harder-edged at every rung, and <b>degrading in colour as it strengthens</b> &mdash; sickly greens into bruise violets. Power reads as corruption, not achievement.</td><td>Aura gains a defined outer boundary and internal geometry. The centre stays black at every rung without exception.</td></tr>
+      <tr><td><b>M &mdash; the mind</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">Oriane only</span></td><td>Structure lost from inside. Warm and contained at the bottom, uncontained and colourless at the top. The aura stops having an edge rather than gaining one.</td><td>Discrete points of light in a ring, doubling. Seam-light leaks, the light-formed pieces crack and orbit, the wing-aura opens and finally closes into one unbroken ring.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><h3 style="font-size:22px">The schedule &mdash; where each rung lands</h3>
+    <p>The two ladders are interleaved on purpose. Every time she takes a rung, they answer with one, so the gap never closes and the tension never resolves early. The one exception is S9, where the film leaves her entirely to show the Threadwright at A6 &mdash; hollow-centred &mdash; which is the audience's first sight of the ceiling.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th style="width:16%">Shot</th><th style="width:14%">Oriane</th><th style="width:22%">Against her</th><th>What the rung is doing</th></tr></thead>
+    <tbody>
+      <tr><td><b>S6</b> the run</td><td><code>M1</code></td><td>&mdash;</td><td>Establish the resting state so every later change is measurable. Warm core, low even aura, wings barely suggested. She is not trying yet.</td></tr>
+      <tr><td><b>S7</b> sixteen behind</td><td><code>M2</code></td><td><code>A1&ndash;A2</code></td><td>The smallest possible increment, and the first bodies are auraless puppets. Both sides open low so there is somewhere to go.</td></tr>
+      <tr><td><b>S8</b> up the wall</td><td><code>M10</code></td><td><code>A2</code></td><td>The first real jump, and it is a big one &mdash; ten points at arm's reach. Deliberately outpaces them, so the audience assumes she is winning.</td></tr>
+      <tr><td><b>S9</b> the Threadwright</td><td>&mdash;</td><td><code>A6</code></td><td>The reveal. We leave Oriane for the only time, and what we find is an aura larger than anything yet seen, hard-edged and <b>black at the centre</b>. The ceiling, established before it matters.</td></tr>
+      <tr><td><b>S10</b> the leviathan</td><td><code>M11</code></td><td><code>A4&ndash;A5</code></td><td>The eleventh piece is the one she splits off to hold her despair. Three A5s hold the beast aloft &mdash; the first time their ladder is working in concert rather than in sequence.</td></tr>
+      <tr><td><b>S11</b> the flank</td><td><code>M16</code></td><td><code>A3&ndash;A4</code></td><td>Full ring, wing-aura at full span, robes streaming upward. This is her maximum <i>stable</i> state and it should look like mastery.</td></tr>
+      <tr><td><b>S12</b> lightning river</td><td><code>M16</code></td><td><code>A3</code></td><td>Held, not raised. The rung stays flat for a whole shot so the audience settles &mdash; which is what makes the next one land.</td></tr>
+      <tr><td><b>S13</b> the vortex</td><td><code>M32&rarr;64&rarr;128</code></td><td>all consumed</td><td>Three rungs inside fifteen silent seconds. The aura loses its edge, the pieces crack and orbit, and the doubling becomes visible as colour density rather than as counting.</td></tr>
+      <tr><td><b>S14</b> the Stone leaves</td><td><code>M200+</code></td><td>&mdash;</td><td>Terminal. Aura and figure merge; the pieces are gone; the ring closes and collapses inward. She wins by spending the ladder entirely, which is the payoff the whole climb was buying.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict" style="margin-top:22px">
+    <b>The trap to avoid.</b> A ladder that only brightens reads as a power-up, and then her death lands as a victory lap rather than a cost. Every rung above <code>M16</code> must visibly <i>take</i> something &mdash; a cracked pauldron, a burnt-out patch of sheen, an outline going soft at the extremities, a wing-aura guttering on one side. The <b>B variant</b> of the mind ladder exists solely to keep that counter-evidence in front of you while you generate.
+  </div>
+
+  <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">Modelling it &mdash; states are modifiers, not assets</h3>
+    <p>Eight states across four characters at four variants each would be a hundred and twenty-eight sheets, and it would be waste: the identity does not change between rungs, only the aura does. So <b>generate identity once and carry state as a text fragment</b> appended to any prompt. Three ladder sheets lock the progression visually; everything after that is injection.</p>
+  </div>
+  <div class="frags" id="frags"></div>
+
+  <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">Naming and folders</h3>
+    <p>State goes in the filename, in fixed-width fields, so the whole ladder sorts in order and a missing rung is visible as a gap rather than discovered at Gate B.</p>
+  </div>
+  <pre class="paste" style="max-height:none">REF-&lt;who&gt;-A&lt;n&gt;-M&lt;nnn&gt;-&lt;variant&gt;-##
+
+     REF-oriane-A7-M001-A-01      resting state, identity sheet
+     REF-oriane-A7-M016-B-03      full ring, in-world plate
+     REF-oriane-A7-M200-D-01      terminal, chroma pass
+     REF-darkling-A4-water-A-02   a specialist, one element
+     REF-threadwright-A6-A-01     the ceiling
+     REF-caedom-A7-A-01           a bearer who needs no ladder
+
+00 &middot; REFERENCES
+&#9500;&#9472; Characters
+&#9474;  &#9500;&#9472; ORIANE/          REF-oriane-A7-M001 &hellip; M200        &larr; one folder, eight rungs, sorts itself
+&#9474;  &#9500;&#9472; CAEDOM/          REF-caedom-A7
+&#9474;  &#9500;&#9472; THREADWRIGHT/    REF-threadwright-A6
+&#9474;  &#9500;&#9472; TURNED/          REF-darkling-A1 &hellip; A6, by element
+&#9474;  &#9492;&#9472; BROTHERS/        REF-brothers                        &larr; no ladder, no aura, and that is the point
+&#9492;&#9472; States
+   &#9500;&#9472; RULE-aura                 core vs hollow &mdash; generate this first
+   &#9500;&#9472; LADDER-oriane             the eight rungs of the mind
+   &#9492;&#9472; LADDER-attunement         the six rungs, and the ceiling</pre>
+
+  <div class="verdict" style="margin-top:22px">
+    <b>Caedom is off both ladders, and it should stay that way.</b> He held all seven Stones at once, a thousand years at a time. Putting a rung on him would make him comparable to her, and the whole opening depends on him being incomparable &mdash; a being for whom none of this is effort. He wears no armour, carries no light-formed pieces, and his aura is broad, warm-cored, edgeless and completely unchanging in every frame he appears in. <b>The one who never escalates is the most powerful thing in the film.</b>
+  </div>
+</div></section>
+
 <!-- ================= FOLDERS ================= -->
 <section id="folders"><div class="wrap">
   <div class="sec-head">
@@ -1005,7 +1112,8 @@ footer a{color:var(--ink-2)}
   <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">The structure</h3></div>
   <pre class="paste" style="max-height:none">The Same Miracle/
 &#9500;&#9472; 00 &middot; REFERENCES            &larr; Phase 0. Generated in-window, from scratch.
-&#9474;  &#9500;&#9472; Characters             REF-oriane, REF-oriane-damaged, REF-caedmon,
+&#9474;  &#9500;&#9472; Characters             one folder per character, state in the filename &mdash;
+&#9474;  &#9474;                          see Power States. REF-oriane, REF-oriane-damaged, REF-caedom,
 &#9474;  &#9474;                          REF-brothers, REF-threadwright, REF-keeper,
 &#9474;  &#9474;                          REF-turned, LEV-rider
 &#9474;  &#9500;&#9472; Locations              BG-courtyard, BG-nacre, BG-bloom, BG-vigil-temple,
@@ -1138,7 +1246,7 @@ footer a{color:var(--ink-2)}
     <tbody>
       <tr><td><i>Stone of Matter</i> / LITIGUH</td><td><b>THE SAME MIRACLE</b></td><td>The old title was itself a coined term from the book, which made the title the single largest leak. The new one is the film's own thesis &mdash; one event, two children, two futures &mdash; and belongs to the film rather than the novel.</td></tr>
       <tr><td>Gwendolyn / Gwen</td><td><b>Oriane</b> / Ori</td><td>Carries dawn and gold at the root, which her whole function is. Shortens as naturally as Gwen did.</td></tr>
-      <tr><td>Torin</td><td><b>Caedmon</b></td><td>After the first named English poet &mdash; a maker who sings things into being. More apt for a creator than the original.</td></tr>
+      <tr><td>Torin</td><td><b>Caedom</b></td><td>After the first named English poet &mdash; a maker who sings things into being. More apt for a creator than the original.</td></tr>
       <tr><td>Morningstar</td><td><b>the Vesper</b></td><td>The evening star against her morning one: same astronomical family, opposite end of the day, and it sheds the Lucifer cliché the original invited.</td></tr>
       <tr><td>Ammon (8)</td><td><b>Alder</b></td><td>The elder brother, and the word carries &ldquo;elder&rdquo; inside it.</td></tr>
       <tr><td>Mikael (6&frac12;)</td><td><b>Wren</b></td><td>Paired with Alder it gives you tree and bird &mdash; the older one rooted and calculating, the younger one light and never still. The pairing does more work than the originals did.</td></tr>
@@ -1261,8 +1369,8 @@ footer a{color:var(--ink-2)}
     <div class="card pick">
       <span class="tag">Option B &mdash; recommended</span>
       <h3>The framed prophecy</h3>
-      <p>Caedmon's scene is not a prologue, it is the <b>spine</b>. His voice carries across both other movements. Oriane's death intercuts with him watching from the Sun &mdash; and the text explicitly supports this: <em>"She looked up to the Sun where she knew Caedmon was watching."</em></p>
-      <p>Then the boys' chapter becomes the <b>answer to Ori's opening question</b>. She asked why release him. Caedmon's reply &mdash; <em>"there must be risk if there is to be growth"</em> &mdash; plays over an eight-year-old's face as he decides he wants to raise mountains over his enemies. Close on the frozen tear from minute one, now revealed as the last image.</p>
+      <p>Caedom's scene is not a prologue, it is the <b>spine</b>. His voice carries across both other movements. Oriane's death intercuts with him watching from the Sun &mdash; and the text explicitly supports this: <em>"She looked up to the Sun where she knew Caedom was watching."</em></p>
+      <p>Then the boys' chapter becomes the <b>answer to Ori's opening question</b>. She asked why release him. Caedom's reply &mdash; <em>"there must be risk if there is to be growth"</em> &mdash; plays over an eight-year-old's face as he decides he wants to raise mountains over his enemies. Close on the frozen tear from minute one, now revealed as the last image.</p>
     </div>
     <div class="card">
       <span class="tag">Option C</span>
@@ -1505,7 +1613,7 @@ footer a{color:var(--ink-2)}
       <tbody id="matrix-body"></tbody>
     </table>
   </div>
-  <p style="margin-top:14px;font-size:13.5px;color:var(--ink-3);max-width:78ch;line-height:1.6">Images feed everything above. For character identity: <b style="color:var(--ink-2)">Soul V2</b> locks one trained person per generation and works only with Soul-compatible models &mdash; use it for Oriane and for Caedmon. <b style="color:var(--ink-2)">Reference Elements</b> accept multiple subjects in a single frame and work across Nano Banana Pro, GPT Image 2, Seedream, Cinema Studio Image and Seedance &mdash; use it for the two brothers, who are almost always in frame together.</p>
+  <p style="margin-top:14px;font-size:13.5px;color:var(--ink-3);max-width:78ch;line-height:1.6">Images feed everything above. For character identity: <b style="color:var(--ink-2)">Soul V2</b> locks one trained person per generation and works only with Soul-compatible models &mdash; use it for Oriane and for Caedom. <b style="color:var(--ink-2)">Reference Elements</b> accept multiple subjects in a single frame and work across Nano Banana Pro, GPT Image 2, Seedream, Cinema Studio Image and Seedance &mdash; use it for the two brothers, who are almost always in frame together.</p>
 </div></section>
 
 <!-- ================= TECHNIQUE ================= -->
@@ -1600,7 +1708,7 @@ footer a{color:var(--ink-2)}
     <div class="truth"><div class="tn">03</div><div class="tb">
       <h4>Godhood is a position on a ladder, not a category</h4>
       <div class="quote">"To a firefly, the eagle is a god&hellip; You are the seed who can become the tree. The pebble, the mountain."</div>
-      <p class="car"><b>Carried by:</b> the pebble-to-mountain image is <b>literalised in S20</b> &mdash; the Keepers raise sand and dead coral into a floating mountain. Caedmon's metaphor from minute one becomes a physical object in minute four. Never point at it.</p>
+      <p class="car"><b>Carried by:</b> the pebble-to-mountain image is <b>literalised in S20</b> &mdash; the Keepers raise sand and dead coral into a floating mountain. Caedom's metaphor from minute one becomes a physical object in minute four. Never point at it.</p>
     </div></div>
     <div class="truth"><div class="tn">04</div><div class="tb">
       <h4>The discipline of power is refusal</h4>
@@ -1687,19 +1795,19 @@ const SHOTS=[
  ]},
 {id:"S2",mv:1,d:18,t:"The courtyard of worlds",cam:"Continuous forward drift, chest height, through the garden; the two figures found from behind.",model:"seedance_2_5 · video_extension forward · 18s",chips:["Extension","No cut"],
  seam:"Extend S1 forward. The seam is inside the glare — invisible.",
- canon:"&ldquo;a luxurious courtyard patterned with worlds as garden flowers&rdquo; &middot; &ldquo;Caedmon shivered.&rdquo;",
+ canon:"&ldquo;a luxurious courtyard patterned with worlds as garden flowers&rdquo; &middot; &ldquo;Caedom shivered.&rdquo;",
  v:[
   {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Continue the same unbroken move. The camera drifts forward at walking pace through a luxurious courtyard whose flowerbeds are planted with worlds — small living planets on stems, each turning slowly, clouds visible on their surfaces. Light beams read as architecture: solid, load-bearing, faintly humming. At the far end, two figures stand with their backs to us, looking down at something below. Both wear robes woven from light. The woman's body beneath hers is crystalline — faceted, refracting the star below. The man shivers once, which is the wrong way round and is the point. The camera keeps approaching and does not stop. Same lens, same grade, same haze as before.`},
-  {c:"B",n:"Find them from the side",tech:"Lateral reveal &middot; both faces earlier",why:"The from-behind approach withholds both faces for thirty-four seconds. If that reads as coy rather than patient, come in laterally and let the audience have Caedmon's stillness sooner.",p:`Continue the same unbroken move, now travelling laterally through the courtyard at chest height rather than approaching from behind. Flowerbeds planted with small living worlds on stems pass through the foreground, each turning slowly with visible cloud systems. Light beams read as architecture: solid, load-bearing, faintly humming. The two figures come into frame from the left in profile, standing at the parapet looking down. Both wear robes woven from light; the woman's body beneath hers is crystalline. The man shivers once. The camera continues past them without stopping. Same lens, same grade, same haze.`},
+  {c:"B",n:"Find them from the side",tech:"Lateral reveal &middot; both faces earlier",why:"The from-behind approach withholds both faces for thirty-four seconds. If that reads as coy rather than patient, come in laterally and let the audience have Caedom's stillness sooner.",p:`Continue the same unbroken move, now travelling laterally through the courtyard at chest height rather than approaching from behind. Flowerbeds planted with small living worlds on stems pass through the foreground, each turning slowly with visible cloud systems. Light beams read as architecture: solid, load-bearing, faintly humming. The two figures come into frame from the left in profile, standing at the parapet looking down. Both wear robes woven from light; the woman's body beneath hers is crystalline. The man shivers once. The camera continues past them without stopping. Same lens, same grade, same haze.`},
   {c:"C",n:"Garden of worlds",tech:"Planets at full chroma &middot; key art",why:"Worlds as garden flowers is the strangest image the novel offers and the film's own grade nearly buries it. One frame at full chroma is worth having even if the sequence stays restrained.",p:`Continue the same unbroken forward move, high chroma and high contrast. The flowerbeds are planted with worlds — small living planets on stems, each a different saturated colour, deep ocean blue, rust red, banded amber, jade, violet, each turning with its own visible weather. They are the only saturated objects in frame and they glow against cold near-white beams of solid light; everything the beams do not reach falls to deep blue-black. Two figures at the far end in robes of light, backs to us. Molten gold plasma beyond the parapet. Hard blue shadows, heavy amber haze.`}
  ]},
 {id:"S3",mv:1,d:14,t:"“There must be risk”",cam:"The film's first cut — a reverse, arriving into a slow lateral dolly. Both in frame, wide.",model:"cinematic_studio_3_0 · 14s · genre drama · audio on",chips:["First cut","Dialogue"],
  seam:"Cut on her turning her head. Motivated: new point of view.",
  canon:"&ldquo;There must be risk if there is to be growth.&rdquo;",
  v:[
-  {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Two-shot, wide, 40mm. Reverse angle from the previous move: we are now in front of them. Slow lateral dolly, left to right, never settling. CAEDMON, an ageless man in robes of light, calm to the point of stillness. ORIANE, her body crystalline beneath a robe of light, luminous and visibly afraid. The burning star fills the background out of focus. She speaks first, quietly, and he answers without raising his voice. Neither gestures. Performance is held entirely in the eyes. Natural dialogue audio, no score. Grade: warm highlights, cold shadows, gold on black.`},
-  {c:"B",n:"Singles, not a two-shot",tech:"Reverse pair &middot; 75mm",why:"A wide two-shot holds them in the same world. Cutting to singles separates them, which is arguably what the scene is about — she is already alone with this and does not know it yet.",p:`Two singles inside one generation, matched 75mm, shallow. [1] ORIANE, her body crystalline beneath a robe of light, three-quarters to camera, speaking quietly and losing the argument, the burning star out of focus behind her. [2] CAEDMON, an ageless man in robes of light, answering without raising his voice, absolutely still, the same star behind him from the opposite side. Identical lens, identical grade, identical haze in both. Neither gestures. Performance held entirely in the eyes. Natural dialogue audio, no score. Warm highlights, cold shadows, gold on black.`},
-  {c:"C",n:"Fire behind the argument",tech:"Molten background &middot; key art",why:"The dialogue is the quietest thing in the movement and the background is a star. Letting the plasma burn at full saturation behind two still figures is free tension that costs the scene nothing.",p:`Two-shot, wide, 40mm, extreme contrast and high chroma. Slow lateral dolly, never settling. CAEDMON and ORIANE in front of an ocean of liquid plasma pushed to saturated molten gold, thrown fully out of focus so it reads as a burning field of colour across the whole background. Both figures are rim-lit hot gold along one edge and fall to deep saturated cobalt everywhere else, with no neutral midtone between. The prismatic sheen in her robes and the faceted edges of her pauldrons split the rim light into faint spectra. Neither gestures. Natural dialogue audio, no score.`}
+  {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Two-shot, wide, 40mm. Reverse angle from the previous move: we are now in front of them. Slow lateral dolly, left to right, never settling. CAEDOM, an ageless man in robes of light, calm to the point of stillness. ORIANE, her body crystalline beneath a robe of light, luminous and visibly afraid. The burning star fills the background out of focus. She speaks first, quietly, and he answers without raising his voice. Neither gestures. Performance is held entirely in the eyes. Natural dialogue audio, no score. Grade: warm highlights, cold shadows, gold on black.`},
+  {c:"B",n:"Singles, not a two-shot",tech:"Reverse pair &middot; 75mm",why:"A wide two-shot holds them in the same world. Cutting to singles separates them, which is arguably what the scene is about — she is already alone with this and does not know it yet.",p:`Two singles inside one generation, matched 75mm, shallow. [1] ORIANE, her body crystalline beneath a robe of light, three-quarters to camera, speaking quietly and losing the argument, the burning star out of focus behind her. [2] CAEDOM, an ageless man in robes of light, answering without raising his voice, absolutely still, the same star behind him from the opposite side. Identical lens, identical grade, identical haze in both. Neither gestures. Performance held entirely in the eyes. Natural dialogue audio, no score. Warm highlights, cold shadows, gold on black.`},
+  {c:"C",n:"Fire behind the argument",tech:"Molten background &middot; key art",why:"The dialogue is the quietest thing in the movement and the background is a star. Letting the plasma burn at full saturation behind two still figures is free tension that costs the scene nothing.",p:`Two-shot, wide, 40mm, extreme contrast and high chroma. Slow lateral dolly, never settling. CAEDOM and ORIANE in front of an ocean of liquid plasma pushed to saturated molten gold, thrown fully out of focus so it reads as a burning field of colour across the whole background. Both figures are rim-lit hot gold along one edge and fall to deep saturated cobalt everywhere else, with no neutral midtone between. The prismatic sheen in her robes and the faceted edges of her pauldrons split the rim light into faint spectra. Neither gestures. Natural dialogue audio, no score.`}
  ]},
 {id:"S4",mv:1,d:14,t:"“He's your brother”",cam:"Locked. Static single on Oriane. Fourteen seconds. The camera does not move at all.",model:"minimax_hailuo (2.3) · 10s + hold, or cinematic_studio_3_0 · 14s",chips:["Locked","14s hold"],
  seam:"No seam. This shot's job is to make the audience feel the film stop moving.",
@@ -1713,9 +1821,9 @@ const SHOTS=[
  seam:"Ends on the frozen tear in macro. That facet becomes the ocean.",
  canon:"&ldquo;&lsquo;Tomorrow.&rsquo; A single tear rolled down his cheek, fell to the floor, and froze.&rdquo;",
  v:[
-  {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Continuous 18-second move. Open on CAEDMON holding ORIANE's face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds.`},
+  {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Continuous 18-second move. Open on CAEDOM holding ORIANE's face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds.`},
   {c:"B",n:"Stay on the tear",tech:"Locked macro &middot; no travelling",why:"The eighteen-second push does three jobs and can fail at any of them. Splitting it — play the embrace elsewhere, hold only the tear here — makes the transition into Movement II bulletproof.",p:`Locked-off macro on a floor of light, no camera movement. A single tear falls into frame from above, strikes the luminous surface, spreads into a shallow dome with a fine crown of secondary droplets, then contracts and goes angular as it freezes inward from the edge into a hard faceted bead of ice. Hold on the bead. Its interior slowly resolves into a moving blue. Push very slightly closer in the final three seconds until one facet fills the frame. Sound drops away to nothing in the final two seconds.`},
-  {c:"C",n:"The last warm frame",tech:"Gold to blue &middot; the handover",why:"This shot hands a gold movement to a blue one. Letting the grade make that handover inside the frame — warm at the top, cold by the end — does the work the cut would otherwise have to do alone.",p:`Continuous 18-second move, high chroma. Open warm: CAEDMON holding ORIANE's face, both rendered in saturated gold and amber against deep cobalt shadow. He releases her and turns toward a blue-green planet below. As the camera pushes past them and tilts down, the palette travels with it — gold draining out of frame, cold saturated blue rising from the floor of light. A tear strikes and freezes into a faceted bead whose interior is a deep oceanic blue with bright cyan caustics. By the final frame there is no warm colour left in the picture. Sound drops to nothing.`}
+  {c:"C",n:"The last warm frame",tech:"Gold to blue &middot; the handover",why:"This shot hands a gold movement to a blue one. Letting the grade make that handover inside the frame — warm at the top, cold by the end — does the work the cut would otherwise have to do alone.",p:`Continuous 18-second move, high chroma. Open warm: CAEDOM holding ORIANE's face, both rendered in saturated gold and amber against deep cobalt shadow. He releases her and turns toward a blue-green planet below. As the camera pushes past them and tilts down, the palette travels with it — gold draining out of frame, cold saturated blue rising from the floor of light. A tear strikes and freezes into a faceted bead whose interior is a deep oceanic blue with bright cyan caustics. By the final frame there is no warm colour left in the picture. Sound drops to nothing.`}
  ]},
 {id:"S6",mv:2,d:14,t:"108 years later — the run",cam:"Travelling beside her at her exact speed. World blurs, she is stable.",model:"cinematic_studio_video_v2 · 12s pro · speedramp auto + 2s ext",chips:["Travelling","Card"],
  seam:"Match cut in from the tear's facet: blue interior becomes ocean water.",
@@ -1853,13 +1961,13 @@ const SHOTS=[
   {c:"B",n:"Over Wren's shoulder",tech:"OTS &middot; the listener in frame",why:"The push-in isolates Alder, which is right. Keeping Wren in the foreground makes the same point differently — his brother is talking to him and he has already stopped listening.",p:`Over-the-shoulder from behind the younger boy, who fills the left third of frame, out of focus, talking fast and moving his hands. Beyond him and sharp, the OLDER boy lies in the beach grass staring out at flat water. He is not excited. He is calculating. The younger boy's voice drops away under the sound of surf while his hands keep moving. The older boy never turns toward him. Somewhere in the shot his expression settles into something that does not belong on an eight-year-old. Far behind, deep out of focus, a single dark cloud sits low over the water, motionless while every other cloud moves.`},
   {c:"C",n:"The last warm frame",tech:"Golden hour at full chroma",why:"This is the final image of the island and the audience should want it back. Full saturation here is what makes the return to the Sun in the next shot feel like a loss.",p:`Two boys lying in beach grass, high chroma and extreme contrast, golden hour taken to full saturation. The grass burns yellow-green, the sand holds clear pink and violet iridescence, the water is deep saturated turquoise, the low sun rims both boys hot orange against all of it. The camera begins a slow relentless push toward the OLDER boy's face and does not stop. His brother's voice drops away under the surf. Far behind him, deep out of focus, a single dark cloud sits low over the water — the one desaturated object in a fully saturated frame — motionless while every other cloud moves. Hold on his eyes.`}
  ]},
-{id:"S23",mv:3,d:12,t:"Tomorrow, again",cam:"Hard cut to the Sun. Caedmon alone. Crane away from the frozen tear. Black.",model:"cinematic_studio_3_0 · 12s · 4K · genre drama",chips:["Bookend","End"],
+{id:"S23",mv:3,d:12,t:"Tomorrow, again",cam:"Hard cut to the Sun. Caedom alone. Crane away from the frozen tear. Black.",model:"cinematic_studio_3_0 · 12s · 4K · genre drama",chips:["Bookend","End"],
  seam:"Closes the loop opened in S1. The last image is the first image's residue.",
  canon:"Bookend to Ch I &mdash; the courtyard, the planet below, and the tear still lying there.",
  v:[
-  {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Hard cut back to the courtyard of light on the star. CAEDMON stands alone at the edge where two people stood at the start, looking down at the planet. He does not move. Over this, two lines of dialogue from the film's opening return as voice-over — a woman asking whether he could erase everything, and his answer that there must be risk if there is to be growth. The camera tilts down to the floor of light and finds the frozen tear still lying there, unchanged. Slow crane straight up and away from it until it is a single point of light on a vast luminous floor. Cut to black. Title card: THE SAME MIRACLE.`},
-  {c:"B",n:"Never leave the tear",tech:"Locked macro &middot; Caedmon out of focus",why:"The written version finds the tear at the end. This one starts there and never leaves — Caedmon is a shape in the background, and the film's last image is the only object in it that has not changed.",p:`Hard cut back to the courtyard of light. Locked-off macro on the floor: the frozen tear lying exactly where it fell, unchanged, filling the lower third of frame. Deep out of focus behind it, a tall figure in robes of light stands alone at the parapet, motionless, looking down at a planet below. He never comes into focus and never moves. Over this, two lines of dialogue from the opening return as voice-over — a woman asking whether he could erase everything, and his answer that there must be risk if there is to be growth. Slow crane straight up and away from the bead until it is a single point of light on a vast luminous floor. Cut to black. Title card: THE SAME MIRACLE.`},
-  {c:"C",n:"Gold returned",tech:"Full chroma bookend &middot; the loop closed",why:"The film opened in molten gold and ends in the same place. Matching the opening's chroma exactly is what makes the last frame read as a return rather than as a new scene.",p:`Hard cut back to the courtyard on the star, extreme contrast and high chroma, matched exactly to the film's opening frame. Molten gold plasma below, cold saturated cobalt in every shadow, no neutral midtone. CAEDMON stands alone at the edge where two people stood at the start, rim-lit hot gold, everything else falling to deep blue. Below him a blue-green planet in deep saturated colour. Voice-over returns from the opening. The camera tilts down to the floor of light and finds the frozen tear, its interior a deep oceanic blue — the one cold saturated object in a gold frame. Slow crane up and away until it is a single point. Cut to black. Title card: THE SAME MIRACLE.`}
+  {c:"A",n:"As specced",tech:"The version that ships",why:"The primary. Everything in the shot list, the frame string and the timing lock assumes this one.",p:`Hard cut back to the courtyard of light on the star. CAEDOM stands alone at the edge where two people stood at the start, looking down at the planet. He does not move. Over this, two lines of dialogue from the film's opening return as voice-over — a woman asking whether he could erase everything, and his answer that there must be risk if there is to be growth. The camera tilts down to the floor of light and finds the frozen tear still lying there, unchanged. Slow crane straight up and away from it until it is a single point of light on a vast luminous floor. Cut to black. Title card: THE SAME MIRACLE.`},
+  {c:"B",n:"Never leave the tear",tech:"Locked macro &middot; Caedom out of focus",why:"The written version finds the tear at the end. This one starts there and never leaves — Caedom is a shape in the background, and the film's last image is the only object in it that has not changed.",p:`Hard cut back to the courtyard of light. Locked-off macro on the floor: the frozen tear lying exactly where it fell, unchanged, filling the lower third of frame. Deep out of focus behind it, a tall figure in robes of light stands alone at the parapet, motionless, looking down at a planet below. He never comes into focus and never moves. Over this, two lines of dialogue from the opening return as voice-over — a woman asking whether he could erase everything, and his answer that there must be risk if there is to be growth. Slow crane straight up and away from the bead until it is a single point of light on a vast luminous floor. Cut to black. Title card: THE SAME MIRACLE.`},
+  {c:"C",n:"Gold returned",tech:"Full chroma bookend &middot; the loop closed",why:"The film opened in molten gold and ends in the same place. Matching the opening's chroma exactly is what makes the last frame read as a return rather than as a new scene.",p:`Hard cut back to the courtyard on the star, extreme contrast and high chroma, matched exactly to the film's opening frame. Molten gold plasma below, cold saturated cobalt in every shadow, no neutral midtone. CAEDOM stands alone at the edge where two people stood at the start, rim-lit hot gold, everything else falling to deep blue. Below him a blue-green planet in deep saturated colour. Voice-over returns from the opening. The camera tilts down to the floor of light and finds the frozen tear, its interior a deep oceanic blue — the one cold saturated object in a gold frame. Slow crane up and away until it is a single point. Cut to black. Title card: THE SAME MIRACLE.`}
  ]}
 ];
 
@@ -1959,7 +2067,7 @@ const MATRIX=[
 {n:"Sync Lipsync 3",id:"sync_so",len:"—",res:"—",fr:"—",refs:"a/v",tags:["finish","perf"],key:0,
  pro:"Repairs dialogue sync after the fact, with five strategies for duration mismatch.",
  con:"A repair tool, not a performance tool — it will not fix a bad read.",
- use:"Caedmon and Oriane, if needed"},
+ use:"Caedom and Oriane, if needed"},
 {n:"Reframe",id:"reframe",len:"—",res:"—",fr:"—",refs:"video",tags:["finish"],key:0,
  pro:"Converts aspect ratio after the fact — 16:9 masters into 21:9 scope.",
  con:"Reframing loses information; compose for 21:9 from the start where the model supports it.",
@@ -1968,7 +2076,7 @@ const MATRIX=[
 
 const KEYS=[
 {k:"HIGGSFIELD_API_KEY",n:"Higgsfield",req:1,d:"Picture, motion, upscale — the whole spine. Nothing else in this production can be substituted for it.",u:"https://higgsfield.ai/",l:"Account → API"},
-{k:"ELEVENLABS_API_KEY",n:"ElevenLabs",req:1,d:"Caedmon's voice, Oriane's dialogue, Alder's internal monologue, and the sound design. Audio is exempt from the from-scratch rule, so this is the one place you may reuse earlier work.",u:"https://elevenlabs.io/app/settings/api-keys",l:"API keys"},
+{k:"ELEVENLABS_API_KEY",n:"ElevenLabs",req:1,d:"Caedom's voice, Oriane's dialogue, Alder's internal monologue, and the sound design. Audio is exempt from the from-scratch rule, so this is the one place you may reuse earlier work.",u:"https://elevenlabs.io/app/settings/api-keys",l:"API keys"},
 {k:"SUNO_API_KEY",n:"Suno",d:"Score. The film runs five minutes with long silent holds — the cue under Movement III is doing real structural work.",u:"https://suno.com/",l:"Account → API"},
 {k:"ANTHROPIC_API_KEY",n:"Claude",d:"Prompt drafting, shot-list logic, continuity passes, and the source backcheck.",u:"https://console.anthropic.com/settings/keys",l:"Console keys"},
 {k:"GOOGLE_AI_API_KEY",n:"Google AI Studio",d:"Gemini — script analysis and second-opinion storyboard descriptions.",u:"https://aistudio.google.com/apikey",l:"Get API key"},
@@ -1980,7 +2088,7 @@ const KEYS=[
 const PHASES=[
 {p:"Phase 0",d:"Aug 10–12",w:"2 days",t:"Continuity kit",
  o:[["img","~24 images"]],
- x:"Nothing from the film is generated yet. You are building the reference set that every later image points at. Train <b>Soul V2</b> for Oriane and for Caedmon separately. Build one <b>Reference Element</b> for the two brothers <i>together</i> — Soul carries a single identity per generation and the brothers share frame in every shot they appear in. Then three lighting plates per movement (key direction, colour temperature, haze density) and prop plates for the crystal shell, the Founding Stone, the white robes and the leviathan's coral plating."},
+ x:"Nothing from the film is generated yet. You are building the reference set that every later image points at. Train <b>Soul V2</b> for Oriane and for Caedom separately. Build one <b>Reference Element</b> for the two brothers <i>together</i> — Soul carries a single identity per generation and the brothers share frame in every shot they appear in. Then three lighting plates per movement (key direction, colour temperature, haze density) and prop plates for the crystal shell, the Founding Stone, the white robes and the leviathan's coral plating."},
 {g:"Gate A",t:"Identity lock",
  x:"Every character, palette and lighting reference is final. <b>No anchor frame is generated before this locks</b> — an anchor built on an unlocked face has to be rebuilt, and you will have made thirty-nine of them."},
 {p:"Phase 1",d:"Aug 12–17",w:"5 days",t:"The frame string",
@@ -2022,7 +2130,7 @@ const FRAMES=[
 {f:"F05",r:"single",mv:1,s:"S3 B",d:"Oriane turning her head. The motivated cut out; the movement is the edit point."},
 {f:"F06",r:"single",mv:1,s:"S4 A", p:"Locked medium close-up, 75mm, camera at her eye level and dead centre. Oriane inside her crystal shell, key light thrown from below by the star. Refraction crawls across the crystal facets. Generous headroom, her face slightly off centre, composition balanced to sit still for a long hold.",d:"Locked medium close-up, 75mm, lit from below, refraction crawling across the crystal. Composition must survive fourteen seconds of no camera movement."},
 {f:"F07",r:"single",mv:1,s:"S4 B", p:"Locked medium close-up, 75mm, camera at her eye level and dead centre, key light from below thrown by the star. Oriane inside her crystal shell — identical headroom, identical framing and identical crystal refraction pattern to the preceding frame, with the plasma glow unchanged beneath her. The only difference is the face: eyes wet and not spilled, jaw set, one slow blink just finished.",d:"Identical framing fourteen seconds later. Wet eyes that have not spilled. Only the face has changed — prove it by matching everything else exactly."},
-{f:"F08",r:"single",mv:1,s:"S5 A",d:"Caedmon's hands on her face. Tender, unhurried, both fully in frame."},
+{f:"F08",r:"single",mv:1,s:"S5 A",d:"Caedom's hands on her face. Tender, unhurried, both fully in frame."},
 {f:"F09",r:"match",mv:1,s:"S5 B", p:"Extreme macro on a frozen tear resting on a floor of light. One faceted plane fills the entire frame, its interior a moving luminous blue with soft internal caustics. The facet's edges are hard and angular; the blue inside is bright at centre and falls off toward the corners. No other object in frame.",d:"Macro on the frozen tear, one facet filling frame, the interior a moving blue. <b>Design this together with F10</b> — the match cut is made in the pairing, not in the edit."},
 {f:"F10",r:"match",mv:2,s:"S6 A", p:"Open storm ocean shot from low altitude, water filling the entire frame with no horizon in the upper third. Cold luminous blue-grey chop broken into hard angular planes that read as crystal facets, brightest at the centre of frame and falling off toward the edges. Bruised violet sky reflected in the troughs. The centre of frame holds the same shape, scale and blue as a single facet of a frozen tear seen in macro, so the cut carries through without a beat.",d:"Open storm ocean at the exact scale, colour and shape of F09's facet. If these two images are made independently the 108-year jump costs the audience a beat it should not cost."},
 {f:"F11",r:"shared",mv:2,s:"S6 B / S7 A",d:"Oriane running, camera locked beside her, the world streaked horizontal behind. Her body stable, everything else destroyed by speed."},
@@ -2052,12 +2160,12 @@ const FRAMES=[
 {f:"F33",r:"single",mv:3,s:"S21 B",d:"Temple doors closing, the garden bed replanted, craters filled. Order restored at unsettling speed."},
 {f:"F34",r:"single",mv:3,s:"S22 A",d:"Both boys in the beach grass, Wren mid-sentence and delighted, Alder already elsewhere."},
 {f:"F35",r:"single",mv:3,s:"S22 B", p:"Close-up on an eight-year-old boy's face at the end of a slow push, 85mm, shallow focus. Sun-darkened skin, salt-stiff dark hair, level unblinking gaze slightly off camera. His expression is calculating rather than delighted — too still for his age. Far behind him, deep out of focus, a single dark low cloud sits over flat water. Golden hour backlight, photoreal child skin with visible texture, no smoothing.",d:"Alder in close-up at the end of the push, a single dark cloud deep out of focus behind him. <b>The most important single image in the film</b> — give it the largest batch and the longest look."},
-{f:"F36",r:"single",mv:1,s:"S23 A",d:"Caedmon alone at the courtyard edge, standing where two people stood four minutes earlier."},
+{f:"F36",r:"single",mv:1,s:"S23 A",d:"Caedom alone at the courtyard edge, standing where two people stood four minutes earlier."},
 {f:"F37",r:"single",mv:1,s:"S23 B", p:"A floor of solid light seen from directly above, with a single frozen tear lying on it as one small bright point. The camera is high and rising; the floor is vast and luminous and otherwise completely empty, falling off toward black at the frame edges. No figure in frame.",d:"The frozen tear as one point of light on a vast luminous floor. Last frame of the film; it should rhyme with F01's emptiness."}
 ];
 
 const CHECKS=[
-{d:"Aug 10–12",t:"Phase 0 — build the continuity kit",n:"Soul V2 for Oriane and Caedmon separately. One Reference Element for both brothers together. Lighting plates and prop plates. Nothing from the film itself gets generated yet."},
+{d:"Aug 10–12",t:"Phase 0 — build the continuity kit",n:"Soul V2 for Oriane and Caedom separately. One Reference Element for both brothers together. Lighting plates and prop plates. Nothing from the film itself gets generated yet."},
 {d:"Aug 12",t:"Gate A — identity lock",n:"Faces, palette and lighting are final. Do not generate a single anchor frame before this closes."},
 {d:"Aug 12–17",t:"Phase 1 — generate the frame string",n:"All 39 anchors, four variants each, selected in film order so shared joins are made once and inherited. Roughly 156 image generations and zero video."},
 {d:"Aug 17",t:"Gate B — string lock",n:"All 39 anchors on one contact sheet. Hunt for drift in faces, costume, light direction and grade between neighbours. Fixing it here costs an image; fixing it later costs a shot."},
@@ -2379,6 +2487,26 @@ const LOOK={
  3:"Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events."
 };
 
+const FRAGS=[
+{g:"Ladder M — Oriane's mind. Append to any Oriane prompt.",items:[
+ {k:"M1",n:"Resting",p:`Her aura is low, even and close to the body, with a warm bright core at its centre and a soft edgeless falloff outward. Seam-light in the pauldrons, gauntlets, gorget and greaves is steady and unbroken. The wing-aura is barely suggested and sits close behind the shoulders. The prismatic sheen in the cloth is quiet. Robes hang and fall normally. She is not straining.`},
+ {k:"M2",n:"First split",p:`Her aura tightens and brightens slightly, and one faint concentric ring appears standing off at arm's reach. The core is still warm. Seam-light sharpens. The wing-aura lifts a little from the shoulders. Robes still hang normally. The change from rest is small and should be almost subliminal.`},
+ {k:"M10",n:"Ten parts",p:`Ten discrete points of light hold station in an even ring at arm's reach around her. The aura cools from amber toward white and stands further off the body. Her hair begins to lift. The wing-aura opens to roughly half its span, still soft-edged. The hem and sleeves start to drift upward against gravity. Seam-light is bright and even.`},
+ {k:"M16",n:"Full ring",p:`Sixteen points complete an unbroken ring at arm's reach. The seams run white-hot. The wing-aura is at full span, still soft-edged and with no solid boundary. Her robes stream upward rather than falling. Everything within arm's reach is rendered in hyper-detail with individual raindrops resolved, while the far background smears. This is her maximum stable state and it should read as mastery, not strain.`},
+ {k:"M32",n:"Doubled",p:`The ring doubles into a shell of overlapping points and the aura loses its outer edge, shedding light outward in loose threads. First hairline fractures appear in the pauldrons with seam-light leaking out of them. The cloth streams fully upward. Her outline is still sharp. Something has begun to cost her and it is visible in the material before it is visible in her face.`},
+ {k:"M64",n:"Thickening",p:`The shell thickens and the aura shifts from white to cold blue-white, escaping in visible filaments. The greaves are cracked through and one pauldron has broken. Her outline begins to blur at the extremities. The wing-aura is wider than her body and beginning to lose its paired shape.`},
+ {k:"M128",n:"Corona",p:`The aura is a solid corona and the figure inside is legible only as a silhouette. The light-formed pieces have broken apart and their fragments hang in slow orbit around her. The wing-aura is no longer a pair but one continuous unbroken ring behind her. Colour has almost left the aura entirely. The robes are torn and streaming and still fully cover her.`},
+ {k:"M200",n:"Terminal",p:`The aura is no longer around her but is her. The robes and the broken pieces have been replaced entirely by streaming light, the silhouette staying completely covered and fully defined with no anatomical detail at any point. The ring collapses inward. Everything goes still and white. Her expression, if visible at all, is open and unstrained and joyful.`}
+]},
+{g:"Ladder A — attunement. Append to any Turned or Threadwright prompt.",items:[
+ {k:"A1",n:"Carried",p:`No aura of any kind. The body is limp and carried through the air by something else, joints hyperextended past their stops, head lolling back, arms trailing behind it. Dark sodden cloth plastered flat. It does not act; it is moved.`},
+ {k:"A2",n:"Shreds",p:`A few torn shreds of refraction cling at the shoulders and nowhere else. Still mostly carried, but occasionally correcting its own posture. The centre of what little aura there is stays black.`},
+ {k:"A3",n:"Flickering",p:`A thin aura that flickers and gutters, never holding steady for long. The figure moves under its own power for the first time. Its one element is expressed weakly and intermittently. The centre is black.`},
+ {k:"A4",n:"Steady",p:`A steady cold aura with a clean defined edge, held close to the body. Its single element is expressed cleanly and at will. The centre of the aura is black and the light plainly comes from the rim inward, not from the figure.`},
+ {k:"A5",n:"Structured",p:`The aura gains internal structure — faint concentric geometry visible within it — and stands well off the body. The element is expressed at scale, and the figure has begun to affect others around it rather than only itself. The centre remains black.`},
+ {k:"A6",n:"The ceiling",p:`The aura is dense, cold, hard-edged and visibly shaped by will, larger than any other in frame. It commands the figures around it. And at its centre there is nothing — an absolute black core where a bearer would have light. This is as far as understanding goes, and the emptiness at the middle is the entire reason it is not enough.`}
+]}
+];
 const PREP=[
 /* ============ CHARACTERS ============ */
 {k:"gwen",n:"Oriane",tag:"c",tl:"Character",sv:"REF-oriane",
@@ -2415,19 +2543,19 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast. A robed woman lit by two hard opposed sources — a cold cyan key from behind and left, a hot amber kicker from below and right — with a deep saturated blue-black between them and no neutral tone anywhere. The three points of damage catch the light differently from the intact plate: the starred fracture on the right cheekbone scatters cyan, the shattered rosette in the left calf burns amber from beneath, and the scratch-scoring across the torso reads as thin bright spectral lines. Torn robe of light streaming, salt-matted hair, rain in the air catching both keys. Dry cracked mineral throughout. No blood, no wounds, no gore, no glow bloom, no text, no watermark.`}
  ]},
 
-{k:"caedmon",n:"Caedmon",tag:"c",tl:"Character",sv:"REF-caedmon",
- canon:"Ch I &mdash; &ldquo;garbed in robes of light&rdquo;, &ldquo;only the one called Caedmon was complete&rdquo;, sees all phases of time at once, &ldquo;Caedmon shivered&rdquo;, holds her cheeks in his hands, one tear that freezes.",
+{k:"caedom",n:"Caedom",tag:"c",tl:"Character",sv:"REF-caedom",
+ canon:"Ch I &mdash; &ldquo;garbed in robes of light&rdquo;, &ldquo;only the one called Caedom was complete&rdquo;, sees all phases of time at once, &ldquo;Caedom shivered&rdquo;, holds her cheeks in his hands, one tear that freezes.",
  v:[
- {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; photoreal",sv:"REF-caedmon-A-##",
+ {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; photoreal",sv:"REF-caedom-A-##",
   why:"He opens the film and closes it four and a half minutes later. The bookend only works if this is the same face, so this sheet is trained separately as its own Soul and never shares a generation with Oriane.",
   p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original male character on both sides, single subject only exactly one person with only the character in frame, pure white seamless studio background, professional character sheet presentation, a man who reads as ageless &mdash; anywhere between thirty-five and centuries old &mdash; with warm mid-brown skin, long face with a firm square jawline, high flat cheekbones, straight nose with a narrow bridge, thin lips held in complete repose, mature adult bone structure and adult facial proportions, deep-set grey-amber eyes with naturally muted catchlights, no oversized specular glare in the iris, eye colour muted rather than glowing, straight dark brows, short dark hair greying at the temples worn plain and close to the skull, visible fine skin texture with natural pores, fine lines around the eyes, subtle asymmetries and texture irregularities, weathered rather than smooth, no digital smoothing, no beauty filter, no AI-airbrushed look, matte-to-natural complexion, tall lean build with an upright and completely still posture, wearing a full-length robe woven from light itself &mdash; the fabric emits rather than reflects, with warm filaments running visibly through the weave, a soft luminous falloff at the hem and cuffs, and no cast shadow where the light-cloth meets skin &mdash; long-sleeved and closed to the throat, a plain wide sash at the waist, bare feet. A broad calm aura stands off his shoulders and back, a soft field of refracted light with no edge and no shape to it, reaching further than hers does. He wears no armour of any kind and carries no light-formed pieces: where she is plated at the shoulder and shin, he is bare cloth and aura, and that difference is the whole point of him, no jewellery, no bag, natural anatomy, high-end but unretouched commercial photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture and fabric filament detail, single subject only, exactly one person, only the character in frame, no other people, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, left panel standing full-body head-to-toe not cropped not sitting, right panel tight close-up not full body, no babyface, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, no glossy skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
- {c:"B",n:"Alone at the edge",w:"Image &rarr; 21:9 &rarr; Soul + PLATE-mv1-light",tech:"Cinematic still &middot; in situ &middot; the closing image",sv:"REF-caedmon-B-##",
+ {c:"B",n:"Alone at the edge",w:"Image &rarr; 21:9 &rarr; Soul + PLATE-mv1-light",tech:"Cinematic still &middot; in situ &middot; the closing image",sv:"REF-caedom-B-##",
   why:"This is very nearly the last frame of the film. Making it in Phase 0, under the same plate as the opening, is what stops the bookend drifting when Movement III gets generated three weeks later.",
   p:`Cinematic still, 2.39:1 anamorphic, photoreal. A tall man in a full-length robe of light stands entirely alone at the edge of a courtyard built from solid beams of light, his back three-quarters to camera, looking down at a blue-green planet hanging far below. The robe emits rather than reflects; warm filaments run through the weave; there is no cast shadow where the cloth meets skin. Key light from beneath, off an ocean of white-gold plasma out of focus behind him. He is completely still. Empty space beside him where a second figure would stand. Warm gold highlights, cold shadows, heavy haze, anamorphic flare, deep blacks. Bare feet on a luminous floor. Photoreal, restrained, no glow effects beyond the cloth itself, no particles, no text, no watermark.`},
- {c:"C",n:"Charcoal board",w:"Image &rarr; 21:9 &rarr; concept board",tech:"Charcoal and white chalk on toned paper",sv:"REF-caedmon-C-##",
+ {c:"C",n:"Charcoal board",w:"Image &rarr; 21:9 &rarr; concept board",tech:"Charcoal and white chalk on toned paper",sv:"REF-caedom-C-##",
   why:"A drawing forces the decisions the render hides &mdash; where the light actually falls, what silhouette he cuts, how much of him is edge. Cheap, fast, and it is the pass that tells you whether the costume design is working at all.",
   p:`Character concept board drawn in charcoal and white chalk on mid-grey toned paper, four studies of the same man across one sheet: full figure standing, three-quarter turn, head study, and a study of the robe's fall and hem. Loose confident draughtsmanship, visible paper tooth, smudged charcoal shadow, white chalk used only for the light-emitting cloth so the robe is the brightest thing on the page. Tall lean ageless man, short hair greying at the temples, still upright bearing, bare feet. Sketchy, unfinished at the edges, construction lines left visible. Traditional media only, no colour, no digital rendering, no photorealism, no text, no watermark.`},
- {c:"D",n:"Spectral weave",w:"Image &rarr; 21:9 &rarr; key art",tech:"Full-spectrum filament &middot; dark field",sv:"REF-caedmon-D-##",
+ {c:"D",n:"Spectral weave",w:"Image &rarr; 21:9 &rarr; key art",tech:"Full-spectrum filament &middot; dark field",sv:"REF-caedom-D-##",
   why:"His robe is described as emitting rather than reflecting, and an emitting fabric is free to be any colour it likes. Running the full spectrum through the weave makes him the light source in the frame instead of a man standing in one.",
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma. A tall ageless man in a full-length robe woven from light, standing alone against deep black space with no set and no floor visible. The robe's filaments run the whole spectrum along their length — warm gold at the shoulders shading through amber, rose and violet to a cold blue at the hem — every thread emitting its own colour, the fabric lit from within rather than from outside. That light falls on his face and hands in mixed warm and cool, modelling him entirely from his own garment. Everything beyond arm's reach is unlit black. Deep saturated colour, extreme contrast, no ambient fill. Photoreal fabric with visible weave, bare feet, no particles, no lens flare, no text, no watermark.`}
  ]},
@@ -2663,12 +2791,12 @@ const PREP=[
   p:`Establishing background plate, no characters. Cinematic 2.39:1, locked-off wide, 32mm, low. The shoreline of a small island in three states across three frames. One: TENDED &mdash; pale sand, flower beds and a kept garden running down to the water, a plain white stone temple standing behind them, calm and orderly under a low warm sun. Two: BOMBARDMENT &mdash; the same view under crimson backlight with iron shot falling, sand erupting in columns, torn flowers in the air, thick dust drifting across frame. Three: CRATERED &mdash; the same view afterwards, pitted with craters, garden shredded, dust still hanging, flat water beyond. Identical camera position, identical lens and identical geography in all three. No people, no text, no watermark.`},
  {c:"B",n:"The garden",w:"Image &rarr; 21:9 &rarr; detail plate",tech:"Photoreal &middot; four stages of one bed",sv:"BG-keepers-isle-B",
   why:"The replanting is a throwaway line in the novel and the quietest miracle in the film. It only works if one specific bed is followed from kept to destroyed to whole, so the audience recognises the same flowers.",
-  p:`Four-stage detail plate of a single planting bed, no people, identical camera position and identical planting in every stage. One: kept &mdash; a low formal bed of pale flowering plants in tended soil, edged in stone, healthy and orderly under warm low sun. Two: struck &mdash; the same bed torn open, soil thrown across the stone edge, plants shredded and half-buried, petals scattered. Three: rescaedmong &mdash; soil visibly gathering back into the bed from the surrounding sand, broken stems lifting and closing. Four: whole &mdash; identical to stage one in every particular, indistinguishable, calm. Photoreal, natural light, no glow, no particles, no visible force, no text, no watermark.`},
+  p:`Four-stage detail plate of a single planting bed, no people, identical camera position and identical planting in every stage. One: kept &mdash; a low formal bed of pale flowering plants in tended soil, edged in stone, healthy and orderly under warm low sun. Two: struck &mdash; the same bed torn open, soil thrown across the stone edge, plants shredded and half-buried, petals scattered. Three: rescaedomg &mdash; soil visibly gathering back into the bed from the surrounding sand, broken stems lifting and closing. Four: whole &mdash; identical to stage one in every particular, indistinguishable, calm. Photoreal, natural light, no glow, no particles, no visible force, no text, no watermark.`},
  {c:"C",n:"Aerial survey",w:"Image &rarr; 21:9 &rarr; geography",tech:"High vertical &middot; map-like",sv:"BG-keepers-isle-C",
   why:"Settles where the temple, the beach, the reef and the ships all are relative to each other. The novel puts the temple north and the ships west, and once that is fixed as an image the coverage stops contradicting itself.",
   p:`High vertical aerial photograph of a small tropical island, shot straight down from altitude, no people. A plain white rectangular building sits toward the north of the island with a formal garden laid out on its seaward side; pale sand beaches ring the shore; a fringing coral reef shows as a broad pale halo in turquoise water, breaking off into deep blue on the western approach. A second, larger landmass is visible at the edge of frame to the east across the reef. Flat midday light, no shadow drama, natural colour, high altitude clarity. Survey convention, no text, no labels, no grid, no compass rose, no watermark.`},
  {c:"D",n:"Garden and ash",w:"Image &rarr; 21:9 &rarr; key art",tech:"Saturated planting against scorched ground",sv:"BG-keepers-isle-D",
-  why:"The restoration only means anything if there is something worth rescaedmong. Giving the garden real colour before it is destroyed is what buys the last shot its quiet.",
+  why:"The restoration only means anything if there is something worth rescaedomg. Giving the garden real colour before it is destroyed is what buys the last shot its quiet.",
   p:`Establishing key-art plate, no characters, high chroma and high contrast, two frames from an identical camera position. One: the garden intact — formal beds in saturated coral, magenta, yellow and white flowering plants against deep green foliage and pale sand, lit warm and low, the most colourful thing on the island. Two: the same view destroyed — the beds torn open, the colour buried under grey-brown ash and cratered sand, the surviving petals reading as scattered points of saturated colour in an otherwise desaturated frame. Identical camera, identical lens, identical planting geometry in both. Deep blue-violet shadows, crushed blacks holding colour. No people, no text, no watermark.`}
  ]},
 
@@ -2793,7 +2921,7 @@ const PREP=[
  ]},
 
 {k:"proptear",n:"The frozen tear",tag:"p",tl:"Asset",sv:"PROP-tear",
- canon:"Ch I, final line &mdash; &ldquo;A single tear rolled down his cheek, fell to the floor, and froze.&rdquo; It is Caedmon&rsquo;s tear, and the film returns to it as its closing image.",
+ canon:"Ch I, final line &mdash; &ldquo;A single tear rolled down his cheek, fell to the floor, and froze.&rdquo; It is Caedom&rsquo;s tear, and the film returns to it as its closing image.",
  v:[
  {c:"A",n:"Macro study",w:"Image &rarr; 21:9 &rarr; prop study",tech:"Extreme macro &middot; four studies",sv:"PROP-tear-A-##",
   why:"One facet of this becomes an ocean in the cut to Movement II. That match only works if the interior is genuinely moving and genuinely blue, so two of the four studies exist purely to get the interior right.",
@@ -2876,6 +3004,56 @@ const PREP=[
  {c:"D",n:"Pressure and colour",w:"Image &rarr; 21:9 &rarr; effect key art",tech:"Shockfront &middot; refraction rainbow",sv:"FX-strike-blast-D-##",
   why:"A pressure front bends light, and bent light separates. Letting the shockfront carry a thin band of refracted colour makes an invisible phenomenon legible without giving it any emission at all.",
   p:`Effect key-art sheet, photoreal, high chroma and extreme contrast, four panels over a storm sea. A pressure event rendered entirely as displacement, with colour arriving only through refraction. One: rain converging inward toward a point, the air compressing, a faint spectral shimmer beginning along the gradient. Two: the shockfront expanding as a thin spherical shell, its leading edge carrying a narrow band of refracted spectrum where the density change is steepest — cyan on the leading side, warm amber trailing. Three: the front passing through falling rain, each droplet briefly splitting the light as it crosses. Four: the aftermath, a wide ring of flattened glassy water reflecting a saturated violet sky, mist hanging at its perimeter lit in pale rainbow. No fire, no light emission, no explosion, no debris, no beams, no text, no watermark.`}
+ ]},
+{k:"aurarule",n:"Aura grammar — core vs hollow",tag:"c",tl:"Rule sheet",sv:"RULE-aura",
+ canon:"Ch II &mdash; &ldquo;He may understand, but he does not have the Stone itself. He lacks the core, the crux of it, the emanating essence. The fullness of it is mine alone.&rdquo; That line is the entire power system: understanding climbs to six, the core belongs only to a Stone-bearer.",
+ v:[
+ {c:"A",n:"The rule",w:"Image &rarr; 21:9 &rarr; rule sheet",tech:"Two auras side by side &middot; the tell",sv:"RULE-aura-A",
+  why:"One image that settles the whole hierarchy. Every other aura in the film is graded against this sheet, and the difference is a single readable fact rather than a caption: an adept's aura is hollow at the centre, a bearer's has a core that emits.",
+  p:`Effect rule sheet, photoreal, plain near-black background, two figures shown in silhouette side by side at identical scale and identical framing, each surrounded by its own aura, and nothing else in frame. LEFT, an ADEPT: a dense cold aura with a hard defined outer edge, structured and impressive, but visibly HOLLOW at the centre &mdash; the space where the body stands is darker than the aura around it, the light all borrowed from the rim and none of it originating inside. RIGHT, a BEARER: the same overall size of aura but inverted in structure, brightest at the core and falling off smoothly outward with no hard edge anywhere, the light clearly emitted from within the figure and spilling outward through it. Both figures are fully clothed silhouettes with no anatomical detail. The two are otherwise identical so the only difference the eye can find is where the light comes from. Photoreal volumetrics, no particles, no lens flare, no text, no watermark.`},
+ {c:"B",n:"Six rungs of understanding",w:"Image &rarr; 21:9 &rarr; ladder strip",tech:"A1 to A6 &middot; one row &middot; hollow throughout",sv:"RULE-aura-B",
+  why:"The ceiling made visible. Six figures climbing in power and every one of them still hollow at the centre, so the audience learns the rule without being told and feels it when the seventh finally has a core.",
+  p:`Effect ladder sheet, photoreal, cold storm light, plain dark background, six full-figure silhouettes evenly spaced in one row at identical scale, ascending in power from left to right and every one of them hollow at the centre. ONE: no aura at all, the figure limp and carried, joints hyperextended past their stops. TWO: a few torn shreds of refraction clinging at the shoulders, still mostly carried. THREE: a thin broken aura that flickers and gutters, the figure moving under its own power for the first time. FOUR: a steady cold aura with a clean edge, close to the body. FIVE: the aura gains internal structure, faint concentric geometry visible inside it, standing further off the body. SIX: dense, cold, hard-edged and visibly shaped by will, the largest of the six &mdash; and still black at the centre where a core would be. Identical silhouette, framing and scale across all six so only the aura changes. No faces, no gore, no glow at any centre, no text, no watermark.`},
+ {c:"C",n:"Diagrammatic",w:"Image &rarr; 21:9 &rarr; graphic",tech:"Cross-section &middot; blueprint convention",sv:"RULE-aura-C",
+  why:"A cross-section states the rule as physics rather than as mood, which is what the effects work actually needs to match. Also the natural source for anything the title sequence or an end card wants.",
+  p:`Technical diagram on deep blue blueprint paper, drawn entirely in fine white line, two labelled-free cross-sections side by side showing radial light intensity through a standing figure. LEFT: intensity is zero at the centre, rises steeply to a peak at a hard outer radius, then stops abruptly &mdash; drawn as a ring profile with a void at its middle. RIGHT: intensity is maximum at the centre and falls off smoothly and continuously outward with no boundary &mdash; drawn as a filled bell profile. Beneath each, the same information drawn again as a plan view of concentric contour rings: an annulus on the left, a filled gradient on the right. Precise geometric construction lines, consistent thin line weight, drafting convention, no shading, no colour beyond blue and white, no perspective. Unlabelled &mdash; no text, no numbers, no captions, no legend, no watermark.`},
+ {c:"D",n:"Chroma pass",w:"Image &rarr; 21:9 &rarr; key art",tech:"Cold hollow against warm core",sv:"RULE-aura-D",
+  why:"Colour can carry the rule further than value can. Pitching the adept's aura cold and the bearer's warm means the hierarchy survives a thumbnail, which matters for the poster and the grid.",
+  p:`Effect rule sheet, photoreal, high chroma and extreme contrast, plain black background, two silhouetted figures side by side at identical scale. LEFT: an aura in saturated cold cyan and blue-violet, hard-edged, structured, and absolutely black at the centre where the figure stands. RIGHT: an aura in saturated warm gold and amber, brightest at the core and falling off smoothly outward with no edge, the light plainly coming from inside the figure. Full complementary opposition between the two halves of the frame with no neutral tone anywhere. Both figures fully clothed silhouettes with no anatomical detail. Photoreal volumetrics, no particles, no lens flare, no text, no watermark.`}
+ ]},
+
+{k:"ladder",n:"Oriane — the mind ladder",tag:"c",tl:"State ladder",sv:"LADDER-oriane",
+ canon:"Ch II &mdash; her mind splits to ten, an eleventh takes the despair, then sixteen; she doubles to thirty-two, sixty-four, one hundred and twenty-eight, then halves them past two hundred. &ldquo;Every separation of the mind increased the vividity of the present over the future.&rdquo;",
+ v:[
+ {c:"A",n:"Eight rungs",w:"Image &rarr; 21:9 &rarr; ladder strip",tech:"M1 to M200 &middot; one row &middot; identical figure",sv:"LADDER-oriane-A",
+  why:"Her escalation is not attunement &mdash; she holds the Stone from the first frame, so she is at the ceiling before the fight starts. What escalates is the mind, and this strip is the only place the whole climb is visible at once. Generate this before any Movement II anchor; every one of them grades against it.",
+  p:`Character state ladder, photoreal, cold storm light, plain dark background, the same woman shown eight times in one row at identical scale, identical pose and identical framing, so that only her aura and her light-formed pieces change from left to right. She is in heavy layered robes with a faint prismatic sheen throughout, with angular semi-translucent pauldrons, gauntlets, gorget and greaves, fully clothed in every panel. ONE: at rest, a low even aura with a warm bright core, seam-light steady, wing-aura barely suggested and close to the shoulders. TWO: the aura tightens and brightens, a second faint concentric ring appears at arm's reach. THREE: ten discrete points of light hold station in a ring at arm's reach, the aura cooling from amber toward white, hair beginning to lift, wing-aura at half span. FOUR: sixteen points completing the ring, seams white-hot, wing-aura at full span but still soft-edged, robes streaming upward instead of falling. FIVE: the ring doubles into a shell, the aura losing its outer edge and shedding light in threads, first hairline fractures in the pauldrons with seam-light leaking out of them. SIX: the shell thickens, the aura going cold blue-white, light escaping in visible filaments, the greaves cracked, her outline blurring at the extremities. SEVEN: a solid corona, the figure inside legible only as a silhouette, the light-formed pieces broken apart and their fragments held in orbit around her, the wing-aura now one continuous unbroken ring rather than a pair. EIGHT: terminal &mdash; the aura is no longer around her but is her, the robes and broken pieces replaced entirely by streaming light while the silhouette stays completely covered and fully defined with no anatomical detail at any point, the ring collapsing inward, everything gone still and white. Identical woman across all eight panels. No nudity, no bare skin, no gore, no text, no watermark.`},
+ {c:"B",n:"Cost, not power",w:"Image &rarr; 21:9 &rarr; four panels",tech:"The same climb read as damage",sv:"LADDER-oriane-B",
+  why:"A ladder that only gets brighter reads as a power-up and the ending stops landing. This sheet builds the counter-evidence into the same climb: every rung that gains light also loses something, so the audience is uneasy well before she is.",
+  p:`Four-panel study, photoreal, cold storm light, identical framing throughout, the same robed woman in each. One: aura low and warm-cored, robes intact, light-formed pieces whole, her face calm and unstrained. Two: aura brighter and cooler, the first hairline cracks running through a pauldron, hem beginning to fray, a thread of blood-free strain at the jaw. Three: aura fierce and white, two pieces broken outright and hanging in orbit, robes torn along one flank with the prismatic sheen burned out of the damaged cloth, her stance no longer symmetrical. Four: aura at maximum and consuming the frame, almost every piece gone to fragments, the cloth streaming and half replaced by light, and her expression &mdash; visible for the first time as the only still thing in the picture &mdash; open, unstrained and joyful, which is the most frightening part of the sheet. Fully clothed in every panel. No blood, no wounds, no gore, no bare skin, no text, no watermark.`},
+ {c:"C",n:"Silhouette read",w:"Image &rarr; 21:9 &rarr; thumbnail test",tech:"Black shapes &middot; eight rungs &middot; no detail",sv:"LADDER-oriane-C",
+  why:"If the rungs are not distinguishable as pure black shapes they will not read in motion at speed, and Movement II never holds still. This is the cheapest possible test of whether the escalation actually works.",
+  p:`Eight silhouette studies in one row on a plain white field, photoreal rim treatment, identical scale and identical pose in every panel, the figure rendered as a flat black shape with no interior detail whatsoever. Only the surrounding aura shape changes across the eight: a close even halo; a halo with one outer ring; a ring of ten discrete points; a complete ring of sixteen; a doubled shell; a thickened shell shedding filaments; a solid corona with orbiting fragments; and finally a shape in which figure and aura have merged into one continuous form. The eight must be distinguishable from one another at a glance and at very small size. No facial detail, no costume detail, no colour, no text, no watermark.`},
+ {c:"D",n:"Chroma pass",w:"Image &rarr; 21:9 &rarr; key art",tech:"Amber core to cold corona",sv:"LADDER-oriane-D",
+  why:"The climb is also a colour journey &mdash; warm and contained at the bottom, cold and uncontained at the top &mdash; and stating that in one saturated strip gives the grade a target for the whole movement.",
+  p:`Character state ladder, photoreal, high chroma and extreme contrast, plain black background, the same robed woman eight times in one row at identical scale and pose. The aura travels a fixed colour path across the strip: deep saturated amber and gold at the first rung, warm and contained with a bright core; through white-gold; into hard white at the middle rungs; then cooling into saturated cyan and blue-violet; and finally, at the eighth, a corona so saturated it has no discernible colour temperature left at all, pure and blinding. Her robes stay warm-toned throughout so she remains legible as a warm figure inside an increasingly cold field &mdash; the opposition widening panel by panel. Fully clothed in every panel, no bare skin, no gore, no text, no watermark.`}
+ ]},
+
+{k:"darkladder",n:"The Turned — attunement ladder",tag:"c",tl:"State ladder",sv:"LADDER-attunement",
+ canon:"Ch II &mdash; lesser ones are carried as puppets and disintegrate; specialists each command one element; the Threadwright moves them all. None of them holds a Stone, so none of them reaches the seventh.",
+ v:[
+ {c:"A",n:"Six rungs, six elements",w:"Image &rarr; 21:9 &rarr; ladder grid",tech:"A1 to A6 &middot; hollow at every rung",sv:"LADDER-attunement-A",
+  why:"The pursuit escalates across the movement and the audience has to feel that without a line of dialogue. Fixing six rungs here means a shot can be cast by rung &mdash; send three A2s and one A4 &mdash; instead of by adjective.",
+  p:`Character ladder sheet for a group, photoreal, cold blue-grey storm light, plain dark background, no warm tone anywhere. Six figures evenly spaced in one row, ascending in power from left to right, each carrying exactly one visible element and every one of them hollow at the centre of its aura. ONE: no aura, the body limp and carried through the air, joints hyperextended past their stops, head lolling back. TWO: torn shreds of refraction at the shoulders, still mostly carried, water beading and running off waterlogged pale hands. THREE: a thin flickering aura, moving under its own power, a weak blue arc crossing between the fingers. FOUR: a steady cold aura with a clean edge, standing on a raised pillar of black seawater. FIVE: an aura with faint internal geometry standing well off the body, the air visibly bending and heavy beneath the figure. SIX: dense, hard-edged, visibly shaped by will and the largest of the six, a loose cloud of rust-red ore rods held in orbit around it &mdash; and still absolutely black at the centre. Dark sodden cloth on all six, no armour, no insignia, no matching costume. Identical framing and scale across all six. No gore, no blood, no wounds, no glowing eyes, no text, no watermark.`},
+ {c:"B",n:"Formation by rung",w:"Image &rarr; 21:9 &rarr; staging plate",tech:"Sixteen figures &middot; rank legible by aura",sv:"LADDER-attunement-B",
+  why:"Answers the staging question the shot list keeps asking: where does each rank sit in the frame. Weak ones forward and expendable, strong ones held back, and the audience learns to read the formation before the film ever explains it.",
+  p:`Cinematic staging plate, 2.39:1, photoreal, storm ocean, cold blue-grey, long lens. Sixteen figures pursuing across water in depth, staged so that rank reads by aura alone: nearest the camera and most numerous, auraless bodies carried limp with arms trailing; behind them a scattered middle rank with thin flickering auras moving under their own power; behind those, four figures with steady structured cold auras each expressing one element &mdash; a water pillar, a blue arc, bending air, orbiting ore; and furthest back and alone, one figure with a dense hard-edged aura larger than any other, unhurried, hollow at its centre. Driving rain, violet sky, spray. The depth ordering is the point: the weak are spent first and the strong are held back. No faces legible, no armour, no uniforms, no gore, no text, no watermark.`},
+ {c:"C",n:"Dissolution by rung",w:"Image &rarr; 21:9 &rarr; effect study",tech:"How each rung dies",sv:"LADDER-attunement-C",
+  why:"Death should also carry rank. A lesser one comes apart on contact and a sixth takes real work, and fixing that here stops sixteen deaths blurring into one repeated effect.",
+  p:`Effect study, photoreal, cold storm light, plain dark background, four rows showing how differently each rank comes apart. ROW ONE, auraless: the figure loses definition instantly and entirely, gone to drifting ash within a single stage. ROW TWO, thin aura: the aura gutters out first, then the body follows, slower, trailing away in fragments. ROW THREE, structured aura: the aura holds its shape briefly after the body has begun to fail, an empty ring of light standing where a figure was. ROW FOUR, dense aura: the outer edge collapses inward under pressure, compressing to a hard bright point before it goes, and the ash left behind is denser and falls rather than drifts. No blood, no gore, no wounds, no skeletons, no fire, no text, no watermark.`},
+ {c:"D",n:"Chroma pass",w:"Image &rarr; 21:9 &rarr; key art",tech:"Sick greens and bruise violets by rank",sv:"LADDER-attunement-D",
+  why:"Their colour should worsen as they strengthen, which is the opposite of how a hero ladder behaves. Six rungs of increasingly wrong colour is the fastest way to make power read as corruption rather than achievement.",
+  p:`Character ladder sheet for a group, photoreal, extreme chroma, plain near-black background, six figures in one row ascending in power from left to right. The aura colour degrades as it strengthens: nearly colourless at the first rung, then a faint sickly yellow-green, then a stronger green with a bruise-violet fringe, then saturated bruise-violet, then violet with a hard magenta edge, and at the sixth a dense cold colour with a hard boundary and an absolutely black centre. Skin reads greenish where the light strikes it and violet in shadow at every rung. Dark sodden cloth throughout, gaunt drawn faces, no armour, no insignia, no matching costume. Colour separation extreme, blacks crushed and slightly green. No gore, no blood, no wounds, no glowing eyes, no text, no watermark.`}
  ]}
 ];
 
@@ -2914,12 +3092,12 @@ const RUN=[
  set:"Batch of 4. Damage in exactly three places: right cheekbone, LEFT calf, torso scoring. Reject any frame with a fourth mark.",
  sv:"REF-oriane-damaged-A-##",
  mdl:"soul_2 · reuse the Oriane soul_id",ar:"16:9",fld:"00 · REFERENCES / Characters"},
-{ph:"Phase 0",t:"Caedmon — train Soul V2",
+{ph:"Phase 0",t:"Caedom — train Soul V2",
  s:"He opens the film and closes it. Same face at 0:00 and 4:41 or the bookend does not land.",
- a:"Caedmon's robe is reading as a glow effect instead of fabric. Rewrite that part of the prompt.",
- b:"<b>Image</b> → Soul V2 → train a second character. Paste the Caedmon prompt below.",
- w:"Image",u:HF+"image",pk:"caedmon",
- set:"Batch of 4. Separate Soul from Oriane — one identity per Soul.",sv:"REF-caedmon-##",
+ a:"Caedom's robe is reading as a glow effect instead of fabric. Rewrite that part of the prompt.",
+ b:"<b>Image</b> → Soul V2 → train a second character. Paste the Caedom prompt below.",
+ w:"Image",u:HF+"image",pk:"caedom",
+ set:"Batch of 4. Separate Soul from Oriane — one identity per Soul.",sv:"REF-caedom-##",
  mdl:"soul_2 · Soul V2, a second identity",ar:"16:9",fld:"00 · REFERENCES / Characters"},
 {ph:"Phase 0",t:"The brothers — one Reference Element, both boys",
  s:"Soul carries a single identity per generation and these two share the frame in every shot they are in. So they train together, as one element.",
@@ -3198,6 +3376,28 @@ const RUN=[
       {rootMargin:"-90px 0px 0px 0px"}
     ).observe(document.getElementById("control"));
   }
+
+  /* power-state modifier fragments */
+  (function(){
+    const host=document.getElementById("frags"); if(!host)return;
+    FRAGS.forEach(gr=>{
+      const h=document.createElement("p"); h.className="frag-g"; h.textContent=gr.g; host.appendChild(h);
+      const wrap=document.createElement("div"); wrap.className="frag-grid";
+      gr.items.forEach(it=>{
+        const d=document.createElement("div"); d.className="frag";
+        d.innerHTML='<div class="frag-hd"><code>'+it.k+'</code><b>'+it.n+'</b></div>'+
+          '<pre class="paste">'+it.p.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</pre>'+
+          '<button class="copy" data-frag="'+it.k+'">Copy '+it.k+'</button>';
+        wrap.appendChild(d);
+      });
+      host.appendChild(wrap);
+    });
+    host.addEventListener("click",e=>{
+      const b=e.target.closest(".copy"); if(!b)return;
+      const it=FRAGS.flatMap(g=>g.items).find(x=>x.k===b.dataset.frag); if(!it)return;
+      navigator.clipboard.writeText(it.p).then(()=>flash(b,"Copied")).catch(()=>flash(b,"Copy failed"));
+    });
+  })();
 
   /* asset prompt cards \u2014 each asset carries three variants on its own tab strip */
   const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
