@@ -750,6 +750,52 @@ footer a{color:var(--ink-2)}
 .fc-id{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
 .copy.sm{font-size:10px;padding:5px 9px;margin:0}
 /* ---- revision loop ---- */
+/* ---- binding board ---- */
+.bindwrap{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.bindtop{display:flex;align-items:center;gap:20px;padding:18px 22px;background:var(--surface-2);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.bindmeter{flex:1;min-width:240px;display:flex;flex-direction:column;gap:7px}
+.bm-bar{height:9px;border-radius:5px;background:var(--surface-3);border:1px solid var(--line-soft);overflow:hidden}
+.bm-bar i{display:block;height:100%;width:0;background:var(--jade);transition:width .2s}
+.bm-txt{display:flex;align-items:baseline;gap:10px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.bm-txt b{font-size:19px;color:var(--ink)}
+.bgroup{padding:16px 22px;border-bottom:1px solid var(--line-soft)}
+.bgroup:last-child{border-bottom:0}
+.bg-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+.bg-hd h4{font-size:15px}
+.bg-hd span{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.bg-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:5px}
+.bslot{
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  padding:7px 9px;border-radius:7px;border:1px solid var(--line-soft);background:var(--surface-2);
+  font-size:12px;min-width:0
+}
+.bslot:hover{border-color:var(--line)}
+.bslot.on{background:var(--jade-soft);border-color:var(--jade-line)}
+.bslot input{width:14px;height:14px;accent-color:var(--jade);flex:0 0 auto;cursor:pointer}
+.bs-id{font-family:var(--mono);font-size:10px;color:var(--ink-3);flex:0 0 auto}
+.bslot.on .bs-id{color:var(--jade)}
+.bs-t{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.bslot.on .bs-t{text-decoration:line-through;color:var(--ink-3)}
+/* ---- lessons ---- */
+.lessons{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.lesson{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:19px 22px;border-bottom:1px solid var(--line-soft)}
+.lesson:last-child{border-bottom:0}
+.le-n{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:4px}
+.le-hd{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;margin-bottom:8px}
+.le-hd h4{font-size:16px}
+.le-c{
+  font:600 9.5px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;
+  padding:4px 7px;border-radius:4px;border:1px solid currentColor
+}
+.le-c.source{color:var(--gold)}
+.le-c.structure{color:var(--void)}
+.le-c.design{color:var(--jade)}
+.le-c.rights{color:var(--coral)}
+.le-c.process{color:var(--ink-3)}
+.le-b p{font-size:13.5px;line-height:1.6;color:var(--ink-2);margin:0 0 6px}
+.le-b p:last-child{margin-bottom:0}
+.le-r{color:var(--ink)!important}
+.le-b p b{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--ink-3);margin-right:4px}
 .loopsteps{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
 .ls{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line-soft);align-items:start}
 .ls:last-child{border-bottom:0}
@@ -898,8 +944,10 @@ footer a{color:var(--ink-2)}
   <a href="#assets">Asset Prompts</a>
   <a href="#states">Power States</a>
   <a href="#forms">Forms &amp; States</a>
+  <a href="#bind">Binding</a>
   <a href="#filing">Filing &amp; Selection</a>
   <a href="#loop">Revision Loop</a>
+  <a href="#lessons">Lessons</a>
   <a href="#folders">Folders</a>
   <a href="#dials">Tweaks &amp; Export</a>
   <a href="#thesis">The Thesis</a>
@@ -1301,6 +1349,75 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
       <h3>Canvas and the scratch surfaces</h3>
       <p><b>Do not build anything that ships on a board or canvas surface.</b> Not because it is a bad tool &mdash; because the entry is verified against the project's own generation history, and anything composed on a side surface risks landing outside it. Use it to think, then regenerate the decision properly inside the project and park the sketch in <code>99 &middot; LOOKDEV</code>. <b>If a frame's history is not in the project, that frame cannot be in the film.</b></p>
     </div>
+  </div>
+</div></section>
+
+<!-- ================= BINDING ================= -->
+<section id="bind"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">How a library of favourites becomes one film</span>
+    <h2>Binding</h2>
+    <p>This is the step everyone gets stuck on, and it is stuck for a structural reason: <b>a pile of favourites and a film are different kinds of object.</b> A favourite is a thing you liked. A film is a fixed sequence of durations and seams that has to be complete before it is anything at all. You cannot arrive at the second by accumulating the first.</p>
+  </div>
+
+  <div class="verdict" style="margin-bottom:30px;border-color:var(--void-line);background:var(--void-soft)">
+    <b>The move that unsticks it:</b> stop asking &ldquo;what do I have and how does it fit together?&rdquo; and start asking <b>&ldquo;which numbered slot is still empty?&rdquo;</b> The film is already fully specified &mdash; 40 references, 39 anchors, 23 shots, 5 minutes exactly. Every one of those is a named hole. Generation is not creation here; it is filling holes in a known order. <b>Cohesion is not something you achieve at the end. It is a property of the plan, and the plan already has it.</b>
+  </div>
+
+  <div class="sec-head"><h3 style="font-size:22px">Why favourites cannot be assembled</h3></div>
+  <table class="dials" style="margin-bottom:34px">
+    <thead><tr><th style="width:30%">A library of favourites</th><th>A film</th></tr></thead>
+    <tbody>
+      <tr><td>Grows without limit. More is always better.</td><td><b>Has exactly 300 seconds.</b> More is worse. Every second added removes one somewhere else.</td></tr>
+      <tr><td>Each item judged on its own merit.</td><td><b>Each shot judged on its seam</b> &mdash; what it cuts from and into. A beautiful shot that breaks a seam is a defect.</td></tr>
+      <tr><td>Order is arbitrary and revisable.</td><td><b>Order is the argument.</b> The film's whole thesis is that one miracle plants two different seeds, and that only works in sequence.</td></tr>
+      <tr><td>Selection is taste.</td><td><b>Selection is fit.</b> The right frame is the one that matches the plate, the identity and the adjacent frames &mdash; often not the prettiest of the four.</td></tr>
+      <tr><td>Done when you stop.</td><td><b>Done when every slot is filled.</b> Which is checkable, which is why the board below exists.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><h3 style="font-size:22px">The binding board</h3>
+    <p>Every slot in the submission, generated from this document rather than typed by hand, so it cannot drift out of sync with the plan. Tick a slot when its file exists in the project under its ledger name. Progress is stored in this browser.</p>
+  </div>
+  <div class="bindwrap">
+    <div class="bindtop">
+      <div class="bindmeter"><div class="bm-bar"><i id="bm-fill"></i></div>
+        <div class="bm-txt"><b id="bm-pct">0%</b><span id="bm-n">nothing bound yet</span></div></div>
+      <button class="abtn ghost" id="bind-reset">Reset the board</button>
+    </div>
+    <div id="bindboard"></div>
+  </div>
+
+  <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">Planned, organised chaos</h3>
+    <p>Divergence is not the enemy &mdash; unbudgeted divergence is. The method that makes this repeatable on the next project is deciding <i>in advance</i> which surfaces are free and which are fenced, and then being genuinely loose inside the free ones.</p>
+  </div>
+  <div class="grid g2" style="margin-bottom:22px">
+    <div class="card"><span class="tag" style="background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)">Free</span>
+      <h3>Diverge as much as you like</h3>
+      <p><b>C and D variants.</b> Alternate media, chroma passes, anything in <code>99 &middot; LOOKDEV</code>. Extra takes beyond the keeper. Sketches, wrong turns, experiments that go nowhere. None of it touches the film, all of it feeds your eye, and the retention rule means keeping it costs nothing.</p>
+      <p>Budget it explicitly: <b>one free pass for every three fenced ones.</b> That ratio is the whole trick &mdash; it is enough to keep the work alive and not enough to endanger the deadline.</p>
+    </div>
+    <div class="card pick"><span class="tag">Fenced</span>
+      <h3>Never improvise here</h3>
+      <p><b>Identity, durations, seams, the frame string, and the grade of each movement.</b> These five are decided once and then obeyed, because every one of them is load-bearing for something else: a changed face invalidates anchors, a changed duration breaks the 300 seconds, a changed seam breaks two shots at once.</p>
+      <p>If a fenced thing genuinely must change, it is a <b>gate failure</b>, not a tweak. Say so, go back to the gate, and redo what depended on it.</p>
+    </div>
+  </div>
+  <div class="verdict">
+    <b>The reusable shape, for the next project after this one:</b> specify the whole thing as numbered empty slots before generating anything &middot; lock identity first because everything else inherits it &middot; fence five things and leave the rest free &middot; generate in dependency order so nothing waits on something later &middot; keep every reject &middot; and write down each failure as a rule the moment it costs you something. That last one is the only part that compounds.
+  </div>
+</div></section>
+
+<!-- ================= LESSONS ================= -->
+<section id="lessons"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Every failure that cost something, and the rule it became</span>
+    <h2>Lessons</h2>
+    <p>This is the only part of the document that compounds. Each row is a real failure from building this production &mdash; not a hypothetical &mdash; and the rule now standing because of it. <b>Add a row the moment something costs you time, while you still remember why.</b> On the next project this list is the thing you carry over; everything else gets rebuilt.</p>
+  </div>
+  <div class="lessons" id="lessons-list"></div>
+  <div class="verdict" style="margin-top:26px">
+    <b>The pattern across all of them:</b> nearly every entry is the same shape &mdash; two things that should have agreed were allowed to drift apart because nothing forced a comparison. A prompt and its source. A run sheet and an asset list. A licence and the files under it. <b>The fix is almost never more care. It is a check that makes disagreement visible.</b>
   </div>
 </div></section>
 
@@ -2756,6 +2873,48 @@ const FORMS=[
   {c:"FREED",n:"Released",g:0,d:"The rider gone, a smooth empty hollow in the plating, fins collapsing slack. She apologises to it as it dies.",asset:"FX-strike-blast-A"}
  ]}
 ];
+const BINDX=[
+{g:"Audio",n:"AUDIO",items:["Score — MV1","Score — MV3","Dialogue — Caedom","Dialogue — Oriane","VO — Alder","Sound design pass","S13 silence protected"]},
+{g:"Delivery",n:"MVS",items:["Watermarked master","Packshot","Social cut","Public post URL","End card","Rights pass done","Project verified"]}
+];
+const LESSONS=[
+{c:"Source",t:"Describing a covering by what it is not",
+ w:"Oriane's prompt said the crystal was &ldquo;encasing her rather than armour or clothing&rdquo;. The filter read the disclaimer as the subject and refused the generation. Two credits and an hour.",
+ r:"Never define a covering negatively. State positively what is worn and how much it covers. A classifier reads the words, not the intent &mdash; and so, it turns out, does the image model."},
+{c:"Source",t:"A material described as a body instead of as worn",
+ w:"The same crystal was written as her body transformed. It generated a statue, fought the filter, and contradicted the novel, which has her both &ldquo;garbed in robes of light&rdquo; and &ldquo;encased in crystal&rdquo;.",
+ r:"When the source says two things about one subject, honour both before inventing a third. Robes with a crystal aura satisfied the text, the filter and the design in one move."},
+{c:"Source",t:"A beat attributed to the wrong character",
+ w:"The shiver in Chapter I belongs to Caedom. The prompt gave it to Oriane, which turned the most interesting moment in the scene &mdash; the immortal flinching &mdash; into an ordinary one.",
+ r:"Check the attribution of every beat against the source, not just its presence. Being in the scene is not the same as being in the right hands."},
+{c:"Source",t:"Right events, wrong order",
+ w:"The Vigil knelt on arrival, then the miracle began. In the novel the suspension starts first and they kneel to avoid watching it. The inversion made the kneel read as a spell being cast.",
+ r:"Verify sequence, not just contents. Order carries meaning that a list of ingredients cannot."},
+{c:"Structure",t:"Two documents describing the same thing",
+ w:"The asset section grew to 29 assets while the run sheet still described six prop studies and three plates. Following the steps in order would have left four assets unmade.",
+ r:"When one list drives another, audit them against each other on every change. Parity drift is silent and only surfaces as a gap at the worst moment."},
+{c:"Structure",t:"Superseded work left standing beside its replacement",
+ w:"Caedom briefly had three sheets &mdash; an old general one plus the new ascended and mortal forms. Three sheets for one character is three chances to generate from the wrong one.",
+ r:"Retire superseded assets the moment the replacement exists. Keeping both is not caution; it is an unresolved decision left for later you."},
+{c:"Design",t:"An escalation that only ever gained",
+ w:"The mind ladder brightened at every rung, which made the climb read as a power-up and turned her death into a victory lap instead of a cost.",
+ r:"Every rung of any escalation must visibly take something as well as give. If the ladder only goes up, the ending cannot land."},
+{c:"Design",t:"Filing by where a thing is used",
+ w:"The instinct was to put damaged Oriane under Scene 2. That splits one identity across several folders and destroys the single view where continuity errors are actually visible.",
+ r:"File by what a thing is, never by where it is used. State and version go in the filename; identity decides the folder."},
+{c:"Rights",t:"A permissive licence sitting over a manuscript",
+ w:"The repository was public with Apache&nbsp;2.0 at its root and the novel's first three chapters inside it &mdash; a grant of perpetual, irrevocable rights to reproduce and make derivative works of the book, to anyone who found it.",
+ r:"Check the licence and the visibility before the first push, not after the tenth. A NOTICE carve-out is a mitigation; scope and privacy are the fix."},
+{c:"Rights",t:"Protecting ownership instead of exposure",
+ w:"Early advice said not to rename anything because the novel was already owned. True, and beside the point: the entry publishes prompts and generation history, so the coined vocabulary of an unfinished book would have gone public under someone else's licence.",
+ r:"Ownership and exposure are different risks. Ask what the submission publishes, not only what it transfers."},
+{c:"Process",t:"Assuming platform behaviour that could not be checked",
+ w:"Network egress to the platform is blocked from this environment, so the exact reference syntax and the licence clause could not be read. Asserting either would have been a guess dressed as a fact.",
+ r:"State what was verified and what was not, in the document itself. An unverified claim that looks verified is worse than an open question."},
+{c:"Process",t:"Trusting a push that a rollback had undone",
+ w:"A commit was reported as pushed, then a container rollback left the local branch behind while the remote kept the commit. Committing again would have duplicated it.",
+ r:"When state looks wrong, diff against the remote before acting. The working tree was byte-identical &mdash; the fix was a fast-forward, not a new commit."}
+];
 const FRAGS=[
 {g:"Ladder M — Oriane's mind. Append to any Oriane prompt.",items:[
  {k:"M1",n:"Resting",p:`Her aura is low, even and close to the body, with a warm bright core at its centre and a soft edgeless falloff outward. Seam-light in the pauldrons, gauntlets, gorget and greaves is steady and unbroken. The wing-aura is barely suggested and sits close behind the shoulders. The prismatic sheen in the cloth is quiet. Robes hang and fall normally. She is not straining.`},
@@ -3859,6 +4018,65 @@ const RUN=[
       const it=FRAGS.flatMap(g=>g.items).find(x=>x.k===btn.dataset.ffrag); if(!it)return;
       navigator.clipboard.writeText(it.p).then(()=>flash(btn,"Copied")).catch(()=>flash(btn,"Copy failed"));
     });
+  })();
+
+  /* binding board — slots generated from the plan itself */
+  (function(){
+    const host=document.getElementById("bindboard"); if(!host)return;
+    const KEY="tsm-bind-v1";
+    let done={}; try{done=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){done={}}
+
+    const groups=[
+      {g:"References",n:"REF",items:PREP.map(p=>({id:p.v[0].sv,t:p.n}))},
+      {g:"Anchors",n:"ANC",items:FRAMES.map(f=>({id:f.f,t:f.t||f.f}))},
+      {g:"Shots",n:"SHOT",items:SHOTS.map(s=>({id:s.id,t:s.t}))},
+      ...BINDX.map(b=>({g:b.g,n:b.n,items:b.items.map((t,i)=>({id:b.n+"-"+(i+1),t:t}))}))
+    ];
+    const total=groups.reduce((a,g)=>a+g.items.length,0);
+
+    function paint(){
+      const n=Object.values(done).filter(Boolean).length;
+      const pct=Math.round(n/total*100);
+      document.getElementById("bm-fill").style.width=pct+"%";
+      document.getElementById("bm-pct").textContent=pct+"%";
+      document.getElementById("bm-n").textContent=n+" of "+total+" slots bound"+(n===total?" — the film is complete":"");
+      groups.forEach(g=>{
+        const c=g.items.filter(i=>done[i.id]).length;
+        const el=document.getElementById("bg-"+g.n);
+        if(el)el.textContent=c+"/"+g.items.length;
+      });
+    }
+
+    host.innerHTML=groups.map(g=>
+      '<div class="bgroup"><div class="bg-hd"><h4>'+g.g+'</h4><span id="bg-'+g.n+'"></span></div>'+
+      '<div class="bg-row">'+g.items.map(i=>
+        '<label class="bslot'+(done[i.id]?" on":"")+'" data-id="'+i.id+'">'+
+        '<input type="checkbox"'+(done[i.id]?" checked":"")+'><span class="bs-id">'+i.id+'</span>'+
+        '<span class="bs-t">'+i.t+'</span></label>').join("")+'</div></div>').join("");
+
+    host.addEventListener("change",e=>{
+      const l=e.target.closest(".bslot"); if(!l)return;
+      done[l.dataset.id]=e.target.checked;
+      l.classList.toggle("on",e.target.checked);
+      localStorage.setItem(KEY,JSON.stringify(done));
+      paint();
+    });
+    document.getElementById("bind-reset").onclick=()=>{
+      done={}; localStorage.setItem(KEY,"{}");
+      host.querySelectorAll(".bslot").forEach(l=>{l.classList.remove("on");l.querySelector("input").checked=false});
+      paint();
+    };
+    paint();
+  })();
+
+  /* lessons */
+  (function(){
+    const host=document.getElementById("lessons-list"); if(!host)return;
+    host.innerHTML=LESSONS.map((l,i)=>
+      '<div class="lesson"><div class="le-n">'+String(i+1).padStart(2,"0")+'</div>'+
+      '<div class="le-b"><div class="le-hd"><span class="le-c '+l.c.toLowerCase()+'">'+l.c+'</span><h4>'+l.t+'</h4></div>'+
+      '<p class="le-w"><b>What happened.</b> '+l.w+'</p>'+
+      '<p class="le-r"><b>The rule now.</b> '+l.r+'</p></div></div>').join("");
   })();
 
   /* drift report copy */
