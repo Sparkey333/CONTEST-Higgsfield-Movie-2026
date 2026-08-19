@@ -749,6 +749,16 @@ footer a{color:var(--ink-2)}
 .fc-ft{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .fc-id{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
 .copy.sm{font-size:10px;padding:5px 9px;margin:0}
+/* ---- revision loop ---- */
+.loopsteps{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.ls{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line-soft);align-items:start}
+.ls:last-child{border-bottom:0}
+.ls .n{
+  font:700 15px/1 var(--mono);color:var(--signal-ink);background:var(--signal);
+  width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px
+}
+.ls h4{font-size:16.5px;margin-bottom:5px}
+.ls p{font-size:14px;line-height:1.6;color:var(--ink-2)}
 .canon{
   font-size:11.5px;line-height:1.55;color:var(--ink-3);
   border-left:2px solid var(--line-soft);padding:2px 0 2px 9px;margin:0 0 11px
@@ -773,6 +783,13 @@ footer a{color:var(--ink-2)}
 .vtab[data-v="B"].on,.vtab[data-v="B"][data-on]{background:var(--gold-soft);border-color:var(--gold-line);color:var(--gold)}
 .vtab[data-v="C"].on,.vtab[data-v="C"][data-on]{background:var(--jade-soft);border-color:var(--jade-line);color:var(--jade)}
 .vtab[data-v="D"].on,.vtab[data-v="D"][data-on]{background:var(--coral-soft);border-color:var(--coral-line);color:var(--coral)}
+.filerow{display:grid;grid-template-columns:1fr;gap:5px;margin:0 0 10px}
+.filerow span{
+  display:flex;gap:8px;align-items:baseline;font-family:var(--mono);font-size:11px;
+  background:var(--surface-3);border:1px solid var(--line-soft);border-radius:6px;padding:6px 9px;color:var(--ink-2)
+}
+.filerow i{font-style:normal;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);flex:0 0 46px}
+.filerow b{color:var(--ink)}
 .vtech{
   display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;
   color:var(--jade);background:var(--jade-soft);border:1px solid var(--jade-line);
@@ -881,6 +898,8 @@ footer a{color:var(--ink-2)}
   <a href="#assets">Asset Prompts</a>
   <a href="#states">Power States</a>
   <a href="#forms">Forms &amp; States</a>
+  <a href="#filing">Filing &amp; Selection</a>
+  <a href="#loop">Revision Loop</a>
   <a href="#folders">Folders</a>
   <a href="#dials">Tweaks &amp; Export</a>
   <a href="#thesis">The Thesis</a>
@@ -1122,6 +1141,169 @@ footer a{color:var(--ink-2)}
   <div id="formsboard"></div>
 </div></section>
 
+<!-- ================= FILING ================= -->
+<section id="filing"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Answered directly, so you never have to decide twice</span>
+    <h2>Filing &amp; selection</h2>
+    <p>Every generation in this production has exactly one correct destination and exactly one correct name, and both are decided here rather than at the moment you press save. The rule underneath all of it is one sentence.</p>
+  </div>
+
+  <div class="verdict" style="margin-bottom:30px;border-color:var(--jade-line);background:var(--jade-soft)">
+    <b>File by what a thing IS, never by where it gets used.</b> An asset lives with its identity for the whole production. A shot lives with its pipeline stage. Nothing is ever filed by scene, because a scene is a <i>usage</i>, and usages change while identities do not.
+  </div>
+
+  <div class="sec-head"><h3 style="font-size:22px">Your question, answered</h3></div>
+  <table class="dials" style="margin-bottom:34px">
+    <thead><tr><th style="width:34%">If you are asking</th><th style="width:16%">Answer</th><th>Because</th></tr></thead>
+    <tbody>
+      <tr><td>Does damaged Oriane go under Scene 2, or with the other Oriane generations?</td><td><b>One folder. <code>Characters / ORIANE</code>.</b></td><td>Continuity failures are <i>identity</i> failures, and you catch them by putting every version of a face side by side in one view. Split her across scene folders and that view stops existing exactly when you need it. Her damaged sheet, her eight mind rungs, both her plates and her chroma pass all live together. <b>The state goes in the filename, not the path.</b></td></tr>
+      <tr><td>Where do the anchor frames go?</td><td><b>By movement, in film order.</b></td><td>Anchors are the one thing whose job <i>is</i> sequence, so they are the one thing filed by position. <code>01 · ANCHORS / MV2 The Ocean</code>. Never by character &mdash; an anchor with two people in it has no single owner.</td></tr>
+      <tr><td>Where do rendered shots go?</td><td><b>By pipeline stage.</b></td><td><code>02 · DRAFT MOTION</code> then <code>03 · FINAL SHOTS</code>. A shot's identity is which pass it belongs to, because that is what you sort by when deciding what still needs doing.</td></tr>
+      <tr><td>The seven domain beings &mdash; one folder each?</td><td><b>No. All seven in <code>Characters / TURNED</code>.</b></td><td>They are one faction with one shared rule, and the check you run on them is a group check: does every aura still have a black centre. Seven folders makes that check seven times slower for no benefit.</td></tr>
+      <tr><td>Caedom's mortal and ascended forms?</td><td><b>One folder. <code>Characters / CAEDOM</code>.</b></td><td>Same identity, two states. The whole point of the mortal sheet is that it is the same bone structure, and you can only verify that with both in one place.</td></tr>
+      <tr><td>Rejected generations?</td><td><b><code>99 · LOOKDEV</code>. Never deleted.</b></td><td>Everything used in the film must stay in the project for the generation-history check, and deleting weakens that record for no gain. But they must be unmistakably not-the-film, which is what the <code>99</code> prefix is for.</td></tr>
+      <tr><td>Does a scene folder ever make sense?</td><td><b>No. Not once.</b></td><td>Scene grouping already exists twice over &mdash; in the shot IDs and in the frame ledger. Adding it as a third place makes three sources of truth that drift apart, and the one that drifts is always the folder.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><h3 style="font-size:22px">The three axes</h3>
+    <p>There are only three, and each answers a different question. Everything in the project is filed on exactly one of them.</p>
+  </div>
+  <div class="grid g3" style="margin-bottom:34px">
+    <div class="card"><span class="tag" style="background:var(--void-soft);color:var(--void);border-color:var(--void-line)">By identity</span>
+      <h3>References</h3><p><code>00 · REFERENCES</code>. Answers <b>&ldquo;who or what is this?&rdquo;</b> One folder per character, for the life of the production. Sorted by name.</p></div>
+    <div class="card"><span class="tag" style="background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)">By position</span>
+      <h3>Anchors</h3><p><code>01 · ANCHORS</code>. Answers <b>&ldquo;when does this happen?&rdquo;</b> One folder per movement, frames in film order. Sorted by number.</p></div>
+    <div class="card"><span class="tag" style="background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)">By stage</span>
+      <h3>Shots &amp; delivery</h3><p><code>02</code>&ndash;<code>06</code>. Answers <b>&ldquo;how finished is this?&rdquo;</b> One folder per pass. Sorted by pipeline order.</p></div>
+  </div>
+
+  <div class="sec-head"><h3 style="font-size:22px">The filename, in full</h3>
+    <p>Fixed-width fields, in this order, every time. A name built this way sorts itself into the right sequence and shows a missing state as a gap rather than as a surprise at Gate B.</p>
+  </div>
+  <pre class="paste" style="max-height:none">REF-&lt;who&gt;[-&lt;state&gt;][-A&lt;n&gt;][-M&lt;nnn&gt;]-&lt;variant&gt;-&lt;take&gt;
+
+  REF-oriane-A7-M001-A-01        identity sheet, resting, first keeper
+  REF-oriane-A7-M016-B-03        full ring, in-world plate, third take
+  REF-oriane-damaged-A7-M016-A-01   damaged overlay at the same rung
+  REF-oriane-A7-M200-D-01        terminal, chroma pass
+  REF-caedom-ascended-A-01       no ladder — he has no state to encode
+  REF-caedom-mortal-A-01
+  REF-bgravity-A4-B-02           a domain being, rung four, element plate
+  LADDER-oriane-A-01             a rule sheet, no identity, no state
+  F14-anchor-01                  an anchor frame — film order, not identity
+
+  variant : A continuity · B in-world · C alternate medium · D chroma
+  take    : 01, 02, 03 — never overwrite, never reuse a number
+</pre>
+
+  <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">Which of the four do you keep?</h3>
+    <p>Every generation is a batch of four. The selection rule is different for each kind of asset, and getting it wrong is more expensive than a bad prompt, because a bad selection propagates into every frame downstream.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th style="width:20%">Asset kind</th><th style="width:14%">Keep</th><th>The test you actually apply</th></tr></thead>
+    <tbody>
+      <tr><td><b>Identity sheets</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">A variant, characters</span></td><td><b>Exactly 1</b></td><td>Not the most beautiful &mdash; the most <b>repeatable</b>. Ask: could you describe this face to someone in three features, and would they recognise it in another frame? If the answer needs more than three, it will drift. Reject any frame where the two panels disagree with each other; that is the same failure you are trying to prevent, appearing early.</td></tr>
+      <tr><td><b>State ladders</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">LADDER-*</span></td><td><b>Exactly 1</b></td><td>Reject any frame where the figure changes pose or scale between rungs. The whole value of the strip is that only the aura moves; a shifted pose makes the ladder unreadable as a progression.</td></tr>
+      <tr><td><b>Rule sheets</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">RULE-aura</span></td><td><b>Exactly 1</b></td><td>One binary check: does the left figure have any light at its centre? If yes, reject, no matter how good the rest looks. This single sheet governs forty others.</td></tr>
+      <tr><td><b>Lighting plates</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">PLATE-*</span></td><td><b>Exactly 1</b></td><td>Judge it at thumbnail size, not full size. A plate's job is to be matched from memory across nine weeks, so if its key direction is not obvious at two centimetres it is the wrong plate.</td></tr>
+      <tr><td><b>Props, locations, effects</b></td><td><b>1&ndash;2</b></td><td>Keep a second only if it shows the subject from an angle the first cannot. Two near-identical props is two chances to pick the wrong one later.</td></tr>
+      <tr><td><b>Domain beings</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">REF-b*</span></td><td><b>1 per domain</b></td><td>Black centre on every aura in the frame. Then: are the three rungs actually distinguishable from one another at a glance? If rungs two and three look the same, the sheet has failed at its only job.</td></tr>
+      <tr><td><b>Everything rejected</b></td><td><b>Park, don't bin</b></td><td>Straight to <code>99 · LOOKDEV</code> with its original generation name intact. Renaming a reject wastes the one thing it is still good for &mdash; proving what you tried.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict" style="margin-top:22px">
+    <b>The habit that makes all of this work:</b> name the file the instant it is generated, from the ledger, never later from memory. <code>REF-oriane-A7-M016-B-03</code> is findable in nine weeks. <code>generation_4471</code> is not, and at Gate B you are looking at thirty-nine of them at once.
+  </div>
+</div></section>
+
+<!-- ================= THE LOOP ================= -->
+<section id="loop"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Generate &rarr; download &rarr; diagnose &rarr; v2 &rarr; back in</span>
+    <h2>The revision loop</h2>
+    <p>No prompt in this bible survives first contact unchanged. The loop below is how a v1 becomes a v2 without losing the identity you already trained, and it is deliberately short: <b>five moves, and only one of them happens outside Higgsfield.</b></p>
+  </div>
+
+  <div class="loopsteps">
+    <div class="ls"><span class="n">1</span><div>
+      <h4>Generate in the project</h4>
+      <p>Paste the <b>A</b> variant. Batch of 4. Always inside the Cinema Studio submission project &mdash; never in the general workspace, never over MCP, or the frame cannot go in the film.</p>
+    </div></div>
+    <div class="ls"><span class="n">2</span><div>
+      <h4>Select one, name it, favourite it</h4>
+      <p>Apply the selection test for that asset kind, then rename it from the ledger <i>immediately</i> &mdash; <code>REF-oriane-A7-M001-A-01</code>. Mark it as a favourite in Higgsfield in the same action. The favourite is what makes it findable later; the name is what makes it identifiable.</p>
+    </div></div>
+    <div class="ls"><span class="n">3</span><div>
+      <h4>Download the keeper &mdash; and only the keeper</h4>
+      <p>Download the selected frame at full resolution. <b>Do not download the rejects.</b> They stay in the project in <code>99 &middot; LOOKDEV</code>, which is where they are useful; a copy on your disk is not.</p>
+    </div></div>
+    <div class="ls"><span class="n">4</span><div>
+      <h4>Bring it here and say what drifted</h4>
+      <p>Attach the image in this conversation with the <b>drift report</b> below. This is the only step outside Higgsfield. You get back a rewritten prompt marked <b>v2</b>, with the changed clauses called out so you can see what moved and why.</p>
+    </div></div>
+    <div class="ls"><span class="n">5</span><div>
+      <h4>Regenerate against the same identity</h4>
+      <p>Paste the v2 into Higgsfield <b>with the same trained Soul or Reference Element selected</b>. Never retrain to fix a prompt problem &mdash; retraining changes the face, which is the one thing you were protecting. Save the result as <code>&hellip;-v2-01</code>.</p>
+    </div></div>
+  </div>
+
+  <div class="sec-head" style="margin-top:40px"><h3 style="font-size:22px">The drift report</h3>
+    <p>Paste this with the image. Vague feedback produces a vague rewrite; these five lines are what make a v2 actually different from a v1 rather than a reshuffle of the same adjectives.</p>
+  </div>
+  <pre class="paste" id="driftblock" style="max-height:none">ASSET     : REF-oriane-A7-M001-A-01
+VARIANT   : A
+WHAT HELD : the face, the robe layering, the bare feet
+WHAT DRIFTED : the aura reads as a hard ring instead of a soft core;
+               pauldrons came back as full plate armour
+WORST FRAME OF THE FOUR : #3 — added a second figure
+KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
+  <button class="copy" id="copydrift" style="margin-top:10px">Copy the drift report template</button>
+
+  <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">Versioning &mdash; where v2 lives</h3></div>
+  <table class="dials" style="margin-bottom:34px">
+    <thead><tr><th style="width:26%">Thing</th><th>Rule</th></tr></thead>
+    <tbody>
+      <tr><td><b>The file</b></td><td>Version goes between variant and take: <code>REF-oriane-A7-M016-B-v2-01</code>. A v1 is never overwritten and never deleted &mdash; it stays beside the v2 so a regression is visible instead of mysterious. No version suffix means v1.</td></tr>
+      <tr><td><b>The folder</b></td><td><b>Same folder. Always.</b> A v2 is the same identity at a better quality, not a different asset. It goes next to its v1 in <code>Characters / ORIANE</code>. Never a <code>v2/</code> subfolder &mdash; that splits the one view you need.</td></tr>
+      <tr><td><b>The prompt in this bible</b></td><td>When a v2 prompt is written, it is added to the asset card as a second tab beside the original, so both are visible and copyable. The v1 is kept, because knowing what failed is how you avoid rewriting your way back into it.</td></tr>
+      <tr><td><b>The Soul</b></td><td>Unversioned. One Soul per identity for the whole production. If you genuinely must retrain, every anchor generated from the old Soul is invalidated &mdash; treat it as a Gate A failure and say so out loud rather than quietly carrying on.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><h3 style="font-size:22px">Referencing saved assets with <code>@</code></h3>
+    <p>Once an asset is saved in the project it can be pulled into a later prompt by handle rather than re-described. This is what stops a forty-asset production turning into forty independent descriptions that slowly disagree.</p>
+  </div>
+  <table class="dials" style="margin-bottom:22px">
+    <thead><tr><th style="width:26%">Do this</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><b>Give it a clean handle</b></td><td>Handles want to be short, lowercase and unambiguous &mdash; <code>oriane</code>, <code>caedom-ascended</code>, <code>vigil</code>, <code>leviathan</code>. Set it when you save the asset, not later. A handle with a space or a capital in it is a handle you will mistype at speed.</td></tr>
+      <tr><td><b>Reference, do not re-describe</b></td><td>In a later prompt, call the saved asset by its handle and then describe only <i>what is different about this frame</i> &mdash; the state, the lighting, the action. Re-describing the face in every prompt is how faces drift, because each description is a fresh chance to disagree with the last.</td></tr>
+      <tr><td><b>One handle per identity</b></td><td>Oriane has one handle across all ten of her states. The state is carried by the modifier fragment appended to the prompt, never by a second handle. Two handles for one character is two identities that will diverge.</td></tr>
+      <tr><td><b>Anchors reference, shots inherit</b></td><td>Use handles heavily when generating the 39 anchor frames. In the motion pass you mostly do not need them: the shot inherits identity from its start frame, which is already correct.</td></tr>
+    </tbody>
+  </table>
+  <div class="verdict" style="margin-bottom:34px">
+    <b>Verify the exact syntax on-platform before you rely on it.</b> The reference mechanic and its trigger character are read from the Higgsfield UI at the time you build, and this environment cannot reach the site to confirm the current form. Save one asset, reference it in a throwaway prompt, and confirm it resolves before you build thirty-nine frames on the assumption.
+  </div>
+
+  <div class="sec-head"><h3 style="font-size:22px">Canvas, and the other tools &mdash; a ruling</h3></div>
+  <div class="grid g2">
+    <div class="card pick">
+      <span class="tag">Use</span>
+      <h3>Inside the project, for the film</h3>
+      <p><b>Image</b> and <b>Soul V2</b> for every reference and anchor. <b>Cinema Studio</b> for every shot. <b>Upscale</b> at the finishing stage. That is the whole tool list, and everything on it writes into the submission project's generation history, which is what Rule 7 actually checks.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Lookdev only</span>
+      <h3>Canvas and the scratch surfaces</h3>
+      <p><b>Do not build anything that ships on a board or canvas surface.</b> Not because it is a bad tool &mdash; because the entry is verified against the project's own generation history, and anything composed on a side surface risks landing outside it. Use it to think, then regenerate the decision properly inside the project and park the sketch in <code>99 &middot; LOOKDEV</code>. <b>If a frame's history is not in the project, that frame cannot be in the film.</b></p>
+    </div>
+  </div>
+</div></section>
+
 <!-- ================= FOLDERS ================= -->
 <section id="folders"><div class="wrap">
   <div class="sec-head">
@@ -1144,29 +1326,35 @@ footer a{color:var(--ink-2)}
 
   <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">The structure</h3></div>
   <pre class="paste" style="max-height:none">The Same Miracle/
-&#9500;&#9472; 00 &middot; REFERENCES            &larr; Phase 0. Generated in-window, from scratch.
-&#9474;  &#9500;&#9472; Characters             one folder per character, state in the filename &mdash;
-&#9474;  &#9474;                          see Power States. REF-oriane, REF-oriane-damaged, REF-caedom,
-&#9474;  &#9474;                          REF-brothers, REF-threadwright, REF-keeper,
-&#9474;  &#9474;                          REF-turned, LEV-rider
+&#9500;&#9472; 00 &middot; REFERENCES            &larr; by IDENTITY. Generated in-window, from scratch.
+&#9474;  &#9500;&#9472; States                 RULE-aura &larr; generate first, it governs everything
+&#9474;  &#9474;                          LADDER-oriane, LADDER-attunement
+&#9474;  &#9500;&#9472; Characters
+&#9474;  &#9474;  &#9500;&#9472; ORIANE/             every state, every variant, every version, one folder
+&#9474;  &#9474;  &#9500;&#9472; CAEDOM/             ascended + mortal &mdash; same identity, two forms
+&#9474;  &#9474;  &#9500;&#9472; BROTHERS/           both boys, always together
+&#9474;  &#9474;  &#9500;&#9472; THREADWRIGHT/
+&#9474;  &#9474;  &#9500;&#9472; VIGIL/
+&#9474;  &#9474;  &#9492;&#9472; TURNED/             group sheet, fused rider, all seven domains
 &#9474;  &#9500;&#9472; Locations              BG-courtyard, BG-nacre, BG-bloom, BG-vigil-temple,
 &#9474;  &#9474;                          BG-keepers-isle, BG-machira
 &#9474;  &#9500;&#9472; Props &amp; Creatures      PROP-shell, PROP-hollowstone, PROP-tear, PROP-coral,
 &#9474;  &#9474;                          PROP-ore, PROP-ships, LEV-body
 &#9474;  &#9500;&#9472; Lighting Plates        PLATE-mv1, PLATE-mv2, PLATE-mv3, PLATE-mv3b
 &#9474;  &#9492;&#9472; Effects                FX-hollow, FX-mind, FX-mountain, FX-strike-blast
-&#9474;                             (suffix every file -A, -B or -C for its variant)
-&#9500;&#9472; 01 &middot; ANCHORS               &larr; the 39-frame string, in film order
+&#9500;&#9472; 01 &middot; ANCHORS               &larr; by POSITION. The 39-frame string, in film order.
 &#9474;  &#9500;&#9472; MV1 The Sun            F01-F09, F36, F37
 &#9474;  &#9500;&#9472; MV2 The Ocean          F10-F22, B01
 &#9474;  &#9492;&#9472; MV3 The Island         F23-F35, B02
-&#9500;&#9472; 02 &middot; DRAFT MOTION          DRAFT-S01 &hellip; DRAFT-S23   (Phase 3, budget tier)
-&#9500;&#9472; 03 &middot; FINAL SHOTS           FINAL-S01 &hellip; FINAL-S23   (Phase 4, by movement)
+&#9500;&#9472; 02 &middot; DRAFT MOTION          &larr; by STAGE. DRAFT-S01 &hellip; DRAFT-S23
+&#9500;&#9472; 03 &middot; FINAL SHOTS           FINAL-S01 &hellip; FINAL-S23
 &#9500;&#9472; 04 &middot; FINISHING             MASTER-S## &mdash; deflicked, then upscaled
 &#9500;&#9472; 05 &middot; AUDIO                 every external audio file, uploaded here
-&#9500;&#9472; 06 &middot; DELIVERY              Watermarks + packshot, watermarked master,
-&#9474;                             social cut, the public post URL
-&#9492;&#9472; 99 &middot; LOOKDEV (not the film)  sketches, rejects, mood frames</pre>
+&#9500;&#9472; 06 &middot; DELIVERY              watermark + packshot, master, social cut, post URL
+&#9492;&#9472; 99 &middot; LOOKDEV (not the film)  every reject, name untouched. Never deleted.
+
+   No scene folders. Anywhere. Ever.
+   State and version live in the FILENAME: REF-oriane-A7-M016-B-v2-01</pre>
 
   <div class="verdict" style="margin-top:22px">
     <b>The one habit that makes this work:</b> name the file the moment it is generated, from the ledger, not later from memory. <code>F12</code> is findable in nine weeks; <code>generation_4471</code> is not, and at Gate B you are looking at thirty-nine of them at once.
@@ -2590,7 +2778,7 @@ const FRAGS=[
 ];
 const PREP=[
 /* ============ CHARACTERS ============ */
-{k:"gwen",n:"Oriane",tag:"c",tl:"Character",sv:"REF-oriane",
+{k:"gwen",n:"Oriane",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / ORIANE",sv:"REF-oriane",
  canon:"Ch I &mdash; &ldquo;garbed in robes of light&rdquo;, &ldquo;stood encased in crystal&rdquo;, the crystal &ldquo;elevated her physical body&rdquo;. Ch II &mdash; &ldquo;her crystalized body&rdquo;, &ldquo;her crystal form&rdquo;, lightning &ldquo;cut through her hollow and crystal&rdquo; at the cheek, &ldquo;her feet were bare&rdquo;, wind in her hair.",
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; photoreal",sv:"REF-oriane-A-##",
@@ -2607,7 +2795,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast. A woman in full-length layered robes stands against a near-black field. A hard white key raking across her from the left is caught by the prismatic sheen in the cloth and by the faceted light-formed pauldrons, throwing bands of saturated violet, cyan and amber along every fold and across the floor around her. The heavy cloth burns warm gold against those cold spectral bands — full complementary opposition, gold against violet, with nothing neutral between them. Behind her the wing-aura reads as two faint fans of refracted colour with no solid edge anywhere. Deep shadows that hold colour rather than going grey. Rim light picking the silhouette in hot cyan. Face bare and unobscured, fully clothed, bare feet. Rich, saturated, operatic. Photoreal, no glow effects on the skin, no particles, no text, no watermark.`}
  ]},
 
-{k:"gwendmg",n:"Oriane &mdash; battle damage",tag:"c",tl:"Character",sv:"REF-oriane-damaged",
+{k:"gwendmg",n:"Oriane &mdash; battle damage",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / ORIANE",sv:"REF-oriane-damaged",
  canon:"Ch II &mdash; lightning &ldquo;ripping at her cheek&hellip; cut through her hollow and crystal&rdquo;; &ldquo;a spear of ore pierced her left calf&rdquo;; hail &ldquo;tinkling on her crystal form&rdquo;. Novel shows blood; this sheet renders the damage as fractured mineral instead.",
  v:[
  {c:"A",n:"Damage sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 (same Soul)",tech:"Split-screen &middot; white cyc &middot; three marks only",sv:"REF-oriane-damaged-A-##",
@@ -2624,7 +2812,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast. A robed woman lit by two hard opposed sources — a cold cyan key from behind and left, a hot amber kicker from below and right — with a deep saturated blue-black between them and no neutral tone anywhere. The three points of damage catch the light differently from the intact plate: the starred fracture on the right cheekbone scatters cyan, the shattered rosette in the left calf burns amber from beneath, and the scratch-scoring across the torso reads as thin bright spectral lines. Torn robe of light streaming, salt-matted hair, rain in the air catching both keys. Dry cracked mineral throughout. No blood, no wounds, no gore, no glow bloom, no text, no watermark.`}
  ]},
 
-{k:"bros",n:"Alder and Wren &mdash; the brothers",tag:"c",tl:"Character",sv:"REF-brothers",
+{k:"bros",n:"Alder and Wren &mdash; the brothers",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / BROTHERS",sv:"REF-brothers",
  canon:"Ch III &mdash; Alder is eight today, Wren &ldquo;only six-and-a-half&rdquo;, &ldquo;one brother blonde and the other brunette&rdquo; (the novel does not say which), &ldquo;both equal in height and joy&rdquo;. Deliberate deviation: the novel has them strip to their shorts to swim; these sheets keep them clothed.",
  v:[
  {c:"A",n:"Paired sheet",w:"Image &rarr; 16:9 &rarr; Reference Element (both boys)",tech:"Four paired views &middot; white cyc",sv:"REF-brothers-A-##",
@@ -2641,7 +2829,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast, locked-off wide. Two boys stand at the tide line of a tropical beach at first light, small in a very wide frame, backs half to camera. The sand is pushed to full iridescence — clear pinks, mint greens and pale violets separating in the grain and catching a hard low sun. Water in deep saturated turquoise breaking to white. Jungle at the left in dense blue-green shadow with no detail. The low sun rims both boys in hot orange against all that cool colour, full complementary opposition. Both fully clothed in undyed tunics and loose trousers, barefoot, exactly the same height, one dark head and one blonde. Fully clothed, no bare torsos, no swimwear. Photoreal, no text, no watermark.`}
  ]},
 
-{k:"pup",n:"The Threadwright",tag:"c",tl:"Character",sv:"REF-threadwright",
+{k:"pup",n:"The Threadwright",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / THREADWRIGHT",sv:"REF-threadwright",
  canon:"Ch II &mdash; &ldquo;the master threadwright&rdquo;, a woman, moves and protects the others with her own understanding of hollows, possibly &ldquo;possessing the animal within them as well&rdquo;, &ldquo;a burning hunger to devour a creature of radiant light&rdquo;, faltered once when Oriane smiled.",
  v:[
  {c:"A",n:"Occluded sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Five views &middot; charcoal cyc &middot; face never shown",sv:"REF-threadwright-A-##",
@@ -2658,7 +2846,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme chroma, no neutral tone anywhere in frame. A woman in full-length dark rippling cloth hovers above a storm ocean, seen from behind and slightly below, her face not visible and never becoming visible. She is lit by two hard opposed sources with nothing between them: a saturated cyan key from screen left and a deep magenta kicker from screen right, the two colours meeting along the centre of her back and along the edges of every fold. The cloth drifts as though fully submerged. Her hands are held low, fingers precisely posed mid-gesture, lit cyan on one side and magenta on the other. Black sea, black sky, rain catching both colours as coloured streaks. No warm tone, no face, no eye contact, no glow, no text, no watermark.`}
  ]},
 
-{k:"guard",n:"The Keepers",tag:"c",tl:"Character",sv:"REF-keeper",
+{k:"guard",n:"The Keepers",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / VIGIL",sv:"REF-keeper",
  canon:"Ch III &mdash; &ldquo;two lines&hellip; marching out with white robes and blank faces&rdquo;, &ldquo;a fluid motion to their step, lacking all impatience&rdquo;, they &ldquo;took a knee, all bowing their heads&rdquo; and refuse to look at the scene, and Wren notes &ldquo;there were small Keepers out there too&rdquo;.",
  v:[
  {c:"A",n:"Order sheet",w:"Image &rarr; 16:9 &rarr; Reference Element",tech:"Five views &middot; white cyc &middot; identical robe cut",sv:"REF-keeper-A-##",
@@ -2675,7 +2863,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma, locked-off wide and static. Two parallel lines of figures in undyed white robes and heavy white cloaks kneel in sand, heads bowed, facing a sea they refuse to look at. Everything behind and around them is pushed to saturated crimson and burnt orange — the sun a hard red disc, the dust incandescent, the sea reflecting fire, the sky deep rust falling to near-black at the top of frame. The robes stay pure neutral white and are the only unsaturated thing in the picture, so they read as cut out of the fire rather than lit by it. Long hard shadows thrown toward camera in deep blue-violet. No insignia, no armour, no weapons, no glow, no text, no watermark.`}
  ]},
 
-{k:"turned",n:"The Turned &mdash; sixteen pursuers",tag:"c",tl:"Character",sv:"REF-turned",
+{k:"turned",n:"The Turned &mdash; sixteen pursuers",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-turned",
  canon:"Ch II &mdash; sixteen following her; specialists in water and its phases, energy, gravity, metals; lesser ones are &ldquo;puppets&rdquo; whose bodies &ldquo;collapse, tumbling and then disintegrating&rdquo;; &ldquo;no dark being could truly care for another&rdquo;.",
  v:[
  {c:"A",n:"Rank sheet",w:"Image &rarr; 16:9 &rarr; Reference Element",tech:"Three ranks &middot; one corruption each &middot; dark cyc",sv:"REF-turned-A-##",
@@ -2692,7 +2880,7 @@ const PREP=[
   p:`Character key-art sheet for a group, photoreal, extreme chroma, plain near-black background. Nine gaunt figures in dark sodden cloth, lit entirely by two unpleasant sources: a sickly yellow-green from below and a bruise-violet from behind, meeting on every face and every joint with no neutral tone between them. Skin reads greenish in the light and violet in the shadow. Joints hyperextended past their stops, heads lolling, several carried limp with arms trailing. One figure mid-dissolution, its edges going to drifting ash that catches the violet. The specialists keep their single tells — a pillar of black water, a blue arc between fingers, air bending, orbiting rust-red ore. Colour separation extreme, blacks crushed and slightly green. No gore, no blood, no wounds, no glowing eyes, no text, no watermark.`}
  ]},
 
-{k:"levrider",n:"The fused Dominion wielder",tag:"c",tl:"Character",sv:"LEV-rider",
+{k:"levrider",n:"The fused Dominion wielder",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"LEV-rider",
  canon:"Ch II &mdash; &ldquo;fused in its head, pierced into its flesh, was a wielder of animals. One who understands the Stone of Thrall. The worst of their kind.&rdquo; The creature&rsquo;s appearance is &ldquo;a physical manifestation of a corrupted soul&rdquo;.",
  v:[
  {c:"A",n:"Join study",w:"Image &rarr; 21:9 &rarr; detail study",tech:"Four views &middot; dark cyc &middot; overgrown seam",sv:"LEV-rider-A-##",
@@ -2710,7 +2898,7 @@ const PREP=[
  ]},
 
 /* ============ LIGHTING PLATES ============ */
-{k:"l1",n:"Movement I &mdash; the Sun",tag:"l",tl:"Lighting plate",sv:"PLATE-mv1-light",
+{k:"l1",n:"Movement I &mdash; the Sun",tag:"l",tl:"Lighting plate",fld:"00 &middot; REFERENCES / Lighting Plates",sv:"PLATE-mv1-light",
  canon:"Ch I &mdash; the Sun as a place that can be stood on, &ldquo;a building of solidified light-beams&rdquo;, &ldquo;a luxurious courtyard patterned with worlds as garden flowers&rdquo;.",
  v:[
  {c:"A",n:"Key plate",w:"Image &rarr; 21:9 &rarr; plate only",tech:"Empty frame &middot; key from below",sv:"PLATE-mv1-light-A",
@@ -2727,7 +2915,7 @@ const PREP=[
   p:`Empty lighting plate, no characters, no story, high chroma and extreme contrast. Cinematic 2.39:1. The surface of a star as landscape: an ocean of liquid plasma pushed to saturated molten gold and white-hot at the crests, moving like weather. Above it a courtyard of solidified light beams, its shadowed faces falling to deep saturated cobalt blue rather than grey — full complementary opposition with no neutral midtone anywhere between the gold and the blue. Key from below throwing hard-edged blue shadows upward. Heavy haze rendered in warm amber where lit and cold blue where not. Anamorphic flare in gold. Blacks crushed and slightly blue. This is the outer limit of the Movement I grade, not its default. No people, no text, no watermark.`}
  ]},
 
-{k:"l2",n:"Movement II &mdash; the Ocean",tag:"l",tl:"Lighting plate",sv:"PLATE-mv2-light",
+{k:"l2",n:"Movement II &mdash; the Ocean",tag:"l",tl:"Lighting plate",fld:"00 &middot; REFERENCES / Lighting Plates",sv:"PLATE-mv2-light",
  canon:"Ch II &mdash; open ocean, &ldquo;the eye of the gathering storm&rdquo;, leviathans below, rain, lightning, sea spray, walls of water that solidify into ice.",
  v:[
  {c:"A",n:"Key plate",w:"Image &rarr; 21:9 &rarr; plate only",tech:"Empty frame &middot; fully desaturated",sv:"PLATE-mv2-light-A",
@@ -2744,7 +2932,7 @@ const PREP=[
   p:`Empty lighting plate, no characters, no story, high chroma and extreme contrast — this plate deliberately violates the desaturation rule and exists to define its limit. Cinematic 2.39:1. A storm ocean under a sky pushed to deep saturated violet, the cloud structure separating into magenta at the crests and near-black in the troughs. The water reads cold saturated teal, breaking to white at the tearing tops. Lightning in hot electric blue-white, lighting the rain as individual coloured streaks. Full violet-against-teal opposition with no neutral tone anywhere. Long-lens compression, spray on the lens. No warm colour is permitted even here — the chroma is entirely in the cold half of the wheel. No people, no text, no watermark.`}
  ]},
 
-{k:"l3",n:"Movement III &mdash; the Island",tag:"l",tl:"Lighting plate",sv:"PLATE-mv3-light",
+{k:"l3",n:"Movement III &mdash; the Island",tag:"l",tl:"Lighting plate",fld:"00 &middot; REFERENCES / Lighting Plates",sv:"PLATE-mv3-light",
  canon:"Ch III &mdash; &ldquo;the radiant, colored sands of Nacre Beach&rdquo;, jungle at the treeline, the swim begun at twilight with the Sun already warm.",
  v:[
  {c:"A",n:"Key plate",w:"Image &rarr; 21:9 &rarr; plate only",tech:"Empty frame &middot; locked-off &middot; golden hour",sv:"PLATE-mv3-light-A",
@@ -2761,7 +2949,7 @@ const PREP=[
   p:`Empty lighting plate, no characters, no story, high chroma and high contrast. Cinematic 2.39:1, locked-off wide, 32mm, low. A tropical beach at golden hour with the colour taken to full saturation: sand strongly iridescent with clear pinks, mint greens and pale violets separating in the grain; water in deep saturated turquoise shading to cobalt at the horizon; jungle at the left in rich blue-green with the sunlit leaf edges burning yellow-green. A low sun throwing hot orange light directly toward camera against all that cool colour, full complementary opposition. Long shadows in saturated blue-violet rather than grey. Warm, vivid, almost too beautiful — which is the point. No people, no text, no watermark.`}
  ]},
 
-{k:"platemv3b",n:"Movement III &mdash; bombardment",tag:"l",tl:"Lighting plate",sv:"PLATE-mv3b",
+{k:"platemv3b",n:"Movement III &mdash; bombardment",tag:"l",tl:"Lighting plate",fld:"00 &middot; REFERENCES / Lighting Plates",sv:"PLATE-mv3b",
  canon:"Ch III &mdash; &ldquo;illuminated by the rays of the setting Sun&rdquo;, &ldquo;All was hazy and red like crimson clouds&rdquo;, &ldquo;A great dust storm stirred up, obscuring all shapes into dark-brown shadows&rdquo;.",
  v:[
  {c:"A",n:"Key plate",w:"Image &rarr; 21:9 &rarr; plate only",tech:"Empty frame &middot; crimson backlight &middot; dust",sv:"PLATE-mv3b-A",
@@ -2779,7 +2967,7 @@ const PREP=[
  ]},
 
 /* ============ BACKGROUNDS ============ */
-{k:"courtyard",n:"Courtyard of worlds",tag:"p",tl:"Background",sv:"BG-courtyard",
+{k:"courtyard",n:"Courtyard of worlds",tag:"p",tl:"Background",fld:"00 &middot; REFERENCES / Locations",sv:"BG-courtyard",
  canon:"Ch I &mdash; &ldquo;a building of solidified light-beams, surrounded by a luxurious courtyard patterned with worlds as garden flowers&rdquo;.",
  v:[
  {c:"A",n:"Establishing plate",w:"Image &rarr; 21:9 &rarr; establishing",tech:"Photoreal &middot; empty &middot; key from below",sv:"BG-courtyard-A",
@@ -2796,7 +2984,7 @@ const PREP=[
   p:`Establishing key-art plate, no characters, high chroma and high contrast. Cinematic 2.39:1. A formal courtyard whose flowerbeds are planted with worlds — small living planets on stems, each turning slowly, and each a different saturated colour: deep ocean blue, rust red, banded amber, jade green, violet, each with its own visible cloud system catching light. They are the only saturated objects in frame and they glow softly against the structure around them. The courtyard's beams of solid light read as cold near-white; everything they do not reach falls to deep blue-black. An ocean of molten gold plasma beyond the parapet. Key from below, hard blue shadows, heavy amber haze. No people, no text, no watermark.`}
  ]},
 
-{k:"beach",n:"Nacre Beach",tag:"p",tl:"Background",sv:"BG-nacre",
+{k:"beach",n:"Nacre Beach",tag:"p",tl:"Background",fld:"00 &middot; REFERENCES / Locations",sv:"BG-nacre",
  canon:"Ch III &mdash; &ldquo;the radiant, colored sands of Nacre Beach&rdquo; on the west edge of Cairn Island, the brothers coming out of the jungle at twilight, the swim &ldquo;just over three miles&rdquo;.",
  v:[
  {c:"A",n:"Establishing plate",w:"Image &rarr; 21:9 &rarr; establishing",tech:"Photoreal &middot; locked-off &middot; 32mm low",sv:"BG-nacre-A",
@@ -2813,7 +3001,7 @@ const PREP=[
   p:`Establishing key-art plate, no characters, high chroma and high contrast. Cinematic 2.39:1, locked-off wide, 32mm, very low to the ground so the sand fills the lower half of frame. A tropical beach at dawn with the light raking almost horizontally across the surface, so every grain casts a micro-shadow and the iridescence separates completely — clear pinks, mint greens, pale violets and cold blues visible as distinct colours in the grain rather than as a tint. Wet sand at the tide line mirroring a saturated orange sky. Deep turquoise water beyond, jungle at the left as a dense blue-green mass. Extreme colour separation, blacks holding blue. No people, no footprints, no text, no watermark.`}
  ]},
 
-{k:"bgbloom",n:"The Corals and the abyss",tag:"p",tl:"Background",sv:"BG-bloom",
+{k:"bgbloom",n:"The Corals and the abyss",tag:"p",tl:"Background",fld:"00 &middot; REFERENCES / Locations",sv:"BG-bloom",
  canon:"Ch III &mdash; &ldquo;none were quite as vibrant or lively as the Bloom&rdquo;; &ldquo;Fish, stingray. Eels, urchins&rdquo;; &ldquo;as the reef dropped off into the abyss, the two young boys swam on, unaware of the beasts that lurked beneath them&rdquo;.",
  v:[
  {c:"A",n:"Reef plate",w:"Image &rarr; 21:9 &rarr; underwater establishing",tech:"Photoreal &middot; held wide &middot; drop-off in frame",sv:"BG-bloom-A",
@@ -2830,7 +3018,7 @@ const PREP=[
   p:`Underwater key-art plate, no people, extreme chroma and extreme contrast. Cinematic 2.39:1, held wide. A living coral reef occupying the upper half of frame at maximum saturation — hot corals and magentas, electric yellows, deep purples and acid greens in the soft corals and sea fans, dense shoals of small fish in saturated blue and gold crossing the frame, a stingray in pale sand-gold. Hard sunlight breaking through the surface above in defined shafts, caustics dancing bright across every surface. Directly ahead and below, the reef ends at a clean edge and drops into total lightless black occupying the lower third — no colour, no detail, no gradient, an absolute hollow against all that saturation. The black stays empty. No creature in the dark, no people, no text, no watermark.`}
  ]},
 
-{k:"temple",n:"The white temple",tag:"p",tl:"Background",sv:"BG-vigil-temple",
+{k:"temple",n:"The white temple",tag:"p",tl:"Background",fld:"00 &middot; REFERENCES / Locations",sv:"BG-vigil-temple",
  canon:"Ch III &mdash; &ldquo;the brilliant white of the Vigil Temple&rdquo;; under fire &ldquo;the white structure was ghostly as sand and flowers fell around it&rdquo;; &ldquo;the Temple doors fell open&rdquo; onto &ldquo;the bright hollow&rdquo;.",
  v:[
  {c:"A",n:"Three states",w:"Image &rarr; 21:9 &rarr; establishing",tech:"Photoreal &middot; three conditions on one sheet",sv:"BG-vigil-temple-A",
@@ -2847,7 +3035,7 @@ const PREP=[
   p:`Establishing key-art plate, no characters, extreme contrast and high chroma. Cinematic 2.39:1. A plain white stone temple stands square to camera while the world around it burns — the sky pushed to deep saturated crimson, the drifting dust incandescent orange, the sea behind reflecting fire, the shadows falling in deep blue-violet. The temple's stone stays a clean neutral white and does not take the colour cast, so it reads as cut out of the frame rather than lit within it. Torn flowers in saturated pink and yellow falling across its face. Its shut doors are the darkest shape in the picture. No people, no text, no watermark.`}
  ]},
 
-{k:"bgisle",n:"Keeper's Isle &mdash; the ground",tag:"p",tl:"Background",sv:"BG-keepers-isle",
+{k:"bgisle",n:"Keeper's Isle &mdash; the ground",tag:"p",tl:"Background",fld:"00 &middot; REFERENCES / Locations",sv:"BG-keepers-isle",
  canon:"Ch III &mdash; &ldquo;Only Keepers can step foot on their Isle&rdquo;; the Isle &ldquo;in shambles&rdquo; under fire; afterwards &ldquo;repairing craters with sand and soil. Their garden was replanted in moments.&rdquo;",
  v:[
  {c:"A",n:"Three states",w:"Image &rarr; 21:9 &rarr; establishing",tech:"Photoreal &middot; identical camera in all three",sv:"BG-keepers-isle-A",
@@ -2864,7 +3052,7 @@ const PREP=[
   p:`Establishing key-art plate, no characters, high chroma and high contrast, two frames from an identical camera position. One: the garden intact — formal beds in saturated coral, magenta, yellow and white flowering plants against deep green foliage and pale sand, lit warm and low, the most colourful thing on the island. Two: the same view destroyed — the beds torn open, the colour buried under grey-brown ash and cratered sand, the surviving petals reading as scattered points of saturated colour in an otherwise desaturated frame. Identical camera, identical lens, identical planting geometry in both. Deep blue-violet shadows, crushed blacks holding colour. No people, no text, no watermark.`}
  ]},
 
-{k:"bgmachira",n:"Machira from orbit",tag:"p",tl:"Background",sv:"BG-machira",
+{k:"bgmachira",n:"Machira from orbit",tag:"p",tl:"Background",fld:"00 &middot; REFERENCES / Locations",sv:"BG-machira",
  canon:"Ch I &mdash; &ldquo;the massive orb that was her planet. The third rock from the Sun. The inhabited planet of Machira.&rdquo; Ch II &mdash; the vortex becomes &ldquo;a black hole that stretched out into the space between planets&rdquo;.",
  v:[
  {c:"A",n:"The planet",w:"Image &rarr; 21:9 &rarr; establishing",tech:"Photoreal &middot; from the courtyard's edge",sv:"BG-machira-A",
@@ -2882,7 +3070,7 @@ const PREP=[
  ]},
 
 /* ============ PROPS &amp; CREATURES ============ */
-{k:"shell",n:"The aura and the light-formed pieces",tag:"p",tl:"Prop",sv:"PROP-shell",
+{k:"shell",n:"The aura and the light-formed pieces",tag:"p",tl:"Prop",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"PROP-shell",
  canon:"Ch I &mdash; &ldquo;A crystal formed by a Founding Stone, to protect its bearer&rdquo;, which &ldquo;elevated her physical body&rdquo;. Ch II &mdash; &ldquo;her crystalized body&rdquo;, &ldquo;her crystal form&rdquo;, hail &ldquo;tinkling&rdquo; on it, lightning cutting &ldquo;through her hollow and crystal&rdquo;.",
  v:[
  {c:"A",n:"Material sheet",w:"Image &rarr; 21:9 &rarr; plain background",tech:"Four studies &middot; grown not manufactured",sv:"PROP-shell-A",
@@ -2899,7 +3087,7 @@ const PREP=[
   p:`Extreme macro material study on a plain black background, high chroma and extreme contrast, four panels. A crystalline mineral splitting a hard white beam into visible spectra. One: a single thick facet with a beam entering and leaving as a fanned spectrum across the black. Two: light passing through internal fracture planes, throwing coloured caustics that separate into bands where the planes cross. Three: the transition where opaque plate thins to transparent lattice, the thin edge glowing spectral while the thick mass stays cold white. Four: a broken face scattering the beam into hundreds of coloured points. Physically plausible dispersion and refraction. Saturated spectral colour against absolute black, no ambient fill. No figure, no body, no text, no watermark.`}
  ]},
 
-{k:"stone",n:"The Founding Stone",tag:"p",tl:"Prop",sv:"PROP-hollowstone",
+{k:"stone",n:"The Founding Stone",tag:"p",tl:"Prop",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"PROP-hollowstone",
  canon:"Ch I &mdash; the Second Stone, the Founding Stone of Hollows, held &ldquo;in her heart&rdquo;, fused with it, separable at will. Ch II &mdash; it &ldquo;fell from her body&rdquo; and she &ldquo;launched it thousands of miles away&rdquo;. The novel gives it no colour.",
  v:[
  {c:"A",n:"Prop sheet",w:"Image &rarr; 21:9 &rarr; plain background",tech:"Four studies &middot; ancient not magical",sv:"PROP-hollowstone-A",
@@ -2916,7 +3104,7 @@ const PREP=[
   p:`Macro key-art study on a pure black background, high chroma and extreme contrast. An irregular unpolished stone the size of a closed fist, lit almost entirely from within by a saturated green-white core whose light moves slowly through the mass. The interior light is intense enough to make the stone translucent at its thin edges, glowing acid green there and cooling to deep jade through the thick centre. It throws a small pool of saturated green onto the black surface beneath it and lights nothing beyond that. A faint cold blue rim from a single distant source picks out the top edge, the one colour in frame that is not green. Photoreal, heavy, ancient. No bloom, no lens flare, no particles, no text, no watermark.`}
  ]},
 
-{k:"coral",n:"Leviathan coral plating",tag:"p",tl:"Prop",sv:"PROP-coral",
+{k:"coral",n:"Leviathan coral plating",tag:"p",tl:"Prop",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"PROP-coral",
  canon:"Ch II &mdash; &ldquo;Its natural plating was miraculous, covered with dead coral it had collected for years&rdquo;; underfoot it recalls &ldquo;crusted sponges&rdquo;; &ldquo;its cold and cracking flesh seemed to ooze with malice&rdquo;.",
  v:[
  {c:"A",n:"Texture sheet",w:"Image &rarr; 21:9 &rarr; texture study",tech:"Four studies &middot; takes a bare footfall",sv:"PROP-coral-A",
@@ -2933,7 +3121,7 @@ const PREP=[
   p:`Texture and material key-art study on a plain black background, high chroma and extreme contrast, raking key from one side. The hide of an enormous sea creature: armoured plating pushed to deep oxidised green-black and wet, overgrown with dead coral in bright bone white and pale bleached cream that reads several stops brighter than everything around it. Where the coral has sheeted away, the exposed hide beneath is a saturated rust-brown, wet and cold. Three materials in hard colour separation — bone, verdigris and rust — with no neutral tone between them. Water beading and running across all three, each bead catching the key as a hard white point. Photoreal, no blood, no gore, no text, no watermark.`}
  ]},
 
-{k:"levbody",n:"The Leviathan &mdash; whole creature",tag:"p",tl:"Asset",sv:"LEV-body",
+{k:"levbody",n:"The Leviathan &mdash; whole creature",tag:"p",tl:"Asset",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"LEV-body",
  canon:"Ch II &mdash; &ldquo;a great leviathan ripped from the torrential depths of the abyss&rdquo;; &ldquo;countless fins, all which now spanned outwards and filled with air, puffing up like leather balloons&rdquo;; held aloft by three Turned using gravity and hollows.",
  v:[
  {c:"A",n:"Creature sheet",w:"Image &rarr; 21:9 &rarr; creature sheet",tech:"Five views &middot; mid-grey cyc &middot; no rider",sv:"LEV-body-A-##",
@@ -2950,7 +3138,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma. An enormous sea creature hanging in the air above a storm ocean, seen from far below and rendered almost entirely as a black silhouette against a sky pushed to saturated violet and magenta, with lightning behind it lighting the cloud from within. Only the wet edges of its armoured plating and the bone-white coral along its back catch any light, drawing a hard bright rim around a black mass. Rows of inflated fins spread outward, each one a dark bulbous shape against the sky. Seawater streaming off it in long lit threads. A tall sailing ship far below for scale, tiny. Blacks fully crushed, no fill light, no detail inside the silhouette. No rider visible, no text, no watermark.`}
  ]},
 
-{k:"propore",n:"Iron ore &mdash; the spears",tag:"p",tl:"Prop",sv:"PROP-ore",
+{k:"propore",n:"Iron ore &mdash; the spears",tag:"p",tl:"Prop",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"PROP-ore",
  canon:"Ch II &mdash; &ldquo;several sharp rods hurtled towards her. She identified them as bits of iron ore, taken from stone by those who understood metals&rdquo;; later &ldquo;a spear of ore pierced her left calf&rdquo;.",
  v:[
  {c:"A",n:"Prop sheet",w:"Image &rarr; 21:9 &rarr; plain background",tech:"Four studies &middot; torn from rock not forged",sv:"PROP-ore-A",
@@ -2967,7 +3155,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma, black field. Several rough ore rods crossing frame at speed, their surfaces pushed to deep saturated rust-red and oxidised orange, motion-blurred along their length with the leading points sharp. Between and along them, filaments of hot electric blue arc through the falling rain, lighting individual droplets as bright blue points and casting a cold blue sheen along the upper edge of each rod — full complementary opposition, rust against electric blue, with no neutral tone anywhere. Everything the arc does not reach is absolute black. Water shearing off the rods in lit threads. No lens flare, no glow bloom, no beams, no text, no watermark.`}
  ]},
 
-{k:"ships",n:"The twelve ships",tag:"p",tl:"Prop",sv:"PROP-ships",
+{k:"ships",n:"The twelve ships",tag:"p",tl:"Prop",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"PROP-ships",
  canon:"Ch III &mdash; &ldquo;wooden ships with billowing sails. There were twelve of them. Foreign ships approaching rapidly from the west, releasing a hellfire of metal&rdquo;; the boys first mistake them for leviathans.",
  v:[
  {c:"A",n:"Vessel sheet",w:"Image &rarr; 21:9 &rarr; vessel sheet",tech:"Four studies &middot; identical class",sv:"PROP-ships-A-##",
@@ -2984,7 +3172,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma. Twelve tall wooden sailing ships advancing in line, seen from a low beach with the setting sun directly behind them. The canvas is backlit and translucent, burning saturated orange and gold with the rigging drawn across it in hard black line. The hulls are pure silhouette. The sea in front of them is pushed cold — deep saturated teal and blue-violet, broken by a hot orange sun track running straight toward camera. Full warm-against-cold opposition with the horizon as the dividing line. Smoke from the gun decks catching the light in hot amber. No detail in the hulls, no faces, no flags, no insignia, no text, no watermark.`}
  ]},
 
-{k:"proptear",n:"The frozen tear",tag:"p",tl:"Asset",sv:"PROP-tear",
+{k:"proptear",n:"The frozen tear",tag:"p",tl:"Asset",fld:"00 &middot; REFERENCES / Props &amp; Creatures",sv:"PROP-tear",
  canon:"Ch I, final line &mdash; &ldquo;A single tear rolled down his cheek, fell to the floor, and froze.&rdquo; It is Caedom&rsquo;s tear, and the film returns to it as its closing image.",
  v:[
  {c:"A",n:"Macro study",w:"Image &rarr; 21:9 &rarr; prop study",tech:"Extreme macro &middot; four studies",sv:"PROP-tear-A-##",
@@ -3002,7 +3190,7 @@ const PREP=[
  ]},
 
 /* ============ EFFECTS ============ */
-{k:"fxhollow",n:"The hollow &mdash; base unit of her power",tag:"p",tl:"Asset",sv:"FX-hollow",
+{k:"fxhollow",n:"The hollow &mdash; base unit of her power",tag:"p",tl:"Asset",fld:"00 &middot; REFERENCES / Effects",sv:"FX-hollow",
  canon:"Ch II &mdash; hollows open behind, in front of and inside things; they move her, break necks, armour her body, and rip matter apart. The novel never once describes them as glowing or emitting anything.",
  v:[
  {c:"A",n:"Rule sheet",w:"Image &rarr; 21:9 &rarr; effect rules",tech:"Four scales &middot; lens not glow",sv:"FX-hollow-A-##",
@@ -3019,7 +3207,7 @@ const PREP=[
   p:`Effect key-art sheet, photoreal, high chroma and extreme contrast, four panels against a saturated storm background. The same warping distortion at four scales, still emitting no light of its own. Its only colour comes from lens behaviour at the boundary: strong chromatic aberration fringing the rim, splitting the displaced background into a hard cyan edge on one side and a magenta edge on the other, intensifying where the distortion is strongest and vanishing at the centre. Behind them the storm is pushed to saturated violet and teal, so the displaced and doubled background inside each hollow is vividly coloured and vividly wrong. Rain bending through changes colour as it crosses the rim. No glow, no emission, no core, no sparks, no beams, no text, no watermark.`}
  ]},
 
-{k:"fxmind",n:"The segmented mind",tag:"p",tl:"Asset",sv:"FX-mind",
+{k:"fxmind",n:"The segmented mind",tag:"p",tl:"Asset",fld:"00 &middot; REFERENCES / Effects",sv:"FX-mind",
  canon:"Ch II &mdash; sixteen pieces doubling to thirty-two, sixty-four, one hundred and twenty-eight, then halved again past two hundred; every split &ldquo;increased the vividity of the present over the future&rdquo;; her face is &ldquo;sheer concentration and pure joy&rdquo;.",
  v:[
  {c:"A",n:"Progression sheet",w:"Image &rarr; 21:9 &rarr; effect study",tech:"Four studies &middot; the doubling",sv:"FX-mind-A-##",
@@ -3036,7 +3224,7 @@ const PREP=[
   p:`Effect key-art sheet, photoreal, high chroma and extreme contrast, four studies. A ring of translucent warping lenses around a single crouched figure, each lens fringing its rim with chromatic separation, and each at a slightly different hue so the ring reads as a prismatic band rather than a grey one. One: sixteen lenses, the colours discrete and countable. Two: doubled to sixty-four, the fringes beginning to overlap into a continuous spectrum. Three: past two hundred, the ring now a dense saturated halo of overlapping colour with the figure inside legible only as a silhouette. Four: the focus inversion, near field in hyper-detail with every raindrop resolved and colour-fringed, far field smeared into unreadable saturated bands. Her face calm, eyes closed, unstrained. No emission, no particles, no beams, no text, no watermark.`}
  ]},
 
-{k:"fxmountain",n:"The floating mountain",tag:"p",tl:"Asset",sv:"FX-mountain",
+{k:"fxmountain",n:"The floating mountain",tag:"p",tl:"Asset",fld:"00 &middot; REFERENCES / Effects",sv:"FX-mountain",
  canon:"Ch III &mdash; projectiles halt, &ldquo;the shifting sands converged on the metal scraps&rdquo;, rock and dead coral erupt from the sea, the mass &ldquo;merged as one, creating what appeared to be a floating mountain&rdquo;, then falls &ldquo;as if driven by a force stronger than gravity&rdquo;.",
  v:[
  {c:"A",n:"Sequence sheet",w:"Image &rarr; 21:9 &rarr; effect sequence",tech:"Four stages &middot; no light of any kind",sv:"FX-mountain-A-##",
@@ -3053,7 +3241,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma. An enormous mass of compacted sand, rock and dead coral hangs motionless above twelve sailing ships, rendered almost entirely as a black silhouette against a sky pushed to incandescent crimson and orange. Only its upper edges catch the low sun, drawn as a hard bright rim of bone white and rust. Its underside and its vast shadow across the water are the deepest blue-violet in the frame. The sea around the shadow burns with reflected fire; inside the shadow it goes almost black. Tiny figures going over the sides of the hulls. The mass emits no light of any kind. No glow, no beams, no energy, no runes, no text, no watermark.`}
  ]},
 
-{k:"fxkill",n:"The kill beat &mdash; strike and blast",tag:"p",tl:"Asset",sv:"FX-strike-blast",
+{k:"fxkill",n:"The kill beat &mdash; strike and blast",tag:"p",tl:"Asset",fld:"00 &middot; REFERENCES / Effects",sv:"FX-strike-blast",
  canon:"Ch II &mdash; she channels the contained electricity and a condensed water spike into one point on the skull, amplified by seized iron spears; &ldquo;Sound collapsed at this same point, then expanded in a massive physical wave&rdquo;; the leviathan &ldquo;rippled in its flesh&hellip; as if a meteor had crashed into a lake&rdquo;.",
  v:[
  {c:"A",n:"Sequence sheet",w:"Image &rarr; 21:9 &rarr; effect sequence",tech:"Four stages &middot; damage to material only",sv:"FX-strike-blast-A-##",
@@ -3069,7 +3257,7 @@ const PREP=[
   why:"A pressure front bends light, and bent light separates. Letting the shockfront carry a thin band of refracted colour makes an invisible phenomenon legible without giving it any emission at all.",
   p:`Effect key-art sheet, photoreal, high chroma and extreme contrast, four panels over a storm sea. A pressure event rendered entirely as displacement, with colour arriving only through refraction. One: rain converging inward toward a point, the air compressing, a faint spectral shimmer beginning along the gradient. Two: the shockfront expanding as a thin spherical shell, its leading edge carrying a narrow band of refracted spectrum where the density change is steepest — cyan on the leading side, warm amber trailing. Three: the front passing through falling rain, each droplet briefly splitting the light as it crosses. Four: the aftermath, a wide ring of flattened glassy water reflecting a saturated violet sky, mist hanging at its perimeter lit in pale rainbow. No fire, no light emission, no explosion, no debris, no beams, no text, no watermark.`}
  ]},
-{k:"aurarule",n:"Aura grammar — core vs hollow",tag:"c",tl:"Rule sheet",sv:"RULE-aura",
+{k:"aurarule",n:"Aura grammar — core vs hollow",tag:"c",tl:"Rule sheet",fld:"00 &middot; REFERENCES / States",sv:"RULE-aura",
  canon:"Ch II &mdash; &ldquo;He may understand, but he does not have the Stone itself. He lacks the core, the crux of it, the emanating essence. The fullness of it is mine alone.&rdquo; That line is the entire power system: understanding climbs to six, the core belongs only to a Stone-bearer.",
  v:[
  {c:"A",n:"The rule",w:"Image &rarr; 21:9 &rarr; rule sheet",tech:"Two auras side by side &middot; the tell",sv:"RULE-aura-A",
@@ -3086,7 +3274,7 @@ const PREP=[
   p:`Effect rule sheet, photoreal, high chroma and extreme contrast, plain black background, two silhouetted figures side by side at identical scale. LEFT: an aura in saturated cold cyan and blue-violet, hard-edged, structured, and absolutely black at the centre where the figure stands. RIGHT: an aura in saturated warm gold and amber, brightest at the core and falling off smoothly outward with no edge, the light plainly coming from inside the figure. Full complementary opposition between the two halves of the frame with no neutral tone anywhere. Both figures fully clothed silhouettes with no anatomical detail. Photoreal volumetrics, no particles, no lens flare, no text, no watermark.`}
  ]},
 
-{k:"ladder",n:"Oriane — the mind ladder",tag:"c",tl:"State ladder",sv:"LADDER-oriane",
+{k:"ladder",n:"Oriane — the mind ladder",tag:"c",tl:"State ladder",fld:"00 &middot; REFERENCES / States",sv:"LADDER-oriane",
  canon:"Ch II &mdash; her mind splits to ten, an eleventh takes the despair, then sixteen; she doubles to thirty-two, sixty-four, one hundred and twenty-eight, then halves them past two hundred. &ldquo;Every separation of the mind increased the vividity of the present over the future.&rdquo;",
  v:[
  {c:"A",n:"Eight rungs",w:"Image &rarr; 21:9 &rarr; ladder strip",tech:"M1 to M200 &middot; one row &middot; identical figure",sv:"LADDER-oriane-A",
@@ -3103,7 +3291,7 @@ const PREP=[
   p:`Character state ladder, photoreal, high chroma and extreme contrast, plain black background, the same robed woman eight times in one row at identical scale and pose. The aura travels a fixed colour path across the strip: deep saturated amber and gold at the first rung, warm and contained with a bright core; through white-gold; into hard white at the middle rungs; then cooling into saturated cyan and blue-violet; and finally, at the eighth, a corona so saturated it has no discernible colour temperature left at all, pure and blinding. Her robes stay warm-toned throughout so she remains legible as a warm figure inside an increasingly cold field &mdash; the opposition widening panel by panel. Fully clothed in every panel, no bare skin, no gore, no text, no watermark.`}
  ]},
 
-{k:"darkladder",n:"The Turned — attunement ladder",tag:"c",tl:"State ladder",sv:"LADDER-attunement",
+{k:"darkladder",n:"The Turned — attunement ladder",tag:"c",tl:"State ladder",fld:"00 &middot; REFERENCES / States",sv:"LADDER-attunement",
  canon:"Ch II &mdash; lesser ones are carried as puppets and disintegrate; specialists each command one element; the Threadwright moves them all. None of them holds a Stone, so none of them reaches the seventh.",
  v:[
  {c:"A",n:"Six rungs, six elements",w:"Image &rarr; 21:9 &rarr; ladder grid",tech:"A1 to A6 &middot; hollow at every rung",sv:"LADDER-attunement-A",
@@ -3119,7 +3307,7 @@ const PREP=[
   why:"Their colour should worsen as they strengthen, which is the opposite of how a hero ladder behaves. Six rungs of increasingly wrong colour is the fastest way to make power read as corruption rather than achievement.",
   p:`Character ladder sheet for a group, photoreal, extreme chroma, plain near-black background, six figures in one row ascending in power from left to right. The aura colour degrades as it strengthens: nearly colourless at the first rung, then a faint sickly yellow-green, then a stronger green with a bruise-violet fringe, then saturated bruise-violet, then violet with a hard magenta edge, and at the sixth a dense cold colour with a hard boundary and an absolutely black centre. Skin reads greenish where the light strikes it and violet in shadow at every rung. Dark sodden cloth throughout, gaunt drawn faces, no armour, no insignia, no matching costume. Colour separation extreme, blacks crushed and slightly green. No gore, no blood, no wounds, no glowing eyes, no text, no watermark.`}
  ]},
-{k:"bhollow",n:"Turned — Hollows",tag:"c",tl:"Lesser being",stone:"Second Stone",sv:"REF-bhollow",
+{k:"bhollow",n:"Turned — Hollows",tag:"c",tl:"Lesser being",stone:"Second Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-bhollow",
  canon:"Ch II &mdash; &ldquo;So, he also has understanding of hollows&hellip; He may understand, but he does not have the Stone itself.&rdquo; This is the being Oriane measures herself against, and the one who proves the ceiling.",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A2 &middot; A3 &middot; A4 &middot; one domain &middot; dark cyc",sv:"REF-bhollow-A-##",
@@ -3135,7 +3323,7 @@ const PREP=[
   why:"Its aura and Oriane's are the same phenomenon at different qualities, so putting them in opposed colour is the cheapest way to keep the audience clear about which is which at speed.",
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme chroma, black field. A figure ringed by warping distortions, its aura pushed to saturated cyan and blue-violet with a hard outer boundary and an absolutely black hollow at its centre. The distortions carry strong chromatic fringing at their rims, splitting the storm behind them into hard cyan and magenta edges. No warm colour anywhere in frame. No emission from the centre, no core, no glow inside the figure.`}
  ]},
-{k:"bwater",n:"Turned — Water and its Phases",tag:"c",tl:"Lesser being",stone:"Third Stone",sv:"REF-bwater",
+{k:"bwater",n:"Turned — Water and its Phases",tag:"c",tl:"Lesser being",stone:"Third Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-bwater",
  canon:"Ch II &mdash; &ldquo;They must have created the water-walls&hellip; They must have understanding of water and its phases.&rdquo; Two of them rise on pillars from the sea, and a wall of ocean stands and freezes across her path.",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A2 &middot; A3 &middot; A4 &middot; one domain &middot; dark cyc",sv:"REF-bwater-A-##",
@@ -3151,7 +3339,7 @@ const PREP=[
   why:"Water is the one domain that can legitimately hold saturated colour in a desaturated movement, because ice takes colour from what is behind it rather than emitting any.",
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme chroma. A standing wall of seawater going to ice, pushed to deep saturated cyan and bottle-green with hard white fracture planes driving through it, lit from behind by violet lightning so the whole wall glows from within. A figure beside it as a black silhouette, its aura a cold hard-edged ring with a black hollow at the centre. The sea below in deep teal, the sky saturated violet. No warm colour anywhere.`}
  ]},
-{k:"benergy",n:"Turned — Energy",tag:"c",tl:"Lesser being",stone:"Fourth Stone",sv:"REF-benergy",
+{k:"benergy",n:"Turned — Energy",tag:"c",tl:"Lesser being",stone:"Fourth Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-benergy",
  canon:"Ch II &mdash; &ldquo;A wielder of energies, too? I'm flattered.&rdquo; One strikes her cheek with lightning; another connects the spaces between raindrops with it, and later tries to pull the charge back out of her.",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A2 &middot; A3 &middot; A4 &middot; one domain &middot; dark cyc",sv:"REF-benergy-A-##",
@@ -3167,7 +3355,7 @@ const PREP=[
   why:"Electric blue against rust is the strongest colour pairing available in the movement, and this domain is where it occurs naturally alongside the ore.",
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma, black field. A figure at the centre of a lattice of saturated electric blue running between individually lit raindrops, the blue so intense it is the only light source in frame. Its aura reads cold violet with a hard boundary and an absolutely black centre. Rust-red ore rods cross the frame nearby, catching the blue along one edge &mdash; full complementary opposition. Everything untouched by the discharge is pure black.`}
  ]},
-{k:"bgravity",n:"Turned — Gravity",tag:"c",tl:"Lesser being",stone:"Fifth Stone",sv:"REF-bgravity",
+{k:"bgravity",n:"Turned — Gravity",tag:"c",tl:"Lesser being",stone:"Fifth Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-bgravity",
  canon:"Ch II &mdash; &ldquo;A being of wrath shrieked with pleasure, using gravity to increase Oriane's weight. Her time became warped.&rdquo; Three more hold the leviathan aloft with the same understanding.",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A3 &middot; A4 &middot; A5 &middot; one domain &middot; dark cyc",sv:"REF-bgravity-A-##",
@@ -3183,7 +3371,7 @@ const PREP=[
   why:"Its effect on time is the detail worth spending colour on: the film can show her time warping as a shift in the colour of everything inside the affected region.",
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme chroma. A region of the frame near a hanging figure is visibly compressed, and inside that region the entire palette has shifted &mdash; deep saturated violet and magenta, rain falling in hard streaks, motion smeared long &mdash; while outside it the storm stays cold teal and the rain drifts normally. The boundary between the two regions is a soft curved line rather than an edge. The figure's aura is dense, cold and absolutely black at its centre. No beams, no visible force, no energy effects.`}
  ]},
-{k:"bmetal",n:"Turned — Metals",tag:"c",tl:"Lesser being",stone:"Sixth Stone",sv:"REF-bmetal",
+{k:"bmetal",n:"Turned — Metals",tag:"c",tl:"Lesser being",stone:"Sixth Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-bmetal",
  canon:"Ch II &mdash; &ldquo;She identified them as bits of iron ore, taken from stone by those who understood metals.&rdquo; They spear her with ore and pair with the energy wielders to run charge along it.",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A2 &middot; A3 &middot; A4 &middot; one domain &middot; dark cyc",sv:"REF-bmetal-A-##",
@@ -3199,7 +3387,7 @@ const PREP=[
   why:"Rust against electric blue is complementary opposition occurring naturally, and this is the one domain that supplies both halves of it.",
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma, black field. Dozens of ore rods in a dense ordered volume, their surfaces pushed to deep saturated rust-red and oxidised orange, with hot electric-blue filaments arcing between them through the rain and casting a cold sheen along their upper edges. Full complementary opposition, rust against electric blue, no neutral tone anywhere. The figure at the centre is nearly black, its aura a hard cold ring around an absolutely black core.`}
  ]},
-{k:"bthrall",n:"Turned — Thrall",tag:"c",tl:"Lesser being",stone:"Seventh Stone",sv:"REF-bthrall",
+{k:"bthrall",n:"Turned — Thrall",tag:"c",tl:"Lesser being",stone:"Seventh Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-bthrall",
  canon:"Ch II &mdash; &ldquo;a wielder of animals. One who understands the Stone of Thrall. The worst of their kind.&rdquo; The novel is explicit that beasts are innocent: &ldquo;wild beasts were only wielded spirits, lacking the desire to do evil, while still used for such purposes.&rdquo;",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A3 &middot; A4 &middot; A5 &middot; one domain &middot; dark cyc",sv:"REF-bthrall-A-##",
@@ -3215,7 +3403,7 @@ const PREP=[
   why:"Colour can carry the moral point: the creatures stay naturally coloured and correct while everything around them degrades, so the audience reads them as the only clean thing in frame.",
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme chroma. A figure whose aura is pushed to sickly yellow-green with a bruise-violet fringe and an absolutely black centre, surrounded by lifted sea creatures that remain entirely naturally coloured &mdash; silver, blue, ordinary &mdash; and physically perfect. The contrast is the subject: corrupted colour on the wielder, clean natural colour on everything it has taken. Storm sea in deep saturated teal behind. No gore, no damage to any creature.`}
  ]},
-{k:"banchor",n:"Turned — Anchor",tag:"c",tl:"Lesser being",stone:"First Stone",sv:"REF-banchor",
+{k:"banchor",n:"Turned — Anchor",tag:"c",tl:"Lesser being",stone:"First Stone",fld:"00 &middot; REFERENCES / Characters / TURNED",sv:"REF-banchor",
  canon:"Extrapolated, not depicted. The novel gives matter to Cairn Island and to the Vigil, who raise a mountain with it. No Turned wielder of matter appears in Chapters I&ndash;III &mdash; this sheet fills the seventh slot so the system is complete, and it is deliberately the weakest of the seven.",
  v:[
  {c:"A",n:"Three rungs",w:"Image &rarr; 21:9 &rarr; figure sheet",tech:"A1 &middot; A2 &middot; A3 &middot; one domain &middot; dark cyc",sv:"REF-banchor-A-##",
@@ -3231,7 +3419,7 @@ const PREP=[
   why:"It should be the least colourful of the seven, because it is the least powerful. Restraint here makes the other six read stronger by comparison.",
   p:`Cinematic key-art still, 2.39:1, photoreal, high contrast but deliberately restrained chroma. A figure straining to hold a cracked slab of dead coral, rendered almost entirely in desaturated grey-brown and wet black, with only the faintest sickly green in its thin aura and an absolutely black centre. The sea behind is saturated teal and the sky saturated violet, so the figure and its burden read as the one drab thing in a vivid frame. The colour it lacks is the point.`}
  ]},
-{k:"caedomasc",n:"Caedom &mdash; the ascended form",tag:"c",tl:"Character",sv:"REF-caedom-ascended",
+{k:"caedomasc",n:"Caedom &mdash; the ascended form",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / CAEDOM",sv:"REF-caedom-ascended",
  canon:"Ch I &mdash; &ldquo;the celestialized man who had created Machira. He had used each Stone in their destined order, a thousand years at a time, to shape pure energy into organized matter.&rdquo; He is &ldquo;complete&rdquo; where Oriane is not, and he sees every phase of a thing at once. This is the form Scene 1 is played in.",
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; luminous",sv:"REF-caedom-ascended-A-##",
@@ -3248,7 +3436,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, extreme contrast and high chroma. An ageless luminous man in full-length layered white robes stands against a field of deep saturated cobalt and blue-black, an ocean of molten saturated gold plasma burning far below him. Everything in frame is pushed to full saturation except the man himself, who stays a clean luminous white and takes no colour cast from either the gold beneath or the blue around him &mdash; he reads as cut out of the frame rather than lit within it. A single faint tint moves through his aura, one colour only and barely perceptible against the white. Wing form behind the shoulders as refracted light with no solid edge. Fully robed, bare feet, no halo, no crown, no jewellery. No rainbow, no saturated bands on the figure, no beams, no particles, no text, no watermark.`}
  ]},
 
-{k:"caedommortal",n:"Caedom &mdash; the mortal form",tag:"c",tl:"Character",sv:"REF-caedom-mortal",
+{k:"caedommortal",n:"Caedom &mdash; the mortal form",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / CAEDOM",sv:"REF-caedom-mortal",
  canon:"Ch I &mdash; he is &ldquo;the celestialized man&rdquo;, and of Earth he says &ldquo;his voice became a nostalgic mist as he spoke of his home world.&rdquo; He ascended, which means there was a man first. He also tells Oriane she can climb the same way: &ldquo;You are the seed who can become the tree. The pebble, the mountain.&rdquo;",
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; entirely ordinary",sv:"REF-caedom-mortal-A-##",
@@ -3283,6 +3471,13 @@ const RUN=[
  w:"Cinema Studio",u:HF+"cinema-studio",
  set:"Read the festival's own rules page while you are there — including the licence clause. Confirm 21:9 is available on your plan.",sv:"Project: THE SAME MIRACLE",
  mdl:"Cinema Studio — no generation yet",ar:"21:9 · crop to 2.39:1 on export",fld:"The Same Miracle/ ← create this now"},
+{ph:"Phase 0",t:"The aura rule — generate this before any character",
+ s:"One image decides how power reads for the rest of the film, and it needs no identity, no location and no lighting plate, so nothing blocks it. An adept's aura is bright at the rim and black at the centre; a bearer's is brightest at the centre with no edge at all. Every character sheet after this one gets graded against it. Generating it third — before a single face exists — is the cheapest ordering decision in the whole build.",
+ a:"My two auras are reading as the same thing at different sizes. Sharpen the difference.",
+ b:"<b>Image</b> → plain generation, no Soul. Two silhouettes side by side. Paste RULE-aura variant A.",
+ w:"Image",u:HF+"image",pk:"aurarule",
+ set:"Batch of 4. Silhouettes only — no faces, no costume. Reject any frame where the left figure has any light at its centre.",
+ sv:"RULE-aura-A",mdl:"nano_banana_pro · no Soul",ar:"21:9",fld:"00 · REFERENCES / States"},
 {ph:"Phase 0",t:"Oriane — train Soul V2",
  s:"Her face has to be identical across nine shots spread over three minutes. That comes from a trained identity, not from luck.",
  a:"Sharpen the Oriane prompt — I want more visible skin texture and a harder jawline.",
@@ -3301,6 +3496,13 @@ const RUN=[
  set:"Batch of 4. Damage in exactly three places: right cheekbone, LEFT calf, torso scoring. Reject any frame with a fourth mark.",
  sv:"REF-oriane-damaged-A-##",
  mdl:"soul_2 · reuse the Oriane soul_id",ar:"16:9",fld:"00 · REFERENCES / Characters"},
+{ph:"Phase 0",t:"Oriane's mind ladder — the eight rungs",
+ s:"Her escalation is the spine of Movement II and it has to exist as one strip before any anchor is generated, because every Movement II frame grades against it. It needs her Soul, so it goes here and not earlier. The B variant is the one that keeps you honest — it shows the same climb as damage rather than as power.",
+ a:"My ladder is just getting brighter. Where should the cost show at each rung?",
+ b:"<b>Image</b> → Soul V2 → same Oriane soul_id. Paste LADDER-oriane variant A, then variant B.",
+ w:"Image",u:HF+"image",pk:"ladder",
+ set:"Batch of 4. Identical pose and scale in all eight panels — reject any frame where she moves between rungs.",
+ sv:"LADDER-oriane-A · LADDER-oriane-B",mdl:"soul_2 · same Oriane soul_id",ar:"21:9",fld:"00 · REFERENCES / States"},
 {ph:"Phase 0",t:"Caedom — two forms, one Soul",
  s:"He opens the film and closes it, so the same face has to survive from 0:00 to 4:41 or the bookend does not land. He also has two forms — the ascended being Scene 1 is played in, and the ordinary man he was before it. Train the ascended form as the Soul; the mortal sheet is generated from it so the bone structure carries across, because the argument of the whole film is that the distance between the two is climbable.",
  a:"Caedom's robe is reading as a glow effect instead of fabric. Rewrite that part of the prompt.",
@@ -3333,6 +3535,22 @@ const RUN=[
  set:"No armour, no uniforms, no matching costume, no glowing eyes. They must read as individuals who went wrong separately.",
  sv:"REF-turned-A-## · LEV-rider-A-##",
  mdl:"nano_banana_pro · group and detail sheets",ar:"16:9 group · 21:9 rider",fld:"00 · REFERENCES / Characters"},
+{ph:"Phase 0",t:"The seven domains — one sheet per Founding Stone",
+ s:"Seven sheets, one per Stone: hollows, water and its phases, energy, gravity, metals, thrall, anchor. Each shows three rungs of that single domain, so a shot can be cast by naming a domain and a rung instead of describing a figure from scratch. Every one draws on exactly one Stone. Anchor is extrapolated rather than depicted and is deliberately the feeblest of the seven.",
+ a:"Write me a fourth rung for one of the domains — I need a stronger version for a specific shot.",
+ b:"<b>Image</b> → plain generation, no Soul. Seven separate sheets, tagged Lesser being below.",
+ w:"Image",u:HF+"image",pk:"bhollow",
+ set:"Batch of 4 each. Every aura black at the centre without exception — that is the check for all seven.",
+ sv:"REF-bhollow · bwater · benergy · bgravity · bmetal · bthrall · banchor",
+ mdl:"nano_banana_pro · no Soul",ar:"21:9",fld:"00 · REFERENCES / Characters / TURNED"},
+
+{ph:"Phase 0",t:"The attunement ladder — and the ceiling",
+ s:"Six rungs on one strip, and the sixth still hollow at its centre. This is the sheet that makes the ceiling visible, and it needs the domain sheets to exist first so the rungs are drawn from something rather than invented. Its B variant fixes the pursuit formation — weak forward, strong held back — which answers a staging question the shot list asks four separate times.",
+ a:"My rung six does not read as more powerful than rung five. What should change between them?",
+ b:"<b>Image</b> → plain generation. Paste LADDER-attunement variant A, then variant B for the formation plate.",
+ w:"Image",u:HF+"image",pk:"darkladder",
+ set:"Batch of 4. Reject any frame where a centre glows — that is the one thing this sheet cannot get wrong.",
+ sv:"LADDER-attunement-A · LADDER-attunement-B",mdl:"nano_banana_pro · no Soul",ar:"21:9",fld:"00 · REFERENCES / States"},
 {ph:"Phase 0",t:"Four lighting plates — three movements and the bombardment",
  s:"These four images decide the grade of the whole film. Every anchor frame afterwards gets told to match one of them. The fourth — the bombardment plate — replaces the calm island plate for the attack, and without it Movement III grades as one continuous afternoon when it should turn.",
  a:"Compare my four lighting plates — is one of them fighting the other three?",
@@ -3643,6 +3861,13 @@ const RUN=[
     });
   })();
 
+  /* drift report copy */
+  (function(){
+    const b=document.getElementById("copydrift"); if(!b)return;
+    b.onclick=()=>{const t=document.getElementById("driftblock").textContent;
+      navigator.clipboard.writeText(t).then(()=>flash(b,"Copied")).catch(()=>flash(b,"Copy failed"));};
+  })();
+
   /* power-state modifier fragments */
   (function(){
     const host=document.getElementById("frags"); if(!host)return;
@@ -3684,7 +3909,7 @@ const RUN=[
   function paintVariant(p,i){
     const v=p.v[i];
     const host=document.querySelector('.vbody[data-k="'+p.k+'"]');
-    host.innerHTML='<div class="prep-meta">'+v.w+' &middot; save as <b>'+v.sv+'</b></div>'+
+    host.innerHTML='<div class="prep-meta">'+v.w+'</div>'+'<div class="filerow"><span><i>Folder</i>'+(p.fld||'00 &middot; REFERENCES')+'</span><span><i>Save as</i><b>'+v.sv+'</b></span></div>'+
       '<div class="vtech">'+v.tech+'</div>'+
       '<p class="vwhy">'+v.why+'</p>'+
       '<pre class="paste">'+esc(v.p)+'</pre>'+
