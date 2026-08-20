@@ -796,6 +796,20 @@ footer a{color:var(--ink-2)}
 .le-b p:last-child{margin-bottom:0}
 .le-r{color:var(--ink)!important}
 .le-b p b{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--ink-3);margin-right:4px}
+/* ---- process page ---- */
+.proc{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.pstep{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:16px 22px;border-bottom:1px solid var(--line-soft)}
+.pstep:last-child{border-bottom:0}
+.pstep.gatestep{background:linear-gradient(90deg,var(--coral-soft),transparent 62%)}
+.ps-n{font-family:var(--mono);font-size:13px;color:var(--ink-3);padding-top:3px}
+.pstep.gatestep .ps-n{color:var(--coral)}
+.ps-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.ps-hd h4{font-size:16.5px;font-weight:700}
+.ps-b ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:3px}
+.ps-b li{font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.itn{font-size:12px;line-height:1;letter-spacing:-.06em;opacity:.75}
+.itn.one{color:var(--jade)}
+.itn.two{color:var(--gold)}
 .loopsteps{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
 .ls{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line-soft);align-items:start}
 .ls:last-child{border-bottom:0}
@@ -939,6 +953,7 @@ footer a{color:var(--ink-2)}
 </header>
 
 <nav class="toc"><div class="wrap toc-inner">
+  <a href="#process">★ The Process</a>
   <a href="#control">▶ Control Room</a>
   <a href="#backcheck">Source Backcheck</a>
   <a href="#assets">Asset Prompts</a>
@@ -1349,6 +1364,33 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
       <h3>Canvas and the scratch surfaces</h3>
       <p><b>Do not build anything that ships on a board or canvas surface.</b> Not because it is a bad tool &mdash; because the entry is verified against the project's own generation history, and anything composed on a side surface risks landing outside it. Use it to think, then regenerate the decision properly inside the project and park the sketch in <code>99 &middot; LOOKDEV</code>. <b>If a frame's history is not in the project, that frame cannot be in the film.</b></p>
     </div>
+  </div>
+</div></section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The whole method on one page &middot; works for any film, not just this one</span>
+    <h2>How a film gets made here</h2>
+    <p>Seventeen steps, in the order they actually happen. Everything else in this document is <i>this</i> film; this page is the method underneath it, and it transfers. Small marks show where the work loops: <span class="itn one">&#8635;</span> expect a second pass, <span class="itn two">&#8635;&#8635;</span> expect several and budget for them.</p>
+  </div>
+  <div class="proc" id="proc"></div>
+
+  <div class="sec-head" style="margin-top:44px"><h3 style="font-size:22px">Scaling it to other lengths</h3>
+    <p>The method does not change with runtime. Only four numbers do, and they move together &mdash; so decide the runtime first and read the rest off it rather than discovering them halfway through.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th>Runtime</th><th>Shots</th><th>Anchors</th><th>References</th><th>What changes about the method</th></tr></thead>
+    <tbody>
+      <tr><td><b>15&ndash;60 sec</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">social, teaser</span></td><td>3&ndash;6</td><td>6&ndash;10</td><td>5&ndash;10</td><td>Skip the stills reel and Gate C &mdash; at this length you can hold the whole thing in your head. Everything else stands. One identity, one plate.</td></tr>
+      <tr><td><b>3&ndash;5 min</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">the festival short</span></td><td>20&ndash;25</td><td>35&ndash;45</td><td>35&ndash;45</td><td>The full seventeen steps, exactly as written. This is the length the method was built around and the one where every gate earns its place.</td></tr>
+      <tr><td><b>8&ndash;15 min</b></td><td>50&ndash;80</td><td>90&ndash;140</td><td>60&ndash;90</td><td>Split into acts and run Gates A&ndash;C <i>per act</i> rather than once for the whole film. A single string lock over 140 anchors is not reviewable in one sitting, and a gate nobody can actually perform is not a gate.</td></tr>
+      <tr><td><b>20 min +</b></td><td>120 +</td><td>200 +</td><td>100 +</td><td>Identity and plates stay global; everything downstream goes per act. Add a continuity pass between acts, because the failure mode stops being drift within a scene and becomes drift between acts made weeks apart.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict" style="margin-top:22px">
+    <b>The three numbers that decide everything else:</b> runtime, shot count, and how many identities appear on screen. Fix those three before you open the platform and the rest of the plan derives itself &mdash; anchors are roughly two per shot minus the shared ones, references are roughly identities plus locations plus effects, and the credit cost is roughly four times the reference count for Phase 0 plus two passes per shot. <b>Every project that goes wrong went wrong because one of those three moved after generation started.</b>
   </div>
 </div></section>
 
@@ -2836,6 +2878,8 @@ const FORMS=[
   {c:"M64",n:"Thickening",g:64,d:"Cold blue-white, escaping in filaments, greaves cracked, outline blurring at the extremities.",frag:"M64"},
   {c:"M128",n:"Corona",g:128,d:"Figure legible only as silhouette. Pieces broken and orbiting. Wings now one unbroken ring.",frag:"M128"},
   {c:"M200",n:"Terminal",g:200,d:"Aura and figure merged. Robes replaced by streaming light, silhouette fully covered. The ring collapses inward.",frag:"M200"},
+  {c:"REST",n:"At rest &mdash; travelling",g:1,d:"Cream draped mantle over a dark teal high-collared tunic, dark trousers, heavy buckled greaves over low boots. Carries almost nothing. MV1 and the opening of MV2.",asset:"REF-oriane-A"},
+  {c:"ASC",n:"Ascended &mdash; seam-lit",g:32,d:"Dark robe with continuous luminous seam-lines, a long trailing train, angular light wings &mdash; and BAREFOOT. The greaves are gone, and their absence is the escalation. MV2 from the leviathan onward.",asset:"REF-oriane-ascended-A"},
   {c:"DMG",n:"Battle-damaged",g:16,d:"Three fixed marks: scar with the aura burned dark, shattered left greave with its seam-light dead, scorched flank. Overlays any rung from M10 up.",asset:"REF-oriane-damaged"},
   {c:"GONE",n:"Discarnate",g:0,d:"After the Stone leaves: particles falling upward, then an empty frame held for two and a half seconds. No aura at all.",asset:"S14"}
  ]},
@@ -2879,6 +2923,60 @@ const FORMS=[
   {c:"HELD",n:"Ridden",g:0,d:"Fins spanned and inflated, held aloft by three gravity wielders, the rider fused into the skull crown and the hide bruise-stained around him.",asset:"LEV-rider-A"},
   {c:"FREED",n:"Released",g:0,d:"The rider gone, a smooth empty hollow in the plating, fins collapsing slack. She apologises to it as it dies.",asset:"FX-strike-blast-A"}
  ]}
+];
+const PROC=[
+{n:"01",t:"Decide the film before you open anything",it:0,b:[
+ "Fix the runtime, the shot count and how many identities appear on screen. Everything downstream derives from these three.",
+ "Write the thesis in one sentence. If it takes two, the film is not decided yet.",
+ "List the seams — what cuts into what — before any shot exists."]},
+{n:"02",t:"Create the project",it:0,b:[
+ "Make it inside the contest or workspace that will verify it, and generate everything there from then on.",
+ "Confirm the aspect ratio your plan actually supports, and read the retention rule before it costs you a frame."]},
+{n:"03",t:"Generate the governing rule sheet",it:1,b:[
+ "One image that fixes how your world's central visual idea works. It needs no identity and no location, so nothing blocks it.",
+ "Everything generated afterwards gets graded against this one sheet."]},
+{n:"04",t:"Lighting plates, one per movement",it:1,b:[
+ "Empty frames, no characters. Key direction and palette only.",
+ "Judge them at thumbnail size — a plate you cannot read small is a plate nobody will match."]},
+{n:"05",t:"Train identity",it:2,b:[
+ "One trained Soul per character. Never two for one person.",
+ "Generate every other state of that character from the same Soul — damage, costume changes, power states.",
+ "If two characters share frames, generate a pairing sheet last as the check."]},
+{n:"06",t:"Build the world",it:1,b:[
+ "Locations, props, creatures, effects. Plain backgrounds, one asset per sheet.",
+ "Effects sheets are worth more than they look: they settle a rule once so it never gets re-decided under deadline."]},
+{n:"07",t:"GATE A — identity lock",it:0,g:1,b:[
+ "Every reference side by side in one view. Look for a face that moved.",
+ "Nothing downstream may begin until this holds, because everything downstream inherits it."]},
+{n:"08",t:"Anchor frames, in film order",it:2,b:[
+ "The first and last frame of every shot, generated as one continuous string rather than per scene.",
+ "Chained shots share frames — one shot's end frame is the next one's start.",
+ "This is where the most iteration lives. Budget for it."]},
+{n:"09",t:"GATE B — string lock",it:0,g:1,b:[
+ "Every anchor on one contact sheet, in order. Read it as a comic strip.",
+ "If the story does not work here, it will not work in motion, and motion costs ten times more."]},
+{n:"10",t:"Stills reel",it:0,b:[
+ "Cut the anchors on a timeline at their real durations and watch the whole thing.",
+ "Almost free, and it finds pacing problems that a contact sheet hides."]},
+{n:"11",t:"GATE C — timing lock",it:0,g:1,b:[
+ "Durations are now fixed. Changing one after this point breaks the total runtime."]},
+{n:"12",t:"Draft motion, cheap tier",it:1,b:[
+ "Every shot, lowest usable quality, no exceptions and no favourites.",
+ "You are testing whether the movement works, not how it looks."]},
+{n:"13",t:"GATE D — motion lock",it:0,g:1,b:[
+ "Watch it end to end at draft quality. Every camera move and seam is decided here."]},
+{n:"14",t:"Final shots",it:2,b:[
+ "Highest quality tier, one movement at a time, in film order.",
+ "Two passes then it ships — a third pass is almost always a different prompt, not a better one."]},
+{n:"15",t:"Finish",it:0,b:[
+ "Deflicker first, then upscale, then grade. That order, always.",
+ "Upscaling a flickering shot upscales the flicker."]},
+{n:"16",t:"GATE E — picture lock",it:0,g:1,b:[
+ "No further picture changes. Audio is built against this cut and nothing else."]},
+{n:"17",t:"Audio, then deliver",it:1,b:[
+ "Score, dialogue, sound design. Audio is usually exempt from from-scratch rules — check, then reuse freely if it is.",
+ "Upload every external audio file into the project.",
+ "Watermark, packshot, social cut, public post, rights pass. Then verify the project and submit."]}
 ];
 const BINDX=[
 {g:"Audio",n:"AUDIO",items:["Score — MV1","Score — MV3","Dialogue — Caedom","Dialogue — Oriane","VO — Alder","Sound design pass","S13 silence protected"]},
@@ -2949,7 +3047,7 @@ const PREP=[
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; photoreal",sv:"REF-oriane-A-##",
   why:"The face-lock pass. Everything is subordinated to getting one repeatable face; the crystal is described as a material state of the body rather than something worn, which is both what the novel says and the phrasing that keeps the filter quiet.",
-  p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original female character on both sides, single subject only exactly one person with only the character in frame, pure white seamless studio background, professional character sheet presentation, a woman in her early thirties with fair olive skin, oval face with a defined angular jawline, high pronounced cheekbones, straight narrow nose, full lips with a natural rosy-nude tint and a soft matte finish, mature adult bone structure and adult facial proportions, dark almond eyes with a slight upward tilt, naturally muted catchlights, no oversized specular glare in the iris, eye colour muted rather than glowing, full dark brows with natural stray hairs, long dark brown hair worn loose and slightly disordered with a soft natural finish and a centre parting, visible fine skin texture with natural pores, fine lines, subtle asymmetries and texture irregularities, bare face with no makeup, faint natural flush across the cheeks, a few faint freckles across the nose, no digital smoothing, no beauty filter, no AI-airbrushed look, matte-to-natural complexion, lean athletic build with balanced proportions. She is dressed in full-length layered robes and the crystal is an aura over them, never a body and never solid plate. A floor-length underrobe in pale bone-white, long-sleeved and closed to the throat, beneath a heavier open overrobe with a long trailing hem and a wide sash at the waist, the cloth matte and heavy with real weight in the fold, covering her completely. Lying over the fabric is a faint refractive hue — a cool prismatic sheen that catches along the folds and the cut edges of the cloth and vanishes wherever the light does not strike it, as though the weave were dusted with something that bends light. Over the robes sit a few angular light-formed pieces and no more: a segmented pauldron on each shoulder tapering to a fine point, slim tapered gauntlets from wrist to mid-forearm, a narrow layered gorget at the throat, and slim greaves over the shins — all of them faceted and semi-translucent, lit faintly along their seams rather than reflecting, grown rather than forged, and clearly a minority of the silhouette against all that cloth. Behind her shoulders a pair of wings suggested only as a faint luminous aura: implied planes of refracted light with no solid feathers, no membrane and no bone, fading out entirely before the tips. Bare feet below the hem. No jewellery, no bag, natural anatomy, high-end but unretouched commercial photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture, cloth weave and the faceted edges of the light-formed pieces, single subject only, exactly one person, only the character in frame, fully clothed in heavy robes at all times, no other people, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, left panel standing full-body head-to-toe not cropped not sitting, right panel tight close-up not full body, no full-body crystal, no crystal skin, no statue, no solid glass figure, no full plate armour, no solid wings, no feathered wings, no babyface, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, no glossy skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+  p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original female character on both sides, single subject only exactly one person with only the character in frame, pure white seamless studio background, professional character sheet presentation, a woman in her mid thirties with fair olive skin, oval face with a defined angular jawline, high pronounced cheekbones, straight narrow nose, full lips with a natural rosy-nude tint and a soft matte finish, mature adult bone structure and adult facial proportions, clear pale blue-grey eyes with naturally muted catchlights and no oversized specular glare in the iris, strong straight dark brows with a defined squared inner edge and a clean arch — the single most identifying feature of the face, very long dark brown hair with a faint auburn cast, worn loose and straight past the chest with a centre parting, visible fine skin texture with natural pores, fine lines, subtle asymmetries and texture irregularities, bare face with no makeup, faint natural flush across the cheeks, a few faint freckles across the nose, no digital smoothing, no beauty filter, no AI-airbrushed look, matte-to-natural complexion, lean athletic build with balanced proportions. She is dressed for travel, not for ceremony, and the crystal is an aura over the cloth rather than a body or a solid plate. A dark teal-green high-collared tunic, zip-fronted, closed to the throat, falling to mid-thigh over slim dark trousers. Over it a long draped mantle of heavy undyed cream cloth, open at the front, falling in soft asymmetric points well past the knee, weighty and slightly crumpled with real wear in the fold. On the shins, heavy dark buckled greaves strapped over the trouser with four visible buckles each, worn over low dark boots. Lying over the cloth is a faint refractive hue — a cool prismatic sheen that catches along the folds and the cut edges of the mantle and vanishes wherever the light does not strike it. No pauldrons, no gauntlets, no gorget and no wings in this state: at rest she carries almost nothing, and everything she gains later has to be visibly gained. No jewellery, no bag, natural anatomy, high-end but unretouched commercial photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture, cloth weave and the faceted edges of the light-formed pieces, single subject only, exactly one person, only the character in frame, fully clothed in heavy robes at all times, no other people, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, left panel standing full-body head-to-toe not cropped not sitting, right panel tight close-up not full body, no full-body crystal, no crystal skin, no statue, no solid glass figure, no full plate armour, no solid wings, no feathered wings, no babyface, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, no glossy skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
  {c:"B",n:"On the Sun",w:"Image &rarr; 21:9 &rarr; Soul + PLATE-mv1-light",tech:"Cinematic still &middot; in situ &middot; anamorphic",sv:"REF-oriane-B-##",
   why:"Proves the character survives contact with the Movement I grade. Key from below off the plasma is the hardest light she ever stands in, and if the crystal reads as plastic anywhere it will show here first.",
   p:`Cinematic still, 2.39:1 anamorphic, photoreal. A woman stands at the edge of a courtyard built from solidified beams of light, an ocean of liquid white-gold plasma burning far below and out of focus behind her. Key light comes from beneath her, throwing the light upward across her jaw and the underside of her brow. She is dressed in full-length layered robes with a faint prismatic sheen lying over the cloth, a few angular semi-translucent light-formed pieces over them — pauldrons, gauntlets, a narrow gorget, slim greaves — lit along their seams rather than reflecting, and a pair of wings suggested only as a faint refractive aura with no solid feathers and no membrane. The overrobe's hem lifts in an updraught and the prismatic sheen runs along it as it moves. The seam-light in the pauldrons is the only part of her that emits. Bare feet on a luminous floor. Long dark hair, loose. She is three-quarters to camera, looking down and away at something below the courtyard's edge, not at us. Held, still, unhurried. Warm gold highlights, genuinely cold shadows, heavy atmospheric haze, anamorphic flare, deep blacks. Fully clothed in heavy robes, no skin visible below the jaw. Photoreal. No full-body crystal, no crystal skin, no statue, no full plate armour, no solid wings, no particles, no text, no watermark.`},
@@ -3650,6 +3748,22 @@ const PREP=[
  {c:"D",n:"Chroma pass",w:"Image &rarr; 21:9 &rarr; key art",tech:"Full warm saturation &middot; no shadow side",sv:"REF-wren-D-##",
   why:"His chroma pass is the opposite of his brother's on purpose: where Alder is split between hot and cold, Wren is lit warm from both sides with nowhere dark on him. Two boys in the same light, and only one of them has a shadow half.",
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast. Close on a six-and-a-half-year-old boy in beach grass at golden hour, laughing with his mouth open, lit warm from two directions so that saturated gold and amber wrap the whole face and there is no deep shadow side anywhere on him. Sun-bleached blonde hair blown out bright at the edges. Saturated yellow-green grass, deep turquoise water behind, everything vivid and warm. Fully clothed, sun-darkened skin. Nothing in the frame is dull or cool. No text, no watermark.`}
+ ]},
+{k:"orianeasc",n:"Oriane &mdash; the ascended state",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / ORIANE",sv:"REF-oriane-ascended",
+ canon:"Ch II &mdash; &ldquo;Her feet were bare as they touched the leviathan&rsquo;s skin.&rdquo; She is barefoot at the height of the fight, and shod when the chase begins. The greaves coming off is the escalation, stated by the novel and legible in one frame.",
+ v:[
+ {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 (same soul_id)",tech:"Split-screen &middot; seam-lit robes &middot; barefoot",sv:"REF-oriane-ascended-A-##",
+  why:"Her second costume state, locked from the v5 generations. Same face and same Soul as the resting sheet &mdash; only the garment and the feet change, and that restraint is what makes the change read as escalation rather than as a different character.",
+  p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original female character on both sides, single subject only exactly one person, pure white seamless studio background, professional character sheet presentation. Identical face and build to the established Oriane reference: a woman in her mid thirties with fair olive skin, defined angular jawline, high cheekbones, clear pale blue-grey eyes with naturally muted catchlights, strong straight dark brows with a defined squared inner edge and a clean arch, very long dark brown hair with a faint auburn cast worn loose and straight past the chest. She is dressed in full-length dark robes carrying their own light. A dark charcoal-olive robe closed at the throat and falling to the floor, with a long trailing train spreading several feet behind her, the cloth matte and heavy. Running the length of the garment &mdash; down the centre seam, along the collar, around the cuffs and out along the edges of the train &mdash; are continuous luminous seam-lines, thin and bright, as though the stitching itself were lit from inside. The light comes from the seams only; the cloth between them stays dark and matte and never glows. Behind her shoulders a pair of wings built from angular planes of refracted light, sharp-edged and faceted, clearly constructed rather than grown, with no feathers, no membrane and no bone, fading out before the tips. She is BAREFOOT &mdash; no boots and no greaves at this rung, and their absence is the point. visible fine skin texture with natural pores, fine lines, subtle asymmetries, no digital smoothing, no beauty filter, no AI-airbrushed look, matte-to-natural complexion, natural anatomy, soft diffused studio lighting, cinematic realism, clean white background, 4K quality, fully clothed at all times, exactly one person, no other people, no duplicate figures, no mannequin, no props, no background objects, empty seamless studio, no full-body crystal, no crystal skin, no statue, no full plate armour, no feathered wings, no glowing cloth, no glowing skin, no babyface, no plastic skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+ {c:"B",n:"On the water",w:"Image &rarr; 21:9 &rarr; Soul + PLATE-mv2-light",tech:"In-world &middot; train streaming &middot; storm",sv:"REF-oriane-ascended-B-##",
+  why:"The train and the seam-light are the two things that will actually sell motion in Movement II, and both need to be seen behaving in wind before the motion pass tries to animate them.",
+  p:`Cinematic still, 2.39:1, photoreal, storm ocean, cold blue-grey, fully desaturated except the seam-light. A woman in a floor-length dark charcoal-olive robe stands above open water, the long train streaming several feet sideways in the wind rather than falling. Continuous thin luminous seam-lines run down the centre of the robe, along the collar, around the cuffs and out along every edge of the streaming train, so the garment is drawn in light against a dark silhouette. The cloth between the seams stays matte and dark. Angular faceted wings of refracted light behind her shoulders, sharp-edged, no feathers. Barefoot. Very long dark hair whipped sideways. Driving rain, spray, violet lightning behind. No glowing cloth, no glowing skin, no particles, no text, no watermark.`},
+ {c:"C",n:"Seam construction",w:"Image &rarr; 21:9 &rarr; garment study",tech:"Flat pattern &middot; where the light runs",sv:"REF-oriane-ascended-C-##",
+  why:"Seam-light only reads as construction if the seams are actually where seams would be. A flat pattern study settles that once, and every later frame inherits a garment that makes sense instead of a robe with glowing scribbles on it.",
+  p:`Garment construction study on a plain mid-grey background, photoreal, flat even light. Four panels. One: the robe laid flat as a cutting pattern, dark charcoal-olive cloth, showing the centre front seam, the collar seam, the cuff seams, the shoulder join and the long curved edge of the train, with every seam drawn as a thin continuous bright line and the cloth between them entirely matte. Two: a close detail of one seam showing the stitching itself lit from within the fabric, the threads bright and the weave either side dark. Three: the same seam seen at a fold, the light continuing around the curve without breaking. Four: the hem of the train, where the seam-line thins and fades out. No figure, no body, no face. Physically plausible garment construction. No glowing cloth panels, no runes, no symbols, no text, no watermark.`},
+ {c:"D",n:"Chroma pass",w:"Image &rarr; 21:9 &rarr; key art",tech:"Seam gold to seam cyan",sv:"REF-oriane-ascended-D-##",
+  why:"The seam colour is the cheapest possible readout of which rung she is on: warm gold low on the ladder, cold cyan at the top. One strip fixes that mapping for the whole movement.",
+  p:`Key-art still, 2.39:1, photoreal, extreme contrast, black field, the same robed figure shown twice side by side at identical scale and pose. LEFT: the seam-lines burn saturated warm gold and amber, the wings warm-edged, the whole figure reading as contained and lit from within. RIGHT: the identical figure with the seam-lines shifted to hard saturated cyan and blue-white, the wings cold and sharper, the light escaping further from the seams into the surrounding air. The robe stays dark charcoal-olive in both; only the light changes. Barefoot in both. No glowing cloth, no glowing skin, no rainbow, no text, no watermark.`}
  ]}
 ];
 
@@ -4058,6 +4172,18 @@ const RUN=[
       const it=FRAGS.flatMap(g=>g.items).find(x=>x.k===btn.dataset.ffrag); if(!it)return;
       navigator.clipboard.writeText(it.p).then(()=>flash(btn,"Copied")).catch(()=>flash(btn,"Copy failed"));
     });
+  })();
+
+  /* process page */
+  (function(){
+    const host=document.getElementById("proc"); if(!host)return;
+    host.innerHTML=PROC.map(p=>
+      '<div class="pstep'+(p.g?" gatestep":"")+'">'+
+      '<div class="ps-n">'+p.n+'</div>'+
+      '<div class="ps-b"><div class="ps-hd"><h4>'+p.t+'</h4>'+
+      (p.it===2?'<span class="itn two" title="expect several passes">&#8635;&#8635;</span>':
+       p.it===1?'<span class="itn one" title="expect a second pass">&#8635;</span>':'')+
+      '</div><ul>'+p.b.map(x=>'<li>'+x+'</li>').join("")+'</ul></div></div>').join("");
   })();
 
   /* binding board — slots generated from the plan itself */
