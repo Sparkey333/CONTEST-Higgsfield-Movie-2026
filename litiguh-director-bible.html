@@ -810,6 +810,10 @@ footer a{color:var(--ink-2)}
 .itn{font-size:12px;line-height:1;letter-spacing:-.06em;opacity:.75}
 .itn.one{color:var(--jade)}
 .itn.two{color:var(--gold)}
+.cls{font:600 9.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:4px;border:1px solid currentColor;white-space:nowrap}
+.cls.g{color:var(--jade);background:var(--jade-soft)}
+.cls.t{color:var(--gold);background:var(--gold-soft)}
+.cls.p{color:var(--coral);background:var(--coral-soft)}
 .loopsteps{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
 .ls{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line-soft);align-items:start}
 .ls:last-child{border-bottom:0}
@@ -954,6 +958,7 @@ footer a{color:var(--ink-2)}
 
 <nav class="toc"><div class="wrap toc-inner">
   <a href="#process">★ The Process</a>
+  <a href="#reuse">Reuse</a>
   <a href="#control">▶ Control Room</a>
   <a href="#backcheck">Source Backcheck</a>
   <a href="#assets">Asset Prompts</a>
@@ -1391,6 +1396,82 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
 
   <div class="verdict" style="margin-top:22px">
     <b>The three numbers that decide everything else:</b> runtime, shot count, and how many identities appear on screen. Fix those three before you open the platform and the rest of the plan derives itself &mdash; anchors are roughly two per shot minus the shared ones, references are roughly identities plus locations plus effects, and the credit cost is roughly four times the reference count for Phase 0 plus two passes per shot. <b>Every project that goes wrong went wrong because one of those three moved after generation started.</b>
+  </div>
+</div></section>
+
+<!-- ================= REUSE ================= -->
+<section id="reuse"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Turning this into a tool instead of a one-off</span>
+    <h2>Reuse &mdash; the next film</h2>
+    <p>This document is currently one film wearing a method. The method is the valuable half, so everything here is classified by <b>what actually happens to it when you start project two</b>. Three categories, and the honest split is that rather more of it transfers than you would expect &mdash; the parts that do not are the parts that were supposed to be specific.</p>
+  </div>
+
+  <div class="grid g3" style="margin-bottom:30px">
+    <div class="card"><span class="tag" style="background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)">Generic &middot; 9</span>
+      <h3>Take it untouched</h3><p>Copy the section across and change nothing. It is about how films get made, not about this film. Roughly <b>40% of the document</b>.</p></div>
+    <div class="card pick"><span class="tag">Template &middot; 10</span>
+      <h3>Keep the shape, swap the values</h3><p>The structure is the thinking; the contents are this story. Empty the array, keep the fields. Roughly <b>35%</b>.</p></div>
+    <div class="card"><span class="tag" style="background:var(--coral-soft);color:var(--coral);border-color:var(--coral-line)">Project &middot; 6</span>
+      <h3>Delete and rebuild</h3><p>Arguments about <i>this</i> story that would be actively misleading applied to another. Roughly <b>25%</b>. Deleting these is the first act of the next project.</p></div>
+  </div>
+
+  <div class="sec-head"><h3 style="font-size:22px">The parity audit</h3></div>
+  <table class="dials" style="margin-bottom:34px">
+    <thead><tr><th style="width:20%">Part</th><th style="width:13%">On reuse</th><th>What you do to it</th></tr></thead>
+    <tbody>
+      <tr><td><b>The Process</b></td><td><span class="cls g">Generic</span></td><td>Nothing. Seventeen steps, five gates, the iteration marks. It was written to transfer and contains no character, scene or title.</td></tr>
+      <tr><td><b>Filing &amp; Selection</b></td><td><span class="cls g">Generic</span></td><td>Nothing. File by identity, anchors by position, shots by stage, never by scene. The selection tests are per asset <i>kind</i>, not per asset.</td></tr>
+      <tr><td><b>Revision Loop</b></td><td><span class="cls g">Generic</span></td><td>Nothing. Five moves, the drift report template, the versioning rules, the handle rules, the scratch-surface ruling.</td></tr>
+      <tr><td><b>Lessons</b></td><td><span class="cls g">Generic</span></td><td>Nothing &mdash; and this is the one that compounds. Carry it forward and keep appending. Twelve entries now; a fourth project should have forty and be the most valuable page here.</td></tr>
+      <tr><td><b>Binding</b></td><td><span class="cls g">Generic</span></td><td>The argument transfers untouched. The board regenerates itself from whatever the new arrays contain, so it needs no editing at all &mdash; it will simply show the new slot count.</td></tr>
+      <tr><td><b>Revision rules &middot; Techniques &middot; Model matrix</b></td><td><span class="cls g">Generic</span></td><td>Two passes then it ships. Four variants beats four attempts. The length-buying techniques and the model capability table are platform facts, not story facts. Re-verify the matrix against the live catalogue; the reasoning around it stands.</td></tr>
+      <tr><td><b>Key vault</b></td><td><span class="cls g">Generic</span></td><td>Nothing. Same services, same required/optional split.</td></tr>
+      <tr><td><b>Asset prompts</b> <code>PREP</code></td><td><span class="cls t">Template</span></td><td>Empty the array; keep every field and the four-lane grammar. <b>A / B / C / D transfer as a way of thinking</b> &mdash; continuity pass, in-world plate, alternate medium, chroma pass &mdash; and that alone is most of the value.</td></tr>
+      <tr><td><b>Shot list</b> <code>SHOTS</code></td><td><span class="cls t">Template</span></td><td>Empty it; keep <code>id, mv, d, cam, seam, model, canon, v[]</code>. The three-lane shot grammar (ships / coverage / chroma) transfers.</td></tr>
+      <tr><td><b>Run sheet</b> <code>RUN</code></td><td><span class="cls t">Template</span></td><td>Keep the phase and gate skeleton and the model/aspect/folder fields. Swap the per-asset steps. Roughly two thirds survives verbatim.</td></tr>
+      <tr><td><b>Frame string</b> <code>FRAMES</code></td><td><span class="cls t">Template</span></td><td>Keep the mechanism &mdash; shared frames, bridges, matched pairs. Renumber for the new shot count.</td></tr>
+      <tr><td><b>Forms &amp; States</b> <code>FORMS</code></td><td><span class="cls t">Template</span></td><td>Keep the idea that a character is not one asset. The aura glyphs are drawn from this world's rule, so either keep the rule or replace the glyph function.</td></tr>
+      <tr><td><b>Power states &middot; ladders</b> <code>FRAGS</code></td><td><span class="cls t">Template</span></td><td>The <b>two-orthogonal-axes</b> idea is genuinely reusable for anything with escalation. The specific rungs are not. Keep the modifier-not-asset economy.</td></tr>
+      <tr><td><b>Pipeline &middot; Gates &middot; Checks</b></td><td><span class="cls t">Template</span></td><td>Gates A&ndash;E transfer. Only the counts inside them change. Past eight minutes, split them per act.</td></tr>
+      <tr><td><b>Folder structure</b></td><td><span class="cls t">Template</span></td><td>Numbered folders transfer exactly; the character folders under <code>Characters/</code> are the only thing that changes.</td></tr>
+      <tr><td><b>Lighting plates</b></td><td><span class="cls t">Template</span></td><td>One per movement, empty frames, judged at thumbnail size. The palettes are this film's.</td></tr>
+      <tr><td><b>Source backcheck</b></td><td><span class="cls p">Project</span></td><td>Delete. Rebuild against whatever the new source is &mdash; or drop entirely if the new film has no source text. <b>Keep the method:</b> read every prompt against the source, check attribution and order, not just presence.</td></tr>
+      <tr><td><b>Thesis &middot; Brief &middot; Doctrine &middot; Blend &middot; Structural test</b></td><td><span class="cls p">Project</span></td><td>Delete all five. They are arguments about why <i>this</i> film is shaped this way, and carrying them into a different film is how a method becomes a rut.</td></tr>
+      <tr><td><b>Layered truths</b></td><td><span class="cls p">Project</span></td><td>Delete. Rebuild &mdash; every film should be able to state what it is about in eight lines, but they will be eight different lines.</td></tr>
+      <tr><td><b>Rights &amp; the name crosswalk</b></td><td><span class="cls p">Project</span></td><td>Delete the crosswalk. <b>Keep the reasoning</b> about exposure versus ownership, licences attaching on submission, and checking repository visibility before the first push. That part is not story-specific at all.</td></tr>
+      <tr><td><b>Control room</b></td><td><span class="cls p">Project</span></td><td>Resets itself &mdash; clear the stored step and it re-reads whatever <code>RUN</code> now contains.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><h3 style="font-size:22px">Starting project two</h3>
+    <p>In order, and it takes about an hour before you generate anything.</p>
+  </div>
+  <div class="proc" style="margin-bottom:34px">
+    <div class="pstep"><div class="ps-n">01</div><div class="ps-b"><div class="ps-hd"><h4>Delete the six project sections</h4></div><ul><li>Backcheck, thesis, brief, doctrine, blend, structural test, truths, crosswalk. Do this first &mdash; working around them is how the old film's shape leaks into the new one.</li></ul></div></div>
+    <div class="pstep"><div class="ps-n">02</div><div class="ps-b"><div class="ps-hd"><h4>Fix the three numbers</h4></div><ul><li>Runtime, shot count, on-screen identities. Everything else derives from them.</li><li>Read the anchor and reference counts off the scaling table rather than discovering them later.</li></ul></div></div>
+    <div class="pstep"><div class="ps-n">03</div><div class="ps-b"><div class="ps-hd"><h4>Empty the ten template arrays, keep every field</h4></div><ul><li><code>PREP SHOTS RUN FRAMES FORMS FRAGS PHASES CHECKS BINDX</code> and the plate set.</li><li>Resist changing the field names. They are the thinking; renaming them is how a template becomes a rewrite.</li></ul></div></div>
+    <div class="pstep"><div class="ps-n">04</div><div class="ps-b"><div class="ps-hd"><h4>Write the new governing rule first</h4></div><ul><li>Every world needs one visual law that everything else is graded against. Here it was core-versus-hollow. Find the new one before any character exists.</li></ul></div></div>
+    <div class="pstep"><div class="ps-n">05</div><div class="ps-b"><div class="ps-hd"><h4>Carry the lessons across untouched</h4></div><ul><li>Then keep appending. This is the only page that should be longer on project two than it was on project one.</li></ul></div></div>
+  </div>
+
+  <div class="sec-head"><h3 style="font-size:22px">Other mediums</h3>
+    <p>Runtime is only one axis. These change the method in specific, small ways &mdash; and in every case the change is which gates matter, never whether the gates exist.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th style="width:18%">Medium</th><th style="width:22%">What it changes</th><th>What stays exactly the same</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vertical short</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">9:16, under 60s</span></td><td>Every plate and anchor is generated 9:16 from the start &mdash; do not shoot wide and crop, you will lose the composition. The first frame does the work of the first thirty seconds.</td><td>Identity lock. The A-lane continuity pass. Filing. The loop.</td></tr>
+      <tr><td><b>Ad or commercial</b></td><td>The product is a fixed identity with zero tolerance for drift, so it gets a reference sheet stricter than any character. Gate A becomes the whole game.</td><td>Everything. This is the medium the method suits best, because the client already fixed the runtime.</td></tr>
+      <tr><td><b>Music video</b></td><td>Durations come from the track, not from you, so the timing lock happens <i>first</i> rather than at Gate C. Cut the stills reel against the audio.</td><td>Identity, anchors, the frame string, the gates. Only their order moves.</td></tr>
+      <tr><td><b>Trailer or teaser</b></td><td>Built from an existing film's assets, so Phase 0 is mostly skipped &mdash; but the binding board still applies, and it is the thing that stops a trailer becoming a favourites reel.</td><td>Binding. Selection is fit, not taste.</td></tr>
+      <tr><td><b>Episodic</b></td><td>Identity and plates become <b>series-level</b> and are locked once across all episodes. Gate A happens for the series, not the episode; everything downstream is per episode.</td><td>All of it, plus a continuity pass between episodes made weeks apart.</td></tr>
+      <tr><td><b>Documentary or explainer</b></td><td>Little or no character identity, so Phase 0 collapses to plates and locations. The script locks before anything visual, which makes the stills reel more valuable rather than less.</td><td>Filing, the loop, the gates, the binding board.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict" style="margin-top:22px">
+    <b>The honest summary:</b> about three quarters of this document is method and a quarter is <i>The Same Miracle</i>. That ratio is the whole argument for having built it this way &mdash; the first film paid for the tool, and the second one gets it for the cost of deleting six sections and emptying ten arrays. <b>Keep the lessons page above everything else.</b> The prompts are replaceable and the structure can be rebuilt from this page in an afternoon, but a list of the mistakes you have already paid for cannot be reconstructed from anything.
   </div>
 </div></section>
 
