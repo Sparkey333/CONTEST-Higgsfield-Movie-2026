@@ -26,7 +26,7 @@ No build step, no dependencies, no account, no network calls.
 
 | File | What it's for |
 | --- | --- |
-| **`index.html`** | The front door. Documents, install routes, open decisions, the daily capture protocol. |
+| **`index.html`** | The front door. Documents, install routes, open decisions, the **status read**, and the **key vault**. |
 | **`director-bible.html`** | The working app. This is where the film actually gets made. |
 | **`production-sheet.html`** | One page to keep open beside Higgsfield while you generate. |
 | **`lookbook-audit.html`** | The honest list of what the adaptation drops and what has no reference plate. |
@@ -52,6 +52,36 @@ No build step, no dependencies, no account, no network calls.
 | **Frame String** | All 39 anchor frames, shared joins and bridge frames, as an interactive ledger. |
 | **Model Matrix** | Every video model compared on max length, resolution, frame roles and references. |
 | **Key Vault** | BYOK storage with a `.env` export for local tooling. Browser storage only. |
+
+### The status read
+
+Four screenshots, in this order, are enough to reconstruct where the project
+stands without describing it. **The first alone answers most of it.**
+
+1. **Project folder tree, fully expanded** — every folder open, asset counts legible
+2. **Elements → Characters** — every `@handle` with its image count
+3. **All assets, filtered to Liked** — separates *generated* from *chosen*
+4. **The generate bar as it sits** — model, aspect ratio, duration
+
+`index.html` → **Status read** holds these as a checklist, takes the images,
+and builds a hand-off block with the counts already filled in. It logs each
+reading so the day-over-day delta is visible rather than remembered, and
+exports the log as CSV.
+
+Capture rules: full window never a region, one screen per image, and do not
+scale down on export — filenames and counts are the payload.
+
+## Keys
+
+Bring your own. The vault in `index.html` stores them in browser local storage
+and shares them with the director's bible, because both pages are one origin.
+Enter a key in either and both have it.
+
+**Exporting:** browsers refuse to save a leading-dot filename — Chromium strips
+the dot and appends `.txt` — so the export lands as `production-desk.env`.
+Rename it where your tooling wants a dotfile: `mv production-desk.env .env`.
+All three names (`.env`, `*.env`, `env.txt`) are gitignored, because the one
+that silently isn't covered is the one that gets committed with live keys in it.
 
 ## How the film is being made
 
@@ -86,6 +116,3 @@ novel's. The table mapping the two sets is **not committed**: it lives in
 `director-bible.html` on your machine, the crosswalk appears in the bible's
 rights section; in any published copy there is nothing there to leak.
 
-## Keys
-
-Never commit `.env` or an exported config. Both are already gitignored.

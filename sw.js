@@ -5,7 +5,7 @@
    Bump CACHE when any document changes, otherwise the installed app will
    keep serving the copy it cached on first run. */
 
-const CACHE = "desk-v3";
+const CACHE = "desk-v4";
 
 /* crosswalk.local.js is deliberately absent from this list: it is gitignored,
    may not exist, and a single 404 fails the whole addAll(). */

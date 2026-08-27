@@ -2902,10 +2902,12 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
     const v={}; KEYS.forEach(k=>{const t=document.getElementById("in-"+k.k).value.trim(); v[k.k]=t});
     const out=["# THE SAME MIRACLE — local runner environment",
       "# Generated from the director's bible key vault.",
-      "# Do not commit this file. Add .env to .gitignore.",""]
+      "# Browsers cannot save a dotfile, so this arrives as production-desk.env.",
+      "# Rename it to .env where your tooling expects one:  mv production-desk.env .env",
+      "# Do not commit it. Both names are already in .gitignore.",""]
       .concat(KEYS.map(k=>"# "+k.n+" — "+k.d+"\n"+k.k+"="+(v[k.k]||(k.ph||""))))
       .join("\n")+"\n";
-    dl(".env",out,"text/plain");
+    dl("production-desk.env",out,"text/plain");
   };
   document.getElementById("export-json").onclick=()=>{
     const v={}; KEYS.forEach(k=>{const t=document.getElementById("in-"+k.k).value.trim(); if(t)v[k.k]=t});
