@@ -1,4 +1,17 @@
 .env
 .env.*
 !.env.example
+
+# exported key configs — never commit
 litiguh.config.json
+director-bible.config.json
+*.config.json
+
+# the novel → production name mapping. This is the one file that reverses the
+# IP separation, so it stays local and is never pushed.
+crosswalk.local.js
+
+# local packaging output
+*.zip
+
+.DS_Store

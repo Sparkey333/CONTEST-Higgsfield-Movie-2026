@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Production Desk</title>
+<meta name="description" content="Local front door for the director's bible, the production sheet and the source audit.">
+<meta name="theme-color" content="#EDEFF5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#07080D" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="app.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Production Desk">
+<style>
+/* ============ TOKENS — light is the bare :root, dark redefines ============ */
+:root{
+  --ground:#EDEFF5; --surface:#FFFFFF; --surface-2:#E3E6EF; --surface-3:#D6DAE7;
+  --line:#BFC6D8; --line-soft:#DCE1EC;
+  --ink:#0E1017; --ink-2:#3D4459; --ink-3:#646B80;
+  --gold:#8A5A00; --gold-soft:#FBEBC4; --gold-line:#D9AC46;
+  --void:#3A32DC; --void-soft:#DEDCFF; --void-line:#9A96F5;
+  --coral:#BC3317; --coral-soft:#FFDCD1; --coral-line:#EE9273;
+  --jade:#046B45; --jade-soft:#CDF0E0; --jade-line:#5EBE95;
+  --shadow:0 1px 2px rgba(16,18,28,.06),0 8px 24px -12px rgba(16,18,28,.18);
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#07080D; --surface:#111319; --surface-2:#1A1D28; --surface-3:#242938;
+    --line:#333A4D; --line-soft:#20242F;
+    --ink:#F4F0E6; --ink-2:#A8AEC2; --ink-3:#767D92;
+    --gold:#FFBE4A; --gold-soft:#33260F; --gold-line:#6B4E18;
+    --void:#9B9DFF; --void-soft:#1C1D3D; --void-line:#403FA0;
+    --coral:#FF8F6B; --coral-soft:#3A1C13; --coral-line:#7A3826;
+    --jade:#4FDCA0; --jade-soft:#0A2E20; --jade-line:#1D6B4C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#07080D; --surface:#111319; --surface-2:#1A1D28; --surface-3:#242938;
+  --line:#333A4D; --line-soft:#20242F;
+  --ink:#F4F0E6; --ink-2:#A8AEC2; --ink-3:#767D92;
+  --gold:#FFBE4A; --gold-soft:#33260F; --gold-line:#6B4E18;
+  --void:#9B9DFF; --void-soft:#1C1D3D; --void-line:#403FA0;
+  --coral:#FF8F6B; --coral-soft:#3A1C13; --coral-line:#7A3826;
+  --jade:#4FDCA0; --jade-soft:#0A2E20; --jade-line:#1D6B4C;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:16px/1.6 var(--body);
+  padding:0 0 80px; overflow-x:hidden;
+}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+
+/* ---------- masthead ---------- */
+header.top{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--ground));
+  padding:44px 0 34px; margin-bottom:38px;
+}
+.eyebrow{
+  font:600 10.5px/1 var(--mono); letter-spacing:.19em; text-transform:uppercase;
+  color:var(--ink-3); display:block; margin-bottom:14px;
+}
+h1{
+  font:400 clamp(34px,6vw,54px)/1.04 var(--display);
+  margin:0 0 14px; letter-spacing:-.01em;
+}
+.lede{margin:0;max-width:64ch;color:var(--ink-2);font-size:17px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badge{
+  font:600 10px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;
+  padding:6px 9px;border-radius:5px;border:1px solid var(--line);
+  background:var(--surface-2);color:var(--ink-2);white-space:nowrap;
+}
+.badge.on{background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)}
+.badge.off{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+
+/* ---------- sections ---------- */
+section{margin-bottom:46px}
+.sec-head{margin-bottom:20px}
+h2{font:400 27px/1.2 var(--display);margin:0 0 8px;letter-spacing:-.005em}
+h2 .n{
+  font:600 11px/1 var(--mono);letter-spacing:.16em;color:var(--ink-3);
+  vertical-align:middle;margin-right:12px;
+}
+.sec-head p{margin:0;color:var(--ink-2);max-width:70ch;font-size:15px}
+
+/* ---------- doc cards ---------- */
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+a.doc{
+  display:flex;flex-direction:column;gap:10px;text-decoration:none;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;
+  padding:22px 22px 20px;box-shadow:var(--shadow);
+  transition:transform .13s ease,border-color .13s ease;
+}
+a.doc:hover{transform:translateY(-2px);border-color:var(--gold-line)}
+a.doc:focus-visible{outline:2px solid var(--void);outline-offset:3px}
+.doc .k{
+  font:600 9.5px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);
+}
+.doc h3{font:600 19px/1.25 var(--body);margin:0;letter-spacing:-.01em}
+.doc p{margin:0;font-size:14px;color:var(--ink-2);flex:1}
+.doc .f{
+  font:11px/1 var(--mono);color:var(--ink-3);
+  border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px;
+  display:flex;justify-content:space-between;gap:10px;
+}
+a.doc.primary{border-color:var(--gold-line);background:linear-gradient(180deg,var(--gold-soft),var(--surface) 62%)}
+
+/* ---------- numbered steps ---------- */
+.steps{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line-soft)}
+.step .sn{font:600 12px/1.5 var(--mono);color:var(--ink-3);letter-spacing:.08em}
+.step h4{margin:0 0 5px;font:600 15.5px/1.35 var(--body)}
+.step p{margin:0;font-size:14px;color:var(--ink-2)}
+.step p + p{margin-top:5px}
+code{
+  font:12.5px/1.45 var(--mono);background:var(--surface-2);
+  border:1px solid var(--line-soft);border-radius:4px;padding:1.5px 5px;
+  word-break:break-word;
+}
+kbd{
+  font:11.5px/1 var(--mono);background:var(--surface);border:1px solid var(--line);
+  border-bottom-width:2px;border-radius:4px;padding:3px 6px;
+}
+
+/* ---------- open decisions ---------- */
+.decs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.dec{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:9px;padding:17px 18px}
+.dec h4{margin:0 0 6px;font:600 15px/1.3 var(--body)}
+.dec p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.dec .blk{
+  display:inline-block;margin-top:9px;font:600 9.5px/1 var(--mono);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--coral);
+  background:var(--coral-soft);border:1px solid var(--coral-line);
+  border-radius:4px;padding:4px 7px;
+}
+
+/* ---------- capture ---------- */
+.cap{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:24px;box-shadow:var(--shadow)}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:0 0 18px}
+.shot{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:8px;padding:14px 15px}
+.shot .sk{font:600 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--void);display:block;margin-bottom:7px}
+.shot b{display:block;font:600 14px/1.3 var(--body);margin-bottom:4px}
+.shot span.d{font-size:13px;color:var(--ink-2)}
+pre{
+  margin:0;background:var(--surface-2);border:1px solid var(--line-soft);
+  border-radius:8px;padding:14px 15px;overflow-x:auto;
+  font:12.5px/1.7 var(--mono);color:var(--ink-2);
+}
+.rules{margin:16px 0 0;padding-left:20px;font-size:13.5px;color:var(--ink-2)}
+.rules li{margin-bottom:5px}
+
+.note{
+  background:var(--void-soft);border:1px solid var(--void-line);
+  border-radius:9px;padding:16px 18px;font-size:14px;color:var(--ink-2);
+}
+.note b{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);margin-top:20px;padding-top:22px;font-size:13px;color:var(--ink-3)}
+footer p{margin:0 0 6px}
+
+/* ---------- theme toggle ---------- */
+#tt{
+  position:fixed;right:16px;bottom:16px;z-index:9;
+  font:600 10px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;
+  background:var(--surface);color:var(--ink-2);border:1px solid var(--line);
+  border-radius:20px;padding:10px 15px;cursor:pointer;box-shadow:var(--shadow);
+}
+#tt:hover{border-color:var(--gold-line);color:var(--ink)}
+@media (max-width:640px){ .step{grid-template-columns:38px 1fr;gap:11px} .wrap{padding:0 18px} }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <span class="eyebrow">Local build &middot; runs with no server, no account, no network</span>
+  <h1>Production Desk</h1>
+  <p class="lede">The front door to the three documents that run this film. Everything here is a plain
+  file on your own disk &mdash; open it, work from it, close the laptop. Nothing phones home and nothing
+  expires.</p>
+  <div class="badges">
+    <span class="badge on">Offline</span>
+    <span class="badge on">Self-contained</span>
+    <span class="badge on">Installable</span>
+    <span class="badge">Light + dark</span>
+    <span class="badge off">Title undecided</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+
+<!-- ============ DOCUMENTS ============ -->
+<section>
+  <div class="sec-head">
+    <h2><span class="n">01</span>The documents</h2>
+    <p>Three files, three jobs. The bible is where you work; the sheet is what you keep open beside
+    Higgsfield; the audit is what you check yourself against when something feels thin.</p>
+  </div>
+  <div class="docs">
+
+    <a class="doc primary" href="director-bible.html">
+      <span class="k">The working app</span>
+      <h3>Director's Bible</h3>
+      <p>Run sheet with saved progress, 43 asset prompts &times; 4 variants, 23 shots, the 39-frame
+      string, forms and states, filing rules, the revision loop, the key vault. This is the one that
+      remembers where you stopped.</p>
+      <span class="f"><span>director-bible.html</span><span>~600&nbsp;KB</span></span>
+    </a>
+
+    <a class="doc" href="production-sheet.html">
+      <span class="k">Beside the screen</span>
+      <h3>Production Sheet</h3>
+      <p>One page. Folder structure, element naming, how many images per asset kind, what to do with
+      bad generations, the four Higgsfield tools, the verification sequence, the daily capture
+      protocol.</p>
+      <span class="f"><span>production-sheet.html</span><span>~34&nbsp;KB</span></span>
+    </a>
+
+    <a class="doc" href="lookbook-audit.html">
+      <span class="k">The honest list</span>
+      <h3>Source Audit</h3>
+      <p>What the asset register has no plate for, what the adaptation drops, and which shots are
+      currently carried by nothing. Read it when a movement feels underbuilt &mdash; it usually names
+      the reason.</p>
+      <span class="f"><span>lookbook-audit.html</span><span>~22&nbsp;KB</span></span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ============ INSTALL ============ -->
+<section>
+  <div class="sec-head">
+    <h2><span class="n">02</span>Getting it onto the Mac</h2>
+    <p>Three routes, cheapest first. Route&nbsp;A is enough for most days. Route&nbsp;B is the one that
+    gives you a real Dock icon and its own window with no browser chrome around it.</p>
+  </div>
+  <div class="steps">
+
+    <div class="step">
+      <div class="sn">A</div>
+      <div>
+        <h4>Just open it</h4>
+        <p>Double-click <code>index.html</code>. Every link on this page is relative, so the whole desk
+        works straight off the disk with no server running.</p>
+        <p>The only thing you lose is offline caching, which you do not need when the files are
+        already local.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="sn">B</div>
+      <div>
+        <h4>Install it as an app</h4>
+        <p>Double-click <code>Open Director Bible.command</code>. It starts a small local web server in
+        this folder and opens the desk in your browser. First run only: right-click it &rarr;
+        <b>Open</b>, because macOS blocks double-clicked scripts the first time.</p>
+        <p>Then in Chrome or Edge, <b>File &rarr; Install page as app</b> (or the install icon in the
+        address bar). You get <b>Production Desk</b> in the Dock, in its own window, and it keeps
+        working after you close the terminal because the service worker has cached everything.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="sn">C</div>
+      <div>
+        <h4>Or run the server yourself</h4>
+        <p>In Terminal, from this folder: <code>python3 -m http.server 8733</code> &mdash; then open
+        <code>http://localhost:8733</code>. Same result as B, without the launcher file.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="sn">&mdash;</div>
+      <div>
+        <h4>Where your work is actually stored</h4>
+        <p>Run-sheet progress, ticked checks and vault keys live in <b>browser local storage</b>, which
+        is per-browser and per-origin. That has one consequence worth knowing before you start:
+        <b>opening the bible from a file path and from <code>localhost</code> are two different
+        origins</b>, so they keep two separate sets of progress.</p>
+        <p>Pick one route and stay on it. If you plan to install it as an app, start with route B from
+        day one.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ OPEN DECISIONS ============ -->
+<section>
+  <div class="sec-head">
+    <h2><span class="n">03</span>Open decisions</h2>
+    <p>Three things are still unresolved, and all three are cheap now and expensive later &mdash; each
+    one is upstream of assets that are already being generated.</p>
+  </div>
+  <div class="decs">
+
+    <div class="dec">
+      <h4>The title</h4>
+      <p>The brief and the bible say <b>THE SAME MIRACLE</b>. The Higgsfield project folder says
+      <b>Matter of Light</b>. Pick one and make the other a note, because the title is on the master
+      filename, the brief and the submission.</p>
+      <span class="blk">Blocks Phase 0 sign-off</span>
+    </div>
+
+    <div class="dec">
+      <h4>&ldquo;Drowning&rdquo;</h4>
+      <p>There is an <code>@Drowning</code> element folder with no referent in the source. Either it is
+      a scene name that needs writing down, or it is a stray from an early session that should be
+      deleted before it accumulates generations.</p>
+      <span class="blk">Blocks element cleanup</span>
+    </div>
+
+    <div class="dec">
+      <h4>Leviathan scale</h4>
+      <p>Described as &ldquo;the size of a city block&rdquo;. Nothing in the anchor frames fixes what it
+      is measured against, so every generation guesses differently. Choose the reference object once
+      and put it in the prompt.</p>
+      <span class="blk">Blocks Movement II anchors</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DAILY CAPTURE ============ -->
+<section>
+  <div class="sec-head">
+    <h2><span class="n">04</span>Before you start work</h2>
+    <p>Three screenshots, same three every day, in this order. It takes about forty seconds and it is
+    what lets the project be read back accurately instead of remembered optimistically.</p>
+  </div>
+  <div class="cap">
+    <div class="shots">
+      <div class="shot"><span class="sk">Shot 1</span><b>Folder tree, expanded</b>
+        <span class="d">Every folder open, asset counts visible. This is the one that shows drift.</span></div>
+      <div class="shot"><span class="sk">Shot 2</span><b>All assets, filtered to Liked</b>
+        <span class="d">The favourites are the shortlist. If it is not liked, it does not exist yet.</span></div>
+      <div class="shot"><span class="sk">Shot 3</span><b>Elements &rarr; Characters</b>
+        <span class="d">Handles and their image counts, so identity drift is caught the day it starts.</span></div>
+    </div>
+    <pre>STANDUP  <span style="color:var(--ink-3)">— paste this above the screenshots</span>
+
+Date:        2026-__-__
+Gate:        A / B / C / D / E        (last one that HOLDS)
+Yesterday:   ______________________
+Today:       ______________________
+Blocked by:  ______________________  (or: nothing)
+Counts:      refs __/43   anchors __/39   shots __/23</pre>
+    <ul class="rules">
+      <li><b>Full window, never a region.</b> A cropped screenshot hides the thing that was about to be
+      the answer.</li>
+      <li><b>One screen per image.</b> Two monitors in one file makes both unreadable.</li>
+      <li><b>Never scale down on export.</b> Filenames and counts are the payload; if they are not
+      legible the capture was wasted.</li>
+      <li><b>Same three, same order, every day.</b> The value is in the diff, and a diff needs the shots
+      to line up.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ NOTE ============ -->
+<section>
+  <div class="note">
+    <b>On the name crosswalk.</b> The table mapping production names back to the novel is deliberately
+    not inside <code>director-bible.html</code>. It lives in <code>crosswalk.local.js</code>, which is
+    gitignored and never committed. If that file is sitting in this folder the table appears in the
+    bible's rights section; if it is not, there is nothing there to leak. That is the correct state for
+    any copy you publish, share or push.
+  </div>
+</section>
+
+<footer>
+  <p>Written, directed and produced by <b>B.L. Barkey</b>. Narrative content is not covered by the
+  repository licence &mdash; see <code>NOTICE</code>.</p>
+  <p>No analytics, no network calls, no external assets. Everything on this page is in this folder.</p>
+</footer>
+
+</div>
+
+<button id="tt" type="button" aria-label="Switch colour theme">Theme</button>
+
+<script>
+(function(){
+  var K="msm.theme", r=document.documentElement, b=document.getElementById("tt");
+  function get(){ try{ return localStorage.getItem(K); }catch(e){ return null; } }
+  function set(v){ try{ localStorage.setItem(K,v); }catch(e){} }
+  var saved=get(); if(saved==="dark"||saved==="light") r.setAttribute("data-theme",saved);
+  function dark(){
+    var a=r.getAttribute("data-theme");
+    if(a) return a==="dark";
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches;
+  }
+  function label(){ b.textContent = dark() ? "Light" : "Dark"; }
+  label();
+  b.addEventListener("click",function(){
+    var next = dark() ? "light" : "dark";
+    r.setAttribute("data-theme",next); set(next); label();
+  });
+})();
+
+/* Service worker — only over http(s). Silently absent on file://, which is correct. */
+if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
+  window.addEventListener("load",function(){
+    navigator.serviceWorker.register("sw.js").catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

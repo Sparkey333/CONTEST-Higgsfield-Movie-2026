@@ -1,4 +1,23 @@
 <title>THE SAME MIRACLE — Director's Bible</title>
+<script>
+/* One-time storage migration. The old keys carried a coined term from the novel,
+   which leaked the source through devtools and through the exported config
+   filename, so they were renamed. Copy forward rather than move, so an older
+   copy of this file opened afterwards still finds its own progress. */
+(function(){
+  try{
+    /* lane is not migrated: it is cleared on every load by design. */
+    var map={"litiguh.keys":"msm.keys","litiguh.run":"msm.run",
+             "litiguh.checks":"msm.checks"};
+    for(var old in map){
+      var nu=map[old];
+      if(localStorage.getItem(nu)===null && localStorage.getItem(old)!==null){
+        localStorage.setItem(nu, localStorage.getItem(old));
+      }
+    }
+  }catch(e){}
+})();
+</script>
 <style>
 /* ============ TOKENS: light is the bare :root, dark redefines ============ */
 :root{
@@ -1684,7 +1703,7 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   <table class="dials">
     <tbody>
       <tr><td>Why the earlier advice changed</td><td>Ownership was never the risk. You own the novel from the moment you wrote it, and no contest entry transfers that. The risk is <b>exposure of the vocabulary</b>: the entry publishes your prompts and generation history, so every coined term you typed &mdash; the names, the islands, the Stones, the title &mdash; enters a public, machine-readable corpus on someone else's platform, under whatever licence you accepted, years before the novel is finished. That is not a copyright question. It is a branding and control question, and it is the one worth acting on.</td></tr>
-      <tr><td>Do scrambles work? (&ldquo;Egwn&rdquo;, &ldquo;Rinot&rdquo;)</td><td><b>No &mdash; they are the worst of both options.</b> Names are not protected by copyright at all, so a scramble buys you nothing legally. And it buys you nothing practically either: anyone reading &ldquo;Egwn and Rinot&rdquo; sees Gwen and Torin, so the vocabulary is still exposed, while you have also failed to build a clean second brand. Either use the real names deliberately, or use genuinely distinct ones. Half-measures give you neither the link nor the separation.</td></tr>
+      <tr><td>Do scrambles work? (&ldquo;Egwn&rdquo;, &ldquo;Rinot&rdquo;)</td><td><b>No &mdash; they are the worst of both options.</b> Names are not protected by copyright at all, so a scramble buys you nothing legally. And it buys you nothing practically either: anyone reading a scrambled name reads straight through it to the original, so the vocabulary is still exposed, while you have also failed to build a clean second brand. Either use the real names deliberately, or use genuinely distinct ones. Half-measures give you neither the link nor the separation.</td></tr>
       <tr><td>Does entering complicate finishing the novel?</td><td>Not if the licence is ordinary. A contest licence normally attaches to <b>the entry</b> &mdash; the film &mdash; not to the underlying work it was adapted from. A non-exclusive, promotional licence in a five-minute film does not reach your manuscript. The clauses that <i>would</i> complicate it are: the word <b>exclusive</b>, anything worded as an <b>assignment</b>, any reference to <b>&ldquo;underlying works&rdquo;</b> or <b>&ldquo;derivative works&rdquo;</b>, and any <b>moral-rights waiver</b>. Read for those five things specifically.</td></tr>
       <tr><td>&ldquo;If I don't win, it's all mine anyway&rdquo;</td><td><b>No &mdash; and this is the assumption worth correcting.</b> Contest licences almost always attach <i>on submission</i>, not on winning: the wording is typically &ldquo;by entering, you grant&hellip;&rdquo;. Losing does not release you, and entries are usually published regardless of result. Winning generally adds obligations rather than creating the licence. Assume the grant is live the moment you press submit.</td></tr>
       <tr><td>What to put on the end card</td><td>Credit yourself; do not hand over the link. <b>&ldquo;Original screen story by B.L. Barkey&rdquo;</b> gives you authorship and provenance without naming the novel and inviting the licence to be read against it. Only name <i>Stone of Matter</i> if the rules require you to disclose underlying IP &mdash; and if they ask, disclose honestly. Never conceal something the entry form actually asks for.</td></tr>
@@ -1697,36 +1716,13 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   <div class="verdict" style="margin-top:22px;border-color:var(--coral-line);background:var(--coral-soft)">
     <b>Before anything else: this repository is public.</b> <code>source/chapters-1-3.txt</code> &mdash; 7,830 words of the unpublished manuscript &mdash; is readable by anyone, and the root <code>LICENSE</code> is <b>Apache&nbsp;2.0</b>, which grants the world a perpetual, irrevocable, royalty-free licence to reproduce the work and <i>prepare derivative works of it</i>. That licence was meant for the tooling. Read against the whole repository it reaches your novel, and it is a far larger giveaway than any contest clause. A <code>NOTICE</code> file has been added carving the narrative content out of the Apache grant, which is the strongest same-day mitigation available &mdash; but the real fix is to <b>make the repository private and take the manuscript out of it</b>. That is your call to make, not mine, so it has not been done.
   </div>
-
   <div class="sec-head" style="margin-top:44px">
     <h3 style="font-size:22px">The name crosswalk</h3>
-    <p>Every name in this bible is now a production name, distinct from the novel. The film can be published, indexed and licensed without putting a single coined term from <i>Stone of Matter</i> into public circulation. <b>This table is the only place the two sets meet &mdash; delete this block before sharing the bible with anyone.</b></p>
+    <p>Every name in this bible is a production name, distinct from the novel. The film can be published, indexed and licensed without putting a single coined term from the source into public circulation. <b>The table that maps the two sets is deliberately not in this file</b> &mdash; it lives in <code>crosswalk.local.js</code>, which is gitignored and never leaves your machine. If that file is sitting next to this one, the table appears below; if it is not, there is nothing here to leak.</p>
   </div>
-  <table class="dials">
-    <thead><tr><th style="width:26%">Novel</th><th style="width:26%">Production</th><th>Why this one</th></tr></thead>
-    <tbody>
-      <tr><td><i>Stone of Matter</i> / LITIGUH</td><td><b>THE SAME MIRACLE</b></td><td>The old title was itself a coined term from the book, which made the title the single largest leak. The new one is the film's own thesis &mdash; one event, two children, two futures &mdash; and belongs to the film rather than the novel.</td></tr>
-      <tr><td>Gwendolyn / Gwen</td><td><b>Oriane</b> / Ori</td><td>Carries dawn and gold at the root, which her whole function is. Shortens as naturally as Gwen did.</td></tr>
-      <tr><td>Torin</td><td><b>Caedom</b></td><td>After the first named English poet &mdash; a maker who sings things into being. More apt for a creator than the original.</td></tr>
-      <tr><td>Morningstar</td><td><b>the Vesper</b></td><td>The evening star against her morning one: same astronomical family, opposite end of the day, and it sheds the Lucifer cliché the original invited.</td></tr>
-      <tr><td>Ammon (8)</td><td><b>Alder</b></td><td>The elder brother, and the word carries &ldquo;elder&rdquo; inside it.</td></tr>
-      <tr><td>Mikael (6&frac12;)</td><td><b>Wren</b></td><td>Paired with Alder it gives you tree and bird &mdash; the older one rooted and calculating, the younger one light and never still. The pairing does more work than the originals did.</td></tr>
-      <tr><td>the master puppeteer</td><td><b>the Threadwright</b></td><td>Names the craft rather than the cliché, and &ldquo;wright&rdquo; implies she made the strings as well as pulls them.</td></tr>
-      <tr><td>the dark ones</td><td><b>the Turned</b></td><td>Implies they were something else first, which is exactly what the novel says about them.</td></tr>
-      <tr><td>Guardians / Sector Guard</td><td><b>the Vigil</b> (members: <b>Keepers</b>)</td><td>A vigil is a watch kept &mdash; and their defining act is refusing to watch. The irony is free.</td></tr>
-      <tr><td>Litiguh (angel of light)</td><td><b>Auren</b></td><td>Same aurum/aurora root as Oriane, so the title and the woman who holds it now rhyme.</td></tr>
-      <tr><td>Proelum</td><td><b>Machira</b></td><td>Built from the Greek for battle, preserving exactly the resonance the Latin original had.</td></tr>
-      <tr><td>Cephas Island</td><td><b>Cairn Island</b></td><td>Cephas means rock; a cairn is <i>placed</i> stone that marks a spot &mdash; a sharper irony for an island whose whole plot is staying hidden.</td></tr>
-      <tr><td>Horizon Islands</td><td><b>the Verge Isles</b></td><td>Same idea of the edge of sight, different word.</td></tr>
-      <tr><td>Coral Beach</td><td><b>Nacre Beach</b></td><td>Nacre is mother-of-pearl &mdash; more precise about the iridescent sand than &ldquo;coral&rdquo; ever was.</td></tr>
-      <tr><td>the Corals</td><td><b>the Bloom</b></td><td>Reads as a reef in full colour and as something about to happen.</td></tr>
-      <tr><td>Guardian Isle</td><td><b>Keeper's Isle</b></td><td>Follows the order's rename.</td></tr>
-      <tr><td>Creation Stones / the Seven</td><td><b>Founding Stones</b></td><td>Same function, ordinary English, no coinage to defend.</td></tr>
-      <tr><td>Stone of Voids &middot; of Matter &middot; of Dominion</td><td><b>Stone of Hollows &middot; the Anchor Stone &middot; Stone of Thrall</b></td><td>&ldquo;Hollow&rdquo; is more evocative than &ldquo;void&rdquo;; &ldquo;anchor&rdquo; carries mass and holding-fast; &ldquo;thrall&rdquo; names the horror the novel describes rather than the mechanic.</td></tr>
-      <tr><td>the mechanic: a <i>void</i></td><td><b>a hollow</b></td><td>Renamed throughout the effect sheets. An absence you can open in the air &mdash; and it keeps the system vocabulary out of public prompts.</td></tr>
-      <tr><td>the Great Fire &middot; the Greater War</td><td><b>the Long Fire &middot; the Unending War</b></td><td>Plainer, and they no longer sound like the same phrase twice.</td></tr>
-    </tbody>
-  </table>
+  <div id="crosswalk-slot"><div class="verdict" style="border-style:dashed"><b>Crosswalk not loaded.</b> <code>crosswalk.local.js</code> is not beside this file. That is the correct state for any copy you have shared, published or pushed.</div></div>
+  <script src="crosswalk.local.js"></script>
+  <script>if(window.CROSSWALK){document.getElementById("crosswalk-slot").innerHTML=window.CROSSWALK;}</script>
   <div class="verdict" style="margin-top:22px">
     <b>What this does and does not buy you.</b> It does not protect the story &mdash; the plot, the structure and the scenes are still recognisably your novel, and that is fine, because you own those too and the separation was never meant to hide the connection. What it buys is that your <i>coined vocabulary</i> stays yours and stays unpublished: the words a series would be branded on never enter the contest's licence, the platform's logs, or a training corpus. <span style="color:var(--ink-3)">This is practical guidance from someone who is not your lawyer. The licence clause and the Apache-2.0 question are both worth a professional read before you submit.</span>
   </div>
@@ -2865,7 +2861,7 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
 /* ================= VAULT ================= */
 (function(){
   const host=document.getElementById("keyrows");
-  const store="litiguh.keys";
+  const store="msm.keys";
   KEYS.forEach(k=>{
     const r=document.createElement("div");
     r.className="keyrow";
@@ -2917,13 +2913,13 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
       providers:KEYS.map(k=>({name:k.n,env:k.k,configured:!!v[k.k],console:k.u})),
       shot_manifest:SHOTS.map(s=>({id:s.id,movement:s.mv,seconds:s.d,title:s.t,model:s.model,source:s.canon,
         variants:s.v.map(v=>({variant:v.c,name:v.n,technique:v.tech,prompt:v.p}))}))};
-    dl("litiguh.config.json",JSON.stringify(cfg,null,2),"application/json");
+    dl("director-bible.config.json",JSON.stringify(cfg,null,2),"application/json");
   };
 })();
 
 /* ================= CHECKLIST ================= */
 (function(){
-  const host=document.getElementById("checklist"), store="litiguh.checks";
+  const host=document.getElementById("checklist"), store="msm.checks";
   let done=[]; try{done=JSON.parse(localStorage.getItem(store)||"[]")}catch(e){}
   CHECKS.forEach((c,i)=>{
     const row=document.createElement("label");
@@ -3815,7 +3811,7 @@ const PREP=[
  ]},
 
 {k:"wren",n:"Wren &mdash; the younger brother",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / BROTHERS",sv:"REF-wren",
- canon:"Ch III &mdash; &ldquo;Mikael was only six-and-a-half years old, making the swim a truly incredible feat for someone his age.&rdquo; He is the one who says &ldquo;Ammon, I want that!&rdquo; and imagines them both making it in, so their parents would be proud.",
+ canon:"Ch III &mdash; the younger brother is only six-and-a-half, which makes the swim a genuinely incredible feat for his age. He is the one who says &ldquo;Alder, I want that!&rdquo; and imagines them both making it in, so their parents would be proud.",
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; in motion",sv:"REF-wren-A-##",
   why:"He is the emotional weather of the third movement and he is almost never still, so a neutral sheet fights the character. This one trains him mid-speech on purpose &mdash; an open mouth and raised brows are what the model needs to hold, because that is what every shot asks for.",
@@ -4062,7 +4058,7 @@ const RUN=[
  a:"Give me the final delivery spec and the MVS checklist in order.",
  b:"<b>Cinema Studio</b> → submission project → apply the official watermark and packshot to the finished cut.",
  w:"Cinema Studio",u:HF+"cinema-studio",
- set:"MP4 or MOV, up to 4K, 21:9. Runtime clears the 3:00 floor. English subtitles or voice-over for all dialogue.",sv:"MASTER-litiguh-watermarked",
+ set:"MP4 or MOV, up to 4K, 21:9. Runtime clears the 3:00 floor. English subtitles or voice-over for all dialogue.",sv:"MASTER-film-watermarked",
  mdl:"nano_banana_pro · still, or an export",ar:"21:9 master · 1:1 packshot",fld:"06 · DELIVERY"},
 {ph:"Phase 7",t:"Social post — MVS component 2, and the classic way to lose",
  s:"A public post on Instagram, YouTube, X or Reddit showing the film with watermark and packshot intact. Mandatory, not optional. The post and the account must both be public and stay public through the end of the festival — a private account is the single most common reason an otherwise-strong entry gets marked non-eligible.",
@@ -4081,7 +4077,7 @@ const RUN=[
 
 /* ================= CONTROL ROOM ================= */
 (function(){
-  const STORE="litiguh.run", LSTORE="litiguh.lane";
+  const STORE="msm.run", LSTORE="msm.lane";
   const host=document.getElementById("runsheet");
   const clean=t=>t.replace(/<[^>]+>/g,"").replace(/&#37;/g,"%").replace(/&mdash;/g,"—").replace(/&amp;/g,"&").replace(/&ldquo;|&rdquo;/g,'"').replace(/&nbsp;/g," ");
 
