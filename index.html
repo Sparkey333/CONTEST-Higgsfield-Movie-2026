@@ -521,14 +521,14 @@ function flash(el,msg,cls){
 /* Ordered by how much of the project state each one recovers.
    CAPS[0] alone answers most of it — everything after narrows the answer. */
 var CAPS=[
-  { id:"tree", req:1, n:"Project folder tree, fully expanded",
-    w:"Every folder open with its <em>asset count</em> visible. This is the frame that shows what exists, what is empty, and where the work actually went &mdash; it is the one capture that is worth more than a paragraph of description." },
+  { id:"tree",  req:1, n:"Folder tree, expanded",
+    w:"Every folder open, <em>counts legible</em>. Take this one even if you take nothing else." },
   { id:"chars", req:1, n:"Elements &rarr; Characters",
-    w:"Every <em>@handle</em> with its image count. This is where identity drift is caught on the day it starts, and it is the only view that shows whether a handle is a version or a state." },
-  { id:"liked", req:0, n:"All assets, filtered to Liked",
-    w:"The shortlist. If it is not liked it does not exist yet, so this separates <em>generated</em> from <em>chosen</em> &mdash; and the gap between those two numbers is usually the real status." },
-  { id:"bar", req:0, n:"The generate bar as it currently sits",
-    w:"Model, <em>aspect ratio</em> and duration. Small frame, high value: it was last seen set to 4:3 and 30s on a film that is 21:9 with an 18-second ceiling." }
+    w:"Every <em>@handle</em> with its image count. Drift shows up here first." },
+  { id:"liked", req:0, n:"Assets filtered to Liked",
+    w:"What you <em>chose</em>, not just what you made." },
+  { id:"bar",   req:0, n:"The generate bar",
+    w:"Model, <em>ratio</em>, duration. Ten seconds, and it catches wrong settings." }
 ];
 
 (function(){
