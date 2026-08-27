@@ -234,7 +234,7 @@ td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);
 └─ <b>99 · LOOKDEV</b>               <i>every reject. Never deleted.</i>
                        original generation names intact</pre>
         <div class="note">
-          <b>No scene folders. Anywhere.</b> Scene grouping already exists in the shot IDs and the frame ledger — a third copy is a third thing to drift, and the folder is always the one that drifts.
+          <b>Correction to an earlier rule.</b> &ldquo;No scene folders anywhere&rdquo; was too broad. It holds for <b>references</b> — an identity split across scenes destroys the one view where drift is visible. It does <i>not</i> hold for <b>shots</b>: grouping those by movement <i>is</i> the position axis, and it is the same thing the anchor folders do. So keep <code>Scene #1/#2/#3</code>, rename them <code>MV1 · MV2 · MV3</code> to match the film, and put only shots and anchors in them. Never a character.
         </div>
       </div>
 
@@ -320,6 +320,42 @@ REF-oriane-A7-M016-B-v2-03
       </div>
 
       <div class="blk">
+        <h2>The four tools <em>two execute the plan, two compete with it</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-do">Core</div>
+          <div class="body">
+            <h3>Elements</h3>
+            <p>The <code>@handle</code> library. This is the single most important tool in the room — it is what keeps a face the same across nine weeks. Everything in the roster below lives here.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">Core</div>
+          <div class="body">
+            <h3>The generate bar</h3>
+            <p>Model, references, aspect, resolution, duration. Where the work actually happens. <b>Check the settings every session</b> — see the warning below.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">Limited</div>
+          <div class="body">
+            <h3>Canvas</h3>
+            <p>Lookdev only. Compare variants spatially, think, then regenerate the decision inside the project. Nothing that ships gets composed on it.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">Limited</div>
+          <div class="body">
+            <h3>Chat &amp; AI Director</h3>
+            <p>These generate <b>decisions</b> — shot ideas, directions, structure. You already have those, written down and argued for. Using them now means negotiating your own plan with a tool that has not read the novel.</p>
+            <p><b>The one good use:</b> a second opinion <i>at a gate</i>. Ask AI Director what it would do with a shot you are stuck on, take the idea if it is better, and never let it re-plan the film.</p>
+          </div>
+        </div>
+        <div class="note">
+          <b>The generate bar is currently set to 4:3, 30s.</b> The film is 21:9 and its longest shot is 18 seconds. Those two settings will quietly produce unusable frames at full price — reset them to <b>21:9</b> and the shot's real duration before the next generation, and check them at the top of every session.
+        </div>
+      </div>
+
+      <div class="blk">
         <h2>Elements <em>the handle is an API — treat it like one</em></h2>
         <div class="rule-row">
           <div class="verdict v-never">Never</div>
@@ -391,6 +427,82 @@ REF-oriane-A7-M016-B-v2-03
             <h3>A new element only for a genuinely new state</h3>
             <p>Different costume, different power rung, different age. Not &ldquo;a better version&rdquo; — that is an <i>add</i>. If you cannot name the new state in one word, it is not a new element.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FULL WIDTH: HANDLES + STANDUP ============ -->
+  <div class="cols" style="margin-top:16px">
+    <div class="stack">
+      <div class="blk">
+        <h2>Handle cleanup <em>what you have &rarr; what to make it</em></h2>
+        <table>
+          <thead><tr><th>Now</th><th>Becomes</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="k">@Oriane <span style="color:var(--ink-3)">16</span><br>@Oriane-1 <span style="color:var(--ink-3)">13</span></td><td class="k">@oriane_rest<br>@oriane_ascended</td><td>Not duplicates — <b>two states</b>. Sort all 29 images by costume: mantle and boots into rest, dark robe and bare feet into ascended.</td></tr>
+            <tr><td class="k">@Oriane-damaged <span style="color:var(--ink-3)">3</span></td><td class="k">@oriane_damaged</td><td>Right idea already. Needs 6&ndash;8 images, not 3.</td></tr>
+            <tr><td class="k">@Caedom <span style="color:var(--ink-3)">24</span></td><td class="k">@caedom_ascended<br>@caedom_mortal</td><td>24 images is two states in one element — the exact averaging problem. Split them.</td></tr>
+            <tr><td class="k">@KaiBrothers <span style="color:var(--ink-3)">16</span></td><td class="k">@alder · @wren<br>@brothers</td><td>Alder carries the film's last shot alone and needs his own callable identity.</td></tr>
+            <tr><td class="k">@TheTurned16 <span style="color:var(--ink-3)">16</span></td><td class="k">@turned</td><td>The <code>16</code> reads as a version number. It is a headcount, and it does not belong in a name.</td></tr>
+            <tr><td class="k">@ThreadWright <span style="color:var(--ink-3)">18</span></td><td class="k">@threadwright</td><td>Lowercase, one word. Mixed case costs you a typo a day.</td></tr>
+            <tr><td class="k">@TheKeepers <span style="color:var(--ink-3)">8</span></td><td class="k">@vigil</td><td>Matches the order's name in the bible.</td></tr>
+            <tr><td class="k">@Wielder-Dominion <span style="color:var(--ink-3)">14</span></td><td class="k">@lev_rider</td><td>He is the fused rider specifically, not the domain in general.</td></tr>
+            <tr><td class="k">@Drowning <span style="color:var(--ink-3)">0</span><br>@StarMorn <span style="color:var(--ink-3)">0</span></td><td class="k">delete or define</td><td>Both empty. <b>@Drowning</b> has never had a source referent — decide what it is or remove it. <b>@StarMorn</b> is the Vesper, who does not appear in these three chapters.</td></tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <b>Do this in one sitting, before the next generation.</b> Nothing downstream references these handles yet, which makes right now the only cheap moment. Every prompt written after today locks them in.
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="blk">
+        <h2>Daily capture <em>three screenshots, then one line</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-spec">01</div>
+          <div class="body">
+            <h3>The folder tree, fully expanded</h3>
+            <p>Sidebar only is fine. <b>Counts must be legible</b> — they are how progress gets measured. Expand every folder, including the empty ones.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">02</div>
+          <div class="body">
+            <h3>All assets, filtered to Liked</h3>
+            <p>Your favourites <i>are</i> your selections, so this is the clearest picture of what is genuinely done. Leave the filter chips visible so I can see what is being filtered.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">03</div>
+          <div class="body">
+            <h3>Elements &rarr; Characters</h3>
+            <p>Handles and their thumbnails. This is where drift shows up first, and it is the one I will comment on hardest.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">Then</div>
+          <div class="body">
+            <h3>One line of text</h3>
+            <p>Where you are, what you did since last time, what is blocking you. Three sentences maximum — the screenshots carry the facts, the line carries the intent.</p>
+          </div>
+        </div>
+        <div class="note">
+          <b>Capture rules that actually matter:</b> full window, never a cropped region — the chrome tells me which screen I am looking at. One screen per image, not a collage. <b>Do not scale down</b> before sending; small text is the single most common reason I have to guess. And a wide window beats a tall one, because the counts sit on the right.
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>The standup line <em>paste this, fill the blanks</em></h2>
+        <pre class="tree">DAY 00 &middot; <b>date</b>
+
+SINCE LAST     what got generated, sorted or locked
+NOW WORKING ON the one thing in front of you
+BLOCKED ON     what is stopping you, or "nothing"
+CREDITS        balance, so pace can be advised</pre>
+        <div class="note">
+          What comes back: <b>an updated slot count</b>, the next three moves in order, and anything in the screenshots that contradicts the plan — a stray aspect ratio, a handle that split, a folder filling up that should not be.
         </div>
       </div>
     </div>
