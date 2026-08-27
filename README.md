@@ -38,9 +38,9 @@ No build step, no dependencies, no account, no network calls.
 | Section | What's in it |
 | --- | --- |
 | **Process** | The whole film in bold headlines and short bullets, with iteration and review points marked. Start here. |
-| **Control Room** | A 33-step run sheet that remembers where you stopped. One step lit at a time, with the exact screen, model, aspect ratio, prompt and filename per step. |
+| **Control Room** | A 34-step run sheet that remembers where you stopped. One step lit at a time, with the exact screen, model, aspect ratio, prompt and filename per step. |
 | **Reuse** | Every part of this document classified generic / template / project, plus what changes for a vertical short, an ad, a music video, a trailer, an episode. |
-| **Asset Prompts** | 43 reference assets × 4 variant lanes — A continuity, B in-world plate, C alternate medium, D chroma pass. |
+| **Asset Prompts** | 42 reference assets × 4 variant lanes — A continuity, B in-world plate, C alternate medium, D chroma pass. |
 | **Forms & States** | 34 character states across 7 groups. A character is not one asset. |
 | **Power Ladders** | Two orthogonal axes — attunement A1–A6 and mind-splits M1→M200+ — carried as prompt modifiers rather than as separate assets. |
 | **Filing & Selection** | Three axes: references by identity, anchors by position, shots by pipeline stage. Plus what to do with bad generations. |

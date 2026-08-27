@@ -53,7 +53,7 @@ Every visual asset is generated from scratch, in this project, inside the
 generation window. Nothing is reused from earlier work. Audio is made
 separately and uploaded here.
 
-- **43 reference assets** — characters, lighting plates, locations, props,
+- **42 reference assets** — characters, lighting plates, locations, props,
   creatures and effect rule sheets, each generated on a plain background before
   a single film frame exists
 - **39 anchor frames** — one continuous string in film order, with chained shots

@@ -176,7 +176,7 @@ td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);
       <div><dt>Runtime</dt><dd>300 sec</dd></div>
       <div><dt>Shots</dt><dd>23</dd></div>
       <div><dt>Anchors</dt><dd>39</dd></div>
-      <div><dt>References</dt><dd>43</dd></div>
+      <div><dt>References</dt><dd>42</dd></div>
       <div><dt>Prompts</dt><dd>241</dd></div>
     </dl>
   </div>
@@ -401,7 +401,6 @@ REF-oriane-A7-M016-B-v2-03
             <tr><td class="k">@caedom_mortal</td><td>Caedom</td><td class="n">6&ndash;8</td><td>The ordinary man. Same bone structure, no light.</td></tr>
             <tr><td class="k">@alder</td><td>Alder</td><td class="n">8&ndash;12</td><td>Eight. Dark hair, still mouth, level gaze.</td></tr>
             <tr><td class="k">@wren</td><td>Wren</td><td class="n">8&ndash;12</td><td>Six and a half. Blonde, mid-speech, never still.</td></tr>
-            <tr><td class="k">@brothers</td><td>Brothers</td><td class="n">4&ndash;6</td><td>The pairing check. Equal height verified here.</td></tr>
             <tr><td class="k">@threadwright</td><td>Threadwright</td><td class="n">6&ndash;8</td><td>Face never resolved. Hands do the acting.</td></tr>
             <tr><td class="k">@vigil</td><td>The Vigil</td><td class="n">6&ndash;8</td><td>White robes, blank faces, identical construction.</td></tr>
           </tbody>
@@ -443,7 +442,7 @@ REF-oriane-A7-M016-B-v2-03
             <tr><td class="k">@Oriane <span style="color:var(--ink-3)">16</span><br>@Oriane-1 <span style="color:var(--ink-3)">13</span></td><td class="k">@oriane_rest<br>@oriane_ascended</td><td>Not duplicates — <b>two states</b>. Sort all 29 images by costume: mantle and boots into rest, dark robe and bare feet into ascended.</td></tr>
             <tr><td class="k">@Oriane-damaged <span style="color:var(--ink-3)">3</span></td><td class="k">@oriane_damaged</td><td>Right idea already. Needs 6&ndash;8 images, not 3.</td></tr>
             <tr><td class="k">@Caedom <span style="color:var(--ink-3)">24</span></td><td class="k">@caedom_ascended<br>@caedom_mortal</td><td>24 images is two states in one element — the exact averaging problem. Split them.</td></tr>
-            <tr><td class="k">@KaiBrothers <span style="color:var(--ink-3)">16</span></td><td class="k">@alder · @wren<br>@brothers</td><td>Alder carries the film's last shot alone and needs his own callable identity.</td></tr>
+            <tr><td class="k">@KaiBrothers <span style="color:var(--ink-3)">16</span></td><td class="k">@alder · @wren</td><td><b>Two identities in one element, so every call returns a blend of both boys</b> — the same averaging problem as a two-costume element. Split the 16 images by which brother is in them. <b>No @brothers element:</b> where they share a frame, call both handles.</td></tr>
             <tr><td class="k">@TheTurned16 <span style="color:var(--ink-3)">16</span></td><td class="k">@turned</td><td>The <code>16</code> reads as a version number. It is a headcount, and it does not belong in a name.</td></tr>
             <tr><td class="k">@ThreadWright <span style="color:var(--ink-3)">18</span></td><td class="k">@threadwright</td><td>Lowercase, one word. Mixed case costs you a typo a day.</td></tr>
             <tr><td class="k">@TheKeepers <span style="color:var(--ink-3)">8</span></td><td class="k">@vigil</td><td>Matches the order's name in the bible.</td></tr>
@@ -522,7 +521,7 @@ CREDITS        balance, so pace can be advised</pre>
   <div class="blk" style="margin-top:16px">
     <h2>Verification sequence <em>run in this order — each step's input is the one above</em></h2>
     <ol class="seq">
-      <li><strong>Rebuild the handles around state</strong><span>Ten elements, one state each, named for what they are: <code>@oriane_rest</code>, <code>@oriane_ascended</code>, <code>@oriane_damaged</code>, <code>@caedom_ascended</code>, <code>@caedom_mortal</code>, <code>@alder</code>, <code>@wren</code>, <code>@brothers</code>, <code>@threadwright</code>, <code>@vigil</code>. Retire the <code>_v3 _v4 _v5</code> handles as you go &mdash; nothing downstream references them yet, which is exactly why now is the cheap moment.</span></li>
+      <li><strong>Rebuild the handles around state</strong><span>Nine elements, one state each, named for what they are: <code>@oriane_rest</code>, <code>@oriane_ascended</code>, <code>@oriane_damaged</code>, <code>@caedom_ascended</code>, <code>@caedom_mortal</code>, <code>@alder</code>, <code>@wren</code>, <code>@threadwright</code>, <code>@vigil</code>. Retire the <code>_v3 _v4 _v5</code> handles as you go &mdash; nothing downstream references them yet, which is exactly why now is the cheap moment.</span></li>
       <li><strong>Sort every existing generation into one state</strong><span>Your seven current character elements are versions of two people. Decide, per image, which <b>state</b> it belongs to and put it there. Anything that fits no state is lookdev, not an element.</span></li>
       <li><strong>Favourite the keepers, inside the project</strong><span>Favourite is your working filter — it is how you find a frame again in a library of three hundred. Favourite the ones going into elements, and nothing else.</span></li>
       <li><strong>Load each element to 8&ndash;12 images</strong><span>Varied angle, framing and light, all of one state. Add the strongest, drop the weakest it beats. Stop at twelve.</span></li>

@@ -275,6 +275,25 @@ section{padding:66px 0;border-bottom:1px solid var(--line)}
 .copy:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .copy.done{color:var(--jade);border-color:var(--jade)}
 
+/* ---- manual-copy fallback ---- */
+#copybox{position:fixed;inset:0;z-index:999;background:rgba(4,5,9,.72);
+  display:flex;align-items:center;justify-content:center;padding:24px}
+.cb-panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);max-width:760px;width:100%;padding:22px;display:flex;
+  flex-direction:column;gap:12px}
+.cb-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.cb-head b{font-size:17px}
+.cb-x{background:none;border:0;color:var(--ink-3);font-size:24px;line-height:1;
+  cursor:pointer;padding:0 4px}
+.cb-x:hover{color:var(--ink)}
+.cb-note{margin:0;font-size:13.5px;color:var(--ink-2)}
+.cb-ta{width:100%;min-height:280px;resize:vertical;font:12.5px/1.65 var(--mono);
+  color:var(--ink);background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:13px}
+.cb-ta:focus{outline:2px solid var(--gold);outline-offset:1px}
+.copy.warn{color:var(--gold);border-color:var(--gold-line)}
+
+
 .transition{
   display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:center;
   padding:16px 18px;margin:14px 0;border-left:2px solid var(--gold);
@@ -1090,7 +1109,7 @@ footer a{color:var(--ink-2)}
       </tr>
       <tr>
         <td>&ldquo;They stripped to their shorts and dove into the tide.&rdquo;</td>
-        <td>The brothers' sheet has them fully clothed in tunics and trousers, with <code>no bare torsos</code> in the negative tail.</td>
+        <td>The brothers' sheets have them fully clothed in tunics and trousers, with <code>no bare torsos</code> in the negative tail.</td>
         <td><b>Departure, kept.</b> This is the one place the film should not follow the novel. Photoreal eight- and six-year-olds with skin-texture language across a bare torso is not a prompt worth writing whatever any filter permits. The swim is now played entirely as backlit silhouette &mdash; a third variant exists for exactly this &mdash; which solves it by physics rather than by wardrobe, and looks better than the literal version would have.</td>
       </tr>
       <tr>
@@ -1207,7 +1226,8 @@ footer a{color:var(--ink-2)}
 &#9474;  &#9500;&#9472; CAEDOM/          REF-caedom-A7
 &#9474;  &#9500;&#9472; THREADWRIGHT/    REF-threadwright-A6
 &#9474;  &#9500;&#9472; TURNED/          REF-darkling-A1 &hellip; A6, by element
-&#9474;  &#9492;&#9472; BROTHERS/        REF-brothers                        &larr; no ladder, no aura, and that is the point
+&#9474;  &#9500;&#9472; ALDER/           REF-alder                           &larr; no ladder, no aura, and that is the point
+&#9474;  &#9492;&#9472; WREN/            REF-wren                            &larr; his brother, and never the same folder
 &#9492;&#9472; States
    &#9500;&#9472; RULE-aura                 core vs hollow &mdash; generate this first
    &#9500;&#9472; LADDER-oriane             the eight rungs of the mind
@@ -1591,7 +1611,8 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
 &#9474;  &#9500;&#9472; Characters
 &#9474;  &#9474;  &#9500;&#9472; ORIANE/             every state, every variant, every version, one folder
 &#9474;  &#9474;  &#9500;&#9472; CAEDOM/             ascended + mortal &mdash; same identity, two forms
-&#9474;  &#9474;  &#9500;&#9472; BROTHERS/           both boys, always together
+&#9474;  &#9474;  &#9500;&#9472; ALDER/              the elder &mdash; his own identity, his own folder
+&#9474;  &#9474;  &#9500;&#9472; WREN/               the younger &mdash; never filed with his brother
 &#9474;  &#9474;  &#9500;&#9472; THREADWRIGHT/
 &#9474;  &#9474;  &#9500;&#9472; VIGIL/
 &#9474;  &#9474;  &#9492;&#9472; TURNED/             group sheet, fused rider, all seven domains
@@ -1668,7 +1689,7 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
       <tr><td><b>Saying what a covering is <i>not</i></b></td><td>The original Oriane prompt read <i>&ldquo;encased from the collarbone down &hellip; rather than armour or clothing&rdquo;</i> with <i>&ldquo;refractive index that bends whatever sits behind it&rdquo;</i>. That is a classifier reading <b>adult woman, full body, not clothed, see-through</b>. Never disclaim clothing. Say <b>wearing</b>, say <b>garment</b>, say <b>opaque across the body</b>, and put the refraction at the silhouette edge instead of over the skin.</td></tr>
       <tr><td><b>&ldquo;Bare&rdquo; plus a body part</b></td><td>Bare feet are fine on their own. <i>Bare</i> stacked against a full-length figure and skin-texture language is not. Keep one, drop the rest &mdash; state coverage positively (<i>&ldquo;fully covered, no skin visible below the jaw&rdquo;</i>) so the model has something to satisfy.</td></tr>
       <tr><td><b>Skin-texture realism on a whole body</b></td><td>The anti-retouch module is written for <b>faces</b>. Applied to a full figure it reads as an instruction to render skin, everywhere. Scope it: <i>&ldquo;natural unretouched face&rdquo;</i>, not <i>&ldquo;visible pores&rdquo;</i> across a standing nude-adjacent body.</td></tr>
-      <tr><td><b>Children plus anything</b></td><td>The brothers' sheet asked for photoreal minors, <i>no shirt</i>, and skin texture across the shoulders. <b>That one the filter was right about, and it is now fully clothed</b> &mdash; tunics and trousers, face texture only, with <i>no bare torsos</i> in the negative tail. Keep it that way even where a filter would let it through.</td></tr>
+      <tr><td><b>Children plus anything</b></td><td>The brothers' sheets asked for photoreal minors, <i>no shirt</i>, and skin texture across the shoulders. <b>That one the filter was right about, and it is now fully clothed</b> &mdash; tunics and trousers, face texture only, with <i>no bare torsos</i> in the negative tail. Keep it that way even where a filter would let it through.</td></tr>
       <tr><td><b>Wounds described as wounds</b></td><td>Blood, punctures, torn flesh and weeping fluid read as gore whatever the story reason. Move the damage onto the <b>material</b>: a starred fracture in crystal, a rosette of shattered facets, staining in the plating. Add <i>no blood, no wounds, no gore</i> to the tail. The image survives; the refusal does not.</td></tr>
       <tr><td><b>Body horror verbs</b></td><td><i>Pierced, fused, sloughing, split, burned-open, socket</i> are all flags. Say <b>set into</b>, <b>overgrown</b>, <b>waterlogged</b>, <b>scorch-mark</b>, <b>hollow</b>. The uncanny effect comes from stillness and wrongness, not from injury detail &mdash; and it reads better for it.</td></tr>
       <tr><td>If it still refuses</td><td>Cut the prompt in half and generate each half; the offending clause reveals itself immediately. Do <b>not</b> keep re-rolling a refusal &mdash; a filter is deterministic in a way a bad seed is not.</td></tr>
@@ -2240,6 +2261,90 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
 </div></footer>
 
 <script>
+/* ============================================================================
+   copyText - one clipboard path for every Copy button in this document.
+
+   The old code called navigator.clipboard.writeText() directly and hung a
+   .catch() on it. That fails in the two places this file is actually opened:
+   on file://, which is not a secure context, navigator.clipboard is undefined,
+   so the call throws synchronously and the .catch() never runs at all; and in
+   a sandboxed iframe the promise rejects on permission. Either way the button
+   said "Copy failed" and the text was unreachable.
+
+   Three tiers, and the last one cannot fail: if the clipboard is unavailable
+   the text goes on screen already selected, so Cmd-C always works.
+   ========================================================================== */
+function copyText(text, btn, okMsg){
+  okMsg = okMsg || "Copied";
+  var restore = btn ? btn.textContent : "";
+
+  function done(msg, warn){
+    if(!btn) return;
+    btn.textContent = msg;
+    btn.classList.add(warn ? "warn" : "done");
+    clearTimeout(btn._ct);
+    btn._ct = setTimeout(function(){
+      btn.textContent = restore;
+      btn.classList.remove("done"); btn.classList.remove("warn");
+    }, warn ? 2600 : 1600);
+  }
+
+  /* 3 - never a dead end: hand the text over, pre-selected */
+  function manual(){
+    done("Select and press ⌘C", true);
+    var old = document.getElementById("copybox");
+    if(old) old.remove();
+    var w = document.createElement("div");
+    w.id = "copybox";
+    w.innerHTML =
+      '<div class="cb-panel" role="dialog" aria-modal="true" aria-label="Copy this text">' +
+        '<div class="cb-head"><b>Copy this by hand</b>' +
+          '<button class="cb-x" type="button" aria-label="Close">&times;</button></div>' +
+        '<p class="cb-note">The clipboard is not available here &mdash; that happens when the ' +
+        'page is opened straight off the disk rather than through a server. The text is ' +
+        'selected already: press <kbd>&#8984;C</kbd>, then Escape.</p>' +
+        '<textarea class="cb-ta" readonly spellcheck="false"></textarea>' +
+      '</div>';
+    document.body.appendChild(w);
+    var ta = w.querySelector(".cb-ta");
+    ta.value = text;
+    function close(){ w.remove(); document.removeEventListener("keydown", esc); }
+    function esc(e){ if(e.key === "Escape") close(); }
+    w.querySelector(".cb-x").onclick = close;
+    w.addEventListener("click", function(e){ if(e.target === w) close(); });
+    document.addEventListener("keydown", esc);
+    ta.focus(); ta.select();
+    try{ ta.setSelectionRange(0, text.length); }catch(e){}
+  }
+
+  /* 2 - execCommand needs a real, focused, selected node in the document */
+  function legacy(){
+    var ta = document.createElement("textarea"), ok = false;
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:0;left:0;width:2em;height:2em;padding:0;" +
+      "border:none;outline:none;box-shadow:none;background:transparent;opacity:0;";
+    document.body.appendChild(ta);
+    try{
+      ta.focus(); ta.select();
+      try{ ta.setSelectionRange(0, text.length); }catch(e){}
+      ok = document.execCommand("copy");
+    }catch(e){ ok = false; }
+    ta.remove();
+    if(ok) done(okMsg); else manual();
+  }
+
+  /* 1 - the async clipboard, where it exists and is permitted */
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(okMsg); }, legacy);
+      return;
+    }
+  }catch(e){}
+  legacy();
+}
+</script>
+<script>
 /* ================= DATA ================= */
 const SHOTS=[
 {id:"S1",mv:1,d:16,t:"Rise out of the fire",cam:"Slow vertical crane out of liquid flame; no horizon until the last third.",model:"wan3_0 · 16s · 1080p · 21:9",chips:["No cut","Opening"],
@@ -2545,7 +2650,7 @@ const KEYS=[
 const PHASES=[
 {p:"Phase 0",d:"Aug 10–12",w:"2 days",t:"Continuity kit",
  o:[["img","~24 images"]],
- x:"Nothing from the film is generated yet. You are building the reference set that every later image points at. Train <b>Soul V2</b> for Oriane and for Caedom separately. Build one <b>Reference Element</b> for the two brothers <i>together</i> — Soul carries a single identity per generation and the brothers share frame in every shot they appear in. Then three lighting plates per movement (key direction, colour temperature, haze density) and prop plates for the crystal shell, the Founding Stone, the white robes and the leviathan's coral plating."},
+ x:"Nothing from the film is generated yet. You are building the reference set that every later image points at. Train <b>Soul V2</b> for Oriane and for Caedom separately. Train a separate <b>Soul</b> for each brother — Alder and Wren are two identities and never one element, because an element holding both returns a blend of them. Where they share a frame, call both Souls. Then three lighting plates per movement (key direction, colour temperature, haze density) and prop plates for the crystal shell, the Founding Stone, the white robes and the leviathan's coral plating."},
 {g:"Gate A",t:"Identity lock",
  x:"Every character, palette and lighting reference is final. <b>No anchor frame is generated before this locks</b> — an anchor built on an unlocked face has to be rebuilt, and you will have made thirty-nine of them."},
 {p:"Phase 1",d:"Aug 12–17",w:"5 days",t:"The frame string",
@@ -2622,7 +2727,7 @@ const FRAMES=[
 ];
 
 const CHECKS=[
-{d:"Aug 10–12",t:"Phase 0 — build the continuity kit",n:"Soul V2 for Oriane and Caedom separately. One Reference Element for both brothers together. Lighting plates and prop plates. Nothing from the film itself gets generated yet."},
+{d:"Aug 10–12",t:"Phase 0 — build the continuity kit",n:"Soul V2 for Oriane, Caedom, Alder and Wren — four identities, four Souls, no shared elements. Lighting plates and prop plates. Nothing from the film itself gets generated yet."},
 {d:"Aug 12",t:"Gate A — identity lock",n:"Faces, palette and lighting are final. Do not generate a single anchor frame before this closes."},
 {d:"Aug 12–17",t:"Phase 1 — generate the frame string",n:"All 39 anchors, four variants each, selected in film order so shared joins are made once and inherited. Roughly 156 image generations and zero video."},
 {d:"Aug 17",t:"Gate B — string lock",n:"All 39 anchors on one contact sheet. Hunt for drift in faces, costume, light direction and grade between neighbours. Fixing it here costs an image; fixing it later costs a shot."},
@@ -2753,11 +2858,7 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
       ? s.id+" · "+s.t+"\n"+"=".repeat(70)+"\n\n"+s.v.map(v=>
           v.c+" · "+v.n+"  ["+v.tech+"]\n\n"+v.p).join("\n\n"+"-".repeat(70)+"\n\n")
       : s.v[+b.dataset.vi].p;
-    const lbl=b.textContent;
-    navigator.clipboard.writeText(txt).then(()=>{
-      b.textContent="Copied"; b.classList.add("done");
-      setTimeout(()=>{b.textContent=lbl;b.classList.remove("done")},1600);
-    }).catch(()=>{b.textContent="Select and copy manually"});
+    copyText(txt,b);
   });
 })();
 
@@ -2987,8 +3088,7 @@ const FORMS=[
  items:[
   {c:"ALD",n:"Alder, eight",g:0,d:"The elder. Longer face, dark hair, level steady gaze, mouth closed and still. A watchfulness in the eyes that reads older than the rest of the face &mdash; that mismatch is the character.",asset:"REF-alder-A"},
   {c:"WRN",n:"Wren, six and a half",g:0,d:"The younger. Rounder face, sun-bleached blonde, mouth caught mid-speech, brows up, certain of being heard. Exactly the same height as his brother.",asset:"REF-wren-A"},
-  {c:"PAIR",n:"Together",g:0,d:"The continuity anchor. Generated after both, and the only place the equal-height rule can actually be checked. Two faces that work alone can still look like strangers side by side.",asset:"REF-brothers-A"},
-  {c:"SWIM",n:"In silhouette",g:0,d:"The swim, played entirely as backlit shapes against the sun. Solves the novel&rsquo;s stripped-to-shorts by physics rather than wardrobe.",asset:"REF-brothers-C"}
+  {c:"SWIM",n:"In silhouette",g:0,d:"The swim, played entirely as backlit shapes against the sun. Solves the novel&rsquo;s stripped-to-shorts by physics rather than wardrobe &mdash; and it needs no character asset at all, because at that distance neither boy has a face.",asset:"BG-bloom-C"}
  ]},
 {who:"THE VIGIL",sub:"Anchor &mdash; matter &middot; one shared aura, no individual rungs",asset:"REF-keeper",kind:"core",
  items:[
@@ -3155,22 +3255,6 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast. A robed woman lit by two hard opposed sources — a cold cyan key from behind and left, a hot amber kicker from below and right — with a deep saturated blue-black between them and no neutral tone anywhere. The three points of damage catch the light differently from the intact plate: the starred fracture on the right cheekbone scatters cyan, the shattered rosette in the left calf burns amber from beneath, and the scratch-scoring across the torso reads as thin bright spectral lines. Torn robe of light streaming, salt-matted hair, rain in the air catching both keys. Dry cracked mineral throughout. No blood, no wounds, no gore, no glow bloom, no text, no watermark.`}
  ]},
 
-{k:"bros",n:"Alder and Wren &mdash; the pairing sheet",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / BROTHERS",sv:"REF-brothers",
- canon:"Ch III &mdash; Alder is eight today, Wren &ldquo;only six-and-a-half&rdquo;, &ldquo;one brother blonde and the other brunette&rdquo; (the novel does not say which), &ldquo;both equal in height and joy&rdquo;. Deliberate deviation: the novel has them strip to their shorts to swim; these sheets keep them clothed.",
- v:[
- {c:"A",n:"Paired sheet",w:"Image &rarr; 16:9 &rarr; Reference Element (both boys)",tech:"Four paired views &middot; white cyc",sv:"REF-brothers-A-##",
-  why:"Generate this AFTER both individual sheets, and keep it. It is not a substitute for them &mdash; it is the continuity anchor that proves the two trained faces still agree when they share a frame, and it is the only place the equal-height rule can actually be checked. Two Souls that each look right alone can still look like strangers together.",
-  p:`Two-character reference sheet, four paired views of the same two brothers arranged evenly in a row &mdash; both boys front-on full body standing upright with feet flat and arms relaxed, both boys in three-quarter view, both boys in side profile facing each other, and a paired head-and-shoulders close-up of the two of them &mdash; identical original characters carried unchanged across every view, exactly two people in frame and no others, pure white seamless studio background, professional character sheet presentation, two brothers who are island children with sun-darkened brown skin, ALDER is the elder at eight years old with a longer face, a level steady gaze and a closed still mouth, WREN is the younger at six and a half with a rounder face, a wide open smile and a mouth caught mid-speech, both with dark brown eyes and naturally muted catchlights, no oversized specular glare in the iris, ALDER dark brown-haired and WREN sun-bleached pale blonde gone brassy and stiff at the tips, both salt-stiffened, the two boys exactly equal in height in every view, natural unretouched faces with light sun-freckling across the nose, subtle asymmetries and texture irregularities, no digital smoothing, no beauty filter, no AI-airbrushed look, matte-to-natural complexion, both slight and wiry with normal healthy child proportions, both fully clothed in simple undyed knee-length tunics with short sleeves, belted at the waist over loose calf-length trousers, barefoot, no jewellery, no bag, natural anatomy, high-end but unretouched documentary photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, sharp focus on skin texture detail, fully clothed at all times, no bare torsos, no swimwear, no beachwear, exactly two people, only these two characters in frame, no third figure, no adults, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, the two faces clearly distinct from each other and consistent across all four views, one blonde head and one dark head, identical height, full-body views head-to-toe not cropped not sitting, original characters not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
- {c:"B",n:"Beach plate",w:"Image &rarr; 21:9 &rarr; element + PLATE-mv3-light",tech:"Cinematic still &middot; wide &middot; small in frame",sv:"REF-brothers-B-##",
-  why:"Every shot they are in holds them small in a very wide frame, which is a different problem from a studio sheet: at this size the faces carry nothing and the read has to come from silhouette, hair value and how they stand next to each other.",
-  p:`Cinematic still, 2.39:1, locked-off wide, 32mm, low to the ground, photoreal. Two boys stand at the tide line of a tropical beach at dawn, small in a very wide frame, backs half to camera, looking out across flat water. Sand faintly iridescent with pinks and pale greens in the grain; dense jungle fills the left third; a white temple just visible on a distant isle across three miles of reef. The elder is dark-haired, the younger sun-bleached blonde; they are exactly the same height. Both fully clothed in simple undyed knee-length tunics and loose calf-length trousers, barefoot, salt-stiffened hair. Long shadows toward camera, warm low sun, completely peaceful. Fully clothed, no bare torsos, no swimwear. Photoreal documentary style, no text, no watermark.`},
- {c:"C",n:"Silhouette study",w:"Image &rarr; 21:9 &rarr; no faces",tech:"Backlit silhouette &middot; underwater and surface",sv:"REF-brothers-C-##",
-  why:"The swim is the one sequence where the novel undresses them and the film will not. Playing it entirely as backlit silhouette solves it honestly rather than by omission, and this sheet is the reference that keeps that choice consistent.",
-  p:`Four backlit silhouette studies of two small swimming figures, photoreal, no facial detail anywhere and none required. One: from below and far beneath, two bodies crossing a bright water surface, rendered as flat dark shapes against the sun, caustics breaking around them. Two: the same from further below, smaller, with the reef shelf falling away into black in the foreground. Three: the two figures at the surface seen from a distance in profile, mid-stroke, backlit and edge-rimmed. Four: two figures wading out of surf onto sand, backlit by a low sun, entirely in shadow. Deep blue-green water, strong sun shafts, heavy particulate. Silhouette only, no visible skin detail, no facial features, no clothing detail, no text, no watermark.`},
- {c:"D",n:"Saturated dawn",w:"Image &rarr; 21:9 &rarr; key art",tech:"Full-chroma tropical &middot; hard rim",sv:"REF-brothers-D-##",
-  why:"The iridescent sand is the one genuinely strange thing in the third movement and the calm plate keeps it whispering. Pushed to full chroma it reads immediately, and it makes the beach feel like somewhere worth losing.",
-  p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and high contrast, locked-off wide. Two boys stand at the tide line of a tropical beach at first light, small in a very wide frame, backs half to camera. The sand is pushed to full iridescence — clear pinks, mint greens and pale violets separating in the grain and catching a hard low sun. Water in deep saturated turquoise breaking to white. Jungle at the left in dense blue-green shadow with no detail. The low sun rims both boys in hot orange against all that cool colour, full complementary opposition. Both fully clothed in undyed tunics and loose trousers, barefoot, exactly the same height, one dark head and one blonde. Fully clothed, no bare torsos, no swimwear. Photoreal, no text, no watermark.`}
- ]},
 
 {k:"pup",n:"The Threadwright",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / THREADWRIGHT",sv:"REF-threadwright",
  canon:"Ch II &mdash; &ldquo;the master threadwright&rdquo;, a woman, moves and protects the others with her own understanding of hollows, possibly &ldquo;possessing the animal within them as well&rdquo;, &ldquo;a burning hunger to devour a creature of radiant light&rdquo;, faltered once when Oriane smiled.",
@@ -3795,12 +3879,12 @@ const PREP=[
   why:"His mortal chroma pass should be the warmest and least spectacular image in the whole set. Everything else in the film gets pushed toward the cosmic; this one gets pushed toward a kitchen, because that is the contrast the character is built on.",
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma but domestic in scale. An ordinary weathered man of about forty in plain worn work clothing, lit by warm low afternoon daylight coming from one side through an unseen window, the colour pushed to rich saturated amber and honey across his skin and clothing with deep warm brown shadow behind him. Dust in the light. Nothing cosmic, nothing luminous, nothing designed &mdash; the most ordinary and the most warmly coloured image in the entire film. He is looking at something out of frame with mild attention. No glow, no aura, no halo, no light emission, no fantasy elements, no text, no watermark.`}
  ]},
-{k:"alder",n:"Alder &mdash; the elder brother",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / BROTHERS",sv:"REF-alder",
+{k:"alder",n:"Alder &mdash; the elder brother",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / ALDER",sv:"REF-alder",
  canon:"Ch III &mdash; eight years old today; it is his birthday swim. &ldquo;I want to move mountains. To raise them up high over the heads of my enemies. To see the pause and regret in their eyes, just before justice comes raining down upon them.&rdquo; The novel says the brothers are &ldquo;equal in height&rdquo; despite the age gap.",
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; still",sv:"REF-alder-A-##",
   why:"He carries the film's last shot &mdash; a slow push into his face until it settles into something that does not belong on an eight-year-old. That needs a face specific enough to hold a fourteen-second close-up, which a shared two-boy sheet can never give you.",
-  p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original child character on both sides, single subject only exactly one person, pure white seamless studio background, professional character sheet presentation. ALDER, a boy of exactly eight years old. Brothers, unmistakably born of the same two parents and raised on the same island: the same sun-darkened warm brown skin, the same wide-set dark brown eyes of the same shape with naturally muted catchlights and no oversized specular glare, the same straight nose bridge, the same slightly squared chin, and the same light sun-freckling scattered across the nose and upper cheeks. Both slight and wiry with normal healthy child proportions. Hair salt-stiffened and dried rough by seawater. Fully clothed in a simple undyed knee-length short-sleeved tunic belted at the waist over loose calf-length trousers, barefoot, the garment construction identical between the brothers and differing only in wear. His own features: the longer of the two faces, with the jaw already beginning to show a squarer line; straight dark brown hair, thick and roughly cut, falling to just above the eyes. His default expression is a level steady gaze holding the camera without effort, mouth closed and completely still, eyebrows relaxed and low. He does not perform for the lens. There is a watchfulness in the eyes that reads slightly older than the rest of the face, and that mismatch is the single most important thing on this sheet. visible fine skin texture on the face with natural pores, subtle asymmetries and texture irregularities, no digital smoothing, no beauty filter, no AI-airbrushed look, skin free of artificial glare or highlight blooms, matte-to-natural complexion, natural anatomy, high-end but unretouched documentary photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, fully clothed at all times, no bare torsos, no swimwear, no beachwear, exactly one person, only this character in frame, no other people, no second child, no adults, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, full-body view head-to-toe not cropped not sitting, no babyface distortion, no overly rounded doll proportions, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
+  p:`Split-screen character sheet composition, left side a full-body shot of the character standing upright in a neutral straight standing pose facing the camera with both feet flat on the ground and arms relaxed at the sides, full head-to-toe framing with the whole body and both feet visible, right side a tight close-up chest-up portrait of the same character, identical original child character on both sides, single subject only exactly one person, pure white seamless studio background, professional character sheet presentation. ALDER, a boy of exactly eight years old. Brothers, unmistakably born of the same two parents and raised on the same island: the same sun-darkened warm brown skin, the same wide-set dark brown eyes of the same shape with naturally muted catchlights and no oversized specular glare, the same straight nose bridge, the same slightly squared chin, and the same light sun-freckling scattered across the nose and upper cheeks. Both slight and wiry with normal healthy child proportions. Hair salt-stiffened and dried rough by seawater. Fully clothed in a simple undyed knee-length short-sleeved tunic belted at the waist over loose calf-length trousers, barefoot, the garment construction identical between the brothers and differing only in wear. His own features: the longer of the two faces, with the jaw already beginning to show a squarer line; straight dark brown hair, thick and roughly cut, falling to just above the eyes. His default expression is a level steady gaze holding the camera without effort, mouth closed and completely still, eyebrows relaxed and low. He does not perform for the lens. He is visibly the elder of the two in the face while standing exactly the same height as his younger brother &mdash; the age reads in the features and never in the stature. There is a watchfulness in the eyes that reads slightly older than the rest of the face, and that mismatch is the single most important thing on this sheet. visible fine skin texture on the face with natural pores, subtle asymmetries and texture irregularities, no digital smoothing, no beauty filter, no AI-airbrushed look, skin free of artificial glare or highlight blooms, matte-to-natural complexion, natural anatomy, high-end but unretouched documentary photography style, soft diffused studio lighting without harsh reflections, cinematic realism, clean white background, 4K quality, fully clothed at all times, no bare torsos, no swimwear, no beachwear, exactly one person, only this character in frame, no other people, no second child, no adults, no duplicate figures, no mannequin, no reflections, no props, no furniture, no background objects, empty seamless studio, full-body view head-to-toe not cropped not sitting, no babyface distortion, no overly rounded doll proportions, no beauty filter, no digital smoothing, no airbrushing, no plastic skin, original character not resembling any real person or existing property, no text, no watermark, no logos, no frame borders.`},
  {c:"B",n:"Beach plate",w:"Image &rarr; 21:9 &rarr; Soul + PLATE-mv3-light",tech:"In-world &middot; the final push-in",sv:"REF-alder-B-##",
   why:"The one frame the whole film ends on. Building it in Phase 0 means the closing shot is a motion pass over an image that already works, rather than the hardest performance in the film attempted last and under pressure.",
   p:`Cinematic still, 2.39:1, photoreal, golden hour, shallow focus. A boy of eight lies on his front in coarse beach grass, propped on his forearms, looking out at flat calm water. Sun-darkened brown skin, straight dark brown hair salt-stiffened and roughly cut, an undyed knee-length tunic and loose trousers, barefoot, sand dried on his forearms. He is not excited. He is calculating &mdash; the eyes fixed and working, the mouth closed and still, the jaw very slightly set. The expression must read as thought rather than sulk. Low warm sun from the left rimming his shoulder and cheek, long shadows toward camera. Far behind him and deep out of focus, a single dark cloud sits low over the water. Fully clothed. No other person in frame. Photoreal child performance, no text, no watermark.`},
@@ -3812,7 +3896,7 @@ const PREP=[
   p:`Cinematic key-art still, 2.39:1, photoreal, high chroma and extreme contrast. Close on an eight-year-old boy in beach grass at golden hour, lit by a low sun directly behind and to one side so that one edge of his face, shoulder and hair burns hot saturated orange while the whole shadow side falls into deep saturated blue-violet, with almost no neutral tone between them. The grass is saturated yellow-green, the water behind deep turquoise. His expression is fixed and calculating, mouth closed. Fully clothed, sun-darkened skin, dark salt-stiffened hair. One dark desaturated cloud sits low on the horizon, out of focus, the only dull thing in a vivid frame. No text, no watermark.`}
  ]},
 
-{k:"wren",n:"Wren &mdash; the younger brother",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / BROTHERS",sv:"REF-wren",
+{k:"wren",n:"Wren &mdash; the younger brother",tag:"c",tl:"Character",fld:"00 &middot; REFERENCES / Characters / WREN",sv:"REF-wren",
  canon:"Ch III &mdash; the younger brother is only six-and-a-half, which makes the swim a genuinely incredible feat for his age. He is the one who says &ldquo;Alder, I want that!&rdquo; and imagines them both making it in, so their parents would be proud.",
  v:[
  {c:"A",n:"Identity sheet",w:"Image &rarr; 16:9 &rarr; Soul V2 &rarr; train a character",tech:"Split-screen &middot; white cyc &middot; in motion",sv:"REF-wren-A-##",
@@ -3902,13 +3986,20 @@ const RUN=[
  w:"Image",u:HF+"image",pk:"caedomasc",
  set:"Batch of 4. Separate Soul from Oriane — one identity per Soul.",sv:"REF-caedom-ascended-A-## · REF-caedom-mortal-A-##",
  mdl:"soul_2 · Soul V2, a second identity",ar:"16:9",fld:"00 · REFERENCES / Characters"},
-{ph:"Phase 0",t:"Alder, then Wren, then the pair",
- s:"Two separate identities, then a third sheet proving they agree. Alder carries the final shot of the film — a fourteen-second push into his face — which needs a face specific enough to hold it, and a shared two-boy sheet cannot give you one. Generate him first, then Wren, then the pairing sheet last. That order matters: the pair is a check, and a check comes after the things it checks.",
+{ph:"Phase 0",t:"Alder — the elder brother",
+ s:"He carries the final shot of the film — a fourteen-second push into his face — so he needs a face specific enough to hold it. Generate him first and alone. There is no shared two-boy sheet in this build: an element holding two identities returns a blend of both, which is the same averaging failure as one element holding two costumes.",
  a:"My two brothers read as the same child at two ages. Push the faces apart without breaking the family resemblance.",
- b:"<b>Image</b> → Soul V2 → train <b>Alder</b>. Then a second Soul for <b>Wren</b>. Then <b>Reference Element</b> for the pairing sheet, using both.",
- w:"Image",u:HF+"image",pk:"bros",
- set:"Batch of 4 each. Identical height in the pairing sheet is the one non-negotiable — reject any frame where Wren is shorter, however good the faces are.",sv:"REF-alder-A-## · REF-wren-A-## · REF-brothers-A-##",
- mdl:"soul_2 · Reference Element, not a Soul",ar:"16:9",fld:"00 · REFERENCES / Characters"},
+ b:"<b>Image</b> → Soul V2 → train <b>Alder</b>. One identity, one Soul.",
+ w:"Image",u:HF+"image",pk:"alder",
+ set:"Batch of 4. Longer face, dark hair, mouth closed and still. Reject any frame that reads sulky rather than watchful — that is the whole character.",sv:"REF-alder-A-##",
+ mdl:"soul_2 · Soul V2, its own identity",ar:"16:9",fld:"00 · REFERENCES / Characters / ALDER"},
+{ph:"Phase 0",t:"Wren — the younger brother",
+ s:"A second, separate Soul. Then the check the pairing sheet used to do: put the two finished sheets side by side and measure. The novel gives them equal height despite the age gap, and that is the one thing two independently trained faces will not agree on by accident.",
+ a:"Wren keeps coming out shorter than Alder. They must be identical in height with the age showing only in the face.",
+ b:"<b>Image</b> → Soul V2 → train <b>Wren</b>. Then open both A sheets together and compare.",
+ w:"Image",u:HF+"image",pk:"wren",
+ set:"Batch of 4. Then the height check, side by side, and it is the one non-negotiable — reject any Wren frame where he is shorter, however good the face is. Age reads in the features, never in the stature.",sv:"REF-wren-A-##",
+ mdl:"soul_2 · Soul V2, its own identity",ar:"16:9",fld:"00 · REFERENCES / Characters / WREN"},
 {ph:"Phase 0",t:"Threadwright and Keepers",
  s:"Two more identities. The Threadwright's face is never fully shown — that is a rule, not a limitation.",
  a:"The Keeper faces read as peaceful rather than blank. Fix the wording.",
@@ -4180,7 +4271,7 @@ const RUN=[
     if(c.dataset.say) txt=RUN[+c.dataset.say].a;
     else if(c.dataset.prep){const p=PREP.find(x=>x.k===c.dataset.prep); txt=p?p.v[0].p:"";}
     else if(c.dataset.anc) txt=anchorsFor(+c.dataset.anc);
-    navigator.clipboard.writeText(txt).then(()=>flash(c,"Copied")).catch(()=>flash(c,"Copy failed"));
+    copyText(txt,c);
   });
 
   document.getElementById("cr-reset").onclick=()=>{cur=0;peek.clear();localStorage.setItem(STORE,0);paint()};
@@ -4249,7 +4340,7 @@ const RUN=[
     host.addEventListener("click",e=>{
       const btn=e.target.closest("[data-ffrag]"); if(!btn)return;
       const it=FRAGS.flatMap(g=>g.items).find(x=>x.k===btn.dataset.ffrag); if(!it)return;
-      navigator.clipboard.writeText(it.p).then(()=>flash(btn,"Copied")).catch(()=>flash(btn,"Copy failed"));
+      copyText(it.p,btn);
     });
   })();
 
@@ -4328,7 +4419,7 @@ const RUN=[
   (function(){
     const b=document.getElementById("copydrift"); if(!b)return;
     b.onclick=()=>{const t=document.getElementById("driftblock").textContent;
-      navigator.clipboard.writeText(t).then(()=>flash(b,"Copied")).catch(()=>flash(b,"Copy failed"));};
+      copyText(t,b);};
   })();
 
   /* power-state modifier fragments */
@@ -4349,7 +4440,7 @@ const RUN=[
     host.addEventListener("click",e=>{
       const b=e.target.closest(".copy"); if(!b)return;
       const it=FRAGS.flatMap(g=>g.items).find(x=>x.k===b.dataset.frag); if(!it)return;
-      navigator.clipboard.writeText(it.p).then(()=>flash(b,"Copied")).catch(()=>flash(b,"Copy failed"));
+      copyText(it.p,b);
     });
   })();
 
@@ -4397,7 +4488,7 @@ const RUN=[
           "where   : "+v.w.replace(/&rarr;/g,"\u2192").replace(/&middot;/g,"\u00b7")+"\n"+
           "save as : "+v.sv+"\n\n"+v.p).join("\n\n"+"-".repeat(70)+"\n\n")
       : p.v[+b.dataset.vi].p;
-    navigator.clipboard.writeText(txt).then(()=>flash(b,"Copied")).catch(()=>flash(b,"Copy failed"));
+    copyText(txt,b);
   });
 
   /* the whole Phase 0 work order, in generation order, ready to paste down inside the project */
@@ -4423,8 +4514,7 @@ const RUN=[
             "   prompt  :\n"+v.p+"\n"
           ).join("\n");
       }).join("\n"+"-".repeat(78)+"\n\n");
-    navigator.clipboard.writeText(txt).then(()=>flash(this,"Copied \u2014 "+VN+" prompts"))
-      .catch(()=>flash(this,"Copy failed"));
+    copyText(txt,this,"Copied \u2014 "+VN+" prompts");
   };
 
   paint();

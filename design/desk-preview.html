@@ -171,6 +171,25 @@ button.b.pri{background:var(--gold-soft);color:var(--gold);border-color:var(--go
 button.b.pri:hover{filter:brightness(1.05)}
 button.b:disabled{opacity:.45;cursor:not-allowed}
 .stat{font:11px/1.4 var(--mono);color:var(--ink-3)}
+
+/* ---- manual-copy fallback ---- */
+#copybox{position:fixed;inset:0;z-index:999;background:rgba(4,5,9,.72);
+  display:flex;align-items:center;justify-content:center;padding:24px}
+.cb-panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);max-width:760px;width:100%;padding:22px;display:flex;
+  flex-direction:column;gap:12px}
+.cb-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.cb-head b{font-size:17px}
+.cb-x{background:none;border:0;color:var(--ink-3);font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+.cb-x:hover{color:var(--ink)}
+.cb-note{margin:0;font-size:13.5px;color:var(--ink-2)}
+.cb-ta{width:100%;min-height:280px;resize:vertical;font:12.5px/1.65 var(--mono);
+  color:var(--ink);background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:13px}
+.cb-ta:focus{outline:2px solid var(--void);outline-offset:1px}
+button.b.warn{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft)}
+button.b.done{color:var(--jade);border-color:var(--jade-line);background:var(--jade-soft)}
+
 .stat.ok{color:var(--jade)}
 .stat.err{color:var(--coral)}
 
@@ -266,7 +285,7 @@ footer p{margin:0 0 6px}
     <div class="doc primary unavail">
       <span class="k">The working app</span>
       <h3>Director's Bible</h3>
-      <p>Run sheet with saved progress, 43 asset prompts &times; 4 variants, 23 shots, the 39-frame
+      <p>Run sheet with saved progress, 42 asset prompts &times; 4 variants, 23 shots, the 39-frame
       string, forms and states, filing rules, the revision loop. This is the one that remembers where
       you stopped.</p>
       <span class="f"><span>director-bible.html</span><span>~600&nbsp;KB</span></span>
@@ -409,7 +428,7 @@ footer p{margin:0 0 6px}
           <option>D · motion lock</option>
           <option>E · picture lock</option>
         </select></div>
-      <div class="fld"><label for="f-refs">References</label><input type="number" id="f-refs" min="0" max="43" placeholder="of 43"><span class="hint">Phase 0 assets</span></div>
+      <div class="fld"><label for="f-refs">References</label><input type="number" id="f-refs" min="0" max="42" placeholder="of 42"><span class="hint">Phase 0 assets</span></div>
       <div class="fld"><label for="f-anchors">Anchor frames</label><input type="number" id="f-anchors" min="0" max="39" placeholder="of 39"><span class="hint">the frame string</span></div>
       <div class="fld"><label for="f-shots">Shots</label><input type="number" id="f-shots" min="0" max="23" placeholder="of 23"><span class="hint">motion pass</span></div>
       <div class="fld"><label for="f-elems">Elements</label><input type="number" id="f-elems" min="0" placeholder="handles"><span class="hint">trained @handles</span></div>
@@ -519,6 +538,89 @@ footer p{margin:0 0 6px}
 /* ================= SHARED HELPERS ================= */
 function LS(k,d){ try{ var v=localStorage.getItem(k); return v===null?d:JSON.parse(v); }catch(e){ return d; } }
 function SS(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); return true; }catch(e){ return false; } }
+/* ============================================================================
+   copyText - one clipboard path for every Copy button in this document.
+
+   The old code called navigator.clipboard.writeText() directly and hung a
+   .catch() on it. That fails in the two places this file is actually opened:
+   on file://, which is not a secure context, navigator.clipboard is undefined,
+   so the call throws synchronously and the .catch() never runs at all; and in
+   a sandboxed iframe the promise rejects on permission. Either way the button
+   said "Copy failed" and the text was unreachable.
+
+   Three tiers, and the last one cannot fail: if the clipboard is unavailable
+   the text goes on screen already selected, so Cmd-C always works.
+   ========================================================================== */
+function copyText(text, btn, okMsg){
+  okMsg = okMsg || "Copied";
+  var restore = btn ? btn.textContent : "";
+
+  function done(msg, warn){
+    if(!btn) return;
+    btn.textContent = msg;
+    btn.classList.add(warn ? "warn" : "done");
+    clearTimeout(btn._ct);
+    btn._ct = setTimeout(function(){
+      btn.textContent = restore;
+      btn.classList.remove("done"); btn.classList.remove("warn");
+    }, warn ? 2600 : 1600);
+  }
+
+  /* 3 - never a dead end: hand the text over, pre-selected */
+  function manual(){
+    done("Select and press ⌘C", true);
+    var old = document.getElementById("copybox");
+    if(old) old.remove();
+    var w = document.createElement("div");
+    w.id = "copybox";
+    w.innerHTML =
+      '<div class="cb-panel" role="dialog" aria-modal="true" aria-label="Copy this text">' +
+        '<div class="cb-head"><b>Copy this by hand</b>' +
+          '<button class="cb-x" type="button" aria-label="Close">&times;</button></div>' +
+        '<p class="cb-note">The clipboard is not available here &mdash; that happens when the ' +
+        'page is opened straight off the disk rather than through a server. The text is ' +
+        'selected already: press <kbd>&#8984;C</kbd>, then Escape.</p>' +
+        '<textarea class="cb-ta" readonly spellcheck="false"></textarea>' +
+      '</div>';
+    document.body.appendChild(w);
+    var ta = w.querySelector(".cb-ta");
+    ta.value = text;
+    function close(){ w.remove(); document.removeEventListener("keydown", esc); }
+    function esc(e){ if(e.key === "Escape") close(); }
+    w.querySelector(".cb-x").onclick = close;
+    w.addEventListener("click", function(e){ if(e.target === w) close(); });
+    document.addEventListener("keydown", esc);
+    ta.focus(); ta.select();
+    try{ ta.setSelectionRange(0, text.length); }catch(e){}
+  }
+
+  /* 2 - execCommand needs a real, focused, selected node in the document */
+  function legacy(){
+    var ta = document.createElement("textarea"), ok = false;
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:0;left:0;width:2em;height:2em;padding:0;" +
+      "border:none;outline:none;box-shadow:none;background:transparent;opacity:0;";
+    document.body.appendChild(ta);
+    try{
+      ta.focus(); ta.select();
+      try{ ta.setSelectionRange(0, text.length); }catch(e){}
+      ok = document.execCommand("copy");
+    }catch(e){ ok = false; }
+    ta.remove();
+    if(ok) done(okMsg); else manual();
+  }
+
+  /* 1 - the async clipboard, where it exists and is permitted */
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(okMsg); }, legacy);
+      return;
+    }
+  }catch(e){}
+  legacy();
+}
+
 function dl(name,text,mime){
   var b=new Blob([text],{type:mime}), u=URL.createObjectURL(b);
   var a=document.createElement("a"); a.href=u; a.download=name;
@@ -660,7 +762,7 @@ var SHOTS=[];   /* {name,w,h,bytes,url,b64,media} */
     L.push("| | |");
     L.push("|---|---|");
     L.push("| Gate holding | "+(v.gate||"not stated")+" |");
-    L.push("| References | "+n(v.refs,43)+" |");
+    L.push("| References | "+n(v.refs,42)+" |");
     L.push("| Anchor frames | "+n(v.anchors,39)+" |");
     L.push("| Shots | "+n(v.shots,23)+" |");
     L.push("| Elements | "+n(v.elems)+" |");
@@ -683,18 +785,7 @@ var SHOTS=[];   /* {name,w,h,bytes,url,b64,media} */
   };
 
   document.getElementById("copy").onclick=function(){
-    var t=out.textContent;
-    function ok(){ flash(outStat,"Copied","ok"); }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(t).then(ok,function(){ legacy(); });
-    } else legacy();
-    function legacy(){
-      var ta=document.createElement("textarea"); ta.value=t;
-      ta.style.position="fixed"; ta.style.opacity="0";
-      document.body.appendChild(ta); ta.select();
-      try{ document.execCommand("copy"); ok(); }catch(e){ flash(outStat,"Copy failed — select it by hand","err"); }
-      ta.remove();
-    }
+    copyText(out.textContent, this, "Copied");
   };
   document.getElementById("dl-md").onclick=function(){
     var v=read();
