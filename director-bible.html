@@ -1077,7 +1077,7 @@ footer a{color:var(--ink-2)}
   <div class="sec-head">
     <span class="eyebrow">Every prompt read against <code>source/chapters-1-3.txt</code></span>
     <h2>Source backcheck</h2>
-    <p>All 26 asset prompts and all 23 shot prompts were read line by line against the novel. Most of it holds &mdash; the left calf, the lightning between her teeth, the dark cloud that does not move, the children among the Keepers, <i>equal in height</i> for two boys eighteen months apart. Eight things did not, and they are listed below with what was done about each. Three of them were errors; three were gaps; two are deliberate departures that should stay departures.</p>
+    <p>Every asset prompt and all 23 shot prompts were read line by line against the novel. Most of it holds &mdash; the left calf, the lightning between her teeth, the dark cloud that does not move, the children among the Keepers, <i>equal in height</i> for two boys eighteen months apart. Eight things did not, and they are listed below with what was done about each. Three of them were errors; three were gaps; two are deliberate departures that should stay departures.</p>
   </div>
 
   <table class="dials">
@@ -1453,9 +1453,9 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   </div>
 
   <div class="grid g3" style="margin-bottom:30px">
-    <div class="card"><span class="tag" style="background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)">Generic &middot; 9</span>
+    <div class="card"><span class="tag" style="background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)">Generic &middot; 11</span>
       <h3>Take it untouched</h3><p>Copy the section across and change nothing. It is about how films get made, not about this film. Roughly <b>40% of the document</b>.</p></div>
-    <div class="card pick"><span class="tag">Template &middot; 10</span>
+    <div class="card pick"><span class="tag">Template &middot; 12</span>
       <h3>Keep the shape, swap the values</h3><p>The structure is the thinking; the contents are this story. Empty the array, keep the fields. Roughly <b>35%</b>.</p></div>
     <div class="card"><span class="tag" style="background:var(--coral-soft);color:var(--coral);border-color:var(--coral-line)">Project &middot; 6</span>
       <h3>Delete and rebuild</h3><p>Arguments about <i>this</i> story that would be actively misleading applied to another. Roughly <b>25%</b>. Deleting these is the first act of the next project.</p></div>
@@ -1471,7 +1471,11 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
       <tr><td><b>Lessons</b></td><td><span class="cls g">Generic</span></td><td>Nothing &mdash; and this is the one that compounds. Carry it forward and keep appending. Twelve entries now; a fourth project should have forty and be the most valuable page here.</td></tr>
       <tr><td><b>Binding</b></td><td><span class="cls g">Generic</span></td><td>The argument transfers untouched. The board regenerates itself from whatever the new arrays contain, so it needs no editing at all &mdash; it will simply show the new slot count.</td></tr>
       <tr><td><b>Revision rules &middot; Techniques &middot; Model matrix</b></td><td><span class="cls g">Generic</span></td><td>Two passes then it ships. Four variants beats four attempts. The length-buying techniques and the model capability table are platform facts, not story facts. Re-verify the matrix against the live catalogue; the reasoning around it stands.</td></tr>
-      <tr><td><b>Key vault</b></td><td><span class="cls g">Generic</span></td><td>Nothing. Same services, same required/optional split.</td></tr>
+      <tr><td><b>Key vault</b></td><td><span class="cls g">Generic</span></td><td>Nothing. Same services, same required/optional split &mdash; and it is now shared with the desk over one storage key, so both pages carry it forward together.</td></tr>
+      <tr><td><b>The Desk</b> <code>index.html</code></td><td><span class="cls g">Generic</span></td><td>Nothing. The front door, the status read, the capture checklist, the log and its deltas, and the copy helper are all about running a production, not about this film. Change three document titles and the open-decisions cards.</td></tr>
+      <tr><td><b>Production sheet &middot; Four Captures plate</b></td><td><span class="cls t">Template</span></td><td>Keep both layouts; swap the counts, the handle map and the folder tree. The plate regenerates from <code>design/four-captures.gen.py</code> &mdash; edit the four capture lines and re-run.</td></tr>
+      <tr><td><b>Workflow sheets</b> <code>workflow-sheets.pdf</code></td><td><span class="cls t">Template</span></td><td>Regenerates from this file&rsquo;s own arrays via <code>design/build-sheets.py</code> &mdash; empty the arrays for the next film and the printed kit rebuilds itself.</td></tr>
+      <tr><td><b>Hosted preview build</b></td><td><span class="cls g">Generic</span></td><td>Nothing. <code>design/build-preview.py</code> derives it from whatever the desk currently is, and fails loudly if the desk changes underneath it.</td></tr>
       <tr><td><b>Asset prompts</b> <code>PREP</code></td><td><span class="cls t">Template</span></td><td>Empty the array; keep every field and the four-lane grammar. <b>A / B / C / D transfer as a way of thinking</b> &mdash; continuity pass, in-world plate, alternate medium, chroma pass &mdash; and that alone is most of the value.</td></tr>
       <tr><td><b>Shot list</b> <code>SHOTS</code></td><td><span class="cls t">Template</span></td><td>Empty it; keep <code>id, mv, d, cam, seam, model, canon, v[]</code>. The three-lane shot grammar (ships / coverage / chroma) transfers.</td></tr>
       <tr><td><b>Run sheet</b> <code>RUN</code></td><td><span class="cls t">Template</span></td><td>Keep the phase and gate skeleton and the model/aspect/folder fields. Swap the per-asset steps. Roughly two thirds survives verbatim.</td></tr>
@@ -1529,7 +1533,7 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   </div>
 
   <div class="verdict" style="margin-bottom:30px;border-color:var(--void-line);background:var(--void-soft)">
-    <b>The move that unsticks it:</b> stop asking &ldquo;what do I have and how does it fit together?&rdquo; and start asking <b>&ldquo;which numbered slot is still empty?&rdquo;</b> The film is already fully specified &mdash; 40 references, 39 anchors, 23 shots, 5 minutes exactly. Every one of those is a named hole. Generation is not creation here; it is filling holes in a known order. <b>Cohesion is not something you achieve at the end. It is a property of the plan, and the plan already has it.</b>
+    <b>The move that unsticks it:</b> stop asking &ldquo;what do I have and how does it fit together?&rdquo; and start asking <b>&ldquo;which numbered slot is still empty?&rdquo;</b> The film is already fully specified &mdash; 42 references, 39 anchors, 23 shots, 5 minutes exactly. Every one of those is a named hole. Generation is not creation here; it is filling holes in a known order. <b>Cohesion is not something you achieve at the end. It is a property of the plan, and the plan already has it.</b>
   </div>
 
   <div class="sec-head"><h3 style="font-size:22px">Why favourites cannot be assembled</h3></div>

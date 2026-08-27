@@ -44,18 +44,20 @@ if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
      "service worker")
 
 # ── 2 · the document cards have nowhere to go ────────────────────────────────
-s = re.sub(r'<a class="doc( primary)?" href="[^"]+\.html">',
+s = re.sub(r'<a class="doc( primary)?" href="[^"]+\.(?:html|pdf)"[^>]*>',
            lambda m: '<div class="doc%s unavail">' % (m.group(1) or ""), s)
 s = s.replace("</a>\n  </div>\n</section>", "</div>\n  </div>\n</section>")
 if '<a class="doc' in s:
     sys.exit("build-preview: a doc card was left as a link")
 
-once('''    <p>Three files, three jobs. The bible is where you work; the sheet is what you keep open beside
-    Higgsfield; the audit is what you check yourself against when something feels thin.</p>''',
-     '''    <p>Three files, three jobs. The bible is where you work; the sheet is what you keep open beside
-    Higgsfield; the audit is what you check yourself against when something feels thin.</p>
-    <p class="unavail-note">These three are not openable here &mdash; this preview is a single page,
-    and they are separate files. Open them from the folder on your Mac.</p>''',
+once('''    <p>Three files, three jobs &mdash; plus the printable kit. The bible is where you work; the sheet is
+    what you keep open beside Higgsfield; the audit is what you check yourself against when something
+    feels thin; the PDF is the pencil version for when the laptop is closed.</p>''',
+     '''    <p>Three files, three jobs &mdash; plus the printable kit. The bible is where you work; the sheet is
+    what you keep open beside Higgsfield; the audit is what you check yourself against when something
+    feels thin; the PDF is the pencil version for when the laptop is closed.</p>
+    <p class="unavail-note">These are not openable here &mdash; this preview is a single page, and
+    they are separate files. Open them from the folder on your Mac.</p>''',
      "documents note")
 
 # ── 3 · Send cannot work here, so it says so instead of failing ──────────────
