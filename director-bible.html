@@ -6,7 +6,13 @@
    copy of this file opened afterwards still finds its own progress. */
 (function(){
   try{
-    /* lane is not migrated: it is cleared on every load by design. */
+    /* These two lines hold the ONLY remaining instances of the old coined
+       term in this file, as literal storage-key names. They cannot be
+       disguised without breaking the lookup, and they are needed because
+       keys and run progress were saved under them. SAFE TO DELETE this
+       whole block once you have opened this file on every browser and
+       origin you use it from — after that the migration has nothing left
+       to do. Lane is not migrated: it is cleared on every load by design. */
     var map={"litiguh.keys":"msm.keys","litiguh.run":"msm.run",
              "litiguh.checks":"msm.checks"};
     for(var old in map){
@@ -3120,7 +3126,8 @@ const PROC=[
 {n:"05",t:"Train identity",it:2,b:[
  "One trained Soul per character. Never two for one person.",
  "Generate every other state of that character from the same Soul — damage, costume changes, power states.",
- "If two characters share frames, generate a pairing sheet last as the check."]},
+ "Never one element for two people — it returns a blend of both. Two identities, two Souls, called together where they share a frame.",
+ "Where two characters must match on something physical (height, age gap, build), check it by putting their finished sheets side by side. That is a review step, not a third asset."]},
 {n:"06",t:"Build the world",it:1,b:[
  "Locations, props, creatures, effects. Plain backgrounds, one asset per sheet.",
  "Effects sheets are worth more than they look: they settle a rule once so it never gets re-decided under deadline."]},
@@ -3470,12 +3477,12 @@ const PREP=[
   p:`Establishing background plate, no characters. Cinematic 2.39:1, locked-off wide, 32mm, low. The shoreline of a small island in three states across three frames. One: TENDED &mdash; pale sand, flower beds and a kept garden running down to the water, a plain white stone temple standing behind them, calm and orderly under a low warm sun. Two: BOMBARDMENT &mdash; the same view under crimson backlight with iron shot falling, sand erupting in columns, torn flowers in the air, thick dust drifting across frame. Three: CRATERED &mdash; the same view afterwards, pitted with craters, garden shredded, dust still hanging, flat water beyond. Identical camera position, identical lens and identical geography in all three. No people, no text, no watermark.`},
  {c:"B",n:"The garden",w:"Image &rarr; 21:9 &rarr; detail plate",tech:"Photoreal &middot; four stages of one bed",sv:"BG-keepers-isle-B",
   why:"The replanting is a throwaway line in the novel and the quietest miracle in the film. It only works if one specific bed is followed from kept to destroyed to whole, so the audience recognises the same flowers.",
-  p:`Four-stage detail plate of a single planting bed, no people, identical camera position and identical planting in every stage. One: kept &mdash; a low formal bed of pale flowering plants in tended soil, edged in stone, healthy and orderly under warm low sun. Two: struck &mdash; the same bed torn open, soil thrown across the stone edge, plants shredded and half-buried, petals scattered. Three: rescaedomg &mdash; soil visibly gathering back into the bed from the surrounding sand, broken stems lifting and closing. Four: whole &mdash; identical to stage one in every particular, indistinguishable, calm. Photoreal, natural light, no glow, no particles, no visible force, no text, no watermark.`},
+  p:`Four-stage detail plate of a single planting bed, no people, identical camera position and identical planting in every stage. One: kept &mdash; a low formal bed of pale flowering plants in tended soil, edged in stone, healthy and orderly under warm low sun. Two: struck &mdash; the same bed torn open, soil thrown across the stone edge, plants shredded and half-buried, petals scattered. Three: restoring &mdash; soil visibly gathering back into the bed from the surrounding sand, broken stems lifting and closing. Four: whole &mdash; identical to stage one in every particular, indistinguishable, calm. Photoreal, natural light, no glow, no particles, no visible force, no text, no watermark.`},
  {c:"C",n:"Aerial survey",w:"Image &rarr; 21:9 &rarr; geography",tech:"High vertical &middot; map-like",sv:"BG-keepers-isle-C",
   why:"Settles where the temple, the beach, the reef and the ships all are relative to each other. The novel puts the temple north and the ships west, and once that is fixed as an image the coverage stops contradicting itself.",
   p:`High vertical aerial photograph of a small tropical island, shot straight down from altitude, no people. A plain white rectangular building sits toward the north of the island with a formal garden laid out on its seaward side; pale sand beaches ring the shore; a fringing coral reef shows as a broad pale halo in turquoise water, breaking off into deep blue on the western approach. A second, larger landmass is visible at the edge of frame to the east across the reef. Flat midday light, no shadow drama, natural colour, high altitude clarity. Survey convention, no text, no labels, no grid, no compass rose, no watermark.`},
  {c:"D",n:"Garden and ash",w:"Image &rarr; 21:9 &rarr; key art",tech:"Saturated planting against scorched ground",sv:"BG-keepers-isle-D",
-  why:"The restoration only means anything if there is something worth rescaedomg. Giving the garden real colour before it is destroyed is what buys the last shot its quiet.",
+  why:"The restoration only means anything if there is something worth saving. Giving the garden real colour before it is destroyed is what buys the last shot its quiet.",
   p:`Establishing key-art plate, no characters, high chroma and high contrast, two frames from an identical camera position. One: the garden intact — formal beds in saturated coral, magenta, yellow and white flowering plants against deep green foliage and pale sand, lit warm and low, the most colourful thing on the island. Two: the same view destroyed — the beds torn open, the colour buried under grey-brown ash and cratered sand, the surviving petals reading as scattered points of saturated colour in an otherwise desaturated frame. Identical camera, identical lens, identical planting geometry in both. Deep blue-violet shadows, crushed blacks holding colour. No people, no text, no watermark.`}
  ]},
 
@@ -3994,7 +4001,7 @@ const RUN=[
  set:"Batch of 4. Longer face, dark hair, mouth closed and still. Reject any frame that reads sulky rather than watchful — that is the whole character.",sv:"REF-alder-A-##",
  mdl:"soul_2 · Soul V2, its own identity",ar:"16:9",fld:"00 · REFERENCES / Characters / ALDER"},
 {ph:"Phase 0",t:"Wren — the younger brother",
- s:"A second, separate Soul. Then the check the pairing sheet used to do: put the two finished sheets side by side and measure. The novel gives them equal height despite the age gap, and that is the one thing two independently trained faces will not agree on by accident.",
+ s:"A second, separate Soul. Then the check: put the two finished sheets side by side and measure. The novel gives them equal height despite the age gap, and that is the one thing two independently trained faces will not agree on by accident.",
  a:"Wren keeps coming out shorter than Alder. They must be identical in height with the age showing only in the face.",
  b:"<b>Image</b> → Soul V2 → train <b>Wren</b>. Then open both A sheets together and compare.",
  w:"Image",u:HF+"image",pk:"wren",
