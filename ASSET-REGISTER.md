@@ -1,4 +1,4 @@
-# THE SAME MIRACLE — Asset Register
+# MATTER OF LIGHT — Asset Register
 
 Built from Chapters I–III of *Stone of Matter*. Every entry cites the source line it came from.
 Status is measured against the 14 asset prompts in the director's bible.

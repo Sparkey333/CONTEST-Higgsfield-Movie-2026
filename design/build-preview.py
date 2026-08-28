@@ -50,12 +50,14 @@ s = s.replace("</a>\n  </div>\n</section>", "</div>\n  </div>\n</section>")
 if '<a class="doc' in s:
     sys.exit("build-preview: a doc card was left as a link")
 
-once('''    <p>Three files, three jobs &mdash; plus the printable kit. The bible is where you work; the sheet is
-    what you keep open beside Higgsfield; the audit is what you check yourself against when something
-    feels thin; the PDF is the pencil version for when the laptop is closed.</p>''',
-     '''    <p>Three files, three jobs &mdash; plus the printable kit. The bible is where you work; the sheet is
-    what you keep open beside Higgsfield; the audit is what you check yourself against when something
-    feels thin; the PDF is the pencil version for when the laptop is closed.</p>
+once('''    <p>Three files, three jobs &mdash; plus the printable kit and the screenplay. The bible is where you
+    work; the sheet is what you keep open beside Higgsfield; the audit is what you check yourself
+    against when something feels thin; the PDF sheets are the pencil version for when the laptop is
+    closed; the screenplay is the film as written, and the cut order the assembly follows.</p>''',
+     '''    <p>Three files, three jobs &mdash; plus the printable kit and the screenplay. The bible is where you
+    work; the sheet is what you keep open beside Higgsfield; the audit is what you check yourself
+    against when something feels thin; the PDF sheets are the pencil version for when the laptop is
+    closed; the screenplay is the film as written, and the cut order the assembly follows.</p>
     <p class="unavail-note">These are not openable here &mdash; this preview is a single page, and
     they are separate files. Open them from the folder on your Mac.</p>''',
      "documents note")

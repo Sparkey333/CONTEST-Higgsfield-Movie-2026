@@ -23,7 +23,7 @@ import sys
 DATA = json.load(open(sys.argv[1] if len(sys.argv) > 1 else "/tmp/bible-data.json"))
 RUN, PREP, FRAMES, SHOTS, PROC = (DATA[k] for k in ("RUN", "PREP", "FRAMES", "SHOTS", "PROC"))
 
-TITLE = "THE SAME MIRACLE"
+TITLE = "MATTER OF LIGHT"
 PRINTED = "printed 2026-08-27"
 N_SHEETS = 8
 
@@ -195,7 +195,7 @@ gates = "".join(
                  ("D", "Motion lock — every seam confirmed at draft tier"),
                  ("E", "Picture lock — no further generation")])
 sheets.append(head(1, "COVER") + f"""
-<div style="margin:14pt 0 4pt"><div style="font:400 34pt/1 'Disp'">The Same Miracle</div>
+<div style="margin:14pt 0 4pt"><div style="font:400 34pt/1 'Disp'">Matter of Light</div>
 <div style="font:8pt 'Mono';letter-spacing:.3em;color:#777;margin-top:4pt">HIGGSFIELD GLOBAL FILM FESTIVAL · 5:00 · 21:9 · DEADLINE SEP 3, 11:59 PM PT</div></div>
 <div class="kv" style="margin:8pt 0 12pt">
  <span><b>42</b> references</span><span><b>39</b> anchor frames</span><span><b>23</b> shots</span>
@@ -212,9 +212,9 @@ so counts here always match the app they were printed from.</div>
 <p class="sub">A gate is a hard stop — nothing downstream begins until it holds. Date each one the moment it locks.</p>
 <table>{gates}</table>
 <div class="rulebox" style="margin-top:10pt"><b>Open decisions, still.</b>
-① The title — folder says <i>Matter of Light</i>, bible says <i>THE SAME MIRACLE</i>: <span class="bl" style="min-width:110pt"></span>
-&nbsp;② <tt>@Drowning</tt> — define or delete: <span class="bl" style="min-width:80pt"></span>
-&nbsp;③ Leviathan scale reference object: <span class="bl" style="min-width:80pt"></span></div>
+(The title is decided: <i>Matter of Light</i>, everywhere.)
+&nbsp;① <tt>@Drowning</tt> — define or delete: <span class="bl" style="min-width:80pt"></span>
+&nbsp;② Leviathan scale reference object: <span class="bl" style="min-width:80pt"></span></div>
 """ + foot("Sheet source: director-bible.html data arrays · design/build-sheets.py", "MVS = watermark + packshot on the film AND a public social post"))
 
 # ── Sheet 2 · the process ───────────────────────────────────────────────────

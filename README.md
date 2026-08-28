@@ -33,6 +33,7 @@ No build step, no dependencies, no account, no network calls.
 | **`ASSET-REGISTER.md`** | Line-referenced audit of every asset against the source chapters. |
 | **`PROJECT-BRIEF.md`** | Paste-ready copy for the festival's project brief field. |
 | **`workflow-sheets.pdf`** | Eight printable pages — run sheet, gates, ledgers, shot list, daily log — with pencil blanks. Rebuild with `design/build-sheets.py`. |
+| **`matter-of-light-screenplay.pdf`** | The abridged festival screenplay, production names throughout, Movements II and III interleaved. Source: `design/matter-of-light-screenplay.html`. |
 | **`design/four-captures.png`** | The one-page capture plate to keep open beside Higgsfield. |
 
 ### Inside the director's bible

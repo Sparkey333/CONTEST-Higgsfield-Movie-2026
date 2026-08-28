@@ -1,10 +1,10 @@
-# THE SAME MIRACLE
+# MATTER OF LIGHT
 
 **A 5-minute short. Three movements, 23 shots, 300 seconds exactly.**
 
 A creator stands on the surface of the Sun and decides to release his brother,
 knowing it will probably end everything. A hundred and eight years later a woman
-burns her own mind to ash to keep one island hidden. The next morning two boys
+burns her own mind to ash to keep one island hidden. That same sunset two boys
 watch a mountain fall out of the sky — and only one of them learns the right
 lesson from it.
 
