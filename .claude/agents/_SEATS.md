@@ -1,6 +1,6 @@
 # The Five Seats
 
-Five standing reviewers for LITIGUH. Each owns one jury seat's concerns and keeps its own
+Five standing reviewers for THE SAME MIRACLE. Each owns one jury seat's concerns and keeps its own
 voice. Invoke one by name for a targeted pass, or run all five before a gate.
 
 | Seat | Agent | Owns |

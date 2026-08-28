@@ -22,6 +22,12 @@
       }
     }
   }catch(e){}
+  /* Honour an explicit theme choice made on the Desk (index.html). All the
+     pages share one origin, so one saved choice styles every document. */
+  try{
+    var t=localStorage.getItem("msm.theme");
+    if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);
+  }catch(e){}
 })();
 </script>
 <style>
@@ -143,6 +149,13 @@ nav.toc{
 }
 .toc a:hover{color:var(--ink);background:var(--surface-2)}
 .toc a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.toc-inner #tt{
+  flex:0 0 auto;margin-left:auto;padding:13px 15px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);
+  background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;
+}
+.toc-inner #tt:hover{color:var(--ink);background:var(--surface-2)}
+.toc-inner #tt:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 
 /* ============ SECTIONS ============ */
 section{padding:66px 0;border-bottom:1px solid var(--line)}
@@ -1033,6 +1046,7 @@ footer a{color:var(--ink-2)}
   <a href="#truths">Layered Truths</a>
   <a href="#vault">Key Vault</a>
   <a href="#build">Build Order</a>
+  <button id="tt" type="button" aria-label="Switch colour theme">Theme</button>
 </div></nav>
 
 <div class="resume" id="resume"><div class="resume-in">
@@ -2358,6 +2372,26 @@ function copyText(text, btn, okMsg){
   }catch(e){}
   legacy();
 }
+
+/* Theme toggle — the same behaviour and the same storage key as the Desk,
+   so a choice made on either page carries to the other. */
+(function(){
+  var K="msm.theme", r=document.documentElement, b=document.getElementById("tt");
+  if(!b) return;
+  function dark(){
+    var a=r.getAttribute("data-theme");
+    if(a) return a==="dark";
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches;
+  }
+  function label(){ b.textContent = dark()?"Light":"Dark"; }
+  label();
+  b.addEventListener("click",function(){
+    var n=dark()?"light":"dark";
+    r.setAttribute("data-theme",n);
+    try{localStorage.setItem(K,n)}catch(e){}
+    label();
+  });
+})();
 </script>
 <script>
 /* ================= DATA ================= */
