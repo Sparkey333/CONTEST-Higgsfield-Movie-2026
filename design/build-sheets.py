@@ -50,7 +50,7 @@ PREFILL = [
     (r"Oriane damaged",           {"target": "Aug 27", "note": "started · @Oriane-damaged holds 3, needs 6–8"}),
     (r"mind ladder",              {"target": "Aug 27"}),
     (r"Caedom — two forms",       {"target": "Aug 27", "note": "started · @Caedom holds 24 — split ascended / mortal"}),
-    (r"Alder — the elder",        {"target": "Aug 27", "note": "started · split @KaiBrothers 16 by which boy is in frame"}),
+    (r"Alder — the elder",        {"target": "Aug 27", "note": "started · split @KaiBrothers 16 by which brother is in frame"}),
     (r"Wren — the younger",       {"target": "Aug 27", "note": "then the height check: both A sheets side by side"}),
     (r"Threadwright and Keepers", {"target": "Aug 27", "note": "started · @ThreadWright 18 · @TheKeepers 8 → @vigil"}),
     (r"Turned and the fused",     {"target": "Aug 27", "note": "started · @TheTurned16 16 · @Wielder-Dominion 14 → @lev_rider"}),
