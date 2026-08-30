@@ -150,12 +150,72 @@ nav.toc{
 .toc a:hover{color:var(--ink);background:var(--surface-2)}
 .toc a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 .toc-inner #tt{
-  flex:0 0 auto;margin-left:auto;padding:13px 15px;font-family:var(--mono);font-size:11px;
+  flex:0 0 auto;margin-left:4px;padding:13px 15px;font-family:var(--mono);font-size:11px;
   letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);
   background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;
 }
 .toc-inner #tt:hover{color:var(--ink);background:var(--surface-2)}
 .toc-inner #tt:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.toc-inner .pk{
+  flex:0 0 auto;margin-left:auto;align-self:center;padding:7px 13px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink);background:var(--surface-2);border:1px solid var(--line);
+  border-radius:6px;border-bottom-width:1px;
+}
+.toc-inner .pk:hover{background:var(--gold);color:#141310;border-color:var(--gold)}
+
+/* ============ PAPER KIT ============ */
+.pk-index td{font-size:13.5px}
+.pk-index .pn{font-family:var(--mono);color:var(--ink-3);white-space:nowrap}
+.gm-tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.gm-tools .gbtn{
+  padding:8px 14px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-2);background:var(--surface);
+  border:1px solid var(--line);border-radius:6px;cursor:pointer;
+}
+.gm-tools .gbtn[data-on="1"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.gm-stagewrap{border:1px solid var(--line);border-radius:10px;background:#fff;
+  overflow:hidden;position:relative}
+.gm-mini{width:8.5in;background:#fff;color:#101010;padding:.45in .5in;
+  transform:scale(.62);transform-origin:0 0;font:9px/1.4 -apple-system,sans-serif}
+.gm-mini .gmh{display:flex;justify-content:space-between;border-bottom:2px solid #101010;
+  padding-bottom:5px;margin-bottom:10px;font:700 10px/1 var(--mono);letter-spacing:.14em}
+.gm-mini .fr{border:1px solid #333;border-radius:2px;background:#fff}
+.gm-mini .fr.lite{border-color:#888;border-width:.8px}
+.gm-mini .frl{font:8.5px var(--mono);color:#888;margin-top:2px}
+.gm-mini .g6{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+.gm-mini .g6 .fr{height:1.5in}
+.gm-mini .g12{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px 11px}
+.gm-mini .g12 .fr{height:.98in}
+.gm-mini .gp{display:grid;grid-template-columns:repeat(5,1fr);gap:9px 11px}
+.gm-mini .gp .fr{height:.6in}
+.gm-mini .gr{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:flex-start}
+.gm-mini .gr .cell{display:flex;flex-direction:column;gap:1px}
+.gm-mini .gr .fr{height:.7in}
+.gm-mini .gr .m1{border-top:3px solid #101010}
+.gm-mini .gr .m2{border-top:3px double #101010}
+.gm-mini .gr .m3{border-top:3px dotted #101010}
+.gm-act{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
+.mth-card{border:1px solid var(--line);border-radius:10px;background:var(--surface);
+  padding:16px 18px;margin-top:12px}
+.mth-card .mtag{display:inline-block;font:700 10px/1 var(--mono);letter-spacing:.16em;
+  color:var(--ground);background:var(--ink);padding:4px 8px;border-radius:4px;margin-right:8px;
+  vertical-align:2px}
+.mth-card.best .mtag{background:var(--gold);color:#141310}
+.mth-card h4{font-size:16px;display:inline}
+.mth-card ol{margin:8px 0 0 18px;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+.mth-card .qual{margin-top:8px;font-size:12.5px;line-height:1.55;color:var(--ink-3);font-style:italic}
+.np-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.np-bar select,.np-bar input[type=text]{
+  padding:8px 10px;font:13px var(--mono);color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:6px;min-width:120px}
+.np-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.np-item{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.np-item img{width:100%;height:100px;object-fit:cover;display:block}
+.np-item .npm{padding:6px 8px;font:10.5px var(--mono);color:var(--ink-3);line-height:1.5}
+.np-item .npx{background:none;border:none;color:var(--red,#a33);cursor:pointer;
+  font:10.5px var(--mono);padding:0}
+.np-empty{font-size:13px;color:var(--ink-3);font-style:italic;padding:8px 0}
 
 /* ============ SECTIONS ============ */
 section{padding:66px 0;border-bottom:1px solid var(--line)}
@@ -1046,6 +1106,7 @@ footer a{color:var(--ink-2)}
   <a href="#truths">Layered Truths</a>
   <a href="#vault">Key Vault</a>
   <a href="#build">Build Order</a>
+  <a href="#paper" class="pk">&#9998; Paper Kit</a>
   <button id="tt" type="button" aria-label="Switch colour theme">Theme</button>
 </div></nav>
 
@@ -2267,6 +2328,153 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
       <span class="vault-status" id="vault-status">Nothing stored</span>
     </div>
   </div>
+</div></section>
+
+<!-- ================= PAPER ================= -->
+<section id="paper"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Print</span>
+    <h2>The paper kit &mdash; twelve sheets for thinking</h2>
+    <p>The workflow sheets record what happened; these decide what should. Structure is cheapest on
+    paper &mdash; a re-ordered movement costs an eraser here and forty generations after Gate&nbsp;C. Each
+    sheet is the paper twin of a run-sheet step, in the same order the run sheet walks, and the kit is
+    generated from this document's own data so the two can never drift.</p>
+  </div>
+
+  <h3 style="margin-bottom:8px">The sheets, in step order</h3>
+  <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch;margin-bottom:10px">Separate PDFs live in
+  <code>paper-kit/</code> beside this file (one per sheet, numbered in kit order), with the combined
+  <code>paper-kit.pdf</code> at the root; both rebuild with <code>design/build-paper-kit.py</code>. In the
+  published view, use the grid maker below &mdash; it generates the storyboard sheets live and saves them
+  as printable files.</p>
+  <div class="tbl-scroll"><table class="pk-index">
+    <thead><tr><th>Sheet</th><th style="min-width:150px">Name</th><th>Job</th><th style="min-width:170px">Paper twin of</th></tr></thead>
+    <tbody>
+      <tr><td class="pn">01</td><td><b>Cover</b></td><td>How the paper loop works: print &rarr; pencil &rarr; photograph &rarr; iterate.</td><td>&mdash;</td></tr>
+      <tr><td class="pn">02</td><td><b>Phase 0 ledger</b></td><td>The 42 references in generation order, tick per locked A variant.</td><td>Run steps 1&ndash;14</td></tr>
+      <tr><td class="pn">03</td><td><b>Gate A review</b></td><td>Per identity: the three features that must not move, written from memory first.</td><td>Gate A</td></tr>
+      <tr><td class="pn">04</td><td><b>Anchor string</b></td><td>Thumbnail all 39 anchors as a comic strip before generating one.</td><td>Phase 1</td></tr>
+      <tr><td class="pn">05</td><td><b>Storyboard 6-up</b></td><td>Equal frames, large &mdash; one drawing per idea, for the shots that carry the film.</td><td>Phases 1&ndash;2</td></tr>
+      <tr><td class="pn">06</td><td><b>Storyboard 12-up</b></td><td>Equal frames, small &mdash; alternates and coverage; ideas must read at thumbnail size.</td><td>Phases 1&ndash;2</td></tr>
+      <tr><td class="pn">07</td><td><b>Pulse &middot; 12s ticks</b></td><td>Equal <em>time</em>: 25 frames, one every twelve seconds &mdash; the honest pacing read.</td><td>Phase 2 &middot; Gate C</td></tr>
+      <tr><td class="pn">08</td><td><b>Ribbon &middot; weighted</b></td><td>Box width = shot length &mdash; draw inside the time you actually have.</td><td>Phase 2 &middot; Gate C</td></tr>
+      <tr><td class="pn">09</td><td><b>Gates B + C</b></td><td>The contact-sheet drift hunt, then the timing lock and its cost table.</td><td>Gates B &amp; C</td></tr>
+      <tr><td class="pn">10</td><td><b>Shot cards</b></td><td>Draft and final boxes for all 23 shots, attempts tally, promoted-frame column.</td><td>Phases 3&ndash;4 &middot; Gate D</td></tr>
+      <tr><td class="pn">11</td><td><b>Methods</b></td><td>What wins on the platform now, plus the two methods below.</td><td>Doctrine</td></tr>
+      <tr><td class="pn">12</td><td><b>Finish + submit</b></td><td>Deflicker &rarr; upscale &rarr; grade, then the MVS list that disqualifies.</td><td>Phases 6&ndash;7 &middot; Gate E</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin:26px 0 4px">Grid maker &mdash; the four storyboard formats, live</h3>
+  <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch">Two formats hold frame count equal and two
+  hold <em>time</em> honest. The pulse and ribbon grids are computed from the live shot list, so a timing
+  change here reprints correctly there. Pick a format, then open the print view (⌘P from there) or save
+  the sheet as a file.</p>
+  <div class="gm-tools" id="gm-tools">
+    <button class="gbtn" data-g="6" data-on="1">6-up &middot; equal frames</button>
+    <button class="gbtn" data-g="12">12-up &middot; equal frames</button>
+    <button class="gbtn" data-g="pulse">Pulse &middot; every 12s</button>
+    <button class="gbtn" data-g="ribbon">Ribbon &middot; width = duration</button>
+  </div>
+  <div class="gm-stagewrap" id="gm-stagewrap"><div class="gm-mini" id="gm-stage"></div></div>
+  <div class="gm-act">
+    <button class="abtn" id="gm-open">Open print view</button>
+    <button class="abtn ghost" id="gm-save">Save sheet (HTML)</button>
+    <span class="vault-status" id="gm-status"></span>
+  </div>
+
+  <h3 style="margin:30px 0 4px">Methods &mdash; what wins now, and what this production adds</h3>
+  <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch">Current best practice on the platform, per
+  Higgsfield's own Cinema Studio guidance and the community workflows around it: the hero-frame-first,
+  image-before-motion pipeline; end&rarr;start frame chaining for continuity; forward extension for oners;
+  multi-shot single generations for coverage; ramps and body wipes instead of cuts; motion control for
+  repeatable choreography; cheap-tier previz with promoted frames; deflicker before upscale. All eight are
+  already load-bearing in this bible. The two boxed methods are this production's additions &mdash; both
+  were adversarially reviewed before being written down, and the qualifications are part of the method.</p>
+
+  <div class="mth-card" id="mth-better">
+    <span class="mtag">BETTER</span><h4>The sketch-lock loop</h4>
+    <ol>
+      <li>Compose on the printed 21:9 frames until silhouette, camera height and light direction are
+      decided &mdash; sheets 04&ndash;08 of this kit. Draw inside the printed frame: a phone photo of an
+      unframed sketch silently re-centres the composition when a model crops it.</li>
+      <li>Photograph the winning thumbnail with the notes camera below. From that moment the sketch is
+      the shot's <b>judging target</b>: every batch is selected against the drawing, and a re-roll that
+      drifts from it is rejected on sight. This is where the precision lives, and it carries zero
+      rules risk because nothing external ever enters the project.</li>
+      <li>Generate prompt-only first. Escalate to sketch-as-reference only for stubborn layout &mdash;
+      wrong shot size, exact figure placement, the two match-cut pairs &mdash; after roughly two failed
+      batches, and then through the <b>multi-reference image lane</b> (nano_banana_pro) to build a
+      photoreal comp draft whose layout the identity pass then rebuilds. Never in the soul_2 lane:
+      its single reference slot belongs to the movement's lighting plate.</li>
+      <li>When a sketch does go in, scope it every time: &ldquo;use the attached sketch for framing, shot
+      size and figure placement only; render photoreal; match the movement plate for light and grade;
+      no graphite, no monochrome, no paper texture.&rdquo; Any sketch bleed is a hard reject &mdash; and
+      confirm on the rules page first that hand-drawn reference inputs are permitted, because every
+      input publishes with the generation history.</li>
+    </ol>
+    <p class="qual" id="mth-better-qual"><b>Qualifications:</b> this claims <em>precision</em>, never
+    credit savings &mdash; free iteration already exists on the unlimited-trial models. The drawing's value
+    is that it states a composition a prompt cannot; the loop's discipline is that the sketch stays a
+    target by default and becomes an input only under the guardrails above.</p>
+  </div>
+
+  <div class="mth-card best" id="mth-best">
+    <span class="mtag">BEST</span><h4>The re-anchor budget</h4>
+    <ol>
+      <li>At string time, classify every join in the film: a <b>designed anchor</b> (drift resets to
+      zero), an <b>inherited frame</b> (the extracted last frame of shot N becomes N+1's start &mdash;
+      pixel-exact, but drift-from-design accrues), or an <b>authored bridge</b> (near-black or blinding
+      by design &mdash; drift is absorbed, not carried).</li>
+      <li>Enforce the budget: <b>never more than two consecutive inherited joins</b> without a reset. A
+      sequence that wants a third link either promotes that join to a designed anchor or spends a
+      bridge. This film's longest inherited runs &mdash; S6&ndash;S8 and S10&ndash;S12 &mdash; are exactly two links
+      each, which is why the chain holds; the budget makes the accident a law.</li>
+      <li>Inherit <b>start frames only</b>. The end of every link stays a designed anchor &mdash; start
+      frames inherit pixel-exactly while an end frame is a soft landing target on every chainable model,
+      so a chain built onto extracted end frames degrades in the one direction the platform cannot
+      guarantee.</li>
+      <li>Between resets, sub-chains are independent: strict order lives <em>inside</em> a sub-chain,
+      never across the film &mdash; S6&ndash;S8, S10&ndash;S12 and the standalone shots can generate in parallel
+      without touching continuity.</li>
+      <li>At Gate D, measure each draft link's landing against its designed end anchor; promote the
+      better frame <em>in inheritance order only</em>, so a promotion never invalidates a shot already
+      generated downstream.</li>
+    </ol>
+    <p class="qual" id="mth-best-qual"><b>Qualifications:</b> the budget generalises what B01 already does
+    at S11&rarr;S12 &mdash; it does not replace the anchor string, it prices every departure from it. The
+    obvious-seeming upgrade &mdash; building a long chain from both ends toward a designed midpoint &mdash; was
+    adversarially reviewed and rejected for this pipeline: it relocates error rather than halving it, and
+    a backward-built half forces earlier shots to end on extracted frames, trading the platform's exact
+    inheritance for its approximate one. Keep the generation log per sub-chain, so the published prompt
+    history still reads in order.</p>
+  </div>
+
+  <h3 style="margin:30px 0 4px">Notes camera &mdash; photograph the marked sheets</h3>
+  <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch">Step three of the loop. Photograph a
+  pencilled sheet, tag it with the sheet it came from, and it stays filed here (stored in this browser
+  only, like everything else on this page). To iterate: drop the same photo into the Claude session
+  &mdash; the marks get read, the prompts and sheets get revised, you reprint. Every photo kept here, with
+  its tag and what changed after, is the loop's training pile: the longer it grows, the sharper the next
+  revision starts.</p>
+  <div class="np-bar">
+    <label class="abtn" for="np-input" style="cursor:pointer">&#128247; Add photo</label>
+    <input type="file" id="np-input" accept="image/*" capture="environment" multiple hidden>
+    <select id="np-sheet" aria-label="Which sheet is this photo of">
+      <option value="01">01 · Cover</option><option value="02">02 · Phase 0 ledger</option>
+      <option value="03">03 · Gate A</option><option value="04" selected>04 · Anchor string</option>
+      <option value="05">05 · 6-up</option><option value="06">06 · 12-up</option>
+      <option value="07">07 · Pulse</option><option value="08">08 · Ribbon</option>
+      <option value="09">09 · Gates B+C</option><option value="10">10 · Shot cards</option>
+      <option value="11">11 · Methods</option><option value="12">12 · Finish</option>
+      <option value="other">other</option>
+    </select>
+    <input type="text" id="np-cap" placeholder="what changed / what to try" maxlength="120">
+    <span class="vault-status" id="np-count">Nothing filed</span>
+  </div>
+  <div class="np-grid" id="np-grid"></div>
+  <p class="np-empty" id="np-empty">No photos yet. Print a sheet, mark it up, photograph it here &mdash;
+  or drop the photo straight into the Claude session to iterate immediately.</p>
 </div></section>
 
 <!-- ================= BUILD ================= -->
@@ -4084,7 +4292,7 @@ const RUN=[
  a:"F03 keeps coming back as a wide shot. Rewrite that anchor prompt.",
  b:"<b>Image</b> → work down the list in order. One button below copies all eleven prompts at once.",
  w:"Image",u:HF+"image",anc:1,
- set:"Batch of 4 per anchor, then select 1. Attach the Movement I lighting plate + the relevant Soul every time.",sv:"F01 … F09 · F36 · F37",
+ set:"Batch of 4 per anchor, then select 1. Attach the Movement I lighting plate + the relevant Soul every time. Verify soul_2 really offers 21:9 · 4K first; if capped, identity 16:9/2K, comp via nano_banana_pro.",sv:"F01 … F09 · F36 · F37",
  mdl:"soul_2 + soul_id · PLATE-mv1-light as reference",ar:"21:9 · 4K",fld:"01 · ANCHORS / MV1 The Sun"},
 {ph:"Phase 1",t:"Movement II look — 14 anchors",
  s:"F10–F22 plus the B01 bridge. Both match-cut pairs are decided here: F09/F10 carries the 108-year jump, F22/F23 carries a day and three thousand miles. Design each pair together or the audience pays for it.",
@@ -4565,5 +4773,189 @@ const RUN=[
   };
 
   paint();
+})();
+</script>
+<script>
+/* ================= PAPER KIT ================= */
+(function(){
+  if(!document.getElementById("gm-stage"))return;
+
+  /* ---- grid maker: four formats, computed from the live SHOTS data ---- */
+  var NAMES={
+    "6":"Storyboard \u2014 six equal frames",
+    "12":"Storyboard \u2014 twelve equal frames",
+    "pulse":"Pulse \u2014 one frame every twelve seconds",
+    "ribbon":"Ribbon \u2014 box width is shot length"
+  };
+  function inner(kind){
+    var h="";
+    if(kind==="6"){
+      h='<div class="g6">';
+      for(var i=0;i<6;i++)h+='<div><div class="fr"></div><div class="frl">shot ____ \u00b7 sec ____ \u00b7 seam out ____________</div></div>';
+      h+="</div>";
+    }else if(kind==="12"){
+      h='<div class="g12">';
+      for(var j=0;j<12;j++)h+='<div><div class="fr lite"></div><div class="frl">shot ____ \u00b7 ______________</div></div>';
+      h+="</div>";
+    }else if(kind==="pulse"){
+      var spans=[],c=0;
+      SHOTS.forEach(function(s){spans.push([c,c+s.d,s]);c+=s.d});
+      h='<div class="gp">';
+      for(var t=0;t<c;t+=12){
+        var on=null;
+        for(var k=0;k<spans.length;k++)if(spans[k][0]<=t&&t<spans[k][1]){on=spans[k][2];break}
+        var m=Math.floor(t/60),ss=String(t%60).padStart(2,"0");
+        h+='<div><div class="fr lite"></div><div class="frl"><b>'+m+":"+ss+"</b> \u00b7 "+on.id+" \u00b7 MV"+on.mv+"</div></div>";
+      }
+      h+="</div>";
+    }else{
+      h='<div class="gr">';
+      SHOTS.forEach(function(s){
+        var w=(s.d*0.158).toFixed(2);
+        h+='<div class="cell" style="width:'+w+'in"><div class="fr m'+s.mv+'" style="width:'+w+'in"></div><div class="frl"><b>'+s.id+"</b> \u00b7 "+s.d+"s</div></div>";
+      });
+      h+="</div>";
+    }
+    return h;
+  }
+  function sheetDoc(kind){
+    /* a standalone printable page \u2014 same geometry as the PDF kit, system fonts */
+    var css="*{margin:0;padding:0;box-sizing:border-box}@page{size:Letter;margin:0}"+
+      "body{font:9.5pt/1.45 -apple-system,'Helvetica Neue',sans-serif;color:#101010;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}"+
+      ".sheet{width:8.5in;min-height:11in;padding:.52in .55in .45in}"+
+      ".gmh{display:flex;justify-content:space-between;border-bottom:1.6pt solid #101010;padding-bottom:5pt;margin-bottom:12pt;font:700 8pt monospace;letter-spacing:.16em}"+
+      ".fr{border:1pt solid #333;border-radius:1.5pt;background:#fff}"+
+      ".fr.lite{border:.7pt solid #888}"+
+      ".frl{font:6.5pt monospace;color:#999;margin-top:2pt}"+
+      ".g6{display:grid;grid-template-columns:1fr 1fr;gap:12pt 16pt}.g6 .fr{height:1.5in}"+
+      ".g12{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9pt 11pt}.g12 .fr{height:.98in}"+
+      ".gp{display:grid;grid-template-columns:repeat(5,1fr);gap:11pt 11pt}.gp .fr{height:.92in}"+
+      ".gr{display:flex;flex-wrap:wrap;gap:6pt 3pt;align-items:flex-start}.gr .cell{display:flex;flex-direction:column;gap:1pt}.gr .fr{height:.84in}"+
+      ".gr .m1{border-top:3pt solid #101010}.gr .m2{border-top:5pt double #101010}.gr .m3{border-top:2.5pt dotted #101010}";
+    return "<!doctype html><html><head><meta charset='utf-8'><title>"+NAMES[kind]+"</title><style>"+css+"</style></head><body>"+
+      '<div class="sheet"><div class="gmh"><span>MATTER OF LIGHT \u00b7 PAPER KIT</span><span>'+NAMES[kind].toUpperCase()+"</span></div>"+
+      inner(kind)+"</div></body></html>";
+  }
+  var cur="6",stage=document.getElementById("gm-stage"),
+      wrap=document.getElementById("gm-stagewrap"),status=document.getElementById("gm-status");
+  function paintGrid(){
+    stage.innerHTML='<div class="gmh"><span>MATTER OF LIGHT \u00b7 PAPER KIT</span><span>'+NAMES[cur].toUpperCase()+"</span></div>"+inner(cur);
+    wrap.style.height=Math.ceil(stage.scrollHeight*0.62)+"px";
+  }
+  paintGrid();
+  document.getElementById("gm-tools").addEventListener("click",function(e){
+    var b=e.target.closest(".gbtn");if(!b)return;
+    this.querySelectorAll(".gbtn").forEach(function(x){x.removeAttribute("data-on")});
+    b.setAttribute("data-on","1");cur=b.dataset.g;paintGrid();
+  });
+  document.getElementById("gm-open").addEventListener("click",function(){
+    try{
+      var w=window.open("","_blank");
+      if(!w)throw 0;
+      w.document.write(sheetDoc(cur));w.document.close();
+      status.textContent="Print view opened \u2014 \u2318P there";status.className="vault-status ok";
+    }catch(e){
+      status.textContent="Pop-ups blocked here \u2014 use Save instead";status.className="vault-status";
+    }
+  });
+  var DL=null;
+  try{
+    if(window.claude&&window.claude.use)window.claude.use("downloads").then(function(d){DL=d});
+  }catch(e){}
+  document.getElementById("gm-save").addEventListener("click",function(){
+    var doc=sheetDoc(cur),fn="matter-of-light-sheet-"+cur+".html",self=this;
+    if(DL){
+      DL.save({filename:fn,data:doc}).then(function(){
+        status.textContent="Saved";status.className="vault-status ok";
+      }).catch(function(err){
+        status.textContent=(err&&err.code==="declined")?"Save declined":"Save unavailable here";
+        status.className="vault-status";
+      });
+      return;
+    }
+    try{
+      var b=new Blob([doc],{type:"text/html"}),u=URL.createObjectURL(b),a=document.createElement("a");
+      a.href=u;a.download=fn;a.click();setTimeout(function(){URL.revokeObjectURL(u)},800);
+      status.textContent="Saved";status.className="vault-status ok";
+    }catch(e){status.textContent="Save unavailable here";status.className="vault-status"}
+  });
+
+  /* ---- notes camera: photos filed against sheets, IndexedDB, local only ---- */
+  var grid=document.getElementById("np-grid"),empty=document.getElementById("np-empty"),
+      count=document.getElementById("np-count");
+  function db(){
+    return new Promise(function(res,rej){
+      var r=indexedDB.open("msm-notes",1);
+      r.onupgradeneeded=function(){r.result.createObjectStore("photos",{keyPath:"id",autoIncrement:true})};
+      r.onsuccess=function(){res(r.result)};r.onerror=function(){rej(r.error)};
+    });
+  }
+  function tx(mode,fn){
+    return db().then(function(d){
+      return new Promise(function(res,rej){
+        var t=d.transaction("photos",mode),s=t.objectStore("photos"),out=fn(s);
+        t.oncomplete=function(){res(out&&out.result!==undefined?out.result:out)};
+        t.onerror=function(){rej(t.error)};
+      });
+    });
+  }
+  function shrink(file){
+    return new Promise(function(res){
+      var img=new Image(),u=URL.createObjectURL(file);
+      img.onload=function(){
+        var MAX=1600,sc=Math.min(1,MAX/Math.max(img.width,img.height));
+        var cv=document.createElement("canvas");
+        cv.width=Math.round(img.width*sc);cv.height=Math.round(img.height*sc);
+        cv.getContext("2d").drawImage(img,0,0,cv.width,cv.height);
+        URL.revokeObjectURL(u);
+        cv.toBlob(function(b){res(b||file)},"image/jpeg",0.82);
+      };
+      img.onerror=function(){URL.revokeObjectURL(u);res(file)};
+      img.src=u;
+    });
+  }
+  function paintNotes(){
+    tx("readonly",function(s){return s.getAll()}).then(function(all){
+      all=all||[];
+      grid.innerHTML="";
+      empty.style.display=all.length?"none":"";
+      count.textContent=all.length?all.length+" photo"+(all.length===1?"":"s")+" filed in this browser":"Nothing filed";
+      count.className="vault-status"+(all.length?" ok":"");
+      all.sort(function(a,b){return b.id-a.id}).forEach(function(p){
+        var d=document.createElement("div");d.className="np-item";
+        var u=URL.createObjectURL(p.blob);
+        d.innerHTML='<img alt="paper note photo" src="'+u+'"><div class="npm"><b>'+
+          (p.sheet==="other"?"other":"sheet "+p.sheet)+"</b> \u00b7 "+
+          new Date(p.ts).toLocaleDateString()+
+          (p.cap?"<br>"+p.cap.replace(/</g,"&lt;"):"")+
+          '<br><button class="npx" data-x="'+p.id+'">remove</button></div>';
+        grid.appendChild(d);
+      });
+    }).catch(function(){
+      empty.textContent="Photo storage is unavailable in this browser view \u2014 drop photos straight into the Claude session instead.";
+    });
+  }
+  paintNotes();
+  document.getElementById("np-input").addEventListener("change",function(){
+    var files=[].slice.call(this.files||[]);this.value="";
+    if(!files.length)return;
+    var sheet=document.getElementById("np-sheet").value,
+        cap=document.getElementById("np-cap").value.trim();
+    Promise.all(files.map(shrink)).then(function(blobs){
+      return tx("readwrite",function(s){
+        blobs.forEach(function(b){s.add({ts:Date.now(),sheet:sheet,cap:cap,blob:b})});
+      });
+    }).then(function(){
+      document.getElementById("np-cap").value="";
+      paintNotes();
+    }).catch(function(){
+      empty.textContent="Could not store the photo here \u2014 drop it straight into the Claude session instead.";
+    });
+  });
+  grid.addEventListener("click",function(e){
+    var b=e.target.closest("[data-x]");if(!b)return;
+    var id=+b.dataset.x;
+    tx("readwrite",function(s){s.delete(id)}).then(paintNotes);
+  });
 })();
 </script>

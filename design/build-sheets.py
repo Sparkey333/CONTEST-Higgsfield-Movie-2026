@@ -259,7 +259,7 @@ def run_row(i, r):
             f'<td style="width:.34in">{box}</td>'
             f'<td style="width:1in">{date}</td></tr>')
 
-half = 16
+half = 15
 for s_i, chunk in enumerate((RUN[:half], RUN[half:])):
     rows = "".join(run_row(i + s_i * half, r) for i, r in enumerate(chunk))
     intro = ("" if s_i else '<h2>The run sheet</h2><p class="sub">All 34 steps in production order — '

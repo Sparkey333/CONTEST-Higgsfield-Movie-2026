@@ -5,7 +5,7 @@
    Bump CACHE when any document changes, otherwise the installed app will
    keep serving the copy it cached on first run. */
 
-const CACHE = "desk-v8";
+const CACHE = "desk-v9";
 
 /* crosswalk.local.js is deliberately absent from this list: it is gitignored,
    may not exist, and a single 404 fails the whole addAll(). */
@@ -18,7 +18,20 @@ const ASSETS = [
   "./app.webmanifest",
   "./icon.svg",
   "./workflow-sheets.pdf",
-  "./matter-of-light-screenplay.pdf"
+  "./matter-of-light-screenplay.pdf",
+  "./paper-kit.pdf",
+  "./paper-kit/01-cover.pdf",
+  "./paper-kit/02-phase0-ledger.pdf",
+  "./paper-kit/03-gate-a.pdf",
+  "./paper-kit/04-anchor-string.pdf",
+  "./paper-kit/05-storyboard-6up.pdf",
+  "./paper-kit/06-storyboard-12up.pdf",
+  "./paper-kit/07-pulse-12s.pdf",
+  "./paper-kit/08-ribbon-weighted.pdf",
+  "./paper-kit/09-gates-b-c.pdf",
+  "./paper-kit/10-shot-cards.pdf",
+  "./paper-kit/11-methods.pdf",
+  "./paper-kit/12-finish-submit.pdf"
 ];
 
 self.addEventListener("install", (e) => {
