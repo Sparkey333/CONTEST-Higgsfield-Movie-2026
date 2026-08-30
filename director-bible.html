@@ -5440,7 +5440,11 @@ const RUN=[
       ["Souls", ((snap&&snap.souls)||[]).length, "trained identities", ""],
       ["Elements", ((snap&&snap.elements)||[]).length, "reference handles", ""],
       ["Credits", (ws.credits!==undefined?ws.credits:"—"), (ws.plan||"plan")+" plan",
-        (typeof ws.credits==="number"&&ws.credits<20)?"warn":""]
+        (typeof ws.credits==="number"&&ws.credits<20)?"warn":""],
+      /* Generations whose prompt matches no current sheet: almost always work
+         made before a prompt was rewritten. Worth seeing — they are the images
+         that will quietly not match the film. */
+      ["Off-sheet", (snap&&snap.counts&&snap.counts.loose)||0, "match no current prompt", ""]
     ];
     SUM.innerHTML=cards.map(function(c){
       return '<div class="hf-card '+c[3]+'"><span class="k">'+c[0]+'</span>'+
