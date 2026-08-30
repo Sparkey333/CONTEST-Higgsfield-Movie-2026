@@ -36,6 +36,7 @@ No build step, no dependencies, no account, no network calls.
 | **`paper-kit.pdf`** + **`paper-kit/`** | Twelve sheets for thinking rather than tracking — anchor-string strip, storyboard grids at equal frames and equal time, the duration-weighted ribbon, gates, methods. One combined PDF plus a separate PDF per sheet. Rebuild with `design/build-paper-kit.py` then `design/render-paper-kit.mjs`. |
 | **`matter-of-light-screenplay.pdf`** | The abridged festival screenplay, production names throughout, Movements II and III interleaved. Source: `design/matter-of-light-screenplay.html`. |
 | **`design/four-captures.png`** | The one-page capture plate to keep open beside Higgsfield. |
+| **`design/higgsfield-snapshot.py`** | Turns a Higgsfield generation pull into the bible's coverage board, matching generations back to assets by prompt text. Writes `higgsfield.local.json`, which is gitignored — it holds account handles and asset URLs. |
 
 ### Inside the director's bible
 
@@ -55,6 +56,8 @@ No build step, no dependencies, no account, no network calls.
 | **Pipeline & Gates** | Five hard locks: identity, string, timing, motion, picture. Nothing downstream starts until the gate above holds. |
 | **Frame String** | All 39 anchor frames, shared joins and bridge frames, as an interactive ledger. |
 | **Model Matrix** | Every video model compared on max length, resolution, frame roles and references. |
+| **Higgsfield** | The live tab. A 42 × 4 coverage board of what the account actually holds against what the bible plans, the trained identities and element handles, and the pull loop: refresh → read the gap → generate → refresh again. |
+| **Paper Kit** | The twelve printable thinking sheets, a live grid maker for the four storyboard geometries, the methods panel, and the notes camera for photographed paper. |
 | **Key Vault** | BYOK storage with a `.env` export for local tooling. Browser storage only. |
 
 ### The status read

@@ -1020,6 +1020,208 @@ footer a{color:var(--ink-2)}
 .spec .sp.a i{color:var(--gold)}
 .spec .sp.f{background:var(--jade-soft);border-color:var(--jade-line)}
 .spec .sp.f i{color:var(--jade)}
+
+/* ==========================================================================
+   CINEMA LAYER
+   The page was a wall of grey mono links over cream. Everything below is art
+   direction: a title card instead of a masthead, six chapters instead of
+   twenty-eight equal links, and the film's own three looks used as the colour
+   system. The plates are drawn in CSS so they render identically offline, in
+   the artifact viewer and in print; where the real generated frames are
+   reachable (a local copy beside the Higgsfield project) they load over the
+   top and the CSS becomes their underpainting.
+   ========================================================================== */
+:root{
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.36'/></svg>");
+  /* the three movement looks, as plates */
+  --plate1:radial-gradient(110% 85% at 26% 96%,#FFE1A0 0%,#F4A92C 22%,#B45A06 44%,#3A1B03 72%,#0A0703 100%);
+  --plate2:radial-gradient(120% 110% at 76% 8%,#B9A7FF 0%,#5B49C8 20%,#22246B 46%,#0B1030 74%,#04060F 100%);
+  --plate3:radial-gradient(105% 105% at 64% 92%,#FFD3A0 0%,#EE7C3E 22%,#8C2F2A 48%,#2A1220 76%,#080609 100%);
+}
+
+/* ---------- title card ---------- */
+header.mast{
+  position:relative;isolation:isolate;overflow:hidden;border-bottom:0;
+  background:#05060B;color:#F6F2E8;
+}
+.mast-art{position:absolute;inset:0;z-index:-2;display:grid;grid-template-columns:1fr 1fr 1fr}
+.mast-art i{display:block;position:relative;background-size:cover;background-position:center}
+.mast-art i:nth-child(1){background-image:var(--plate1)}
+.mast-art i:nth-child(2){background-image:var(--plate2)}
+.mast-art i:nth-child(3){background-image:var(--plate3)}
+.mast-art i + i{box-shadow:-1px 0 0 rgba(0,0,0,.55)}
+.mast-scrim{
+  position:absolute;inset:0;z-index:-1;
+  /* Enough to hold white type at AA, not enough to crush the plates: the two
+     warm panels went black under a heavier scrim and the title card stopped
+     being three looks. */
+  background:
+    var(--grain),
+    linear-gradient(180deg,rgba(5,6,11,.30) 0%,rgba(5,6,11,.58) 52%,rgba(5,6,11,.88) 100%),
+    linear-gradient(90deg,rgba(5,6,11,.72) 0%,rgba(5,6,11,.30) 46%,rgba(5,6,11,.34) 100%);
+  background-size:140px 140px,cover,cover;
+}
+.mast-inner{padding:70px 0 30px}
+.mast .brackets{color:#E8C88A;opacity:.95}
+.mast .title{color:#FBF7EE;text-shadow:0 2px 40px rgba(0,0,0,.65)}
+.mast .title small{color:#B9C2D8}
+.mast .logline{color:#D6DBE8;max-width:56ch;font-size:18px}
+.mast .logline strong{color:#FFE6A8;font-weight:600}
+/* the plates named, so the art reads as the film rather than as decoration */
+.mast-legend{
+  display:flex;gap:0;margin-top:26px;border-top:1px solid rgba(255,255,255,.16);
+  font:600 9.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase
+}
+.mast-legend span{
+  flex:1;padding:11px 0 0;color:rgba(246,242,232,.62);
+  border-top:2px solid transparent;margin-top:-1px
+}
+.mast-legend span:nth-child(1){border-top-color:#F0A62E}
+.mast-legend span:nth-child(2){border-top-color:#7B6BE8}
+.mast-legend span:nth-child(3){border-top-color:#E8763C}
+.mast .stats{
+  border-top:1px solid rgba(255,255,255,.14);border-bottom:0;
+  background:rgba(255,255,255,.04);backdrop-filter:blur(6px);
+  border-radius:12px 12px 0 0;margin-bottom:0;overflow:hidden
+}
+.mast .stat{border-right:1px solid rgba(255,255,255,.10);padding:14px 18px}
+.mast .stat .k{color:rgba(246,242,232,.52)}
+.mast .stat .v{color:#FBF7EE;font-size:19px}
+.mast .stat .v.warn{color:#FF9C7A}
+.mast .stat .n{color:rgba(246,242,232,.44);font-size:11.5px}
+/* real frames, when they are reachable */
+.has-frames .mast-art i{background-blend-mode:luminosity}
+.has-frames .mast-art i:nth-child(1){background-image:var(--f1),var(--plate1)}
+.has-frames .mast-art i:nth-child(2){background-image:var(--f2),var(--plate2)}
+.has-frames .mast-art i:nth-child(3){background-image:var(--f3),var(--plate3)}
+
+/* ---------- chapters: six tabs, not twenty-eight links ---------- */
+nav.toc{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.chap-inner{display:flex;align-items:stretch;gap:4px;padding-top:0;padding-bottom:0}
+.chap{
+  --c:var(--ink-3);
+  flex:0 0 auto;display:flex;flex-direction:column;gap:3px;align-items:flex-start;
+  padding:11px 16px 9px;border:0;border-bottom:2.5px solid transparent;
+  background:none;cursor:pointer;color:var(--ink-2);text-decoration:none;
+  font-family:var(--body);transition:background .12s,color .12s,border-color .12s
+}
+.chap .cn{font:700 9px/1 var(--mono);letter-spacing:.2em;color:var(--ink-3)}
+.chap .ct{font:600 14px/1.15 var(--body);letter-spacing:-.01em;white-space:nowrap}
+.chap:hover{background:var(--surface-2);color:var(--ink)}
+.chap:hover .cn,.chap[data-on] .cn{color:var(--c)}
+.chap[data-on]{border-bottom-color:var(--c);color:var(--ink);background:var(--surface-2)}
+.chap[aria-expanded="true"]{background:var(--surface-3);border-bottom-color:var(--c)}
+.chap.pk{--c:var(--gold);justify-content:center}
+.chap.pk .ct{color:var(--gold)}
+.chap.hf{--c:var(--jade);margin-left:auto;justify-content:center}
+.chap.hf .ct{color:var(--jade)}
+.chap.hf .cn{color:var(--jade)}
+.toc-inner #tt{align-self:center;margin-left:0}
+.chap-panel{
+  display:none;border-top:1px solid var(--line-soft);
+  background:var(--surface-2);box-shadow:inset 0 12px 24px -18px rgba(0,0,0,.5)
+}
+.chap-panel[data-open]{display:block}
+.chap-panel .wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:2px;padding-top:12px;padding-bottom:14px}
+.chap-panel a{
+  display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;
+  text-decoration:none;color:var(--ink);border-left:2px solid transparent
+}
+.chap-panel a:hover{background:var(--surface);border-left-color:var(--pc,var(--gold))}
+.chap-panel a b{font:600 13.5px/1.25 var(--body)}
+.chap-panel a span{font-size:11.5px;line-height:1.4;color:var(--ink-3)}
+@media (max-width:860px){
+  .chap .ct{font-size:12.5px}
+  .chap{padding:9px 10px 7px}
+  .chap.pk .ct{font-size:0}
+  .chap.pk .ct::after{content:"✎";font-size:15px}
+}
+
+/* ---------- sections: chapter colour, and prose that stops shouting ---------- */
+section{position:relative}
+section > .wrap > .sec-head{position:relative;padding-left:16px}
+section > .wrap > .sec-head::before{
+  content:"";position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:2px;
+  background:var(--sc,var(--line));opacity:.9
+}
+.sec-head .eyebrow{color:var(--sc,var(--ink-3))}
+section[data-ch="run"]{--sc:var(--mv1)}
+section[data-ch="make"]{--sc:var(--mv2)}
+section[data-ch="film"]{--sc:var(--mv3)}
+section[data-ch="craft"]{--sc:var(--jade)}
+section[data-ch="check"]{--sc:var(--void)}
+section[data-ch="setup"]{--sc:var(--ink-3)}
+/* long intros collapse to two lines until asked for */
+.sec-head p.clamp{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+}
+.sec-head p.clamp.open{display:block;-webkit-line-clamp:unset}
+.moreb{
+  display:block;width:fit-content;align-self:flex-start;
+  margin-top:6px;padding:4px 9px;border:1px solid var(--line);border-radius:99px;
+  background:var(--surface);color:var(--ink-3);cursor:pointer;
+  font:600 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase
+}
+.moreb:hover{color:var(--ink);border-color:var(--sc,var(--gold))}
+
+/* ---------- higgsfield ---------- */
+section[data-ch="higgs"]{--sc:var(--jade)}
+.hf-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0 18px}
+.hf-go{
+  padding:9px 14px;border-radius:8px;text-decoration:none;cursor:pointer;
+  font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  color:#0B0C10;background:var(--gold);border:1px solid var(--gold);white-space:nowrap
+}
+.hf-go:hover{filter:brightness(1.08)}
+.hf-go.ghost{background:var(--surface);color:var(--ink-2);border-color:var(--line)}
+.hf-go.ghost:hover{color:var(--ink);border-color:var(--gold-line);filter:none}
+.hf-go.pull{background:var(--jade);border-color:var(--jade);color:#04120C}
+.hf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px}
+.hf-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 15px;
+  display:flex;flex-direction:column;gap:4px
+}
+.hf-card .k{font:600 9.5px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.hf-card .v{font:600 22px/1 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+.hf-card .n{font-size:11.5px;color:var(--ink-3);line-height:1.4}
+.hf-card.warn{border-color:var(--coral-line);background:var(--coral-soft)}
+.hf-card.warn .v{color:var(--coral)}
+.hf-card.ok{border-color:var(--jade-line);background:var(--jade-soft)}
+.hf-card.ok .v{color:var(--jade)}
+.hf-cov{margin-top:12px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.hf-row{display:grid;grid-template-columns:1fr repeat(4,42px);gap:0;align-items:center;
+  border-bottom:1px solid var(--line-soft)}
+.hf-row:last-child{border-bottom:0}
+.hf-row.head{background:var(--surface-2);position:sticky;top:0}
+.hf-row.head span{font:600 9px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);padding:8px 0;text-align:center}
+.hf-row.head .nm{text-align:left;padding-left:12px}
+.hf-row .nm{padding:7px 12px;font-size:13px;color:var(--ink);overflow:hidden;
+  white-space:nowrap;text-overflow:ellipsis}
+.hf-row .nm em{font-style:normal;color:var(--ink-3);font-size:11px;font-family:var(--mono)}
+.hf-cell{
+  height:26px;margin:3px;border-radius:5px;border:1px solid var(--line-soft);
+  background:var(--surface-2);display:flex;align-items:center;justify-content:center;
+  font:600 10px/1 var(--mono);color:var(--ink-3)
+}
+.hf-cell.on{background:var(--jade-soft);border-color:var(--jade-line);color:var(--jade)}
+.hf-cell.miss-a{background:var(--coral-soft);border-color:var(--coral-line);color:var(--coral)}
+.hf-els{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:12px}
+.hf-el{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--surface)}
+.hf-el img{display:block;width:100%;height:88px;object-fit:cover;background:var(--surface-3)}
+.hf-el .m{padding:7px 9px;font:11px/1.4 var(--mono);color:var(--ink-2);word-break:break-word}
+.hf-el .m i{font-style:normal;color:var(--ink-3);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;display:block;margin-top:2px}
+.hf-el.soul{border-color:var(--gold-line);background:var(--gold-soft)}
+.hf-loop{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:12px}
+.hf-step{display:flex;gap:11px;background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;padding:13px 15px}
+.hf-step .hn{font:700 13px/1 var(--mono);color:var(--jade);background:var(--jade-soft);
+  border:1px solid var(--jade-line);border-radius:6px;padding:6px 8px;height:fit-content}
+.hf-step b{font-size:14px}
+.hf-step p{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin-top:3px}
+.hf-empty{padding:22px;text-align:center;color:var(--ink-3);font-size:13.5px;font-style:italic}
 #now-spec{margin-top:12px}
 .vbody.sv .prompt{margin-top:0}
 
@@ -1058,12 +1260,15 @@ footer a{color:var(--ink-2)}
 </style>
 
 <header class="mast">
+  <div class="mast-art" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="mast-scrim" aria-hidden="true"></div>
   <div class="wrap mast-inner">
     <div class="brackets">&#123; Higgsfield Global Film Festival &nbsp;·&nbsp; Entry Bible &#125;</div>
     <h1 class="title">MATTER OF LIGHT
       <small>Prelude &mdash; The Unending War &nbsp;·&nbsp; adapted from Chapters I&ndash;III</small>
     </h1>
     <p class="logline">A creator stands on the surface of the Sun and decides to release his brother, knowing it will probably end everything. A hundred and eight years later an Auren burns her own mind to ash to keep one island hidden. That same sunset two brothers watch a mountain fall out of the sky &mdash; and <strong>only one of them learns the right lesson from it.</strong></p>
+    <div class="mast-legend"><span>I &middot; The Sun &middot; gold on black</span><span>II &middot; The Ocean &middot; cold blue-grey</span><span>III &middot; The Island &middot; golden hour</span></div>
   </div>
   <div class="wrap">
     <div class="stats">
@@ -1078,37 +1283,10 @@ footer a{color:var(--ink-2)}
   </div>
 </header>
 
-<nav class="toc"><div class="wrap toc-inner">
-  <a href="#process">★ The Process</a>
-  <a href="#reuse">Reuse</a>
-  <a href="#control">▶ Control Room</a>
-  <a href="#backcheck">Source Backcheck</a>
-  <a href="#assets">Asset Prompts</a>
-  <a href="#states">Power States</a>
-  <a href="#forms">Forms &amp; States</a>
-  <a href="#bind">Binding</a>
-  <a href="#filing">Filing &amp; Selection</a>
-  <a href="#loop">Revision Loop</a>
-  <a href="#lessons">Lessons</a>
-  <a href="#folders">Folders</a>
-  <a href="#dials">Tweaks &amp; Export</a>
-  <a href="#thesis">The Thesis</a>
-  <a href="#brief">The Brief</a>
-  <a href="#doctrine">Doctrine</a>
-  <a href="#blend">Blend Options</a>
-  <a href="#versus">Structural Test</a>
-  <a href="#shots">Shot List</a>
-  <a href="#pipeline">Pipeline &amp; Gates</a>
-  <a href="#frames">Frame String</a>
-  <a href="#revision">Revision Rules</a>
-  <a href="#matrix">Model Matrix</a>
-  <a href="#technique">Techniques</a>
-  <a href="#truths">Layered Truths</a>
-  <a href="#vault">Key Vault</a>
-  <a href="#build">Build Order</a>
-  <a href="#paper" class="pk">&#9998; Paper Kit</a>
-  <button id="tt" type="button" aria-label="Switch colour theme">Theme</button>
-</div></nav>
+<nav class="toc" id="chapnav">
+  <div class="wrap toc-inner chap-inner" id="chap-tabs"></div>
+  <div class="chap-panel" id="chap-panel"><div class="wrap"></div></div>
+</nav>
 
 <div class="resume" id="resume"><div class="resume-in">
   <span class="rl" id="res-l">Step 1/22</span>
@@ -2311,6 +2489,66 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
 </div></section>
 
 <!-- ================= VAULT ================= -->
+<!-- ================= HIGGSFIELD ================= -->
+<section id="higgs"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The account</span>
+    <h2>Higgsfield &mdash; the project, and the loop back to here</h2>
+    <p>What actually exists in the Higgsfield project, matched asset by asset and lane by lane against
+    the 42 sheets in this bible. Generations carry the prompt they were made from, and this document owns
+    those prompts, so every image can be attributed without any naming convention in the account &mdash;
+    which means the board below shows the true gap between what is planned and what is made.</p>
+  </div>
+
+  <div class="hf-bar">
+    <a class="hf-go" href="https://higgsfield.ai/cinema-studio" target="_blank" rel="noopener">
+      Open Cinema Studio &#8599;</a>
+    <a class="hf-go ghost" href="https://higgsfield.ai/assets" target="_blank" rel="noopener">Assets &#8599;</a>
+    <a class="hf-go ghost" href="https://higgsfield.ai/image" target="_blank" rel="noopener">Image &#8599;</a>
+    <button class="hf-go pull" id="hf-refresh">&#8635; Refresh from account</button>
+    <label class="hf-go ghost" for="hf-file" style="cursor:pointer">Import snapshot&hellip;</label>
+    <input type="file" id="hf-file" accept="application/json,.json" hidden>
+    <span class="vault-status" id="hf-stat">No snapshot loaded</span>
+  </div>
+
+  <div class="hf-grid" id="hf-summary"></div>
+
+  <h3 style="margin:26px 0 4px">Coverage &mdash; 42 assets &times; 4 lanes</h3>
+  <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch">Each row is an asset sheet; each cell a
+  variant lane. Filled means generations exist in the account for that exact prompt. <b>A is the lane that
+  must exist</b> &mdash; it is the continuity pass everything downstream inherits; B, C and D are look and
+  technique passes that can wait. A row with a filled D and an empty A is the shape of a problem.</p>
+  <div class="hf-cov" id="hf-cov"></div>
+
+  <h3 style="margin:26px 0 4px">Trained identities and elements</h3>
+  <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch">Souls are identities the platform can
+  reproduce; elements are reference handles. One identity per Soul, never two &mdash; an element holding two
+  people returns a blend of both.</p>
+  <div class="hf-els" id="hf-els"></div>
+
+  <h3 style="margin:26px 0 4px">The iteration loop</h3>
+  <div class="hf-loop">
+    <div class="hf-step"><span class="hn">1</span><div>
+      <b>Pull</b><p>Press <b>Refresh</b>. With a Higgsfield key in the vault the app asks the account
+      directly; where the browser or the viewer blocks that call, it hands you a pull request to paste
+      into the Claude session instead &mdash; same result, one extra step.</p></div></div>
+    <div class="hf-step"><span class="hn">2</span><div>
+      <b>Read the gap</b><p>The board above fills in. Empty A lanes are the queue; everything else is
+      optional. The order button below writes that queue out with the prompts attached.</p></div></div>
+    <div class="hf-step"><span class="hn">3</span><div>
+      <b>Generate</b><p>Paste the order into Cinema Studio, or hand it back to Claude to generate through
+      the platform tools. Batch of 4, select 1, save under the name the order gives.</p></div></div>
+    <div class="hf-step"><span class="hn">4</span><div>
+      <b>Return</b><p>Refresh again. The board moves, the queue shrinks, and what is left is the honest
+      remainder &mdash; one more turn of this and the asset set is closed.</p></div></div>
+  </div>
+  <div class="gm-act">
+    <button class="abtn" id="hf-order">Copy the next-batch order</button>
+    <button class="abtn ghost" id="hf-ask">Copy the pull request for Claude</button>
+    <button class="abtn ghost" id="hf-clear">Clear snapshot</button>
+  </div>
+</div></section>
+
 <section id="vault"><div class="wrap">
   <div class="sec-head">
     <span class="eyebrow">Bring your own keys</span>
@@ -4957,5 +5195,393 @@ const RUN=[
     var id=+b.dataset.x;
     tx("readwrite",function(s){s.delete(id)}).then(paintNotes);
   });
+})();
+</script>
+<script>
+/* ================= CHAPTERS =================
+   Twenty-eight sections were twenty-eight identical links, which is a list, not
+   a structure. They group into six chapters that match how the work actually
+   runs: what you do today, what you build, what the film is, how it is made,
+   what you check, and what you configure. The tabs are the only thing on
+   screen; the sections behind each one appear on demand. */
+(function(){
+  var CH=[
+    {k:"run",n:"Run",d:"Today's work",c:"var(--mv1)",items:[
+      ["process","The Process","The whole film in headlines — start here"],
+      ["control","Control Room","34 steps that remember where you stopped"],
+      ["paper","Paper Kit","Twelve printable sheets for thinking"],
+      ["build","Build Order","The 24-day schedule, ticked locally"]]},
+    {k:"make",n:"Make",d:"Assets and identities",c:"var(--mv2)",items:[
+      ["assets","Asset Prompts","42 assets × 4 variant lanes"],
+      ["forms","Forms & States","34 character states across 7 groups"],
+      ["states","Power States","Ladder modifiers, pasted onto any prompt"],
+      ["filing","Filing & Selection","File by what a thing is, never where it is used"],
+      ["bind","Binding","Turns favourites into a whole"],
+      ["loop","Revision Loop","Download, refine, re-upload, mark v2"]]},
+    {k:"film",n:"Film",d:"The movie itself",c:"var(--mv3)",items:[
+      ["shots","Shot List","23 shots, three prompt lanes each"],
+      ["frames","Frame String","39 anchors, shared joins, bridges"],
+      ["pipeline","Pipeline & Gates","Five hard locks"],
+      ["thesis","The Thesis","One sentence, and what carries it"],
+      ["brief","The Brief","Paste-ready festival copy"]]},
+    {k:"craft",n:"Craft",d:"How it gets made",c:"var(--jade)",items:[
+      ["technique","Techniques","Seven ways to buy length"],
+      ["matrix","Model Matrix","Every model on length, res and frames"],
+      ["revision","Revision Rules","The escalation ladder"],
+      ["doctrine","Doctrine","The rules this film generates under"],
+      ["blend","Blend Options","Ways the movements could combine"],
+      ["versus","Structural Test","Interleave: argued, then adopted"]]},
+    {k:"check",n:"Check",d:"Verify before you spend",c:"var(--void)",items:[
+      ["backcheck","Source Backcheck","Where the adaptation diverges, on purpose"],
+      ["truths","Layered Truths","Eight payloads and where each lands"],
+      ["lessons","Lessons","Mistakes already paid for"],
+      ["folders","Folders","The tree everything is filed into"]]},
+    {k:"setup",n:"Setup",d:"Keys and configuration",c:"var(--ink-3)",items:[
+      ["vault","Key Vault","BYOK, stored in this browser"],
+      ["dials","Tweaks & Export","Everything adjustable in one place"],
+      ["reuse","Reuse","What carries to the next film"]]}
+  ];
+
+  var tabs=document.getElementById("chap-tabs"),
+      panel=document.getElementById("chap-panel"),
+      pbody=panel.firstElementChild;
+  if(!tabs)return;
+
+  /* colour every section by the chapter that owns it. The two standalone tabs
+     own themselves — they are their own chapter of one. */
+  var SOLO=[["higgs","higgs"],["paper","run"]];
+  CH.forEach(function(c){
+    c.items.forEach(function(it){
+      var s=document.getElementById(it[0]);
+      if(s&&s.tagName==="SECTION")s.setAttribute("data-ch",c.k);
+    });
+  });
+  SOLO.forEach(function(x){
+    var s=document.getElementById(x[0]);
+    if(s&&s.tagName==="SECTION")s.setAttribute("data-ch",x[1]);
+  });
+
+  var html="";
+  CH.forEach(function(c,i){
+    html+='<button class="chap" type="button" data-c="'+c.k+'" aria-expanded="false" '+
+      'style="--c:'+c.c+'"><span class="cn">'+String(i+1).padStart(2,"0")+'</span>'+
+      '<span class="ct">'+c.n+'</span></button>';
+  });
+  html+='<a class="chap hf" href="#higgs"><span class="cn">Live</span><span class="ct">◆ Higgsfield</span></a>'+
+        '<a class="chap pk" href="#paper"><span class="cn">Print</span><span class="ct">✎ Paper Kit</span></a>'+
+        '<button id="tt" type="button" aria-label="Switch colour theme">Theme</button>';
+  tabs.innerHTML=html;
+
+  var open=null;
+  function shut(){
+    if(!open)return;
+    panel.removeAttribute("data-open");
+    tabs.querySelectorAll(".chap").forEach(function(b){b.setAttribute("aria-expanded","false")});
+    open=null;
+  }
+  function show(k,btn){
+    var c=CH.find(function(x){return x.k===k});
+    if(!c)return;
+    pbody.innerHTML=c.items.map(function(it){
+      return '<a href="#'+it[0]+'" style="--pc:'+c.c+'"><b>'+it[1]+'</b><span>'+it[2]+'</span></a>';
+    }).join("");
+    panel.setAttribute("data-open","1");
+    tabs.querySelectorAll(".chap").forEach(function(b){
+      b.setAttribute("aria-expanded", b===btn ? "true" : "false");
+    });
+    open=k;
+  }
+  tabs.addEventListener("click",function(e){
+    var b=e.target.closest(".chap"); if(!b||b.classList.contains("pk"))return;
+    if(open===b.dataset.c){shut();return}
+    show(b.dataset.c,b);
+  });
+  document.addEventListener("click",function(e){
+    if(!e.target.closest("#chapnav"))shut();
+  });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape")shut(); });
+  pbody.addEventListener("click",function(e){ if(e.target.closest("a"))shut(); });
+
+  /* scroll spy — the tab for the chapter you are reading stays lit */
+  var owner={};
+  CH.forEach(function(c){ c.items.forEach(function(it){ owner[it[0]]=c.k }) });
+  if("IntersectionObserver" in window){
+    var seen={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ seen[en.target.id]=en.isIntersecting });
+      var lit=null;
+      Object.keys(seen).forEach(function(id){ if(seen[id]&&!lit)lit=owner[id] });
+      tabs.querySelectorAll(".chap").forEach(function(b){
+        if(b.dataset.c===lit)b.setAttribute("data-on","1"); else b.removeAttribute("data-on");
+      });
+    },{rootMargin:"-72px 0px -55% 0px"});
+    Object.keys(owner).forEach(function(id){
+      var s=document.getElementById(id); if(s)io.observe(s);
+    });
+  }
+
+  /* theme toggle lives on the rebuilt bar, so it is wired here */
+  (function(){
+    var K="msm.theme", r=document.documentElement, b=document.getElementById("tt");
+    if(!b)return;
+    function dark(){
+      var a=r.getAttribute("data-theme");
+      if(a)return a==="dark";
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches;
+    }
+    function label(){ b.textContent=dark()?"Light":"Dark" }
+    label();
+    b.addEventListener("click",function(){
+      var n=dark()?"light":"dark";
+      r.setAttribute("data-theme",n);
+      try{localStorage.setItem(K,n)}catch(e){}
+      label();
+    });
+  })();
+})();
+
+/* ================= PROSE THAT STOPS SHOUTING =================
+   Every section opened with a three-to-five line paragraph. Kept, because they
+   carry real reasoning — but clamped to two lines, so the page reads as
+   structure first and argument second. */
+(function(){
+  document.querySelectorAll("section > .wrap > .sec-head > p").forEach(function(p){
+    if(p.textContent.trim().length < 180)return;
+    p.classList.add("clamp");
+    var b=document.createElement("button");
+    b.type="button"; b.className="moreb"; b.textContent="Why";
+    b.addEventListener("click",function(){
+      var open=p.classList.toggle("open");
+      b.textContent=open?"Less":"Why";
+    });
+    p.after(b);
+  });
+})();
+
+/* ================= REAL FRAMES OVER THE PLATES =================
+   The title card is painted in CSS so it always renders. Where the generated
+   frames are actually reachable — a local copy opened beside the Higgsfield
+   project, not the sandboxed viewer — they load on top and the painting
+   becomes their underlayer. One probe; no broken images if it fails. */
+(function(){
+  var F=[
+    "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_202136_906db698-5edc-4ba1-926e-f788f2b7d40d_min.webp",
+    "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_203701_b39cf743-e952-4518-9671-a1eeb560f05e_min.webp",
+    "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_202146_7d5b33b4-bfa7-4cf8-b063-8fa54ee18d65_min.webp"
+  ];
+  try{
+    var saved=JSON.parse(localStorage.getItem("msm.frames")||"null");
+    if(saved&&saved.length===3)F=saved;
+  }catch(e){}
+  var img=new Image();
+  img.onload=function(){
+    var r=document.documentElement;
+    r.style.setProperty("--f1",'url("'+F[0]+'")');
+    r.style.setProperty("--f2",'url("'+F[1]+'")');
+    r.style.setProperty("--f3",'url("'+F[2]+'")');
+    document.body.classList.add("has-frames");
+  };
+  img.onerror=function(){};
+  img.referrerPolicy="no-referrer";
+  img.src=F[0];
+})();
+</script>
+<script>
+/* ================= HIGGSFIELD =================
+   The account is the other half of this document: the bible holds the plan,
+   the project holds what was actually made. A generation carries the prompt it
+   was made from and this file owns those prompts, so the two can be matched
+   exactly — no naming convention required in the account, and no guessing.
+
+   Where the snapshot comes from, in order of preference:
+     1. a pull the app made itself with the vault's Higgsfield key
+     2. higgsfield.local.json sitting beside this file (gitignored, like the
+        crosswalk — it holds account handles and asset URLs)
+     3. a snapshot file imported by hand
+   All three end in localStorage so the board survives a reload. */
+(function(){
+  var COV=document.getElementById("hf-cov"); if(!COV)return;
+  var SUM=document.getElementById("hf-summary"), ELS=document.getElementById("hf-els"),
+      STAT=document.getElementById("hf-stat"), KEY="msm.higgs";
+  var LANES=["A","B","C","D"];
+  var snap=null;
+
+  function say(m,cls){ STAT.textContent=m; STAT.className="vault-status"+(cls?" "+cls:""); }
+
+  function load(){
+    try{ var s=JSON.parse(localStorage.getItem(KEY)||"null"); if(s&&s.assets)return s; }catch(e){}
+    return null;
+  }
+  function save(s){
+    snap=s;
+    try{ localStorage.setItem(KEY,JSON.stringify(s)); }catch(e){
+      say("Snapshot too large for this browser's storage — showing it without saving","err");
+    }
+    paint();
+  }
+
+  function paint(){
+    /* The board draws with or without a pull: empty, it is the plan; filled, it
+       is the gap. Hiding it until a snapshot exists threw away the more useful
+       of the two states. */
+    var A=(snap&&snap.assets)||{}, madeA=0, made=0, lanes=0;
+    PREP.forEach(function(p){
+      var a=A[p.k]; if(!a)return;
+      made++;
+      LANES.forEach(function(L){ if(a.lanes&&a.lanes[L]){lanes++; if(L==="A")madeA++;} });
+    });
+    var gens=(snap&&snap.counts&&snap.counts.generations_seen)||0;
+    var ws=(snap&&snap.workspace&&snap.workspace[0])||{};
+    var cards=[
+      ["Generations", gens, "seen in this pull", ""],
+      ["Assets", made+"/"+PREP.length, "have at least one lane", made>=PREP.length?"ok":""],
+      ["A lanes", madeA+"/"+PREP.length, "the continuity pass", madeA>=PREP.length?"ok":"warn"],
+      ["Lanes", lanes+"/"+(PREP.length*4), "all four variants", ""],
+      ["Souls", ((snap&&snap.souls)||[]).length, "trained identities", ""],
+      ["Elements", ((snap&&snap.elements)||[]).length, "reference handles", ""],
+      ["Credits", (ws.credits!==undefined?ws.credits:"—"), (ws.plan||"plan")+" plan",
+        (typeof ws.credits==="number"&&ws.credits<20)?"warn":""]
+    ];
+    SUM.innerHTML=cards.map(function(c){
+      return '<div class="hf-card '+c[3]+'"><span class="k">'+c[0]+'</span>'+
+             '<span class="v">'+c[1]+'</span><span class="n">'+c[2]+'</span></div>';
+    }).join("");
+
+    var rows='<div class="hf-row head"><span class="nm">Asset sheet</span>'+
+      LANES.map(function(L){return '<span>'+L+'</span>'}).join("")+'</div>';
+    PREP.forEach(function(p){
+      var a=A[p.k]||{lanes:{}};
+      rows+='<div class="hf-row"><span class="nm">'+p.n+' <em>'+p.tl+'</em></span>'+
+        LANES.map(function(L){
+          var l=a.lanes&&a.lanes[L];
+          if(l)return '<span class="hf-cell on" title="'+l.n+' — '+l.save_as+'">'+l.n+'</span>';
+          return '<span class="hf-cell'+(L==="A"?" miss-a":"")+'">'+(L==="A"?"!":"·")+'</span>';
+        }).join("")+'</div>';
+    });
+    COV.innerHTML=rows;
+
+    var els=((snap&&snap.souls)||[]).map(function(s){
+      return '<div class="hf-el soul">'+(s.thumb?'<img alt="" referrerpolicy="no-referrer" src="'+s.thumb+'">':'')+
+        '<div class="m">'+(s.name||"soul")+'<i>Soul · '+(s.status||"")+'</i></div></div>';
+    }).concat(((snap&&snap.elements)||[]).map(function(e){
+      return '<div class="hf-el">'+(e.thumb?'<img alt="" referrerpolicy="no-referrer" src="'+e.thumb+'">':'')+
+        '<div class="m">'+(e.name||"element")+'<i>'+(e.cat||"")+'</i></div></div>';
+    }));
+    ELS.innerHTML=els.length?els.join(""):
+      '<div class="hf-empty">No identities pulled yet.</div>';
+
+    if(snap){
+      say(gens+" generations · "+made+"/"+PREP.length+" assets · "+madeA+" A lanes"+
+          (snap.pulled?" · pulled "+snap.pulled:""),"ok");
+    }
+  }
+
+  /* ---- refresh: try the account, fall back to the pull request ---- */
+  document.getElementById("hf-refresh").addEventListener("click",function(){
+    var btn=this, keys={};
+    try{ keys=JSON.parse(localStorage.getItem("msm.keys")||"{}"); }catch(e){}
+    var k=keys.HIGGSFIELD_API_KEY;
+    if(!k){
+      say("No Higgsfield key in the vault — use “Copy the pull request for Claude” instead","err");
+      return;
+    }
+    btn.disabled=true; say("Asking the account…");
+    fetch("https://platform.higgsfield.ai/v1/generations?limit=100",{
+      headers:{"hf-api-key":k,"accept":"application/json"}
+    }).then(function(r){ if(!r.ok)throw new Error("HTTP "+r.status); return r.json(); })
+      .then(function(j){
+        var items=j.items||j.data||[];
+        if(!items.length)throw new Error("no items in response");
+        save(fromApi(items));
+      })
+      .catch(function(e){
+        say("Direct pull unavailable here ("+e.message+") — use the pull request for Claude","err");
+      })
+      .then(function(){ btn.disabled=false; });
+  });
+
+  /* Shape an API page like the snapshot the matcher writes. Prompt matching is
+     the same rule the script uses, so both routes produce one board. */
+  function norm(t){ return String(t||"").toLowerCase().replace(/[^a-z0-9]+/g,"").slice(0,400); }
+  function fromApi(items){
+    var idx={};
+    PREP.forEach(function(p){ p.v.forEach(function(v){
+      idx[norm(v.p)]={k:p.k,n:p.n,lane:v.c,ln:v.n,sv:v.sv};
+    })});
+    var assets={};
+    items.forEach(function(it){
+      var pr=(it.params&&it.params.prompt)||it.prompt||"";
+      var hit=idx[norm(pr)]; if(!hit)return;
+      var A=assets[hit.k]||(assets[hit.k]={name:hit.n,lanes:{}});
+      var L=A.lanes[hit.lane]||(A.lanes[hit.lane]={name:hit.ln,save_as:hit.sv,items:[],n:0});
+      L.n++;
+    });
+    return {pulled:new Date().toISOString().slice(0,10),assets:assets,
+            souls:(snap&&snap.souls)||[],elements:(snap&&snap.elements)||[],
+            workspace:(snap&&snap.workspace)||[],counts:{generations_seen:items.length}};
+  }
+
+  document.getElementById("hf-file").addEventListener("change",function(){
+    var f=this.files&&this.files[0]; this.value="";
+    if(!f)return;
+    f.text().then(function(t){
+      var s=JSON.parse(t);
+      if(!s.assets)throw new Error("not a snapshot");
+      save(s);
+    }).catch(function(e){ say("That file is not a snapshot ("+e.message+")","err"); });
+  });
+
+  document.getElementById("hf-clear").addEventListener("click",function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    snap=null; paint(); say("Snapshot cleared");
+  });
+
+  document.getElementById("hf-ask").addEventListener("click",function(){
+    copyText(
+      "Pull my Higgsfield project state and hand it back as a snapshot I can import.\n\n"+
+      "1. mcp__Higgsfield__show_generations (type image, size 100, paginate with next_cursor "+
+      "until the dates stop moving)\n"+
+      "2. mcp__Higgsfield__show_reference_elements and show_characters and list_workspaces\n"+
+      "3. node design/extract-data.mjs --prompts > /tmp/bible-prompts.json\n"+
+      "4. python3 design/higgsfield-snapshot.py /tmp/bible-prompts.json <the dumps> "+
+      "--elements e.json --characters c.json --workspace w.json -o higgsfield.local.json\n"+
+      "5. Send me higgsfield.local.json, then tell me which A lanes are still empty and "+
+      "what the next batch should be.", this);
+  });
+
+  document.getElementById("hf-order").addEventListener("click",function(){
+    var A=(snap&&snap.assets)||{}, out=[], n=0;
+    PREP.forEach(function(p){
+      var a=A[p.k];
+      var missing=LANES.filter(function(L){ return !(a&&a.lanes&&a.lanes[L]) });
+      if(!missing.length)return;
+      var need=missing.indexOf("A")>=0?["A"]:missing.slice(0,1);
+      need.forEach(function(L){
+        var v=p.v.find(function(x){return x.c===L}); if(!v)return;
+        n++;
+        out.push(n+". "+p.n.replace(/&mdash;/g,"—")+"  ["+L+" · "+v.n+"]\n"+
+          "   save as : "+v.sv+"\n"+
+          "   folder  : "+String(p.fld||"").replace(/&middot;/g,"·")+"\n"+
+          "   prompt  :\n"+v.p+"\n");
+      });
+    });
+    copyText(
+      "MATTER OF LIGHT — next batch, generated inside the festival project.\n"+
+      "Batch of 4, select 1, save under the name given. A lanes first: they are the\n"+
+      "continuity pass every later frame inherits.\n"+
+      (snap?"":"NOTE: no snapshot loaded, so this is the whole sheet rather than the gap.\n")+
+      "=".repeat(74)+"\n\n"+out.join("\n"+"-".repeat(74)+"\n\n"),
+      this, "Copied — "+n+" prompts");
+  });
+
+  /* boot: stored snapshot, else a local file if one is sitting beside this page */
+  snap=load();
+  paint();
+  if(!snap && location.protocol.indexOf("http")===0){
+    fetch("higgsfield.local.json",{cache:"no-store"})
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(j){ if(j&&j.assets){ save(j); say("Loaded higgsfield.local.json","ok"); } })
+      .catch(function(){});
+  }
 })();
 </script>

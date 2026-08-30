@@ -26,8 +26,11 @@ new Function(
   code + `\nsink({${names.join(",")}});`
 )(HF, (o) => Object.assign(out, o));
 
-// strip the huge prompt bodies the sheets don't print
-for (const p of out.PREP) for (const v of p.v) { delete v.p; delete v.why; }
-for (const s of out.SHOTS) for (const v of s.v) { delete v.p; delete v.why; }
+// Strip the huge prompt bodies the sheets don't print. --prompts keeps them:
+// the Higgsfield snapshot matches generations back to assets by prompt text,
+// so that consumer needs the bodies the printable kits never use.
+const KEEP = process.argv.includes("--prompts");
+for (const p of out.PREP) for (const v of p.v) { if (!KEEP) delete v.p; delete v.why; }
+for (const s of out.SHOTS) for (const v of s.v) { if (!KEEP) delete v.p; delete v.why; }
 
 process.stdout.write(JSON.stringify(out));

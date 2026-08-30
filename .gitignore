@@ -21,3 +21,7 @@ crosswalk.local.js
 # --- local ------------------------------------------------------------------
 *.zip
 .DS_Store
+
+# Higgsfield account snapshot: holds account handles and asset URLs.
+# Produced by design/higgsfield-snapshot.py, read by the bible if present.
+higgsfield.local.json
