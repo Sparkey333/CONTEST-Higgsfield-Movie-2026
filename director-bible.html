@@ -1222,6 +1222,12 @@ section[data-ch="higgs"]{--sc:var(--jade)}
 .hf-step b{font-size:14px}
 .hf-step p{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin-top:3px}
 .hf-empty{padding:22px;text-align:center;color:var(--ink-3);font-size:13.5px;font-style:italic}
+.hf-rule{
+  border:1px solid var(--line);border-left:3px solid var(--jade);border-radius:10px;
+  background:var(--surface);padding:15px 18px;margin-top:12px;
+  font-size:13.5px;line-height:1.6;color:var(--ink-2);max-width:82ch
+}
+.hf-rule b{color:var(--ink)}
 #now-spec{margin-top:12px}
 .vbody.sv .prompt{margin-top:0}
 
@@ -2524,6 +2530,24 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   <p style="font-size:13.5px;color:var(--ink-3);max-width:78ch">Souls are identities the platform can
   reproduce; elements are reference handles. One identity per Soul, never two &mdash; an element holding two
   people returns a blend of both.</p>
+
+  <div class="hf-rule">
+    <b>Naming, and why it is not cosmetic.</b> <code>character</code> for identity,
+    <code>character-state</code> for a variant, <code>character-place</code> for an in-world plate.
+    Lowercase, hyphens, <b>no version numbers</b> &mdash; the element <em>is</em> the current version, and a
+    <code>_v5</code> suffix is how you end up with five of something and no rule about which one is real.
+    Production names only: the festival publishes prompts and generation history, so a handle named for the
+    novel goes public with the entry. That is the whole reason the crosswalk lives outside the repo.
+    <br><br>
+    <b>Check what a handle actually holds before you trust it.</b> Every generation carries the prompt it
+    was made from, so a mislabelled reference can be caught by reading that prompt rather than by looking at
+    the picture and hoping. This project found its own worst case that way: a Soul named for one character,
+    trained on another's images. A handle is a claim about content, and the claim is checkable.
+    <br><br>
+    <b>The API creates but never renames or deletes</b> &mdash; elements and Souls alike. Corrections happen
+    in the web UI; what arrives from here is always additive.
+  </div>
+
   <div class="hf-els" id="hf-els"></div>
 
   <h3 style="margin:26px 0 4px">The iteration loop</h3>
