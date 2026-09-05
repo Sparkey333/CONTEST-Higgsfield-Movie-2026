@@ -1,0 +1,552 @@
+<title>Production Sheet</title>
+<script>/* Honour the theme chosen on the Desk — one origin, one saved choice. */
+try{var t=localStorage.getItem("msm.theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#EEF1F5; --card:#FFFFFF; --card-2:#E4E9F0;
+  --ink:#10161F; --ink-2:#46536A; --ink-3:#6E7C93;
+  --rule:#C3CCDA; --rule-soft:#DDE3EC;
+  --amber:#8A5600; --amber-bg:#FBEDD3; --amber-line:#D9A957;
+  --jade:#0A6E4E; --jade-bg:#D5EFE4; --jade-line:#5FBE97;
+  --iron:#9E2B25; --iron-bg:#FADFDD; --iron-line:#DE9A95;
+  --indigo:#2F3AAE; --indigo-bg:#DFE2FB;
+  --disp:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1017; --card:#141A24; --card-2:#1C2430;
+    --ink:#E8EDF4; --ink-2:#A3B0C4; --ink-3:#77869C;
+    --rule:#2B3542; --rule-soft:#1D2530;
+    --amber:#F0B54E; --amber-bg:#2E2210; --amber-line:#6B4E1C;
+    --jade:#4FD6A0; --jade-bg:#0B2C21; --jade-line:#1D6B4E;
+    --iron:#F58279; --iron-bg:#311614; --iron-line:#7A3230;
+    --indigo:#9AA2FF; --indigo-bg:#1B1E3C;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C1017; --card:#141A24; --card-2:#1C2430;
+  --ink:#E8EDF4; --ink-2:#A3B0C4; --ink-3:#77869C;
+  --rule:#2B3542; --rule-soft:#1D2530;
+  --amber:#F0B54E; --amber-bg:#2E2210; --amber-line:#6B4E1C;
+  --jade:#4FD6A0; --jade-bg:#0B2C21; --jade-line:#1D6B4E;
+  --iron:#F58279; --iron-bg:#311614; --iron-line:#7A3230;
+  --indigo:#9AA2FF; --indigo-bg:#1B1E3C;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:1240px;margin:0 auto;padding:26px 22px 60px}
+
+/* ---------- title block ---------- */
+.tb{border:1.5px solid var(--ink);background:var(--card)}
+.tb-top{display:grid;grid-template-columns:1fr auto;gap:18px;padding:18px 20px 14px;border-bottom:1.5px solid var(--ink)}
+.tb h1{
+  font-family:var(--disp);font-weight:700;font-size:clamp(27px,4.2vw,42px);
+  line-height:1.02;letter-spacing:-.015em;margin:0;text-wrap:balance;text-transform:uppercase;
+}
+.tb .sub{font-size:14.5px;color:var(--ink-2);margin:7px 0 0;max-width:62ch}
+.stamp{
+  align-self:start;font-family:var(--mono);font-size:10px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--amber);
+  border:1.5px solid var(--amber-line);background:var(--amber-bg);
+  padding:7px 11px;white-space:nowrap;
+}
+.tb-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr))}
+.tb-meta div{padding:9px 14px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:2px}
+.tb-meta div:last-child{border-right:0}
+.tb-meta dt{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0}
+.tb-meta dd{margin:0;font-family:var(--mono);font-size:13px;font-weight:500;font-variant-numeric:tabular-nums}
+
+/* ---------- layout ---------- */
+.cols{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px;margin-top:16px;align-items:start}
+@media (max-width:940px){.cols{grid-template-columns:1fr}}
+.stack{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+.blk{border:1px solid var(--rule);background:var(--card)}
+.blk>h2{
+  font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.17em;text-transform:uppercase;
+  margin:0;padding:9px 14px;border-bottom:1px solid var(--rule);color:var(--ink-2);
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+}
+.blk>h2 em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em}
+.pad{padding:14px}
+
+/* ---------- tree ---------- */
+pre.tree{
+  margin:0;padding:14px;font-family:var(--mono);font-size:11.5px;line-height:1.62;
+  white-space:pre;overflow-x:auto;color:var(--ink-2);
+}
+pre.tree b{color:var(--ink);font-weight:600}
+pre.tree i{font-style:normal;color:var(--amber)}
+pre.tree u{text-decoration:none;color:var(--indigo)}
+pre.tree s{text-decoration:none;color:var(--ink-3)}
+
+/* ---------- rules / answers ---------- */
+.rule-row{display:grid;grid-template-columns:74px 1fr;border-bottom:1px solid var(--rule-soft)}
+.rule-row:last-child{border-bottom:0}
+.rule-row .verdict{
+  padding:12px 10px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;border-right:1px solid var(--rule-soft);display:flex;align-items:flex-start;
+}
+.v-do{color:var(--jade);background:var(--jade-bg)}
+.v-never{color:var(--iron);background:var(--iron-bg)}
+.v-spec{color:var(--amber);background:var(--amber-bg)}
+.rule-row .body{padding:12px 14px;min-width:0}
+.rule-row .body h3{font-family:var(--disp);font-weight:600;font-size:15px;margin:0 0 4px;letter-spacing:.005em}
+.rule-row .body p{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.rule-row .body p+p{margin-top:6px}
+.rule-row .body b{color:var(--ink);font-weight:600}
+code{font-family:var(--mono);font-size:.87em;background:var(--card-2);padding:1px 4px;border-radius:2px}
+
+/* ---------- ordered check sequence ---------- */
+ol.seq{margin:0;padding:0;list-style:none;counter-reset:s}
+ol.seq li{
+  counter-increment:s;display:grid;grid-template-columns:32px 1fr;gap:11px;
+  padding:11px 14px;border-bottom:1px solid var(--rule-soft);
+}
+ol.seq li:last-child{border-bottom:0}
+ol.seq li::before{
+  content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:11px;font-weight:600;
+  color:var(--ink-3);padding-top:2px;font-variant-numeric:tabular-nums;
+}
+ol.seq strong{font-family:var(--disp);font-weight:600;font-size:14.5px;display:block;margin-bottom:2px}
+ol.seq span{font-size:13px;color:var(--ink-2);line-height:1.5}
+ol.seq .gate{color:var(--iron)}
+
+/* ---------- spec table ---------- */
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);font-weight:500;
+}
+td{padding:9px 12px;border-bottom:1px solid var(--rule-soft);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.k{font-family:var(--mono);font-size:12px;color:var(--ink);white-space:nowrap}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---------- pros / cons ---------- */
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media (max-width:620px){.pc{grid-template-columns:1fr}}
+.pc>div{padding:12px 14px}
+.pc>div:first-child{border-right:1px solid var(--rule-soft)}
+@media (max-width:620px){.pc>div:first-child{border-right:0;border-bottom:1px solid var(--rule-soft)}}
+.pc h4{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  margin:0 0 7px;
+}
+.pc.p h4{color:var(--jade)} .pc.p{}
+.pc ul{margin:0;padding-left:15px;display:flex;flex-direction:column;gap:5px}
+.pc li{font-size:13px;color:var(--ink-2);line-height:1.5}
+.pc .con h4{color:var(--iron)}
+
+.note{
+  padding:12px 14px;border-top:1px solid var(--rule);background:var(--card-2);
+  font-size:13px;line-height:1.55;color:var(--ink-2);
+}
+.note b{color:var(--ink)}
+
+.foot{
+  margin-top:16px;border-top:1.5px solid var(--ink);padding-top:10px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="sheet">
+
+  <div class="tb">
+    <div class="tb-top">
+      <div>
+        <h1>Production Sheet</h1>
+        <p class="sub">Folder structure, asset counts, retention policy and the verification sequence for a five-minute AI short. Everything on this page is operational — decisions already made, so they are not made again at 2am.</p>
+      </div>
+      <span class="stamp">Pin this</span>
+    </div>
+    <dl class="tb-meta">
+      <div><dt>Project</dt><dd>MATTER OF LIGHT</dd></div>
+      <div><dt>Runtime</dt><dd>300 sec</dd></div>
+      <div><dt>Shots</dt><dd>23</dd></div>
+      <div><dt>Anchors</dt><dd>39</dd></div>
+      <div><dt>References</dt><dd>42</dd></div>
+      <div><dt>Prompts</dt><dd>241</dd></div>
+    </dl>
+  </div>
+
+  <div class="cols">
+
+    <!-- ============ LEFT: TREE ============ -->
+    <div class="stack">
+      <div class="blk">
+        <h2>Folder structure <em>identity · position · stage</em></h2>
+        <pre class="tree"><b>Matter of Light/</b>
+│
+├─ <b>00 · REFERENCES</b>            <i>by IDENTITY — never by scene</i>
+│  ├─ <b>States/</b>                 governs everything below
+│  │   RULE-aura-A-01              <i>make this first</i>
+│  │   LADDER-oriane-A-01
+│  │   LADDER-attunement-A-01
+│  │
+│  ├─ <b>Characters/</b>             one @handle per identity
+│  │  ├─ <u>@Oriane/</u>              <i>11 states, ONE folder</i>
+│  │  │   REF-oriane-A7-M001-A-01
+│  │  │   REF-oriane-A7-M001-A-02   <s>alt take</s>
+│  │  │   REF-oriane-A7-M001-B-01   <s>in-world</s>
+│  │  │   REF-oriane-A7-M016-A-01
+│  │  │   REF-oriane-A7-M016-A-v2-01
+│  │  │   REF-oriane-ascended-A-01
+│  │  │   REF-oriane-damaged-A-01
+│  │  ├─ <u>@Caedom/</u>              ascended + mortal
+│  │  ├─ <u>@Alder/</u>  <u>@Wren/</u>  <u>@Brothers/</u>
+│  │  ├─ <u>@Threadwright/</u>  <u>@Vigil/</u>
+│  │  └─ <u>@Turned/</u>              group + 7 domains + rider
+│  │
+│  ├─ <b>Locations/</b>   BG-courtyard, BG-nacre, BG-bloom,
+│  │                   BG-vigil-temple, BG-keepers-isle,
+│  │                   BG-machira
+│  ├─ <b>Props/</b>       PROP-shell, PROP-hollowstone,
+│  │                   PROP-tear, PROP-coral, PROP-ore,
+│  │                   PROP-ships, LEV-body
+│  ├─ <b>Plates/</b>      PLATE-mv1, mv2, mv3, mv3b
+│  └─ <b>Effects/</b>     FX-hollow, FX-mind, FX-mountain,
+│                      FX-strike-blast
+│
+├─ <b>01 · ANCHORS</b>               <i>by POSITION — film order</i>
+│  ├─ MV1 The Sun        F01–F09, F36, F37
+│  ├─ MV2 The Ocean      F10–F22, B01
+│  └─ MV3 The Island     F23–F35, B02
+│
+├─ <b>02 · DRAFT MOTION</b>          <i>by STAGE</i>
+│                      DRAFT-S01 … DRAFT-S23
+├─ <b>03 · FINAL SHOTS</b>   FINAL-S01 … FINAL-S23
+├─ <b>04 · FINISHING</b>     MASTER-S## deflick→upscale
+├─ <b>05 · AUDIO</b>         every external file, uploaded
+├─ <b>06 · DELIVERY</b>      watermark, packshot, social, URL
+│
+└─ <b>99 · LOOKDEV</b>               <i>every reject. Never deleted.</i>
+                       original generation names intact</pre>
+        <div class="note">
+          <b>Correction to an earlier rule.</b> &ldquo;No scene folders anywhere&rdquo; was too broad. It holds for <b>references</b> — an identity split across scenes destroys the one view where drift is visible. It does <i>not</i> hold for <b>shots</b>: grouping those by movement <i>is</i> the position axis, and it is the same thing the anchor folders do. So keep <code>Scene #1/#2/#3</code>, rename them <code>MV1 · MV2 · MV3</code> to match the film, and put only shots and anchors in them. Never a character.
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>Filename grammar <em>fixed-width fields, in order</em></h2>
+        <pre class="tree">REF-<b>who</b>[-<b>state</b>][-A<b>n</b>][-M<b>nnn</b>]-<b>variant</b>[-v<b>n</b>]-<b>take</b>
+
+REF-oriane-A7-M016-B-v2-03
+    │      │  │    │  │  └─ take, never reused
+    │      │  │    │  └──── version, absent = v1
+    │      │  │    └─────── A continuity · B in-world
+    │      │  │             C medium · D chroma
+    │      │  └──────────── mind rung
+    │      └─────────────── attunement (bearers = A7)
+    └────────────────────── the @handle, lowercase</pre>
+      </div>
+    </div>
+
+    <!-- ============ RIGHT: ANSWERS ============ -->
+    <div class="stack">
+
+      <div class="blk">
+        <h2>Retention <em>the question that costs most to get wrong</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-never">Never<br>delete</div>
+          <div class="body">
+            <h3>Old and bad generations stay</h3>
+            <p>The entry is verified against the project's own generation history. Deleting weakens that record and buys you nothing — storage is not your constraint, provenance is.</p>
+            <p><b>Move them, don't bin them.</b> Straight to <code>99 · LOOKDEV</code> with the original generation name untouched. Renaming a reject wastes the only thing it is still good for: proving what you tried.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">Do</div>
+          <div class="body">
+            <h3>Merge the duplicate handles first</h3>
+            <p><code>@Oriane</code>, <code>@Oriane-1</code> and <code>@Oriane-d…</code> are one identity in three places — the exact condition that makes a face drift. Consolidate to <code>@Oriane</code>; her damaged and ascended states are <b>filename</b> states, not separate handles.</p>
+            <p>Same for the three unnamed <code>Characters</code> folders: 27 generations currently invisible at Gate A.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>Downloading favourites <em>yes — for three reasons, not four</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-do">Do</div>
+          <div class="body">
+            <h3>Download the keeper only</h3>
+            <p>Full resolution, one per asset. Three legitimate uses: <b>the revision loop</b> (you cannot get a v2 without showing the v1), <b>offline contact sheets</b> at Gate A and Gate B, and <b>backup</b> against an account problem three weeks before deadline.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-never">Never</div>
+          <div class="body">
+            <h3>Re-upload a download into the film</h3>
+            <p>A downloaded frame pushed back in arrives as an <i>import</i>, not a generation, and its history no longer sits in the project. Regenerate from the same Soul instead. Downloads are for looking at.</p>
+            <p>Also skip downloading rejects — they are useful <b>in</b> the project and useless on your disk.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>Canvas <em>and the other scratch surfaces</em></h2>
+        <div class="pc">
+          <div class="p">
+            <h4>Worth it for</h4>
+            <ul>
+              <li>Comparing many variants spatially, which a vertical feed is bad at</li>
+              <li>Mood and palette thinking before a plate exists</li>
+              <li>Rough layout of a frame you will then generate properly</li>
+            </ul>
+          </div>
+          <div class="con">
+            <h4>Costs you</h4>
+            <ul>
+              <li>Provenance — anything composed on a side surface risks landing outside the project's generation history</li>
+              <li>A second place for assets to live, which is how the naming discipline quietly dies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">
+          <b>Ruling: lookdev only.</b> Think on it freely, then regenerate the decision inside the project and park the sketch in <code>99 · LOOKDEV</code>. If a frame's history is not in the project, that frame cannot be in the film. <b>Verify once before relying on it</b> — compose one throwaway on Canvas and check whether it appears in the project's history.
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>The four tools <em>two execute the plan, two compete with it</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-do">Core</div>
+          <div class="body">
+            <h3>Elements</h3>
+            <p>The <code>@handle</code> library. This is the single most important tool in the room — it is what keeps a face the same across nine weeks. Everything in the roster below lives here.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">Core</div>
+          <div class="body">
+            <h3>The generate bar</h3>
+            <p>Model, references, aspect, resolution, duration. Where the work actually happens. <b>Check the settings every session</b> — see the warning below.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">Limited</div>
+          <div class="body">
+            <h3>Canvas</h3>
+            <p>Lookdev only. Compare variants spatially, think, then regenerate the decision inside the project. Nothing that ships gets composed on it.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">Limited</div>
+          <div class="body">
+            <h3>Chat &amp; AI Director</h3>
+            <p>These generate <b>decisions</b> — shot ideas, directions, structure. You already have those, written down and argued for. Using them now means negotiating your own plan with a tool that has not read the novel.</p>
+            <p><b>The one good use:</b> a second opinion <i>at a gate</i>. Ask AI Director what it would do with a shot you are stuck on, take the idea if it is better, and never let it re-plan the film.</p>
+          </div>
+        </div>
+        <div class="note">
+          <b>The generate bar is currently set to 4:3, 30s.</b> The film is 21:9 and its longest shot is 18 seconds. Those two settings will quietly produce unusable frames at full price — reset them to <b>21:9</b> and the shot's real duration before the next generation, and check them at the top of every session.
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>Elements <em>the handle is an API — treat it like one</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-never">Never</div>
+          <div class="body">
+            <h3>Put the version in the handle</h3>
+            <p><code>@oriane_v5</code>, <code>@char_oriane_v3</code>, <code>@char_oriane_v4</code> — you call these by name inside a prompt, so a handle that says <i>v5</i> tells you nothing about what you are calling. You end up opening thumbnails to remember, every single time.</p>
+            <p><b>A handle is a name, not a changelog.</b> The moment you write a prompt using it, renaming it breaks that prompt.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">Do</div>
+          <div class="body">
+            <h3>The handle encodes <i>state</i></h3>
+            <p><code>@oriane_rest</code> · <code>@oriane_ascended</code> · <code>@oriane_damaged</code>. Now the prompt reads itself, and the handle never has to change again for the life of the production.</p>
+            <p>Keep the display name as the character — <b>Oriane</b> — so the library still groups them. That part you already have right.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-never">Never</div>
+          <div class="body">
+            <h3>Mix two states inside one element</h3>
+            <p>This is the one that actually causes drift. An element holding both cream-mantle and dark-robe images <b>averages them</b> on every call, and you get a costume that exists in neither. One state per element, always.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">Rule</div>
+          <div class="body">
+            <h3>An element earns its existence at two shots</h3>
+            <p>Appears in two or more shots → it is an element. Appears once → it is a prompt. Ten elements is a healthy roster for a five-minute film; thirty is a library you will stop maintaining by week three.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>Recommended roster <em>10 elements, one state each</em></h2>
+        <table>
+          <thead><tr><th>Handle</th><th>Name</th><th>Imgs</th><th>What goes in it</th></tr></thead>
+          <tbody>
+            <tr><td class="k">@oriane_rest</td><td>Oriane</td><td class="n">8&ndash;12</td><td>Cream mantle, teal tunic, greaves over boots. MV1 and the top of MV2.</td></tr>
+            <tr><td class="k">@oriane_ascended</td><td>Oriane</td><td class="n">8&ndash;12</td><td>Dark robe, seam-light, light wings, <b>barefoot</b>. MV2 from the leviathan on.</td></tr>
+            <tr><td class="k">@oriane_damaged</td><td>Oriane</td><td class="n">6&ndash;8</td><td>The three fixed marks. Overlays the ascended state.</td></tr>
+            <tr><td class="k">@caedom_ascended</td><td>Caedom</td><td class="n">8&ndash;12</td><td>Translucent, white hair, robes of light. All of MV1.</td></tr>
+            <tr><td class="k">@caedom_mortal</td><td>Caedom</td><td class="n">6&ndash;8</td><td>The ordinary man. Same bone structure, no light.</td></tr>
+            <tr><td class="k">@alder</td><td>Alder</td><td class="n">8&ndash;12</td><td>Eight. Dark hair, still mouth, level gaze.</td></tr>
+            <tr><td class="k">@wren</td><td>Wren</td><td class="n">8&ndash;12</td><td>Six and a half. Blonde, mid-speech, never still.</td></tr>
+            <tr><td class="k">@threadwright</td><td>Threadwright</td><td class="n">6&ndash;8</td><td>Face never resolved. Hands do the acting.</td></tr>
+            <tr><td class="k">@vigil</td><td>The Vigil</td><td class="n">6&ndash;8</td><td>White robes, blank faces, identical construction.</td></tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <b>Coverage beats count.</b> Eight varied images — front, three-quarter, profile, close-up, full body, two lighting changes, one in-situ — outperform twenty near-identical ones. Below four the element over-fits to a single pose and fights you in every new angle. <b>The seven domain beings and the leviathan get prompts, not elements</b> — each appears in one or two shots and does not need a callable identity.
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>Improving an element <em>the answer to &ldquo;add or rename?&rdquo;</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-do">Add</div>
+          <div class="body">
+            <h3>Better images go into the existing element</h3>
+            <p>Generate a stronger frame → <b>add it to the same element</b> and remove the weakest one it beats. The handle stays; every prompt you have already written keeps working; the element quietly gets better.</p>
+            <p>Cap it around twelve. An element is a curated set, not an archive — the archive is <code>99 · LOOKDEV</code>.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">New</div>
+          <div class="body">
+            <h3>A new element only for a genuinely new state</h3>
+            <p>Different costume, different power rung, different age. Not &ldquo;a better version&rdquo; — that is an <i>add</i>. If you cannot name the new state in one word, it is not a new element.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FULL WIDTH: HANDLES + STANDUP ============ -->
+  <div class="cols" style="margin-top:16px">
+    <div class="stack">
+      <div class="blk">
+        <h2>Handle cleanup <em>what you have &rarr; what to make it</em></h2>
+        <table>
+          <thead><tr><th>Now</th><th>Becomes</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="k">@Oriane <span style="color:var(--ink-3)">16</span><br>@Oriane-1 <span style="color:var(--ink-3)">13</span></td><td class="k">@oriane_rest<br>@oriane_ascended</td><td>Not duplicates — <b>two states</b>. Sort all 29 images by costume: mantle and boots into rest, dark robe and bare feet into ascended.</td></tr>
+            <tr><td class="k">@Oriane-damaged <span style="color:var(--ink-3)">3</span></td><td class="k">@oriane_damaged</td><td>Right idea already. Needs 6&ndash;8 images, not 3.</td></tr>
+            <tr><td class="k">@Caedom <span style="color:var(--ink-3)">24</span></td><td class="k">@caedom_ascended<br>@caedom_mortal</td><td>24 images is two states in one element — the exact averaging problem. Split them.</td></tr>
+            <tr><td class="k">@KaiBrothers <span style="color:var(--ink-3)">16</span></td><td class="k">@alder · @wren</td><td><b>Two identities in one element, so every call returns a blend of both brothers</b> — the same averaging problem as a two-costume element. Split the 16 images by which brother is in them. <b>No @brothers element:</b> where they share a frame, call both handles.</td></tr>
+            <tr><td class="k">@TheTurned16 <span style="color:var(--ink-3)">16</span></td><td class="k">@turned</td><td>The <code>16</code> reads as a version number. It is a headcount, and it does not belong in a name.</td></tr>
+            <tr><td class="k">@ThreadWright <span style="color:var(--ink-3)">18</span></td><td class="k">@threadwright</td><td>Lowercase, one word. Mixed case costs you a typo a day.</td></tr>
+            <tr><td class="k">@TheKeepers <span style="color:var(--ink-3)">8</span></td><td class="k">@vigil</td><td>Matches the order's name in the bible.</td></tr>
+            <tr><td class="k">@Wielder-Dominion <span style="color:var(--ink-3)">14</span></td><td class="k">@lev_rider</td><td>He is the fused rider specifically, not the domain in general.</td></tr>
+            <tr><td class="k">@Drowning <span style="color:var(--ink-3)">0</span><br>@StarMorn <span style="color:var(--ink-3)">0</span></td><td class="k">delete or define</td><td>Both empty. <b>@Drowning</b> has never had a source referent — decide what it is or remove it. <b>@StarMorn</b> is the Vesper, who does not appear in these three chapters.</td></tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <b>Do this in one sitting, before the next generation.</b> Nothing downstream references these handles yet, which makes right now the only cheap moment. Every prompt written after today locks them in.
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="blk">
+        <h2>Daily capture <em>four screenshots, then one line</em></h2>
+        <div class="rule-row">
+          <div class="verdict v-spec">01</div>
+          <div class="body">
+            <h3>Folder tree, expanded &mdash; <i>core</i></h3>
+            <p>Every folder open, including the empty ones. <b>Counts must be legible.</b> Take this one even if you take nothing else.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-spec">02</div>
+          <div class="body">
+            <h3>Elements &rarr; Characters &mdash; <i>core</i></h3>
+            <p>Every handle with its image count. Drift shows up here first, and it is the only view that separates a <i>version</i> from a <i>state</i>.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">03</div>
+          <div class="body">
+            <h3>Assets filtered to Liked</h3>
+            <p>What you <b>chose</b>, not just what you made. Leave the filter chips visible.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">04</div>
+          <div class="body">
+            <h3>The generate bar</h3>
+            <p>Model, ratio, duration. Ten seconds to take, and it catches wrong settings &mdash; it was last seen on <b>4:3 at 30s</b> for a 21:9 film.</p>
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="verdict v-do">Then</div>
+          <div class="body">
+            <h3>One line of text</h3>
+            <p>Where you are, what you did since last time, what is blocking you. Three sentences maximum &mdash; the screenshots carry the facts, the line carries the intent.</p>
+          </div>
+        </div>
+        <div class="note">
+          <b>The desk builds this for you.</b> <code>index.html</code> &rarr; <b>Status read</b> holds the same four captures as a checklist, takes the images, and generates the hand-off block with the counts already in it &mdash; then logs the reading so the day-over-day delta is visible instead of remembered.
+        </div>
+        <div class="note">
+          <b>Three rules:</b> full window, never a crop. One screen per image, never a collage. <b>Never scale down</b> &mdash; the counts stop being legible.
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2>The standup line <em>paste this, fill the blanks</em></h2>
+        <pre class="tree">DAY 00 &middot; <b>date</b>
+
+SINCE LAST     what got generated, sorted or locked
+NOW WORKING ON the one thing in front of you
+BLOCKED ON     what is stopping you, or "nothing"
+CREDITS        balance, so pace can be advised</pre>
+        <div class="note">
+          What comes back: <b>an updated slot count</b>, the next three moves in order, and anything in the screenshots that contradicts the plan — a stray aspect ratio, a handle that split, a folder filling up that should not be.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FULL WIDTH: SEQUENCE ============ -->
+  <div class="blk" style="margin-top:16px">
+    <h2>Verification sequence <em>run in this order — each step's input is the one above</em></h2>
+    <ol class="seq">
+      <li><strong>Rebuild the handles around state</strong><span>Nine elements, one state each, named for what they are: <code>@oriane_rest</code>, <code>@oriane_ascended</code>, <code>@oriane_damaged</code>, <code>@caedom_ascended</code>, <code>@caedom_mortal</code>, <code>@alder</code>, <code>@wren</code>, <code>@threadwright</code>, <code>@vigil</code>. Retire the <code>_v3 _v4 _v5</code> handles as you go &mdash; nothing downstream references them yet, which is exactly why now is the cheap moment.</span></li>
+      <li><strong>Sort every existing generation into one state</strong><span>Your seven current character elements are versions of two people. Decide, per image, which <b>state</b> it belongs to and put it there. Anything that fits no state is lookdev, not an element.</span></li>
+      <li><strong>Favourite the keepers, inside the project</strong><span>Favourite is your working filter — it is how you find a frame again in a library of three hundred. Favourite the ones going into elements, and nothing else.</span></li>
+      <li><strong>Load each element to 8&ndash;12 images</strong><span>Varied angle, framing and light, all of one state. Add the strongest, drop the weakest it beats. Stop at twelve.</span></li>
+      <li><strong>Download one contact set per element</strong><span>Full resolution, keepers only. This is what you bring back for a refinement pass &mdash; the prompt cannot be improved without seeing what it produced.</span></li>
+      <li><strong>Bring them here with a drift report</strong><span>Attach the images and say what held, what drifted, which of the four was worst and what must not change. You get back a <b>v2 prompt</b> with the changed clauses called out.</span></li>
+      <li><strong>Regenerate against the same element</strong><span>Paste the v2 and call the <i>same</i> <code>@handle</code>. Never retrain to fix a prompt problem &mdash; that moves the face, which is the thing the element exists to hold still. Good results get added to the element; the handle never changes.</span></li>
+      <li><strong>Rename everything from the ledger</strong><span>Every keeper gets its full filename now, not later from memory. <code>generation_4471</code> is unfindable in nine weeks; <code>REF-oriane-A7-M016-B-03</code> is not.</span></li>
+      <li><strong>Sweep the rejects into 99 · LOOKDEV</strong><span>Names untouched. The folder should be the largest in the project and that is correct.</span></li>
+      <li><strong>Tick the binding board</strong><span>116 slots. Every one you can tick is done; every one you cannot is the actual to-do list. This replaces the feeling of being behind with a number.</span></li>
+      <li><strong>Build the Gate A contact sheet</strong><span>Every reference at the same size in one view. You are looking for one thing: a face that moved between sheets.</span></li>
+      <li class="gate"><strong>GATE A — identity lock</strong><span>Nothing downstream begins until this holds, because everything downstream inherits it. A failure here is cheap; the same failure found at Gate D costs thirty-nine anchors.</span></li>
+      <li><strong>Generate anchors as one string</strong><span>Film order, not scene order. This is where the most iteration lives — budget for it rather than being surprised by it.</span></li>
+      <li class="gate"><strong>GATE B — string lock</strong><span>All 39 anchors on one sheet, read as a comic strip. If the story does not work here it will not work in motion, and motion costs ten times more.</span></li>
+      <li><strong>Cut the stills reel</strong><span>Anchors on a timeline at real durations. Nearly free, and it finds pacing problems a contact sheet hides completely.</span></li>
+    </ol>
+    <div class="note">
+      <b>Where you are right now:</b> roughly 292 generations exist and the film has 116 slots. That gap is not waste — it is the search. The next move is not more generating; it is <b>naming what you already have</b> so the board can tell you what is genuinely missing.
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Matter of Light · Production Sheet</span>
+    <span>Retention: nothing deleted · Rev A</span>
+  </div>
+
+</div>

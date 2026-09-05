@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Production Desk</title>
+<meta name="description" content="Local front door for the director's bible, the production sheet and the source audit. Status read, key vault, offline.">
+<meta name="theme-color" content="#EDEFF5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#07080D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Production Desk">
+<style>
+/* ============ TOKENS — light is the bare :root, dark redefines ============ */
+:root{
+  --ground:#EDEFF5; --surface:#FFFFFF; --surface-2:#E3E6EF; --surface-3:#D6DAE7;
+  --line:#BFC6D8; --line-soft:#DCE1EC;
+  --ink:#0E1017; --ink-2:#3D4459; --ink-3:#646B80;
+  --gold:#8A5A00; --gold-soft:#FBEBC4; --gold-line:#D9AC46;
+  --void:#3A32DC; --void-soft:#DEDCFF; --void-line:#9A96F5;
+  --coral:#BC3317; --coral-soft:#FFDCD1; --coral-line:#EE9273;
+  --jade:#046B45; --jade-soft:#CDF0E0; --jade-line:#5EBE95;
+  --shadow:0 1px 2px rgba(16,18,28,.06),0 8px 24px -12px rgba(16,18,28,.18);
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#07080D; --surface:#111319; --surface-2:#1A1D28; --surface-3:#242938;
+    --line:#333A4D; --line-soft:#20242F;
+    --ink:#F4F0E6; --ink-2:#A8AEC2; --ink-3:#767D92;
+    --gold:#FFBE4A; --gold-soft:#33260F; --gold-line:#6B4E18;
+    --void:#9B9DFF; --void-soft:#1C1D3D; --void-line:#403FA0;
+    --coral:#FF8F6B; --coral-soft:#3A1C13; --coral-line:#7A3826;
+    --jade:#4FDCA0; --jade-soft:#0A2E20; --jade-line:#1D6B4C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#07080D; --surface:#111319; --surface-2:#1A1D28; --surface-3:#242938;
+  --line:#333A4D; --line-soft:#20242F;
+  --ink:#F4F0E6; --ink-2:#A8AEC2; --ink-3:#767D92;
+  --gold:#FFBE4A; --gold-soft:#33260F; --gold-line:#6B4E18;
+  --void:#9B9DFF; --void-soft:#1C1D3D; --void-line:#403FA0;
+  --coral:#FF8F6B; --coral-soft:#3A1C13; --coral-line:#7A3826;
+  --jade:#4FDCA0; --jade-soft:#0A2E20; --jade-line:#1D6B4C;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:74px}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--body);padding:0 0 90px;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+
+/* ---------- masthead ---------- */
+header.top{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--ground));padding:44px 0 34px}
+.eyebrow{font:600 10.5px/1 var(--mono);letter-spacing:.19em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:14px}
+h1{font:400 clamp(34px,6vw,54px)/1.04 var(--display);margin:0 0 14px;letter-spacing:-.01em}
+.lede{margin:0;max-width:64ch;color:var(--ink-2);font-size:17px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badge{font:600 10px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;padding:6px 9px;border-radius:5px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.badge.on{background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)}
+.badge.off{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+
+/* ---------- sticky nav ---------- */
+nav.jump{position:sticky;top:0;z-index:8;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);margin-bottom:38px}
+nav.jump .wrap{display:flex;gap:2px;overflow-x:auto;padding-top:0;padding-bottom:0;scrollbar-width:none}
+nav.jump .wrap::-webkit-scrollbar{display:none}
+nav.jump a{font:600 10.5px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;padding:15px 13px;border-bottom:2px solid transparent;white-space:nowrap}
+nav.jump a:hover{color:var(--ink);border-bottom-color:var(--gold-line)}
+
+/* ---------- sections ---------- */
+section{margin-bottom:52px;scroll-margin-top:74px}
+.sec-head{margin-bottom:20px}
+h2{font:400 27px/1.2 var(--display);margin:0 0 8px;letter-spacing:-.005em}
+h2 .n{font:600 11px/1 var(--mono);letter-spacing:.16em;color:var(--ink-3);vertical-align:middle;margin-right:12px}
+.sec-head p{margin:0;color:var(--ink-2);max-width:72ch;font-size:15px}
+.sec-head p + p{margin-top:8px}
+
+/* ---------- doc cards ---------- */
+div.doc{text-decoration:none}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+a.doc{display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:22px 22px 20px;box-shadow:var(--shadow);transition:transform .13s ease,border-color .13s ease}
+a.doc:hover{transform:translateY(-2px);border-color:var(--gold-line)}
+a.doc:focus-visible{outline:2px solid var(--void);outline-offset:3px}
+.doc .k{font:600 9.5px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.doc h3{font:600 19px/1.25 var(--body);margin:0;letter-spacing:-.01em}
+.doc p{margin:0;font-size:14px;color:var(--ink-2);flex:1}
+.doc .f{font:11px/1 var(--mono);color:var(--ink-3);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px;display:flex;justify-content:space-between;gap:10px}
+a.doc.primary,.doc.primary{border-color:var(--gold-line);background:linear-gradient(180deg,var(--gold-soft),var(--surface) 62%)}
+.doc.unavail{cursor:default;box-shadow:none;opacity:.72}
+.doc.unavail:hover{transform:none;border-color:var(--line)}
+.doc.unavail.primary:hover{border-color:var(--gold-line)}
+.unavail-note{margin-top:10px !important;font-size:13.5px;color:var(--ink-3);font-style:italic}
+.badge.pv{background:var(--void-soft);color:var(--void);border-color:var(--void-line)}
+.pv-note{margin:16px 0 0;max-width:64ch;font-size:14.5px;line-height:1.6;color:var(--ink-2);
+  border-left:3px solid var(--void);padding-left:15px}
+.pv-note b{color:var(--ink)}
+
+/* ---------- numbered steps ---------- */
+.steps{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line-soft)}
+.step .sn{font:600 12px/1.5 var(--mono);color:var(--ink-3);letter-spacing:.08em}
+.step h4{margin:0 0 5px;font:600 15.5px/1.35 var(--body)}
+.step p{margin:0;font-size:14px;color:var(--ink-2)}
+.step p + p{margin-top:5px}
+code{font:12.5px/1.45 var(--mono);background:var(--surface-2);border:1px solid var(--line-soft);border-radius:4px;padding:1.5px 5px;word-break:break-word}
+kbd{font:11.5px/1 var(--mono);background:var(--surface);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:3px 6px;white-space:nowrap}
+
+/* ---------- open decisions ---------- */
+.decs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.dec{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:9px;padding:17px 18px}
+.dec h4{margin:0 0 6px;font:600 15px/1.3 var(--body)}
+.dec p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.dec .blk{display:inline-block;margin-top:9px;font:600 9.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--coral);background:var(--coral-soft);border:1px solid var(--coral-line);border-radius:4px;padding:4px 7px}
+
+/* ---------- panels ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:24px;box-shadow:var(--shadow);margin-bottom:18px}
+.panel > h3{margin:0 0 6px;font:600 16px/1.3 var(--body)}
+.panel > h3 + p{margin:0 0 18px;font-size:14px;color:var(--ink-2)}
+.ph{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.ph .lbl{font:600 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- capture cards ---------- */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:13px}
+.capc{background:var(--surface-2);border:1px solid var(--line-soft);border-left:3px solid var(--void);border-radius:9px;padding:15px 16px;display:flex;flex-direction:column;gap:8px}
+.capc.opt{border-left-color:var(--line)}
+.capc .ct{display:flex;align-items:center;gap:9px}
+.capc .cn{font:600 9.5px/1 var(--mono);letter-spacing:.14em;color:var(--void);background:var(--void-soft);border:1px solid var(--void-line);border-radius:4px;padding:4px 6px;white-space:nowrap}
+.capc.opt .cn{color:var(--ink-3);background:var(--surface-3);border-color:var(--line)}
+.capc b{font:600 14.5px/1.3 var(--body)}
+.capc .cw{font-size:13px;color:var(--ink-2);margin:0;flex:1}
+.capc .cw em{color:var(--ink);font-style:normal;font-weight:600}
+.capc label{display:flex;align-items:center;gap:8px;font:600 11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);cursor:pointer;border-top:1px solid var(--line);padding-top:10px}
+.capc input[type=checkbox]{width:15px;height:15px;accent-color:var(--jade);cursor:pointer;flex:none}
+.capc.done{border-left-color:var(--jade)}
+.capc.done label{color:var(--jade)}
+
+/* ---------- drop zone ---------- */
+.drop{border:2px dashed var(--line);border-radius:10px;background:var(--surface-2);padding:30px 20px;text-align:center;cursor:pointer;transition:border-color .13s,background .13s}
+.drop:hover,.drop.over{border-color:var(--void-line);background:var(--void-soft)}
+.drop b{display:block;font:600 15px/1.3 var(--body);margin-bottom:5px}
+.drop span{font-size:13.5px;color:var(--ink-2)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
+.thumb{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface-2);position:relative}
+.thumb img{display:block;width:100%;height:96px;object-fit:cover;object-position:top left;background:var(--surface-3)}
+.thumb .tm{padding:8px 9px;font:10.5px/1.45 var(--mono);color:var(--ink-3);word-break:break-all}
+.thumb .tm b{display:block;color:var(--ink-2);font-weight:600}
+.thumb .rm{position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font:600 13px/1 var(--body);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.thumb .rm:hover{background:var(--coral-soft);color:var(--coral);border-color:var(--coral-line)}
+.thumb .warn{font:9.5px/1.3 var(--mono);color:var(--gold);padding:0 9px 8px}
+
+/* ---------- fields ---------- */
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:13px}
+.fld{display:flex;flex-direction:column;gap:5px}
+.fld label{font:600 9.5px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.fld input,.fld select,.fld textarea{font:13.5px/1.4 var(--body);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:9px 10px;width:100%}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--void);outline-offset:1px;border-color:var(--void-line)}
+.fld textarea{resize:vertical;min-height:56px}
+.fld.wide{grid-column:1/-1}
+.fld .hint{font:10.5px/1.4 var(--mono);color:var(--ink-3)}
+
+/* ---------- buttons ---------- */
+.btns{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:16px}
+button.b{font:600 11px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:11px 15px;cursor:pointer}
+button.b:hover{border-color:var(--gold-line)}
+button.b.pri{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+button.b.pri:hover{filter:brightness(1.05)}
+button.b:disabled{opacity:.45;cursor:not-allowed}
+.stat{font:11px/1.4 var(--mono);color:var(--ink-3)}
+
+/* ---- manual-copy fallback ---- */
+#copybox{position:fixed;inset:0;z-index:999;background:rgba(4,5,9,.72);
+  display:flex;align-items:center;justify-content:center;padding:24px}
+.cb-panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);max-width:760px;width:100%;padding:22px;display:flex;
+  flex-direction:column;gap:12px}
+.cb-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.cb-head b{font-size:17px}
+.cb-x{background:none;border:0;color:var(--ink-3);font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+.cb-x:hover{color:var(--ink)}
+.cb-note{margin:0;font-size:13.5px;color:var(--ink-2)}
+.cb-ta{width:100%;min-height:280px;resize:vertical;font:12.5px/1.65 var(--mono);
+  color:var(--ink);background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:13px}
+.cb-ta:focus{outline:2px solid var(--void);outline-offset:1px}
+button.b.warn{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft)}
+button.b.done{color:var(--jade);border-color:var(--jade-line);background:var(--jade-soft)}
+
+.stat.ok{color:var(--jade)}
+.stat.err{color:var(--coral)}
+
+pre{margin:0;background:var(--surface-2);border:1px solid var(--line-soft);border-radius:8px;padding:14px 15px;overflow-x:auto;font:12.5px/1.7 var(--mono);color:var(--ink-2);white-space:pre-wrap;word-break:break-word}
+pre.out{max-height:340px;overflow-y:auto}
+.rules{margin:16px 0 0;padding-left:20px;font-size:13.5px;color:var(--ink-2)}
+.rules li{margin-bottom:5px}
+
+/* ---------- log ---------- */
+table.log{width:100%;border-collapse:collapse;font-size:13px}
+table.log th{text-align:left;font:600 9.5px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);padding:0 10px 9px 0;border-bottom:1px solid var(--line)}
+table.log td{padding:11px 10px 11px 0;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--ink-2)}
+table.log td.d{font:12px/1.4 var(--mono);color:var(--ink);white-space:nowrap}
+table.log td.c{font:12px/1.4 var(--mono);white-space:nowrap}
+.delta{color:var(--jade);font-weight:600}
+.delta.zero{color:var(--ink-3);font-weight:400}
+.tw{overflow-x:auto}
+.empty{font-size:13.5px;color:var(--ink-3);font-style:italic}
+
+/* ---------- vault ---------- */
+.keyrow{display:grid;grid-template-columns:minmax(140px,1fr) minmax(180px,1.5fr) auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line-soft)}
+.keyrow:last-of-type{border-bottom:0}
+.kn{display:flex;flex-direction:column;gap:3px;min-width:0}
+.kn strong{font:600 14.5px/1.25 var(--body);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.kn span{font:10.5px/1.3 var(--mono);color:var(--ink-3);word-break:break-all}
+.req{font:600 8.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:var(--coral);background:var(--coral-soft);border:1px solid var(--coral-line);border-radius:3px;padding:3px 5px}
+.keyrow input{font:12.5px/1.4 var(--mono);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:10px;width:100%}
+.keyrow input:focus{outline:2px solid var(--void);outline-offset:1px;border-color:var(--void-line)}
+a.klink{font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:9px 11px;white-space:nowrap}
+a.klink:hover{border-color:var(--gold-line);color:var(--ink)}
+a.klink.req{background:var(--coral-soft);color:var(--coral);border-color:var(--coral-line)}
+.kd{grid-column:1/-1;font-size:13px;color:var(--ink-2);margin-top:-3px}
+
+.note{background:var(--void-soft);border:1px solid var(--void-line);border-radius:9px;padding:16px 18px;font-size:14px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+.note.warn{background:var(--gold-soft);border-color:var(--gold-line)}
+.note + .note{margin-top:12px}
+
+footer{border-top:1px solid var(--line);margin-top:20px;padding-top:22px;font-size:13px;color:var(--ink-3)}
+footer p{margin:0 0 6px}
+
+#tt{position:fixed;right:16px;bottom:16px;z-index:9;font:600 10px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;background:var(--surface);color:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:10px 15px;cursor:pointer;box-shadow:var(--shadow)}
+#tt:hover{border-color:var(--gold-line);color:var(--ink)}
+
+@media (max-width:640px){
+  .step{grid-template-columns:38px 1fr;gap:11px}
+  .wrap{padding:0 18px}
+  .keyrow{grid-template-columns:1fr;gap:9px}
+  .panel{padding:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <span class="eyebrow">Local build &middot; runs with no server, no account, no network</span>
+  <h1>Production Desk</h1>
+  <p class="lede">The front door to the three documents that run this film, plus the two things that
+  keep it honest &mdash; a status read you can hand to anyone, and one place for the keys.</p>
+  <p class="pv-note"><b>This is the hosted preview.</b> The status read and the vault are the same code
+  as the real page and work fully. What is missing is everything that needs the folder around it: the
+  three documents, offline install, and anything that saves a file. The real build is
+  <code>index.html</code> in the repo.</p>
+  <div class="badges">
+    <span class="badge on">Offline</span>
+    <span class="badge on">Self-contained</span>
+    <span class="badge pv">Hosted preview</span>
+    <span class="badge on">BYOK</span>
+    <span class="badge on">Matter of Light</span>
+  </div>
+</div></header>
+
+<nav class="jump"><div class="wrap">
+  <a href="#docs">Documents</a>
+  <a href="#install">Install</a>
+  <a href="#decisions">Open decisions</a>
+  <a href="#status">Status read</a>
+  <a href="#vault">Key vault</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- ============ 01 DOCUMENTS ============ -->
+<section id="docs">
+  <div class="sec-head">
+    <h2><span class="n">01</span>The documents</h2>
+    <p>Three files, three jobs &mdash; plus two printable kits and the screenplay. The bible is where you
+    work; the sheet is what you keep open beside Higgsfield; the audit is what you check yourself
+    against when something feels thin; the workflow sheets track the production in pencil and the
+    paper kit thinks it through; the screenplay is the film as written, and the cut order the
+    assembly follows.</p>
+    <p class="unavail-note">These are not openable here &mdash; this preview is a single page, and
+    they are separate files. Open them from the folder on your Mac.</p>
+  </div>
+  <div class="docs">
+    <div class="doc primary unavail">
+      <span class="k">The working app</span>
+      <h3>Director's Bible</h3>
+      <p>Run sheet with saved progress, 42 asset prompts &times; 4 variants, 23 shots, the 39-frame
+      string, forms and states, filing rules, the revision loop. This is the one that remembers where
+      you stopped.</p>
+      <span class="f"><span>director-bible.html</span><span>~600&nbsp;KB</span></span>
+    </a>
+    <div class="doc unavail">
+      <span class="k">Beside the screen</span>
+      <h3>Production Sheet</h3>
+      <p>One page. Folder structure, element naming, how many images per asset kind, what to do with
+      bad generations, the four Higgsfield tools, the verification sequence.</p>
+      <span class="f"><span>production-sheet.html</span><span>~34&nbsp;KB</span></span>
+    </a>
+    <div class="doc unavail">
+      <span class="k">The honest list</span>
+      <h3>Source Audit</h3>
+      <p>What the asset register has no plate for, what the adaptation drops, and which shots are
+      currently carried by nothing. Read it when a movement feels underbuilt.</p>
+      <span class="f"><span>lookbook-audit.html</span><span>~22&nbsp;KB</span></span>
+    </a>
+
+    <div class="doc unavail">
+      <span class="k">Print it &middot; PDF</span>
+      <h3>Workflow Sheets</h3>
+      <p>Eight printable pages in bible order &mdash; the run sheet, gates, reference and frame
+      ledgers, shot list and daily log, with pencil blanks and the compressed Aug&nbsp;27&ndash;Sep&nbsp;3
+      targets already filled in grey. Generated from the bible's own data, so it cannot drift.</p>
+      <span class="f"><span>workflow-sheets.pdf</span><span>8 pages &middot; ~330&nbsp;KB</span></span>
+    </a>
+
+    <div class="doc unavail">
+      <span class="k">Think on it &middot; PDF</span>
+      <h3>Paper Kit</h3>
+      <p>Twelve sheets for thinking rather than tracking, one per bible step: the anchor-string
+      comic strip, storyboard grids at equal frames and equal time, the duration-weighted ribbon,
+      the gates, and the methods sheet. Separate one-sheet PDFs live in <code>paper-kit/</code>;
+      the bible's Paper panel generates the grids live and files your photographed notes.</p>
+      <span class="f"><span>paper-kit.pdf &middot; paper-kit/*</span><span>12 sheets</span></span>
+    </a>
+
+    <div class="doc unavail">
+      <span class="k">The film as written &middot; PDF</span>
+      <h3>Screenplay &mdash; Matter of Light</h3>
+      <p>The abridged festival screenplay: production names throughout, the prologue voice-over,
+      Movements II and III interleaved &mdash; the swim runs inside the battle and the streak lands in
+      the brothers' sunset sky. Generation still follows the bible's order; this is the cut.</p>
+      <span class="f"><span>matter-of-light-screenplay.pdf</span><span>12 pages &middot; ~47&nbsp;KB</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 INSTALL ============ -->
+<section id="install">
+  <div class="sec-head">
+    <h2><span class="n">02</span>Getting it onto the Mac</h2>
+    <p>Three routes, cheapest first. Route&nbsp;A is enough for most days. Route&nbsp;B is the one that
+    gives you a Dock icon and its own window with no browser chrome around it.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">A</div><div>
+      <h4>Just open it</h4>
+      <p>Double-click <code>index.html</code>. Every link is relative, so the whole desk works straight
+      off the disk with no server running.</p>
+    </div></div>
+    <div class="step"><div class="sn">B</div><div>
+      <h4>Install it as an app</h4>
+      <p>Double-click <code>Open Director Bible.command</code>. First run only: right-click it &rarr;
+      <b>Open</b>, because macOS blocks double-clicked scripts the first time.</p>
+      <p>Then Chrome or Edge &rarr; <b>File &rarr; Install page as app</b>. You get <b>Production
+      Desk</b> in the Dock, in its own window, still working after you close the terminal.</p>
+    </div></div>
+    <div class="step"><div class="sn">C</div><div>
+      <h4>Or run the server yourself</h4>
+      <p><code>python3 -m http.server 8733</code> in this folder, then open
+      <code>http://localhost:8733</code>.</p>
+    </div></div>
+    <div class="step"><div class="sn">&mdash;</div><div>
+      <h4>Where your work is stored</h4>
+      <p>Status log, ticked steps and vault keys live in <b>browser local storage</b>, which is
+      per-origin. <b>Opening from a file path and from <code>localhost</code> are two different
+      origins</b>, so they keep two separate sets of everything. Pick one route and stay on it.</p>
+      <p>The bible and this page share one vault, because they share an origin. Enter a key here and
+      the bible already has it.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ 03 OPEN DECISIONS ============ -->
+<section id="decisions">
+  <div class="sec-head">
+    <h2><span class="n">03</span>Open decisions</h2>
+    <p>Three things are unresolved, and all three are cheap now and expensive later &mdash; each is
+    upstream of assets that are already being generated.</p>
+  </div>
+  <div class="decs">
+    <div class="dec">
+      <h4>The title &mdash; decided</h4>
+      <p>The film is <b>MATTER OF LIGHT</b>, matching the Higgsfield project folder. The bible, the
+      sheets, the brief, the screenplay and this desk now carry it. Master filename, end card and
+      social post must use exactly this title.</p>
+      <span class="blk">Decided &middot; Aug 28</span>
+    </div>
+    <div class="dec">
+      <h4>&ldquo;Drowning&rdquo;</h4>
+      <p>An <code>@Drowning</code> element folder with no referent in the source. Either it is a scene
+      name that needs writing down, or a stray from an early session to delete before it accumulates
+      generations.</p>
+      <span class="blk">Blocks element cleanup</span>
+    </div>
+    <div class="dec">
+      <h4>Leviathan scale</h4>
+      <p>&ldquo;The size of a city block&rdquo; &mdash; but nothing in the anchor frames fixes what it
+      is measured against, so every generation guesses differently. Choose the reference object once
+      and put it in the prompt.</p>
+      <span class="blk">Blocks Movement II anchors</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 STATUS READ ============ -->
+<section id="status">
+  <div class="sec-head">
+    <h2><span class="n">04</span>Status read</h2>
+    <p>Four screenshots, taken in this order, are enough to reconstruct exactly where the project
+    stands &mdash; without you having to remember or describe it. <b>Capture&nbsp;1 alone answers most
+    of it.</b> Take the rest when you want the answer to be specific rather than approximate.</p>
+    <p>Everything below runs locally. The panel builds a hand-off block you paste into a chat
+    alongside the images, keeps a dated log so the day-over-day delta is visible, and &mdash; if you
+    have stored a Claude key in the vault &mdash; can send the read directly.</p>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span class="lbl">Step 1 &middot; Capture</span><span class="stat" id="cap-stat"></span></div>
+    <div class="caps" id="caps"></div>
+    <ul class="rules">
+      <li><b>Full window, never a region.</b> A crop hides the thing that was about to be the answer.</li>
+      <li><b>One screen per image.</b> Two monitors in one file makes both unreadable.</li>
+      <li><b>Do not scale down on export.</b> Filenames and counts are the payload &mdash; if they are
+      not legible the capture was wasted. <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>4</kbd> then
+      <kbd>Space</kbd> captures a single window cleanly.</li>
+      <li><b>Same set, same order, every time.</b> The value is in the diff, and a diff needs the shots
+      to line up.</li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span class="lbl">Step 2 &middot; Load them</span><span class="stat" id="drop-stat">No images loaded</span></div>
+    <div class="drop" id="drop" role="button" tabindex="0" aria-label="Add screenshots">
+      <b>Drop screenshots here</b>
+      <span>or click to choose &mdash; PNG, JPEG or WebP. They never leave this machine unless you press Send.</span>
+    </div>
+    <input type="file" id="file" accept="image/*" multiple hidden>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span class="lbl">Step 3 &middot; What you already know</span><span class="stat">Optional &mdash; blanks are fine</span></div>
+    <p style="margin:0 0 16px;font-size:14px;color:var(--ink-2)">Fill in anything you know off the top
+    of your head. It is not a form to complete &mdash; it is context that makes the read sharper, and
+    the counts are what the log charts over time.</p>
+    <div class="fields">
+      <div class="fld"><label for="f-date">Date</label><input type="date" id="f-date"></div>
+      <div class="fld"><label for="f-gate">Last gate that holds</label>
+        <select id="f-gate">
+          <option value="">— not sure —</option>
+          <option>none yet</option>
+          <option>A · identity lock</option>
+          <option>B · string lock</option>
+          <option>C · timing lock</option>
+          <option>D · motion lock</option>
+          <option>E · picture lock</option>
+        </select></div>
+      <div class="fld"><label for="f-refs">References</label><input type="number" id="f-refs" min="0" max="42" placeholder="of 42"><span class="hint">Phase 0 assets</span></div>
+      <div class="fld"><label for="f-anchors">Anchor frames</label><input type="number" id="f-anchors" min="0" max="39" placeholder="of 39"><span class="hint">the frame string</span></div>
+      <div class="fld"><label for="f-shots">Shots</label><input type="number" id="f-shots" min="0" max="23" placeholder="of 23"><span class="hint">motion pass</span></div>
+      <div class="fld"><label for="f-elems">Elements</label><input type="number" id="f-elems" min="0" placeholder="handles"><span class="hint">trained @handles</span></div>
+      <div class="fld wide"><label for="f-block">Blocked by</label><textarea id="f-block" placeholder="or leave empty if nothing is blocking"></textarea></div>
+      <div class="fld wide"><label for="f-ask">Anything specific you want looked at</label><textarea id="f-ask" placeholder="e.g. is the Characters folder actually consistent? which handle should die?"></textarea></div>
+    </div>
+    <div class="btns">
+      <button class="b pri" id="build">Build hand-off block</button>
+      <button class="b" id="save-log">Save to log</button>
+      <span class="stat" id="f-stat"></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span class="lbl">Step 4 &middot; Hand it over</span><span class="stat" id="out-stat"></span></div>
+    <pre class="out" id="out">Press “Build hand-off block”. The text appears here — copy it, paste it into the chat, and drag the same screenshots in beside it.</pre>
+    <div class="btns">
+      <button class="b" id="copy" disabled>Copy block</button>
+      <button class="b" id="dl-md" disabled title="Downloads do not work in the hosted preview">Download .md &mdash; local only</button>
+      <button class="b" id="send" disabled title="Unavailable in the hosted preview">Send &mdash; local build only</button>
+      <span class="stat" id="send-stat"></span>
+    </div>
+    <pre class="out" id="reply" hidden></pre>
+    <div class="note warn" style="margin-top:16px">
+      <b>Send and the downloads are off in this build.</b> A hosted page may only talk to a short
+      list of hosts, and it cannot hand you a file at all &mdash; so Send, Download&nbsp;.md,
+      Export&nbsp;CSV and Export&nbsp;.env would each fail silently. They are disabled rather than left
+      to look broken. <b>Copy block</b> works, and it is the route that matters: paste it into a chat
+      and drag the screenshots in beside it.
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span class="lbl">The log</span><span class="stat" id="log-stat"></span></div>
+    <div class="tw"><table class="log" id="logtbl"></table></div>
+    <div class="btns">
+      <button class="b" id="dl-log" disabled title="Downloads do not work in the hosted preview">Export CSV &mdash; local only</button>
+      <button class="b" id="clr-log" disabled>Clear log</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 VAULT ============ -->
+<section id="vault">
+  <div class="sec-head">
+    <h2><span class="n">05</span>Key vault</h2>
+    <p>Bring your own keys. Everything is stored in this browser's local storage and nothing is
+    transmitted anywhere by this page &mdash; the one exception is <b>Send</b> above, which you have to
+    press deliberately. <b>Two of these are required</b>; the rest are convenience.</p>
+    <p>This is the same vault the director's bible uses. Enter a key in either place and both have it.</p>
+  </div>
+  <div class="panel">
+    <div id="keyrows"></div>
+    <div class="btns">
+      <button class="b pri" id="save-keys">Save keys</button>
+      <button class="b" id="env" disabled title="Downloads do not work in the hosted preview">Export .env &mdash; local only</button>
+      <button class="b" id="clear-keys">Clear vault</button>
+      <span class="stat" id="vault-stat"></span>
+    </div>
+  </div>
+  <div class="note">
+    <b>Never commit the export.</b> <code>.env</code> and <code>*.config.json</code> are already in
+    <code>.gitignore</code>. Local storage is per-browser and per-origin, so a key entered on
+    <code>localhost</code> is invisible to the same file opened from a path &mdash; another reason to
+    pick one route and stay on it.
+  </div>
+</section>
+
+<section>
+  <div class="note">
+    <b>On the name crosswalk.</b> The table mapping production names back to the novel is deliberately
+    not inside <code>director-bible.html</code>. It lives in <code>crosswalk.local.js</code>, which is
+    gitignored and never committed. If that file is in this folder the table appears in the bible's
+    rights section; if it is not, there is nothing there to leak. That is the correct state for any
+    copy you publish, share or push.
+  </div>
+</section>
+
+<footer>
+  <p>Written, directed and produced by <b>B.L. Barkey</b>. Narrative content is not covered by the
+  repository licence &mdash; see <code>NOTICE</code>.</p>
+  <p>No analytics and no external assets. The only outbound request this page can make is the one you
+  press Send for.</p>
+</footer>
+
+</div>
+
+<button id="tt" type="button" aria-label="Switch colour theme">Theme</button>
+
+<script>
+/* ================= THEME ================= */
+(function(){
+  var K="msm.theme", r=document.documentElement, b=document.getElementById("tt");
+  function get(){ try{return localStorage.getItem(K)}catch(e){return null} }
+  function set(v){ try{localStorage.setItem(K,v)}catch(e){} }
+  var s=get(); if(s==="dark"||s==="light") r.setAttribute("data-theme",s);
+  function dark(){
+    var a=r.getAttribute("data-theme");
+    if(a) return a==="dark";
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches;
+  }
+  function label(){ b.textContent = dark()?"Light":"Dark"; }
+  label();
+  b.addEventListener("click",function(){ var n=dark()?"light":"dark"; r.setAttribute("data-theme",n); set(n); label(); });
+})();
+
+/* ================= SHARED HELPERS ================= */
+function LS(k,d){ try{ var v=localStorage.getItem(k); return v===null?d:JSON.parse(v); }catch(e){ return d; } }
+function SS(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); return true; }catch(e){ return false; } }
+/* ============================================================================
+   copyText - one clipboard path for every Copy button in this document.
+
+   The old code called navigator.clipboard.writeText() directly and hung a
+   .catch() on it. That fails in the two places this file is actually opened:
+   on file://, which is not a secure context, navigator.clipboard is undefined,
+   so the call throws synchronously and the .catch() never runs at all; and in
+   a sandboxed iframe the promise rejects on permission. Either way the button
+   said "Copy failed" and the text was unreachable.
+
+   Three tiers, and the last one cannot fail: if the clipboard is unavailable
+   the text goes on screen already selected, so Cmd-C always works.
+   ========================================================================== */
+function copyText(text, btn, okMsg){
+  okMsg = okMsg || "Copied";
+  var restore = btn ? btn.textContent : "";
+
+  function done(msg, warn){
+    if(!btn) return;
+    btn.textContent = msg;
+    btn.classList.add(warn ? "warn" : "done");
+    clearTimeout(btn._ct);
+    btn._ct = setTimeout(function(){
+      btn.textContent = restore;
+      btn.classList.remove("done"); btn.classList.remove("warn");
+    }, warn ? 2600 : 1600);
+  }
+
+  /* 3 - never a dead end: hand the text over, pre-selected */
+  function manual(){
+    done("Select and press ⌘C", true);
+    var old = document.getElementById("copybox");
+    if(old) old.remove();
+    var w = document.createElement("div");
+    w.id = "copybox";
+    w.innerHTML =
+      '<div class="cb-panel" role="dialog" aria-modal="true" aria-label="Copy this text">' +
+        '<div class="cb-head"><b>Copy this by hand</b>' +
+          '<button class="cb-x" type="button" aria-label="Close">&times;</button></div>' +
+        '<p class="cb-note">The clipboard is not available here &mdash; that happens when the ' +
+        'page is opened straight off the disk rather than through a server. The text is ' +
+        'selected already: press <kbd>&#8984;C</kbd>, then Escape.</p>' +
+        '<textarea class="cb-ta" readonly spellcheck="false"></textarea>' +
+      '</div>';
+    document.body.appendChild(w);
+    var ta = w.querySelector(".cb-ta");
+    ta.value = text;
+    function close(){ w.remove(); document.removeEventListener("keydown", esc); }
+    function esc(e){ if(e.key === "Escape") close(); }
+    w.querySelector(".cb-x").onclick = close;
+    w.addEventListener("click", function(e){ if(e.target === w) close(); });
+    document.addEventListener("keydown", esc);
+    ta.focus(); ta.select();
+    try{ ta.setSelectionRange(0, text.length); }catch(e){}
+  }
+
+  /* 2 - execCommand needs a real, focused, selected node in the document */
+  function legacy(){
+    var ta = document.createElement("textarea"), ok = false;
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:0;left:0;width:2em;height:2em;padding:0;" +
+      "border:none;outline:none;box-shadow:none;background:transparent;opacity:0;";
+    document.body.appendChild(ta);
+    try{
+      ta.focus(); ta.select();
+      try{ ta.setSelectionRange(0, text.length); }catch(e){}
+      ok = document.execCommand("copy");
+    }catch(e){ ok = false; }
+    ta.remove();
+    if(ok) done(okMsg); else manual();
+  }
+
+  /* 1 - the async clipboard, where it exists and is permitted */
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(okMsg); }, legacy);
+      return;
+    }
+  }catch(e){}
+  legacy();
+}
+
+function dl(name,text,mime){
+  var b=new Blob([text],{type:mime}), u=URL.createObjectURL(b);
+  var a=document.createElement("a"); a.href=u; a.download=name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){URL.revokeObjectURL(u)},900);
+}
+function flash(el,msg,cls){
+  el.textContent=msg; el.className="stat "+(cls||"");
+  clearTimeout(el._t); el._t=setTimeout(function(){ el.textContent=""; el.className="stat"; },2600);
+}
+
+/* ================= 04 · CAPTURE SPEC ================= */
+/* Ordered by how much of the project state each one recovers.
+   CAPS[0] alone answers most of it — everything after narrows the answer. */
+var CAPS=[
+  { id:"tree",  req:1, n:"Folder tree, expanded",
+    w:"Every folder open, <em>counts legible</em>. Take this one even if you take nothing else." },
+  { id:"chars", req:1, n:"Elements &rarr; Characters",
+    w:"Every <em>@handle</em> with its image count. Drift shows up here first." },
+  { id:"liked", req:0, n:"Assets filtered to Liked",
+    w:"What you <em>chose</em>, not just what you made." },
+  { id:"bar",   req:0, n:"The generate bar",
+    w:"Model, <em>ratio</em>, duration. Ten seconds, and it catches wrong settings." }
+];
+
+(function(){
+  var host=document.getElementById("caps"), stat=document.getElementById("cap-stat");
+  var KEY="msm.caps", state=LS(KEY,{});
+  CAPS.forEach(function(c,i){
+    var d=document.createElement("div");
+    d.className="capc"+(c.req?"":" opt")+(state[c.id]?" done":"");
+    d.innerHTML=
+      '<div class="ct"><span class="cn">'+(i+1)+(c.req?" · Core":" · Adds detail")+'</span></div>'+
+      '<b>'+c.n+'</b>'+
+      '<p class="cw">'+c.w+'</p>'+
+      '<label><input type="checkbox" '+(state[c.id]?"checked":"")+' data-id="'+c.id+'"> Captured</label>';
+    host.appendChild(d);
+  });
+  function paint(){
+    var n=CAPS.filter(function(c){return state[c.id]}).length;
+    stat.textContent=n+" of "+CAPS.length+" captured";
+    stat.className="stat"+(n>=2?" ok":"");
+  }
+  host.addEventListener("change",function(e){
+    var cb=e.target.closest("input[type=checkbox]"); if(!cb) return;
+    state[cb.dataset.id]=cb.checked; SS(KEY,state);
+    cb.closest(".capc").classList.toggle("done",cb.checked);
+    paint();
+  });
+  paint();
+})();
+
+/* ================= 04 · IMAGE INTAKE ================= */
+var SHOTS=[];   /* {name,w,h,bytes,url,b64,media} */
+
+(function(){
+  var drop=document.getElementById("drop"), file=document.getElementById("file"),
+      thumbs=document.getElementById("thumbs"), stat=document.getElementById("drop-stat");
+
+  function paint(){
+    thumbs.innerHTML="";
+    SHOTS.forEach(function(s,i){
+      var d=document.createElement("div"); d.className="thumb";
+      var small = s.w<1000;
+      d.innerHTML='<img src="'+s.url+'" alt="">'+
+        '<button class="rm" data-i="'+i+'" aria-label="Remove">&times;</button>'+
+        '<div class="tm"><b>'+s.name.replace(/[<>&]/g,"")+'</b>'+s.w+'&times;'+s.h+' · '+Math.round(s.bytes/1024)+' KB</div>'+
+        (small?'<div class="warn">Under 1000px wide — filenames and counts may not be legible.</div>':'');
+      thumbs.appendChild(d);
+    });
+    stat.textContent = SHOTS.length ? SHOTS.length+" image"+(SHOTS.length===1?"":"s")+" loaded" : "No images loaded";
+    stat.className="stat"+(SHOTS.length?" ok":"");
+    /* send stays disabled in this build */
+  }
+
+  /* Downscale to the API's useful ceiling on the long edge. Anything larger is
+     resized server-side anyway, so this costs no legibility and a lot of bytes. */
+  function shrink(img,max){
+    var w=img.naturalWidth, h=img.naturalHeight, sc=Math.min(1,max/Math.max(w,h));
+    var c=document.createElement("canvas");
+    c.width=Math.round(w*sc); c.height=Math.round(h*sc);
+    c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+    return c.toDataURL("image/jpeg",0.85);
+  }
+
+  function add(f){
+    if(!f.type||f.type.indexOf("image/")!==0) return;
+    var url=URL.createObjectURL(f), img=new Image();
+    img.onload=function(){
+      var data="";
+      try{ data=shrink(img,1568).split(",")[1]||""; }catch(e){}
+      SHOTS.push({name:f.name,w:img.naturalWidth,h:img.naturalHeight,bytes:f.size,url:url,b64:data,media:"image/jpeg"});
+      paint();
+    };
+    img.onerror=function(){ URL.revokeObjectURL(url); };
+    img.src=url;
+  }
+
+  drop.addEventListener("click",function(){ file.click(); });
+  drop.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); file.click(); } });
+  file.addEventListener("change",function(e){ [].slice.call(e.target.files).forEach(add); file.value=""; });
+  ["dragenter","dragover"].forEach(function(t){ drop.addEventListener(t,function(e){ e.preventDefault(); drop.classList.add("over"); }); });
+  ["dragleave","drop"].forEach(function(t){ drop.addEventListener(t,function(e){ e.preventDefault(); drop.classList.remove("over"); }); });
+  drop.addEventListener("drop",function(e){ [].slice.call(e.dataTransfer.files).forEach(add); });
+  thumbs.addEventListener("click",function(e){
+    var b=e.target.closest(".rm"); if(!b) return;
+    var i=+b.dataset.i; URL.revokeObjectURL(SHOTS[i].url); SHOTS.splice(i,1); paint();
+  });
+  paint();
+})();
+
+/* ================= 04 · BLOCK, LOG, SEND ================= */
+(function(){
+  var out=document.getElementById("out"), outStat=document.getElementById("out-stat"),
+      fStat=document.getElementById("f-stat"), LOGK="msm.log";
+  var F={date:"f-date",gate:"f-gate",refs:"f-refs",anchors:"f-anchors",shots:"f-shots",
+         elems:"f-elems",block:"f-block",ask:"f-ask"};
+
+  var d=new Date();
+  document.getElementById("f-date").value =
+    d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+
+  function read(){
+    var v={}; for(var k in F){ v[k]=document.getElementById(F[k]).value.trim(); } return v;
+  }
+  function n(v,tot){ return v===""? "—" : (tot? v+"/"+tot : v); }
+
+  function block(){
+    var v=read(), L=[];
+    L.push("## Status read — "+(v.date||"undated"));
+    L.push("");
+    L.push("Screenshots attached, in this order:");
+    if(SHOTS.length){
+      SHOTS.forEach(function(s,i){ L.push((i+1)+". "+s.name+"  ("+s.w+"×"+s.h+")"); });
+    } else {
+      L.push("_none loaded — attach them to the message directly_");
+    }
+    L.push("");
+    L.push("| | |");
+    L.push("|---|---|");
+    L.push("| Gate holding | "+(v.gate||"not stated")+" |");
+    L.push("| References | "+n(v.refs,42)+" |");
+    L.push("| Anchor frames | "+n(v.anchors,39)+" |");
+    L.push("| Shots | "+n(v.shots,23)+" |");
+    L.push("| Elements | "+n(v.elems)+" |");
+    L.push("| Blocked by | "+(v.block||"nothing stated")+" |");
+    L.push("");
+    L.push("**What I want back:** read the screenshots against the run sheet and tell me where I");
+    L.push("actually am — not where I think I am. Name what is missing, what is duplicated, what is");
+    L.push("mis-filed, and the single next step. Correct my numbers above if the images disagree.");
+    if(v.ask){ L.push(""); L.push("**Specifically:** "+v.ask); }
+    return L.join("\n");
+  }
+
+  document.getElementById("build").onclick=function(){
+    out.textContent=block(); out.dataset.ready="1";
+    document.getElementById("copy").disabled=false;
+    /* dl-md stays disabled: downloads are inert in this build */
+      /* stays disabled: the hosted preview cannot reach the API */
+    flash(outStat, SHOTS.length? "Built — copy it and drag the images in beside it"
+                               : "Built — no images loaded, attach them to the message yourself","ok");
+  };
+
+  document.getElementById("copy").onclick=function(){
+    copyText(out.textContent, this, "Copied");
+  };
+  document.getElementById("dl-md").onclick=function(){
+    var v=read();
+    dl("status-read-"+(v.date||"undated")+".md", out.textContent, "text/markdown");
+  };
+
+  /* ---- log ---- */
+  var tbl=document.getElementById("logtbl"), logStat=document.getElementById("log-stat");
+  function delta(cur,prev){
+    if(cur==="") return "";
+    if(prev===undefined||prev==="") return "";
+    var d=(+cur)-(+prev);
+    return ' <span class="delta'+(d?"":" zero")+'">'+(d>0?"+"+d:d)+'</span>';
+  }
+  function paintLog(){
+    var L=LS(LOGK,[]);
+    logStat.textContent = L.length ? L.length+" entr"+(L.length===1?"y":"ies") : "Nothing logged yet";
+    /* dl-log stays disabled: downloads are inert in this build */
+    document.getElementById("clr-log").disabled=!L.length;
+    if(!L.length){ tbl.innerHTML='<tr><td class="empty">Save a reading and it starts charting the delta between days.</td></tr>'; return; }
+    var h='<thead><tr><th>Date</th><th>Gate</th><th>Refs</th><th>Anchors</th><th>Shots</th><th>Elements</th><th>Blocked by</th></tr></thead><tbody>';
+    L.forEach(function(e,i){
+      var p=L[i+1]||{};
+      h+='<tr><td class="d">'+esc(e.date||"—")+'</td><td>'+esc(e.gate||"—")+'</td>'+
+         '<td class="c">'+esc(e.refs||"—")+delta(e.refs,p.refs)+'</td>'+
+         '<td class="c">'+esc(e.anchors||"—")+delta(e.anchors,p.anchors)+'</td>'+
+         '<td class="c">'+esc(e.shots||"—")+delta(e.shots,p.shots)+'</td>'+
+         '<td class="c">'+esc(e.elems||"—")+delta(e.elems,p.elems)+'</td>'+
+         '<td>'+esc(e.block||"—")+'</td></tr>';
+    });
+    tbl.innerHTML=h+"</tbody>";
+  }
+  function esc(s){ return String(s).replace(/[<>&"]/g,function(c){return {"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]}); }
+
+  document.getElementById("save-log").onclick=function(){
+    var v=read(), L=LS(LOGK,[]);
+    L=L.filter(function(e){ return e.date!==v.date; });   /* one entry per day, latest wins */
+    L.unshift(v);
+    L=L.slice(0,120);
+    var wrote=SS(LOGK,L);
+    flash(fStat, wrote?"Saved to log":"Could not save — storage is full or blocked", wrote?"ok":"err");
+    paintLog();
+  };
+  document.getElementById("dl-log").onclick=function(){
+    var L=LS(LOGK,[]), cols=["date","gate","refs","anchors","shots","elems","block","ask"];
+    var rows=[cols.join(",")].concat(L.map(function(e){
+      return cols.map(function(c){ return '"'+String(e[c]||"").replace(/"/g,'""')+'"'; }).join(",");
+    }));
+    dl("status-log.csv",rows.join("\n"),"text/csv");
+  };
+  document.getElementById("clr-log").onclick=function(){
+    if(!confirm("Delete every logged reading? This cannot be undone.")) return;
+    try{ localStorage.removeItem(LOGK); }catch(e){}
+    paintLog();
+  };
+  paintLog();
+
+  /* ---- send (unverified path) ---- */
+  document.getElementById("send").onclick=function(){
+    var btn=this, s=document.getElementById("send-stat"), rep=document.getElementById("reply");
+    var keys=LS("msm.keys",{}), key=keys.ANTHROPIC_API_KEY;
+    if(!key){ flash(s,"No Claude key in the vault — add one below","err"); return; }
+    if(!SHOTS.length){ flash(s,"Load at least one screenshot first","err"); return; }
+    btn.disabled=true; s.textContent="Sending…"; s.className="stat"; rep.hidden=true;
+
+    var content=SHOTS.map(function(x){
+      return {type:"image",source:{type:"base64",media_type:x.media,data:x.b64}};
+    });
+    content.push({type:"text",text:out.textContent});
+
+    fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json",
+        "x-api-key":key,
+        "anthropic-version":"2023-06-01",
+        "anthropic-dangerous-direct-browser-access":"true"
+      },
+      body:JSON.stringify({model:"claude-opus-5",max_tokens:2000,
+        messages:[{role:"user",content:content}]})
+    })
+    .then(function(r){ return r.json().then(function(j){ return {ok:r.ok,status:r.status,j:j}; }); })
+    .then(function(r){
+      if(!r.ok){
+        var m=(r.j&&r.j.error&&r.j.error.message)||("HTTP "+r.status);
+        throw new Error(m);
+      }
+      var txt=(r.j.content||[]).filter(function(b){return b.type==="text"}).map(function(b){return b.text}).join("\n");
+      rep.textContent=txt||"(empty response)"; rep.hidden=false;
+      flash(s,"Reply received","ok");
+    })
+    .catch(function(e){
+      rep.textContent="Send failed: "+e.message+
+        "\n\nThis path is unverified. Use “Copy block” and paste into a chat instead — that route always works."+
+        "\n\nCommon causes: the browser blocked the cross-origin request, the key is wrong or has no credit, or you are offline.";
+      rep.hidden=false;
+      flash(s,"Failed — use Copy instead","err");
+    })
+    .then(function(){ btn.disabled=false; });
+  };
+})();
+
+/* ================= 05 · VAULT ================= */
+var KEYS=[
+  {k:"HIGGSFIELD_API_KEY",n:"Higgsfield",req:1,d:"Picture, motion, upscale — the whole spine. Nothing else in this production can be substituted for it.",u:"https://higgsfield.ai/",l:"Account → API"},
+  {k:"ELEVENLABS_API_KEY",n:"ElevenLabs",req:1,d:"Voice and sound design. Audio is exempt from the from-scratch rule, so this is the one place you may reuse earlier work.",u:"https://elevenlabs.io/app/settings/api-keys",l:"API keys"},
+  {k:"ANTHROPIC_API_KEY",n:"Claude",d:"Prompt drafting, shot-list logic, continuity passes, the source backcheck — and the Send button in the status read above.",u:"https://console.anthropic.com/settings/keys",l:"Console keys"},
+  {k:"SUNO_API_KEY",n:"Suno",d:"Score. The film runs five minutes with long silent holds, so the cue under Movement III is doing real structural work.",u:"https://suno.com/",l:"Account → API"},
+  {k:"GOOGLE_AI_API_KEY",n:"Google AI Studio",d:"Gemini — script analysis and second-opinion storyboard descriptions.",u:"https://aistudio.google.com/apikey",l:"Get API key"},
+  {k:"OPENAI_API_KEY",n:"OpenAI",d:"Optional — alternate drafting and image passes. Nothing in the build depends on it.",u:"https://platform.openai.com/api-keys",l:"API keys"},
+  {k:"LOVABLE_API_KEY",n:"Lovable",d:"Optional — building a companion app around this desk.",u:"https://lovable.dev/",l:"Settings"},
+  {k:"OLLAMA_BASE_URL",n:"Ollama",d:"Local models. No key needed on localhost — leave the default as it is.",u:"https://ollama.com/",l:"Download",ph:"http://localhost:11434"}
+];
+
+(function(){
+  var host=document.getElementById("keyrows"), stat=document.getElementById("vault-stat"), store="msm.keys";
+  KEYS.forEach(function(k){
+    var r=document.createElement("div"); r.className="keyrow";
+    r.innerHTML=
+      '<span class="kn"><strong>'+k.n+(k.req?'<em class="req">Required</em>':'')+'</strong><span>'+k.k+'</span></span>'+
+      '<input type="password" id="in-'+k.k+'" placeholder="'+(k.ph||("paste your "+k.n+" key"))+'" autocomplete="off" spellcheck="false" aria-label="'+k.n+' key">'+
+      '<a class="klink'+(k.req?' req':'')+'" href="'+k.u+'" target="_blank" rel="noopener noreferrer">'+k.l+' &#8599;</a>'+
+      '<span class="kd">'+k.d+'</span>';
+    host.appendChild(r);
+  });
+  function paint(){
+    var v=LS(store,{}), n=Object.values(v).filter(Boolean).length;
+    KEYS.forEach(function(k){ var el=document.getElementById("in-"+k.k); if(v[k.k]) el.value=v[k.k]; });
+    stat.textContent = n ? n+" key"+(n===1?"":"s")+" stored in this browser" : "Nothing stored";
+    stat.className = "stat"+(n?" ok":"");
+  }
+  paint();
+  document.getElementById("save-keys").onclick=function(){
+    var v={};
+    KEYS.forEach(function(k){ var t=document.getElementById("in-"+k.k).value.trim(); if(t) v[k.k]=t; });
+    var wrote=SS(store,v);
+    /* No flash() here: it blanks the line before repainting. Show the outcome,
+       then settle back to the count. */
+    stat.textContent = wrote ? "Saved" : "Could not save — storage is blocked";
+    stat.className   = "stat "+(wrote?"ok":"err");
+    clearTimeout(stat._t);
+    stat._t=setTimeout(paint,1500);
+  };
+  document.getElementById("clear-keys").onclick=function(){
+    if(!confirm("Clear every stored key from this browser?")) return;
+    try{ localStorage.removeItem(store); }catch(e){}
+    KEYS.forEach(function(k){ document.getElementById("in-"+k.k).value=""; });
+    paint();
+  };
+  document.getElementById("env").onclick=function(){
+    var v=LS(store,{}), L=[
+      "# Production Desk — exported keys. NEVER COMMIT THIS FILE.",
+      "# Browsers refuse to save a leading-dot filename, so this arrives as",
+      "# production-desk.env. Rename it where your tooling expects a dotfile:",
+      "#   mv production-desk.env .env",
+      "# Both names are already in .gitignore.",""];
+    KEYS.forEach(function(k){ L.push("# "+k.n+" — "+k.d); L.push(k.k+"="+(v[k.k]||(k.ph||""))); L.push(""); });
+    /* Not ".env": Chromium strips the leading dot and appends .txt, producing
+       env.txt — a name no gitignore rule was covering. */
+    dl("production-desk.env",L.join("\n"),"text/plain");
+    flash(stat,"Saved as production-desk.env — rename to .env","ok");
+  };
+})();
+
+/* Service worker omitted: this build is one file on its own origin. */
+</script>
+</body>
+</html>
