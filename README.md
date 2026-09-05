@@ -37,6 +37,8 @@ No build step, no dependencies, no account, no network calls.
 | **`matter-of-light-screenplay.pdf`** | The abridged festival screenplay, production names throughout, Movements II and III interleaved. Source: `design/matter-of-light-screenplay.html`. |
 | **`design/four-captures.png`** | The one-page capture plate to keep open beside Higgsfield. |
 | **`design/higgsfield-snapshot.py`** | Turns a Higgsfield generation pull into the bible's coverage board, matching generations back to assets by prompt text. Writes `higgsfield.local.json`, which is gitignored — it holds account handles and asset URLs. |
+| **`design/virality-results.json`** | Nine clips run through the platform's virality predictor, with job ids and per-region figures so the ranking is reproducible rather than remembered. Records the two hypotheses that were tested and refuted alongside the one that survived. |
+| **`design/asset-ranks.md`** | What got promoted for main-asset consideration and why — videos by measurement, stills by lane and pipeline health, with the difference between those two kinds of claim stated up front. |
 
 ### Inside the director's bible
 
@@ -56,7 +58,7 @@ No build step, no dependencies, no account, no network calls.
 | **Pipeline & Gates** | Five hard locks: identity, string, timing, motion, picture. Nothing downstream starts until the gate above holds. |
 | **Frame String** | All 39 anchor frames, shared joins and bridge frames, as an interactive ledger. |
 | **Model Matrix** | Every video model compared on max length, resolution, frame roles and references. |
-| **Higgsfield** | The live tab. A 42 × 4 coverage board of what the account actually holds against what the bible plans, the trained identities and element handles, and the pull loop: refresh → read the gap → generate → refresh again. |
+| **Higgsfield** | The live tab. The canvas the film is generated on and the build order for it, a 42 × 4 coverage board of what the account actually holds against what the bible plans, the trained identities and element handles, the measured lighting finding, and the pull loop: refresh → read the gap → generate → refresh again. |
 | **Paper Kit** | The twelve printable thinking sheets, a live grid maker for the four storyboard geometries, the methods panel, and the notes camera for photographed paper. |
 | **Key Vault** | BYOK storage with a `.env` export for local tooling. Browser storage only. |
 

@@ -1228,6 +1228,21 @@ section[data-ch="higgs"]{--sc:var(--jade)}
   font-size:13.5px;line-height:1.6;color:var(--ink-2);max-width:82ch
 }
 .hf-rule b{color:var(--ink)}
+.hf-canvas{
+  border:1px solid var(--gold-line);border-radius:12px;background:var(--gold-soft);
+  padding:16px 18px;margin-top:14px
+}
+.hf-canvas h4{font-size:14.5px;margin:0 0 5px}
+.hf-canvas p{font-size:13.5px;line-height:1.6;color:var(--ink-2);max-width:80ch}
+.hf-canvas p b{color:var(--ink)}
+.hf-cq{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:9px;margin-top:13px}
+.hf-cqi{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:11px 13px}
+.hf-cqi .o{font:700 9px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:5px}
+.hf-cqi b{font-size:13px;display:block}
+.hf-cqi span.w{font-size:12px;line-height:1.5;color:var(--ink-3);display:block;margin-top:3px}
+.hf-cqi code{font:11px/1 var(--mono);color:var(--ink-2);background:var(--surface-2);
+  border:1px solid var(--line-soft);border-radius:4px;padding:2px 5px;display:inline-block;margin-top:6px}
 #now-spec{margin-top:12px}
 .vbody.sv .prompt{margin-top:0}
 
@@ -2507,14 +2522,85 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   </div>
 
   <div class="hf-bar">
-    <a class="hf-go" href="https://higgsfield.ai/cinema-studio" target="_blank" rel="noopener">
-      Open Cinema Studio &#8599;</a>
+    <a class="hf-go" href="https://higgsfield.ai/generate/@drawingsquid1334/ai-film-festival?elements=1&amp;canvasProjectId=fd65cff2-8d25-44cf-a5b2-19a9267f3bcf"
+       target="_blank" rel="noopener">Open the canvas &#8599;</a>
+    <a class="hf-go ghost" href="https://higgsfield.ai/cinema-studio" target="_blank" rel="noopener">
+      Cinema Studio &#8599;</a>
     <a class="hf-go ghost" href="https://higgsfield.ai/assets" target="_blank" rel="noopener">Assets &#8599;</a>
     <a class="hf-go ghost" href="https://higgsfield.ai/image" target="_blank" rel="noopener">Image &#8599;</a>
     <button class="hf-go pull" id="hf-refresh">&#8635; Refresh from account</button>
     <label class="hf-go ghost" for="hf-file" style="cursor:pointer">Import snapshot&hellip;</label>
     <input type="file" id="hf-file" accept="application/json,.json" hidden>
     <span class="vault-status" id="hf-stat">No snapshot loaded</span>
+  </div>
+
+  <div class="hf-canvas">
+    <h4>The canvas is where the work happens now, and here is the unglamorous reason</h4>
+    <p>Generation through the platform API bills credits. The account holds <b>0.03 credits</b> on the
+    ultra plan, and a Nano Banana Pro image costs 2 &mdash; so nothing can be generated from the tooling
+    side, at any quality, regardless of what the plan allows. The <b>unlimited allowance is a property of
+    the web app</b>, not of the key. That makes the canvas the only surface where the next 26 assets can
+    actually be made, and it happens to also be the surface the festival expects the work to be made on.</p>
+    <p style="margin-top:9px">So the division of labour is fixed, not preferred: <b>this document owns the
+    prompts and the order; the canvas owns the pixels.</b> Everything below is written to be pasted into
+    that canvas in sequence.</p>
+
+    <h4 style="margin:16px 0 5px">What the account actually holds &mdash; the shape of it</h4>
+    <p>Sixteen asset sheets have matched generations. <b>All sixteen are characters.</b> The twenty-six
+    with nothing against them are every location, every lighting plate, every prop and creature, every
+    effect, and five Turned variants. The cast is cast; the world is not built. Read the board below with
+    that in mind &mdash; it is not a scattering of gaps, it is one clean line through the middle of the
+    project.</p>
+
+    <div class="hf-cq">
+      <div class="hf-cqi"><span class="o">Canvas order 1</span><b>Three lighting plates</b>
+        <span class="w">The Sun, the Ocean, the Island. Every other frame inherits its key, its
+        contrast and its palette from one of these three, so a plate made late invalidates everything
+        made before it.</span><code>l1 &middot; l2 &middot; l3 &mdash; lane A</code></div>
+      <div class="hf-cqi"><span class="o">Canvas order 2</span><b>Six locations</b>
+        <span class="w">Courtyard, Nacre Beach, the corals, the white temple, Keeper&rsquo;s Isle,
+        Machira from orbit. Drop the matching plate on the canvas first and generate the location
+        beside it, so the light is inherited rather than re-described.</span>
+        <code>courtyard &middot; beach &middot; bgbloom &middot; temple &middot; bgisle &middot; bgmachira</code></div>
+      <div class="hf-cqi"><span class="o">Canvas order 3</span><b>Seven props and creatures</b>
+        <span class="w">The Founding Stone, the aura shell, coral plating, the whole leviathan, the
+        iron spears, the twelve ships, the frozen tear. These are held in shot, so they need the
+        location behind them settled first.</span>
+        <code>stone &middot; shell &middot; coral &middot; levbody &middot; propore &middot; ships &middot; proptear</code></div>
+      <div class="hf-cqi"><span class="o">Canvas order 4</span><b>Four effects, five Turned</b>
+        <span class="w">The hollow, the segmented mind, the floating mountain, the kill beat &mdash;
+        then the Turned domain variants. Last because each one is a modifier applied to work that has
+        to exist first.</span>
+        <code>fxhollow &middot; fxmind &middot; fxmountain &middot; fxkill &middot; b*</code></div>
+    </div>
+
+    <p style="margin-top:13px"><b>The fourteen clean element handles are already live in the account</b>
+    and appear in the canvas&rsquo;s Elements panel &mdash; drag them in rather than describing a face.
+    They are listed further down this page. The legacy handles carrying version suffixes and the novel&rsquo;s
+    vocabulary are the ones to leave alone; the API cannot delete them, so they have to be cleared by hand.</p>
+  </div>
+
+  <div class="hf-rule">
+    <b>What nine measured clips say about how to light the remaining plates.</b> Every clip in the
+    account under sixteen seconds was run through the platform&rsquo;s virality predictor. The result is
+    a clean split with nothing crossing it: <b>high-contrast images on a dark ground score 51&ndash;56;
+    diffuse bright fields score 47&ndash;49.</b> That holds across three video models, four subjects,
+    three aspect ratios and two weeks of dates, and the mind-wandering proxy orders the whole table
+    almost by itself. A bright even field gives the eye nowhere to fix.
+    <br><br>
+    Two tidier explanations were tested and killed on the way there, so neither gets re-run: <em>close
+    and singular beats spectacle</em> died when a reef flyover with no subject at all outscored a lone
+    walking figure; <em>kling3_0_turbo beats seedance by six points</em> looked airtight at four clips
+    against four with zero overlap, until the kling courtyard-on-the-Sun control came back eight points
+    below every other kling clip. <b>Do not pick a video model on that evidence.</b>
+    <br><br>
+    <b>The consequence for the plates.</b> Movement I is the Sun and the Sun lost four times out of
+    four. That is not an argument against the opening &mdash; a sustained bright oner is what Movement I
+    <em>is</em>, and the festival cut keeps it. It is an argument that Movement I is never the material
+    social cuts come from, and that when generating <b>l2</b> and <b>l3</b> the thing worth pushing for
+    is a dark ground with high local contrast, because those two movements carry everything that has to
+    travel. Full figures and method in <code>design/virality-results.json</code> and
+    <code>design/asset-ranks.md</code>. They are proxy metrics on nine clips, not an audience.
   </div>
 
   <div class="hf-grid" id="hf-summary"></div>
