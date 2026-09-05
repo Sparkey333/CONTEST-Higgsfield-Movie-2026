@@ -86,11 +86,17 @@ finished film. The best-scoring material is also the safest to post, which does 
 
 ## Stills — judged structurally
 
-Sixteen of the forty-two asset sheets have generations attributed to them by prompt match. **All
-sixteen are characters.** The twenty-six with nothing against them are every location, every lighting
-plate, every prop and creature, every effect, and five Turned domain variants.
+> **Correction, Sep 5.** The attribution script that produces these counts matched generations to
+> prompts on the first 400 characters. The split-screen character sheets share a preamble longer than
+> that, so Caedom's mortal and ascended forms were attributed to each other, and the first version of
+> this section had them backwards. The script now compares the whole prompt. Every count below is from
+> the corrected index; Tier 3 records what was built on the wrong one before it was caught.
 
-That is the shape of the project right now: **the cast is cast and the world is not built.**
+As of the morning of Sep 5, sixteen of the forty-two asset sheets had generations attributed to them,
+and all sixteen were characters. The twenty-six with nothing against them were every location, every
+lighting plate, every prop and creature, every effect, and five Turned domain variants — **the cast was
+cast and the world was not built.** By that evening all forty-two had A-lane generations and every one
+of the twenty-six had a clean element handle. What follows ranks what exists now.
 
 ### Ranking signals
 
@@ -116,35 +122,48 @@ element handle.
 | The Turned — attunement ladder | 8 | nano_banana_2 | — |
 | Aura grammar — core vs hollow | 8 | nano_banana_2 | — |
 
-### Tier 2 — one re-render away
+### Tier 2 — rendered by more than one engine
 
-These have an A lane, but it was rendered by **two different models**, which is precisely the drift
-the A lane exists to prevent. Re-render each A lane on one engine before locking identity at Gate A.
+These have an A lane rendered by more than one model, which is precisely the drift the A lane exists
+to prevent. Counts below are from the **corrected** index (see the correction note above) and include
+the Sep 5 re-renders. The platform labels a Nano Banana Pro request `nano_banana_2` and a Nano Banana 2
+request `nano_banana_flash`; the majority label in every lane is `nano_banana_2`, so "one engine" here
+means *request Pro*.
 
-| Asset | A lane split | Handle |
+| Asset | A lane by label | Handle |
 |---|---|---|
-| Alder | 8 × nano_banana_2 + 4 × text2image_soul_v2 | `@alder` |
-| Wren | 8 × nano_banana_2 + 4 × text2image_soul_v2 | `@wren` |
-| Caedom — the mortal form | 4 × nano_banana_2 + 4 × text2image_soul_v2 | `@caedom-mortal` |
-| The Threadwright | 4 × nano_banana_2 + 2 × text2image_soul_v2 | `@threadwright` |
-| Turned — Water and its Phases | 4 × text2image_soul_v2 + 2 × soul_cinematic + 1 × seedream_v5_pro | — |
+| Alder | 11 × nano_banana_2 · 4 × text2image_soul_v2 · 4 × nano_banana_flash | `@alder` |
+| Wren | 12 × nano_banana_2 · 4 × text2image_soul_v2 · 4 × nano_banana_flash | `@wren` |
+| Caedom — the ascended form | 5 × nano_banana_2 · 4 × text2image_soul_v2 · 4 × nano_banana_flash | `@caedom-ascended` |
+| Caedom — the mortal form | 4 × nano_banana_2 · 4 × nano_banana_flash — **all eight made Sep 5** | `@caedom-mortal` (see below) |
+| The Threadwright | 7 × nano_banana_2 · 2 × text2image_soul_v2 · 4 × nano_banana_flash | `@threadwright` |
+| Turned — Water and its Phases | six labels across 16 images | `turned-water` not yet created |
+| Oriane — battle damage | 8 × text2image_soul_v2 · 1 × seedance_2_5 | `@oriane-damaged` |
 
-**The brothers are the urgent case.** Alder and Wren have to read as the same age, the same height,
-and unmistakably related, and their identity sheets are currently two-thirds one engine and one-third
-another. Pick nano_banana_2 — it is the majority on both — and re-render the four odd ones.
+Every lane above now has at least seven images under its majority label, which is enough to lock
+identity from. **Select from the majority label only** — the `_flash` and `soul_v2` images are extras,
+not the sheet.
 
 *A worry that turned out to be unfounded, recorded so it is not re-investigated:* several A lanes use
-`text2image_soul_v2`, and the account's only trained Soul is mislabelled — named for Caedom, resolving
-to Oriane's images. If those generations had been Soul-conditioned, Wren and Caedom would be wearing
-Oriane's face. They were not: **no `soul_id` is attached to any generation in any A lane.** The model
-was used text-to-image. The sheets are clean.
+`text2image_soul_v2`, and the account's oldest Soul is mislabelled — named for Caedom, resolving to
+Oriane's images. If those generations had been Soul-conditioned, they would be wearing Oriane's face.
+They were not: **no `soul_id` is attached to any generation in any A lane.** The sheets are clean.
 
-### Tier 3 — blocked
+### Tier 3 — the one that was wrong, and what it cost
 
-**Caedom — the ascended form** has B, C and D lanes and **no A lane at all**. It is the form Scene 1
-is played in, and it is the one character with no identity sheet. Its element handle
-`@caedom-ascended` was sourced from lane B as a stopgap and is labelled as such. This is the single
-highest-priority character generation left.
+The first version of this file said Caedom's **ascended** form had no A lane. The corrected index says
+the opposite: **the ascended form had eight; the mortal form had none until Sep 5.** Three things were
+built on the wrong reading before it was caught:
+
+- The element handle `@caedom-mortal`, created Aug 29, points at an **ascended** image. It has to be
+  swapped in the web UI to one of the eight mortal sheets made Sep 5 (job `e25c1241` is the first).
+- A Soul named `caedom-mortal` was trained Sep 5 on four ascended and four mortal images. It is
+  contaminated and should be deleted. A replacement, `caedom-before`, was trained the same hour from the
+  eight genuine mortal sheets only.
+- The Soul `caedom-ascended` is correct: all five of its training images are the ascended form.
+
+The mortal form is now the character with the *newest* identity sheet rather than the oldest, and it has
+never been looked at by a person. It goes first at Gate A.
 
 ### Tier 4 — the twenty-six with nothing
 

@@ -34,9 +34,12 @@ import sys
 
 def norm(t):
     """Prompts drift by entity encoding and whitespace between the app and the
-    platform; compare on letters and digits only."""
+    platform; compare on letters and digits only. The whole prompt is compared:
+    the split-screen character sheets share a preamble longer than 400
+    characters, and a truncated key let the last one indexed swallow the rest
+    (Caedom's ascended A lane showed as missing for a day because of it)."""
     t = html.unescape(t or "")
-    return re.sub(r"[^a-z0-9]+", "", t.lower())[:400]
+    return re.sub(r"[^a-z0-9]+", "", t.lower())
 
 
 def main():

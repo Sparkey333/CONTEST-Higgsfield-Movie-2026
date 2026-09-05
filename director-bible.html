@@ -2580,6 +2580,39 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
     vocabulary are the ones to leave alone; the API cannot delete them, so they have to be cleared by hand.</p>
   </div>
 
+  <div class="hf-canvas" style="border-color:var(--jade-line);background:var(--jade-soft)">
+    <h4>What was generated on Sep 5, and what it changed</h4>
+    <p><b>Every one of the 42 asset sheets now has A-lane generations in the account.</b> The twenty-six
+    that were empty that morning &mdash; four plates, six locations, seven props and creatures, four
+    effects, five Turned variants &mdash; were generated through the API in batches of twelve, and every
+    one of them was promoted to a clean production-name element handle the same hour. The five A lanes
+    that had been rendered by two engines were re-rendered on one. Five Souls are trained or training:
+    <code>alder</code>, <code>wren</code>, <code>oriane</code>, <code>caedom-mortal</code>,
+    <code>caedom-ascended</code>. The exact route from here to a finished film is in
+    <code>design/path-to-video.md</code>.</p>
+
+    <div class="hf-cq">
+      <div class="hf-cqi"><span class="o">Found on the way</span><b>The platform labels results one tier down</b>
+        <span class="w">Request Nano Banana Pro and the generation is labelled <code>nano_banana_2</code>; request
+        Nano Banana 2 and it is labelled <code>nano_banana_flash</code>. The existing lanes carry the
+        <code>nano_banana_2</code> label, so matching them means <em>requesting Pro</em>. Twenty-four
+        re-renders were done the wrong way round before this was caught and are superseded.</span></div>
+      <div class="hf-cqi"><span class="o">Found on the way</span><b>Two kinds of filter rejection</b>
+        <span class="w">The Thrall sheet was rejected until re-worded &mdash; <em>dominion</em>, <em>blank eyes</em>,
+        <em>body slack</em> were the likely triggers, and the bible now carries the calmer wording. Separately,
+        two of twenty-four clean character sheets were rejected while the identical prompt passed three of
+        four times in the same batch. That second kind is noise: re-submit once, do not rewrite.</span></div>
+      <div class="hf-cqi"><span class="o">Left for the web UI</span><b>Handles the API cannot touch</b>
+        <span class="w">Soul training auto-creates a junk element per Soul (every <code>-1</code> handle)
+        &mdash; delete them. <b><code>caedom-mortal</code> has pointed at an <em>ascended</em> image since
+        Aug 29</b> because the attribution script confused the two forms; swap it to a Sep 5 mortal sheet.
+        <code>caedom-ascended</code> still points at its lane-B stopgap; swap it to the new A sheet. Two Souls
+        should go: <code>Caedom</code> (it is Oriane) and <code>caedom-mortal</code> (half ascended) &mdash;
+        <code>caedom-before</code> replaces it. Twenty-three legacy handles carry the novel&rsquo;s vocabulary;
+        the list is in the snapshot file.</span></div>
+    </div>
+  </div>
+
   <div class="hf-rule">
     <b>What nine measured clips say about how to light the remaining plates.</b> Every clip in the
     account under sixteen seconds was run through the platform&rsquo;s virality predictor. The result is
