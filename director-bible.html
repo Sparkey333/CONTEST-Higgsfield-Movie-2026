@@ -5650,7 +5650,7 @@ const RUN=[
 
   /* Shape an API page like the snapshot the matcher writes. Prompt matching is
      the same rule the script uses, so both routes produce one board. */
-  function norm(t){ return String(t||"").toLowerCase().replace(/[^a-z0-9]+/g,"").slice(0,400); }
+  function norm(t){ return String(t||"").toLowerCase().replace(/[^a-z0-9]+/g,""); }
   function fromApi(items){
     var idx={};
     PREP.forEach(function(p){ p.v.forEach(function(v){
