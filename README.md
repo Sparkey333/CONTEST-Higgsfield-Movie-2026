@@ -39,6 +39,7 @@ No build step, no dependencies, no account, no network calls.
 | **`design/higgsfield-snapshot.py`** | Turns a Higgsfield generation pull into the bible's coverage board, matching generations back to assets by prompt text. Writes `higgsfield.local.json`, which is gitignored — it holds account handles and asset URLs. |
 | **`design/virality-results.json`** | Nine clips run through the platform's virality predictor, with job ids and per-region figures so the ranking is reproducible rather than remembered. Records the two hypotheses that were tested and refuted alongside the one that survived. |
 | **`design/asset-ranks.md`** | What got promoted for main-asset consideration and why — videos by measurement, stills by lane and pipeline health, with the difference between those two kinds of claim stated up front. |
+| **`design/canvas-skeletons.md`** | The canvas, scene by scene: one board per scene, the handles to drop on it, and the start and end anchor of every shot with the job id of the placeholder generated for it on Sep 6. |
 
 ### Inside the director's bible
 

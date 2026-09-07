@@ -1,6 +1,7 @@
 # Path to video — the delta from where the production stands to a compliant film
 
-Written Sep 5, revised the same afternoon once the deadline and the day's generations were confirmed. This is
+Written Sep 5, revised the same afternoon once the deadline and the day's generations were confirmed, and again
+on Sep 6 after the audit and the anchor skeleton pass. This is
 a delta against the bible's 34-step RUN, not a rewrite of it. Step numbers below are RUN step numbers. Where
 this file and the bible disagree on the account's state, this file is current.
 
@@ -15,10 +16,17 @@ second move. Check it again before every gate.
 Of the 34 RUN steps: steps 1–3, 5, 11, 13 and 14 are done; **steps 12 and 15 finished on Sep 5** — every one of
 the 42 asset sheets now has an A-lane generation in the account, and every one of the 26 that were empty that
 morning (four plates, six locations, seven props and creatures, four effects, five Turned variants) has a clean
-production-name element handle. Steps 4 and 7–10 are done to the point of Gate A: five Souls exist
-(`alder`, `wren`, `oriane` ready; `caedom-mortal` and `caedom-ascended` training), and the five A lanes that had
+production-name element handle. Steps 4 and 7–10 are done to the point of Gate A: six Souls exist
+(`alder`, `wren`, `oriane`, `caedom-ascended`, `caedom-before` ready; `caedom-mortal` trained but contaminated, to be deleted), and the five A lanes that had
 been rendered by two engines were re-rendered on one. Step 16, Gate A, is the next thing to attempt and can be
-attempted today. **Steps 17–34 have not begun: 0 of 39 anchors exist, 0 of 23 shots exist.**
+attempted today. **Steps 17–34 had not begun on Sep 5: 0 of 39 anchors, 0 of 23 shots.**
+
+**Sep 6.** The Sep 5 jobs were audited: 76 terminal, 73 completed, 3 filter rejections each covered by a clean pass.
+Every one of the 42 assets now has a clean handle (six created today), and the Ocean plate was regenerated with the
+dark-ground rule as `plate-ocean-dark`. **All 39 anchors now exist as a skeleton pass** — one image each,
+`nano_banana_pro` at 21:9, handles attached by element id, the previous frame attached wherever section 3 says so.
+They are placeholders for the canvas: Gate A has still not been held, and the batch-of-four, select-one pass in
+Stage 6 replaces each of them. 0 of 23 shots exist. The board layout, scene by scene, is `canvas-skeletons.md`.
 
 The film is image-first — every shot is a motion pass between two anchor stills — so the nine days divide
 cleanly: roughly three for the anchors (Stages 6–7 below), three for the motion pass (Stage 8), two for
@@ -43,8 +51,8 @@ D lanes until Gate A, exactly as RUN 15 says.
 - **Count:** 4 (part of batch 1's 12).
 - **Approval:** judge at thumbnail size (lumen). mv2 must contain no warm colour at all. mv2 and mv3 get the
   dark-ground / high-local-contrast bias (section 6); mv1 does not.
-- **Then:** `show_reference_elements create` — one clean handle per plate (`plate-sun`, `plate-ocean`,
-  `plate-island`, `plate-bombardment`). The API cannot rename or delete, so the name is final on creation.
+- **Then:** `show_reference_elements create` — one clean handle per plate (`plate-sun`, `plate-ocean` — superseded on Sep 6 by
+  `plate-ocean-dark` — `plate-island`, `plate-bombardment`). The API cannot rename or delete, so the name is final on creation.
 - **Why first:** every location inherits its key from a plate. A plate made late invalidates every location
   made before it.
 
@@ -54,7 +62,7 @@ D lanes until Gate A, exactly as RUN 15 says.
   reference so the light is inherited rather than re-described. Batch 1 carries these; regenerate any
   location whose plate is rejected at Stage 1.
 - **Count:** 6. **Approval:** one per sheet; reject anything whose key direction disagrees with its plate.
-- **Then:** `show_reference_elements create` for each (`courtyard`, `nacre-beach`, `bloom`, `temple`,
+- **Then:** `show_reference_elements create` for each (`courtyard-of-worlds`, `nacre-beach`, `corals-abyss`, `white-temple`,
   `keepers-isle`, `machira-orbit`).
 
 ### Stage 3 — Props and creatures (RUN 15) · done Sep 5
@@ -65,7 +73,7 @@ D lanes until Gate A, exactly as RUN 15 says.
   courtyard).
 - **Count:** 7. **Approval:** one per sheet. The leviathan is the one to be strict about — S10 locks identity
   to this image and there is no other reference for it.
-- **Then:** handles for `stone`, `shell`, `coral`, `leviathan`, `ore`, `ships`, `tear`.
+- **Then:** handles `founding-stone`, `aura-shell`, `leviathan-plating`, `leviathan`, `iron-spears`, `twelve-ships`, `frozen-tear`.
 
 ### Stage 4 — Effects and Turned variants (RUN 12 + 15) · done Sep 5
 - **What:** FX-hollow, FX-mind, FX-mountain, FX-strike-blast; then the five missing Turned domain sheets.
@@ -73,7 +81,10 @@ D lanes until Gate A, exactly as RUN 15 says.
   glow — attach the aura rule sheet as reference so it is decided once. Turned variants attach the `turned`
   handle and the attunement ladder so the three ranks match the group sheet.
 - **Count:** 9. **Approval:** one per sheet. Turned: no armour, no uniforms, no glowing eyes.
-- **Then:** handles for the four effects. The Turned variants do not need handles; they are modifiers.
+- **Then:** handles `fx-hollow`, `fx-segmented-mind`, `fx-floating-mountain`, `fx-kill-beat`. The Turned variants got handles
+  too (`turned-energy`, `turned-gravity`, `turned-metals`, `turned-thrall`, `turned-anchor`; `turned-water` and
+  `turned-hollows` on Sep 6), with `ladder-attunement`, `ladder-oriane` and `aura-grammar` beside them so a rank
+  sheet can be attached to a shot.
 
 ### Stage 5 — Single-model re-renders and Soul training (RUN 4, 7, 8, 9, 10) · done Sep 5, two Souls still training
 - **Re-render:** Alder, Wren, Caedom mortal, Threadwright, Turned-Water. Each A lane is currently split
@@ -85,19 +96,24 @@ D lanes until Gate A, exactly as RUN 15 says.
   (typically 3–4 of 4). Then the height check: Alder and Wren side by side, equal height, age only in the
   face — reject any Wren frame where he is shorter. 20 images total.
 - **Caedom ascended:** lane A is in batch 1 (previously the only character with no A lane; the live
-  `caedom-ascended` handle was built from lane B as a stopgap and must be replaced — create
-  `caedom-ascended-a` since the old handle cannot be deleted from the API).
-- **Train Souls:** `show_characters train` for **Caedom** (from the ascended A lane plus the re-rendered
-  mortal A lane, so the bone structure carries across both forms), **Alder** and **Wren** (separate Souls,
-  never one element for two people). **Oriane** already has a Soul — the one named Caedom; rename it
-  `oriane-soul` in the web UI, do not retrain. **Threadwright and Keepers do not need Souls**: the
+  `caedom-ascended` handle was built from lane B as a stopgap and must be replaced — the Sep 5 Soul
+  training auto-created `caedom-ascended-1` from that A sheet, and that is the handle to use; the old one cannot be
+  deleted from the API).
+- **Train Souls:** `show_characters train` for **Caedom twice** — `caedom-ascended` from the ascended A lane and
+  `caedom-before` from the eight mortal sheets; one Soul for both forms was tried as `caedom-mortal` and came out
+  contaminated, so a Soul holds one form only — then **Alder** and **Wren** (separate Souls,
+  never one element for two people). **Oriane**'s Soul is `oriane`; the Aug 19 Soul named `Caedom` also resolves to her
+  images and should be deleted, not retrained. **Threadwright and Keepers do not need Souls**: the
   Threadwright's face is never shown and the Keepers are an order, not a face; their existing handles serve.
 - **Why now:** Soul training is the one stage with wall-clock latency that cannot be parallelised away.
   Start it the moment the re-renders are selected, while Stages 2–4 are still generating.
 - **Gate A (RUN 16):** everything from Stages 1–5 on one screen, in the canvas. Look for a face that moved.
   Nothing in Stage 6 begins before this holds.
 
-### Stage 6 — 39 anchors in film order (RUN 17, 18, 19)
+### Stage 6 — 39 anchors in film order (RUN 17, 18, 19) · skeleton pass done Sep 6; selection pass open
+- **Done Sep 6, one image per anchor:** `nano_banana_pro`, 21:9, 2k, handles attached by element id, the previous
+  frame attached wherever section 3 says so, in four dependency rounds (24, 11, 3, 1). Job ids and the board layout
+  are in `canvas-skeletons.md`. These are placeholders for the canvas; the counts below are the pass that replaces them.
 - **Tool:** `generate_image_batch`, 21:9. Two engines by frame type:
   - Anchors with a face at medium or closer (F04–F08, F15, F21, F34, F35, F36): **soul_2 with the
     character's soul_id**, the movement's plate attached. Verify soul_2 offers 21:9 first; if it caps at
@@ -153,26 +169,26 @@ haze, hard terminator) — the composed prompt must not inherit "sea spray on th
 movement's plate; frames that depend on a previous frame attach that frame as an image reference — the
 model cannot see "the previous frame" unless you hand it over.
 
-**Session I — the Sun (plate-sun, courtyard, oriane-soul, caedom Soul, tear). 11 anchors.**
+**Session I — the Sun (plate-sun, courtyard-of-worlds, `oriane` Soul, `caedom-ascended` Soul, frozen-tear). 11 anchors.**
 1. **F02** — courtyard resolving out of glare, no figures. First, because every other Sun frame inherits
    this room, and because it needs no Soul, so it can start before Caedom finishes training. The glare must
    be genuinely blinding at centre: the S1→S2 extension seam lives inside it.
 2. **F01** — near-black, plasma at the bottom edge. Trivial; generate it so the from-scratch rule is met.
 3. **F03** — two figures from behind, worlds on stems. Handles are enough (backs), F02 attached.
 4. **F04** — reverse two-shot, 40 mm. Both Souls. Same room, different lens — attach F03.
-5. **F05** — Oriane turning her head. oriane-soul, F04 attached.
-6. **F06** — locked MCU, 75 mm, lit from below. oriane-soul. Then immediately:
+5. **F05** — Oriane turning her head. `oriane` Soul, F04 attached.
+6. **F06** — locked MCU, 75 mm, lit from below. `oriane` Soul. Then immediately:
 7. **F07** — identical framing, wet eyes. Generate with **F06 attached as reference** and the prompt
    restating lens, height and framing in full. "Identical to F06" specifies nothing on its own.
 8. **F08** — Caedom's hands on her face. Both Souls.
 9. **F36** — Caedom alone at the courtyard edge. Made here, under this plate, with F03 attached so he
    stands where two people stood — not in the Movement III session weeks later.
-10. **F09** — macro on the frozen tear, one facet, interior a moving blue. `tear` handle. Then, before
+10. **F09** — macro on the frozen tear, one facet, interior a moving blue. `frozen-tear` handle. Then, before
     anything else in Movement II:
 11. **F37** — the tear as one point of light on the luminous floor; rhymes with F01. F02 attached.
 
-**Session II — the Ocean (plate-ocean, oriane-soul, oriane-ascended, oriane-damaged, turned,
-threadwright, leviathan, coral, ore, lev-rider, machira-orbit). 14 anchors.**
+**Session II — the Ocean (plate-ocean-dark, `oriane` Soul, oriane-ascended, oriane-damaged, turned, turned-water,
+threadwright, leviathan, leviathan-plating, iron-spears, lev-rider, machira-orbit). 14 anchors.**
 12. **F10** — open storm ocean at the exact scale, colour and shape of F09's facet. **F09 attached.** This
     pair is made in the pairing, not in the edit.
 13. **F11** (shared S6/S7) — Oriane running, camera beside, world streaked. Greaves on.
@@ -182,30 +198,30 @@ threadwright, leviathan, coral, ore, lev-rider, machira-orbit). 14 anchors.**
 16. **F14** — over the Threadwright's shoulder, quarry small and distant. No warmth anywhere; this frame is
     graded from the dark side. `threadwright` handle, face never shown.
 17. **F15** — her fingers mid-gesture, marionettes answering. F14 attached.
-18. **F16** — the leviathan erupting, camera low. `leviathan` + `coral` handles.
+18. **F16** — the leviathan erupting, camera low. `leviathan` + `leviathan-plating` handles.
 19. **F17** (shared S10/S11) — Oriane tiny between the jaws. From here on she is **barefoot**
     (oriane-ascended) — the greaves coming off is the escalation.
 20. **B01** (bridge) — the flank filling frame to genuinely near-black. Reject anything at 70 % obscured.
 21. **F18** — she launches forward, lightning circulating in the shell. oriane-damaged marks from here.
 22. **F19** — orbital, the vortex eye open. Orbital look override, `machira-orbit` handle.
 23. **F20** — the eye beginning to close. **F19 attached**; same framing.
-24. **F21** — Oriane falling upward, fractures filling with light. oriane-soul + damaged.
+24. **F21** — Oriane falling upward, fractures filling with light. `oriane` Soul + damaged.
 25. **F22** — empty sky, planetary curvature, the green streak. Orbital look; F19 attached for the limb.
 
 **Session III — the Island (plate-island, then plate-bombardment from F27 onward, alder Soul, wren Soul,
-keeper, keeper-kneel, temple, keepers-isle, nacre-beach, ships, fx-mountain). 14 anchors.**
+keeper, keeper-kneel, white-temple, keepers-isle, nacre-beach, corals-abyss, twelve-ships, fx-floating-mountain). 14 anchors.**
 26. **F23** — Nacre Beach at dawn, the streak's residue as a low star. **F22 attached** for the streak's
     exact colour. Warm for the first time in three minutes.
 27. **F24** — two brothers stopped at the tide line, small in a very wide frame. Both Souls at this size are
     optional; handles suffice. Height check applies.
-28. **F25** — underwater reef, two silhouettes crossing far above. `bloom` handle.
+28. **F25** — underwater reef, two silhouettes crossing far above. `corals-abyss` handle.
 29. **F26** — the shelf edge and the black past it. Never resolve what is down there.
 30. **F27** — brothers staggering out of the surf. **Switch to plate-bombardment.**
-31. **F28** — boys flat on the sand, twelve ships in the same frame, backlit red. F27 attached; `ships`.
-32. **F29** — the white temple taking hits, no reaction. `temple`.
+31. **F28** — boys flat on the sand, twelve ships in the same frame, backlit red. F27 attached; `twelve-ships`.
+32. **F29** — the white temple taking hits, no reaction. `white-temple`.
 33. **B02** (bridge) — the dust wall, brown shadow, no legible shapes.
 34. **F30** (shared S19/S20) — two lines of Keepers kneeling, shot falling around them. `keeper-kneel`.
-35. **F31** — the mountain's particles falling, ships going under, heads still bowed. `fx-mountain`, F30
+35. **F31** — the mountain's particles falling, ships going under, heads still bowed. `fx-floating-mountain`, F30
     attached.
 36. **F32** — flat open ocean, nothing left. Plate-island again (aftermath).
 37. **F33** — temple doors closing, garden replanted.
@@ -319,7 +335,7 @@ about that) — every selection so far has been structural, not visual.
 - **Unlimited iteration on the images that decide the film:** F35 above all, then F06/F07, F17 and the
   F09/F10 pair. Do not spend API credits on the tenth variant of F35; that is what the canvas's allowance
   is for.
-- **The renames and deletes the API cannot do:** Soul `Caedom` → `oriane-soul`; the off-doctrine element
+- **The renames and deletes the API cannot do:** Soul `Caedom` → delete (Oriane's Soul is `oriane`); the off-doctrine element
   names listed in element-cleanup.md; deletion of the superseded `_v1…_v5` handles so nothing generates
   from the wrong one.
 - **Cinema Studio:** the stills reel at Gate C, the assembly at Gate E, watermark and packshot, the
@@ -373,16 +389,17 @@ finished film could later contradict.
 ## 7. One-screen checklist
 
 **Done on Sep 5 — do not redo:**
-- [x] 4 plates, 6 locations, 7 props/creatures, 4 effects, 5 Turned variants generated · 27 clean handles created
+- [x] 4 plates, 6 locations, 7 props/creatures, 4 effects, 5 Turned variants generated · 27 clean handles created (Sep 5) · 6 more on Sep 6, so every asset has one
 - [x] Alder, Wren, Caedom-mortal, Threadwright, Turned-Water re-rendered on one engine (request Pro; it lands on the `nano_banana_2` label)
-- [x] Souls trained: `alder`, `wren`, `oriane` ready · `caedom-mortal`, `caedom-ascended` training
-- [ ] In the web UI: delete the five `-1` junk handles Soul training created · swap `caedom-ascended` to its new A sheet · delete the Soul named `Caedom` (it is Oriane) · clear the 23 legacy novel-vocabulary handles
+- [x] Souls ready: `alder`, `wren`, `oriane`, `caedom-ascended`, `caedom-before` · `caedom-mortal` contaminated, delete
+- [x] Sep 6: all 76 Sep 5 jobs audited terminal · `plate-ocean-dark` regenerated with the dark-ground rule · 39 skeleton anchors, one each, in `canvas-skeletons.md`
+- [ ] In the web UI: delete `alder-1`, `wren-1`, `oriane-1`, `caedom-mortal-1` · delete the elements `caedom-mortal`, `caedom-ascended`, `plate-ocean` (use `caedom-before`, `caedom-ascended-1`, `plate-ocean-dark`) · delete the Souls `Caedom` (it is Oriane) and `caedom-mortal` · clear the 23 legacy novel-vocabulary handles
 
 **The film — nine days, Sep 5 to Sep 14:**
 - [ ] **Look at every sheet generated on Sep 5.** They were made one per asset and never seen by the person who ordered them; approve or regenerate each in the canvas before anything is built on it
 - [ ] Alder/Wren height check side by side
 - [ ] **Gate A** — every reference on one screen; no face moved
-- [ ] Anchors Session I (F02 first, F09 last-but-one, F36/F37 here) · Session II (F10 with F09 attached;
+- [ ] Anchors, selection pass (the skeleton exists): Session I (F02 first, F09 last-but-one, F36/F37 here) · Session II (F10 with F09 attached;
       barefoot from F17; B01 truly black) · Session III (plate-bombardment from F27; F23 with F22 attached;
       F35 batch of 8–12)
 - [ ] **Gate B** — 39 on one contact sheet, read twice

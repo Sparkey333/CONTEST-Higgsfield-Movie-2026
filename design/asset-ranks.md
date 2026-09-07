@@ -193,3 +193,45 @@ it perform on a metric it structurally cannot win.
   Everything above is inference from prompt text, lane structure, model, count and date.
 - **Clips over 16 seconds cannot be tested at all.** That rules out both 30 s 21:9 clips and every
   20 s seedance clip in the account.
+
+---
+
+## Sep 6 — completion audit, and the two-attribute rule
+
+Every job from Sep 5 was checked against the platform on Sep 6, and the question asked of each asset was the
+one set for the pass: *is it complete, and can more than two attributes of it be improved?*
+
+**Completion.** 76 jobs across seven batches. 73 completed. Three were content-filter rejections — the first
+Thrall sheet (re-worded, then passed), one of four Alder sheets and one of four Threadwright sheets (the identical
+prompt passed three times in the same batch) — and each was covered by a clean pass. Nothing is missing. Every
+one of the 42 assets now has a clean handle: `turned-hollows`, `turned-water`, `ladder-oriane`, `ladder-attunement`
+and `aura-grammar` were created on Sep 6 from stable A-lane jobs, closing the five gaps this file's Tier 1 and
+Tier 2 tables showed as `—`.
+
+**Attributes checked per A lane:** aspect ratio against the lane's spec; whether the references the plan calls
+for were attached (plate for a location, location for a prop, group sheet and ladder for a Turned variant, aura
+rule for an effect); the dark-ground rule where section 6 of `path-to-video.md` places it; the model label; and
+whether the current bible prompt is the one that was generated. Findings:
+
+| Gap | Assets | Count |
+|---|---|---:|
+| Generated text-only, no reference attached | every Sep 5 sheet | 49 |
+| 16:9 where the lane asks for 21:9 | the seven props, `fx-hollow`, `fx-segmented-mind`, the six Turned domain sheets | 14 |
+| Dark-ground rule missing from the prompt | `l2` only (`l3` had it) | 1 |
+| Wrong model label, prompt drift | none | 0 |
+
+No asset reaches three. The props, the two effects and the Turned domain sheets sit at two (aspect ratio plus a
+missing reference); the locations and the other plates at one or none. **So under the rule, nothing was
+regenerated for quality** — the two shared gaps are batch-level decisions rather than per-asset defects, and both
+are corrected at no cost at the anchor stage, where every frame has its plate and its sheets attached by id.
+
+**The one regeneration, and why it does not contradict that.** `l2` sat at one gap, but the gap was an unfinished
+promise: the Sep 5 version of this file and of `path-to-video.md` said the dark-ground rule would go on both the
+Ocean and the Island plates, and only the Island got it. The l2 prompt now carries the rule; the plate was
+regenerated (job `66da2493`) and promoted as `plate-ocean-dark`; every Movement II anchor was generated against
+it. The old `plate-ocean` handle remains only because the API cannot delete it.
+
+**What was made on top of that.** All 39 anchors, one image each, as the skeleton for the canvas — see
+`canvas-skeletons.md`. They have not been looked at and are not ranked here; ranking a frame the person who
+ordered it has never seen would repeat the mistake this file warns about at the top.
+

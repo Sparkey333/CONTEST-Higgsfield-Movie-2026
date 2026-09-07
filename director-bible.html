@@ -2536,61 +2536,78 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   </div>
 
   <div class="hf-canvas">
-    <h4>The canvas is where the work happens now, and here is the unglamorous reason</h4>
-    <p>Generation through the platform API bills credits. The account holds <b>0.03 credits</b> on the
-    ultra plan, and a Nano Banana Pro image costs 2 &mdash; so nothing can be generated from the tooling
-    side, at any quality, regardless of what the plan allows. The <b>unlimited allowance is a property of
-    the web app</b>, not of the key. That makes the canvas the only surface where the next 26 assets can
-    actually be made, and it happens to also be the surface the festival expects the work to be made on.</p>
-    <p style="margin-top:9px">So the division of labour is fixed, not preferred: <b>this document owns the
-    prompts and the order; the canvas owns the pixels.</b> Everything below is written to be pasted into
-    that canvas in sequence.</p>
+    <h4>The canvas is where the work gets judged; the API is where it gets made</h4>
+    <p>Credits are topped up, so the division of labour settled on Sep 5 and it is not the one written here
+    before: <b>the API generates and creates</b> &mdash; batches of twelve, handles attached by id, a clean
+    element the moment a sheet is selected &mdash; and <b>the canvas selects, arranges and iterates</b>.
+    Everything countable happens from the tooling side; everything that needs eyes happens here. The one
+    thing that crosses between them is a chosen image&rsquo;s id.</p>
+    <p style="margin-top:9px">Open the project with the Elements panel showing (the link at the top of this
+    tab does that). <b>Every one of the 42 asset sheets now answers to a production-name handle</b>, so a face
+    or a place is dragged in, never described.</p>
 
-    <h4 style="margin:16px 0 5px">What the account actually holds &mdash; the shape of it</h4>
-    <p>Sixteen asset sheets have matched generations. <b>All sixteen are characters.</b> The twenty-six
-    with nothing against them are every location, every lighting plate, every prop and creature, every
-    effect, and five Turned variants. The cast is cast; the world is not built. Read the board below with
-    that in mind &mdash; it is not a scattering of gaps, it is one clean line through the middle of the
-    project.</p>
+    <h4 style="margin:16px 0 5px">Three canvases, one per lighting plate</h4>
+    <p>Build one canvas per movement, because every frame on it inherits the same plate and the same look
+    line, and a board that mixes plates is a board where the light drifts. Each scene is a row: the plate
+    top-left, the location beside it, the people and props under them, then the anchor frames in shot order
+    &mdash; the start and end of every shot, with shared frames sitting once between the two shots they
+    join. <b>All thirty-nine anchors exist as of Sep 6</b>, one image each, generated from the handles with
+    the previous frame attached. They are in the library under Sep 6 and are the placeholders each board is
+    laid out from. The per-shot table with job ids is <code>design/canvas-skeletons.md</code>.</p>
 
     <div class="hf-cq">
-      <div class="hf-cqi"><span class="o">Canvas order 1</span><b>Three lighting plates</b>
-        <span class="w">The Sun, the Ocean, the Island. Every other frame inherits its key, its
-        contrast and its palette from one of these three, so a plate made late invalidates everything
-        made before it.</span><code>l1 &middot; l2 &middot; l3 &mdash; lane A</code></div>
-      <div class="hf-cqi"><span class="o">Canvas order 2</span><b>Six locations</b>
-        <span class="w">Courtyard, Nacre Beach, the corals, the white temple, Keeper&rsquo;s Isle,
-        Machira from orbit. Drop the matching plate on the canvas first and generate the location
-        beside it, so the light is inherited rather than re-described.</span>
-        <code>courtyard &middot; beach &middot; bgbloom &middot; temple &middot; bgisle &middot; bgmachira</code></div>
-      <div class="hf-cqi"><span class="o">Canvas order 3</span><b>Seven props and creatures</b>
-        <span class="w">The Founding Stone, the aura shell, coral plating, the whole leviathan, the
-        iron spears, the twelve ships, the frozen tear. These are held in shot, so they need the
-        location behind them settled first.</span>
-        <code>stone &middot; shell &middot; coral &middot; levbody &middot; propore &middot; ships &middot; proptear</code></div>
-      <div class="hf-cqi"><span class="o">Canvas order 4</span><b>Four effects, five Turned</b>
-        <span class="w">The hollow, the segmented mind, the floating mountain, the kill beat &mdash;
-        then the Turned domain variants. Last because each one is a modifier applied to work that has
-        to exist first.</span>
-        <code>fxhollow &middot; fxmind &middot; fxmountain &middot; fxkill &middot; b*</code></div>
+      <div class="hf-cqi"><span class="o">Canvas I</span><b>The Sun</b>
+        <span class="w">Scenes 1&ndash;3 and the coda: rise and courtyard (S1&ndash;S2), &ldquo;there must be
+        risk&rdquo; and &ldquo;he&rsquo;s your brother&rdquo; (S3&ndash;S4), the tear freezes (S5), tomorrow
+        again (S23). Eleven anchors: F01&ndash;F09, F36, F37.</span>
+        <code>plate-sun &middot; courtyard-of-worlds &middot; oriane &middot; caedom-ascended-1 &middot; frozen-tear &middot; aura-shell</code></div>
+      <div class="hf-cqi"><span class="o">Canvas II</span><b>The Ocean</b>
+        <span class="w">Scenes 4&ndash;7: the run and the wall (S6&ndash;S8), the Threadwright&rsquo;s eyes
+        (S9), the leviathan and the lightning river (S10&ndash;S12), the vortex from orbit and the Stone
+        leaving her (S13&ndash;S14). Fourteen anchors: F10&ndash;F22, B01. Dark ground throughout &mdash; this
+        is where the social cuts come from.</span>
+        <code>plate-ocean-dark &middot; oriane &middot; oriane-ascended &middot; oriane-damaged &middot; turned &middot; turned-water &middot; threadwright &middot; leviathan &middot; leviathan-plating &middot; machira-orbit &middot; founding-stone &middot; ladder-oriane</code></div>
+      <div class="hf-cqi"><span class="o">Canvas III</span><b>The Island</b>
+        <span class="w">Scenes 8&ndash;11: Nacre Beach and the abyss (S15&ndash;S16), twelve ships and the
+        temple (S17&ndash;S18), the Keepers and the mountain (S19&ndash;S21), what Alder saw (S22). Fourteen
+        anchors: F23&ndash;F35, B02. Switch the plate to plate-bombardment from F27 to F31.</span>
+        <code>plate-island &middot; plate-bombardment &middot; nacre-beach &middot; corals-abyss &middot; keepers-isle &middot; white-temple &middot; twelve-ships &middot; keeper &middot; keeper-kneel &middot; fx-floating-mountain &middot; alder &middot; wren</code></div>
+      <div class="hf-cqi"><span class="o">On every board</span><b>Two rules that are not optional</b>
+        <span class="w">Chain from the <em>rendered</em> last frame of the previous shot, never from the
+        anchor still &mdash; the anchor is the target, the render is the truth. And spend the canvas&rsquo;s
+        unlimited allowance on the frames that decide the film: F35 first, then F06/F07, F17 and the F09/F10
+        pair. The API made one of each; the canvas makes the tenth.</span>
+        <code>select 1 &middot; then re-run the face with its Soul</code></div>
     </div>
 
-    <p style="margin-top:13px"><b>The fourteen clean element handles are already live in the account</b>
-    and appear in the canvas&rsquo;s Elements panel &mdash; drag them in rather than describing a face.
-    They are listed further down this page. The legacy handles carrying version suffixes and the novel&rsquo;s
-    vocabulary are the ones to leave alone; the API cannot delete them, so they have to be cleared by hand.</p>
+    <p style="margin-top:13px"><b>The skeleton is a skeleton.</b> Every anchor was made once, from handles
+    rather than Souls, and nobody has looked at it. Gate A &mdash; every reference on one screen &mdash; still
+    comes first; then each placeholder is replaced by the batch-of-four, select-one pass in
+    <code>design/path-to-video.md</code>, with <code>soul_2</code> for any face at medium or closer.</p>
   </div>
 
   <div class="hf-canvas" style="border-color:var(--jade-line);background:var(--jade-soft)">
-    <h4>What was generated on Sep 5, and what it changed</h4>
-    <p><b>Every one of the 42 asset sheets now has A-lane generations in the account.</b> The twenty-six
+    <h4>What was generated on Sep 5 and Sep 6, and what it changed</h4>
+    <p><b>Sep 5.</b> Every one of the 42 asset sheets got A-lane generations in the account. The twenty-six
     that were empty that morning &mdash; four plates, six locations, seven props and creatures, four
     effects, five Turned variants &mdash; were generated through the API in batches of twelve, and every
     one of them was promoted to a clean production-name element handle the same hour. The five A lanes
-    that had been rendered by two engines were re-rendered on one. Five Souls are trained or training:
-    <code>alder</code>, <code>wren</code>, <code>oriane</code>, <code>caedom-before</code>,
-    <code>caedom-ascended</code>. The exact route from here to a finished film is in
-    <code>design/path-to-video.md</code>.</p>
+    that had been rendered by two engines were re-rendered on one. Six Souls are ready:
+    <code>alder</code>, <code>wren</code>, <code>oriane</code>, <code>caedom-ascended</code>,
+    <code>caedom-before</code> and the Aug 19 <code>Caedom</code>, which is Oriane&rsquo;s face and goes.
+    The route from here to a finished film is <code>design/path-to-video.md</code>.</p>
+    <p style="margin-top:9px"><b>Sep 6.</b> All 76 jobs from Sep 5 were checked against the platform: 73
+    completed, three were filter rejections and each was covered by a clean pass. Two things the audit
+    found and left alone, on purpose: every Sep 5 sheet was generated text-only, without its plate or group
+    sheet attached, and fourteen world sheets landed at 16:9 where the lane asks for 21:9. Neither crosses
+    the bar for a regeneration on its own, and both are corrected for free at the anchor stage, where the
+    plate and the sheet are attached to every frame. One thing it fixed: the Ocean plate never received the
+    dark-ground rule the Island plate got, so its prompt now carries it and the plate was regenerated as
+    <code>plate-ocean-dark</code>. Six handles the account lacked were created &mdash;
+    <code>turned-hollows</code>, <code>turned-water</code>, <code>ladder-oriane</code>,
+    <code>ladder-attunement</code>, <code>aura-grammar</code>, <code>plate-ocean-dark</code> &mdash; and the
+    39 anchors were generated in four dependency rounds, one image each; one frame failed on the
+    platform&rsquo;s side and passed unchanged on the second try.</p>
 
     <div class="hf-cq">
       <div class="hf-cqi"><span class="o">Found on the way</span><b>The platform labels results one tier down</b>
@@ -2598,19 +2615,21 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
         Nano Banana 2 and it is labelled <code>nano_banana_flash</code>. The existing lanes carry the
         <code>nano_banana_2</code> label, so matching them means <em>requesting Pro</em>. Twenty-four
         re-renders were done the wrong way round before this was caught and are superseded.</span></div>
-      <div class="hf-cqi"><span class="o">Found on the way</span><b>Two kinds of filter rejection</b>
-        <span class="w">The Thrall sheet was rejected until re-worded &mdash; <em>dominion</em>, <em>blank eyes</em>,
-        <em>body slack</em> were the likely triggers, and the bible now carries the calmer wording. Separately,
-        two of twenty-four clean character sheets were rejected while the identical prompt passed three of
-        four times in the same batch. That second kind is noise: re-submit once, do not rewrite.</span></div>
+      <div class="hf-cqi"><span class="o">Found on the way</span><b>Three kinds of failure</b>
+        <span class="w">A content rejection: the Thrall sheet was refused until re-worded &mdash; <em>dominion</em>,
+        <em>blank eyes</em>, <em>body slack</em> were the likely triggers. A stochastic rejection: two of
+        twenty-four clean character sheets refused while the identical prompt passed three of four times in
+        the same batch. A platform failure: one anchor came back <em>failed</em> with no reason and passed
+        unchanged a minute later. None of the three is a prompt problem. Re-submit once; do not rewrite.</span></div>
       <div class="hf-cqi"><span class="o">Left for the web UI</span><b>Handles the API cannot touch</b>
-        <span class="w">Soul training auto-creates a junk element per Soul (every <code>-1</code> handle)
-        &mdash; delete them. <b><code>caedom-mortal</code> has pointed at an <em>ascended</em> image since
-        Aug 29</b> because the attribution script confused the two forms; swap it to a Sep 5 mortal sheet.
-        <code>caedom-ascended</code> still points at its lane-B stopgap; swap it to the new A sheet. Two Souls
-        should go: <code>Caedom</code> (it is Oriane) and <code>caedom-mortal</code> (half ascended) &mdash;
-        <code>caedom-before</code> replaces it. Twenty-three legacy handles carry the novel&rsquo;s vocabulary;
-        the list is in the snapshot file.</span></div>
+        <span class="w">Soul training auto-creates an element per Soul. Two of those are the handles to use:
+        <b><code>caedom-before</code></b> is the mortal form (the <code>caedom-mortal</code> element has pointed
+        at an <em>ascended</em> image since Aug 29) and <b><code>caedom-ascended-1</code></b> is built from
+        the A sheet (the <code>caedom-ascended</code> element is still the lane-B stopgap). Delete: the
+        <code>-1</code> handles for alder, wren, oriane and caedom-mortal; the elements <code>caedom-mortal</code>,
+        <code>caedom-ascended</code> and <code>plate-ocean</code>; the Souls <code>Caedom</code> and
+        <code>caedom-mortal</code>. Twenty-three legacy handles carry the novel&rsquo;s vocabulary; the list is
+        in the snapshot file.</span></div>
     </div>
   </div>
 
@@ -2631,9 +2650,9 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
     <b>The consequence for the plates.</b> Movement I is the Sun and the Sun lost four times out of
     four. That is not an argument against the opening &mdash; a sustained bright oner is what Movement I
     <em>is</em>, and the festival cut keeps it. It is an argument that Movement I is never the material
-    social cuts come from, and that when generating <b>l2</b> and <b>l3</b> the thing worth pushing for
-    is a dark ground with high local contrast, because those two movements carry everything that has to
-    travel. Full figures and method in <code>design/virality-results.json</code> and
+    social cuts come from, and that <b>l2</b> and <b>l3</b> should be dark-ground plates with high local
+    contrast, because those two movements carry everything that has to travel &mdash; the Island plate got
+    that rule on Sep 5 and the Ocean plate on Sep 6, as <code>plate-ocean-dark</code>. Full figures and method in <code>design/virality-results.json</code> and
     <code>design/asset-ranks.md</code>. They are proxy metrics on nine clips, not an audience.
   </div>
 
@@ -3686,7 +3705,7 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
 /* ================= ASSET PROMPTS ================= */
 const LOOK={
  1:"Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture.",
- 2:"Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame.",
+ 2:"Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Dark ground: the sea and the sky sit near-black, and the lightning, the crests and the crystal are the only bright shapes.",
  3:"Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events."
 };
 
@@ -4226,7 +4245,7 @@ const PREP=[
  v:[
  {c:"A",n:"Key plate",w:"Image &rarr; 21:9 &rarr; plate only",tech:"Empty frame &middot; fully desaturated",sv:"PLATE-mv2-light-A",
   why:"The rule this plate enforces is negative: there is no warm colour in this movement anywhere. Every later frame gets checked against it for a stray gold highlight that would break the contrast with Movements I and III.",
-  p:`Empty lighting plate, no characters, no story. Cinematic 2.39:1. A storm ocean under a bruised violet sky, wrong-shaped clouds converging on the horizon. Violet lightning, driving rain, sea spray hanging in the air. Long-lens compression, spray on the lens, water tearing past in horizontal streaks. Fully desaturated &mdash; there is no warm colour anywhere in this frame and there must not be. This plate defines the colour and key direction for every Movement II frame. No people, no text, no watermark.`},
+  p:`Empty lighting plate, no characters, no story. Cinematic 2.39:1. A storm ocean under a bruised violet sky, wrong-shaped clouds converging on the horizon. Violet lightning, driving rain, sea spray hanging in the air. Long-lens compression, spray on the lens, water tearing past in horizontal streaks. Fully desaturated &mdash; there is no warm colour anywhere in this frame and there must not be. The sea and the sky sit dark &mdash; a near-black ground with the lightning, the wave crests and the hanging spray as the only bright shapes, so the frame reads as high local contrast on a dark field and never as an even grey wash. This plate defines the colour and key direction for every Movement II frame. No people, no text, no watermark.`},
  {c:"B",n:"Sea state ladder",w:"Image &rarr; 21:9 &rarr; four panels",tech:"Four sea states &middot; same camera",sv:"PLATE-mv2-light-B",
   why:"The chase escalates and the water has to escalate with it. Fixing four states in advance stops the sea from arbitrarily calming down between two shots that are meant to be continuous.",
   p:`Four-panel sea-state study, no characters, identical camera position and lens in every panel, fully desaturated throughout. Panel one: heavy swell, rain, low cloud, no whitecaps. Panel two: a rising sea with the tops tearing off in horizontal streaks. Panel three: a wall of water standing vertically and going over to grey ice, the surface fracturing as it freezes. Panel four: the same sea flattened and glassy under a sky that has opened into a slow rotating eye. Violet lightning present in all four at different intensities. Bruised violet sky, spray on the lens, no warm colour anywhere. No people, no text, no watermark.`},
