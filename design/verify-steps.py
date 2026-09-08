@@ -254,6 +254,59 @@ def check_filed(f):
              "%d of %d still outside the project" % (rows - filed, rows)])
 
 
+def check_elements(f):
+    """The account should hold one handle per thing the film attaches, and nothing else.
+
+    element-map.json carries a decision per handle. This does not check the
+    account — no API can read a deletion — it checks that a decision exists for
+    every handle and reports what is still waiting on the web UI.
+    """
+    em = load(os.path.join(ROOT, "design/element-map.json"), {})
+    els = em.get("elements") or {}
+    if not els:
+        return ("blocked", 0, 1, ["design/element-map.json has no elements"])
+    keep = [n for n, e in els.items() if e.get("decision") == "keep"]
+    drop = [n for n, e in els.items() if str(e.get("decision", "")).startswith("delete")]
+    undecided = [n for n, e in els.items() if not e.get("decision")]
+    legacy = em.get("legacy_elements") or []
+    souls = [n for n, x in (em.get("souls") or {}).items() if x.get("decision") == "delete"]
+    ev = ["%d handles kept, %d marked for deletion, %d legacy names, %d Souls to delete"
+          % (len(keep), len(drop), len(legacy), len(souls))]
+    if undecided:
+        return ("partial", len(els) - len(undecided), len(els),
+                ev + ["no decision recorded for: " + ", ".join(undecided)])
+    done = (em.get("_cull") or {}).get("done_in_web_ui")
+    if done:
+        return ("pass", len(els), len(els), ev + ["cull recorded done %s" % done])
+    ev.append("the cull is decided but not yet actioned — deletion is web-UI only; "
+              "record it as _cull.done_in_web_ui when finished")
+    return ("partial", len(keep), len(els), ev)
+
+
+def check_dialogue(f):
+    """Every speaking shot names its own lines, and the cut exists as data."""
+    d = load(os.path.join(ROOT, "design/dialogue.json"), {})
+    cut = d.get("cut") or {}
+    if not cut:
+        return ("todo", 0, 1, ["design/dialogue.json has no cut"])
+    spoken = [s["id"] for s in f.bible["SHOTS"]
+              if "DIALOGUE" in clean(([v for v in s["v"] if v["c"] == "A"] or [{}])[0].get("p", ""))]
+    missing = [k for k in cut if k not in spoken]
+    lines = sum(len(v) for v in cut.values())
+    ev = ["%d speaking shots, %d lines, %d of %d screenplay words kept"
+          % (len(cut), lines, d.get("kept_words", 0), d.get("screenplay_words", 0))]
+    cast = d.get("voice", {}).get("cast") or {}
+    uncast = [k for k, v in cast.items() if not v]
+    if missing:
+        return ("partial", len(spoken), len(cut),
+                ev + ["in dialogue.json but not in the prompt: " + ", ".join(missing)])
+    if uncast:
+        ev.append("voices not chosen yet: " + ", ".join(uncast)
+                  + " — casting takes are generated, listen and record the pick")
+        return ("partial", len(spoken), len(cut) + 1, ev)
+    return ("pass", len(cut) + 1, len(cut) + 1, ev + ["cast recorded"])
+
+
 WORLD = ["courtyard", "beach", "bgbloom", "temple", "bgisle", "bgmachira",
          "stone", "shell", "coral", "levbody", "propore", "ships", "proptear",
          "fxhollow", "fxmind", "fxmountain", "fxkill"]
@@ -295,6 +348,8 @@ STEPS = {
                                           "plate-island", "plate-bombardment"])),
     15: dict(check=lambda f: need_assets(f, WORLD, WORLD_EL)),
     16: dict(kind="gate", gate="A", manual=[
+        "Before the gate: work the element cull in design/element-map.json — the API",
+        "cannot delete a handle or a Soul, so every deletion there is a web-UI action.",
         "Put every reference on one screen, in the canvas or a contact sheet.",
         "Read left to right twice looking for one thing: a face that moved.",
         "Alder beside Wren — same height, age only in the face.",
@@ -335,11 +390,16 @@ STEPS = {
         "caedom-before, caedom-ascended-1, caedom-mortal-1, alder-1, wren-1, oriane-1.",
         "Open each, confirm the source file is a Higgsfield generation, and record it",
         "in design/festival-rules.md. A Soul inherits whatever was trained into it."]),
-    31: dict(kind="manual", manual=[
-        "SUBTITLES OR VOICE-OVER: the rule wants English subtitles OR an English",
-        "voice-over. Decide which limb you are satisfying. Subtitles are picture, so",
-        "they are burned in inside Cinema Studio, never in an outside editor.",
-        "Music, voice and sound design all have to be AI-generated — not licensed.",
+    31: dict(check=check_dialogue, manual=[
+        "The film is in English, so the language rule is met by the dialogue itself;",
+        "subtitles are optional here, and if you burn them in they are picture and so",
+        "are made inside Cinema Studio.",
+        "Listen to the eight casting takes, pick one voice per character, and write it",
+        "into voice.cast in design/dialogue.json.",
+        "Generate the full cut with seed_audio (0.1 credits a line), then UPLOAD every",
+        "audio file into the submission project — made elsewhere and never uploaded is",
+        "the classic disqualification.",
+        "Music and sound design all have to be AI-generated — not licensed.",
         "Upload every audio file into the festival project. Files made elsewhere",
         "and never uploaded are the classic disqualification.",
         "S13 stays silent. Confirm its audio is off, not merely quiet."]),
@@ -358,6 +418,7 @@ STEPS = {
 }
 
 EXTRA = {
+    16: check_elements,
     23: check_refs_in_shots,
 }
 

@@ -16,7 +16,7 @@ unreachable from this container — verify anything below against
 | **Publication** | The finished work published **publicly**. | RUN 33, and the logged-out check is already in it. |
 | **Audio** | Music, voice and sound design **AI-generated**, files **uploaded into the submission project**, creator holds the rights. | RUN 31 says exactly this. |
 | **Real people** | Inputs **cannot include a real person's face or voice — not even your own**. | ⚠️ **Open. See below.** |
-| **Language** | Any language, real or fictional, **with English subtitles or voice-over**. | ⚠️ **Open. See below.** |
+| **Language** | Any language, real or fictional, **with English subtitles or voice-over**. | Met — the film is in English. See Gap 2, corrected. |
 | **Format** | MP4 or MOV, up to 4K. | Finish target is 4K; confirm the container at export. |
 | **Team** | Solo or up to four, 18+. | Solo. |
 | **Entries** | Unlimited, each a standalone film. | One. |
@@ -43,19 +43,19 @@ is a Higgsfield generation. If any one of them traces back to a photograph of a 
 delete the handle, delete any Soul trained from it, and regenerate the identity from a text
 prompt. Then record the outcome in this file.
 
-## Gap 2 — nothing in the 34 steps produces subtitles
+## Gap 2 — corrected: the film is in English, so the language rule is met by the dialogue itself
 
-The rule is *English subtitles **or** voice-over*, so the film may already satisfy it: there
-is dialogue in Movement I and a V.O. in S22. But no step in the run sheet produces a
-subtitle file, and no step confirms that the spoken English covers enough of the film to
-count as the alternative. A five-minute film with two minutes of wordless Movement II is
-exactly the case where "we have a voice-over" turns out not to be an answer.
+The first reading of this rule was too cautious. It exists for films in another language:
+*any language, real or fictional, **with** English subtitles or voice-over*. This film's dialogue
+and voice-over are English, so the rule is satisfied the moment the speech is actually in the
+cut — which, as of Sep 8, it was not: every concept clip was generated silent. That is now
+closed. `design/dialogue.json` carries the cut (nine speaking shots, ~180 of the screenplay's
+556 words, budgeted at 2.4 words a second with a quarter left for air), and each of those nine
+shot prompts carries its exact lines.
 
-**What to do at RUN 31, with the sound:** decide which limb of the rule you are satisfying.
-If it is subtitles, burn them in or ship a sidecar with the export — and remember they are
-picture, so they are made in Cinema Studio, not in an outside editor. If it is voice-over,
-confirm the English is continuous enough to carry the film to a judge who speaks no other
-language.
+Subtitles are therefore optional here, not required. They are still worth burning in for
+accessibility and for a jury watching on a laptop — and if you do, they are picture, so they are
+made inside Cinema Studio.
 
 ## Canvas, from the platform's own guidance
 

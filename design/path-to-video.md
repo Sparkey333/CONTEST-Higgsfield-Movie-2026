@@ -24,10 +24,12 @@ attempted today. **Steps 17–34 had not begun on Sep 5: 0 of 39 anchors, 0 of 2
 **Sep 8 — read this before anything else in this file.** Two facts landed today and between them they
 decide how the remaining six days are spent.
 
-**One: the API cannot pay for the final pass.** Eleven concept clips at 720p on the budget engine cost about
-112 credits each, and 2323 credits remain. Twenty-three final clips on the engines named in the SHOTS rows,
-at 1080p or 4K, with a second attempt on most and six budgeted for S20, is several times that. The arithmetic
-does not close.
+**One: the final pass fits, and only just — this replaces an earlier claim here that it did not.**
+That claim was extrapolated from one 720p concept clip and it was wrong. Preflighted properly on Sep 8 with
+`get_cost` against the models the SHOTS rows actually name, one attempt at all 23 final clips is **1,575
+credits**, the anchor selection pass is 312 and the voice is 2 — **1,889 against a balance of 2,299**. So it
+closes, with 410 credits of head-room: about five re-runs of an average shot. Enough for the shots that go
+wrong, not enough for a change of mind. Section 5b has the per-shot table and two ways to buy more margin.
 
 **Two: the API cannot put an asset in the submission project.** `list_workspaces` returns exactly one private
 workspace and no project target; nothing in the generation call places a result inside a Cinema Studio project.
@@ -382,8 +384,10 @@ about that) — every selection so far has been structural, not visual.
 
 **The recommendation, revised Sep 8, and it is now a firm yes.** Before today the canvas was a convenience.
 It is now the only surface that can finish the film, for two reasons that are each sufficient on their own:
-the API cannot place an asset inside the submission project that Rule 7 requires, and the remaining credits
-cannot pay for a final pass. Both were open questions until today; neither is now.
+the API cannot place an asset inside the submission project that Rule 7 requires — that one is absolute — and
+the credit head-room for a final pass is thin enough (410 credits after one clean attempt, section 5b) that
+spending it on API renders which then cannot be filed would be the worst of both. The first reason alone is
+sufficient and does not depend on the arithmetic.
 
 **The folder question, settled model by model.** A `folder_id` parameter does exist, but only on
 `minimax_h3` and `minimax_h3_max`, only as a creation-time argument, and on no image model — and there is
@@ -453,6 +457,40 @@ the shots that carry the film — S10, S20, S13, S12, S16 — which are also the
 **What to carry across for each shot,** all of it already written down: the A-lane prompt from the bible's
 shot list, which now ends in the exact references to attach; the start and end anchor from
 `design/canvas-skeletons.md`; and the model and duration from the same row. Nothing has to be re-derived.
+
+---
+
+## 5b. The budget, measured rather than estimated
+
+Preflighted with `get_cost` on 2026-09-08, so these are the platform's own numbers:
+`wan3_0` 16 s 1080p **56**, `cinematic_studio_3_0` 14 s 720p **70**, `seedance_2_5` 15 s 1080p
+21:9 **135**. Applied per shot against the models the SHOTS rows already name,
+`design/budget.json` gives:
+
+| | credits |
+| --- | ---: |
+| One attempt at all 23 final clips | **1,575** |
+| Anchor selection pass, 39 × 4 at 2 each | 312 |
+| Voice, 19 lines at 0.1 | 2 |
+| **One clean pass, end to end** | **1,889** |
+| Balance | 2,299 |
+| **Head-room for retries** | **410** — about 26% of the video pass |
+
+So the film fits, and it fits with less margin than it looks: 410 credits buys roughly five
+re-runs of an average shot, or two of S2 and S10. That is enough for the shots that go wrong,
+not enough for a change of mind. The order of spending follows: hold the gates *before* the
+final pass, because a structural change after it costs video rather than images.
+
+**Two ways to buy margin if it runs close.** Drop the anchor selection pass from four variants
+to two on the twenty frames that are not identity or match frames — that is about 80 credits
+back for very little risk. And S2 at 162 is the single most expensive clip in the film for a
+drift through a courtyard; taken on `wan3_0` instead it is about 63.
+
+**One finding from the probe that is not about money.** `wan3_0` does not accept 21:9 — the
+call came back with `used: "16:9", reason: "closest supported aspect ratio"`. S1, S13 and S20
+are all assigned to it, and S20 is the mountain, one of the three shots the film is sold on.
+Either those three get reframed from 16:9 and lose height, or they move to a model that holds
+2.39:1 natively. Decide it at Gate C, not after the final pass.
 
 ---
 

@@ -29,7 +29,7 @@ Listed first because they get asked for by name. They also appear in their own s
 | ◆ | **S12** <br><small>concept clip</small> | `92d87626-73e7-4b75-8c79-5f8b09ae062e` | 2026-09-08 | `seedance_2_0_mini` | The camera pulls off the near-black flank and opens out, and she launches forwar |
 
 
-## The film's own assets — 93 generations
+## The film's own assets — 82 generations
 
 | | what | job | made | model | prompt |
 |---|---|---|---|---|---|
@@ -42,16 +42,11 @@ Listed first because they get asked for by name. They also appear in their own s
 |  | **@founding-stone** <br><small>reference handle</small> | `c640e786-5284-4367-9103-5a103e8a923b` | 2026-09-05 | `nano_banana_2` | Isolated prop study on a plain dark background, photoreal. A green-white stone r |
 |  | **@frozen-tear** <br><small>reference handle</small> | `9b033dbf-8a98-4b84-8596-7d821769b353` | 2026-09-05 | `nano_banana_2` | Isolated prop study on a plain dark background, photoreal, extreme macro. Four s |
 |  | **@fx-floating-mountain** <br><small>reference handle</small> | `333f2c9a-1b29-4f91-9951-4f58323a8900` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, low red setting sun, heavy haze. Four stages  |
-|  | **@fx-hollow** <br><small>reference handle</small> | `7d496e4b-5d73-4fcf-95f9-06fd1c1b5937` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, cold blue-grey storm light. Four scales of th |
-|  | **@fx-kill-beat** <br><small>reference handle</small> | `b03d9d69-dee5-4381-9724-a3d734c09e10` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, torrential rain, overcast storm light. Four s |
-|  | **@fx-segmented-mind** <br><small>reference handle</small> | `18f1eca5-f976-4962-8376-86666db17fd6` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, cold blue-grey storm light. Four studies of a |
-|  | **@iron-spears** <br><small>reference handle</small> | `bdb8aca8-4031-4968-ad34-ca36fe704d5d` | 2026-09-05 | `nano_banana_2` | Isolated prop study on a plain dark background, photoreal. Rods of raw iron ore  |
 |  | **@keeper** <br><small>reference handle</small> | `205ec84d-0904-409a-9d10-03c5906645cf` | 2026-08-29 | `nano_banana_2` | Character reference sheet for a uniformed order, five views arranged evenly in a |
 |  | **@keeper-kneel** <br><small>reference handle</small> | `22e33df1-58f7-4e34-a6e2-3f4407404f93` | 2026-08-29 | `nano_banana_2` | Cinematic still, 2.39:1, locked-off wide, static, photoreal. Two parallel lines  |
 |  | **@keepers-isle** <br><small>reference handle</small> | `5ac8a64d-43fc-4739-9e07-5fa98243d288` | 2026-09-05 | `nano_banana_2` | Establishing background plate, no characters. Cinematic 2.39:1, locked-off wide, |
 |  | **@ladder-attunement** <br><small>reference handle</small> | `d8a9b7e0-cc1d-464d-9b0c-5aacff2f232f` | 2026-08-29 | `nano_banana_2` | Character ladder sheet for a group, photoreal, cold blue-grey storm light, plain |
 |  | **@ladder-oriane** <br><small>reference handle</small> | `c01c00db-48d2-4e52-bdf7-6fb060092327` | 2026-08-29 | `nano_banana_2` | Character state ladder, photoreal, cold storm light, plain dark background, the  |
-|  | **@lev-rider** <br><small>reference handle</small> | `0a1bb8b8-b020-4d08-a33d-d19ace2f3054` | 2026-08-29 | `nano_banana_2` | Detail study, photoreal, overcast storm light, plain dark background. Four views |
 |  | **@leviathan** <br><small>reference handle</small> | `14592903-e982-4472-89c3-88ed7a54be72` | 2026-09-05 | `nano_banana_2` | Creature reference sheet, photoreal, overcast storm daylight, plain mid-grey bac |
 |  | **@leviathan-plating** <br><small>reference handle</small> | `35a9dc9f-d8bb-414a-b27c-74e6a4b98686` | 2026-09-05 | `nano_banana_2` | Texture and material study on a plain background, photoreal. The hide of an enor |
 |  | **@machira-orbit** <br><small>reference handle</small> | `1460be9e-466c-4cbc-a83f-594380e52a95` | 2026-09-05 | `nano_banana_2` | Establishing plate, no characters. Cinematic 2.39:1. A blue-green inhabited plan |
@@ -66,12 +61,6 @@ Listed first because they get asked for by name. They also appear in their own s
 |  | **@plate-sun** <br><small>reference handle</small> | `21db1b5a-0188-40a2-9747-5996928c8538` | 2026-09-05 | `nano_banana_2` | Empty lighting plate, no characters, no story. Cinematic 2.39:1. The surface of  |
 |  | **@threadwright** <br><small>reference handle</small> | `7116198c-e7ed-4925-9774-1bb661621fac` | 2026-08-29 | `text2image_soul_v2` | Character reference sheet, five views of the same figure arranged evenly in a ro |
 |  | **@turned** <br><small>reference handle</small> | `5fdfc755-3389-40af-95ce-c087b60be75b` | 2026-08-29 | `nano_banana_2` | Character reference sheet for a group, photoreal, cold blue-grey storm light, pl |
-|  | **@turned-anchor** <br><small>reference handle</small> | `5b672db8-b6bb-47c1-b140-fe90e8d69930` | 2026-09-05 | `nano_banana_2` | Character sheet, photoreal, cold storm light, plain dark background, three figur |
-|  | **@turned-energy** <br><small>reference handle</small> | `753c10ad-2ecf-4fa8-b961-79de15e5b95d` | 2026-09-05 | `nano_banana_2` | Character sheet, photoreal, cold storm light, plain dark background, three figur |
-|  | **@turned-gravity** <br><small>reference handle</small> | `0e0ce893-879a-4445-a50f-7938040f630b` | 2026-09-05 | `nano_banana_2` | Character sheet, photoreal, cold storm light, plain dark background, three figur |
-|  | **@turned-hollows** <br><small>reference handle</small> | `320a1df3-cd12-4154-b290-9932a3e49703` | 2026-08-29 | `nano_banana_2` | Character sheet, photoreal, cold blue-grey storm light, plain dark background, t |
-|  | **@turned-metals** <br><small>reference handle</small> | `72734a4c-3621-44f4-a5a4-c6a8ac9519db` | 2026-09-05 | `nano_banana_2` | Character sheet, photoreal, cold storm light, plain dark background, three figur |
-|  | **@turned-thrall** <br><small>reference handle</small> | `8f4aaa1a-d066-4a38-8597-c58e3a31168b` | 2026-09-05 | `nano_banana_2` | Character sheet, photoreal, cold storm light, plain dark background, three figur |
 |  | **@turned-water** <br><small>reference handle</small> | `0a7a84fc-6a50-491b-bc28-6ed9c6ceb9db` | 2026-09-05 | `nano_banana_2` | Character sheet, photoreal, cold blue-grey storm light, plain dark background, t |
 |  | **@twelve-ships** <br><small>reference handle</small> | `ebc798d9-7cfa-4a43-b96f-498d6463f195` | 2026-09-05 | `nano_banana_2` | Vessel reference sheet, photoreal, low red backlight, plain sea horizon. Four st |
 |  | **@white-temple** <br><small>reference handle</small> | `2230917c-4191-49dc-88ec-6d34fe25e65a` | 2026-09-05 | `nano_banana_2` | Establishing background plate, no characters. Cinematic 2.39:1. A white stone te |
@@ -170,7 +159,7 @@ A selection pass is four generations of one anchor, and only the one you choose 
 
 ## Totals
 
-- **93 generations belong in the project** (43 reference handles, 39 anchors, 11 clips)
+- **82 generations belong in the project** (32 reference handles, 39 anchors, 11 clips)
 - 6 creature shots
 - 15 recent generations that are **not** part of the film
 - 12 selection candidates waiting on a choice

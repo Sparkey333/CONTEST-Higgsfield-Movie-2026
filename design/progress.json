@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-08T21:42Z",
+ "generated": "2026-09-08T22:45Z",
  "deadline": "2026-09-14T23:59Z",
  "days_left": 6.1,
  "snapshot_present": true,
@@ -7,10 +7,10 @@
  "rollup": {
   "total": 34,
   "done": 14,
-  "partial": 4,
-  "todo": 16,
+  "partial": 5,
+  "todo": 15,
   "blocked": 0,
-  "pct": 51.4
+  "pct": 54.1
  },
  "steps": [
   {
@@ -241,9 +241,13 @@
    "have": 0,
    "need": 1,
    "evidence": [
+    "32 handles kept, 20 marked for deletion, 31 legacy names, 2 Souls to delete",
+    "the cull is decided but not yet actioned \u2014 deletion is web-UI only; record it as _cull.done_in_web_ui when finished",
     "not recorded in design/gates.json"
    ],
    "manual": [
+    "Before the gate: work the element cull in design/element-map.json \u2014 the API",
+    "cannot delete a handle or a Soul, so every deletion there is a web-UI action.",
     "Put every reference on one screen, in the canvas or a contact sheet.",
     "Read left to right twice looking for one thing: a face that moved.",
     "Alder beside Wren \u2014 same height, age only in the face.",
@@ -485,18 +489,24 @@
    "title": "Sound \u2014 and upload every audio file into the project",
    "phase": "Phase 7",
    "where": "Cinema Studio",
-   "kind": "manual",
-   "state": "todo",
-   "have": 0,
-   "need": 1,
+   "kind": "auto",
+   "state": "partial",
+   "have": 9,
+   "need": 10,
    "evidence": [
-    "manual step \u2014 no file can prove it"
+    "9 speaking shots, 19 lines, 184 of 556 screenplay words kept",
+    "voices not chosen yet: CAEDOM, WREN, ALDER \u2014 casting takes are generated, listen and record the pick"
    ],
    "manual": [
-    "SUBTITLES OR VOICE-OVER: the rule wants English subtitles OR an English",
-    "voice-over. Decide which limb you are satisfying. Subtitles are picture, so",
-    "they are burned in inside Cinema Studio, never in an outside editor.",
-    "Music, voice and sound design all have to be AI-generated \u2014 not licensed.",
+    "The film is in English, so the language rule is met by the dialogue itself;",
+    "subtitles are optional here, and if you burn them in they are picture and so",
+    "are made inside Cinema Studio.",
+    "Listen to the eight casting takes, pick one voice per character, and write it",
+    "into voice.cast in design/dialogue.json.",
+    "Generate the full cut with seed_audio (0.1 credits a line), then UPLOAD every",
+    "audio file into the submission project \u2014 made elsewhere and never uploaded is",
+    "the classic disqualification.",
+    "Music and sound design all have to be AI-generated \u2014 not licensed.",
     "Upload every audio file into the festival project. Files made elsewhere",
     "and never uploaded are the classic disqualification.",
     "S13 stays silent. Confirm its audio is off, not merely quiet."
@@ -545,9 +555,9 @@
    "kind": "auto",
    "state": "todo",
    "have": 0,
-   "need": 93,
+   "need": 82,
    "evidence": [
-    "93 generations belong in the project, newest made 2026-09-08",
+    "82 generations belong in the project, newest made 2026-09-08",
     "gates.json has no filing.filed_through \u2014 nothing recorded as moved",
     "the API has no folder call, so only the person doing it can record this"
    ],
