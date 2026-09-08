@@ -149,10 +149,30 @@ Made on or after 2026-09-06 and named by no handle, anchor or shot. A row here i
 |  | **—** <br><small>not referenced</small> | `5d11ae41-b3a8-47fb-82a8-757e96d909d0` | 2026-09-08 | `seedance_2_5` | summoned skeletal beast of the depths from this image is maintained, controlled  |
 |  | **—** <br><small>not referenced</small> | `b4cc7968-ad7f-4482-8419-6f2a3b8a68de` | 2026-09-08 | `seedance_2_5` | summoned skeletal beast of the depths from this image is maintained, controlled  |
 
+## Awaiting selection — 12 candidates for 3 anchors
+
+A selection pass is four generations of one anchor, and only the one you choose is an asset of the film. Choose, record it as `chosen` in `design/shot-ledger.json`, re-run this script, and the winner joins the list above while the other three stay out of the project.
+
+| pass | frame | job | note |
+|---|---|---|---|
+| scene-1 | **F01** | `622f1c5a-44e0-42df-b944-efe4d741a313` |  |
+| scene-1 | **F01** | `7af85cfb-0218-49b3-995d-09efd761cc9d` |  |
+| scene-1 | **F01** | `33f87edb-ec40-4536-99ae-8c09a0f63bf1` |  |
+| scene-1 | **F01** | `4a8300a5-06ab-42bc-ae2b-d868574dbb5c` |  |
+| scene-1 | **F02** | `3e3c8855-0646-4827-893b-57e5638c9aaf` |  |
+| scene-1 | **F02** | `58a154bc-b5de-4219-95cd-fb8e93499952` |  |
+| scene-1 | **F02** | `91512d7d-3575-4d0e-932a-6484663f26e7` |  |
+| scene-1 | **F02** | `0684db4a-40fa-453d-bd7f-171a43d852d4` |  |
+| scene-1 | **F03** | `1a7d48d5-4724-4369-824f-482bb444a030` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
+| scene-1 | **F03** | `5377d75c-b961-452d-afac-38ad6d904a50` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
+| scene-1 | **F03** | `31d5e449-8e7f-4dec-9a93-586508e3f1ad` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
+| scene-1 | **F03** | `ee236f3e-7d11-4928-bdcb-a7dd2bbfdb99` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
+
 ## Totals
 
 - **93 generations belong in the project** (43 reference handles, 39 anchors, 11 clips)
 - 6 creature shots
 - 15 recent generations that are **not** part of the film
+- 12 selection candidates waiting on a choice
 
 Souls and reference handles are workspace objects, not generations, so they are not filed themselves — the image behind each one is, and that is the row above carrying its `@handle`. `design/element-map.json` holds the whole join.

@@ -79,6 +79,14 @@ def wanted():
         if f.get("job"):
             out.setdefault(f["job"], (f.get("f", "?"), "anchor frame"))
     ledger = read(os.path.join(ROOT, "design/shot-ledger.json"), {})
+    # A selection pass is four candidates for one anchor. Only the chosen one is
+    # an asset of the film; the other three are exploration and stay out of the
+    # project. Until somebody chooses, none of them is required.
+    for pid, sp in (ledger.get("selection_passes") or {}).items():
+        for fid, fr in (sp.get("frames") or {}).items():
+            chosen = (sp.get("chosen") or {}).get(fid) if isinstance(sp.get("chosen"), dict) else None
+            if chosen:
+                out.setdefault(chosen, (fid, "anchor frame (chosen from %s)" % pid))
     for sid, s in (ledger.get("shots") or {}).items():
         for key, why in (("finished", "finished clip"), ("final", "final clip"),
                          ("concept", "concept clip")):
@@ -132,6 +140,17 @@ def main():
     order = {"reference handle": 0, "anchor frame": 1,
              "concept clip": 2, "final clip": 3, "finished clip": 4}
     rows.sort(key=lambda r: (order.get(r[2], 9), r[1]))
+
+    # candidates still waiting on a person
+    pending = []
+    ledger = read(os.path.join(ROOT, "design/shot-ledger.json"), {})
+    for pid, sp in (ledger.get("selection_passes") or {}).items():
+        chosen = sp.get("chosen") if isinstance(sp.get("chosen"), dict) else {}
+        for fid, fr in (sp.get("frames") or {}).items():
+            if chosen.get(fid):
+                continue
+            for j in fr.get("variants", []):
+                pending.append((pid, fid, j, fr.get("provisional")))
 
     since_ts = 0
     if a.since:
@@ -193,6 +212,17 @@ def main():
         for j, h in stray:
             L.append(line(j, "—", "not referenced", h))
 
+    if pending:
+        L += ["\n## Awaiting selection — %d candidates for %d anchors\n\n" % (
+                  len(pending), len({p[1] for p in pending})),
+              "A selection pass is four generations of one anchor, and only the one you choose "
+              "is an asset of the film. Choose, record it as `chosen` in "
+              "`design/shot-ledger.json`, re-run this script, and the winner joins the list "
+              "above while the other three stay out of the project.\n\n",
+              "| pass | frame | job | note |\n|---|---|---|---|\n"]
+        for pid, fid, j, prov in pending:
+            L.append("| %s | **%s** | `%s` | %s |\n" % (pid, fid, j, prov or ""))
+
     L += ["\n## Totals\n\n",
           "- **%d generations belong in the project** (%d reference handles, %d anchors, "
           "%d clips)\n" % (
@@ -202,6 +232,7 @@ def main():
               sum(1 for r in rows if r[2].endswith("clip"))),
           "- %d creature shots\n" % len(featured),
           "- %d recent generations that are **not** part of the film\n" % len(stray),
+          "- %d selection candidates waiting on a choice\n" % len(pending),
           "\nSouls and reference handles are workspace objects, not generations, so they are "
           "not filed themselves — the image behind each one is, and that is the row above "
           "carrying its `@handle`. `design/element-map.json` holds the whole join.\n"]

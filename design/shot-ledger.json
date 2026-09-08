@@ -26,7 +26,7 @@
    "title": "Rise out of the fire",
    "mv": 1,
    "d": 16,
-   "model": "wan3_0 \u00b7 16s \u00b7 1080p \u00b7 21:9",
+   "model": "wan3_0 · 16s · 1080p · 21:9",
    "concept": {
     "job": "3f413c2d-8799-4557-ae68-9c6b29153f02",
     "layer": "L1",
@@ -52,7 +52,7 @@
      "model": "seedance_2_5",
      "on": "2026-09-08",
      "text_only": true,
-     "why_not_concept": "generated with medias:[] and reference_elements:[] \u2014 no anchor, no element, so nothing in it holds an identity"
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
     },
     {
      "job": "3c5d65d9-6451-47fc-bdae-9e850561c4aa",
@@ -62,7 +62,7 @@
      "model": "seedance_2_5",
      "on": "2026-09-08",
      "text_only": true,
-     "why_not_concept": "generated with medias:[] and reference_elements:[] \u2014 no anchor, no element, so nothing in it holds an identity"
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
     }
    ]
   },
@@ -70,7 +70,7 @@
    "title": "The courtyard of worlds",
    "mv": 1,
    "d": 18,
-   "model": "seedance_2_5 \u00b7 video_extension forward \u00b7 18s",
+   "model": "seedance_2_5 · video_extension forward · 18s",
    "concept": {
     "job": "6e850701-c65d-4648-9d1a-5228ceb282c5",
     "layer": "L1",
@@ -96,7 +96,7 @@
      "model": "seedance_2_5",
      "on": "2026-09-08",
      "text_only": true,
-     "why_not_concept": "generated with medias:[] and reference_elements:[] \u2014 no anchor, no element, so nothing in it holds an identity"
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
     },
     {
      "job": "acec24ac-45af-4555-b08c-e5c7157608e5",
@@ -106,7 +106,7 @@
      "model": "seedance_2_5",
      "on": "2026-09-08",
      "text_only": true,
-     "why_not_concept": "generated with medias:[] and reference_elements:[] \u2014 no anchor, no element, so nothing in it holds an identity"
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
     },
     {
      "job": "c437bc36-25ea-470f-a562-7ad886fa9fb1",
@@ -116,7 +116,7 @@
      "model": "seedance_2_5",
      "on": "2026-09-08",
      "text_only": true,
-     "why_not_concept": "generated with medias:[] and reference_elements:[] \u2014 no anchor, no element, so nothing in it holds an identity"
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
     },
     {
      "job": "394484bc-42d0-4148-b1dd-7154c6213801",
@@ -126,45 +126,45 @@
      "model": "seedance_2_5",
      "on": "2026-09-08",
      "text_only": true,
-     "why_not_concept": "generated with medias:[] and reference_elements:[] \u2014 no anchor, no element, so nothing in it holds an identity"
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
     }
    ]
   },
   "S3": {
-   "title": "\u201cThere must be risk\u201d",
+   "title": "“There must be risk”",
    "mv": 1,
    "d": 14,
-   "model": "cinematic_studio_3_0 \u00b7 14s \u00b7 genre drama \u00b7 audio on",
+   "model": "cinematic_studio_3_0 · 14s · genre drama · audio on",
    "concept": null,
    "final": null,
    "finished": null,
    "drafts": []
   },
   "S4": {
-   "title": "\u201cHe's your brother\u201d",
+   "title": "“He's your brother”",
    "mv": 1,
    "d": 14,
-   "model": "minimax_hailuo (2.3) \u00b7 10s + hold, or cinematic_studio_3_0 \u00b7 14s",
+   "model": "minimax_hailuo (2.3) · 10s + hold, or cinematic_studio_3_0 · 14s",
    "concept": null,
    "final": null,
    "finished": null,
    "drafts": []
   },
   "S5": {
-   "title": "\u201cTomorrow\u201d \u2014 the tear freezes",
+   "title": "“Tomorrow” — the tear freezes",
    "mv": 1,
    "d": 18,
-   "model": "cinematic_studio_3_0 \u00b7 15s \u00b7 4K + 3s extension",
+   "model": "cinematic_studio_3_0 · 15s · 4K + 3s extension",
    "concept": null,
    "final": null,
    "finished": null,
    "drafts": []
   },
   "S6": {
-   "title": "108 years later \u2014 the run",
+   "title": "108 years later — the run",
    "mv": 2,
    "d": 14,
-   "model": "cinematic_studio_video_v2 \u00b7 12s pro \u00b7 speedramp auto + 2s ext",
+   "model": "cinematic_studio_video_v2 · 12s pro · speedramp auto + 2s ext",
    "concept": {
     "job": "91ebc1cd-9338-44f5-956b-3540b7cf19ed",
     "layer": "L1",
@@ -187,7 +187,7 @@
    "title": "Sixteen behind her, and a wall of ice",
    "mv": 2,
    "d": 12,
-   "model": "kling3_0 \u00b7 12s \u00b7 pro \u00b7 start+end frame",
+   "model": "kling3_0 · 12s · pro · start+end frame",
    "concept": {
     "job": "10bfa119-960f-4d45-89eb-1c062d655ba4",
     "layer": "L1",
@@ -210,7 +210,7 @@
    "title": "Up the wall",
    "mv": 2,
    "d": 14,
-   "model": "cinematic_studio_video_v2 \u00b7 12s \u00b7 speedramp impact + 2s ext",
+   "model": "cinematic_studio_video_v2 · 12s · speedramp impact + 2s ext",
    "concept": {
     "job": "8ae7fc97-8768-49ba-b99c-424bccc4cda4",
     "layer": "L1",
@@ -233,7 +233,7 @@
    "title": "The threadwright's eyes",
    "mv": 2,
    "d": 12,
-   "model": "veo3_1 \u00b7 8s ultra + 4s ext, or cinematic_studio_3_0 \u00b7 12s",
+   "model": "veo3_1 · 8s ultra + 4s ext, or cinematic_studio_3_0 · 12s",
    "concept": null,
    "final": null,
    "finished": null,
@@ -243,7 +243,7 @@
    "title": "The leviathan",
    "mv": 2,
    "d": 16,
-   "model": "seedance_2_0 \u00b7 15s \u00b7 4K \u00b7 genre epic + ext",
+   "model": "seedance_2_0 · 15s · 4K · genre epic + ext",
    "concept": {
     "job": "000b90fd-fb31-4f54-8319-3b80157f9b95",
     "layer": "L1",
@@ -266,7 +266,7 @@
    "title": "Running the flank",
    "mv": 2,
    "d": 10,
-   "model": "kling3_0 \u00b7 10s \u00b7 motion_control from a driving clip",
+   "model": "kling3_0 · 10s · motion_control from a driving clip",
    "concept": {
     "job": "bb9045fc-23f7-478f-bcb5-0b5b23dd22e4",
     "layer": "L1",
@@ -289,7 +289,7 @@
    "title": "The lightning river",
    "mv": 2,
    "d": 12,
-   "model": "cinematic_studio_video_v2 \u00b7 12s \u00b7 speedramp slowmo \u00b7 pro",
+   "model": "cinematic_studio_video_v2 · 12s · speedramp slowmo · pro",
    "concept": {
     "job": "92d87626-73e7-4b75-8c79-5f8b09ae062e",
     "layer": "L1",
@@ -312,7 +312,7 @@
    "title": "The vortex, from the Sun",
    "mv": 2,
    "d": 15,
-   "model": "wan3_0 \u00b7 15s \u00b7 1080p \u00b7 generate_audio false",
+   "model": "wan3_0 · 15s · 1080p · generate_audio false",
    "concept": null,
    "final": null,
    "finished": null,
@@ -322,17 +322,17 @@
    "title": "The Stone leaves her",
    "mv": 2,
    "d": 13,
-   "model": "cinematic_studio_3_0 \u00b7 13s \u00b7 4K \u00b7 genre drama",
+   "model": "cinematic_studio_3_0 · 13s · 4K · genre drama",
    "concept": null,
    "final": null,
    "finished": null,
    "drafts": []
   },
   "S15": {
-   "title": "Nacre Beach \u2014 the same sun",
+   "title": "Nacre Beach — the same sun",
    "mv": 3,
    "d": 12,
-   "model": "cinematic_studio_3_0 \u00b7 12s \u00b7 4K",
+   "model": "cinematic_studio_3_0 · 12s · 4K",
    "concept": null,
    "final": null,
    "finished": null,
@@ -342,7 +342,7 @@
    "title": "Over the abyss",
    "mv": 3,
    "d": 12,
-   "model": "kling2_6 \u00b7 10s + ext, or seedance_2_0 \u00b7 12s (water physics)",
+   "model": "kling2_6 · 10s + ext, or seedance_2_0 · 12s (water physics)",
    "concept": null,
    "final": null,
    "finished": null,
@@ -352,7 +352,7 @@
    "title": "Twelve ships",
    "mv": 3,
    "d": 10,
-   "model": "cinematic_studio_3_0 \u00b7 10s \u00b7 4K \u00b7 genre epic",
+   "model": "cinematic_studio_3_0 · 10s · 4K · genre epic",
    "concept": null,
    "final": null,
    "finished": null,
@@ -362,7 +362,7 @@
    "title": "The Temple does not answer",
    "mv": 3,
    "d": 10,
-   "model": "cinematic_studio_video_v2 \u00b7 10s \u00b7 multi_shots \u00b7 multi_prompt",
+   "model": "cinematic_studio_video_v2 · 10s · multi_shots · multi_prompt",
    "concept": {
     "job": "3f21d3a4-e42a-4f1a-aeef-78712c378a75",
     "layer": "L1",
@@ -385,7 +385,7 @@
    "title": "The Keepers kneel",
    "mv": 3,
    "d": 10,
-   "model": "seedance_2_0 \u00b7 10s \u00b7 4K \u00b7 start_image from dust",
+   "model": "seedance_2_0 · 10s · 4K · start_image from dust",
    "concept": {
     "job": "7906d8a2-19ba-4a31-adb5-64b02550a45a",
     "layer": "L1",
@@ -408,7 +408,7 @@
    "title": "The mountain",
    "mv": 3,
    "d": 14,
-   "model": "wan3_0 \u00b7 14s \u00b7 1080p \u00b7 enable_thinking",
+   "model": "wan3_0 · 14s · 1080p · enable_thinking",
    "concept": {
     "job": "0c9aaa9e-0987-463c-824c-0ce06dcc4fb7",
     "layer": "L1",
@@ -431,7 +431,7 @@
    "title": "The garden replants itself",
    "mv": 3,
    "d": 8,
-   "model": "veo3_1_lite \u00b7 8s, or cinematic_studio_3_0 \u00b7 8s",
+   "model": "veo3_1_lite · 8s, or cinematic_studio_3_0 · 8s",
    "concept": null,
    "final": null,
    "finished": null,
@@ -441,7 +441,7 @@
    "title": "What Alder saw",
    "mv": 3,
    "d": 14,
-   "model": "veo3_1 \u00b7 8s ultra + ext, or minimax_hailuo 2.3 \u00b7 10s (emotion)",
+   "model": "veo3_1 · 8s ultra + ext, or minimax_hailuo 2.3 · 10s (emotion)",
    "concept": null,
    "final": null,
    "finished": null,
@@ -451,7 +451,7 @@
    "title": "Tomorrow, again",
    "mv": 3,
    "d": 12,
-   "model": "cinematic_studio_3_0 \u00b7 12s \u00b7 4K \u00b7 genre drama",
+   "model": "cinematic_studio_3_0 · 12s · 4K · genre drama",
    "concept": null,
    "final": null,
    "finished": null,
@@ -496,8 +496,8 @@
    "peak_second": 7,
    "job": "31c0e60b-3826-4b0b-81eb-dd7c1ee7ea33"
   },
-  "_read_this_before_comparing": "These are L1 scores and they are only comparable to each other. The nine clips measured on Sep 5 were finished renders and scored 46-56 with a clean dark/bright split. These four are 720p budget renders of dark-ground compositions and they all land at 46-49 \u2014 the tier flattened the luminance advantage rather than the compositions losing it. Do not read a 47 here as the same thing as a 47 there.",
-  "_what_L1_did_show": "Every one of the four peaks in its last three seconds and every one is weakest in the hook window: hooks 30-33 against overalls 46-49. The shot order buries its best second at the end, which is right for a film and wrong for a post. S11 is the exception that proves the rule \u2014 it peaks at second 7 and carries the lowest mind-wandering of the four (0.604), because it is the one shot that gets darker and closer as it runs. Sustain is 98-100 across the board, so retention still needs no work."
+  "_read_this_before_comparing": "These are L1 scores and they are only comparable to each other. The nine clips measured on Sep 5 were finished renders and scored 46-56 with a clean dark/bright split. These four are 720p budget renders of dark-ground compositions and they all land at 46-49 — the tier flattened the luminance advantage rather than the compositions losing it. Do not read a 47 here as the same thing as a 47 there.",
+  "_what_L1_did_show": "Every one of the four peaks in its last three seconds and every one is weakest in the hook window: hooks 30-33 against overalls 46-49. The shot order buries its best second at the end, which is right for a film and wrong for a post. S11 is the exception that proves the rule — it peaks at second 7 and carries the lowest mind-wandering of the four (0.604), because it is the one shot that gets darker and closer as it runs. Sustain is 98-100 across the board, so retention still needs no work."
  },
  "concept_ladder": {
   "L1": "720p, budget engine (seedance_2_0_mini), 10s, from the two anchors. Tests whether the A frame can reach the B frame at all. Done 2026-09-08 for the 11 seam-bearing shots.",
@@ -508,8 +508,64 @@
  "credits": {
   "checked": "2026-09-08",
   "higgsfield_remaining": 2323.53,
-  "spent_today": "about 1300 \u2014 14 world sheets re-rendered at 21:9 with references, plus 11 concept clips",
+  "spent_today": "about 1300 — 14 world sheets re-rendered at 21:9 with references, plus 11 concept clips",
   "measured_cost_per_L1_clip": "about 112 credits for 10s of 720p on the budget engine",
   "why_this_now_decides_the_plan": "23 final clips on premium engines at 1080p or 4K, with a second attempt on most and six on S20, does not fit in 2323 credits. The API cannot pay for the final pass. The web app's unlimited allowance can."
+ },
+ "selection_passes": {
+  "scene-1": {
+   "_what": "Stage 6 selection pass — batch of four per anchor, choose one. Generated 2026-09-08 on nano_banana_pro (the platform labels the result nano_banana_2), 21:9, 2k, inside the account. The skeleton job in anchor-plan.json is the placeholder these replace once one is chosen.",
+   "on": "2026-09-08",
+   "chosen": null,
+   "_chosen_shape": {
+    "F01": "<job id>",
+    "F02": "<job id>",
+    "F03": "<job id>"
+   },
+   "frames": {
+    "F01": {
+     "skeleton": "30403126-ae0d-4926-8df8-fcf14da302ef",
+     "attach": [
+      "plate-sun"
+     ],
+     "variants": [
+      "622f1c5a-44e0-42df-b944-efe4d741a313",
+      "7af85cfb-0218-49b3-995d-09efd761cc9d",
+      "33f87edb-ec40-4536-99ae-8c09a0f63bf1",
+      "4a8300a5-06ab-42bc-ae2b-d868574dbb5c"
+     ]
+    },
+    "F02": {
+     "skeleton": "0e3fbd76-dd81-4105-81c6-6078dacde732",
+     "attach": [
+      "plate-sun",
+      "courtyard-of-worlds"
+     ],
+     "variants": [
+      "3e3c8855-0646-4827-893b-57e5638c9aaf",
+      "58a154bc-b5de-4219-95cd-fb8e93499952",
+      "91512d7d-3575-4d0e-932a-6484663f26e7",
+      "0684db4a-40fa-453d-bd7f-171a43d852d4"
+     ]
+    },
+    "F03": {
+     "skeleton": "06d8c310-c4ba-459d-aef7-b18430ca781c",
+     "attach": [
+      "plate-sun",
+      "courtyard-of-worlds",
+      "oriane",
+      "caedom-ascended-1"
+     ],
+     "chained_from": "0e3fbd76-dd81-4105-81c6-6078dacde732",
+     "provisional": "chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked",
+     "variants": [
+      "1a7d48d5-4724-4369-824f-482bb444a030",
+      "5377d75c-b961-452d-afac-38ad6d904a50",
+      "31d5e449-8e7f-4dec-9a93-586508e3f1ad",
+      "ee236f3e-7d11-4928-bdcb-a7dd2bbfdb99"
+     ]
+    }
+   }
+  }
  }
 }
