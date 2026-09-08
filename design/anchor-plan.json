@@ -1,0 +1,652 @@
+{
+ "meta": {
+  "l2_job": "66da2493-5ab7-4e8d-a86b-f9936370ea7e",
+  "l2_prompt_note": "bible l2 A prompt with the dark-ground sentence, Sep 6",
+  "plate_ocean_dark_element": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+  "layer": "skeleton",
+  "generated": "2026-09-06",
+  "note": "One image per anchor, nano_banana_pro 21:9 2k, handles attached by element id and the previous frame attached where the plan says a frame depends on one. Not selected from a batch and not looked at: 'selected' is set per frame only when a person picks one out of four."
+ },
+ "frames": [
+  {
+   "i": 0,
+   "f": "F01",
+   "mv": 1,
+   "s": "S1 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-sun"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Almost total black. A single low band of white-gold plasma glow along the very bottom edge of frame, its light falling off to nothing within the lower sixth. No horizon, no structure, no figure \u2014 ninety percent of the frame is empty black with fine grain. The composition reads as a held hollow with one ember at the base. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly.",
+   "job": "30403126-ae0d-4926-8df8-fcf14da302ef"
+  },
+  {
+   "i": 1,
+   "f": "F02",
+   "mv": 1,
+   "s": "S1 B / S2 A",
+   "r": "shared",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "courtyard-of-worlds"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. A courtyard of solidified light resolving out of blinding glare \u2014 colonnades and a flat floor built from load-bearing beams of luminance, edges just legible through a blown-out white core that fills the centre of frame. No figures. The glare is genuinely blinding at the centre and falls to deep shadow at the frame edges. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. The set is <<<afc4fc5d-86be-4072-927c-f890966feaca>>>; keep its geography and materials.",
+   "job": "0e3fbd76-dd81-4105-81c6-6078dacde732"
+  },
+  {
+   "i": 2,
+   "f": "F03",
+   "mv": 1,
+   "s": "S2 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F02",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "courtyard-of-worlds",
+    "oriane",
+    "caedom-ascended-1"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Two figures from behind at the courtyard's far edge. Worlds on stems in the foreground, the crystal shell refracting the star beneath her. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. The set is <<<afc4fc5d-86be-4072-927c-f890966feaca>>>; keep its geography and materials. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift. Caedom is <<<fcc3b4b7-1d0e-4c0e-aa8e-ca096e978855>>>: same face, build and costume, no drift. Continuity with the attached previous frame F02: same room, same lens height, same costume state.",
+   "job": "06d8c310-c4ba-459d-aef7-b18430ca781c"
+  },
+  {
+   "i": 3,
+   "f": "F04",
+   "mv": 1,
+   "s": "S3 A",
+   "r": "single",
+   "round": 3,
+   "dep": "F03",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "courtyard-of-worlds",
+    "oriane",
+    "caedom-ascended-1"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Reverse two-shot, 40mm, chest height, both faces legible and in focus. On the left a man in robes of light; on the right a woman encased from the collarbone down in a faceted crystal shell. Behind them the burning star fills the background as soft out-of-focus bokeh. Same room, same light direction, different lens from the preceding move. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. The set is <<<afc4fc5d-86be-4072-927c-f890966feaca>>>; keep its geography and materials. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift. Caedom is <<<fcc3b4b7-1d0e-4c0e-aa8e-ca096e978855>>>: same face, build and costume, no drift. Continuity with the attached previous frame F03: same room, same lens height, same costume state.",
+   "job": "e4b97ee1-b609-412e-a266-1d6bf0d06b56"
+  },
+  {
+   "i": 4,
+   "f": "F05",
+   "mv": 1,
+   "s": "S3 B",
+   "r": "single",
+   "round": 4,
+   "dep": "F04",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "oriane"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Oriane turning her head. The motivated cut out; the movement is the edit point. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift. Continuity with the attached previous frame F04: same room, same lens height, same costume state.",
+   "job": "9e06d580-23d9-41c9-872e-56545049f2c2"
+  },
+  {
+   "i": 5,
+   "f": "F06",
+   "mv": 1,
+   "s": "S4 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "oriane"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Locked medium close-up, 75mm, camera at her eye level and dead centre. Oriane inside her crystal shell, key light thrown from below by the star. Refraction crawls across the crystal facets. Generous headroom, her face slightly off centre, composition balanced to sit still for a long hold. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift.",
+   "job": "39a6cecc-45a6-43ac-b5f9-954a3ac4fbf5"
+  },
+  {
+   "i": 6,
+   "f": "F07",
+   "mv": 1,
+   "s": "S4 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F06",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "oriane"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Locked medium close-up, 75mm, camera at her eye level and dead centre, key light from below thrown by the star. Oriane inside her crystal shell \u2014 identical headroom, identical framing and identical crystal refraction pattern to the preceding frame, with the plasma glow unchanged beneath her. The only difference is the face: eyes wet and not spilled, jaw set, one slow blink just finished. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift. Continuity with the attached previous frame F06: same room, same lens height, same costume state.",
+   "job": "ca631c86-1c40-4551-8107-3514c38e7bca"
+  },
+  {
+   "i": 7,
+   "f": "F08",
+   "mv": 1,
+   "s": "S5 A",
+   "r": "single",
+   "round": 2,
+   "dep": "F06",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "oriane",
+    "caedom-ascended-1"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Caedom's hands on her face. Tender, unhurried, both fully in frame. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift. Caedom is <<<fcc3b4b7-1d0e-4c0e-aa8e-ca096e978855>>>: same face, build and costume, no drift. Continuity with the attached previous frame F06: same room, same lens height, same costume state.",
+   "job": "9293bd47-4e48-4eb4-a098-02f60c506932"
+  },
+  {
+   "i": 8,
+   "f": "F09",
+   "mv": 1,
+   "s": "S5 B",
+   "r": "match",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "frozen-tear"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Extreme macro on a frozen tear resting on a floor of light. One faceted plane fills the entire frame, its interior a moving luminous blue with soft internal caustics. The facet's edges are hard and angular; the blue inside is bright at centre and falls off toward the corners. No other object in frame. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. The tear is <<<58952962-9241-4a19-aedc-031a2374e484>>>, same design.",
+   "job": "5a726527-40f7-4405-9859-d56715418592"
+  },
+  {
+   "i": 9,
+   "f": "F10",
+   "mv": 2,
+   "s": "S6 A",
+   "r": "match",
+   "round": 2,
+   "dep": "F09",
+   "needs_l2": true,
+   "handles": [
+    "L2"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Open storm ocean shot from low altitude, water filling the entire frame with no horizon in the upper third. Cold luminous blue-grey chop broken into hard angular planes that read as crystal facets, brightest at the centre of frame and falling off toward the edges. Bruised violet sky reflected in the troughs. The centre of frame holds the same shape, scale and blue as a single facet of a frozen tear seen in macro, so the cut carries through without a beat. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. Continuity with the attached previous frame F09: same room, same lens height, same costume state.",
+   "job": "fd757328-a2e8-4ffc-bd6c-961b21bc3db2"
+  },
+  {
+   "i": 10,
+   "f": "F11",
+   "mv": 2,
+   "s": "S6 B / S7 A",
+   "r": "shared",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "oriane"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Oriane running, camera locked beside her, the world streaked horizontal behind. Her body stable, everything else destroyed by speed. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift.",
+   "job": "c6e868d3-d9c1-4336-9e4c-e774e5cd50b8"
+  },
+  {
+   "i": 11,
+   "f": "F12",
+   "mv": 2,
+   "s": "S7 B / S8 A",
+   "r": "shared",
+   "round": 2,
+   "dep": "F11",
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "oriane",
+    "turned-water"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. A woman pressed flat against a vertical grey ice wall that fills the frame, seen from the side at her level. Her body is spread against the ice, hair fanned out, entirely unhurt. The ice is fractured white-grey with deep internal cracks. Rain drives across frame; the wall runs out of frame top and bottom. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. Oriane is <<<f0ccb2c6-ee22-493a-a033-8cb46f1ae5aa>>>: same face, build and costume, no drift. The ice wall's maker is <<<40520841-e9d3-45be-852b-c24f126ad3e1>>>, same design. Continuity with the attached previous frame F11: same room, same lens height, same costume state.",
+   "job": "900a2a4c-223b-4fea-956f-400473830731"
+  },
+  {
+   "i": 12,
+   "f": "F13",
+   "mv": 2,
+   "s": "S8 B",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "turned-water"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. The ice wall losing cohesion and collapsing into a mountain of seawater. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. The wall is <<<40520841-e9d3-45be-852b-c24f126ad3e1>>>, same design.",
+   "job": "87de8feb-f0a4-45e6-8e16-feac0dbb2600"
+  },
+  {
+   "i": 13,
+   "f": "F14",
+   "mv": 2,
+   "s": "S9 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "threadwright"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Over-the-shoulder from behind a woman in dark rippling cloth hovering above a storm ocean, her back and shoulder filling the left third in silhouette. Far ahead and small in frame, a distant running figure crosses open water. Long lens, heavy compression, out-of-focus rain in the foreground. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. The Threadwright is <<<00c70af8-e0f1-4eda-90ed-c7ff87afc5f5>>>: same face, build and costume, no drift.",
+   "job": "ec69adae-8fc7-4e50-9c5f-1b1e94dccef8"
+  },
+  {
+   "i": 14,
+   "f": "F15",
+   "mv": 2,
+   "s": "S9 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F14",
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "threadwright",
+    "turned"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Her fingers mid-gesture, the marionettes in the middle distance answering the movement exactly. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. The Threadwright is <<<00c70af8-e0f1-4eda-90ed-c7ff87afc5f5>>>: same face, build and costume, no drift. The pursuers is <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>: same face, build and costume, no drift. Continuity with the attached previous frame F14: same room, same lens height, same costume state.",
+   "job": "186ee742-3de1-4730-a013-c01e44bd1b30"
+  },
+  {
+   "i": 15,
+   "f": "F16",
+   "mv": 2,
+   "s": "S10 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "leviathan",
+    "leviathan-plating"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. The leviathan erupting, camera near the water looking up, dead coral sheeting off its plating in slabs. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. The leviathan is <<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>, same design. Its hide is <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>, same design.",
+   "job": "360d0a10-116c-4581-ad51-1b880707eba7"
+  },
+  {
+   "i": 16,
+   "f": "F17",
+   "mv": 2,
+   "s": "S10 B / S11 A",
+   "r": "shared",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "leviathan",
+    "oriane-ascended"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Low wide angle. A woman is tiny in frame, threading between the opening jaws of a leviathan the size of a city block that fills nearly the entire image. The creature's coral-crusted plating and rows of teeth dominate; she is a small bright speck against it. Scale is the only subject. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. The leviathan is <<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>, same design. Oriane is <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>>: same face, build and costume, no drift.",
+   "job": "e47cb162-4e85-4f35-80f6-8a76e12d4a0f"
+  },
+  {
+   "i": 17,
+   "f": "B01",
+   "mv": 2,
+   "s": "S11 B / S12 A",
+   "r": "bridge",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "leviathan-plating"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. The wet flank of an enormous sea creature swung fully across the lens, filling one hundred percent of frame. Crusted grey-brown hide with dead coral, rendered so dark it is almost pure black \u2014 legible only as faint texture in the deepest shadow. No sky, no horizon, no figure, no light source visible. Effectively a black frame with a trace of surface detail. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. The flank is <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>, same design.",
+   "job": "f3f3ca6e-5f93-4e76-b098-e43c3c9aae74"
+  },
+  {
+   "i": 18,
+   "f": "F18",
+   "mv": 2,
+   "s": "S12 B",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "oriane-damaged",
+    "aura-shell"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. She launches forward, lightning still circulating in the shell around her. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. Oriane is <<<664e3643-e6e8-4081-a489-69651fed4560>>>: same face, build and costume, no drift. The shell is <<<b81752ae-2bda-4a57-ba83-02244d1dbeb4>>>, same design.",
+   "job": "75607634-c58d-4fad-84df-f1120567bf35"
+  },
+  {
+   "i": 19,
+   "f": "F19",
+   "mv": 2,
+   "s": "S13 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "machira-orbit"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Extreme wide orbital plate looking down through the exosphere at a blue-green planet. A storm system fills the lower frame, and at its centre an eye has opened that is not weather: a black puncture reaching up out of the atmosphere toward space, hard-edged against the cloud spiral. The planet's limb curves across the top of frame against absolute black. Cold, clinical, no human scale anywhere. Look: cold blue-grey, seen from orbit. No rain, no sea spray, no water or droplets on the lens, no haze between camera and planet \u2014 vacuum-clean edges, a hard terminator and an absolutely black sky above the limb. Storm weather exists only far below, inside the planet's atmosphere. Desaturated, no warmth anywhere in frame. Anamorphic, deep blacks, clean vacuum foreground, no atmospheric haze in front of the camera. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. The set is <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>; keep its geography and materials.",
+   "job": "35dc71f6-af5b-4621-9e6a-f956e9fdc40f"
+  },
+  {
+   "i": 20,
+   "f": "F20",
+   "mv": 2,
+   "s": "S13 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F19",
+   "needs_l2": false,
+   "handles": [
+    "machira-orbit"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Extreme wide orbital plate, identical altitude and framing to the preceding frame. The black puncture at the storm's centre has begun to close, the spiral tightening around it. Nothing else in the frame suggests anything happened. The planet's limb curves against absolute black. Cold, clinical, still. Look: cold blue-grey, seen from orbit. No rain, no sea spray, no water or droplets on the lens, no haze between camera and planet \u2014 vacuum-clean edges, a hard terminator and an absolutely black sky above the limb. Storm weather exists only far below, inside the planet's atmosphere. Desaturated, no warmth anywhere in frame. Anamorphic, deep blacks, clean vacuum foreground, no atmospheric haze in front of the camera. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. The set is <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>; keep its geography and materials. Continuity with the attached previous frame F19: same room, same lens height, same costume state.",
+   "job": "2c060db4-67f4-4a01-a7f3-507e349abc64"
+  },
+  {
+   "i": 21,
+   "f": "F21",
+   "mv": 2,
+   "s": "S14 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": true,
+   "handles": [
+    "L2",
+    "oriane-damaged"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Oriane falling upward, crystal fracturing, the fractures filling with light rather than dark. Look: cold blue-grey storm. Violet lightning, driving rain, sea spray on the lens. Desaturated everywhere except the crystal. No warmth anywhere in frame. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate {L2} exactly. Oriane is <<<664e3643-e6e8-4081-a489-69651fed4560>>>: same face, build and costume, no drift.",
+   "job": "70a35bb9-7468-4477-861c-6d8532430097"
+  },
+  {
+   "i": 22,
+   "f": "F22",
+   "mv": 2,
+   "s": "S14 B",
+   "r": "match",
+   "round": 2,
+   "dep": "F19",
+   "needs_l2": false,
+   "handles": [
+    "machira-orbit",
+    "founding-stone"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Extreme wide plate from just outside the atmosphere. Empty sky above a planetary curvature that runs across the lower frame, absolute black above the limb. A single thin green streak crosses the frame at a shallow angle, already fading. Nothing else in frame \u2014 no figure, no debris, no cloud detail. Look: cold blue-grey, seen from orbit. No rain, no sea spray, no water or droplets on the lens, no haze between camera and planet \u2014 vacuum-clean edges, a hard terminator and an absolutely black sky above the limb. Storm weather exists only far below, inside the planet's atmosphere. Desaturated, no warmth anywhere in frame. Anamorphic, deep blacks, clean vacuum foreground, no atmospheric haze in front of the camera. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. The set is <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>; keep its geography and materials. The Stone is <<<45c4d884-b89b-4694-af1f-e06eef545e30>>>, same design. Continuity with the attached previous frame F19: same room, same lens height, same costume state.",
+   "job": "fff821a8-7d38-4afe-9aa5-8ab34ca6cd97"
+  },
+  {
+   "i": 23,
+   "f": "F23",
+   "mv": 3,
+   "s": "S15 A",
+   "r": "match",
+   "round": 3,
+   "dep": "F22",
+   "needs_l2": false,
+   "handles": [
+    "plate-island",
+    "nacre-beach"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Nacre Beach at dawn, wide and static, with the streak's residue still fading as a low star. Warm for the first time in three minutes. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. The set is <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>; keep its geography and materials. Continuity with the attached previous frame F22: same room, same lens height, same costume state.",
+   "job": "3cb92044-851c-45a8-bccd-e1157967ec7b"
+  },
+  {
+   "i": 24,
+   "f": "F24",
+   "mv": 3,
+   "s": "S15 B",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-island",
+    "nacre-beach",
+    "alder",
+    "wren"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Two brothers stopped at the tide line, small in a very wide frame that has not moved and will not. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. The set is <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>; keep its geography and materials. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift. Wren is <<<5d2b4828-615d-4f63-93c6-f770a4e14296>>>: same face, build and costume, no drift.",
+   "job": "c61b4451-f957-432d-b207-438afe2267f3"
+  },
+  {
+   "i": 25,
+   "f": "F25",
+   "mv": 3,
+   "s": "S16 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "corals-abyss"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Underwater reef in full colour, two silhouettes crossing the surface far above, backlit. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. The set is <<<0ff096fa-da4b-4a12-a371-5d678fb75651>>>; keep its geography and materials.",
+   "job": "5ec7049a-d240-48a8-995d-afd84e3eadc1"
+  },
+  {
+   "i": 26,
+   "f": "F26",
+   "mv": 3,
+   "s": "S16 B",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "corals-abyss"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Underwater, wide. A coral reef shelf runs across the lower third and ends abruptly at a vertical drop-off into total blackness that occupies the entire right half of frame. Shafts of sunlight fall from above and stop at the shelf edge. The black is unbroken and holds no discernible shape. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. The set is <<<0ff096fa-da4b-4a12-a371-5d678fb75651>>>; keep its geography and materials.",
+   "job": "5edf559f-0009-4abd-86d3-7cd8162e9447"
+  },
+  {
+   "i": 27,
+   "f": "F27",
+   "mv": 3,
+   "s": "S17 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-bombardment",
+    "nacre-beach",
+    "alder",
+    "wren"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. The brothers staggering up the beach out of the surf, static wide, sun low and behind. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> exactly. The set is <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>; keep its geography and materials. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift. Wren is <<<5d2b4828-615d-4f63-93c6-f770a4e14296>>>: same face, build and costume, no drift.",
+   "job": "72f8214a-bacd-47e5-990b-7dfe04918f81"
+  },
+  {
+   "i": 28,
+   "f": "F28",
+   "mv": 3,
+   "s": "S17 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F27",
+   "needs_l2": false,
+   "handles": [
+    "plate-bombardment",
+    "keepers-isle",
+    "twelve-ships",
+    "alder",
+    "wren"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Boys flat on the sand, twelve ships inside the same unmoving frame, everything backlit red. The stillness against the violence is the shot. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> exactly. The set is <<<80fd593c-e98f-40b7-a381-fd719bca9f55>>>; keep its geography and materials. The ships is <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>, same design. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift. Wren is <<<5d2b4828-615d-4f63-93c6-f770a4e14296>>>: same face, build and costume, no drift. Continuity with the attached previous frame F27: same room, same lens height, same costume state.",
+   "job": "d98fa8ca-876c-4e2e-a6dd-8b233e4c9c06"
+  },
+  {
+   "i": 29,
+   "f": "F29",
+   "mv": 3,
+   "s": "S18 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-bombardment",
+    "white-temple",
+    "twelve-ships"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. The white temple taking direct hits, sand and torn flowers falling down its face, no reaction of any kind. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> exactly. The set is <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>; keep its geography and materials. The ships is <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>, same design.",
+   "job": "778a56cc-c82c-43f3-a221-c55c68900928"
+  },
+  {
+   "i": 30,
+   "f": "B02",
+   "mv": 3,
+   "s": "S18 B / S19 A",
+   "r": "bridge",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-bombardment"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. A churning wall of brown dust filling one hundred percent of frame, everything flattened to featureless brown shadow. No legible shapes, no edges, no figures, no light source. Fine particulate and grit suspended throughout. Effectively an opaque dust field. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> exactly.",
+   "job": "840cbe00-3763-4e3d-8914-80e63760469c"
+  },
+  {
+   "i": 31,
+   "f": "F30",
+   "mv": 3,
+   "s": "S19 B / S20 A",
+   "r": "shared",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-bombardment",
+    "keeper-kneel",
+    "keeper"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Two lines of Keepers kneeling, heads bowed, metal shot still falling around them and not touching them. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> exactly. The set is <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>; keep its geography and materials. Every Keeper is <<<8a3838aa-6fe1-485d-881c-4c14dfbe492e>>>: same face, build and costume, no drift.",
+   "job": "d971d86d-a6b3-42e3-9130-5e57a9f9ef99"
+  },
+  {
+   "i": 32,
+   "f": "F31",
+   "mv": 3,
+   "s": "S20 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F30",
+   "needs_l2": false,
+   "handles": [
+    "plate-bombardment",
+    "fx-floating-mountain",
+    "keeper-kneel"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. The mountain's particles falling faster than gravity, ships going under. The Keepers still have not raised their heads. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> exactly. The mountain is <<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>>, same design. The set is <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>; keep its geography and materials. Continuity with the attached previous frame F30: same room, same lens height, same costume state.",
+   "job": "41e0a3c1-ae7c-459f-8789-c73ffb38b12e",
+   "failed_first": "a95d60f7-4890-46b3-ae3a-c6912bbe10e4 (status failed, resubmitted unchanged)"
+  },
+  {
+   "i": 33,
+   "f": "F32",
+   "mv": 3,
+   "s": "S21 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-island"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Locked-off wide, static, 32mm, low. Flat open ocean under a low sun, calm to the horizon. Empty beach in the near foreground with waves running up and back. No wreckage, no debris, no ships, nothing in the sky. Golden hour, warm, deliberately uneventful. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly.",
+   "job": "26786720-93e0-44f4-b924-31a8c086d67d"
+  },
+  {
+   "i": 34,
+   "f": "F33",
+   "mv": 3,
+   "s": "S21 B",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-island",
+    "white-temple"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Temple doors closing, the garden bed replanted, craters filled. Order restored at unsettling speed. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. The set is <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>; keep its geography and materials.",
+   "job": "492410ef-4316-4873-a910-968918b13df6"
+  },
+  {
+   "i": 35,
+   "f": "F34",
+   "mv": 3,
+   "s": "S22 A",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-island",
+    "alder",
+    "wren"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Both brothers in the beach grass, Wren mid-sentence and delighted, Alder already elsewhere. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift. Wren is <<<5d2b4828-615d-4f63-93c6-f770a4e14296>>>: same face, build and costume, no drift.",
+   "job": "c73d7f62-b0ed-4ecc-8e8f-e42353758386"
+  },
+  {
+   "i": 36,
+   "f": "F35",
+   "mv": 3,
+   "s": "S22 B",
+   "r": "single",
+   "round": 1,
+   "dep": null,
+   "needs_l2": false,
+   "handles": [
+    "plate-island",
+    "alder"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Close-up on a young man's face at the end of a slow push, 85mm, shallow focus. Sun-darkened skin, salt-stiff sun-bleached blonde hair, level unblinking gaze slightly off camera. His expression is calculating rather than delighted \u2014 too still for the day he has just had. Far behind him, deep out of focus, a single dark low cloud sits over flat water. Golden hour backlight, a natural unretouched face, no smoothing. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift.",
+   "job": "1b3c8159-88d7-4347-a9cc-6cd0364a361a"
+  },
+  {
+   "i": 37,
+   "f": "F36",
+   "mv": 1,
+   "s": "S23 A",
+   "r": "single",
+   "round": 3,
+   "dep": "F03",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "courtyard-of-worlds",
+    "caedom-ascended-1"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Caedom alone at the courtyard edge, standing where two people stood four minutes earlier. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. The set is <<<afc4fc5d-86be-4072-927c-f890966feaca>>>; keep its geography and materials. Caedom is <<<fcc3b4b7-1d0e-4c0e-aa8e-ca096e978855>>>: same face, build and costume, no drift. Continuity with the attached previous frame F03: same room, same lens height, same costume state.",
+   "job": "bf766d12-89ec-4121-93e0-cac2926cb6da"
+  },
+  {
+   "i": 38,
+   "f": "F37",
+   "mv": 1,
+   "s": "S23 B",
+   "r": "single",
+   "round": 2,
+   "dep": "F02",
+   "needs_l2": false,
+   "handles": [
+    "plate-sun",
+    "courtyard-of-worlds",
+    "frozen-tear"
+   ],
+   "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. A floor of solid light seen from directly above, with a single frozen tear lying on it as one small bright point. The camera is high and rising; the floor is vast and luminous and otherwise completely empty, falling off toward black at the frame edges. No figure in frame. Look: gold on black. Key light from below, thrown by a burning star. Warm highlights, cold shadows, beams of solid light behaving as architecture. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame \u2014 the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> exactly. The set is <<<afc4fc5d-86be-4072-927c-f890966feaca>>>; keep its geography and materials. The tear is <<<58952962-9241-4a19-aedc-031a2374e484>>>, same design. Continuity with the attached previous frame F02: same room, same lens height, same costume state.",
+   "job": "a26c5697-1d07-4e1e-873f-a4fd82092b68"
+  }
+ ]
+}

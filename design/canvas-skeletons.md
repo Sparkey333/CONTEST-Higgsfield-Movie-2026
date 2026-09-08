@@ -198,6 +198,22 @@ Frames on this board, with what each was generated from:
 - **F34** (S22 A) — `plate-island`, `alder`, `wren`
 - **F35** (S22 B) — `plate-island`, `alder`
 
+## What changed on Sep 8
+
+- **Every shot prompt now names its references.** All 69 of them end in the exact list to attach: the plate, the
+  identities, the design handles, the start and end anchor, and which Soul re-runs a face at medium or closer.
+  This closed a real gap — four clips generated that morning used the bible's prompts *verbatim* and still came
+  out text-only, with no frame and no element attached, so nothing in them could hold a face.
+- **The eleven seam-bearing shots have an L1 concept clip**, generated from their two anchors: S1, S2, S6, S7,
+  S8, S10, S11, S12, S18, S19, S20. Job ids are in `design/shot-ledger.json`.
+- **L2 and the final pass do not run from the API.** The account has one private workspace and no project
+  target, so an API generation cannot sit inside the submission project that Rule 7 requires; and at about 112
+  credits per budget clip, the 2323 remaining cannot pay for twenty-three final clips. Both point the same way:
+  **every frame and clip that reaches the cut is generated in the web app, in the festival project.** These
+  boards are how you carry each shot across — the prompt, the two frame ids, the reference list.
+- **`design/verify-steps.py`** now answers whether any of the 34 steps is really done, and the bible's control
+  room shows its numbers.
+
 ## The audit that preceded this (Sep 6)
 
 - **Every Sep 5 job is terminal.** 76 jobs across seven batches: 73 completed, 3 rejected by the content filter (the first Thrall sheet, one Alder sheet, one Threadwright sheet), and each rejection was covered by a clean pass of the same or the re-worded prompt. Nothing is missing.

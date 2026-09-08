@@ -40,6 +40,12 @@ No build step, no dependencies, no account, no network calls.
 | **`design/virality-results.json`** | Nine clips run through the platform's virality predictor, with job ids and per-region figures so the ranking is reproducible rather than remembered. Records the two hypotheses that were tested and refuted alongside the one that survived. |
 | **`design/asset-ranks.md`** | What got promoted for main-asset consideration and why — videos by measurement, stills by lane and pipeline health, with the difference between those two kinds of claim stated up front. |
 | **`design/canvas-skeletons.md`** | The canvas, scene by scene: one board per scene, the handles to drop on it, and the start and end anchor of every shot with the job id of the placeholder generated for it on Sep 6. |
+| **`design/verify-steps.py`** | Answers, for each of the 34 run-sheet steps, whether it is actually done — reading the account snapshot, the anchor plan, the shot ledger and the gate record. Never marks a step done on anything softer than a file, and spends nothing. Writes `design/progress.json`. |
+| **`design/progress.json`** | The verifier's output, and the only source the progress bars read. Regenerate it; never hand-edit it. |
+| **`design/inject-progress.mjs`** | Bakes `progress.json` into the bible so the control-room panel shows measured state in every viewer, including the published artifact where `fetch` would fail. |
+| **`design/gates.json`** | The five gates and the by-hand steps. A gate is a person looking at a screen, so it is recorded here or it did not happen. |
+| **`design/shot-ledger.json`** | Every shot's clips by layer — L1 concept, L2, final, finished — with the anchors each was generated from, the measured virality scores, and the credit arithmetic that decides where the final pass runs. |
+| **`design/anchor-plan.json`** | All 39 anchors: the composed prompt, the handles attached, the frame each depends on, and the job that produced it. |
 
 ### Inside the director's bible
 

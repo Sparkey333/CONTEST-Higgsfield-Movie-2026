@@ -1,0 +1,29 @@
+{
+ "_how": "A gate is a person looking at a screen. Record the answer here; nothing else can.",
+ "_shape": {
+  "held": true,
+  "on": "2026-09-08",
+  "by": "B.L. Barkey",
+  "note": "what you saw"
+ },
+ "A": {
+  "held": false,
+  "blocks": "steps 17-19 \u2014 anchors inherit whatever drift is in the references"
+ },
+ "B": {
+  "held": false,
+  "blocks": "step 21 \u2014 the stills reel is read from the anchors"
+ },
+ "C": {
+  "held": false,
+  "blocks": "steps 25-27 \u2014 after this a structural change costs video, not images"
+ },
+ "D": {
+  "held": false,
+  "blocks": "steps 25-27 \u2014 promote any draft frame that beats its anchor"
+ },
+ "E": {
+  "held": false,
+  "blocks": "steps 31-34 \u2014 picture lock, nothing is generated after it"
+ }
+}

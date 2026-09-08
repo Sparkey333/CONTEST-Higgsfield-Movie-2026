@@ -235,3 +235,30 @@ it. The old `plate-ocean` handle remains only because the API cannot delete it.
 `canvas-skeletons.md`. They have not been looked at and are not ranked here; ranking a frame the person who
 ordered it has never seen would repeat the mistake this file warns about at the top.
 
+---
+
+## Sep 8 — the concept layer, and a caution about comparing it
+
+Eleven shots were animated from their two anchors at 720p on the budget engine, and four were measured.
+
+| Shot | Overall | Hook | Mind-wandering ↓ | Peaks at |
+|---|---:|---:|---:|---:|
+| S1 · rise out of the fire | **49** | 32 | **0.592** | 10 s |
+| S11 · running the flank | 48 | **33** | 0.604 | **7 s** |
+| S10 · the leviathan | 47 | 32 | 0.667 | 10 s |
+| S20 · the mountain | 46 | 30 | 0.649 | 10 s |
+
+**Do not compare these to the nine clips above.** Those were finished renders and split cleanly 51–56 dark
+against 47–49 bright. These four are all dark-ground compositions and all four landed in the *bright* band.
+The honest reading is that the budget tier flattened the luminance advantage — not that the compositions lost
+it. An L1 score is comparable to another L1 score and to nothing else.
+
+**What the layer did show, and it survives the tier.** Every clip is weakest in its opening three seconds and
+peaks in its closing three: hooks of 30–33 against overalls of 46–49, with sustain still 98–100. The shot's own
+order puts its best second last. For the film that is correct. For a post it is backwards, which is the
+measured case for the rule already written down — a social cut opens on the payoff frame and earns it back.
+
+**The one shot that behaves differently is the one to learn from.** S11 peaks at second seven and holds the
+lowest mind-wandering of the four, and it is the only clip in the set that gets darker and closer as it runs,
+ending near-black on the creature's flank. Approach beats reveal, at least here.
+

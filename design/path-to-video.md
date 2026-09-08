@@ -1,7 +1,7 @@
 # Path to video — the delta from where the production stands to a compliant film
 
-Written Sep 5, revised the same afternoon once the deadline and the day's generations were confirmed, and again
-on Sep 6 after the audit and the anchor skeleton pass. This is
+Written Sep 5, revised the same afternoon, again on Sep 6 after the audit and the anchor skeleton pass, and again
+on Sep 8 once the concept layer was measured and the cost of a final pass was known. This is
 a delta against the bible's 34-step RUN, not a rewrite of it. Step numbers below are RUN step numbers. Where
 this file and the bible disagree on the account's state, this file is current.
 
@@ -20,6 +20,30 @@ production-name element handle. Steps 4 and 7–10 are done to the point of Gate
 (`alder`, `wren`, `oriane`, `caedom-ascended`, `caedom-before` ready; `caedom-mortal` trained but contaminated, to be deleted), and the five A lanes that had
 been rendered by two engines were re-rendered on one. Step 16, Gate A, is the next thing to attempt and can be
 attempted today. **Steps 17–34 had not begun on Sep 5: 0 of 39 anchors, 0 of 23 shots.**
+
+**Sep 8 — read this before anything else in this file.** Two facts landed today and between them they
+decide how the remaining six days are spent.
+
+**One: the API cannot pay for the final pass.** Eleven concept clips at 720p on the budget engine cost about
+112 credits each, and 2323 credits remain. Twenty-three final clips on the engines named in the SHOTS rows,
+at 1080p or 4K, with a second attempt on most and six budgeted for S20, is several times that. The arithmetic
+does not close.
+
+**Two: the API cannot put an asset in the submission project.** `list_workspaces` returns exactly one private
+workspace and no project target; nothing in the generation call places a result inside a Cinema Studio project.
+Rule 7 requires every asset in the film to be inside the submission project so the generation history verifies
+it. So an API generation is a *concept*, never a delivered frame.
+
+Those are two independent reasons pointing the same way, which is the strongest kind of answer this project has
+produced. **Everything that reaches the cut is generated in the web app, inside the festival project.** The API
+keeps doing what it is unmatched at — writing and holding the prompts, running batches of twelve to find the
+composition, keeping the ledger, and proving what exists — and hands over a prompt and two frame ids.
+
+**Sep 8, also.** Every shot prompt now names its references (69 of 69). The four Sep 8 clips that prompted this
+were generated from the bible's prompts *verbatim* and still came out text-only — `medias: []` and
+`reference_elements: []` — so nothing in them could hold a face. That is a gap in what the prompt tells you to
+attach, not in the prompt itself, and it is now closed. Eleven concept clips were then generated properly,
+from their two anchors. `design/verify-steps.py` answers, for each of the 34 steps, whether it is really done.
 
 **Sep 6.** The Sep 5 jobs were audited: 76 terminal, 73 completed, 3 filter rejections each covered by a clean pass.
 Every one of the 42 assets now has a clean handle (six created today), and the Ocean plate was regenerated with the
@@ -131,7 +155,22 @@ D lanes until Gate A, exactly as RUN 15 says.
 - **Gate C:** runtime (300 s), shot order and shot count freeze. After this, a structural change costs
   video, not images. This is where the splice findings in section 4 (S4, S5, S22 durations) must be resolved.
 
-### Stage 8 — Motion pass (RUN 23–27)
+### Stage 8 — Motion pass (RUN 23–27) · L1 done Sep 8 for the eleven seam shots
+
+**The concept ladder, three passes on rising cost.** A failure found at L1 costs one budget clip; the same
+failure found at the final pass costs a 4K generation and the shot behind it.
+
+| | Engine | Res | From | Answers |
+|---|---|---|---|---|
+| **L1** | `seedance_2_0_mini` | 720p, 10 s | the shot's two anchors | can the A frame reach the B frame at all |
+| **L2** | the engine in the SHOTS row | 720p, real duration | L1's rendered last frame | does the seam *between* shots hold |
+| **Final** | the engine in the SHOTS row | 1080p / 4K | the previous shot's rendered last frame | the film |
+
+L1 is done for S1, S2, S6, S7, S8, S10, S11, S12, S18, S19 and S20 — job ids in `design/shot-ledger.json`.
+L2 and the final pass are generated **in the web app, in the submission project**, for the two reasons at the
+top of this file.
+
+### Stage 8 — the original plan, kept for the model and duration per shot
 - **Cheap pass (RUN 23), compressed:** the bible runs all 23 at budget tier. On this timeline run it only
   on the shots that carry a seam that can fail — S1/S2, S6, S7, S8, S10, S11, S12, S18, S19, S20 — at
   kling2_6 or veo3_1_lite, 1080p, 21:9. About 11 clips. You are testing whether each A-frame can reach its
@@ -341,9 +380,19 @@ about that) — every selection so far has been structural, not visual.
 - **Cinema Studio:** the stills reel at Gate C, the assembly at Gate E, watermark and packshot, the
   submission itself.
 
-**The recommended split, in one line:** the API generates and creates; the user selects, names, arranges and
-submits; the anchors' selected media ids are the only thing that has to cross from one side to the other,
-and they cross once, at the end of each anchor session.
+**The recommendation, revised Sep 8, and it is now a firm yes.** Before today the canvas was a convenience.
+It is now the only surface that can finish the film, for two reasons that are each sufficient on their own:
+the API cannot place an asset inside the submission project that Rule 7 requires, and the remaining credits
+cannot pay for a final pass. Both were open questions until today; neither is now.
+
+**So the split is:** the API writes and holds every prompt, runs the wide batches that find a composition,
+keeps the ledger, and proves what exists — all of it concept work. **The web app generates every frame and
+every clip that reaches the cut, inside the festival project.** What crosses between them is a prompt, two
+frame ids and a reference list, and it crosses once per shot.
+
+**What to carry across for each shot,** all of it already written down: the A-lane prompt from the bible's
+shot list, which now ends in the exact references to attach; the start and end anchor from
+`design/canvas-skeletons.md`; and the model and duration from the same row. Nothing has to be re-derived.
 
 ---
 
@@ -386,12 +435,40 @@ finished film could later contradict.
 
 ---
 
-## 7. One-screen checklist
+## 7. Verifying a step is actually done
+
+Three ways, and they answer different questions.
+
+**From here, by tool.** `python3 design/verify-steps.py` reads the account snapshot, the anchor plan, the shot
+ledger and the gate record, and reports every one of the 34 steps as done, part-done, not started, or
+unverifiable-on-this-machine. It never marks a step done on anything softer than a file, and it spends nothing.
+Writes `design/progress.json`.
+
+**In the app.** `node design/inject-progress.mjs` bakes that JSON into the bible, so the progress panel in the
+control room is the verifier's numbers rather than a hand-typed guess. The panel also prints the by-hand steps
+for whichever step is current.
+
+**By hand, for the things no file can prove.** Five gates and nine steps are a person looking at a screen. Each
+carries its own checklist in the panel and in `design/verify-steps.py`; when one is held, record it in
+`design/gates.json` and re-run. A gate that is not written down is not held.
+
+The full chain, which is safe to run at any time:
+
+```
+node design/extract-data.mjs --prompts > /tmp/bible-data.json
+python3 design/verify-steps.py /tmp/bible-data.json
+node design/inject-progress.mjs
+```
+
+---
+
+## 8. One-screen checklist
 
 **Done on Sep 5 — do not redo:**
 - [x] 4 plates, 6 locations, 7 props/creatures, 4 effects, 5 Turned variants generated · 27 clean handles created (Sep 5) · 6 more on Sep 6, so every asset has one
 - [x] Alder, Wren, Caedom-mortal, Threadwright, Turned-Water re-rendered on one engine (request Pro; it lands on the `nano_banana_2` label)
 - [x] Souls ready: `alder`, `wren`, `oriane`, `caedom-ascended`, `caedom-before` · `caedom-mortal` contaminated, delete
+- [x] Sep 8: every shot prompt names its references (69/69) · 11 L1 concept clips from their anchors · four measured · verifier and progress panel live
 - [x] Sep 6: all 76 Sep 5 jobs audited terminal · `plate-ocean-dark` regenerated with the dark-ground rule · 39 skeleton anchors, one each, in `canvas-skeletons.md`
 - [ ] In the web UI: delete `alder-1`, `wren-1`, `oriane-1`, `caedom-mortal-1` · delete the elements `caedom-mortal`, `caedom-ascended`, `plate-ocean` (use `caedom-before`, `caedom-ascended-1`, `plate-ocean-dark`) · delete the Souls `Caedom` (it is Oriane) and `caedom-mortal` · clear the 23 legacy novel-vocabulary handles
 
@@ -405,7 +482,8 @@ finished film could later contradict.
 - [ ] **Gate B** — 39 on one contact sheet, read twice
 - [ ] Stills reel at real durations · resolve S4, S5, S22 model/duration · decide S1+S2 as one 30 s gen or not
 - [ ] **Gate C** — 300 s, 23 shots, order frozen
-- [ ] Cheap pass on the 11 seam-bearing shots only · **Gate D** — promote any better frame
+- [x] Cheap pass (L1) on the 11 seam-bearing shots · [ ] **Gate D** — watch them in order, promote any better frame
+- [ ] L2 and the final pass **in the web app, in the submission project** — the API cannot place assets there and cannot afford them
 - [ ] Final pass in strict shot order per movement; chain from rendered last frames, not stills; S13 audio
       off; S20 six attempts; three fails → escalation ladder
 - [ ] Deflicker → upscale (2K, 4K, aigc) → grade (three grades) · **Gate E**
