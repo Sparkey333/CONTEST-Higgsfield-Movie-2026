@@ -416,6 +416,40 @@ keeps the ledger, and proves what exists — all of it concept work. **The web a
 every clip that reaches the cut, inside the festival project.** What crosses between them is a prompt, two
 frame ids and a reference list, and it crosses once per shot.
 
+### The two surfaces side by side
+
+Written down because this decision keeps getting revisited, and the answer has moved once already.
+
+| | **Canvas / Cinema Studio** | **API (Claude)** | **Outside tools** |
+| --- | --- | --- | --- |
+| Files into the submission project | Yes — the only surface that can | **No.** Verified four ways | No |
+| Pays for the final pass | Plan allowance | Credits — roughly 5× short | n/a |
+| Wide exploration | One at a time, by hand | 12 prompts per call | No |
+| Has ever looked at an image | You do | **Never.** Every pick so far is structural | Yes |
+| Reproducible record | None | Ledger, prompts, job ids, verifier | None |
+| Rename / delete a handle | Yes | No — names are permanent from this side |  n/a |
+| Watermark, packshot, submit | Yes | No | No |
+| Disqualification risk | None | Assets outside the project | **High on picture** |
+
+### Do not route picture through anything else
+
+Image and video editing tools are reachable from the same session that runs this pipeline — grade, grain,
+crop, render — and they are the fastest available way to lose. Anything that touches the picture outside
+Higgsfield produces footage with no generation history behind it, which is exactly what Rule 7 exists to
+catch. Deflicker, upscale and grade inside Cinema Studio, on the platform's own tools, or not at all.
+
+Sound is the documented exception: it may be made anywhere, and then **every audio file has to be uploaded
+into the festival project.** Made elsewhere and never uploaded is the classic disqualification.
+
+### The assumption this whole plan rests on
+
+The recommendation above depends on the plan's in-app allowance covering the final pass. From the API side
+that cannot be confirmed: `balance` reports the plan type and a credit figure, and the unlimited pool the
+API can see reports itself unavailable — which is a different pool from the app's. **Verify it in the app
+before committing to a 23-clip final pass.** If it does not cover 1080p across 23 shots, the plan changes
+shape rather than degrades: cut to the Minimal Viable Submission and spend the remaining credits only on
+the shots that carry the film — S10, S20, S13, S12, S16 — which are also the social cuts.
+
 **What to carry across for each shot,** all of it already written down: the A-lane prompt from the bible's
 shot list, which now ends in the exact references to attach; the start and end anchor from
 `design/canvas-skeletons.md`; and the model and duration from the same row. Nothing has to be re-derived.
