@@ -385,6 +385,32 @@ It is now the only surface that can finish the film, for two reasons that are ea
 the API cannot place an asset inside the submission project that Rule 7 requires, and the remaining credits
 cannot pay for a final pass. Both were open questions until today; neither is now.
 
+**The folder question, settled model by model.** A `folder_id` parameter does exist, but only on
+`minimax_h3` and `minimax_h3_max`, only as a creation-time argument, and on no image model — and there is
+no call in the whole surface to list folders, create one, or move a finished generation into one. So a
+generation's project membership is invisible from this side and unchangeable from this side. Filing is a
+hand action in the web app, and it stays one. What the repo contributes instead is the list:
+
+    python3 design/filing-list.py <images.json> <videos.json> --since 2026-09-06 \
+        -o design/project-1-filing.md
+
+`design/filing-list.py` is driven by the film rather than the calendar. It joins three files —
+`design/element-map.json` (every handle and the generation behind it), `design/anchor-plan.json` (the 39
+anchors) and `design/shot-ledger.json` (each shot's clips) — and writes the resulting set out as
+`design/project-1-filing.md`: **93 generations as of Sep 8** — 43 reference handles, 39 anchors, 11 concept
+clips. Each row is named by what it is, so a row that cannot be found in the account is a real gap, not a
+typo. A second section lists recent generations the film references nowhere; those are either exploration,
+which stays out of the project, or a re-render nobody has chosen yet, which moves into the first section
+the moment a handle or a shot points at it.
+
+Souls and reference handles are not filed themselves — they are workspace objects, not generations. What
+gets filed is the image behind each one, which is why `element-map.json` exists and why every handle row in
+the list carries a job id.
+
+Work the list down, then write the last date reached as `filing.filed_through` in `design/gates.json`.
+Step 34 reads the two back against each other and reports the shortfall as a count, so "is it all filed"
+stops being a memory and becomes a check.
+
 **So the split is:** the API writes and holds every prompt, runs the wide batches that find a composition,
 keeps the ledger, and proves what exists — all of it concept work. **The web app generates every frame and
 every clip that reaches the cut, inside the festival project.** What crosses between them is a prompt, two
@@ -448,9 +474,14 @@ Writes `design/progress.json`.
 control room is the verifier's numbers rather than a hand-typed guess. The panel also prints the by-hand steps
 for whichever step is current.
 
-**By hand, for the things no file can prove.** Five gates and nine steps are a person looking at a screen. Each
+**By hand, for the things no file can prove.** Five gates and eight steps are a person looking at a screen. Each
 carries its own checklist in the panel and in `design/verify-steps.py`; when one is held, record it in
 `design/gates.json` and re-run. A gate that is not written down is not held.
+
+**The one that is half of each.** Filing into the submission project cannot be read from the API at all, but it
+can still be checked, because the two halves are both files: `design/project-1-filing.md` says what exists and
+when it was made, `filing.filed_through` in `design/gates.json` says how far the hand got. Step 34 compares
+them and reports the shortfall as a count, not a feeling.
 
 The full chain, which is safe to run at any time:
 
@@ -458,6 +489,13 @@ The full chain, which is safe to run at any time:
 node design/extract-data.mjs --prompts > /tmp/bible-data.json
 python3 design/verify-steps.py /tmp/bible-data.json
 node design/inject-progress.mjs
+```
+
+And after any generating session, to refresh what still has to be filed:
+
+```
+python3 design/filing-list.py <images.json> <videos.json> --since <YYYY-MM-DD> \
+    -o design/project-1-filing.md
 ```
 
 ---
@@ -470,6 +508,7 @@ node design/inject-progress.mjs
 - [x] Souls ready: `alder`, `wren`, `oriane`, `caedom-ascended`, `caedom-before` · `caedom-mortal` contaminated, delete
 - [x] Sep 8: every shot prompt names its references (69/69) · 11 L1 concept clips from their anchors · four measured · verifier and progress panel live
 - [x] Sep 6: all 76 Sep 5 jobs audited terminal · `plate-ocean-dark` regenerated with the dark-ground rule · 39 skeleton anchors, one each, in `canvas-skeletons.md`
+- [ ] **In the web UI: move the 93 rows in `design/project-1-filing.md` into the submission project** (Rule 7; the API cannot do it) and record `filing.filed_through`
 - [ ] In the web UI: delete `alder-1`, `wren-1`, `oriane-1`, `caedom-mortal-1` · delete the elements `caedom-mortal`, `caedom-ascended`, `plate-ocean` (use `caedom-before`, `caedom-ascended-1`, `plate-ocean-dark`) · delete the Souls `Caedom` (it is Oriane) and `caedom-mortal` · clear the 23 legacy novel-vocabulary handles
 
 **The film — nine days, Sep 5 to Sep 14:**

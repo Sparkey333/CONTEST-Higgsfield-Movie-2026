@@ -1,0 +1,90 @@
+{
+  "_what": "Every reference handle in the account, and the generation each one was built from. Pulled live 2026-09-08. This is the join the filing list needs: Rule 7 is about generations being inside the submission project, and an element is only as filed as the image behind it.",
+  "_status": {
+    "live": "the film uses this handle",
+    "superseded": "a better handle exists; do not attach it, and do not file it",
+    "upload": "built from an uploaded file, not a generation — there is no generation to file",
+    "legacy": "pre-dates the film's naming doctrine; slated for deletion in the web UI"
+  },
+  "elements": {
+    "plate-sun":            {"job": "21db1b5a-0188-40a2-9747-5996928c8538", "on": "2026-09-05", "status": "live"},
+    "plate-ocean-dark":     {"job": "66da2493-5ab7-4e8d-a86b-f9936370ea7e", "on": "2026-09-06", "status": "live"},
+    "plate-island":         {"job": "5e545b8b-1676-4795-90a3-9fc18d8e3e7c", "on": "2026-09-05", "status": "live"},
+    "plate-bombardment":    {"job": "cfa81e5e-93fd-4a0c-bb3b-46fe964b7463", "on": "2026-09-05", "status": "live"},
+    "plate-ocean":          {"job": "a707eb44-a0c3-4824-af86-335005ac69fd", "on": "2026-09-05", "status": "superseded", "by": "plate-ocean-dark"},
+
+    "courtyard-of-worlds":  {"job": "e1e6902a-3b4d-4796-b872-9266d2d8f251", "on": "2026-09-05", "status": "live"},
+    "nacre-beach":          {"job": "5e1023d3-4559-4f5b-89de-0b3c965e3d8a", "on": "2026-09-05", "status": "live"},
+    "corals-abyss":         {"job": "a309c71d-2fbd-4309-a949-b889a5af7df8", "on": "2026-09-05", "status": "live"},
+    "white-temple":         {"job": "2230917c-4191-49dc-88ec-6d34fe25e65a", "on": "2026-09-05", "status": "live"},
+    "keepers-isle":         {"job": "5ac8a64d-43fc-4739-9e07-5fa98243d288", "on": "2026-09-05", "status": "live"},
+    "machira-orbit":        {"job": "1460be9e-466c-4cbc-a83f-594380e52a95", "on": "2026-09-05", "status": "live"},
+
+    "founding-stone":       {"job": "c640e786-5284-4367-9103-5a103e8a923b", "on": "2026-09-05", "status": "live"},
+    "aura-shell":           {"job": "62047c7a-509e-4f58-aa2e-4bdfe73c4fca", "on": "2026-09-05", "status": "live"},
+    "leviathan":            {"job": "14592903-e982-4472-89c3-88ed7a54be72", "on": "2026-09-05", "status": "live"},
+    "leviathan-plating":    {"job": "35a9dc9f-d8bb-414a-b27c-74e6a4b98686", "on": "2026-09-05", "status": "live"},
+    "iron-spears":          {"job": "bdb8aca8-4031-4968-ad34-ca36fe704d5d", "on": "2026-09-05", "status": "live"},
+    "twelve-ships":         {"job": "ebc798d9-7cfa-4a43-b96f-498d6463f195", "on": "2026-09-05", "status": "live"},
+    "frozen-tear":          {"job": "9b033dbf-8a98-4b84-8596-7d821769b353", "on": "2026-09-05", "status": "live"},
+
+    "fx-hollow":            {"job": "7d496e4b-5d73-4fcf-95f9-06fd1c1b5937", "on": "2026-09-05", "status": "live"},
+    "fx-segmented-mind":    {"job": "18f1eca5-f976-4962-8376-86666db17fd6", "on": "2026-09-05", "status": "live"},
+    "fx-floating-mountain": {"job": "333f2c9a-1b29-4f91-9951-4f58323a8900", "on": "2026-09-05", "status": "live"},
+    "fx-kill-beat":         {"job": "b03d9d69-dee5-4381-9724-a3d734c09e10", "on": "2026-09-05", "status": "live"},
+
+    "aura-grammar":         {"job": "669fadfc-facc-476b-a09e-96b74a918507", "on": "2026-08-29", "status": "live"},
+    "ladder-oriane":        {"job": "c01c00db-48d2-4e52-bdf7-6fb060092327", "on": "2026-08-29", "status": "live"},
+    "ladder-attunement":    {"job": "d8a9b7e0-cc1d-464d-9b0c-5aacff2f232f", "on": "2026-08-29", "status": "live"},
+
+    "oriane":               {"job": "2a390144-0546-4ed4-930d-f6541ab55c09", "on": "2026-08-29", "status": "live"},
+    "oriane-damaged":       {"job": "ccc9fbfb-fc2b-4542-ae23-93b6678bfd4d", "on": "2026-08-29", "status": "live"},
+    "oriane-ascended":      {"job": "2d4cdcbc-b912-42c1-af12-1d71b8e0a476", "on": "2026-08-29", "status": "live"},
+    "oriane-on-the-sun":    {"job": "756c6b4e-6665-444f-864e-c17547346fe7", "on": "2026-08-29", "status": "live"},
+    "alder":                {"job": "cb258167-6f5c-418d-8098-e1a7069dd926", "on": "2026-08-29", "status": "live"},
+    "alder-beach":          {"job": "ae6d938b-631d-491f-8f8d-cd8a412a093b", "on": "2026-08-29", "status": "live"},
+    "wren":                 {"job": "35c07bdb-8abd-48cf-b989-7fef8c51b6aa", "on": "2026-08-29", "status": "live"},
+    "threadwright":         {"job": "7116198c-e7ed-4925-9774-1bb661621fac", "on": "2026-08-29", "status": "live"},
+    "keeper":               {"job": "205ec84d-0904-409a-9d10-03c5906645cf", "on": "2026-08-29", "status": "live"},
+    "keeper-kneel":         {"job": "22e33df1-58f7-4e34-a6e2-3f4407404f93", "on": "2026-08-29", "status": "live"},
+    "turned":               {"job": "5fdfc755-3389-40af-95ce-c087b60be75b", "on": "2026-08-29", "status": "live"},
+    "lev-rider":            {"job": "0a1bb8b8-b020-4d08-a33d-d19ace2f3054", "on": "2026-08-29", "status": "live"},
+    "turned-hollows":       {"job": "320a1df3-cd12-4154-b290-9932a3e49703", "on": "2026-08-29", "status": "live"},
+    "turned-water":         {"job": "0a7a84fc-6a50-491b-bc28-6ed9c6ceb9db", "on": "2026-09-05", "status": "live"},
+    "turned-energy":        {"job": "753c10ad-2ecf-4fa8-b961-79de15e5b95d", "on": "2026-09-05", "status": "live"},
+    "turned-gravity":       {"job": "0e0ce893-879a-4445-a50f-7938040f630b", "on": "2026-09-05", "status": "live"},
+    "turned-metals":        {"job": "72734a4c-3621-44f4-a5a4-c6a8ac9519db", "on": "2026-09-05", "status": "live"},
+    "turned-thrall":        {"job": "8f4aaa1a-d066-4a38-8597-c58e3a31168b", "on": "2026-09-05", "status": "live"},
+    "turned-anchor":        {"job": "5b672db8-b6bb-47c1-b140-fe90e8d69930", "on": "2026-09-05", "status": "live"},
+
+    "caedom-before":        {"job": null, "media": "3031ec8f-a77c-413c-b94a-9f414bf03a7b", "status": "upload"},
+    "caedom-ascended-1":    {"job": null, "media": "212bcdc1-b55e-48c0-93ea-4a89a2e66bd5", "status": "upload"},
+    "caedom-mortal-1":      {"job": null, "media": "9c6e8773-ca98-4347-babc-b6bb511ad159", "status": "upload"},
+    "alder-1":              {"job": null, "media": "fd0306cc-b4fe-4bf7-a139-53dac3cc37d0", "status": "upload"},
+    "wren-1":               {"job": null, "media": "1a4944fa-82d6-4e7e-9d51-26d1a00c1065", "status": "upload"},
+    "oriane-1":             {"job": null, "media": "3eb248ba-0858-4f4c-971a-930e7a577fec", "status": "upload"},
+
+    "caedom-ascended":      {"job": "1ccb8e16-c394-4d80-bd13-1681df51399d", "on": "2026-08-29", "status": "superseded", "by": "caedom-ascended-1"},
+    "caedom-mortal":        {"job": "5c465fd4-274f-42d6-8cc1-439e352ef6fb", "on": "2026-08-29", "status": "superseded", "by": "caedom-before"}
+  },
+  "souls": {
+    "oriane":          {"soul_id": "c270c1d2-3466-4283-95cd-154dff318d76", "status": "ready"},
+    "alder":           {"soul_id": "efde8880-7bab-43fc-9100-4be64504b3e0", "status": "ready"},
+    "wren":            {"soul_id": "2d6202b6-277e-49c3-a83a-80a63d9ead1b", "status": "ready"},
+    "caedom-before":   {"soul_id": "32212823-f69e-4f05-bfc9-9692275a4a72", "status": "ready"},
+    "caedom-ascended": {"soul_id": "453e85a7-0fef-411e-8edc-693c998b8c95", "status": "ready"},
+    "caedom-mortal":   {"soul_id": "2e332523-ca66-4dd7-8a66-ff1f1d8f3d6e", "status": "ready", "note": "contaminated — delete in the web UI, use caedom-before"},
+    "Caedom":          {"soul_id": "48700a9f-61a0-4b20-8c57-5a7f8a9b0e02", "status": "legacy", "note": "this is Oriane, mis-named — delete in the web UI"}
+  },
+  "legacy_elements": [
+    "sector-guardians_v2", "prop_sector-guardians_v1", "oriane_v5", "caedom_v3",
+    "caedom_v2", "char_oriane_v4", "char_oriane_v3", "char_oriane_v1",
+    "char_oriane_damaged", "char_caedom_v1", "Caedom",
+    "loc_kephas-island-town_v2", "loc_kephas-island_v1", "loc_sector-guard-isle_v1",
+    "loc_starsun_v3", "loc_starsun_v2", "loc_starsun_v1",
+    "prop_enemy-pirate-ships_v1", "prop_the-turned-ones_v3", "prop_the-turned-ones_v2",
+    "prop_the-turned-ones_v1", "prop_beast-leviathan_v1", "prop_beast-dominion-skeleton_v1",
+    "Reborn-Green-Forest", "Siege-Battleground", "Cosmic-Mind-Walk",
+    "White-Pyramid-Being", "Prisman", "Kaya", "Marc", "Hashanna-Wasteland"
+  ]
+}

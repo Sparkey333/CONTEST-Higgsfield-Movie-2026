@@ -213,6 +213,47 @@ def check_refs_in_shots(f):
     return (state, have, total, ev)
 
 
+def check_filed(f):
+    """Is everything the film uses actually inside the submission project?
+
+    Nothing here can be answered from the API: it has no folder call, so a
+    generation's project membership is invisible from this side. What a file
+    *can* prove is whether the person has filed up to a given date, and whether
+    anything has been generated since. design/project-1-filing.md carries the
+    day blocks; gates.json carries how far the filing got.
+    """
+    path = os.path.join(ROOT, "design/project-1-filing.md")
+    if not os.path.exists(path):
+        return ("blocked", 0, 1, ["design/project-1-filing.md not present — "
+                                  "run design/filing-list.py against a fresh dump"])
+    src = open(path, encoding="utf-8").read()
+    block = src.split("## The film's own assets")
+    if len(block) < 2:
+        return ("blocked", 0, 1, ["the filing list has no film-assets section — re-run "
+                                  "design/filing-list.py"])
+    body = block[1].split("\n## ")[0]
+    dates = re.findall(r"\|\s*`[0-9a-f-]{36}`\s*\|\s*(\d{4}-\d{2}-\d{2}|—)\s*\|", body)
+    if not dates:
+        return ("blocked", 0, 1, ["the filing list has no dated rows"])
+    rows = len(dates)
+    known = [d for d in dates if d != "—"]
+    newest = max(known) if known else "—"
+    g = (f.gates.get("filing") or {})
+    through = g.get("filed_through")
+    if not through:
+        return ("todo", 0, rows,
+                ["%d generations belong in the project, newest made %s" % (rows, newest),
+                 "gates.json has no filing.filed_through — nothing recorded as moved",
+                 "the API has no folder call, so only the person doing it can record this"])
+    filed = sum(1 for d in dates if d != "—" and d <= through)
+    if through >= newest:
+        return ("pass", rows, rows,
+                ["all %d filed through %s by %s" % (rows, through, g.get("by", "?"))])
+    return ("partial", filed, rows,
+            ["filed through %s; the film's newest asset was made %s" % (through, newest),
+             "%d of %d still outside the project" % (rows - filed, rows)])
+
+
 WORLD = ["courtyard", "beach", "bgbloom", "temple", "bgisle", "bgmachira",
          "stone", "shell", "coral", "levbody", "propore", "ships", "proptear",
          "fxhollow", "fxmind", "fxmountain", "fxkill"]
@@ -228,7 +269,9 @@ STEPS = {
         "Confirm nothing in the project pre-dates the contest window."]),
     2: dict(kind="manual", manual=[
         "Open Cinema Studio and confirm the festival project exists.",
-        "Confirm every generation so far is inside that project, not loose."]),
+        "Confirm every generation so far is inside that project, not loose.",
+        "design/project-1-filing.md is the list of what is not in it yet —",
+        "the API has no folder call, so this move is only ever done by hand."]),
     3: dict(check=lambda f: need_assets(f, ["aurarule"], ["aura-grammar"])),
     4: dict(check=lambda f: need_assets(f, ["gwen"], ["oriane"], ["oriane"])),
     5: dict(check=lambda f: need_assets(f, ["gwendmg"], ["oriane-damaged"])),
@@ -299,8 +342,10 @@ STEPS = {
         "Post publicly and tag as the rules require — component 2.",
         "Open the post in a logged-out browser. If you cannot see it, neither can a judge.",
         "Social cuts come from S10, S20, S13, S12 or S16 only. Never Movement I."]),
-    34: dict(kind="manual", manual=[
-        "Verify every generation is still inside the festival project.",
+    34: dict(check=check_filed, manual=[
+        "Re-run design/filing-list.py against a fresh show_generations dump.",
+        "Move every labelled row into the festival project, oldest block first.",
+        "Record the date you reached as filing.filed_through in design/gates.json.",
         "Submit with a full day in hand, not on the deadline itself."]),
 }
 

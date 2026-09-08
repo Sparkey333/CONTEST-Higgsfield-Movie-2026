@@ -46,6 +46,9 @@ No build step, no dependencies, no account, no network calls.
 | **`design/gates.json`** | The five gates and the by-hand steps. A gate is a person looking at a screen, so it is recorded here or it did not happen. |
 | **`design/shot-ledger.json`** | Every shot's clips by layer — L1 concept, L2, final, finished — with the anchors each was generated from, the measured virality scores, and the credit arithmetic that decides where the final pass runs. |
 | **`design/anchor-plan.json`** | All 39 anchors: the composed prompt, the handles attached, the frame each depends on, and the job that produced it. |
+| **`design/filing-list.py`** | Builds the filing list from what the film uses, not from the calendar. The platform API has no folder call — checked four ways — so a generation cannot be moved into the submission project from code; this writes down exactly what to move instead. |
+| **`design/project-1-filing.md`** | The 93 generations the film actually uses, each row named by the handle, anchor or shot it is, so a row that cannot be found in the account is a real gap rather than a typo. A second section lists recent work the film references nowhere — either exploration to leave out, or a re-render nobody has chosen yet. |
+| **`design/element-map.json`** | Every reference handle and Soul in the account joined to the generation behind it, with the superseded and legacy ones marked. This is what makes the filing list possible: a handle is only as filed as the image it points at. |
 
 ### Inside the director's bible
 

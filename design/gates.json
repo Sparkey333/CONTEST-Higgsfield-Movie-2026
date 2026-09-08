@@ -25,5 +25,11 @@
  "E": {
   "held": false,
   "blocks": "steps 31-34 \u2014 picture lock, nothing is generated after it"
+ },
+ "filing": {
+  "_how": "The API has no folder call, so project membership cannot be read from this side. Move the rows in design/project-1-filing.md by hand in the web app, then write the last date you finished here. Step 34 compares it against the newest day in the list.",
+  "filed_through": null,
+  "by": null,
+  "note": "date format YYYY-MM-DD, UTC, matching the day headings in the filing list"
  }
 }
