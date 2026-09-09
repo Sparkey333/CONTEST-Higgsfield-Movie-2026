@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-08T22:45Z",
+ "generated": "2026-09-09T02:59Z",
  "deadline": "2026-09-14T23:59Z",
- "days_left": 6.1,
+ "days_left": 5.9,
  "snapshot_present": true,
  "crosswalk_present": true,
  "rollup": {
@@ -10,7 +10,7 @@
   "partial": 5,
   "todo": 15,
   "blocked": 0,
-  "pct": 54.1
+  "pct": 53.9
  },
  "steps": [
   {
@@ -241,7 +241,7 @@
    "have": 0,
    "need": 1,
    "evidence": [
-    "32 handles kept, 20 marked for deletion, 31 legacy names, 2 Souls to delete",
+    "34 handles kept, 16 marked for deletion, 31 legacy names, 2 Souls to delete",
     "the cull is decided but not yet actioned \u2014 deletion is web-UI only; record it as _cull.done_in_web_ui when finished",
     "not recorded in design/gates.json"
    ],
@@ -491,10 +491,11 @@
    "where": "Cinema Studio",
    "kind": "auto",
    "state": "partial",
-   "have": 9,
-   "need": 10,
+   "have": 6,
+   "need": 7,
    "evidence": [
-    "9 speaking shots, 19 lines, 184 of 556 screenplay words kept",
+    "11 spoken lines scanned, no deity reference",
+    "6 speaking shots, 11 lines, 86 of 556 screenplay words kept",
     "voices not chosen yet: CAEDOM, WREN, ALDER \u2014 casting takes are generated, listen and record the pick"
    ],
    "manual": [

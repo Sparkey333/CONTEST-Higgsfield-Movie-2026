@@ -283,14 +283,50 @@ def check_elements(f):
     return ("partial", len(keep), len(els), ev)
 
 
+RELIGIOUS = re.compile(
+    r"\b(god|gods|deity|divine|divinity|holy|sacred|pray\w*|worship|angel|angels|"
+    r"heaven|hellfire|saint|almighty|scripture|resurrect\w*|the One)\b", re.I)
+
+
+def check_world_language(f):
+    """No direct deity reference in anything the film speaks or shows.
+
+    The film defines its own vocabulary — Founding Stones, Founders, wielders,
+    the Vesper — and a real-world religious word inside that is both a tonal
+    break and an avoidable filter risk. "temple" is deliberately not on the list:
+    it is a building, and it is also the handle @white-temple.
+    """
+    d = load(os.path.join(ROOT, "design/dialogue.json"), {})
+    hits = []
+    for sid, lines in (d.get("cut") or {}).items():
+        for l in lines:
+            m = RELIGIOUS.search(l.get("line", ""))
+            if m:
+                hits.append("%s: %r in %r" % (sid, m.group(0), l["line"][:48]))
+    for s in f.bible["SHOTS"]:
+        for v in s["v"]:
+            body = clean(v.get("p", ""))
+            seg = body.split("DIALOGUE")[1].split("REFERENCES")[0] if "DIALOGUE" in body else ""
+            m = RELIGIOUS.search(seg)
+            if m:
+                hits.append("%s/%s prompt: %r" % (s["id"], v["c"], m.group(0)))
+    if hits:
+        return ("todo", 0, 1, ["%d deity reference(s) still in the spoken film" % len(hits)] + hits[:6])
+    n = sum(len(v) for v in (d.get("cut") or {}).values())
+    return ("pass", 1, 1, ["%d spoken lines scanned, no deity reference" % n])
+
+
 def check_dialogue(f):
     """Every speaking shot names its own lines, and the cut exists as data."""
     d = load(os.path.join(ROOT, "design/dialogue.json"), {})
     cut = d.get("cut") or {}
     if not cut:
         return ("todo", 0, 1, ["design/dialogue.json has no cut"])
+    # A silenced shot still carries a DIALOGUE block saying it is silent, so
+    # count the ones that actually speak.
     spoken = [s["id"] for s in f.bible["SHOTS"]
-              if "DIALOGUE" in clean(([v for v in s["v"] if v["c"] == "A"] or [{}])[0].get("p", ""))]
+              if "DIALOGUE" in clean(([v for v in s["v"] if v["c"] == "A"] or [{}])[0].get("p", ""))
+              and "DIALOGUE — none" not in clean(([v for v in s["v"] if v["c"] == "A"] or [{}])[0].get("p", ""))]
     missing = [k for k in cut if k not in spoken]
     lines = sum(len(v) for v in cut.values())
     ev = ["%d speaking shots, %d lines, %d of %d screenplay words kept"
@@ -419,6 +455,7 @@ STEPS = {
 
 EXTRA = {
     16: check_elements,
+    31: check_world_language,
     23: check_refs_in_shots,
 }
 

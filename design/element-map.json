@@ -102,8 +102,9 @@
     "iron-spears": {
       "job": "bdb8aca8-4031-4968-ad34-ca36fe704d5d",
       "on": "2026-09-05",
-      "status": "unused",
-      "decision": "delete (unreferenced)"
+      "status": "live",
+      "decision": "keep",
+      "role": "effect rule sheet — attached to the shots that depict it, so the effect is decided once"
     },
     "twelve-ships": {
       "job": "ebc798d9-7cfa-4a43-b96f-498d6463f195",
@@ -120,14 +121,16 @@
     "fx-hollow": {
       "job": "7d496e4b-5d73-4fcf-95f9-06fd1c1b5937",
       "on": "2026-09-05",
-      "status": "unused",
-      "decision": "delete (unreferenced)"
+      "status": "live",
+      "decision": "keep",
+      "role": "effect rule sheet — attached to the shots that depict it, so the effect is decided once"
     },
     "fx-segmented-mind": {
       "job": "18f1eca5-f976-4962-8376-86666db17fd6",
       "on": "2026-09-05",
-      "status": "unused",
-      "decision": "delete (unreferenced)"
+      "status": "live",
+      "decision": "keep",
+      "role": "effect rule sheet — attached to the shots that depict it, so the effect is decided once"
     },
     "fx-floating-mountain": {
       "job": "333f2c9a-1b29-4f91-9951-4f58323a8900",
@@ -138,8 +141,9 @@
     "fx-kill-beat": {
       "job": "b03d9d69-dee5-4381-9724-a3d734c09e10",
       "on": "2026-09-05",
-      "status": "unused",
-      "decision": "delete (unreferenced)"
+      "status": "live",
+      "decision": "keep",
+      "role": "effect rule sheet — attached to the shots that depict it, so the effect is decided once"
     },
     "aura-grammar": {
       "job": "669fadfc-facc-476b-a09e-96b74a918507",
@@ -282,14 +286,16 @@
       "job": null,
       "media": "3031ec8f-a77c-413c-b94a-9f414bf03a7b",
       "status": "live",
-      "decision": "keep",
-      "role": "the 'before' form, kept as a pair with caedom-ascended-1 at the director's request; no shot uses it"
+      "decision": "replace",
+      "role": "the 'before' form, kept as a pair with caedom-ascended-1 at the director's request; no shot uses it",
+      "replaced_by": "the chosen variant of selection_passes.caedom-identity.caedom-mortal-A in design/shot-ledger.json — a generation, not an upload"
     },
     "caedom-ascended-1": {
       "job": null,
       "media": "212bcdc1-b55e-48c0-93ea-4a89a2e66bd5",
       "status": "live",
-      "decision": "keep"
+      "decision": "replace",
+      "replaced_by": "the chosen variant of selection_passes.caedom-identity.caedom-ascended-A in design/shot-ledger.json — a generation, not an upload"
     },
     "caedom-mortal-1": {
       "job": null,
@@ -424,6 +430,10 @@
       "founding-stone",
       "frozen-tear",
       "fx-floating-mountain",
+      "fx-hollow",
+      "fx-kill-beat",
+      "fx-segmented-mind",
+      "iron-spears",
       "keeper",
       "keeper-kneel",
       "keepers-isle",
@@ -490,10 +500,6 @@
       "Hashanna-Wasteland"
     ],
     "delete_recommended_unreferenced": [
-      "iron-spears",
-      "fx-hollow",
-      "fx-segmented-mind",
-      "fx-kill-beat",
       "lev-rider",
       "turned-hollows",
       "turned-energy",
@@ -506,6 +512,20 @@
       "caedom-mortal",
       "Caedom"
     ],
-    "api_note": "show_reference_elements is create-only and show_characters is list/train/status only — every deletion here is a web-UI action."
+    "api_note": "show_reference_elements is create-only and show_characters is list/train/status only — every deletion here is a web-UI action.",
+    "replace_after_choosing": [
+      "caedom-before",
+      "caedom-ascended-1"
+    ],
+    "note": "Two handles moved from keep to replace on 2026-09-09. They were the only kept handles backed by uploads, which is both the weakest link at Gate A and the open half of the no-real-people rule. Four candidates each are generated and waiting on a choice.",
+    "restored_2026_09_09": {
+      "handles": [
+        "fx-hollow",
+        "fx-kill-beat",
+        "fx-segmented-mind",
+        "iron-spears"
+      ],
+      "why": "These were marked unreferenced because no shot attached them, but the film plainly depicts all four. The fault was in the shot prompts, not in the handles — the effects were being described in words in each shot instead of attached once. They are now attached where they appear (S11, S12, S13, S19, S20), which is what stops the hollow looking different in every shot."
+    }
   }
 }

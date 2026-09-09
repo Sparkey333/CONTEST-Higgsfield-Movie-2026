@@ -29,7 +29,7 @@ Listed first because they get asked for by name. They also appear in their own s
 | ◆ | **S12** <br><small>concept clip</small> | `92d87626-73e7-4b75-8c79-5f8b09ae062e` | 2026-09-08 | `seedance_2_0_mini` | The camera pulls off the near-black flank and opens out, and she launches forwar |
 
 
-## The film's own assets — 82 generations
+## The film's own assets — 86 generations
 
 | | what | job | made | model | prompt |
 |---|---|---|---|---|---|
@@ -42,6 +42,10 @@ Listed first because they get asked for by name. They also appear in their own s
 |  | **@founding-stone** <br><small>reference handle</small> | `c640e786-5284-4367-9103-5a103e8a923b` | 2026-09-05 | `nano_banana_2` | Isolated prop study on a plain dark background, photoreal. A green-white stone r |
 |  | **@frozen-tear** <br><small>reference handle</small> | `9b033dbf-8a98-4b84-8596-7d821769b353` | 2026-09-05 | `nano_banana_2` | Isolated prop study on a plain dark background, photoreal, extreme macro. Four s |
 |  | **@fx-floating-mountain** <br><small>reference handle</small> | `333f2c9a-1b29-4f91-9951-4f58323a8900` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, low red setting sun, heavy haze. Four stages  |
+|  | **@fx-hollow** <br><small>reference handle</small> | `7d496e4b-5d73-4fcf-95f9-06fd1c1b5937` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, cold blue-grey storm light. Four scales of th |
+|  | **@fx-kill-beat** <br><small>reference handle</small> | `b03d9d69-dee5-4381-9724-a3d734c09e10` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, torrential rain, overcast storm light. Four s |
+|  | **@fx-segmented-mind** <br><small>reference handle</small> | `18f1eca5-f976-4962-8376-86666db17fd6` | 2026-09-05 | `nano_banana_2` | Effect reference sheet, photoreal, cold blue-grey storm light. Four studies of a |
+|  | **@iron-spears** <br><small>reference handle</small> | `bdb8aca8-4031-4968-ad34-ca36fe704d5d` | 2026-09-05 | `nano_banana_2` | Isolated prop study on a plain dark background, photoreal. Rods of raw iron ore  |
 |  | **@keeper** <br><small>reference handle</small> | `205ec84d-0904-409a-9d10-03c5906645cf` | 2026-08-29 | `nano_banana_2` | Character reference sheet for a uniformed order, five views arranged evenly in a |
 |  | **@keeper-kneel** <br><small>reference handle</small> | `22e33df1-58f7-4e34-a6e2-3f4407404f93` | 2026-08-29 | `nano_banana_2` | Cinematic still, 2.39:1, locked-off wide, static, photoreal. Two parallel lines  |
 |  | **@keepers-isle** <br><small>reference handle</small> | `5ac8a64d-43fc-4739-9e07-5fa98243d288` | 2026-09-05 | `nano_banana_2` | Establishing background plate, no characters. Cinematic 2.39:1, locked-off wide, |
@@ -138,7 +142,7 @@ Made on or after 2026-09-06 and named by no handle, anchor or shot. A row here i
 |  | **—** <br><small>not referenced</small> | `5d11ae41-b3a8-47fb-82a8-757e96d909d0` | 2026-09-08 | `seedance_2_5` | summoned skeletal beast of the depths from this image is maintained, controlled  |
 |  | **—** <br><small>not referenced</small> | `b4cc7968-ad7f-4482-8419-6f2a3b8a68de` | 2026-09-08 | `seedance_2_5` | summoned skeletal beast of the depths from this image is maintained, controlled  |
 
-## Awaiting selection — 12 candidates for 3 anchors
+## Awaiting selection — 20 candidates for 5 anchors
 
 A selection pass is four generations of one anchor, and only the one you choose is an asset of the film. Choose, record it as `chosen` in `design/shot-ledger.json`, re-run this script, and the winner joins the list above while the other three stay out of the project.
 
@@ -156,12 +160,20 @@ A selection pass is four generations of one anchor, and only the one you choose 
 | scene-1 | **F03** | `5377d75c-b961-452d-afac-38ad6d904a50` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
 | scene-1 | **F03** | `31d5e449-8e7f-4dec-9a93-586508e3f1ad` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
 | scene-1 | **F03** | `ee236f3e-7d11-4928-bdcb-a7dd2bbfdb99` | chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked |
+| caedom-identity | **caedom-mortal-A** | `4a0d4610-1636-46d6-8b8f-a11507b73b7a` |  |
+| caedom-identity | **caedom-mortal-A** | `b4faae0e-0748-4818-b5d0-8687549361b4` |  |
+| caedom-identity | **caedom-mortal-A** | `f7cb2ef6-0b49-4b9b-ba7a-ebd550a41961` |  |
+| caedom-identity | **caedom-mortal-A** | `1f926d21-0469-4e20-a89a-2b0d774911b0` |  |
+| caedom-identity | **caedom-ascended-A** | `206916d3-7511-432a-bde5-0dab8b265d35` |  |
+| caedom-identity | **caedom-ascended-A** | `895ebfa4-06a8-4954-a853-d910449f082b` |  |
+| caedom-identity | **caedom-ascended-A** | `fac2b5e5-9fd7-476f-9522-362056dbc3ee` |  |
+| caedom-identity | **caedom-ascended-A** | `2191b136-68cc-4428-9c26-b67d48fac122` |  |
 
 ## Totals
 
-- **82 generations belong in the project** (32 reference handles, 39 anchors, 11 clips)
+- **86 generations belong in the project** (36 reference handles, 39 anchors, 11 clips)
 - 6 creature shots
 - 15 recent generations that are **not** part of the film
-- 12 selection candidates waiting on a choice
+- 20 selection candidates waiting on a choice
 
 Souls and reference handles are workspace objects, not generations, so they are not filed themselves — the image behind each one is, and that is the row above carrying its `@handle`. `design/element-map.json` holds the whole join.

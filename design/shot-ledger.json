@@ -566,6 +566,43 @@
      ]
     }
    }
+  },
+  "caedom-identity": {
+   "_what": "Caedom was the one character whose identity handles traced to UPLOADS rather than to generations with prompts in this repo — caedom-before and caedom-ascended-1. That is the weakest link going into Gate A and it is also the open half of the festival's no-real-people rule, because a Soul inherits whatever was trained into it. This pass replaces both with traceable generations.",
+   "on": "2026-09-09",
+   "model": "nano_banana_pro (labelled nano_banana_2)",
+   "credits": 16,
+   "how": "The two prompts reference each other's upload, so the circle was broken: the mortal sheet was generated from TEXT ALONE (its prompt fully describes the bone structure), and the ascended sheet from the Aug 29 generation 1ccb8e16 — which is an image_job, not an upload. Both chains now end in a Higgsfield generation whose prompt is in this repo.",
+   "chosen": null,
+   "frames": {
+    "caedom-mortal-A": {
+     "replaces_handle": "caedom-before",
+     "was": "media_input 3031ec8f-a77c-413c-b94a-9f414bf03a7b (upload)",
+     "attach": [],
+     "note": "text-only by design — nothing upstream to inherit",
+     "variants": [
+      "4a0d4610-1636-46d6-8b8f-a11507b73b7a",
+      "b4faae0e-0748-4818-b5d0-8687549361b4",
+      "f7cb2ef6-0b49-4b9b-ba7a-ebd550a41961",
+      "1f926d21-0469-4e20-a89a-2b0d774911b0"
+     ]
+    },
+    "caedom-ascended-A": {
+     "replaces_handle": "caedom-ascended-1",
+     "was": "media_input 212bcdc1-b55e-48c0-93ea-4a89a2e66bd5 (upload)",
+     "attach": [
+      "image_job 1ccb8e16 — the Aug 29 ascended generation"
+     ],
+     "variants": [
+      "206916d3-7511-432a-bde5-0dab8b265d35",
+      "895ebfa4-06a8-4954-a853-d910449f082b",
+      "fac2b5e5-9fd7-476f-9522-362056dbc3ee",
+      "2191b136-68cc-4428-9c26-b67d48fac122"
+     ],
+     "note": "one variant returned status:failed with no reason and was resubmitted unchanged — the third failure kind this production has seen, alongside content-filter and stochastic rejection"
+    }
+   },
+   "then": "Choose one of each, create the two elements from the chosen image_job (the API can create), and delete the two uploads plus caedom-mortal-1 in the web UI. Retrain the caedom-before and caedom-ascended Souls from the chosen sheets if you want the provenance to be clean all the way down."
   }
  }
 }

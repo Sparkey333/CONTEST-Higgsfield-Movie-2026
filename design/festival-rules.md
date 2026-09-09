@@ -57,6 +57,29 @@ Subtitles are therefore optional here, not required. They are still worth burnin
 accessibility and for a jury watching on a laptop — and if you do, they are picture, so they are
 made inside Cinema Studio.
 
+## World language — a decision, not a rule
+
+Nothing in the rules pulled on Sep 8 forbids religious content, and this file does not claim
+otherwise. The film nevertheless carries no direct deity reference, for two reasons that are
+both ours: a real-world religious word inside an invented cosmology is a tonal break, and
+generation platforms commonly reject religious imagery, which is an avoidable way to lose a
+render late.
+
+Changed on Sep 9: "Are you sure you're not God?" became "…not a Founder?", and Caedom's reply
+defines that word instead — which lands better, because a Founder means something specific in
+this world and a god does not. "The One you name" became "the first hand that lit the Stones".
+Oriane's titles lost "Leader of spirits. Angel of light." for "Leader of the seven. Vessel of
+light." A hellfire of metal became a rain of iron. "Desperate souls" became "desperate figures",
+which also stops the word colliding with the platform's Soul feature.
+
+Two words were deliberately kept. **Temple** is a building, and it is also the handle
+`@white-temple` carried by four anchors and several shot prompts; renaming it would cascade for
+no gain. **"Blessed, cursed"** in the opening narration is idiomatic English rather than an
+invocation, and sanitising it would flatten the line without removing a reference.
+
+`check_world_language` in `design/verify-steps.py` scans every spoken line and every DIALOGUE
+block in the shot prompts on each run, so this cannot drift back in.
+
 ## Canvas, from the platform's own guidance
 
 Canvas is described as the tool for when **one reference set drives several shot prompts** —
