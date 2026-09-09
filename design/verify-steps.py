@@ -189,6 +189,34 @@ def check_rights(f):
     return ("pass", 1, 1, ["%d terms scanned across every shipped prompt, no hit" % len(terms)])
 
 
+def check_inline_handles(f):
+    """A shot prompt must bind its handles inside the prose, not only in the tail.
+
+    The tail tells the operator what to attach. It does not tell the model that
+    "the woman" is Oriane — and a prompt that says "the woman" gets a woman, not
+    this one. Every handle named inline must also appear in the tail, because a
+    handle nobody attaches is worse than one never named.
+    """
+    named = re.compile(r"\b(ORIANE|CAEDOM|ALDER|WREN|THREADWRIGHT)\b")
+    bad, bound = [], 0
+    for s in f.bible["SHOTS"]:
+        a = [v for v in s["v"] if v["c"] == "A"]
+        body = clean(a[0].get("p", "")) if a else ""
+        head, _, tail = body.partition("REFERENCES")
+        inl = set(re.findall(r"@([a-z0-9-]+)", head))
+        tl = set(re.findall(r"@([a-z0-9-]+)", tail))
+        if inl:
+            bound += 1
+        if named.search(head) and not inl:
+            bad.append("%s names a character but binds no handle inline" % s["id"])
+        for h in inl - tl:
+            bad.append("%s binds @%s inline but the tail never asks for it" % (s["id"], h))
+    ev = ["%d of %d shots bind a handle inside the prose" % (bound, len(f.bible["SHOTS"]))]
+    if bad:
+        return ("partial", bound, len(f.bible["SHOTS"]), ev + bad[:6])
+    return ("pass", bound, bound, ev + ["every inline handle is also in its tail"])
+
+
 def check_refs_in_shots(f):
     """Feature parity with the anchors: a shot prompt has to name its elements.
 
@@ -455,6 +483,7 @@ STEPS = {
 
 EXTRA = {
     16: check_elements,
+    17: check_inline_handles,
     31: check_world_language,
     23: check_refs_in_shots,
 }

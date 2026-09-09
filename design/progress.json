@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-09T03:48Z",
+ "generated": "2026-09-09T04:02Z",
  "deadline": "2026-09-14T23:59Z",
  "days_left": 5.8,
  "snapshot_present": true,
@@ -241,7 +241,7 @@
    "have": 0,
    "need": 1,
    "evidence": [
-    "34 handles kept, 16 marked for deletion, 31 legacy names, 2 Souls to delete",
+    "35 handles kept, 15 marked for deletion, 31 legacy names, 2 Souls to delete",
     "the cull is decided but not yet actioned \u2014 deletion is web-UI only; record it as _cull.done_in_web_ui when finished",
     "not recorded in design/gates.json"
    ],
@@ -264,6 +264,9 @@
    "have": 11,
    "need": 11,
    "evidence": [
+    "22 of 23 shots bind a handle inside the prose",
+    "S1 names a character but binds no handle inline",
+    "S19 binds @white-temple inline but the tail never asks for it",
     "11 of 11 generated (skeleton pass \u2014 one image each, not yet selected)"
    ],
    "manual": []

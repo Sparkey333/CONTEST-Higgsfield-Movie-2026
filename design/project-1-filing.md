@@ -29,7 +29,7 @@ Listed first because they get asked for by name. They also appear in their own s
 | ◆ | **S12** <br><small>concept clip</small> | `92d87626-73e7-4b75-8c79-5f8b09ae062e` | 2026-09-08 | `seedance_2_0_mini` | The camera pulls off the near-black flank and opens out, and she launches forwar |
 
 
-## The film's own assets — 86 generations
+## The film's own assets — 87 generations
 
 | | what | job | made | model | prompt |
 |---|---|---|---|---|---|
@@ -51,6 +51,7 @@ Listed first because they get asked for by name. They also appear in their own s
 |  | **@keepers-isle** <br><small>reference handle</small> | `5ac8a64d-43fc-4739-9e07-5fa98243d288` | 2026-09-05 | `nano_banana_2` | Establishing background plate, no characters. Cinematic 2.39:1, locked-off wide, |
 |  | **@ladder-attunement** <br><small>reference handle</small> | `d8a9b7e0-cc1d-464d-9b0c-5aacff2f232f` | 2026-08-29 | `nano_banana_2` | Character ladder sheet for a group, photoreal, cold blue-grey storm light, plain |
 |  | **@ladder-oriane** <br><small>reference handle</small> | `c01c00db-48d2-4e52-bdf7-6fb060092327` | 2026-08-29 | `nano_banana_2` | Character state ladder, photoreal, cold storm light, plain dark background, the  |
+|  | **@lev-rider** <br><small>reference handle</small> | `0a1bb8b8-b020-4d08-a33d-d19ace2f3054` | 2026-08-29 | `nano_banana_2` | Detail study, photoreal, overcast storm light, plain dark background. Four views |
 |  | **@leviathan** <br><small>reference handle</small> | `14592903-e982-4472-89c3-88ed7a54be72` | 2026-09-05 | `nano_banana_2` | Creature reference sheet, photoreal, overcast storm daylight, plain mid-grey bac |
 |  | **@leviathan-plating** <br><small>reference handle</small> | `35a9dc9f-d8bb-414a-b27c-74e6a4b98686` | 2026-09-05 | `nano_banana_2` | Texture and material study on a plain background, photoreal. The hide of an enor |
 |  | **@machira-orbit** <br><small>reference handle</small> | `1460be9e-466c-4cbc-a83f-594380e52a95` | 2026-09-05 | `nano_banana_2` | Establishing plate, no characters. Cinematic 2.39:1. A blue-green inhabited plan |
@@ -171,7 +172,7 @@ A selection pass is four generations of one anchor, and only the one you choose 
 
 ## Totals
 
-- **86 generations belong in the project** (36 reference handles, 39 anchors, 11 clips)
+- **87 generations belong in the project** (37 reference handles, 39 anchors, 11 clips)
 - 6 creature shots
 - 15 recent generations that are **not** part of the film
 - 20 selection candidates waiting on a choice

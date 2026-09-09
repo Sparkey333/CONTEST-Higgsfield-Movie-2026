@@ -237,8 +237,9 @@
     "lev-rider": {
       "job": "0a1bb8b8-b020-4d08-a33d-d19ace2f3054",
       "on": "2026-08-29",
-      "status": "unused",
-      "decision": "delete (unreferenced)"
+      "status": "live",
+      "decision": "keep",
+      "role": "the fused wielder set into the leviathan's skull — S10 shows him directly"
     },
     "turned-hollows": {
       "job": "320a1df3-cd12-4154-b290-9932a3e49703",
@@ -523,7 +524,8 @@
         "fx-hollow",
         "fx-kill-beat",
         "fx-segmented-mind",
-        "iron-spears"
+        "iron-spears",
+        "lev-rider"
       ],
       "why": "These were marked unreferenced because no shot attached them, but the film plainly depicts all four. The fault was in the shot prompts, not in the handles — the effects were being described in words in each shot instead of attached once. They are now attached where they appear (S11, S12, S13, S19, S20), which is what stops the hollow looking different in every shot."
     }
