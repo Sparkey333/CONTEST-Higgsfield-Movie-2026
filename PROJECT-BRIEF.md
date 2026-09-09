@@ -23,9 +23,10 @@ the waves. She wins. Winning takes everything she has — to keep the island off
 every map, she burns her own mind to ash.
 
 **III · The Island.** *102 seconds, 9 shots.* The same sunset, from the beach.
-Two brothers, eight and six, watch a mountain fall out of the sky and stop. One
-of them sees a miracle. The other sees a weapon. The film ends on which of them
-was changed.
+Two brothers, eight and six, watch a mountain fall out of the sky and stop. The
+younger one cannot look away from the power. The older one wants it as a weapon,
+says so, and then — in the last held close-up of the film — puts it down and
+finds something better. The film ends on which of them was changed.
 
 ---
 
@@ -52,11 +53,12 @@ the rim and black at the centre, a bearer's is brightest at the centre with no
 edge at all. The whole hierarchy is legible in a single frame, and no line of
 dialogue is spent explaining it.
 
-**Eighty-six words.** The screenplay carries 556 words of dialogue. The film
-keeps 86 of them — 11 lines across 6 of the 23 shots. Three shots that could have
-spoken are silent on purpose, including the climax of Movement II. The last two
-lines of the film are the first two lines of the film, said again after they have
-cost something.
+**Eighty-nine words.** The screenplay carries 556 words of dialogue. The film
+keeps 89 of them — 12 lines across 6 of the 23 shots. Three shots that could have
+spoken are silent on purpose, including the climax of Movement II. Four of the
+final words are spoken on camera by a boy who has just changed his mind; the two
+lines after them are the film's first two lines, said again once they have cost
+something.
 
 ---
 

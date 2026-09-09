@@ -48,6 +48,10 @@
    {
     "who": "ALDER (V.O.)",
     "line": "I want to move mountains. To raise them over the heads of my enemies."
+   },
+   {
+    "who": "ALDER (on camera, smiling — hope, relief, courage)",
+    "line": "…There's something more."
    }
   ],
   "S23": [
@@ -66,12 +70,12 @@
   "S3": "on camera, both faces legible — render with audio on",
   "S4": "on camera, locked close-up — her lips barely move; Caedom is off-screen",
   "S5": "on camera until the tear",
-  "S22": "Alder is voice-over over his own held close-up",
+  "S22": "the want is voice-over over the held push-in; the last line is spoken on camera as the smile arrives — render with audio on, and do not let a score come in under it",
   "S23": "voice-over, the same takes as S4 and S3 — not new ones"
  },
  "screenplay_blocks": 42,
  "screenplay_words": 556,
- "kept_words": 86,
+ "kept_words": 89,
  "voice": {
   "_how": "seed_audio (ByteDance) at 0.1 credits a line — voice is the cheapest thing in this production. Generated inside the account, which is what the rule requires; every file still has to be uploaded into the submission project at RUN 31.",
   "casting_test": {
@@ -220,5 +224,16 @@
    "S17 — one line the picture carries alone"
   ],
   "why": "Time, and the fact that every line kept is one the film would be lesser without: the thesis, the brother, the button, and the want that ends it."
- }
+ },
+ "kept_lines": 12,
+ "speaking_shots": 6,
+ "changes": [
+  {
+   "on": "2026-09-09",
+   "shot": "S22",
+   "what": "The ending reversed. Alder is now the brother who learns the right lesson.",
+   "why": "Author's note. The conquest line stays with Alder and stays verbatim, but it is now his first instinct rather than his conclusion: it arrives as voice-over over the push-in, and then he sets it down and says the film's last new line on camera, smiling. Wren, who was the excited one, has turned away to stare at the keepers and does not look back — so the want does not leave the film, it changes brother. The dark cloud moves off Alder and sits behind Wren.",
+   "departs_from_source": "The novel gives the elder brother the conquest reading and says it guided him for the next ten years. The film keeps the sentence and reverses who it ends up describing."
+  }
+ ]
 }

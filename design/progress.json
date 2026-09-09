@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-09T04:02Z",
+ "generated": "2026-09-09T04:30Z",
  "deadline": "2026-09-14T23:59Z",
  "days_left": 5.8,
  "snapshot_present": true,
@@ -497,8 +497,8 @@
    "have": 6,
    "need": 7,
    "evidence": [
-    "11 spoken lines scanned, no deity reference",
-    "6 speaking shots, 11 lines, 86 of 556 screenplay words kept",
+    "12 spoken lines scanned, no deity reference",
+    "6 speaking shots, 12 lines, 89 of 556 screenplay words kept",
     "voices not chosen yet: CAEDOM, WREN, ALDER \u2014 casting takes are generated, listen and record the pick"
    ],
    "manual": [
@@ -559,9 +559,9 @@
    "kind": "auto",
    "state": "todo",
    "have": 0,
-   "need": 86,
+   "need": 87,
    "evidence": [
-    "86 generations belong in the project, newest made 2026-09-08",
+    "87 generations belong in the project, newest made 2026-09-08",
     "gates.json has no filing.filed_through \u2014 nothing recorded as moved",
     "the API has no folder call, so only the person doing it can record this"
    ],
