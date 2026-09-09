@@ -105,8 +105,8 @@ Listed first because they get asked for by name. They also appear in their own s
 |  | **F31** <br><small>anchor frame</small> | `41e0a3c1-ae7c-459f-8789-c73ffb38b12e` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. The mountain's particles falling |
 |  | **F32** <br><small>anchor frame</small> | `26786720-93e0-44f4-b924-31a8c086d67d` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Locked-off wide, static, 32mm, l |
 |  | **F33** <br><small>anchor frame</small> | `492410ef-4316-4873-a910-968918b13df6` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Temple doors closing, the garden |
-|  | **F34** <br><small>anchor frame</small> | `c73d7f62-b0ed-4ecc-8e8f-e42353758386` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Both brothers in the beach grass |
-|  | **F35** <br><small>anchor frame</small> | `1b3c8159-88d7-4347-a9cc-6cd0364a361a` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Close-up on a young man's face a |
+|  | **F34** <br><small>anchor frame</small> | `35e7845b-8063-4db0-8381-4064e7991799` | 2026-09-09 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Both brothers in the beach grass |
+|  | **F35** <br><small>anchor frame</small> | `4595a2ac-06ce-4fee-852f-247508e68e9d` | 2026-09-09 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Close-up on a young man's face a |
 |  | **F36** <br><small>anchor frame</small> | `bf766d12-89ec-4121-93e0-cac2926cb6da` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. Caedom alone at the courtyard ed |
 |  | **F37** <br><small>anchor frame</small> | `a26c5697-1d07-4e1e-873f-a4fd82092b68` | 2026-09-06 | `nano_banana_2` | Still frame, cinematic 2.39:1, 21:9, photoreal. A floor of solid light seen from |
 |  | **S1** <br><small>concept clip</small> | `3f413c2d-8799-4557-ae68-9c6b29153f02` | 2026-09-08 | `seedance_2_0_mini` | Cinematic 2.39:1. Open in total black. A slow vertical crane rises out of a chur |
@@ -178,3 +178,14 @@ A selection pass is four generations of one anchor, and only the one you choose 
 - 20 selection candidates waiting on a choice
 
 Souls and reference handles are workspace objects, not generations, so they are not filed themselves — the image behind each one is, and that is the row above carrying its `@handle`. `design/element-map.json` holds the whole join.
+
+
+## Superseded on 2026-09-09 — do not file these
+
+The ending was reversed and the two frames that carry it were re-rendered. The rows above now point at
+the new generations. The two below are the versions they replace; leave them out of the submission project.
+
+| Frame | Superseded job | Why |
+| --- | --- | --- |
+| **F34** | `c73d7f62-b0ed-4ecc-8e8f-e42353758386` | No dark cloud behind Wren |
+| **F35** | `1b3c8159-88d7-4347-a9cc-6cd0364a361a` | Alder is calculating in it; the film now ends on his smile |

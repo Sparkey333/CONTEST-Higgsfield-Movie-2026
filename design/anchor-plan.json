@@ -596,8 +596,13 @@
     "wren"
    ],
    "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Both brothers in the beach grass at the top of the shot: the younger one mid-sentence and delighted, hands up; the older one lying back beside him, jaw set, already elsewhere. Far behind the younger brother, deep out of focus, a single dark low cloud sits over flat water, motionless. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame — the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift. Wren is <<<5d2b4828-615d-4f63-93c6-f770a4e14296>>>: same face, build and costume, no drift.",
-   "job": "c73d7f62-b0ed-4ecc-8e8f-e42353758386",
-   "note": "Start of S22. Wren turns away and Alder softens during the shot, so this frame holds the before of both."
+   "job": "35e7845b-8063-4db0-8381-4064e7991799",
+   "note": "Start of S22. Wren turns away and Alder softens during the shot, so this frame holds the before of both.",
+   "superseded": [
+    "c73d7f62-b0ed-4ecc-8e8f-e42353758386"
+   ],
+   "regenerated": "2026-09-09",
+   "why_regenerated": "the ending reversed — S22 now finds a smile, not a calculation"
   },
   {
    "i": 36,
@@ -613,8 +618,13 @@
     "alder"
    ],
    "prompt": "Still frame, cinematic 2.39:1, 21:9, photoreal. Close-up on a young man's face at the end of a slow push, 85mm, shallow focus. Sun-darkened skin, salt-stiff sun-bleached blonde hair. He is smiling — not a grin, a smile that has just arrived and surprised him, eyes bright and wet, mouth barely open, the hard set gone out of his jaw. Hope and relief and something braver than either. Behind him, deep out of focus, open flat water and clear sky with no cloud in it. Golden hour backlight, a natural unretouched face, no smoothing. Look: golden hour. Low warm sun, long shadows, faintly iridescent sand. Calm light held against violent events. Anamorphic, deep blacks, heavy atmospheric haze. This is an anchor frame — the composition has to survive being held. No text, no watermark. Match the key direction, colour and contrast of the lighting plate <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> exactly. Alder is <<<b3ff8e2a-0cb8-4b44-8695-974d379eb621>>>: same face, build and costume, no drift.",
-   "job": "1b3c8159-88d7-4347-a9cc-6cd0364a361a",
-   "note": "The last frame of the film's last new line. Nothing dark sits behind him."
+   "job": "4595a2ac-06ce-4fee-852f-247508e68e9d",
+   "note": "The last frame of the film's last new line. Nothing dark sits behind him.",
+   "superseded": [
+    "1b3c8159-88d7-4347-a9cc-6cd0364a361a"
+   ],
+   "regenerated": "2026-09-09",
+   "why_regenerated": "the ending reversed — S22 now finds a smile, not a calculation"
   },
   {
    "i": 37,
