@@ -538,5 +538,96 @@
     "why": "Its element entry said keep but the cull's keep list omitted it, so the two records disagreed. S10 attaches @lev-rider directly. Working the cull from the list would have deleted a handle the film uses."
    }
   ]
+ },
+ "contest_project_characters": {
+  "_what": "The character elements filed inside the contest project 'AI Film Festival 1 - Matter of Light'. Every shot prompt and every anchor prompt now attaches these instead of the workspace-level handles built here, because those sit outside the project.",
+  "on": "2026-09-10",
+  "elements": {
+   "char_oriane_v1_human": {
+    "id": "4ddb1ec3-0ab7-4299-a14e-0816a278fa48",
+    "role": "Oriane, mortal form",
+    "used_by_film": false
+   },
+   "char_oriane_v2_sun": {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "role": "Oriane, Movement I on the Sun",
+    "shots": [
+     "S2",
+     "S3",
+     "S4",
+     "S5"
+    ]
+   },
+   "char_oriane_v3_battle": {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "role": "Oriane, Movement II — travelling, ascended and damaged all on this one handle",
+    "shots": [
+     "S6",
+     "S7",
+     "S8",
+     "S9",
+     "S10",
+     "S11",
+     "S12",
+     "S14"
+    ]
+   },
+   "char_caedom_v1_sun": {
+    "id": "f1c7669b-6653-49f7-a458-74f41450daa2",
+    "role": "Caedom, ascended",
+    "shots": [
+     "S2",
+     "S3",
+     "S5",
+     "S23"
+    ]
+   },
+   "char_caedom_v2_human": {
+    "id": "add2f79a-b5a8-4c0a-953b-b83fc36c95b0",
+    "role": "Caedom, mortal form",
+    "used_by_film": false
+   },
+   "kai_alder_v1": {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "role": "Alder",
+    "shots": [
+     "S15",
+     "S16",
+     "S17",
+     "S22"
+    ]
+   },
+   "kai_wren_v1": {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "role": "Wren",
+    "shots": [
+     "S15",
+     "S16",
+     "S17",
+     "S22"
+    ]
+   },
+   "drowning_v1": {
+    "id": "a886edff-d780-421a-9071-e5f01d86ea36",
+    "role": "unassigned — no shot attaches it yet",
+    "used_by_film": false
+   }
+  },
+  "open": [
+   "Oriane's Movement II escalation now rides one element. The ascended and damaged states have to be written into the prompt rather than attached, or a v4 damaged element has to be made inside the project.",
+   "Locations and props were not swapped. The Locations and Props tabs were not visible, so the plates, locations and props still point at the handles built here.",
+   "Two of the account's older location elements and two props carry novel vocabulary in their names. See ip_leak below."
+  ],
+  "ip_leak": {
+   "_what": "Element names are rewritten into prompts as @name, and production history is public under the festival rules. These names carry the novel's vocabulary rather than the production names, which is the exact leak the crosswalk exists to prevent.",
+   "elements": [
+    "loc_kephas_island_town",
+    "loc_kephas-island_v1",
+    "loc_sector-guard-isle_v1",
+    "prop_sector-guardians_v1",
+    "sector-guardians_v2"
+   ],
+   "fix": "rename in the web UI to the production terms before any of them is attached to a shot"
+  }
  }
 }
