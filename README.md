@@ -33,6 +33,8 @@ No build step, no dependencies, no account, no network calls.
 | **`ASSET-REGISTER.md`** | Line-referenced audit of every asset against the source chapters. |
 | **`PROJECT-BRIEF.md`** | Paste-ready copy for the festival's project brief field. |
 | **`three-routes.html`** | One page comparing three ways to reach a finished cut from the clips already in the account — chaining forward off the last frame, anchoring only the twelve missing shots, and the full bible method — with measured credits, days and failure mode for each. |
+| **`roster.html`** | What the account holds when the film is finished: 37 reference handles grouped by what they are, five Souls, and the still-to-do list ordered by what it blocks. Counted out of the shot prompts and anchors rather than out of the account, so a handle on it is a handle the film uses. Rebuild with `design/build-roster.py`. |
+| **`frame-index.html`** | All 39 anchor frames in film order with the real images, the handles attached to each, and a direct link per frame. Rebuild with `design/build-frame-index.py`. |
 | **`workflow-sheets.pdf`** | Eight printable pages — run sheet, gates, ledgers, shot list, daily log — with pencil blanks. Rebuild with `design/build-sheets.py`. |
 | **`paper-kit.pdf`** + **`paper-kit/`** | Twelve sheets for thinking rather than tracking — anchor-string strip, storyboard grids at equal frames and equal time, the duration-weighted ribbon, gates, methods. One combined PDF plus a separate PDF per sheet. Rebuild with `design/build-paper-kit.py` then `design/render-paper-kit.mjs`. |
 | **`matter-of-light-screenplay.pdf`** | The abridged festival screenplay, production names throughout, Movements II and III interleaved. Source: `design/matter-of-light-screenplay.html`. |
