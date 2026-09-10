@@ -1,0 +1,254 @@
+{
+ "checked": "2026-09-10",
+ "how": "model capabilities read from models_explore, not remembered",
+ "film_aspect": "2.39:1 (21:9)",
+ "cannot_do_219": [
+  "wan3_0",
+  "veo3_1",
+  "veo3_1_lite",
+  "kling3_0",
+  "kling2_6",
+  "cinematic_studio_video_v2",
+  "minimax_hailuo"
+ ],
+ "can_do_219_two_frame": [
+  "cinematic_studio_3_0",
+  "seedance_2_5",
+  "seedance_2_0",
+  "flux_3_video",
+  "minimax_h3",
+  "seedance1_5"
+ ],
+ "presets_finding": "presets_show returns consumer templates built around an uploaded selfie, not cinematic camera moves. Several take a real face as input, which the no-real-people rule forbids. Not usable for this film.",
+ "swing_method": "hf_mult_motion_control transfers motion from a driving clip onto reference images. Generate the arc once on a throwaway, reuse it across the movement.",
+ "flagged": 16,
+ "total": 23,
+ "shots": [
+  {
+   "id": "S1",
+   "secs": 16,
+   "assigned": "wan3_0",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "seedance_2_5",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S2",
+   "secs": 18,
+   "assigned": "seedance_2_5",
+   "fails": [],
+   "primary": "seedance_2_5",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S3",
+   "secs": 14,
+   "assigned": "cinematic_studio_3_0",
+   "fails": [],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S4",
+   "secs": 14,
+   "assigned": "minimax_hailuo (2.3)",
+   "fails": [
+    "cannot output 2.39:1",
+    "tops out at 10s, this shot is 14s"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "seedance_2_0"
+  },
+  {
+   "id": "S5",
+   "secs": 18,
+   "assigned": "cinematic_studio_3_0",
+   "fails": [
+    "tops out at 15s, this shot is 18s"
+   ],
+   "primary": "seedance_2_5",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S6",
+   "secs": 14,
+   "assigned": "cinematic_studio_video_v2",
+   "fails": [
+    "cannot output 2.39:1",
+    "tops out at 12s, this shot is 14s"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S7",
+   "secs": 12,
+   "assigned": "kling3_0",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S8",
+   "secs": 14,
+   "assigned": "cinematic_studio_video_v2",
+   "fails": [
+    "cannot output 2.39:1",
+    "tops out at 12s, this shot is 14s"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S9",
+   "secs": 12,
+   "assigned": "veo3_1",
+   "fails": [
+    "cannot output 2.39:1",
+    "takes a start frame only, no end frame",
+    "tops out at 8s, this shot is 12s"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S10",
+   "secs": 16,
+   "assigned": "seedance_2_0",
+   "fails": [
+    "tops out at 15s, this shot is 16s"
+   ],
+   "primary": "seedance_2_5",
+   "backup": "seedance_2_0"
+  },
+  {
+   "id": "S11",
+   "secs": 10,
+   "assigned": "kling3_0",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S12",
+   "secs": 12,
+   "assigned": "cinematic_studio_video_v2",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S13",
+   "secs": 15,
+   "assigned": "wan3_0",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S14",
+   "secs": 13,
+   "assigned": "cinematic_studio_3_0",
+   "fails": [],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S15",
+   "secs": 12,
+   "assigned": "cinematic_studio_3_0",
+   "fails": [],
+   "primary": "cinematic_studio_3_0",
+   "backup": "seedance_2_0"
+  },
+  {
+   "id": "S16",
+   "secs": 12,
+   "assigned": "kling2_6",
+   "fails": [
+    "cannot output 2.39:1",
+    "takes a start frame only, no end frame",
+    "tops out at 10s, this shot is 12s"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "seedance_2_0"
+  },
+  {
+   "id": "S17",
+   "secs": 10,
+   "assigned": "cinematic_studio_3_0",
+   "fails": [],
+   "primary": "cinematic_studio_3_0",
+   "backup": "seedance_2_0"
+  },
+  {
+   "id": "S18",
+   "secs": 10,
+   "assigned": "cinematic_studio_video_v2",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S19",
+   "secs": 10,
+   "assigned": "seedance_2_0",
+   "fails": [],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S20",
+   "secs": 14,
+   "assigned": "wan3_0",
+   "fails": [
+    "cannot output 2.39:1"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "hf_mult_motion_control"
+  },
+  {
+   "id": "S21",
+   "secs": 8,
+   "assigned": "veo3_1_lite",
+   "fails": [
+    "cannot output 2.39:1",
+    "takes a start frame only, no end frame"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "seedance_2_0"
+  },
+  {
+   "id": "S22",
+   "secs": 14,
+   "assigned": "veo3_1",
+   "fails": [
+    "cannot output 2.39:1",
+    "takes a start frame only, no end frame",
+    "tops out at 8s, this shot is 14s"
+   ],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  },
+  {
+   "id": "S23",
+   "secs": 12,
+   "assigned": "cinematic_studio_3_0",
+   "fails": [],
+   "primary": "cinematic_studio_3_0",
+   "backup": "flux_3_video"
+  }
+ ]
+}
