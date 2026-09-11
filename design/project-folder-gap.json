@@ -1,0 +1,215 @@
+{
+ "checked": "2026-09-11",
+ "in_project": [
+  "char_caedom_v1_sun",
+  "char_caedom_v2_human",
+  "char_oriane_v1_human",
+  "char_oriane_v2_sun",
+  "char_oriane_v3_battle",
+  "drowning_v1",
+  "kai_alder_v1",
+  "kai_wren_v1",
+  "loc_kephas_island_v1_concept",
+  "loc_kephas_island_v5_town",
+  "loc_loc_sector_isle_v2_action",
+  "loc_loc_starsun_v3_courtyard",
+  "loc_sector_isle_v1",
+  "loc_starsun_v1_outside",
+  "loc_starsun_v2_build",
+  "prop_dragon_v1_dead",
+  "prop_enemy_ships",
+  "prop_leviathan_v1",
+  "prop_prop_dragon_v2_alive",
+  "prop_the-turned-ones_v1",
+  "prop_the-turned-ones_v2",
+  "prop_the-turned-ones_v3"
+ ],
+ "must_move": [
+  {
+   "handle": "plate-ocean-dark",
+   "element_id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+   "shots": [
+    "S6",
+    "S7",
+    "S8",
+    "S9",
+    "S10",
+    "S11",
+    "S12",
+    "S14"
+   ]
+  },
+  {
+   "handle": "plate-sun",
+   "element_id": "21db1b5a-0188-40a2-9747-5996928c8538",
+   "shots": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S23"
+   ]
+  },
+  {
+   "handle": "white-temple",
+   "element_id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+   "shots": [
+    "S18",
+    "S19",
+    "S21",
+    "S22"
+   ]
+  },
+  {
+   "handle": "plate-bombardment",
+   "element_id": "389aa7b5-5de8-435f-b589-b588e51c7ab8",
+   "shots": [
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+   ]
+  },
+  {
+   "handle": "plate-island",
+   "element_id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+   "shots": [
+    "S15",
+    "S21",
+    "S22"
+   ]
+  },
+  {
+   "handle": "leviathan-plating",
+   "element_id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+   "shots": [
+    "S10",
+    "S11",
+    "S12"
+   ]
+  },
+  {
+   "handle": "keeper",
+   "element_id": "8a3838aa-6fe1-485d-881c-4c14dfbe492e",
+   "shots": [
+    "S19",
+    "S20",
+    "S22"
+   ]
+  },
+  {
+   "handle": "iron-spears",
+   "element_id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+   "shots": [
+    "S11",
+    "S19",
+    "S20"
+   ]
+  },
+  {
+   "handle": "turned-water",
+   "element_id": "40520841-e9d3-45be-852b-c24f126ad3e1",
+   "shots": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "handle": "nacre-beach",
+   "element_id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+   "shots": [
+    "S15",
+    "S17"
+   ]
+  },
+  {
+   "handle": "machira-orbit",
+   "element_id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+   "shots": [
+    "S13",
+    "S14"
+   ]
+  },
+  {
+   "handle": "keeper-kneel",
+   "element_id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+   "shots": [
+    "S19",
+    "S20"
+   ]
+  },
+  {
+   "handle": "fx-hollow",
+   "element_id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+   "shots": [
+    "S11",
+    "S12"
+   ]
+  },
+  {
+   "handle": "frozen-tear",
+   "element_id": "58952962-9241-4a19-aedc-031a2374e484",
+   "shots": [
+    "S5",
+    "S23"
+   ]
+  },
+  {
+   "handle": "threadwright",
+   "element_id": "00c70af8-e0f1-4eda-90ed-c7ff87afc5f5",
+   "shots": [
+    "S9"
+   ]
+  },
+  {
+   "handle": "lev-rider",
+   "element_id": "f11fd4fb-d32d-4663-a07b-0e59bc01611d",
+   "shots": [
+    "S10"
+   ]
+  },
+  {
+   "handle": "fx-segmented-mind",
+   "element_id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+   "shots": [
+    "S13"
+   ]
+  },
+  {
+   "handle": "fx-kill-beat",
+   "element_id": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
+   "shots": [
+    "S12"
+   ]
+  },
+  {
+   "handle": "fx-floating-mountain",
+   "element_id": "9ca46e73-1df6-41c3-8ace-7fd4c324850f",
+   "shots": [
+    "S20"
+   ]
+  },
+  {
+   "handle": "founding-stone",
+   "element_id": "45c4d884-b89b-4694-af1f-e06eef545e30",
+   "shots": [
+    "S14"
+   ]
+  },
+  {
+   "handle": "corals-abyss",
+   "element_id": "0ff096fa-da4b-4a12-a371-5d678fb75651",
+   "shots": [
+    "S16"
+   ]
+  },
+  {
+   "handle": "aura-shell",
+   "element_id": "62047c7a-509e-4f58-aa2e-4bdfe73c4fca",
+   "shots": [
+    "S12"
+   ]
+  }
+ ]
+}
