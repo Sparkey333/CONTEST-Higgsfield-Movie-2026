@@ -1,0 +1,35 @@
+{
+ "_how": "A gate is a person looking at a screen. Record the answer here; nothing else can.",
+ "_shape": {
+  "held": true,
+  "on": "2026-09-08",
+  "by": "B.L. Barkey",
+  "note": "what you saw"
+ },
+ "A": {
+  "held": false,
+  "blocks": "steps 17-19 \u2014 anchors inherit whatever drift is in the references"
+ },
+ "B": {
+  "held": false,
+  "blocks": "step 21 \u2014 the stills reel is read from the anchors"
+ },
+ "C": {
+  "held": false,
+  "blocks": "steps 25-27 \u2014 after this a structural change costs video, not images"
+ },
+ "D": {
+  "held": false,
+  "blocks": "steps 25-27 \u2014 promote any draft frame that beats its anchor"
+ },
+ "E": {
+  "held": false,
+  "blocks": "steps 31-34 \u2014 picture lock, nothing is generated after it"
+ },
+ "filing": {
+  "_how": "The API has no folder call, so project membership cannot be read from this side. Move the rows in design/project-1-filing.md by hand in the web app, then write the last date you finished here. Step 34 compares it against the newest day in the list.",
+  "filed_through": null,
+  "by": null,
+  "note": "date format YYYY-MM-DD, UTC, matching the day headings in the filing list"
+ }
+}

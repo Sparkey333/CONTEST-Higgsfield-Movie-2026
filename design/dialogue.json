@@ -1,0 +1,239 @@
+{
+ "generated": "2026-09-08",
+ "rule": "English dialogue and voice-over; every line AI-generated with seed_audio inside the account, then uploaded into the submission project",
+ "budget_words_per_second": 2.4,
+ "air": 0.25,
+ "cut": {
+  "S1": [
+   {
+    "who": "CAEDOM (V.O.)",
+    "line": "It would not be the last tragedy to strike this world. The final act was waiting — on the release of the Vesper."
+   }
+  ],
+  "S3": [
+   {
+    "who": "ORIANE",
+    "line": "Why release him, if he could annihilate everything?"
+   },
+   {
+    "who": "CAEDOM",
+    "line": "There must be risk if there is to be growth."
+   }
+  ],
+  "S4": [
+   {
+    "who": "ORIANE",
+    "line": "He could erase everything. Even Earth."
+   },
+   {
+    "who": "ORIANE",
+    "line": "He's your brother."
+   },
+   {
+    "who": "CAEDOM (off-screen)",
+    "line": "I know."
+   }
+  ],
+  "S5": [
+   {
+    "who": "ORIANE",
+    "line": "When will you release him?"
+   },
+   {
+    "who": "CAEDOM",
+    "line": "Tomorrow."
+   }
+  ],
+  "S22": [
+   {
+    "who": "ALDER (V.O.)",
+    "line": "I want to move mountains. To raise them over the heads of my enemies."
+   },
+   {
+    "who": "ALDER (on camera, smiling — hope, relief, courage)",
+    "line": "…There's something more."
+   }
+  ],
+  "S23": [
+   {
+    "who": "ORIANE (V.O., tired to the bone and unbroken)",
+    "line": "He could erase everything."
+   },
+   {
+    "who": "CAEDOM (V.O.)",
+    "line": "There must be risk if there is to be growth."
+   }
+  ]
+ },
+ "how": {
+  "S1": "voice-over, no lips in frame",
+  "S3": "on camera, both faces legible — render with audio on",
+  "S4": "on camera, locked close-up — her lips barely move; Caedom is off-screen",
+  "S5": "on camera until the tear",
+  "S22": "the want is voice-over over the held push-in; the last line is spoken on camera as the smile arrives — render with audio on, and do not let a score come in under it",
+  "S23": "voice-over, the same takes as S4 and S3 — not new ones"
+ },
+ "screenplay_blocks": 42,
+ "screenplay_words": 556,
+ "kept_words": 89,
+ "voice": {
+  "_how": "seed_audio (ByteDance) at 0.1 credits a line — voice is the cheapest thing in this production. Generated inside the account, which is what the rule requires; every file still has to be uploaded into the submission project at RUN 31.",
+  "casting_test": {
+   "on": "2026-09-08",
+   "cost_credits": 0.8,
+   "_listen": "Two candidates per character, same line. Pick one, write it into `cast` below, then generate the full cut.",
+   "CAEDOM": [
+    {
+     "voice": "Alistair",
+     "id": "d9d5c263-f84e-4752-97b5-3750fcc6fd2f",
+     "job": "3d9bea33-960c-42d6-a7c4-229d1fdcec4f"
+    },
+    {
+     "voice": "Gideon",
+     "id": "1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5",
+     "job": "ef8b32b8-254e-47b8-bee5-0c9bc1d8beed"
+    }
+   ],
+   "ORIANE": [
+    {
+     "voice": "Helena",
+     "id": "3c2b83c0-2e0a-5ae8-998a-a5fe71b7eccd",
+     "job": "5eb7dec5-fc15-4b7b-96f7-5029b362fb86"
+    },
+    {
+     "voice": "Nora",
+     "id": "d081b915-6623-4a44-bacf-80d0f1c90a03",
+     "job": "a76ffbff-63c0-47bf-96b5-3885409da5ec"
+    }
+   ],
+   "WREN": [
+    {
+     "voice": "Benji",
+     "id": "e6f9b893-51b1-51d3-afe9-9e0482cb7ac1",
+     "job": "ae58186b-9e32-4bb4-8577-aa19c285dc5e"
+    },
+    {
+     "voice": "Evan",
+     "id": "f7a46aa0-183a-5327-b554-e71d8c0071bb",
+     "job": "1b4657c9-553f-4abd-992d-6d7a8ab73816"
+    }
+   ],
+   "ALDER": [
+    {
+     "voice": "Reid",
+     "id": "66469f5a-10db-586a-bab1-72f6ee66ba69",
+     "job": "57411edf-a083-4f8d-ac3b-2a7b03c75d1f"
+    },
+    {
+     "voice": "Callan",
+     "id": "d8061b90-ff25-5882-8384-7a6a28806f30",
+     "job": "83b502e6-273e-4800-aab4-7d534e7e5598"
+    }
+   ]
+  },
+  "cast": {
+   "CAEDOM": null,
+   "ORIANE": {
+    "voice": "Kiki",
+    "id": "2d51d9d0-b2a4-5e8b-9c63-f310adafd5f7",
+    "voice_type": "preset",
+    "direction": "Movement I is fear, not fatigue — she is young and arguing and losing. Her closing voice-over is the opposite: spoken after the battle that kills her, tired to the bone and still unbroken. Slow it and drop the level; never soften the spine.",
+    "cast_by": "B.L. Barkey",
+    "on": "2026-09-08"
+   },
+   "WREN": null,
+   "ALDER": null
+  },
+  "note": "Caedom must sound older than Oriane and calmer than everything around him; Alder must read a shade colder than Wren, because the last line of the film is his.",
+  "oriane_takes": {
+   "_all_kiki": true,
+   "on": "2026-09-08",
+   "credits": 0.8,
+   "S3 Why release him again": "fff457ac-9b73-40a7-9f4c-8e76bf5e603e",
+   "S4 He could erase everything": "83239256-9fc1-441e-be82-d3d70aac65da",
+   "S4 He's your brother": "50c875ff-a296-4dfe-af74-6da5cd87d52a",
+   "S5 But I'm terrified": "884cdebe-2798-4465-a4ca-430fe4af27f9",
+   "S5 When will you release him": "493d64ee-3db9-4397-a321-1e13552369dc",
+   "S23 V.O. He could erase everything — TIRED (rate -10, level -8)": "ebe5887b-fd29-4ddd-b450-86a3bd6ecafe",
+   "spare: So it begins, and so it ends — TIRED (rate -12, level -10)": "7bc4d17b-4280-4f34-ad8e-df5eff86e3f2",
+   "S2 Are you sure you're not a Founder? (re-recorded after the world-language pass)": "bab03e57-8f4a-40bf-9f39-dd732db14a92",
+   "_superseded": {
+    "8f09742e-46dd-4548-a508-708b332003a1": "the God line — do not use, do not file"
+   }
+  }
+ },
+ "cost": {
+  "full_cut_lines": 11,
+  "credits_per_line": 0.1,
+  "estimate_credits": 1.1
+ },
+ "world_language": {
+  "on": "2026-09-09",
+  "rule": "No direct religious or deity reference in anything spoken or shown. The film keeps to its own vocabulary — Founding Stones, Founders, wielders, the Vesper, the Turned, the Keepers, attunement, domains.",
+  "changed": [
+   {
+    "was": "Are you sure you're not God?",
+    "now": "Are you sure you're not a Founder?"
+   },
+   {
+    "was": "To a firefly, the eagle is a god.",
+    "now": "To a firefly, the eagle is a Founder."
+   },
+   {
+    "was": "But the One you name? I am not him.",
+    "now": "But the first hand that lit the Stones? I am not that."
+   },
+   {
+    "was": "He is real, though he does not exist.",
+    "now": "It is real, though it does not exist."
+   },
+   {
+    "was": "Leader of spirits. Angel of light.",
+    "now": "Leader of the seven. Vessel of light."
+   },
+   {
+    "was": "A hellfire of metal falls on the Isle.",
+    "now": "A rain of iron falls on the Isle."
+   },
+   {
+    "was": "desperate souls abandoning ship",
+    "now": "desperate figures abandoning ship"
+   }
+  ],
+  "kept_and_why": [
+   {
+    "word": "temple",
+    "why": "a building, not a deity reference. It is also the element handle @white-temple and appears in anchor and shot prompts; renaming it would cascade for no gain."
+   },
+   {
+    "word": "blessed, cursed",
+    "why": "idiomatic English in the opening narration, not an invocation. Sanitising it would flatten the line without removing a reference."
+   }
+  ],
+  "note": "The competition rules pulled on Sep 8 contain no explicit religious-content clause — this is a creative and filter-risk decision, not a compliance one. Generation platforms do commonly reject religious imagery, and the film is stronger for defining its own terms."
+ },
+ "reduction": {
+  "on": "2026-09-09",
+  "from_lines": 19,
+  "to_lines": 11,
+  "from_words": 184,
+  "to_words": 86,
+  "silenced": [
+   "S2 — the Founder exchange; the courtyard drift plays better wordless",
+   "S15 — the brothers' banter; the wide already says they are boys breaking a rule",
+   "S17 — one line the picture carries alone"
+  ],
+  "why": "Time, and the fact that every line kept is one the film would be lesser without: the thesis, the brother, the button, and the want that ends it."
+ },
+ "kept_lines": 12,
+ "speaking_shots": 6,
+ "changes": [
+  {
+   "on": "2026-09-09",
+   "shot": "S22",
+   "what": "The ending reversed. Alder is now the brother who learns the right lesson.",
+   "why": "Author's note. The conquest line stays with Alder and stays verbatim, but it is now his first instinct rather than his conclusion: it arrives as voice-over over the push-in, and then he sets it down and says the film's last new line on camera, smiling. Wren, who was the excited one, has turned away to stare at the keepers and does not look back — so the want does not leave the film, it changes brother. The dark cloud moves off Alder and sits behind Wren.",
+   "departs_from_source": "The novel gives the elder brother the conquest reading and says it guided him for the next ten years. The film keeps the sentence and reverses who it ends up describing."
+  }
+ ]
+}

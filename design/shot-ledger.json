@@ -1,0 +1,608 @@
+{
+ "generated": "2026-09-08",
+ "how_a_shot_counts": {
+  "drafts": "any clip made for this shot, including the text-only ones. Evidence, not progress.",
+  "concept": "720p, generated FROM the shot's two anchors with the scene's elements named. This is RUN 23.",
+  "final": "the model in the bible's SHOTS row, 1080p or 4K, from the rendered last frame of the previous shot.",
+  "finished": "deflickered, upscaled and graded."
+ },
+ "elements_since_snapshot": {
+  "turned-hollows": "6e8dc05f-2e10-4984-b39e-6fa822fe46b5",
+  "ladder-oriane": "cd2aa79a-43ab-445a-a298-f1071884cc50",
+  "ladder-attunement": "447665c3-9c7d-4d95-ad8a-89b9a82d4fe4",
+  "aura-grammar": "86f7d638-b403-459f-af68-e9365a5da336",
+  "turned-water": "40520841-e9d3-45be-852b-c24f126ad3e1",
+  "plate-ocean-dark": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+  "caedom-before": "bb651816-ce13-4472-a4ef-8fd304973822",
+  "caedom-ascended-1": "fcc3b4b7-1d0e-4c0e-aa8e-ca096e978855",
+  "caedom-mortal-1": "66fadd7e-0890-4528-9c99-cd9c000e5f55"
+ },
+ "souls_since_snapshot": {
+  "caedom-ascended": "ready",
+  "caedom-before": "ready"
+ },
+ "shots": {
+  "S1": {
+   "title": "Rise out of the fire",
+   "mv": 1,
+   "d": 16,
+   "model": "wan3_0 · 16s · 1080p · 21:9",
+   "concept": {
+    "job": "3f413c2d-8799-4557-ae68-9c6b29153f02",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F01",
+     "F02"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [
+    {
+     "job": "339f05e1-c78e-4b9d-a7f9-b9b5fb28d1e1",
+     "lane": "A",
+     "res": "1080p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "3c5d65d9-6451-47fc-bdae-9e850561c4aa",
+     "lane": "A",
+     "res": "1080p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    }
+   ]
+  },
+  "S2": {
+   "title": "The courtyard of worlds",
+   "mv": 1,
+   "d": 18,
+   "model": "seedance_2_5 · video_extension forward · 18s",
+   "concept": {
+    "job": "6e850701-c65d-4648-9d1a-5228ceb282c5",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F02",
+     "F03"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [
+    {
+     "job": "b9c5d61d-c23f-47bb-b16c-38a6522f3c6b",
+     "lane": "A",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "acec24ac-45af-4555-b08c-e5c7157608e5",
+     "lane": "A",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "c437bc36-25ea-470f-a562-7ad886fa9fb1",
+     "lane": "B",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "394484bc-42d0-4148-b1dd-7154c6213801",
+     "lane": "B",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    }
+   ]
+  },
+  "S3": {
+   "title": "“There must be risk”",
+   "mv": 1,
+   "d": 14,
+   "model": "cinematic_studio_3_0 · 14s · genre drama · audio on",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S4": {
+   "title": "“He's your brother”",
+   "mv": 1,
+   "d": 14,
+   "model": "minimax_hailuo (2.3) · 10s + hold, or cinematic_studio_3_0 · 14s",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S5": {
+   "title": "“Tomorrow” — the tear freezes",
+   "mv": 1,
+   "d": 18,
+   "model": "cinematic_studio_3_0 · 15s · 4K + 3s extension",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S6": {
+   "title": "108 years later — the run",
+   "mv": 2,
+   "d": 14,
+   "model": "cinematic_studio_video_v2 · 12s pro · speedramp auto + 2s ext",
+   "concept": {
+    "job": "91ebc1cd-9338-44f5-956b-3540b7cf19ed",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F10",
+     "F11"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S7": {
+   "title": "Sixteen behind her, and a wall of ice",
+   "mv": 2,
+   "d": 12,
+   "model": "kling3_0 · 12s · pro · start+end frame",
+   "concept": {
+    "job": "10bfa119-960f-4d45-89eb-1c062d655ba4",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F11",
+     "F12"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S8": {
+   "title": "Up the wall",
+   "mv": 2,
+   "d": 14,
+   "model": "cinematic_studio_video_v2 · 12s · speedramp impact + 2s ext",
+   "concept": {
+    "job": "8ae7fc97-8768-49ba-b99c-424bccc4cda4",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F12",
+     "F13"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S9": {
+   "title": "The threadwright's eyes",
+   "mv": 2,
+   "d": 12,
+   "model": "veo3_1 · 8s ultra + 4s ext, or cinematic_studio_3_0 · 12s",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S10": {
+   "title": "The leviathan",
+   "mv": 2,
+   "d": 16,
+   "model": "seedance_2_0 · 15s · 4K · genre epic + ext",
+   "concept": {
+    "job": "000b90fd-fb31-4f54-8319-3b80157f9b95",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F16",
+     "F17"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S11": {
+   "title": "Running the flank",
+   "mv": 2,
+   "d": 10,
+   "model": "kling3_0 · 10s · motion_control from a driving clip",
+   "concept": {
+    "job": "bb9045fc-23f7-478f-bcb5-0b5b23dd22e4",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F17",
+     "B01"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S12": {
+   "title": "The lightning river",
+   "mv": 2,
+   "d": 12,
+   "model": "cinematic_studio_video_v2 · 12s · speedramp slowmo · pro",
+   "concept": {
+    "job": "92d87626-73e7-4b75-8c79-5f8b09ae062e",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "B01",
+     "F18"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S13": {
+   "title": "The vortex, from the Sun",
+   "mv": 2,
+   "d": 15,
+   "model": "wan3_0 · 15s · 1080p · generate_audio false",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S14": {
+   "title": "The Stone leaves her",
+   "mv": 2,
+   "d": 13,
+   "model": "cinematic_studio_3_0 · 13s · 4K · genre drama",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S15": {
+   "title": "Nacre Beach — the same sun",
+   "mv": 3,
+   "d": 12,
+   "model": "cinematic_studio_3_0 · 12s · 4K",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S16": {
+   "title": "Over the abyss",
+   "mv": 3,
+   "d": 12,
+   "model": "kling2_6 · 10s + ext, or seedance_2_0 · 12s (water physics)",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S17": {
+   "title": "Twelve ships",
+   "mv": 3,
+   "d": 10,
+   "model": "cinematic_studio_3_0 · 10s · 4K · genre epic",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S18": {
+   "title": "The Temple does not answer",
+   "mv": 3,
+   "d": 10,
+   "model": "cinematic_studio_video_v2 · 10s · multi_shots · multi_prompt",
+   "concept": {
+    "job": "3f21d3a4-e42a-4f1a-aeef-78712c378a75",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F29",
+     "B02"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S19": {
+   "title": "The Keepers kneel",
+   "mv": 3,
+   "d": 10,
+   "model": "seedance_2_0 · 10s · 4K · start_image from dust",
+   "concept": {
+    "job": "7906d8a2-19ba-4a31-adb5-64b02550a45a",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "B02",
+     "F30"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S20": {
+   "title": "The mountain",
+   "mv": 3,
+   "d": 14,
+   "model": "wan3_0 · 14s · 1080p · enable_thinking",
+   "concept": {
+    "job": "0c9aaa9e-0987-463c-824c-0ce06dcc4fb7",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F30",
+     "F31"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S21": {
+   "title": "The garden replants itself",
+   "mv": 3,
+   "d": 8,
+   "model": "veo3_1_lite · 8s, or cinematic_studio_3_0 · 8s",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S22": {
+   "title": "What Alder saw",
+   "mv": 3,
+   "d": 14,
+   "model": "veo3_1 · 8s ultra + ext, or minimax_hailuo 2.3 · 10s (emotion)",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  },
+  "S23": {
+   "title": "Tomorrow, again",
+   "mv": 3,
+   "d": 12,
+   "model": "cinematic_studio_3_0 · 12s · 4K · genre drama",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": []
+  }
+ },
+ "scores": {
+  "_method": "virality_predictor on the L1 concept clip. Free on ultra, video only, 16s cap, 2 concurrent.",
+  "S10": {
+   "overall": 47,
+   "hook": 32,
+   "engagement": 45,
+   "dmn": 0.667,
+   "sustain": 100,
+   "peak_second": 10,
+   "job": "615867e5-b9af-42da-8adc-30eb9df09acf"
+  },
+  "S20": {
+   "overall": 46,
+   "hook": 30,
+   "engagement": 44,
+   "dmn": 0.649,
+   "sustain": 100,
+   "peak_second": 10,
+   "job": "5def4a8b-969a-4efd-aa6a-f50f08edebfd"
+  },
+  "S1": {
+   "overall": 49,
+   "hook": 32,
+   "engagement": 48,
+   "dmn": 0.592,
+   "sustain": 100,
+   "peak_second": 10,
+   "job": "ccbff27b-ef61-49d3-b817-366b89960f50"
+  },
+  "S11": {
+   "overall": 48,
+   "hook": 33,
+   "engagement": 44,
+   "dmn": 0.604,
+   "sustain": 98,
+   "peak_second": 7,
+   "job": "31c0e60b-3826-4b0b-81eb-dd7c1ee7ea33"
+  },
+  "_read_this_before_comparing": "These are L1 scores and they are only comparable to each other. The nine clips measured on Sep 5 were finished renders and scored 46-56 with a clean dark/bright split. These four are 720p budget renders of dark-ground compositions and they all land at 46-49 — the tier flattened the luminance advantage rather than the compositions losing it. Do not read a 47 here as the same thing as a 47 there.",
+  "_what_L1_did_show": "Every one of the four peaks in its last three seconds and every one is weakest in the hook window: hooks 30-33 against overalls 46-49. The shot order buries its best second at the end, which is right for a film and wrong for a post. S11 is the exception that proves the rule — it peaks at second 7 and carries the lowest mind-wandering of the four (0.604), because it is the one shot that gets darker and closer as it runs. Sustain is 98-100 across the board, so retention still needs no work."
+ },
+ "concept_ladder": {
+  "L1": "720p, budget engine (seedance_2_0_mini), 10s, from the two anchors. Tests whether the A frame can reach the B frame at all. Done 2026-09-08 for the 11 seam-bearing shots.",
+  "L2": "720p, the shot's real engine from the SHOTS row, real duration, chained from L1's rendered last frame. Tests the seam between shots, not inside them.",
+  "final": "1080p or 4K on the engine in the SHOTS row, chained from the rendered last frame of the previous shot. Only after Gate C freezes the timing.",
+  "why": "Three passes on rising cost. A failure found at L1 costs one budget clip; the same failure found at final costs a 4K generation and the shot behind it."
+ },
+ "credits": {
+  "checked": "2026-09-08",
+  "higgsfield_remaining": 2323.53,
+  "spent_today": "about 1300 — 14 world sheets re-rendered at 21:9 with references, plus 11 concept clips",
+  "measured_cost_per_L1_clip": "about 112 credits for 10s of 720p on the budget engine",
+  "why_this_now_decides_the_plan": "23 final clips on premium engines at 1080p or 4K, with a second attempt on most and six on S20, does not fit in 2323 credits. The API cannot pay for the final pass. The web app's unlimited allowance can."
+ },
+ "selection_passes": {
+  "scene-1": {
+   "_what": "Stage 6 selection pass — batch of four per anchor, choose one. Generated 2026-09-08 on nano_banana_pro (the platform labels the result nano_banana_2), 21:9, 2k, inside the account. The skeleton job in anchor-plan.json is the placeholder these replace once one is chosen.",
+   "on": "2026-09-08",
+   "chosen": null,
+   "_chosen_shape": {
+    "F01": "<job id>",
+    "F02": "<job id>",
+    "F03": "<job id>"
+   },
+   "frames": {
+    "F01": {
+     "skeleton": "30403126-ae0d-4926-8df8-fcf14da302ef",
+     "attach": [
+      "plate-sun"
+     ],
+     "variants": [
+      "622f1c5a-44e0-42df-b944-efe4d741a313",
+      "7af85cfb-0218-49b3-995d-09efd761cc9d",
+      "33f87edb-ec40-4536-99ae-8c09a0f63bf1",
+      "4a8300a5-06ab-42bc-ae2b-d868574dbb5c"
+     ]
+    },
+    "F02": {
+     "skeleton": "0e3fbd76-dd81-4105-81c6-6078dacde732",
+     "attach": [
+      "plate-sun",
+      "courtyard-of-worlds"
+     ],
+     "variants": [
+      "3e3c8855-0646-4827-893b-57e5638c9aaf",
+      "58a154bc-b5de-4219-95cd-fb8e93499952",
+      "91512d7d-3575-4d0e-932a-6484663f26e7",
+      "0684db4a-40fa-453d-bd7f-171a43d852d4"
+     ]
+    },
+    "F03": {
+     "skeleton": "06d8c310-c4ba-459d-aef7-b18430ca781c",
+     "attach": [
+      "plate-sun",
+      "courtyard-of-worlds",
+      "oriane",
+      "caedom-ascended-1"
+     ],
+     "chained_from": "0e3fbd76-dd81-4105-81c6-6078dacde732",
+     "provisional": "chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked",
+     "variants": [
+      "1a7d48d5-4724-4369-824f-482bb444a030",
+      "5377d75c-b961-452d-afac-38ad6d904a50",
+      "31d5e449-8e7f-4dec-9a93-586508e3f1ad",
+      "ee236f3e-7d11-4928-bdcb-a7dd2bbfdb99"
+     ]
+    }
+   }
+  },
+  "caedom-identity": {
+   "_what": "Caedom was the one character whose identity handles traced to UPLOADS rather than to generations with prompts in this repo — caedom-before and caedom-ascended-1. That is the weakest link going into Gate A and it is also the open half of the festival's no-real-people rule, because a Soul inherits whatever was trained into it. This pass replaces both with traceable generations.",
+   "on": "2026-09-09",
+   "model": "nano_banana_pro (labelled nano_banana_2)",
+   "credits": 16,
+   "how": "The two prompts reference each other's upload, so the circle was broken: the mortal sheet was generated from TEXT ALONE (its prompt fully describes the bone structure), and the ascended sheet from the Aug 29 generation 1ccb8e16 — which is an image_job, not an upload. Both chains now end in a Higgsfield generation whose prompt is in this repo.",
+   "chosen": null,
+   "frames": {
+    "caedom-mortal-A": {
+     "replaces_handle": "caedom-before",
+     "was": "media_input 3031ec8f-a77c-413c-b94a-9f414bf03a7b (upload)",
+     "attach": [],
+     "note": "text-only by design — nothing upstream to inherit",
+     "variants": [
+      "4a0d4610-1636-46d6-8b8f-a11507b73b7a",
+      "b4faae0e-0748-4818-b5d0-8687549361b4",
+      "f7cb2ef6-0b49-4b9b-ba7a-ebd550a41961",
+      "1f926d21-0469-4e20-a89a-2b0d774911b0"
+     ]
+    },
+    "caedom-ascended-A": {
+     "replaces_handle": "caedom-ascended-1",
+     "was": "media_input 212bcdc1-b55e-48c0-93ea-4a89a2e66bd5 (upload)",
+     "attach": [
+      "image_job 1ccb8e16 — the Aug 29 ascended generation"
+     ],
+     "variants": [
+      "206916d3-7511-432a-bde5-0dab8b265d35",
+      "895ebfa4-06a8-4954-a853-d910449f082b",
+      "fac2b5e5-9fd7-476f-9522-362056dbc3ee",
+      "2191b136-68cc-4428-9c26-b67d48fac122"
+     ],
+     "note": "one variant returned status:failed with no reason and was resubmitted unchanged — the third failure kind this production has seen, alongside content-filter and stochastic rejection"
+    }
+   },
+   "then": "Choose one of each, create the two elements from the chosen image_job (the API can create), and delete the two uploads plus caedom-mortal-1 in the web UI. Retrain the caedom-before and caedom-ascended Souls from the chosen sheets if you want the provenance to be clean all the way down."
+  }
+ }
+}
