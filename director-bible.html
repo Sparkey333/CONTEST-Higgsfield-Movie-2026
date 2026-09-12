@@ -1,6 +1,10 @@
 <meta charset="utf-8">
 <title>MATTER OF LIGHT — Director's Bible</title>
 <script>
+/* Every {...} in a prompt is a reference to check before generating — an element
+   handle, an anchor frame, or a Soul. Marked at paint time rather than stored as
+   markup, so the text the Copy button hands back stays plain. */
+function markRefs(t){return t.replace(/\{[^{}]{1,90}\}/g,m=>'<b class="ref">'+m+'</b>')}
 /* One-time storage migration. The old keys carried a coined term from the novel,
    which leaked the source through devtools and through the exported config
    filename, so they were renamed. Copy forward rather than move, so an older
@@ -1354,9 +1358,13 @@ section[data-ch="higgs"]{--sc:var(--jade)}
 @media(max-width:700px){.dials,.dials tbody,.dials tr,.dials td{display:block;width:auto}.dials thead{display:none}.dials td:first-child{font-weight:600;padding-bottom:2px;border:0}.dials tr{border-bottom:1px solid var(--line-soft);padding:10px 0;display:block}}
 
 /* references to verify inside a shot prompt */
-pre.prompt b.ref{color:#D9694E;font-weight:600;font-style:normal}
-html[data-theme="light"] pre.prompt b.ref,
-body.light pre.prompt b.ref{color:#B4482C}
+/* A {...} in a prompt is a reference to verify before generating — an element
+   handle, an anchor frame, or a Soul. Token follows the file's own light/dark
+   pattern: bare :root is light, the two dark contexts override it. */
+:root{--ref:#B4482C}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ref:#E2795C}}
+:root[data-theme="dark"]{--ref:#E2795C}
+pre.prompt b.ref,pre.paste b.ref{color:var(--ref);font-weight:600;font-style:normal}
 </style>
 
 <header class="mast">
@@ -3640,12 +3648,7 @@ function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return m+":"+String(s).pad
   }
   function esc(t){return t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 
-  /* Every {...} in a shot prompt is a reference to check before generating —
-     an element handle, an anchor frame, or a Soul. Marked at paint time rather
-     than stored as markup, so the copied prompt stays plain text. */
-  function markRefs(t){
-    return t.replace(/\{[^{}]{1,90}\}/g, m=>'<b class="ref">'+m+'</b>');
-  }
+
 
   function paintShotVariant(s,i){
     const v=s.v[i];
@@ -5331,7 +5334,7 @@ const PROGRESS={"generated":"2026-09-09T04:30Z","deadline":"2026-09-14T23:59Z","
     host.innerHTML='<div class="prep-meta">'+v.w+'</div>'+'<div class="filerow"><span><i>Folder</i>'+(p.fld||'00 &middot; REFERENCES')+'</span><span><i>Save as</i><b>'+v.sv+'</b></span></div>'+
       '<div class="vtech">'+v.tech+'</div>'+
       '<p class="vwhy">'+v.why+'</p>'+
-      '<pre class="paste">'+esc(v.p)+'</pre>'+
+      '<pre class="paste">'+markRefs(esc(v.p))+'</pre>'+
       '<button class="copy" data-pn="'+p.k+'" data-vi="'+i+'">Copy '+v.c+'</button>'+
       '<button class="copy alt" data-pn="'+p.k+'" data-all="1">Copy all three</button>';
   }
