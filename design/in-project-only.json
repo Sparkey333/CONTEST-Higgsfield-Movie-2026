@@ -1,0 +1,33 @@
+{
+ "on": "2026-09-13",
+ "rule": "Shot prompts reference elements inside the contest project 'AI Film Festival 1 - Matter of Light' and nothing else.",
+ "substituted": {
+  "plate-sun (S1)": "loc_starsun_v1_outside",
+  "plate-sun (S2-S5, S23)": "loc_loc_starsun_v3_courtyard",
+  "plate-bombardment": "loc_loc_sector_isle_v2_action",
+  "plate-island": "loc_kephas_island_v1_concept",
+  "white-temple": "loc_sector_isle_v1",
+  "nacre-beach": "loc_kephas_island_v1_concept",
+  "turned-water": "prop_the-turned-ones_v2",
+  "leviathan-plating": "prop_leviathan_v1"
+ },
+ "described_not_attached": [
+  "plate-ocean-dark",
+  "frozen-tear",
+  "iron-spears",
+  "keeper",
+  "keeper-kneel",
+  "threadwright",
+  "lev-rider",
+  "machira-orbit",
+  "corals-abyss",
+  "founding-stone",
+  "aura-shell",
+  "fx-hollow",
+  "fx-kill-beat",
+  "fx-segmented-mind",
+  "fx-floating-mountain"
+ ],
+ "cost": "Fifteen things the film used to attach are now written into the prompt instead. That is a real loss of control — an attached reference is identical every take, a description is not. The biggest is plate-ocean-dark: the project holds no ocean element at all, so eight Movement II shots now carry their key light as words.",
+ "how_to_undo": "Move any of the fifteen into the contest project, tell me which, and it goes back to an attached @[name](id) in one pass. design/project-folder-gap.json carries every id."
+}
