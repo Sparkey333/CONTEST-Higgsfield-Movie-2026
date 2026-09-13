@@ -285,5 +285,393 @@
    "Generate all of one character's lines in a single batch.",
    "S23 reuses the S4 and S3 takes. Ten new takes, not twelve."
   ]
+ },
+ "takes": {
+  "_what": "40 takes, four per line, seed_audio at 48kHz wav, pitch_rate 0 on every one. Pick one per line.",
+  "on": "2026-09-13",
+  "model": "seed_audio",
+  "cast_used": {
+   "ORIANE": "Kiki 2d51d9d0-b2a4-5e8b-9c63-f310adafd5f7",
+   "CAEDOM": "Alistair d9d5c263-f84e-4752-97b5-3750fcc6fd2f",
+   "ALDER": "Reid 66469f5a-10db-586a-bab1-72f6ee66ba69 — the recorded candidate; you named only Kiki and Alistair, so this is the one casting call made here"
+  },
+  "lines": {
+   "S1-CAEDOM": {
+    "mood": "opening narration over a crane out of fire — measured, vast, already grieving",
+    "takes": [
+     {
+      "take": 1,
+      "job": "d139f65b-edd9-4d93-b721-804d760cadfa",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_d139f65b-edd9-4d93-b721-804d760cadfa.wav",
+      "speech_rate": -12,
+      "loudness_rate": 0,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "ce250687-2945-4688-82ba-c8be91b1c65c",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_ce250687-2945-4688-82ba-c8be91b1c65c.wav",
+      "speech_rate": -12,
+      "loudness_rate": 0,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "a8cbd5bc-0e08-45aa-9fce-0d7230bc290a",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_a8cbd5bc-0e08-45aa-9fce-0d7230bc290a.wav",
+      "speech_rate": -15,
+      "loudness_rate": -2,
+      "note": "slower and quieter — more inevitable"
+     },
+     {
+      "take": 4,
+      "job": "22448553-bfb1-4b41-adfe-8549ee8dbb79",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_22448553-bfb1-4b41-adfe-8549ee8dbb79.wav",
+      "speech_rate": -9,
+      "loudness_rate": 2,
+      "note": "a shade brighter and more forward"
+     }
+    ]
+   },
+   "S3-ORIANE": {
+    "mood": "afraid, arguing and losing — pressed but never loud",
+    "takes": [
+     {
+      "take": 1,
+      "job": "00530f20-eb3d-4a2a-81aa-fa878fe46dfa",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163202_00530f20-eb3d-4a2a-81aa-fa878fe46dfa.wav",
+      "speech_rate": 4,
+      "loudness_rate": -2,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "d41b9a14-9ead-48c3-860b-397a33072af2",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_d41b9a14-9ead-48c3-860b-397a33072af2.wav",
+      "speech_rate": 4,
+      "loudness_rate": -2,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "311ec581-fccc-4dd1-bd8c-e4c952e591be",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_311ec581-fccc-4dd1-bd8c-e4c952e591be.wav",
+      "speech_rate": 9,
+      "loudness_rate": 0,
+      "note": "faster — closer to panic"
+     },
+     {
+      "take": 4,
+      "job": "ad18ee04-387b-4a81-86b7-17fe4aab8834",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_ad18ee04-387b-4a81-86b7-17fe4aab8834.wav",
+      "speech_rate": 0,
+      "loudness_rate": -5,
+      "note": "held back, almost under her breath"
+     }
+    ]
+   },
+   "S3-CAEDOM": {
+    "mood": "calm to the point of stillness; never raises his voice",
+    "takes": [
+     {
+      "take": 1,
+      "job": "457e3e35-7c3c-4dd9-8f70-ce747041707a",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_457e3e35-7c3c-4dd9-8f70-ce747041707a.wav",
+      "speech_rate": -8,
+      "loudness_rate": -3,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "9ac5f51b-08ff-4083-877f-1f60b3435b59",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_9ac5f51b-08ff-4083-877f-1f60b3435b59.wav",
+      "speech_rate": -8,
+      "loudness_rate": -3,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "fcc3ec80-ea4a-4ab0-9caa-78d54001b88f",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_fcc3ec80-ea4a-4ab0-9caa-78d54001b88f.wav",
+      "speech_rate": -13,
+      "loudness_rate": -5,
+      "note": "slower and softer — the version that sounds like it costs him nothing"
+     },
+     {
+      "take": 4,
+      "job": "03ac3f6c-52aa-4dae-9318-946df0a8f3f3",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_03ac3f6c-52aa-4dae-9318-946df0a8f3f3.wav",
+      "speech_rate": -4,
+      "loudness_rate": 0,
+      "note": "more conversational"
+     }
+    ]
+   },
+   "S4-ORIANE-a": {
+    "mood": "locked close-up, lips barely move, eyes going wet and not spilling",
+    "takes": [
+     {
+      "take": 1,
+      "job": "bc75bd9e-1fc6-48d1-853b-d50281ea7c42",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_bc75bd9e-1fc6-48d1-853b-d50281ea7c42.wav",
+      "speech_rate": -5,
+      "loudness_rate": -6,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "a024f4d2-5938-4f23-8076-a0e5388db104",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_a024f4d2-5938-4f23-8076-a0e5388db104.wav",
+      "speech_rate": -5,
+      "loudness_rate": -6,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "38aff25f-9eba-49e1-ac6e-c3d6e437455b",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_38aff25f-9eba-49e1-ac6e-c3d6e437455b.wav",
+      "speech_rate": -10,
+      "loudness_rate": -10,
+      "note": "nearly a whisper"
+     },
+     {
+      "take": 4,
+      "job": "2a5d9763-5b4a-408b-9ca2-4a93f7992819",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_2a5d9763-5b4a-408b-9ca2-4a93f7992819.wav",
+      "speech_rate": -1,
+      "loudness_rate": -3,
+      "note": "more direct, less fragile"
+     }
+    ]
+   },
+   "S4-ORIANE-b": {
+    "mood": "the knife — the line she has been holding back",
+    "takes": [
+     {
+      "take": 1,
+      "job": "a36b6780-1ae5-43b3-8469-2a1011f4fc70",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_a36b6780-1ae5-43b3-8469-2a1011f4fc70.wav",
+      "speech_rate": -10,
+      "loudness_rate": -8,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "0cca9ad0-5afd-41a2-96f7-b9a823c7bd40",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_0cca9ad0-5afd-41a2-96f7-b9a823c7bd40.wav",
+      "speech_rate": -10,
+      "loudness_rate": -8,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "d76695e3-7872-45c1-b02f-b9685b43b5a0",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_d76695e3-7872-45c1-b02f-b9685b43b5a0.wav",
+      "speech_rate": -16,
+      "loudness_rate": -12,
+      "note": "barely voiced — breaking"
+     },
+     {
+      "take": 4,
+      "job": "028a6da9-6b32-4ede-b6cb-2b5e5cd7d2a4",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_028a6da9-6b32-4ede-b6cb-2b5e5cd7d2a4.wav",
+      "speech_rate": -6,
+      "loudness_rate": -5,
+      "note": "steadier — an accusation rather than a plea"
+     }
+    ]
+   },
+   "S4-CAEDOM": {
+    "mood": "two words, off-screen, and he already knew",
+    "takes": [
+     {
+      "take": 1,
+      "job": "7338614d-ffea-4f38-937e-f0d5a8688d2a",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_7338614d-ffea-4f38-937e-f0d5a8688d2a.wav",
+      "speech_rate": -14,
+      "loudness_rate": -7,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "0d4bef93-a686-4bfc-9cf0-84474ad241bc",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_0d4bef93-a686-4bfc-9cf0-84474ad241bc.wav",
+      "speech_rate": -14,
+      "loudness_rate": -7,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "def60c83-4a54-4398-9fe0-2e3ea7d43e2c",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_def60c83-4a54-4398-9fe0-2e3ea7d43e2c.wav",
+      "speech_rate": -22,
+      "loudness_rate": -11,
+      "note": "very slow and very quiet — the heaviest reading"
+     },
+     {
+      "take": 4,
+      "job": "2c5436a5-0bd4-4ed3-89cf-b00d40087e14",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163230_2c5436a5-0bd4-4ed3-89cf-b00d40087e14.wav",
+      "speech_rate": -8,
+      "loudness_rate": -4,
+      "note": "plainer, less weighted"
+     }
+    ]
+   },
+   "S5-ORIANE": {
+    "mood": "resigned; she already knows the answer and asks anyway",
+    "takes": [
+     {
+      "take": 1,
+      "job": "8475e18c-d4dc-4e6c-a18a-dc5d087f67e8",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_8475e18c-d4dc-4e6c-a18a-dc5d087f67e8.wav",
+      "speech_rate": -6,
+      "loudness_rate": -4,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "13d787d1-50ba-47b7-9444-1e39665fc526",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_13d787d1-50ba-47b7-9444-1e39665fc526.wav",
+      "speech_rate": -6,
+      "loudness_rate": -4,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "59499182-9067-4a9f-b65a-29484809a8a7",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_59499182-9067-4a9f-b65a-29484809a8a7.wav",
+      "speech_rate": -12,
+      "loudness_rate": -8,
+      "note": "more defeated"
+     },
+     {
+      "take": 4,
+      "job": "3ec19700-5f14-47e5-a8e2-e728d276e878",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163302_3ec19700-5f14-47e5-a8e2-e728d276e878.wav",
+      "speech_rate": -2,
+      "loudness_rate": -1,
+      "note": "asked straight, still hoping"
+     }
+    ]
+   },
+   "S5-CAEDOM": {
+    "mood": "one word, and it ends the scene",
+    "takes": [
+     {
+      "take": 1,
+      "job": "91a7b086-3ae8-4e10-87ef-b2a775d28089",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_91a7b086-3ae8-4e10-87ef-b2a775d28089.wav",
+      "speech_rate": -10,
+      "loudness_rate": -4,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "9b59baad-655f-40ae-8905-c48f0b20ce31",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_9b59baad-655f-40ae-8905-c48f0b20ce31.wav",
+      "speech_rate": -10,
+      "loudness_rate": -4,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "75f2c650-c147-4ab2-959b-be98c20f626c",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_75f2c650-c147-4ab2-959b-be98c20f626c.wav",
+      "speech_rate": -18,
+      "loudness_rate": -7,
+      "note": "drawn out — the tear lands under it"
+     },
+     {
+      "take": 4,
+      "job": "14ae3268-2396-49ea-9b12-50832385b60a",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_14ae3268-2396-49ea-9b12-50832385b60a.wav",
+      "speech_rate": -5,
+      "loudness_rate": -1,
+      "note": "flat and matter-of-fact"
+     }
+    ]
+   },
+   "S22-ALDER-a": {
+    "mood": "voice-over over the held push-in — quiet, level, hungry. His first instinct, not his conclusion",
+    "takes": [
+     {
+      "take": 1,
+      "job": "71778c85-35b9-4a8f-812d-6fa74d9c2f76",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_71778c85-35b9-4a8f-812d-6fa74d9c2f76.wav",
+      "speech_rate": -4,
+      "loudness_rate": -2,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "95382096-aba5-474a-b341-23dff7cfea5d",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_95382096-aba5-474a-b341-23dff7cfea5d.wav",
+      "speech_rate": -4,
+      "loudness_rate": -2,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "3d8959bd-e12e-41ad-8db4-3466777e3174",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_3d8959bd-e12e-41ad-8db4-3466777e3174.wav",
+      "speech_rate": -9,
+      "loudness_rate": -6,
+      "note": "more inward — a thought rather than a statement"
+     },
+     {
+      "take": 4,
+      "job": "5de87e44-a69d-455a-accc-a423a4a6b0c0",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_5de87e44-a69d-455a-accc-a423a4a6b0c0.wav",
+      "speech_rate": 0,
+      "loudness_rate": 2,
+      "note": "declared — the most dangerous reading"
+     }
+    ]
+   },
+   "S22-ALDER-b": {
+    "mood": "the smile arriving. Hope, relief, and something braver than either. The last new line in the film",
+    "takes": [
+     {
+      "take": 1,
+      "job": "a4ef14ad-1c2e-4a3f-a4b8-3bd03028c79b",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163342_a4ef14ad-1c2e-4a3f-a4b8-3bd03028c79b.wav",
+      "speech_rate": -8,
+      "loudness_rate": -3,
+      "note": "the spec"
+     },
+     {
+      "take": 2,
+      "job": "d83d62bd-e542-463e-82d3-aa8f69ba4627",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163339_d83d62bd-e542-463e-82d3-aa8f69ba4627.wav",
+      "speech_rate": -8,
+      "loudness_rate": -3,
+      "note": "the spec, second roll"
+     },
+     {
+      "take": 3,
+      "job": "f44737d3-ef7d-4ab0-b1a2-f9251c859206",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163339_f44737d3-ef7d-4ab0-b1a2-f9251c859206.wav",
+      "speech_rate": -15,
+      "loudness_rate": -7,
+      "note": "private — said to no one"
+     },
+     {
+      "take": 4,
+      "job": "f2accddd-ce39-4ef2-a59e-05286c4bf9bd",
+      "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163339_f2accddd-ce39-4ef2-a59e-05286c4bf9bd.wav",
+      "speech_rate": -3,
+      "loudness_rate": 0,
+      "note": "brighter, more relieved"
+     }
+    ]
+   }
+  },
+  "next": [
+   "Listen to all four per line and mark the keeper in `selected`.",
+   "Upload every chosen file into the submission project — RUN 31. Audio is the one thing the rules let you make anywhere, and the same clause requires it to be filed there.",
+   "S23 reuses the chosen S4-ORIANE-a and S3-CAEDOM takes. Do not generate new ones."
+  ],
+  "selected": {}
  }
 }
