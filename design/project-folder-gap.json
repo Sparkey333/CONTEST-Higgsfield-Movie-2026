@@ -1,28 +1,21 @@
 {
- "checked": "2026-09-11",
- "in_project": [
-  "char_caedom_v1_sun",
-  "char_caedom_v2_human",
-  "char_oriane_v1_human",
+ "checked": "2026-09-13",
+ "_what": "Elements the 23 shot prompts call that were not in the contest project as of the 12 Sep screenshots. Ids re-read from the account, so two that were wrong in the previous version are corrected here.",
+ "corrected": {
+  "plate-bombardment": "was 389aa7b5-5de8-435f-b589-... — the real id is 389aa7b5-5de8-495f-b899-b588e51c7ab8",
+  "aura-shell": "was 62047c7a-... which is the image job, not the element. The element is b81752ae-2bda-4a57-ba83-02244d1dbeb4"
+ },
+ "confirmed_in_project": [
+  "caedom-ascended",
   "char_oriane_v2_sun",
   "char_oriane_v3_battle",
-  "drowning_v1",
   "kai_alder_v1",
   "kai_wren_v1",
-  "loc_kephas_island_v1_concept",
-  "loc_kephas_island_v5_town",
-  "loc_loc_sector_isle_v2_action",
   "loc_loc_starsun_v3_courtyard",
   "loc_sector_isle_v1",
-  "loc_starsun_v1_outside",
-  "loc_starsun_v2_build",
-  "prop_dragon_v1_dead",
   "prop_enemy_ships",
   "prop_leviathan_v1",
-  "prop_prop_dragon_v2_alive",
-  "prop_the-turned-ones_v1",
-  "prop_the-turned-ones_v2",
-  "prop_the-turned-ones_v3"
+  "prop_the-turned-ones_v1"
  ],
  "must_move": [
   {
@@ -41,7 +34,7 @@
   },
   {
    "handle": "plate-sun",
-   "element_id": "21db1b5a-0188-40a2-9747-5996928c8538",
+   "element_id": "03dbcec8-c65f-482c-8c11-58782c673c93",
    "shots": [
     "S1",
     "S2",
@@ -63,7 +56,7 @@
   },
   {
    "handle": "plate-bombardment",
-   "element_id": "389aa7b5-5de8-435f-b589-b588e51c7ab8",
+   "element_id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
    "shots": [
     "S17",
     "S18",
@@ -206,7 +199,7 @@
   },
   {
    "handle": "aura-shell",
-   "element_id": "62047c7a-509e-4f58-aa2e-4bdfe73c4fca",
+   "element_id": "b81752ae-2bda-4a57-ba83-02244d1dbeb4",
    "shots": [
     "S12"
    ]
