@@ -235,5 +235,55 @@
    "why": "Author's note. The conquest line stays with Alder and stays verbatim, but it is now his first instinct rather than his conclusion: it arrives as voice-over over the push-in, and then he sets it down and says the film's last new line on camera, smiling. Wren, who was the excited one, has turned away to stare at the keepers and does not look back — so the want does not leave the film, it changes brother. The dark cloud moves off Alder and sits behind Wren.",
    "departs_from_source": "The novel gives the elder brother the conquest reading and says it guided him for the next ten years. The film keeps the sentence and reverses who it ends up describing."
   }
- ]
+ ],
+ "cast_colour": {
+  "CAEDOM": "gold",
+  "ORIANE": "void",
+  "ALDER": "coral",
+  "WREN": "jade",
+  "_why": "the bible's own movement tokens, so each name reads correctly in both themes"
+ },
+ "settings": {
+  "checked": "2026-09-13",
+  "_how": "read off models_explore, not remembered",
+  "primary": {
+   "model": "seed_audio",
+   "why": "0.1 credits a line, unlim-eligible, and the only cheap engine with a speech_rate dial",
+   "lock": {
+    "format": "wav",
+    "sample_rate": 48000,
+    "loudness_rate": 0,
+    "pitch_rate": 0
+   },
+   "per_line": {
+    "speech_rate": "0 default; -10 for Oriane's closing V.O.; +8 for Wren"
+   },
+   "no_seed": "seed_audio exposes no seed parameter. Reproducibility comes from pinning voice_id, not from a seed."
+  },
+  "reproducible": {
+   "model": "qwen_audio_tts",
+   "why": "the only speech engine here with a real seed (0-65535) and a natural-language instruction field",
+   "lock": {
+    "seed": "pick one per character and never change it",
+    "format": "wav",
+    "sample_rate": 48000,
+    "speech_rate": 1.0,
+    "pitch_rate": 1.0,
+    "batch_size": 4
+   }
+  },
+  "elevenlabs": {
+   "model": "text2speech_v2",
+   "variant": "elevenlabs",
+   "finding": "exposes exactly three fields — variant, voice_type, voice_id. No stability, similarity or style controls. There is nothing to tune, so consistency is entirely the voice id."
+  },
+  "consistency_rules": [
+   "One voice_id per character for the whole film. Changing it mid-production is the only thing that actually breaks a voice.",
+   "Never move pitch_rate between lines of the same character.",
+   "Identical format and sample_rate on every line, or the edit resamples some of them.",
+   "Emotion goes in speech_rate, or in qwen's instruction field. Never in a different voice.",
+   "Generate all of one character's lines in a single batch.",
+   "S23 reuses the S4 and S3 takes. Ten new takes, not twelve."
+  ]
+ }
 }

@@ -1365,6 +1365,38 @@ section[data-ch="higgs"]{--sc:var(--jade)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ref:#E2795C}}
 :root[data-theme="dark"]{--ref:#E2795C}
 pre.prompt b.ref,pre.paste b.ref{color:var(--ref);font-weight:600;font-style:normal}
+
+/* ---- voice: one colour per character, from the movement tokens ---- */
+:root{--vc-caedom:var(--gold);--vc-oriane:var(--void);--vc-alder:var(--coral);--vc-wren:var(--jade)}
+.vx{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;font-weight:700}
+.vx.caedom{color:var(--vc-caedom)} .vx.oriane{color:var(--vc-oriane)}
+.vx.alder{color:var(--vc-alder)}   .vx.wren{color:var(--vc-wren)}
+.vsc{border:1px solid var(--line);border-radius:11px;background:var(--surface);
+  overflow:hidden;margin-bottom:14px}
+.vsc>.vsh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:14px 18px;
+  border-bottom:1px solid var(--line-soft);background:var(--surface-2)}
+.vsh .vn{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink-3)}
+.vsh h4{font-size:17px}
+.vsh .vct{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.vline{display:grid;grid-template-columns:52px 118px 1fr;gap:14px;padding:10px 18px;
+  border-bottom:1px solid var(--line-soft);align-items:baseline}
+.vline:last-child{border-bottom:0}
+.vline .vsid{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.vline .vtxt{font-size:14.5px;color:var(--ink);line-height:1.55}
+.vline .vdir{display:block;font-size:12px;color:var(--ink-3);margin-top:3px;font-style:italic}
+.vline.reuse{opacity:.62}
+.vline.reuse .vtxt{font-style:italic}
+.vsilent{padding:16px 18px;color:var(--ink-3);font-size:13.5px;line-height:1.6}
+.vcast{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin:0 0 22px}
+.vcard{border:1px solid var(--line);border-top:3px solid var(--c,var(--line));border-radius:10px;
+  background:var(--surface);padding:13px 15px}
+.vcard.caedom{--c:var(--vc-caedom)} .vcard.oriane{--c:var(--vc-oriane)}
+.vcard.alder{--c:var(--vc-alder)}   .vcard.wren{--c:var(--vc-wren)}
+.vcard b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;margin-bottom:5px}
+.vcard .vv{font-size:14px;color:var(--ink)}
+.vcard .vid{font-family:var(--mono);font-size:10px;color:var(--ink-3);word-break:break-all;margin-top:4px}
+.vcard .vd{font-size:12.5px;color:var(--ink-2);line-height:1.5;margin-top:7px}
+.vcard .vpend{color:var(--coral);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em}
 </style>
 
 <header class="mast">
@@ -2376,6 +2408,124 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
     <p><b class="lane a">A</b> is the version that ships and the one the frame string, the timing lock and every gate assume. <b class="lane b">B</b> is coverage insurance: the same story beat reached a different way &mdash; a different lens, a different angle, sometimes a deliberately simpler ask &mdash; so that a shot which will not resolve after two passes has somewhere to go that is not a rewrite. <b class="lane c">C</b> is the chroma pass, for the trailer and the grid thumbnail, and carries the same warning as the asset D lane: it is not for the film.</p>
   </div>
   <div id="shotlist"></div>
+</div></section>
+
+<!-- ================= VOICE ================= -->
+<section id="voice"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Ten takes &middot; 89 words &middot; the whole spoken film</span>
+    <h2>Voice</h2>
+    <p>The film speaks for eighty-nine words. Every line is below in film order, coloured by who says it,
+    with the engine settings that keep a character sounding like one person across four days of generating.
+    Model limits here were read off the platform on 13 Sep rather than remembered.</p>
+  </div>
+
+  <div class="vcast">
+    <div class="vcard oriane"><b>ORIANE</b><span class="vv">Kiki &middot; preset</span>
+      <span class="vid">2d51d9d0-b2a4-5e8b-9c63-f310adafd5f7</span>
+      <span class="vd">Cast. Movement I is fear, not fatigue &mdash; she is arguing and losing. Her closing
+      voice-over is the opposite: spoken after the battle that kills her, tired to the bone and unbroken.</span></div>
+    <div class="vcard caedom"><b>CAEDOM</b><span class="vpend">not cast</span>
+      <span class="vd">Two takes exist. <b>Alistair</b> <span class="vid">d9d5c263-f84e-4752-97b5-3750fcc6fd2f</span>
+      or <b>Gideon</b> <span class="vid">1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5</span>. Calm to the point of
+      stillness, and never raises his voice &mdash; pick the one that sounds least like it is performing.</span></div>
+    <div class="vcard alder"><b>ALDER</b><span class="vpend">not cast</span>
+      <span class="vd">Candidate <b>Reid</b> <span class="vid">66469f5a-10db-586a-bab1-72f6ee66ba69</span>.
+      He carries the last line of the film, so cast him on the smile, not on the want.</span></div>
+    <div class="vcard wren"><b>WREN</b><span class="vpend">not cast &middot; and never speaks</span>
+      <span class="vd">Candidates <b>Benji</b> <span class="vid">e6f9b893-51b1-51d3-afe9-9e0482cb7ac1</span>
+      and <b>Evan</b> <span class="vid">f7a46aa0-183a-5327-b554-e71d8c0071bb</span>. Every Wren line was cut
+      on 9 Sep. Cast him only if a line comes back.</span></div>
+  </div>
+
+  <div class="vsc">
+    <div class="vsh"><span class="vn">MOVEMENT I</span><h4>The Sun</h4><span class="vct">8 takes &middot; 66 words</span></div>
+<div class="vline"><span class="vsid">S1</span><span class="vx caedom">CAEDOM (V.O.)</span><span class="vtxt">It would not be the last tragedy to strike this world. The final act was waiting &mdash; on the release of the Vesper.<span class="vdir">voice-over, no lips in frame</span></span></div>
+<div class="vline"><span class="vsid">S3</span><span class="vx oriane">ORIANE</span><span class="vtxt">Why release him, if he could annihilate everything?<span class="vdir">on camera, both faces legible &mdash; render with audio on</span></span></div>
+<div class="vline"><span class="vsid">S3</span><span class="vx caedom">CAEDOM</span><span class="vtxt">There must be risk if there is to be growth.</span></div>
+<div class="vline"><span class="vsid">S4</span><span class="vx oriane">ORIANE</span><span class="vtxt">He could erase everything. Even Earth.<span class="vdir">locked close-up, her lips barely move</span></span></div>
+<div class="vline"><span class="vsid">S4</span><span class="vx oriane">ORIANE</span><span class="vtxt">He&rsquo;s your brother.</span></div>
+<div class="vline"><span class="vsid">S4</span><span class="vx caedom">CAEDOM (o.s.)</span><span class="vtxt">I know.<span class="vdir">off-screen</span></span></div>
+<div class="vline"><span class="vsid">S5</span><span class="vx oriane">ORIANE</span><span class="vtxt">When will you release him?<span class="vdir">on camera until the tear</span></span></div>
+<div class="vline"><span class="vsid">S5</span><span class="vx caedom">CAEDOM</span><span class="vtxt">Tomorrow.</span></div>
+  </div>
+
+  <div class="vsc">
+    <div class="vsh"><span class="vn">MOVEMENT II</span><h4>The Ocean</h4><span class="vct">0 takes</span></div>
+    <p class="vsilent">A hundred and eighteen seconds with no dialogue at all. Nine shots, a chase, a
+    leviathan and a death, and nobody speaks through any of it &mdash; which is what makes the two lines
+    either side of it land. <b>There is nothing to generate for this movement.</b></p>
+  </div>
+
+  <div class="vsc">
+    <div class="vsh"><span class="vn">MOVEMENT III</span><h4>The Island</h4><span class="vct">2 new takes &middot; 2 reused</span></div>
+<div class="vline"><span class="vsid">S22</span><span class="vx alder">ALDER (V.O.)</span><span class="vtxt">I want to move mountains. To raise them over the heads of my enemies.<span class="vdir">voice-over over the held push-in &mdash; his first instinct, not his conclusion</span></span></div>
+<div class="vline"><span class="vsid">S22</span><span class="vx alder">ALDER</span><span class="vtxt">&hellip;There&rsquo;s something more.<span class="vdir">on camera as the smile arrives. Hope, relief, and something braver than either. The last new line in the film</span></span></div>
+<div class="vline"><span class="vsid">S23</span><span class="vx oriane">ORIANE (V.O.)</span><span class="vtxt">He could erase everything.<span class="vdir">REUSE the S4 take. Do not generate a new one &mdash; the point is that it is the same voice, heard again</span></span></div>
+<div class="vline"><span class="vsid">S23</span><span class="vx caedom">CAEDOM (V.O.)</span><span class="vtxt">There must be risk if there is to be growth.<span class="vdir">REUSE the S3 take</span></span></div>
+  </div>
+
+  <div class="verdict" style="margin:22px 0">
+    <b>Ten takes, not twelve.</b> The film&rsquo;s last two lines are its first two lines, and they are the
+    <i>same recordings</i> played again after they have cost something. Generating fresh takes for S23 throws
+    away the only trick the ending has.
+  </div>
+
+  <div class="sec-head" style="margin-top:40px"><h3 style="font-size:22px">Settings &mdash; three engines, and what each one actually exposes</h3>
+    <p>Read from the platform on 13 Sep. The surprise is how little there is to tune: two of the three have
+    almost no dials at all, which means consistency is a discipline rather than a configuration.</p>
+  </div>
+  <table class="dials">
+    <thead><tr><th style="width:19%">Engine</th><th style="width:15%">Use it for</th><th>Settings, and which to lock</th></tr></thead>
+    <tbody>
+      <tr><td><b>seed_audio</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">ByteDance &middot; the primary</span></td>
+        <td>Every line in the film.</td>
+        <td><b>Lock and never move:</b> <code>format wav</code>, <code>sample_rate 48000</code> to match the
+        video master, <code>loudness_rate 0</code> (normalise in the edit, not here), and
+        <code>pitch_rate 0</code> &mdash; moving pitch between two lines of the same character is the single
+        fastest way to make one person sound like two.
+        <b>The one dial you may move:</b> <code>speech_rate</code>, default 0, range &minus;50 to 100. About
+        <b>&minus;10</b> for Oriane&rsquo;s closing voice-over, <b>+8</b> if a Wren line ever returns. Nothing else.
+        Costs 0.1 credits a line and is unlim-eligible, so the whole spoken film is under a credit.</td></tr>
+      <tr><td><b>text2speech_v2</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">variant: elevenlabs</span></td>
+        <td>Only if a voice you want exists nowhere else.</td>
+        <td><b>It exposes exactly three fields</b> &mdash; <code>variant</code>, <code>voice_type</code>,
+        <code>voice_id</code>. No stability, no similarity boost, no style exaggeration, no speed. If you
+        came here expecting the ElevenLabs sliders, they are not surfaced through Higgsfield. That is not a
+        problem so long as you know it: <b>consistency is entirely the voice id</b>, and there is nothing to
+        accidentally drift. Also unlim-eligible.</td></tr>
+      <tr><td><b>qwen_audio_tts</b><br><span style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">Alibaba &middot; the reproducible one</span></td>
+        <td>A line you need to be able to re-make identically.</td>
+        <td><b>The only speech engine here with a real seed</b> &mdash; <code>seed</code>, 0 to 65535. Pick one
+        number per character, write it down, never change it. It also takes an <code>instruction</code>
+        field in plain language, which is the cleanest way to ask for <i>tired to the bone and unbroken</i>
+        without touching pitch. Lock <code>speech_rate 1.0</code> and <code>pitch_rate 1.0</code>; set
+        <code>batch_size 4</code> and pick one.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict" style="margin-top:22px;border-color:var(--coral-line);background:var(--coral-soft)">
+    <b>There is no seed on seed_audio.</b> The name is the model, not the feature &mdash; Seed Audio 1.0
+    exposes format, sample rate, speech rate, loudness, pitch and a voice id, and nothing that makes a take
+    reproducible. If a take has to be re-creatable exactly, that is <code>qwen_audio_tts</code> and a locked
+    seed. Otherwise, reproducibility here means <i>keep the same voice id and change nothing else</i>.
+  </div>
+
+  <div class="sec-head" style="margin-top:40px"><h3 style="font-size:22px">Six rules that keep a character sounding like one person</h3></div>
+  <div class="rules">
+    <div class="rule-item"><div class="rk">One id, forever<em>Rule 01</em></div><div class="rv">A character gets <b>one <code>voice_id</code> for the whole film</b>. Changing it mid-production is the only thing on this page that genuinely breaks a voice; everything else is a wobble.</div></div>
+    <div class="rule-item"><div class="rk">Pitch is not a performance tool<em>Rule 02</em></div><div class="rv">Never move <code>pitch_rate</code> between two lines of the same character. It is the dial that reads as a different actor rather than a different mood.</div></div>
+    <div class="rule-item"><div class="rk">Same container, same rate<em>Rule 03</em></div><div class="rv">Identical <code>format</code> and <code>sample_rate</code> on every take, or the edit quietly resamples some of them and those are the ones that sound thin.</div></div>
+    <div class="rule-item"><div class="rk">Emotion goes in the rate or the instruction<em>Rule 04</em></div><div class="rv">Tired is <code>speech_rate &minus;10</code>, or a sentence in qwen&rsquo;s <code>instruction</code>. It is never a second voice, and never a pitch change.</div></div>
+    <div class="rule-item"><div class="rk">One character, one batch<em>Rule 05</em></div><div class="rv">Generate all of a character&rsquo;s lines in a single batch rather than across four sessions. Same engine, same settings, same sitting &mdash; the takes match because nothing had a chance to change between them.</div></div>
+    <div class="rule-item"><div class="rk">Reuse what the film reuses<em>Rule 06</em></div><div class="rv">S23 is S4 and S3 played again. <b>Ten takes, not twelve.</b> A fresh recording of a repeated line destroys the effect it exists for.</div></div>
+  </div>
+
+  <div class="verdict" style="margin-top:22px;border-color:var(--jade-line);background:var(--jade-soft)">
+    <b>Then upload every file into the submission project.</b> Audio is the one thing the rules let you make
+    anywhere &mdash; and the same clause requires every audio file to be uploaded into the project. Made in the
+    account and never filed is a documented way to lose. That is RUN 31, and it is not done.
+  </div>
 </div></section>
 
 <!-- ================= PIPELINE ================= -->
@@ -5633,6 +5783,7 @@ const PROGRESS={"generated":"2026-09-09T04:30Z","deadline":"2026-09-14T23:59Z","
       ["loop","Revision Loop","Download, refine, re-upload, mark v2"]]},
     {k:"film",n:"Film",d:"The movie itself",c:"var(--mv3)",items:[
       ["shots","Shot List","23 shots, three prompt lanes each"],
+      ["voice","Voice","Ten takes, the cast, and the settings that hold them"],
       ["frames","Frame String","39 anchors, shared joins, bridges"],
       ["pipeline","Pipeline & Gates","Five hard locks"],
       ["thesis","The Thesis","One sentence, and what carries it"],
