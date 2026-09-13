@@ -250,5 +250,37 @@
    "primary": "cinematic_studio_3_0",
    "backup": "flux_3_video"
   }
- ]
+ ],
+ "audio_routing": {
+  "checked": "2026-09-13",
+  "finding": "cinematic_studio_3_0, the motion sheet's primary, accepts no audio reference. The four shots where a mouth moves have to leave it.",
+  "only_engine": {
+   "model": "minimax_h3",
+   "clears": [
+    "start_image + end_image",
+    "audio_references",
+    "21:9",
+    "folder_id"
+   ],
+   "range": "4-15s",
+   "res": "2K"
+  },
+  "per_shot": {
+   "S1": "no sync — voice-over, lay it in at the edit",
+   "S3": "minimax_h3, audio-driven, both takes attached",
+   "S4": "minimax_h3, audio-driven — the held close-up that decides the method",
+   "S5": "minimax_h3, audio-driven, split at 14s; the tear macro is a separate clip with no faces",
+   "S22": "voice-over half laid in; the on-camera line audio-driven on minimax_h3",
+   "S23": "no sync — both lines are reused takes"
+  },
+  "fallback": {
+   "model": "sync_so",
+   "use": "anything already rendered, or a face small enough that only the mouth must agree",
+   "sync_mode": "cut_off or remap; never loop or bounce on a dramatic shot"
+  },
+  "watch": [
+   "Turn the video model's own generate_audio OFF on every speaking shot or it invents a second voice.",
+   "folder_id is unverified — no API lists folders. Test it on one cheap clip before trusting it."
+  ]
+ }
 }
