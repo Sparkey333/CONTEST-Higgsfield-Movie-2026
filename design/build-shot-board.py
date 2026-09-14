@@ -53,7 +53,7 @@ def tile(id8, role, pickscore=None):
     frames = "chained on start/end frames" if v["frames"] else "no start/end frames"
     return f'''<div class="tile {role}" id="r-{id8}">
   <div class="art"><div class="ph"><span class="fid">{esc(id8)}</span><span class="fr">{esc(role)}</span></div>
-    {f'<video muted playsinline preload="none" poster="{esc(thumb)}" src="{esc(mp4)}" controls onerror="this.remove()"></video>' if mp4 else ''}</div>
+    {f'<video muted playsinline preload="metadata" poster="{esc(thumb)}" src="{esc(mp4)}" controls></video>' if mp4 else ''}</div>
   <div class="cap"><b>{esc(t)}</b><span class="role {role}">{esc(role)}</span></div>
   <div class="meta">{v["duration"]}s · {esc(str(v["resolution"]))} · {esc(v["model"])} · {frames} · audio {"on" if v["audio"] else "off"}</div>
   {scores}
@@ -122,8 +122,8 @@ page = f'''<title>Canvas Boards</title>
 .altcol{{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;align-content:start}}
 .tile{{display:flex;flex-direction:column;gap:6px;min-width:0}} .tile.pick .art{{border:2px solid var(--good)}}
 .art{{position:relative;aspect-ratio:21/9;border-radius:7px;overflow:hidden;background:var(--tile);border:1px solid var(--line);max-width:100%}}
-.art video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}}
-.art .ph{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}}
+.art video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;opacity:0}} .art.live video{{opacity:1}} .art.live .ph{{display:none}}
+.art .ph{{position:absolute;inset:0;z-index:1;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}}
 .art .ph .fid{{font:600 22px var(--display);color:#EDE5D6;opacity:.9}} .art .ph .fr{{font:9px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#9A8F7C}}
 .cap{{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}} .cap b{{font-size:13px}} .role{{font:9px var(--mono);letter-spacing:.13em;text-transform:uppercase;padding:2px 5px;border-radius:3px;background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-soft)}}
 .role.pick{{background:var(--good-soft);color:var(--good);border-color:var(--good)}}
@@ -156,6 +156,7 @@ h2{{font-size:clamp(22px,3vw,30px);margin:48px 0 10px}} .callout{{border:1px sol
 <p class="note">Built by <code>design/build-shot-board.py</code> from the account's generation history, the shot map, the picks and the Predictor scores. Regenerate, do not hand-edit. Per-shot prompts for the reshoots are in <code>design/recreate-prompts.md</code>; the four unshot prompts are in <code>design/new-shots.md</code>.</p>
 </div>
 <script>
+document.querySelectorAll('.art video').forEach(v=>{{v.addEventListener('loadeddata',()=>v.parentNode.classList.add('live'));v.addEventListener('error',()=>v.remove())}});
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{{const t=b.dataset.copy,o=b.textContent;const done=()=>{{b.textContent='copied';setTimeout(()=>b.textContent=o,1400)}};
 try{{await navigator.clipboard.writeText(t);done();return}}catch(e){{}}
 const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{{document.execCommand('copy');done()}}catch(e){{b.textContent='select and ⌘C'}}ta.remove();}}));

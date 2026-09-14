@@ -134,8 +134,8 @@ table{{border-collapse:collapse;width:100%;font-size:14px}} th,td{{text-align:le
 <div class="kpi"><b>{avg("overall")}</b><span>mean overall</span></div>
 <div class="kpi"><b>{avg("hook")}</b><span>mean hook — the weak column</span></div>
 <div class="kpi"><b>{avg("engagement")}</b><span>mean engagement</span></div>
-<div class="kpi"><b>{kept}</b><span>keep as-is</span></div>
-<div class="kpi"><b>{regen}</b><span>make again</span></div>
+<div class="kpi"><b>{kept}</b><span>are the pick for their shot</span></div>
+<div class="kpi"><b>5</b><span>things to make, listed below</span></div>
 </div>
 {ver.get("_summary_html","")}
 <h2>The ledger, newest first</h2>
