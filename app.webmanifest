@@ -1,0 +1,35 @@
+{
+  "name": "Production Desk",
+  "short_name": "Desk",
+  "description": "Director's bible, production sheet and source audit for a 5-minute short. Runs entirely offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#EDEFF5",
+  "theme_color": "#EDEFF5",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Director's Bible",
+      "short_name": "Bible",
+      "description": "Run sheet, asset prompts, shot list, frame string",
+      "url": "./director-bible.html"
+    },
+    {
+      "name": "Production Sheet",
+      "short_name": "Sheet",
+      "description": "Folders, naming, retention, verification sequence",
+      "url": "./production-sheet.html"
+    },
+    {
+      "name": "Source Audit",
+      "short_name": "Audit",
+      "description": "What the adaptation drops and what has no plate",
+      "url": "./lookbook-audit.html"
+    }
+  ]
+}

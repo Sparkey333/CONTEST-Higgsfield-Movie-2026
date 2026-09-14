@@ -1,0 +1,602 @@
+<meta charset="utf-8">
+<title>Canvas Boards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ============================================================
+   TOKENS — light is the bare :root; dark redefines the same names.
+   The three accents are the film's own movement worlds, so a board
+   here and a board in the bible read as the same object.
+   ============================================================ */
+:root{
+  --ground:#F2EFE8; --surface:#FBF9F5; --surface-2:#E9E4D9; --surface-3:#DED8CA;
+  --line:#CFC7B6; --line-soft:#E2DCCE;
+  --ink:#171410; --ink-2:#4A443B; --ink-3:#7A7264;
+  --sun:#9A6208; --sun-soft:#FAEBCB; --sun-line:#D9A64A;
+  --void:#3E39C9; --void-soft:#E0DEFB; --void-line:#9793EF;
+  --coral:#B33A18; --coral-soft:#FBDDD1; --coral-line:#E89272;
+  --good:#0A6B45; --good-soft:#CFEEE0;
+  --warn:#8A4B00; --warn-soft:#FBE6CC;
+  --tile:#1A1713;
+  --shadow:0 1px 2px rgba(23,20,16,.06), 0 10px 28px -16px rgba(23,20,16,.30);
+  --display:"Fraunces","Iowan Old Style",Palatino,Georgia,serif;
+  --body:"Archivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --tw:190px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D0B09; --surface:#161311; --surface-2:#211D19; --surface-3:#2C2722;
+    --line:#3B342C; --line-soft:#241F1A;
+    --ink:#F4EFE4; --ink-2:#B0A797; --ink-3:#7D7466;
+    --sun:#EDB44C; --sun-soft:#33260E; --sun-line:#6C4F17;
+    --void:#9B97FF; --void-soft:#1B1A3E; --void-line:#3F3CA6;
+    --coral:#FF8D63; --coral-soft:#37190F; --coral-line:#7C3A22;
+    --good:#4FD9A2; --good-soft:#082C1F;
+    --warn:#F0B36A; --warn-soft:#33220C;
+    --tile:#0A0908;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D0B09; --surface:#161311; --surface-2:#211D19; --surface-3:#2C2722;
+  --line:#3B342C; --line-soft:#241F1A;
+  --ink:#F4EFE4; --ink-2:#B0A797; --ink-3:#7D7466;
+  --sun:#EDB44C; --sun-soft:#33260E; --sun-line:#6C4F17;
+  --void:#9B97FF; --void-soft:#1B1A3E; --void-line:#3F3CA6;
+  --coral:#FF8D63; --coral-soft:#37190F; --coral-line:#7C3A22;
+  --good:#4FD9A2; --good-soft:#082C1F;
+  --warn:#F0B36A; --warn-soft:#33220C;
+  --tile:#0A0908;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 26px}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;
+  letter-spacing:-.012em;text-wrap:balance}
+p{margin:0}
+a{color:var(--sun)}
+code{font-family:var(--mono);font-size:.87em}
+:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------------- masthead ---------------- */
+.mast{border-bottom:1px solid var(--line);background:
+  linear-gradient(180deg,var(--surface) 0%,var(--ground) 100%)}
+.mast-in{padding:46px 0 34px;display:flex;flex-direction:column;gap:20px}
+.mast h1{font-size:clamp(34px,5.4vw,58px);line-height:1.02}
+.mast .lede{font-size:17px;color:var(--ink-2);max-width:66ch}
+.mast .lede b{color:var(--ink);font-weight:600}
+.mvbar{display:flex;gap:0;height:7px;border-radius:4px;overflow:hidden;max-width:640px}
+.mvbar i{display:block;height:100%}
+.mvbar i:nth-child(1){background:var(--sun);flex:80}
+.mvbar i:nth-child(2){background:var(--void);flex:118}
+.mvbar i:nth-child(3){background:var(--coral);flex:102}
+
+/* ---------------- nav ---------------- */
+nav.jump{position:sticky;top:0;z-index:30;background:var(--surface);
+  border-bottom:1px solid var(--line)}
+.jump-in{display:flex;gap:2px;overflow-x:auto;align-items:center}
+.jump a{flex:0 0 auto;padding:12px 14px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+  text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap}
+.jump a:hover{color:var(--ink);background:var(--surface-2)}
+.jump a.m1:hover{color:var(--sun);border-color:var(--sun)}
+.jump a.m2:hover{color:var(--void);border-color:var(--void)}
+.jump a.m3:hover{color:var(--coral);border-color:var(--coral)}
+#tt{margin-left:auto;flex:0 0 auto;padding:12px 14px;font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+  background:none;border:0;cursor:pointer}
+#tt:hover{color:var(--ink)}
+
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+.sec-hd{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;max-width:74ch}
+.sec-hd h2{font-size:clamp(24px,3.4vw,34px);line-height:1.12}
+.sec-hd p{color:var(--ink-2);font-size:15.5px}
+
+/* ---------------- the five rules ---------------- */
+.rules{display:grid;gap:1px;background:var(--line-soft);border:1px solid var(--line);
+  border-radius:10px;overflow:hidden}
+.rule{display:grid;grid-template-columns:38px 1fr;gap:16px;padding:16px 18px;
+  background:var(--surface);align-items:start}
+.rule .n{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:4px}
+.rule b{display:block;font-size:15px;margin-bottom:2px}
+.rule span{font-size:14px;color:var(--ink-2);line-height:1.55}
+
+/* ---------------- board ---------------- */
+.board{margin-top:34px;border:1px solid var(--line);border-radius:14px;
+  background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+.board[data-mv="1"]{border-top:3px solid var(--sun)}
+.board[data-mv="2"]{border-top:3px solid var(--void)}
+.board[data-mv="3"]{border-top:3px solid var(--coral)}
+.b-hd{padding:20px 22px 16px;display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;
+  border-bottom:1px solid var(--line-soft)}
+.b-hd h3{font-size:22px}
+.b-hd .plate{font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:5px}
+.board[data-mv="1"] .plate{background:var(--sun-soft);color:var(--sun);border:1px solid var(--sun-line)}
+.board[data-mv="2"] .plate{background:var(--void-soft);color:var(--void);border:1px solid var(--void-line)}
+.board[data-mv="3"] .plate{background:var(--coral-soft);color:var(--coral);border:1px solid var(--coral-line)}
+.b-hd .meta{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+
+/* shelf */
+.shelf{padding:16px 22px;background:var(--surface-2);border-bottom:1px solid var(--line-soft)}
+.shelf .sl{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.shelf .sl b{font-size:13.5px}
+.shelf .sl span{font-size:12.5px;color:var(--ink-3)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:11.5px;padding:5px 10px;border-radius:6px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip.plate{background:var(--surface-3);color:var(--ink);font-weight:500}
+.chip.soul{border-style:dashed}
+.chip.copied{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+
+/* track */
+.trackwrap{overflow-x:auto;padding:22px}
+.track{display:grid;gap:0 10px;min-width:min-content;
+  grid-auto-rows:min-content;align-items:start}
+.tile{grid-row:1;display:flex;flex-direction:column;gap:6px;width:var(--tw)}
+.tile .art{position:relative;aspect-ratio:21/9;border-radius:7px;overflow:hidden;
+  background:var(--tile);border:1px solid var(--line);display:grid;place-items:center}
+.tile .art img{width:100%;height:100%;object-fit:cover;display:block}
+.tile .art .ph{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:4px;padding:8px;text-align:center}
+.tile .art .ph .fid{font-family:var(--display);font-size:23px;color:#EDE5D6;opacity:.92}
+.tile .art .ph .fr{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;color:#9A8F7C}
+.tile.has-img .ph{display:none}
+.tile .cap{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.tile .cap b{font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+.tile .cap .role{font-family:var(--mono);font-size:9px;letter-spacing:.13em;
+  text-transform:uppercase;padding:2px 5px;border-radius:3px;
+  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-soft)}
+.tile .cap .role.shared{background:var(--sun-soft);color:var(--sun);border-color:var(--sun-line)}
+.tile .cap .role.bridge{background:var(--void-soft);color:var(--void);border-color:var(--void-line);border-style:dashed}
+.tile .cap .role.match{background:var(--coral-soft);color:var(--coral);border-color:var(--coral-line)}
+.tile .hs{display:flex;flex-wrap:wrap;gap:3px}
+.tile .hs i{font-family:var(--mono);font-size:9.5px;font-style:normal;padding:2px 5px;
+  border-radius:3px;background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-soft)}
+.tile .dep{font-family:var(--mono);font-size:9.5px;color:var(--ink-3)}
+.tile .desc{font-size:11.5px;line-height:1.45;color:var(--ink-3)}
+.tile .jid{font-family:var(--mono);font-size:9.5px;color:var(--ink-3);
+  background:none;border:0;padding:0;cursor:pointer;text-align:left;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.tile .jid:hover{color:var(--ink-2);text-decoration:underline}
+
+/* shot spans under the tiles */
+.span{margin-top:12px;border-radius:6px;padding:8px 11px;min-width:0;
+  overflow:hidden;overflow-wrap:anywhere;
+  border:1px solid var(--line);background:var(--surface-2);
+  display:flex;flex-direction:column;gap:3px}
+.board[data-mv="1"] .span{border-left:3px solid var(--sun)}
+.board[data-mv="2"] .span{border-left:3px solid var(--void)}
+.board[data-mv="3"] .span{border-left:3px solid var(--coral)}
+.span .st{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.span .st b{font-family:var(--mono);font-size:12px}
+.span .st em{font-style:normal;font-size:13px;color:var(--ink);font-weight:500}
+.span .st .dur{margin-left:auto;font-family:var(--mono);font-size:11px;
+  color:var(--ink-3);font-variant-numeric:tabular-nums}
+.span .mdl{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.span .seam{font-size:11.5px;color:var(--ink-2);line-height:1.45;overflow-wrap:anywhere}
+.span .mdl,.span .st em{overflow-wrap:anywhere;min-width:0}
+.span.nocut{background:var(--warn-soft);border-color:var(--warn)}
+
+.cutmark{grid-row:1;align-self:center;width:10px;justify-self:center;
+  display:flex;align-items:center;justify-content:center;color:var(--ink-3);
+  font-family:var(--mono);font-size:16px;line-height:1;padding-top:0}
+
+.legend{display:flex;flex-wrap:wrap;gap:16px;padding:14px 22px;
+  border-top:1px solid var(--line-soft);background:var(--surface-2);
+  font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:3px;display:block}
+
+/* ---------------- structural options ---------------- */
+.opt{border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  margin-top:18px;overflow:hidden}
+.opt.pick{border-color:var(--good);box-shadow:0 0 0 3px var(--good-soft)}
+.opt-hd{padding:18px 22px 14px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.opt-hd h4{font-size:19px}
+.opt-hd .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;
+  text-transform:uppercase;padding:4px 8px;border-radius:4px;
+  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line)}
+.opt.pick .tag{background:var(--good-soft);color:var(--good);border-color:var(--good)}
+.opt-hd .cost{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.ribbon{display:flex;height:34px;gap:1px;margin:0 22px;border-radius:5px;overflow:hidden}
+.ribbon b{display:flex;align-items:center;justify-content:center;min-width:0;
+  font-family:var(--mono);font-size:9.5px;font-weight:400;color:#fff;
+  overflow:hidden;position:relative}
+.ribbon b[data-mv="1"]{background:#9A6208}
+.ribbon b[data-mv="2"]{background:#3E39C9}
+.ribbon b[data-mv="3"]{background:#B33A18}
+.ribbon b.new{outline:2px dashed #fff;outline-offset:-4px}
+.opt-body{padding:16px 22px 20px;display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.opt-body .cell{display:flex;flex-direction:column;gap:5px}
+.opt-body .cell .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3)}
+.opt-body .cell.win .k{color:var(--good)}
+.opt-body .cell.lose .k{color:var(--coral)}
+.opt-body .cell p{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.opt-body .cell p b{color:var(--ink);font-weight:600}
+
+.callout{border:1px solid var(--warn);background:var(--warn-soft);border-radius:10px;
+  padding:16px 20px;margin-top:20px;font-size:14.5px;color:var(--ink);line-height:1.6}
+.callout b{font-weight:600}
+.note{border-left:3px solid var(--line);padding:2px 0 2px 16px;color:var(--ink-2);
+  font-size:14px;line-height:1.6;margin-top:16px}
+
+table.ord{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}
+table.ord th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:400;padding:8px 10px;
+  border-bottom:1px solid var(--line)}
+table.ord td{padding:8px 10px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);
+  vertical-align:top}
+table.ord td.mono{font-family:var(--mono);font-size:11.5px;color:var(--ink);white-space:nowrap}
+table.ord tr:last-child td{border-bottom:0}
+
+footer{padding:38px 0 56px;color:var(--ink-3);font-size:13px;line-height:1.7}
+
+/* manual-copy fallback, since the viewer sandbox can refuse the clipboard */
+#cb{position:fixed;inset:0;z-index:99;background:rgba(10,8,6,.72);
+  display:flex;align-items:center;justify-content:center;padding:24px}
+#cb .p{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  max-width:680px;width:100%;padding:20px;display:flex;flex-direction:column;gap:12px}
+#cb .p h4{font-size:17px}
+#cb textarea{width:100%;min-height:180px;font:12.5px/1.6 var(--mono);color:var(--ink);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:12px}
+#cb button{align-self:flex-start;font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:6px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink);cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:640px){
+  :root{--tw:150px}
+  .wrap{padding:0 16px}
+}
+</style>
+
+<header class="mast"><div class="wrap mast-in">
+  <p class="eyebrow">Matter of Light · canvas templates</p>
+  <h1>Three boards, and four ways to order them</h1>
+  <p class="lede">One canvas per lighting plate, because every frame on a board inherits that
+  board's key and look line &mdash; a board that mixes plates is a board where the light drifts.
+  Each board below is the physical layout to reproduce: <b>the handles to drag in</b>, then
+  <b>the anchors in shot order</b>, with the shot spans drawn underneath so a shared frame is
+  visibly one image doing two jobs.</p>
+  <div class="mvbar" aria-hidden="true"><i></i><i></i><i></i></div>
+</div></header>
+
+<nav class="jump"><div class="wrap jump-in">
+  <a href="#how">How a board works</a>
+  <a class="m1" href="#b1">Canvas I · The Sun</a>
+  <a class="m2" href="#b2">Canvas II · The Ocean</a>
+  <a class="m3" href="#b3">Canvas III · The Island</a>
+  <a href="#order">Ordering the film</a>
+  <button id="tt" type="button">Theme</button>
+</div></nav>
+
+<section id="how"><div class="wrap">
+  <div class="sec-hd">
+    <p class="eyebrow">Before you drag anything</p>
+    <h2>How a board works</h2>
+    <p>Five rules. They are the whole method; everything below is these five applied
+    to 39 anchors and 23 shots.</p>
+  </div>
+  <div class="rules">
+    <div class="rule"><span class="n">01</span><div>
+      <b>One canvas per plate, not per scene.</b>
+      <span>Movement I's coda returns to the Sun, so <code>S23</code> sits on Canvas I even
+      though it plays last. Filing by light rather than by running order is what stops the
+      grade drifting between boards.</span></div></div>
+    <div class="rule"><span class="n">02</span><div>
+      <b>Top row is the shelf: plate, then location, then people and props.</b>
+      <span>Dragged in from the Elements panel by handle, never described in words. Each board
+      lists its own shelf below &mdash; that chip row is the drag order.</span></div></div>
+    <div class="rule"><span class="n">03</span><div>
+      <b>Anchors left to right in shot order, shots drawn underneath.</b>
+      <span>A <em>shared</em> frame ends one shot and starts the next; it is one tile serving
+      two spans, so it gets generated once. A <em>bridge</em> is a near-black hidden cut. A
+      <em>match</em> pair is two different images designed together.</span></div></div>
+    <div class="rule"><span class="n">04</span><div>
+      <b>Chain from the rendered last frame, never from the anchor still.</b>
+      <span>Once shot N exists, pull its final frame and start shot N+1 from that. The anchor
+      is the target; the render is the truth.</span></div></div>
+    <div class="rule"><span class="n">05</span><div>
+      <b>Spend the allowance where the film is decided.</b>
+      <span><code>F35</code> first, then <code>F06</code>/<code>F07</code>, <code>F17</code>,
+      and the <code>F09</code>/<code>F10</code> match. The API made one of each; the canvas
+      makes the tenth. Any face at medium or closer is re-run on <code>soul_2</code> with that
+      character's Soul.</span></div></div>
+  </div>
+  <div class="callout" id="imgnote">
+    <b>About the pictures.</b> Each tile tries to load the anchor that was actually generated
+    for it. Those files live on the account's CDN, which a sandboxed page is not allowed to
+    reach &mdash; so in the published view you will see the frame's identity card instead, and
+    the real image appears when this file is opened from your own copy of the repository. The
+    frame id, role, handles and job id under every tile are correct either way, and they are
+    what you actually need at the canvas.
+  </div>
+</div></section>
+
+<section id="b1"><div class="wrap"><div id="board-1"></div></div></section>
+<section id="b2"><div class="wrap"><div id="board-2"></div></div></section>
+<section id="b3"><div class="wrap"><div id="board-3"></div></div></section>
+
+<section id="order"><div class="wrap">
+  <div class="sec-hd">
+    <p class="eyebrow">The structural question</p>
+    <h2>Four ways to order the same 23 shots</h2>
+    <p>The cut as built peaks at the vortex, two minutes and fifty seconds in, and then runs
+    two minutes of falling action &mdash; and Oriane dies at 3:18, after which two strangers
+    arrive cold. Both are real weaknesses. Folding Movement&nbsp;II's back half into
+    Movement&nbsp;III's front half is the obvious fix, so here is what each version of that
+    actually costs.</p>
+  </div>
+  <div id="opts"></div>
+
+  <div class="note">
+    <b>Why option&nbsp;B and option&nbsp;C are not the same argument.</b> The full cross-cut was
+    already run against the current structure and lost five criteria to three &mdash; and its
+    two fatal losses were source fidelity and one-viewing legibility, both of which come from
+    the same thing: alternation reads as <em>simultaneity</em>, and Chapter&nbsp;III opens
+    &ldquo;The next day&hellip;&rdquo;. A single establishing beat placed early is not
+    alternation. It buys the emotional continuity without asking the audience to infer a
+    causal link the source denies. That is the whole reason B is cheap and C is not.
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Built from <code>design/anchor-plan.json</code>, <code>design/shot-ledger.json</code> and
+  the bible's own shot and frame tables &mdash; regenerate rather than hand-edit.
+  Anchor images are the Sep&nbsp;6 skeleton pass: one generation each, nobody has looked at
+  them yet, and Gate&nbsp;A comes before any of them is trusted.</p>
+</div></footer>
+
+<script>
+/* DATA — injected from the repo, not retyped. */
+const D = /*DATA-START*/{"shots":[{"id":"S1","mv":1,"d":16,"t":"Rise out of the fire","at":0,"model":"wan3_0 · 16s · 1080p · 21:9","cam":"Slow vertical crane out of liquid flame; no horizon until the last third.","seam":"Continuous into S2 — do not render these separately unless you must.","chips":["No cut","Opening"],"a":"F01","b":"F02"},{"id":"S2","mv":1,"d":18,"t":"The courtyard of worlds","at":16,"model":"seedance_2_5 · video_extension forward · 18s","cam":"Continuous forward drift, chest height, through the garden; the two figures found from behind.","seam":"Extend S1 forward. The seam is inside the glare — invisible.","chips":["Extension","No cut"],"a":"F02","b":"F03"},{"id":"S3","mv":1,"d":14,"t":"“There must be risk”","at":34,"model":"cinematic_studio_3_0 · 14s · genre drama · audio on","cam":"The film's first cut — a reverse, arriving into a slow lateral dolly. Both in frame, wide.","seam":"Cut on her turning her head. Motivated: new point of view.","chips":["First cut","Dialogue"],"a":"F04","b":"F05"},{"id":"S4","mv":1,"d":14,"t":"“He's your brother”","at":48,"model":"minimax_hailuo (2.3) · 10s + hold, or cinematic_studio_3_0 · 14s","cam":"Locked. Static single on Oriane. Fourteen seconds. The camera does not move at all.","seam":"No seam. This shot's job is to make the audience feel the film stop moving.","chips":["Locked","14s hold"],"a":"F06","b":"F07"},{"id":"S5","mv":1,"d":18,"t":"“Tomorrow” — the tear freezes","at":62,"model":"cinematic_studio_3_0 · 15s · 4K + 3s extension","cam":"Two-shot, then a slow push past them to the world below, then down to the floor.","seam":"Ends on the frozen tear in macro. That facet becomes the ocean.","chips":["Push","Transition out"],"a":"F08","b":"F09"},{"id":"S6","mv":2,"d":14,"t":"108 years later — the run","at":80,"model":"cinematic_studio_video_v2 · 12s pro · speedramp auto + 2s ext","cam":"Travelling beside her at her exact speed. World blurs, she is stable.","seam":"Match cut in from the tear's facet: blue interior becomes ocean water.","chips":["Travelling","Card"],"a":"F10","b":"F11"},{"id":"S7","mv":2,"d":12,"t":"Sixteen behind her, and a wall of ice","at":94,"model":"kling3_0 · 12s · pro · start+end frame","cam":"Camera swings from beside to behind in one move — reveals the pursuit.","seam":"End frame: her body flat against the ice wall. That frame starts S8.","chips":["One move","Chain out"],"a":"F11","b":"F12"},{"id":"S8","mv":2,"d":14,"t":"Up the wall","at":106,"model":"cinematic_studio_video_v2 · 12s · speedramp impact + 2s ext","cam":"Crane rising with her up the vertical face; ramp on the kill.","seam":"Starts on S7's end frame. Ends as the ice wall collapses into the sea.","chips":["Ramp not cut","Chain in"],"a":"F12","b":"F13"},{"id":"S9","mv":2,"d":12,"t":"The threadwright's eyes","at":120,"model":"veo3_1 · 8s ultra + 4s ext, or cinematic_studio_3_0 · 12s","cam":"Perspective reassignment 1 of 2. We leave Oriane for the first time.","seam":"Motivated cut: a new point of view. The only reason a cut is allowed here.","chips":["POV shift","Motivated cut"],"a":"F14","b":"F15"},{"id":"S10","mv":2,"d":16,"t":"The leviathan","at":132,"model":"seedance_2_0 · 15s · 4K · genre epic + ext","cam":"Low, wide, held. Camera small beneath it. Do not cut inside this.","seam":"None. Awe requires duration; a cut here destroys the shot's only job.","chips":["16s hold","Scale"],"a":"F16","b":"F17"},{"id":"S11","mv":2,"d":10,"t":"Running the flank","at":148,"model":"kling3_0 · 10s · motion_control from a driving clip","cam":"Lateral tracking along the beast's skin at her speed. Spears cross frame.","seam":"Ends with the leviathan's flank filling frame to near-black. Hidden cut.","chips":["Tracking","Body wipe out"],"a":"F17","b":"B01"},{"id":"S12","mv":2,"d":12,"t":"The lightning river","at":158,"model":"cinematic_studio_video_v2 · 12s · speedramp slowmo · pro","cam":"Pull off the black. Slow motion inside the shot, no cut.","seam":"Pull off matching darkness. The audience will not register a cut occurred.","chips":["Body wipe in","Slowmo"],"a":"B01","b":"F18"},{"id":"S13","mv":2,"d":15,"t":"The vortex, from the Sun","at":170,"model":"wan3_0 · 15s · 1080p · generate_audio false","cam":"Perspective reassignment 2 of 2. Orbital. Silent. The climax has no sound.","seam":"Hard cut to scale. The film's biggest moment is its quietest.","chips":["Silence","Orbital"],"a":"F19","b":"F20"},{"id":"S14","mv":2,"d":13,"t":"The Stone leaves her","at":185,"model":"cinematic_studio_3_0 · 13s · 4K · genre drama","cam":"Back to intimate. Then hold the empty frame two beats after she's gone.","seam":"The Stone's streak across the sky is the transition into Movement III.","chips":["Empty frame","Death"],"a":"F21","b":"F22"},{"id":"S15","mv":3,"d":12,"t":"Nacre Beach — the same sun","at":198,"model":"cinematic_studio_3_0 · 12s · 4K","cam":"Locked-off wide. The camera has not moved and will not.","seam":"In the interleaved cut this shot plays early, inside Movement II — the streak lands over the brothers later, at sunset, as S14 resolves.","chips":["Locked","Card"],"a":"F23","b":"F24"},{"id":"S16","mv":3,"d":12,"t":"Over the abyss","at":210,"model":"kling2_6 · 10s + ext, or seedance_2_0 · 12s (water physics)","cam":"Held underwater wide. Something below is never clearly shown.","seam":"Straight cut, time passing. Permitted: a jump in place.","chips":["Held","Dread"],"a":"F25","b":"F26"},{"id":"S17","mv":3,"d":10,"t":"Twelve ships","at":222,"model":"cinematic_studio_3_0 · 10s · 4K · genre epic","cam":"Static wide. Violence enters a still frame — more frightening than a shaking one.","seam":"Cut on the tremor — a revelation the current frame cannot hold.","chips":["Static","Attack"],"a":"F27","b":"F28"},{"id":"S18","mv":3,"d":10,"t":"The Temple does not answer","at":232,"model":"cinematic_studio_video_v2 · 10s · multi_shots · multi_prompt","cam":"Coverage without breaking the world — three angles inside one generation.","seam":"Internal cuts only. Nothing leaves the generation.","chips":["Multi-shot","One gen"],"a":"F29","b":"B02"},{"id":"S19","mv":3,"d":10,"t":"The Keepers kneel","at":242,"model":"seedance_2_0 · 10s · 4K · start_image from dust","cam":"Emerge from a dust wall — the story's own written-in cut point.","seam":"Dust wall obscures everything to brown shadow. Cut inside the dust. They walk out and stand — the kneel is S20's.","chips":["Dust seam","Reveal"],"a":"B02","b":"F30"},{"id":"S20","mv":3,"d":14,"t":"The mountain","at":252,"model":"wan3_0 · 14s · 1080p · enable_thinking","cam":"ONE unbroken wide. Fourteen seconds. Only a slow rise. The kneel happens inside this shot, after the suspension.","seam":"None permitted. Cutting this shot is the single worst decision available.","chips":["14s · no cut","The miracle"],"a":"F30","b":"F31"},{"id":"S21","mv":3,"d":8,"t":"The garden replants itself","at":266,"model":"veo3_1_lite · 8s, or cinematic_studio_3_0 · 8s","cam":"Locked wide. Aftermath. Hold on flat water.","seam":"Straight cut on stillness.","chips":["Locked","Aftermath"],"a":"F32","b":"F33"},{"id":"S22","mv":3,"d":14,"t":"What Alder saw","at":274,"model":"veo3_1 · 8s ultra + ext, or minimax_hailuo 2.3 · 10s (emotion)","cam":"The only push-in in the movement. Slow, relentless, into Alder's face.","seam":"Wren's voice fades under, and Alder's own want arrives as V.O. This is the film's actual ending.","chips":["The thesis","Only push"],"a":"F34","b":"F35"},{"id":"S23","mv":3,"d":12,"t":"Tomorrow, again","at":288,"model":"cinematic_studio_3_0 · 12s · 4K · genre drama","cam":"Hard cut to the Sun. Caedom alone. Crane away from the frozen tear. Black.","seam":"Closes the loop opened in S1. The last image is the first image's residue.","chips":["Bookend","End"],"a":"F36","b":"F37"}],"frames":[{"f":"F01","mv":1,"s":"S1 A","r":"single","h":["plate-sun"],"dep":null,"job":"30403126-ae0d-4926-8df8-fcf14da302ef","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_30403126-ae0d-4926-8df8-fcf14da302ef_min.webp","d":"Total black with the first suggestion of plasma at the bottom edge. The film's first frame should be almost nothing — everything the opening does, it does by revealing."},{"f":"F02","mv":1,"s":"S1 B / S2 A","r":"shared","h":["plate-sun","courtyard-of-worlds"],"dep":null,"job":"0e3fbd76-dd81-4105-81c6-6078dacde732","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_0e3fbd76-dd81-4105-81c6-6078dacde732_min.webp","d":"The courtyard of solidified light just resolving out of the star's glare, no figures yet. The forward-extension seam lives inside this glare, which is why the glare has to be genuinely blinding."},{"f":"F03","mv":1,"s":"S2 B","r":"single","h":["plate-sun","courtyard-of-worlds","oriane","caedom-ascended-1"],"dep":"F02","job":"06d8c310-c4ba-459d-aef7-b18430ca781c","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_06d8c310-c4ba-459d-aef7-b18430ca781c_min.webp","d":"Two figures from behind at the courtyard's far edge. Worlds on stems in the foreground, the crystal shell refracting the star beneath her."},{"f":"F04","mv":1,"s":"S3 A","r":"single","h":["plate-sun","courtyard-of-worlds","oriane","caedom-ascended-1"],"dep":"F03","job":"e4b97ee1-b609-412e-a266-1d6bf0d06b56","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_173917_e4b97ee1-b609-412e-a266-1d6bf0d06b56_min.webp","d":"Reverse two-shot, 40mm, both faces legible, star bokeh behind. This frame has to feel like a different lens on the same room — not a different room."},{"f":"F05","mv":1,"s":"S3 B","r":"single","h":["plate-sun","oriane"],"dep":"F04","job":"9e06d580-23d9-41c9-872e-56545049f2c2","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_174148_9e06d580-23d9-41c9-872e-56545049f2c2_min.webp","d":"Oriane turning her head. The motivated cut out; the movement is the edit point."},{"f":"F06","mv":1,"s":"S4 A","r":"single","h":["plate-sun","oriane"],"dep":null,"job":"39a6cecc-45a6-43ac-b5f9-954a3ac4fbf5","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_39a6cecc-45a6-43ac-b5f9-954a3ac4fbf5_min.webp","d":"Locked medium close-up, 75mm, lit from below, refraction crawling across the crystal. Composition must survive fourteen seconds of no camera movement."},{"f":"F07","mv":1,"s":"S4 B","r":"single","h":["plate-sun","oriane"],"dep":"F06","job":"ca631c86-1c40-4551-8107-3514c38e7bca","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_ca631c86-1c40-4551-8107-3514c38e7bca_min.webp","d":"Identical framing fourteen seconds later. Wet eyes that have not spilled. Only the face has changed — prove it by matching everything else exactly."},{"f":"F08","mv":1,"s":"S5 A","r":"single","h":["plate-sun","oriane","caedom-ascended-1"],"dep":"F06","job":"9293bd47-4e48-4eb4-a098-02f60c506932","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_9293bd47-4e48-4eb4-a098-02f60c506932_min.webp","d":"Caedom's hands on her face. Tender, unhurried, both fully in frame."},{"f":"F09","mv":1,"s":"S5 B","r":"match","h":["plate-sun","frozen-tear"],"dep":null,"job":"5a726527-40f7-4405-9859-d56715418592","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_5a726527-40f7-4405-9859-d56715418592_min.webp","d":"Macro on the frozen tear, one facet filling frame, the interior a moving blue. Design this together with F10 — the match cut is made in the pairing, not in the edit."},{"f":"F10","mv":2,"s":"S6 A","r":"match","h":["plate-ocean-dark"],"dep":"F09","job":"fd757328-a2e8-4ffc-bd6c-961b21bc3db2","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_fd757328-a2e8-4ffc-bd6c-961b21bc3db2_min.webp","d":"Open storm ocean at the exact scale, colour and shape of F09's facet. If these two images are made independently the 108-year jump costs the audience a beat it should not cost."},{"f":"F11","mv":2,"s":"S6 B / S7 A","r":"shared","h":["plate-ocean-dark","oriane"],"dep":null,"job":"c6e868d3-d9c1-4336-9e4c-e774e5cd50b8","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_c6e868d3-d9c1-4336-9e4c-e774e5cd50b8_min.webp","d":"Oriane running, camera locked beside her, the world streaked horizontal behind. Her body stable, everything else destroyed by speed."},{"f":"F12","mv":2,"s":"S7 B / S8 A","r":"shared","h":["plate-ocean-dark","oriane","turned-water"],"dep":"F11","job":"900a2a4c-223b-4fea-956f-400473830731","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_900a2a4c-223b-4fea-956f-400473830731_min.webp","d":"Her body flat against the grey ice wall, hair spread, entirely unhurt. The impact frame and the launch frame are the same frame."},{"f":"F13","mv":2,"s":"S8 B","r":"single","h":["plate-ocean-dark","turned-water"],"dep":null,"job":"87de8feb-f0a4-45e6-8e16-feac0dbb2600","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_87de8feb-f0a4-45e6-8e16-feac0dbb2600_min.webp","d":"The ice wall losing cohesion and collapsing into a mountain of seawater."},{"f":"F14","mv":2,"s":"S9 A","r":"single","h":["plate-ocean-dark","threadwright"],"dep":null,"job":"ec69adae-8fc7-4e50-9c5f-1b1e94dccef8","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_ec69adae-8fc7-4e50-9c5f-1b1e94dccef8_min.webp","d":"Over the threadwright's shoulder, quarry small and distant. No warmth anywhere in frame — this is the only shot in the film shot from the dark side and it should feel colour-graded differently."},{"f":"F15","mv":2,"s":"S9 B","r":"single","h":["plate-ocean-dark","threadwright","turned"],"dep":"F14","job":"186ee742-3de1-4730-a013-c01e44bd1b30","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_186ee742-3de1-4730-a013-c01e44bd1b30_min.webp","d":"Her fingers mid-gesture, the marionettes in the middle distance answering the movement exactly."},{"f":"F16","mv":2,"s":"S10 A","r":"single","h":["plate-ocean-dark","leviathan","leviathan-plating"],"dep":null,"job":"360d0a10-116c-4581-ad51-1b880707eba7","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_360d0a10-116c-4581-ad51-1b880707eba7_min.webp","d":"The leviathan erupting, camera near the water looking up, dead coral sheeting off its plating in slabs."},{"f":"F17","mv":2,"s":"S10 B / S11 A","r":"shared","h":["plate-ocean-dark","leviathan","oriane-ascended"],"dep":null,"job":"e47cb162-4e85-4f35-80f6-8a76e12d4a0f","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_e47cb162-4e85-4f35-80f6-8a76e12d4a0f_min.webp","d":"Oriane tiny between the opening jaws. Scale is the whole point of the shot and this frame has to carry it alone."},{"f":"B01","mv":2,"s":"S11 B / S12 A","r":"bridge","h":["plate-ocean-dark","leviathan-plating"],"dep":null,"job":"f3f3ca6e-5f93-4e76-b098-e43c3c9aae74","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_f3f3ca6e-5f93-4e76-b098-e43c3c9aae74_min.webp","d":"Bridge frame. The leviathan's flank filling frame to near-black. Must go genuinely near-black — a 70% obscured frame reads as a hidden cut that failed, which is worse than an honest cut."},{"f":"F18","mv":2,"s":"S12 B","r":"single","h":["plate-ocean-dark","oriane-damaged","aura-shell"],"dep":null,"job":"75607634-c58d-4fad-84df-f1120567bf35","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164025_75607634-c58d-4fad-84df-f1120567bf35_min.webp","d":"She launches forward, lightning still circulating in the shell around her."},{"f":"F19","mv":2,"s":"S13 A","r":"single","h":["machira-orbit"],"dep":null,"job":"35dc71f6-af5b-4621-9e6a-f956e9fdc40f","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_35dc71f6-af5b-4621-9e6a-f956e9fdc40f_min.webp","d":"Orbital, from the exosphere. The vortex eye open in the storm system. Cold, clinical, no human scale anywhere."},{"f":"F20","mv":2,"s":"S13 B","r":"single","h":["machira-orbit"],"dep":"F19","job":"2c060db4-67f4-4a01-a7f3-507e349abc64","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_2c060db4-67f4-4a01-a7f3-507e349abc64_min.webp","d":"The eye beginning to close. Still silent. Nothing in frame suggests anything happened."},{"f":"F21","mv":2,"s":"S14 A","r":"single","h":["plate-ocean-dark","oriane-damaged"],"dep":null,"job":"70a35bb9-7468-4477-861c-6d8532430097","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_70a35bb9-7468-4477-861c-6d8532430097_min.webp","d":"Oriane falling upward, crystal fracturing, the fractures filling with light rather than dark."},{"f":"F22","mv":2,"s":"S14 B","r":"match","h":["machira-orbit","founding-stone"],"dep":"F19","job":"fff821a8-7d38-4afe-9aa5-8ab34ca6cd97","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_fff821a8-7d38-4afe-9aa5-8ab34ca6cd97_min.webp","d":"Empty sky, planetary curvature, the green streak crossing it. Paired with F23 — one object carries the audience across a day and three thousand miles."},{"f":"F23","mv":3,"s":"S15 A","r":"match","h":["plate-island","nacre-beach"],"dep":"F22","job":"3cb92044-851c-45a8-bccd-e1157967ec7b","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_173918_3cb92044-851c-45a8-bccd-e1157967ec7b_min.webp","d":"Nacre Beach at dawn, wide and static, with the streak's residue still fading as a low star. Warm for the first time in three minutes."},{"f":"F24","mv":3,"s":"S15 B","r":"single","h":["plate-island","nacre-beach","alder","wren"],"dep":null,"job":"c61b4451-f957-432d-b207-438afe2267f3","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_c61b4451-f957-432d-b207-438afe2267f3_min.webp","d":"Two brothers stopped at the tide line, small in a very wide frame that has not moved and will not."},{"f":"F25","mv":3,"s":"S16 A","r":"single","h":["corals-abyss"],"dep":null,"job":"5ec7049a-d240-48a8-995d-afd84e3eadc1","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162244_5ec7049a-d240-48a8-995d-afd84e3eadc1_min.webp","d":"Underwater reef in full colour, two silhouettes crossing the surface far above, backlit."},{"f":"F26","mv":3,"s":"S16 B","r":"single","h":["corals-abyss"],"dep":null,"job":"5edf559f-0009-4abd-86d3-7cd8162e9447","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_5edf559f-0009-4abd-86d3-7cd8162e9447_min.webp","d":"The shelf edge and the black past it. Never resolve what is down there — the frame's job is to withhold."},{"f":"F27","mv":3,"s":"S17 A","r":"single","h":["plate-bombardment","nacre-beach","alder","wren"],"dep":null,"job":"72f8214a-bacd-47e5-990b-7dfe04918f81","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_72f8214a-bacd-47e5-990b-7dfe04918f81_min.webp","d":"The brothers staggering up the beach out of the surf, static wide, sun low and behind."},{"f":"F28","mv":3,"s":"S17 B","r":"single","h":["plate-bombardment","keepers-isle","twelve-ships","alder","wren"],"dep":"F27","job":"d98fa8ca-876c-4e2e-a6dd-8b233e4c9c06","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_d98fa8ca-876c-4e2e-a6dd-8b233e4c9c06_min.webp","d":"Boys flat on the sand, twelve ships inside the same unmoving frame, everything backlit red. The stillness against the violence is the shot."},{"f":"F29","mv":3,"s":"S18 A","r":"single","h":["plate-bombardment","white-temple","twelve-ships"],"dep":null,"job":"778a56cc-c82c-43f3-a221-c55c68900928","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_778a56cc-c82c-43f3-a221-c55c68900928_min.webp","d":"The white temple taking direct hits, sand and torn flowers falling down its face, no reaction of any kind."},{"f":"B02","mv":3,"s":"S18 B / S19 A","r":"bridge","h":["plate-bombardment"],"dep":null,"job":"840cbe00-3763-4e3d-8914-80e63760469c","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_840cbe00-3763-4e3d-8914-80e63760469c_min.webp","d":"Bridge frame. The dust wall — everything flattened to brown shadow, no legible shapes at all. The source text wrote this cut for you; the frame just has to honour it."},{"f":"F30","mv":3,"s":"S19 B / S20 A","r":"shared","h":["plate-bombardment","keeper-kneel","keeper"],"dep":null,"job":"d971d86d-a6b3-42e3-9130-5e57a9f9ef99","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_d971d86d-a6b3-42e3-9130-5e57a9f9ef99_min.webp","d":"Two lines of Keepers kneeling, heads bowed, metal shot still falling around them and not touching them."},{"f":"F31","mv":3,"s":"S20 B","r":"single","h":["plate-bombardment","fx-floating-mountain","keeper-kneel"],"dep":"F30","job":"41e0a3c1-ae7c-459f-8789-c73ffb38b12e","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_173917_41e0a3c1-ae7c-459f-8789-c73ffb38b12e_min.webp","d":"The mountain's particles falling faster than gravity, ships going under. The Keepers still have not raised their heads."},{"f":"F32","mv":3,"s":"S21 A","r":"single","h":["plate-island"],"dep":null,"job":"26786720-93e0-44f4-b924-31a8c086d67d","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162258_26786720-93e0-44f4-b924-31a8c086d67d_min.webp","d":"Flat open ocean. No wreckage, nothing left in the sky. Almost boring, which is exactly the intent."},{"f":"F33","mv":3,"s":"S21 B","r":"single","h":["plate-island","white-temple"],"dep":null,"job":"492410ef-4316-4873-a910-968918b13df6","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162258_492410ef-4316-4873-a910-968918b13df6_min.webp","d":"Temple doors closing, the garden bed replanted, craters filled. Order restored at unsettling speed."},{"f":"F34","mv":3,"s":"S22 A","r":"single","h":["plate-island","alder","wren"],"dep":null,"job":"c73d7f62-b0ed-4ecc-8e8f-e42353758386","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162258_c73d7f62-b0ed-4ecc-8e8f-e42353758386_min.webp","d":"Both brothers in the beach grass, Wren mid-sentence and delighted, Alder already elsewhere."},{"f":"F35","mv":3,"s":"S22 B","r":"single","h":["plate-island","alder"],"dep":null,"job":"1b3c8159-88d7-4347-a9cc-6cd0364a361a","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162258_1b3c8159-88d7-4347-a9cc-6cd0364a361a_min.webp","d":"Alder in close-up at the end of the push, a single dark cloud deep out of focus behind him. The most important single image in the film — give it the largest batch and the longest look."},{"f":"F36","mv":1,"s":"S23 A","r":"single","h":["plate-sun","courtyard-of-worlds","caedom-ascended-1"],"dep":"F03","job":"bf766d12-89ec-4121-93e0-cac2926cb6da","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_173917_bf766d12-89ec-4121-93e0-cac2926cb6da_min.webp","d":"Caedom alone at the courtyard edge, standing where two people stood four minutes earlier."},{"f":"F37","mv":1,"s":"S23 B","r":"single","h":["plate-sun","courtyard-of-worlds","frozen-tear"],"dep":"F02","job":"a26c5697-1d07-4e1e-873f-a4fd82092b68","img":"https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_a26c5697-1d07-4e1e-873f-a4fd82092b68_min.webp","d":"The frozen tear as one point of light on a vast luminous floor. Last frame of the film; it should rhyme with F01's emptiness."}]}/*DATA-END*/;
+
+/* ---------------- helpers ---------------- */
+const el = (t, c, h) => { const n = document.createElement(t);
+  if (c) n.className = c; if (h != null) n.innerHTML = h; return n; };
+const mmss = s => Math.floor(s/60) + ":" + String(s%60).padStart(2,"0");
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+function copyText(txt, btn){
+  const ok = () => { if(!btn) return; const o = btn.textContent;
+    btn.classList.add("copied"); btn.textContent = "copied";
+    setTimeout(() => { btn.textContent = o; btn.classList.remove("copied") }, 1400); };
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText)
+      return navigator.clipboard.writeText(txt).then(ok, () => manual(txt));
+  }catch(e){}
+  manual(txt);
+}
+/* The viewer sandbox can refuse clipboard writes outright, and it always refuses
+   downloads. Showing the text and letting the person copy it is the one route
+   that cannot be taken away. */
+function manual(txt){
+  const w = el("div"); w.id = "cb";
+  w.innerHTML = '<div class="p"><h4>Copy this</h4>' +
+    '<textarea readonly></textarea><button type="button">Close</button></div>';
+  w.querySelector("textarea").value = txt;
+  w.addEventListener("click", e => { if(e.target === w || e.target.tagName === "BUTTON") w.remove() });
+  document.body.appendChild(w);
+  const ta = w.querySelector("textarea"); ta.focus(); ta.select();
+}
+
+/* ---------------- boards ---------------- */
+const BOARDS = [
+  { mv:1, name:"Canvas I &middot; The Sun", plate:"plate-sun",
+    souls:["oriane","caedom-ascended"],
+    note:"Movement I and the coda. Warm key from below, cold shadows &mdash; the only board that is a bright field, and never the source for a social cut." },
+  { mv:2, name:"Canvas II &middot; The Ocean", plate:"plate-ocean-dark",
+    souls:["oriane"],
+    note:"The whole of Movement II. Dark ground, high local contrast: sea and sky near-black, with lightning, crests and spray the only bright shapes. Every social cut comes from here." },
+  { mv:3, name:"Canvas III &middot; The Island", plate:"plate-island",
+    souls:["alder","wren"],
+    note:"Movement III. Golden hour with the treeline claiming most of the ground; the bombardment shots swap to plate-bombardment for their key." }
+];
+
+const ROLE = { shared:"shared", bridge:"bridge", match:"match", single:"" };
+
+function tile(f){
+  const t = el("div", "tile");
+  const art = el("div", "art");
+  const ph = el("div", "ph",
+    '<span class="fid">' + f.f + '</span>' +
+    '<span class="fr">' + (f.r === "single" ? "anchor" : f.r) + '</span>');
+  art.appendChild(ph);
+  if (f.img){
+    const im = new Image();
+    im.alt = f.f + " — " + (f.d || "").slice(0, 90);
+    im.loading = "lazy"; im.referrerPolicy = "no-referrer";
+    im.addEventListener("load", () => t.classList.add("has-img"));
+    im.addEventListener("error", () => im.remove());
+    im.src = f.img;
+    art.appendChild(im);
+  }
+  t.appendChild(art);
+  t.appendChild(el("div", "cap",
+    '<b>' + f.f + '</b>' +
+    (ROLE[f.r] ? '<span class="role ' + f.r + '">' + f.r + '</span>' : '<span class="role">anchor</span>')));
+  t.appendChild(el("div", "hs", f.h.map(h => "<i>@" + h + "</i>").join("")));
+  if (f.dep) t.appendChild(el("div", "dep", "chains from " + f.dep));
+  t.appendChild(el("div", "desc", esc((f.d || "").slice(0, 118))));
+  const j = el("button", "jid", f.job || "");
+  j.type = "button";
+  j.title = "copy the job id";
+  j.addEventListener("click", () => copyText(f.job, null));
+  t.appendChild(j);
+  return t;
+}
+
+function buildBoard(cfg){
+  const frames = D.frames.filter(f => f.mv === cfg.mv);
+  const byId = Object.fromEntries(frames.map(f => [f.f, f]));
+  const shots = D.shots.filter(s => byId[s.a]);
+
+  /* columns: walk the shots, adding each start frame unless the previous shot
+     already ended on it — which is exactly what "shared" means. */
+  const cols = [];
+  shots.forEach(s => {
+    if (cols[cols.length-1] !== s.a) cols.push(s.a);
+    cols.push(s.b);
+  });
+  const idx = {}; cols.forEach((c, i) => idx[c] = i + 1);
+
+  const wrap = el("div", "board"); wrap.dataset.mv = cfg.mv;
+  const secs = shots.reduce((a, s) => a + s.d, 0);
+  wrap.appendChild(el("div", "b-hd",
+    '<h3>' + cfg.name + '</h3>' +
+    '<span class="plate">@' + cfg.plate + '</span>' +
+    '<span class="meta">' + frames.length + ' anchors &middot; ' + shots.length +
+    ' shots &middot; ' + secs + 's</span>'));
+
+  /* shelf */
+  const hs = []; frames.forEach(f => f.h.forEach(h => { if (hs.indexOf(h) < 0) hs.push(h) }));
+  const shelf = el("div", "shelf");
+  shelf.appendChild(el("div", "sl", '<b>Shelf</b><span>' + cfg.note + '</span>'));
+  const chips = el("div", "chips");
+  hs.forEach(h => {
+    const c = el("button", "chip" + (h === cfg.plate ? " plate" : ""), "@" + h);
+    c.type = "button"; c.title = "copy @" + h;
+    c.addEventListener("click", () => copyText("@" + h, c));
+    chips.appendChild(c);
+  });
+  cfg.souls.forEach(s => {
+    const c = el("button", "chip soul", "soul: " + s);
+    c.type = "button"; c.title = "copy the Soul name";
+    c.addEventListener("click", () => copyText(s, c));
+    chips.appendChild(c);
+  });
+  const all = el("button", "chip", "⧉ copy the whole shelf");
+  all.type = "button";
+  all.addEventListener("click", () => copyText(
+    hs.map(h => "@" + h).join("\n") + "\n\nSouls: " + cfg.souls.join(", "), all));
+  chips.appendChild(all);
+  shelf.appendChild(chips);
+  wrap.appendChild(shelf);
+
+  /* track */
+  const tw = el("div", "trackwrap"), track = el("div", "track");
+  track.style.gridTemplateColumns = "repeat(" + cols.length + ", var(--tw))";
+  cols.forEach(c => track.appendChild(tile(byId[c])));
+  shots.forEach(s => {
+    const sp = el("div", "span" + (/^None/i.test(s.seam) || /No seam/i.test(s.seam) ? " nocut" : ""));
+    sp.style.gridColumn = idx[s.a] + " / " + (idx[s.b] + 1);
+    sp.style.gridRow = "2";
+    sp.innerHTML =
+      '<div class="st"><b>' + s.id + '</b><em>' + esc(s.t) + '</em>' +
+      '<span class="dur">' + mmss(s.at) + ' &middot; ' + s.d + 's</span></div>' +
+      '<div class="mdl">' + esc(s.model) + '</div>' +
+      '<div class="seam">' + esc(s.seam) + '</div>';
+    track.appendChild(sp);
+  });
+  tw.appendChild(track); wrap.appendChild(tw);
+
+  wrap.appendChild(el("div", "legend",
+    '<span><i style="background:var(--sun)"></i>shared &mdash; one image, two shots</span>' +
+    '<span><i style="background:var(--void)"></i>bridge &mdash; near-black hidden cut</span>' +
+    '<span><i style="background:var(--coral)"></i>match &mdash; two images designed together</span>' +
+    '<span>amber span &mdash; no cut permitted inside it</span>' +
+    '<span>click any handle or job id to copy it</span>'));
+  return wrap;
+}
+
+BOARDS.forEach(b => {
+  const host = document.getElementById("board-" + b.mv);
+  if (host) host.appendChild(buildBoard(b));
+});
+
+/* ---------------- ordering options ---------------- */
+const byId = Object.fromEntries(D.shots.map(s => [s.id, s]));
+const seq = ids => ids.map(x => typeof x === "string"
+  ? { id:x, d:byId[x].d, mv:byId[x].mv }
+  : x);
+
+const OPTS = [
+  { k:"A", tag:"as built", name:"Linear &mdash; three movements in order",
+    cost:"0 new anchors",
+    order: seq(D.shots.map(s => s.id)),
+    fixes:"Nothing to build. The chains run forward in strict order, every seam already has its two anchors, and the source's own sequence is preserved exactly &mdash; separate events, one day apart, as written.",
+    breaks:"Peaks at the vortex (2:50) and then runs two minutes of falling action. Oriane dies at 3:18 and two strangers arrive cold, with ninety seconds left to make anyone care about them.",
+    verdict:"The baseline. Safe, buildable, and structurally weakest in its last third." },
+
+  { k:"B", tag:"recommended", pick:true,
+    name:"Prologue splice &mdash; the beach lands before she does",
+    cost:"1 new anchor",
+    order: seq(["S1","S2","S3","S4","S5","S6","S7","S8","S9","S10","S11","S12",
+      { id:"S15a", d:6, mv:3, isNew:true }, "S13","S14",
+      { id:"S15b", d:6, mv:3, isNew:true },
+      "S16","S17","S18","S19","S20","S21","S22","S23"]),
+    fixes:"Splits S15 in half and moves the first half early. The brothers are established at 3:06, before Oriane dies, so nobody arrives cold &mdash; which is the single biggest structural complaint against the current cut, gone for one generation.",
+    breaks:"A quiet beach beat now sits immediately before the vortex, the film's biggest and quietest moment. That either heightens it by contrast or deflates it, and no amount of arguing settles which &mdash; it is a Gate C call, visible on the stills reel.",
+    verdict:"Buy this one. F23 already carries the streak's reflection, so the only new frame is a clean Nacre Beach dawn with no streak in it, for S15a to open on. F22→F23 stays intact and still lands the streak at S15b." },
+
+  { k:"C", tag:"the fold", name:"Alternating &mdash; II's back half into III's front half",
+    cost:"≈3 anchors",
+    order: seq(["S1","S2","S3","S4","S5","S6","S7","S8","S9","S10","S11","S12",
+      "S15","S13","S16","S14","S17","S18","S19","S20","S21","S22","S23"]),
+    fixes:"Two clocks running at once through the film's middle, which is the most reliable tension engine there is. The scale jump into S13 gets bigger, not smaller &mdash; cutting from a dawn beach to an orbital vortex is a harder cut than cutting from darkness to it.",
+    breaks:"Alternation reads as simultaneity, and the source explicitly denies it. It also strands three seams: F22→F23 no longer adjoin, S16 has to start off the closing vortex eye, and the green streak needs somewhere new to land (S17's sky is the candidate).",
+    verdict:"Real, and more honest than the full cross-cut, but it inherits the causality problem in miniature. Take it only if the stills reel shows option B deflating the vortex." },
+
+  { k:"D", tag:"argued and lost", name:"Full causal interlace",
+    cost:"≈60 anchors, ~40 shots",
+    order: seq(["S1","S2","S3","S15","S4","S5","S16","S6","S7","S17","S8","S9",
+      "S18","S10","S11","S19","S12","S13","S20","S14","S21","S22","S23"]),
+    fixes:"The strongest possible version of the tension argument: one continuous build across three and a half minutes to a single convergent climax, with no dead-protagonist gap anywhere.",
+    breaks:"Lost 5–3 when it was run properly. It requires inventing a causal link the text denies, asks the audience to infer that a vortex three thousand miles away is causing cannon fire in a world whose rules they met ninety seconds ago, needs ~40 generations at ~7s mean, and ends on a resolution rather than a revelation &mdash; closing off the novel it exists to introduce.",
+    verdict:"Kept here so the decision stays visible rather than forgotten. The shot order shown is indicative, not planned." }
+];
+
+const oh = document.getElementById("opts");
+OPTS.forEach(o => {
+  const box = el("div", "opt" + (o.pick ? " pick" : ""));
+  box.appendChild(el("div", "opt-hd",
+    '<span class="tag">' + o.tag + '</span><h4>' + o.name + '</h4>' +
+    '<span class="cost">' + o.cost + '</span>'));
+  const total = o.order.reduce((a, s) => a + s.d, 0);
+  const rib = el("div", "ribbon");
+  o.order.forEach(s => {
+    const b = el("b", s.isNew ? "new" : "", s.d >= 12 ? s.id : "");
+    b.dataset.mv = s.mv;
+    b.style.flex = s.d;
+    b.title = s.id + " · " + s.d + "s";
+    rib.appendChild(b);
+  });
+  box.appendChild(rib);
+  const body = el("div", "opt-body");
+  body.appendChild(el("div", "cell win",
+    '<span class="k">What it fixes</span><p>' + o.fixes + '</p>'));
+  body.appendChild(el("div", "cell lose",
+    '<span class="k">What it costs</span><p>' + o.breaks + '</p>'));
+  body.appendChild(el("div", "cell",
+    '<span class="k">Verdict</span><p>' + o.verdict + '</p>'));
+  box.appendChild(body);
+  oh.appendChild(box);
+});
+
+/* ---------------- theme ---------------- */
+(function(){
+  const r = document.documentElement, b = document.getElementById("tt"), K = "msm.theme";
+  try{ const t = localStorage.getItem(K); if(t === "dark" || t === "light") r.setAttribute("data-theme", t) }catch(e){}
+  const dark = () => { const a = r.getAttribute("data-theme");
+    return a ? a === "dark" : window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches };
+  const label = () => b.textContent = dark() ? "Light" : "Dark";
+  label();
+  b.addEventListener("click", () => {
+    const n = dark() ? "light" : "dark";
+    r.setAttribute("data-theme", n);
+    try{ localStorage.setItem(K, n) }catch(e){}
+    label();
+  });
+})();
+</script>

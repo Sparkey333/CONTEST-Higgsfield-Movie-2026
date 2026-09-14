@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Production Desk">
+  <title>Production Desk</title>
+  <!--
+    The film's governing visual law, used as the mark:
+    a bearer's aura is brightest at the CENTRE and has no edge.
+    (An adept's is bright at the rim and black at the core — the inverse.)
+  -->
+  <defs>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFF6DF" stop-opacity="1"/>
+      <stop offset="22%"  stop-color="#FFD98A" stop-opacity=".96"/>
+      <stop offset="48%"  stop-color="#E0A03A" stop-opacity=".55"/>
+      <stop offset="74%"  stop-color="#8A5A00" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#8A5A00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ground" cx="50%" cy="46%" r="72%">
+      <stop offset="0%"   stop-color="#14161F"/>
+      <stop offset="100%" stop-color="#07080D"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="url(#ground)"/>
+
+  <!-- the aura: no rim, all centre -->
+  <circle cx="256" cy="256" r="186" fill="url(#core)"/>
+
+  <!-- three movements, three arcs, decreasing radius: sun, ocean, island -->
+  <g fill="none" stroke-linecap="round" opacity=".82">
+    <path d="M 256 66 A 190 190 0 0 1 421 351" stroke="#D9AC46" stroke-width="13"/>
+    <path d="M 256 118 A 138 138 0 0 1 138 325"  stroke="#9A96F5" stroke-width="13"/>
+    <path d="M 256 170 A 86 86 0 0 1 331 298"    stroke="#EE9273" stroke-width="13"/>
+  </g>
+
+  <!-- the core itself -->
+  <circle cx="256" cy="256" r="27" fill="#FFF9EC"/>
+</svg>

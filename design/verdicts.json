@@ -1,0 +1,143 @@
+{
+ "d484a959-482d-4a30-913b-fef46183be71": {
+  "shot": "S21",
+  "title": "Aftermath \u2014 the beach heals, 16s, chained",
+  "verdict": "KEEP",
+  "note": "The pick for S21. Your newest render: 16s, chained on F32\u2192F33, on twelve-ships. The 8s take scored 52 and is the fallback if the 16s drags.",
+  "why_unscored": "Not scored."
+ },
+ "25660204-33bc-43b9-80aa-411a0999baeb": {
+  "shot": "S21",
+  "title": "Aftermath \u2014 the beach heals, 16s, chained",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S21 is d484a959.",
+  "why_unscored": "Not scored."
+ },
+ "f0a995ac-6720-4c59-b395-e60a2760867a": {
+  "shot": "S12",
+  "title": "Oriane, upgraded form \u2014 blend",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S12 is c9da8ff1.",
+  "why_unscored": "Not scored."
+ },
+ "5caa2e9f-d579-4c07-a431-ce5c3d0666ad": {
+  "shot": "S12",
+  "title": "Oriane, upgraded form \u2014 blend",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S12 is c9da8ff1.",
+  "why_unscored": "Not scored."
+ },
+ "ca08e6fd-80f4-4b6e-b672-f00c714edce6": {
+  "shot": "S23",
+  "title": "Caedom alone \u2014 the bookend",
+  "verdict": "KEEP",
+  "note": "The pick for S23. 54 overall, the second-best hook (38). Caedom alone, on the current courtyard element.",
+  "why_unscored": "Not scored."
+ },
+ "ae644d57-97fe-4a84-be00-74bac3c644e0": {
+  "shot": "S23",
+  "title": "Caedom alone \u2014 the bookend",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S23 is ca08e6fd.",
+  "why_unscored": "Not scored."
+ },
+ "4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54": {
+  "shot": "S22",
+  "title": "There's something more \u2014 chroma",
+  "verdict": "KEEP",
+  "note": "The pick for S22. Highest score of anything analysed \u2014 58 overall, 41 hook, 60 viral, and the lowest mind-wandering (DMN 0.46). The 'filthy' takes hold attention worst of all (DMN 0.66). The chroma take is the ending.",
+  "why_unscored": "Not scored."
+ },
+ "4896c8e3-bbd9-4162-8380-c460de8fcb0d": {
+  "shot": "S22",
+  "title": "There's something more \u2014 chroma",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S22 is 4bb7a3e9.",
+  "why_unscored": "Not scored."
+ },
+ "6b0d0fac-9889-4ec4-a802-b1db7b0383b6": {
+  "shot": "S22",
+  "title": "There's something more \u2014 filthy, 12s",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S22 is 4bb7a3e9.",
+  "why_unscored": "Not scored."
+ },
+ "d35da4ef-22dc-4e4a-9c37-d68e234de39b": {
+  "shot": "S22",
+  "title": "There's something more \u2014 filthy, 12s",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S22 is 4bb7a3e9.",
+  "why_unscored": "Not scored."
+ },
+ "38eb40d5-4f8d-452c-ac96-a230864a9486": {
+  "shot": "S22",
+  "title": "There's something more \u2014 filthy, 8s",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S22 is 4bb7a3e9.",
+  "why_unscored": "Not scored."
+ },
+ "906714ac-f799-4add-9795-cfbdae775335": {
+  "shot": "S21",
+  "title": "Aftermath \u2014 the beach heals, 8s",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S21 is d484a959.",
+  "why_unscored": "Not scored."
+ },
+ "2ab9dfa7-14ca-422a-a8cc-3d401575b90f": {
+  "shot": "S20",
+  "title": "The mountain rises",
+  "verdict": "KEEP",
+  "note": "The pick for S20. The rise. 12s where the bible wants 14 unbroken \u2014 v4.0 goes to 16, so a 14s retake is cheap if you have the minute.",
+  "why_unscored": "Not scored."
+ },
+ "36e39026-52a3-4821-9d04-23ec1ec4aba3": {
+  "shot": "S20",
+  "title": "The mountain rises",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S20 is 2ab9dfa7.",
+  "why_unscored": "Not scored."
+ },
+ "e8858b44-44fc-4f2c-b47d-077cde893c5c": {
+  "shot": "S19",
+  "title": "Out of the dust",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S19 is 0a4c3337.",
+  "why_unscored": "Not scored."
+ },
+ "0a4c3337-498f-49bc-8aac-2ed1c52a3019": {
+  "shot": "S19",
+  "title": "Out of the dust",
+  "verdict": "KEEP",
+  "note": "The pick for S19. Out of the dust wall. Scored 49.",
+  "why_unscored": "Not scored."
+ },
+ "4a85d97a-3368-411a-957f-1bb06442eee5": {
+  "shot": "S18",
+  "title": "The Temple does not answer",
+  "verdict": "KEEP",
+  "note": "The pick for S18. Three angles in one generation. The temple does not react.",
+  "why_unscored": "Not scored."
+ },
+ "ce8cd528-18db-48db-a1a3-b956e45e3de5": {
+  "shot": "S18",
+  "title": "The Temple does not answer",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S18 is 4a85d97a.",
+  "why_unscored": "Not scored."
+ },
+ "8c13f573-7a01-415f-ac20-8f1f53dcc547": {
+  "shot": "S17",
+  "title": "Twelve ships \u2014 the boys drop flat",
+  "verdict": "KEEP",
+  "note": "The pick for S17. Locked wide, the boys drop flat, the ships open fire. Scored 48 \u2014 the stillness is the point, the Predictor does not reward it.",
+  "why_unscored": "Not scored."
+ },
+ "256dfbfe-e18a-4b42-aefa-4962f7f901bc": {
+  "shot": "S17",
+  "title": "Twelve ships \u2014 the boys drop flat",
+  "verdict": "ALTERNATE",
+  "note": "Second take of the same prompt; the pick for S17 is 8c13f573.",
+  "why_unscored": "Not scored."
+ },
+ "_summary_html": "<h2>What to make again, in order</h2>\n<div class=\"tw\"><table><thead><tr><th>#</th><th>Shot</th><th>Why</th><th>What</th></tr></thead><tbody>\n<tr><td>1</td><td><b>NEW-1 \u00b7 The mind divides</b></td><td>Not generated. Her sacrifice is only ever seen from orbit; the intimate version does not exist.</td><td>16s \u00b7 1080p \u00b7 audio off \u00b7 prompt below</td></tr>\n<tr><td>2</td><td><b>NEW-2 \u00b7 The mound</b></td><td>Not generated. The kill currently happens off-stage between S20 and S21.</td><td>16s \u00b7 1080p \u00b7 audio on \u00b7 prompt below</td></tr>\n<tr><td>3</td><td><b>S5 \u00b7 Tomorrow</b></td><td>All four takes carry the mortal Caedom sheet; he is <code>caedom-ascended</code> everywhere else. The one identity break in the first minute.</td><td>14s + 4s macro \u00b7 <code>recreate-prompts.md</code></td></tr>\n<tr><td>4</td><td><b>S14 \u00b7 The Stone leaves her</b></td><td>One take only, and it is the hinge of the film.</td><td>Second take, same prompt, 1080p</td></tr>\n<tr><td>5</td><td><b>NEW-4 \u00b7 Transition B</b></td><td>Not generated. Optional \u2014 S14's streak already lands on S15 if you cut it tight.</td><td>12s \u00b7 only if there is time after 1\u20134</td></tr>\n<tr><td>\u2014</td><td><b>NEW-3 \u00b7 Transition A</b></td><td><b>Skip.</b> The S6 pick already opens on the tear-to-ocean match cut and carries the card. Making it again buys nothing.</td><td>\u2014</td></tr>\n</tbody></table></div>\n<h2>What the scores actually say</h2>\n<p class=\"lede\">Three patterns, all consistent across the eighteen renders the tool could take \u2014 all of them now scored.</p>\n<ul>\n<li><b>Attention climbs through every clip and peaks on the last second.</b> Not one render peaks early. That is the film working as designed \u2014 slow builds that pay off \u2014 and it is also why the hook column is weak: the Predictor's hook window is seconds 0\u20133, and this film does not front-load. Do not chase the hook number in the film. Use it for the public post only.</li>\n<li><b>The two chroma takes of S22 are the two strongest things in the account</b> \u2014 59 and 58 overall, hooks 43 and 41, viral 60, the lowest mind-wandering of anything (DMN 0.45, 0.46), and the highest visual-cortex drive (0.60). The three \u201cfilthy\u201d takes of the same shot score 49, 49 and 55 \u2014 and the 55 gets there on audio (auditory 0.53) with the visual channel at 0.39. Same shot, same boys, one grade decision, roughly eight points. Finish the film on <code>4896c8e3</code>.</li><li><b>S18's three-angle temple shot is the one clip that opens strong and decays</b> \u2014 both takes peak at second 0 and slide (sustain 92\u201394 against 100 everywhere else). The internal cuts front-load it. Fine for the film; do not use it for the post.</li>\n<li><b>The Oriane \"upgraded form\" blends are the weakest hooks in the account (28, 28).</b> They are texture, not a shot. Keep S12 on the pull-off-the-hide take.</li>\n</ul>"
+}

@@ -1,0 +1,216 @@
+<title>Three Routes to a Finished Cut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ground:#0B0A09; --surface:#141210; --edge:#252019;
+    --ink:#EDE6DA; --muted:#8C8477; --dim:#5F594F;
+    --r1:#6FA8A0; --r2:#E0A33A; --r3:#D9694E;
+    --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+       font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding:56px 24px 96px}
+  header{border-bottom:1px solid var(--edge);padding-bottom:28px;margin-bottom:44px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--dim);margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,46px);line-height:1.08;
+     margin:0 0 16px;text-wrap:balance;letter-spacing:-.01em}
+  .standfirst{color:var(--muted);max-width:60ch;margin:0;font-size:16px}
+  .state{display:flex;flex-wrap:wrap;gap:0;margin-top:30px;border:1px solid var(--edge);border-radius:3px}
+  .state div{flex:1 1 150px;padding:14px 18px;border-right:1px solid var(--edge)}
+  .state div:last-child{border-right:0}
+  .state b{display:block;font-family:var(--mono);font-size:20px;font-variant-numeric:tabular-nums;
+           color:var(--ink);letter-spacing:-.02em}
+  .state span{font-size:12px;color:var(--dim);letter-spacing:.03em}
+
+  .route{border:1px solid var(--edge);border-radius:3px;background:var(--surface);
+         margin-bottom:26px;overflow:hidden}
+  .route > .bar{height:2px}
+  .r1 .bar{background:var(--r1)} .r2 .bar{background:var(--r2)} .r3 .bar{background:var(--r3)}
+  .route .head{padding:24px 26px 4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:12px}
+  .tier{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .r1 .tier{color:var(--r1)} .r2 .tier{color:var(--r2)} .r3 .tier{color:var(--r3)}
+  .route h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:0;letter-spacing:-.01em}
+  .route .body{padding:6px 26px 26px}
+  .lede{color:var(--ink);max-width:62ch;margin:0 0 20px}
+  ol.loop{margin:0 0 20px;padding:0;list-style:none;counter-reset:s}
+  ol.loop li{counter-increment:s;position:relative;padding-left:34px;margin-bottom:9px;
+             color:var(--muted);max-width:62ch}
+  ol.loop li::before{content:counter(s);position:absolute;left:0;top:1px;font-family:var(--mono);
+             font-size:11px;color:var(--dim);border:1px solid var(--edge);border-radius:50%;
+             width:20px;height:20px;display:grid;place-items:center}
+  ol.loop b{color:var(--ink);font-weight:600}
+  .verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;
+           border-top:1px solid var(--edge)}
+  .verdict div{padding:16px 26px;border-right:1px solid var(--edge)}
+  .verdict div:last-child{border-right:0}
+  .verdict h3{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+              color:var(--dim);margin:0 0 7px;font-weight:400}
+  .verdict p{margin:0;font-size:14px;color:var(--muted)}
+  .verdict .num{font-family:var(--mono);font-size:19px;color:var(--ink);
+                font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
+  .tablewrap{overflow-x:auto;border:1px solid var(--edge);border-radius:3px;margin:44px 0 40px}
+  table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--edge);vertical-align:top}
+  thead th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+           color:var(--dim);font-weight:400;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  td:first-child{color:var(--muted)}
+  td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+  .c1{color:var(--r1)} .c2{color:var(--r2)} .c3{color:var(--r3)}
+
+  .close{border-left:2px solid var(--r2);padding:4px 0 4px 22px;margin:0 0 30px}
+  .close h2{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px}
+  .close p{margin:0 0 12px;max-width:64ch;color:var(--muted)}
+  .close strong{color:var(--ink);font-weight:600}
+  .warn{border:1px solid var(--edge);border-left:2px solid var(--r3);border-radius:3px;
+        padding:18px 22px;margin:0 0 40px;background:var(--surface)}
+  .warn h3{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+           color:var(--r3);margin:0 0 9px;font-weight:400}
+  .warn p{margin:0;color:var(--muted);max-width:64ch;font-size:14px}
+  footer{border-top:1px solid var(--edge);padding-top:20px;color:var(--dim);font-size:12px;
+         font-family:var(--mono);letter-spacing:.03em}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Matter of Light · production note · 9 Sep 2026</p>
+  <h1>Three routes from the clips we already have to five finished minutes</h1>
+  <p class="standfirst">Same footage, same deadline, three different amounts of discipline.
+  Every credit figure below is measured against the platform, not estimated.</p>
+
+  <div class="state">
+    <div><b>11 / 23</b><span>shots with a clip</span></div>
+    <div><b>146s</b><span>of 300 covered</span></div>
+    <div><b>0</b><span>final or finished</span></div>
+    <div><b>1,735</b><span>credits in hand</span></div>
+    <div><b>5.8</b><span>days left</span></div>
+  </div>
+</header>
+
+<!-- ROUTE 1 -->
+<section class="route r1">
+  <div class="bar"></div>
+  <div class="head"><span class="tier">Simple</span><h2>Chain forward off the last frame</h2></div>
+  <div class="body">
+    <p class="lede">Never make another still. Take the last frame of a clip you already have, feed it
+    in as the start image of the next generation, and keep walking the film forward until you hit
+    five minutes. Prequels work the same way in reverse: your first frame becomes someone else's
+    end image.</p>
+    <ol class="loop">
+      <li>Pick the strongest clip you own and call it the <b>spine</b>.</li>
+      <li>Grab its <b>last frame</b>. Any player will export one; Cinema Studio will too.</li>
+      <li>New generation, that frame as <b>start image</b>, one sentence of motion. Repeat.</li>
+      <li>For a prequel, use your opening frame as the <b>end image</b> and generate backwards.</li>
+      <li>Assemble in order. Deflicker, upscale, grade, out.</li>
+    </ol>
+    <p class="lede">This is the only route that can be finished in a day.</p>
+  </div>
+  <div class="verdict">
+    <div><h3>Credits</h3><p class="num">~665</p><p>190s of fill at 3.5 credits a second</p></div>
+    <div><h3>Buys you</h3><p>A complete five minutes, fast, with no planning left to do.</p></div>
+    <div><h3>Costs you</h3><p>Drift. Each link inherits the last one's errors, so colour and faces
+    slide. Four or five links in, it is visibly a different film.</p></div>
+  </div>
+</section>
+
+<!-- ROUTE 2 -->
+<section class="route r2">
+  <div class="bar"></div>
+  <div class="head"><span class="tier">Medium</span><h2>Keep the eleven, anchor only the twelve</h2></div>
+  <div class="body">
+    <p class="lede">The eleven concept clips stay. They already cover 146 seconds and they were
+    generated from the real shot list, so they are in the right order and pointed the right way.
+    Spend the budget on the twelve shots that have nothing — and on the joins.</p>
+    <ol class="loop">
+      <li>Upscale the eleven you have. They are 720p; the finish is 4K.</li>
+      <li>Generate a <b>still for each end of the twelve missing shots</b> only. Not 39 anchors, 24.</li>
+      <li>Render those twelve as a <b>start frame to end frame move</b>, at final quality.</li>
+      <li>Where a kept clip meets a new one, pull the <b>kept clip's frame</b> and generate into it —
+      so the seam is made once and cannot drift.</li>
+      <li>Assemble, deflicker, upscale, grade.</li>
+    </ol>
+    <p class="lede">This is the bible's method applied only where the film is actually missing.</p>
+  </div>
+  <div class="verdict">
+    <div><h3>Credits</h3><p class="num">~714</p><p>the twelve missing shots at final quality, plus stills</p></div>
+    <div><h3>Buys you</h3><p>The structure survives. Shot list, seams and match cuts all still mean
+    something, and the film is recognisably the one that was written.</p></div>
+    <div><h3>Costs you</h3><p>Two visible tiers of quality unless the upscale on the older eleven
+    genuinely holds. Look at those first.</p></div>
+  </div>
+</section>
+
+<!-- ROUTE 3 -->
+<section class="route r3">
+  <div class="bar"></div>
+  <div class="head"><span class="tier">Advanced</span><h2>The director's bible, start to finish</h2></div>
+  <div class="body">
+    <p class="lede">Nothing becomes video until the whole film exists as stills. Thirty-nine anchor
+    frames in film order, then every shot is a move between two frames that are already right, then
+    five gates that each stop the work below them.</p>
+    <ol class="loop">
+      <li><b>Gate A, identity.</b> Lock the handles and Souls. Everything downstream inherits them.</li>
+      <li><b>39 anchors</b>, in film order, chained so shots share frames across scene boundaries.</li>
+      <li><b>Gate B, string.</b> Watch all 39 as a stills reel before a single second is rendered.</li>
+      <li><b>23 shots</b>, each a start-to-end move, by movement.</li>
+      <li><b>Gates C, D, E</b> — timing, motion, picture. Deflicker, upscale, grade, submit.</li>
+    </ol>
+    <p class="lede">It is the right method. It is also twenty unheld steps and five human decisions.</p>
+  </div>
+  <div class="verdict">
+    <div><h3>Credits</h3><p class="num">1,889</p><p>1,575 shots · 312 anchors · 2 voice</p></div>
+    <div><h3>Buys you</h3><p>A film with no drift anywhere in it, and a repeatable method for the
+    next one.</p></div>
+    <div><h3>Costs you</h3><p>More credits than the account holds, and every gate is a person at a
+    screen, not a render.</p></div>
+  </div>
+</section>
+
+<div class="tablewrap">
+<table>
+  <thead><tr><th>&nbsp;</th><th class="c1">Simple</th><th class="c2">Medium</th><th class="c3">Advanced</th></tr></thead>
+  <tbody>
+    <tr><td>Credits</td><td class="n">~665</td><td class="n">~714</td><td class="n">1,889</td></tr>
+    <tr><td>Against 1,735 in hand</td><td class="n">fits</td><td class="n">fits</td><td class="n">short 154</td></tr>
+    <tr><td>New stills needed</td><td class="n">0</td><td class="n">24</td><td class="n">39</td></tr>
+    <tr><td>Realistic days</td><td class="n">1</td><td class="n">2–3</td><td class="n">5+</td></tr>
+    <tr><td>Gates you must hold</td><td class="n">0</td><td class="n">1 &nbsp;<span style="color:var(--dim)">(identity)</span></td><td class="n">5</td></tr>
+    <tr><td>Existing clips reused</td><td class="n">11</td><td class="n">11</td><td class="n">0</td></tr>
+    <tr><td>Fails by</td><td>identity drifting across links</td><td>a visible seam between tiers</td><td>running out of days</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="warn">
+  <h3>The number that moved</h3>
+  <p>The full method was preflighted at 1,889 credits against a balance of 2,299 — 410 of head-room.
+  The balance is now 1,735. Route three no longer fits in one clean pass, and that is before a single
+  re-roll. It is not a reason to abandon the method; it is a reason to stop planning as though the
+  whole film gets the method.</p>
+</div>
+
+<div class="close">
+  <h2>What I would do with 5.8 days</h2>
+  <p><strong>Route two, with route one held in reserve.</strong> It costs 49 credits more than the
+  cheapest option and it is the only one of the three that protects the thing the film is actually
+  good at — twenty-three long held shots that were written to sit next to each other in a specific
+  order.</p>
+  <p>Route one is not a lesser film, it is a <em>different</em> film: chaining forward is how you get
+  five continuous minutes that no longer have a shot list underneath them. Keep it as the answer to
+  "it is Friday and four shots are still missing", because on Friday it will be the right answer.</p>
+  <p>Route three stays the reference. It is what the next film gets when there are three weeks
+  instead of six days — and every asset built for it is already sitting in the account, which is
+  exactly why route two is cheap.</p>
+</div>
+
+<footer>
+  Figures: shot ledger, budget preflight, live balance 9 Sep 2026 · 23 shots · 300s · 2.39:1
+</footer>
+
+</div>

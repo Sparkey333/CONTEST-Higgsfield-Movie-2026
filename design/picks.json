@@ -1,0 +1,199 @@
+{
+ "S1": {
+  "pick": "f84a308f",
+  "alts": [
+   "7ad03129",
+   "3a437add",
+   "48c4b641"
+  ],
+  "why": "The only S1 on the current courtyard element, and it is 30s \u2014 it carries S1 AND S2 in one crane, which is exactly what the bible asks for. Trim, do not cut.",
+  "regen": false
+ },
+ "S2": {
+  "pick": "f84a308f",
+  "alts": [],
+  "why": "No separate S2 exists and none is needed: the second half of the 30s crane is the courtyard.",
+  "regen": false
+ },
+ "S3": {
+  "pick": "3ef54818",
+  "alts": [
+   "4874d9e4"
+  ],
+  "why": "Two takes of the same 20s reverse; both on the final identities. First take unless the second holds the faces better on your screen.",
+  "regen": false
+ },
+ "S4": {
+  "pick": "fed12f12",
+  "alts": [
+   "ec2aa3e5",
+   "3b4e617c",
+   "d4fdb764"
+  ],
+  "why": "The 75mm locked MCU is the shot as written; the 100mm chroma pair is the C-lane cover.",
+  "regen": false
+ },
+ "S5": {
+  "pick": "bdf527cd",
+  "alts": [
+   "5bb46cd9",
+   "21e77f5d",
+   "959236d4"
+  ],
+  "why": "All four takes carry the MORTAL Caedom sheet. He is caedom-ascended everywhere else. This is the one identity break a jury will see in the first minute.",
+  "regen": true,
+  "regen_note": "Regenerate on @[caedom-ascended](b86fb7ed-\u2026) \u2014 the corrected prompt is in recreate-prompts.md."
+ },
+ "S6": {
+  "pick": "f8035ad4",
+  "alts": [
+   "a89f4676"
+  ],
+  "why": "Opens ON the tear-to-ocean match cut and carries the '108 years later' card. That means NEW-3 is redundant \u2014 skip it.",
+  "regen": false
+ },
+ "S7": {
+  "pick": "deedd011",
+  "alts": [
+   "fd089667"
+  ],
+  "why": "The single arcing move. Two takes, same prompt.",
+  "regen": false
+ },
+ "S8": {
+  "pick": "01714029",
+  "alts": [
+   "ba9b30eb"
+  ],
+  "why": "Begins on S7's last frame by prompt. Chain it.",
+  "regen": false
+ },
+ "S9": {
+  "pick": "165ab3d9",
+  "alts": [
+   "ac7a4e25"
+  ],
+  "why": "The one shot from the dark side. Grade it colder than its neighbours.",
+  "regen": false
+ },
+ "S10": {
+  "pick": "1971bd66",
+  "alts": [
+   "bab3224f",
+   "4abb698e",
+   "b34943d9"
+  ],
+  "why": "The water-line pair uses the real leviathan element. The other pair attached prop_dragon_v1_dead \u2014 a different creature. Do not use them.",
+  "regen": false
+ },
+ "S11": {
+  "pick": "328324f8",
+  "alts": [
+   "95326675"
+  ],
+  "why": "Lateral track along the flank with the iron spears. 8s \u2014 short for the beat; the bible wants 10.",
+  "regen": false
+ },
+ "S12": {
+  "pick": "c9da8ff1",
+  "alts": [
+   "3cc59ef0",
+   "f0a995ac",
+   "5caa2e9f"
+  ],
+  "why": "Pull off the hide, slow-motion, the lightning connects. The 'upgraded form' blends scored the weakest hook of anything analysed (28) \u2014 keep them as texture, not as the shot.",
+  "regen": false
+ },
+ "S13": {
+  "pick": "e4b5998b",
+  "alts": [
+   "416f5f35",
+   "4779332a",
+   "820907db"
+  ],
+  "why": "Four takes of the orbital segmenting mind. Pick on your screen \u2014 they are the same prompt. NEW-1 is the intimate version of this beat and still has to be made.",
+  "regen": false
+ },
+ "S14": {
+  "pick": "c2e2b8db",
+  "alts": [],
+  "why": "One take only. The Stone leaving her is the hinge of the whole film \u2014 it deserves a second take before you lock.",
+  "regen": true,
+  "regen_note": "A second take of the same prompt, 1080p. Nothing to change, just coverage."
+ },
+ "S15": {
+  "pick": "aa65cc3d",
+  "alts": [
+   "194f53e7"
+  ],
+  "why": "Brothers at the tide line, warm for the first time.",
+  "regen": false
+ },
+ "S16": {
+  "pick": "e8d1b2a6",
+  "alts": [
+   "70c01e2f"
+  ],
+  "why": "The swim over the abyss.",
+  "regen": false
+ },
+ "S17": {
+  "pick": "8c13f573",
+  "alts": [
+   "256dfbfe"
+  ],
+  "why": "Locked wide, the boys drop flat, the ships open fire. The two takes score 48 and 49 \u2014 a tie; pick on your screen. The stillness is the point and the Predictor does not reward it.",
+  "regen": false
+ },
+ "S18": {
+  "pick": "4a85d97a",
+  "alts": [
+   "ce8cd528"
+  ],
+  "why": "Three angles in one generation. The temple does not react.",
+  "regen": false
+ },
+ "S19": {
+  "pick": "0a4c3337",
+  "alts": [
+   "e8858b44"
+  ],
+  "why": "Out of the dust wall. Scored 49.",
+  "regen": false
+ },
+ "S20": {
+  "pick": "36e39026",
+  "alts": [
+   "2ab9dfa7"
+  ],
+  "why": "The scored take: 52 overall, hook 36, climbing to the last frame. 12s where the bible wants 14 unbroken \u2014 v4.0 goes to 16, so a 14s retake is cheap if you have the minute.",
+  "regen": false
+ },
+ "S21": {
+  "pick": "d484a959",
+  "alts": [
+   "25660204",
+   "906714ac"
+  ],
+  "why": "Your newest render: 16s, chained on F32\u2192F33, on twelve-ships. The 8s take scored 52 and is the fallback if the 16s drags.",
+  "regen": false
+ },
+ "S22": {
+  "pick": "4896c8e3",
+  "alts": [
+   "4bb7a3e9",
+   "6b0d0fac",
+   "d35da4ef"
+  ],
+  "why": "The two chroma takes are the two highest scores in the account \u2014 59 and 58, hooks 43 and 41, the lowest mind-wandering of anything (DMN 0.45, 0.46). The three 'filthy' takes of the same shot sit at 49. One grade decision, ten points. The chroma take is the ending.",
+  "regen": false
+ },
+ "S23": {
+  "pick": "ca08e6fd",
+  "alts": [
+   "ae644d57"
+  ],
+  "why": "54 overall, the second-best hook (38). Caedom alone, on the current courtyard element.",
+  "regen": false
+ }
+}

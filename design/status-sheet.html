@@ -1,0 +1,126 @@
+<meta charset="utf-8"><title>Status</title>
+<style>
+@page{size:letter;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font:11px/1.45 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#141210;background:#fff}
+.sheet{width:8.5in;height:11in;padding:0.6in 0.62in;position:relative;page-break-after:always;overflow:hidden;background:#fff}
+@media screen{body{background:#3a3631;padding:26px 14px}
+ .sheet{margin:0 auto 22px;box-shadow:0 2px 22px rgba(0,0,0,.42)}}
+.sheet:last-child{page-break-after:auto}
+h1{font:400 27px/1.1 Georgia,serif;margin:0 0 5px;letter-spacing:-.01em}
+.sub{color:#6d665c;margin:0 0 16px;font-size:11.5px}
+.rule{height:1px;background:#141210;margin:0 0 15px}
+h2{font:400 15px/1.2 Georgia,serif;margin:19px 0 7px;display:flex;align-items:baseline;gap:8px}
+h2 .c{margin-left:auto;font:400 9px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#8b8378}
+.kpi{display:flex;border:1px solid #d8d2c8;margin:0 0 6px}
+.kpi div{flex:1;padding:8px 10px;border-right:1px solid #d8d2c8}
+.kpi div:last-child{border-right:0}
+.kpi b{display:block;font:400 19px/1.1 ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.kpi span{font-size:8.5px;color:#8b8378;letter-spacing:.03em;text-transform:uppercase}
+table{border-collapse:collapse;width:100%;font-size:10px}
+th{text-align:left;font:400 8.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.11em;
+   text-transform:uppercase;color:#8b8378;padding:0 5px 5px;border-bottom:1px solid #141210}
+td{padding:3.4px 5px;border-bottom:1px solid #ece7df;vertical-align:top}
+td.m{font-family:ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bx{display:inline-block;width:9px;height:9px;border:1.2px solid #141210;margin-right:3px;vertical-align:-1px}
+.bx.on{background:#141210;position:relative}
+.bx.on::after{content:"";position:absolute;left:2px;top:0.5px;width:2.5px;height:5px;
+  border:solid #fff;border-width:0 1.2px 1.2px 0;transform:rotate(43deg)}
+.warn{color:#a8442c}
+.ok{color:#3d6b55}
+.dim{color:#8b8378}
+p.note{font-size:10px;color:#544e46;margin:6px 0 0;max-width:62ch}
+.fn{position:absolute;left:0.62in;right:0.62in;bottom:0.42in;border-top:1px solid #ece7df;
+    padding-top:6px;font:8.5px/1.3 ui-monospace,Menlo,monospace;color:#a8a096;
+    display:flex;justify-content:space-between}
+ol.todo{margin:4px 0 0;padding-left:0;list-style:none;counter-reset:t}
+ol.todo li{counter-increment:t;padding:5px 0 5px 22px;border-bottom:1px solid #ece7df;position:relative;font-size:10.5px}
+ol.todo li::before{content:counter(t,decimal-leading-zero);position:absolute;left:0;top:6px;
+  font:8.5px ui-monospace,Menlo,monospace;color:#a8a096}
+ol.todo b{font-weight:600}
+ol.todo span{color:#8b8378}
+</style>
+<div class="sheet"><h1>MATTER OF LIGHT — where it stands</h1>
+<p class="sub">2026-09-10 · deadline 14 Sep 23:59 UTC · every figure below read from a file, none remembered</p>
+<div class="rule"></div>
+<div class="kpi"><div><b>39 / 39</b><span>anchor frames</span></div><div><b>11 / 23</b><span>shots with a clip</span></div><div><b>0 / 23</b><span>final pass</span></div><div><b>0 / 23</b><span>finished</span></div><div><b>15 / 37</b><span>elements in project</span></div></div>
+<h2>The 23 shots<span class="c">draft = a cheap 10s concept clip, not the shot</span></h2>
+<table><thead><tr><th style="width:34px">&nbsp;</th><th style="width:34px">Shot</th><th>Title</th><th style="width:42px">At</th><th style="width:30px">Sec</th><th style="width:52px">Draft</th><th style="width:46px">Final</th><th>Blocked by</th></tr></thead><tbody>
+<tr><td colspan="8" style="padding-top:8px;border-bottom:1px solid #141210"><b>MOVEMENT I · The Sun</b> <span class="dim">· 5 shots · 80s</span></td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S1</td><td>Rise out of the fire</td><td class="m dim">0:00</td><td class="m">16</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S2</td><td>The courtyard of worlds</td><td class="m dim">0:16</td><td class="m">18</td><td class="m ok">yes</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S3</td><td>“There must be risk”</td><td class="m dim">0:34</td><td class="m">14</td><td class="m dim">none</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S4</td><td>“He&#x27;s your brother”</td><td class="m dim">0:48</td><td class="m">14</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1; over duration cap</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S5</td><td>“Tomorrow” — the tear freezes</td><td class="m dim">1:02</td><td class="m">18</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">over duration cap</td></tr>
+<tr><td colspan="8" style="padding-top:8px;border-bottom:1px solid #141210"><b>MOVEMENT II · The Ocean</b> <span class="dim">· 9 shots · 118s</span></td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S6</td><td>108 years later — the run</td><td class="m dim">1:20</td><td class="m">14</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1; over duration cap</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S7</td><td>Sixteen behind her, and a wall of ice</td><td class="m dim">1:34</td><td class="m">12</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S8</td><td>Up the wall</td><td class="m dim">1:46</td><td class="m">14</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1; over duration cap</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S9</td><td>The threadwright&#x27;s eyes</td><td class="m dim">2:00</td><td class="m">12</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">no end frame; model cannot do 2.39:1; over duration cap</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S10</td><td>The leviathan</td><td class="m dim">2:12</td><td class="m">16</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">over duration cap</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S11</td><td>Running the flank</td><td class="m dim">2:28</td><td class="m">10</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S12</td><td>The lightning river</td><td class="m dim">2:38</td><td class="m">12</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S13</td><td>The vortex, from the Sun</td><td class="m dim">2:50</td><td class="m">15</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S14</td><td>The Stone leaves her</td><td class="m dim">3:05</td><td class="m">13</td><td class="m dim">none</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+<tr><td colspan="8" style="padding-top:8px;border-bottom:1px solid #141210"><b>MOVEMENT III · The Island</b> <span class="dim">· 9 shots · 102s</span></td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S15</td><td>Nacre Beach — the same sun</td><td class="m dim">3:18</td><td class="m">12</td><td class="m dim">none</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S16</td><td>Over the abyss</td><td class="m dim">3:30</td><td class="m">12</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">no end frame; model cannot do 2.39:1; over duration cap</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S17</td><td>Twelve ships</td><td class="m dim">3:42</td><td class="m">10</td><td class="m dim">none</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S18</td><td>The Temple does not answer</td><td class="m dim">3:52</td><td class="m">10</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S19</td><td>The Keepers kneel</td><td class="m dim">4:02</td><td class="m">10</td><td class="m ok">yes</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">S20</td><td>The mountain</td><td class="m dim">4:12</td><td class="m">14</td><td class="m ok">yes</td><td class="m dim">—</td><td class="warn" style="font-size:9px">model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S21</td><td>The garden replants itself</td><td class="m dim">4:26</td><td class="m">8</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">no end frame; model cannot do 2.39:1</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S22</td><td>What Alder saw</td><td class="m dim">4:34</td><td class="m">14</td><td class="m dim">none</td><td class="m dim">—</td><td class="warn" style="font-size:9px">no end frame; model cannot do 2.39:1; over duration cap</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">S23</td><td>Tomorrow, again</td><td class="m dim">4:48</td><td class="m">12</td><td class="m dim">none</td><td class="m dim">—</td><td class="dim" style="font-size:9px">ready</td></tr>
+</tbody></table>
+<p class="note"><b>Read this honestly:</b> eleven shots have a ten-second 720p concept clip generated from their anchors. None is the shot. Nothing has had a final pass, so the film exists as 39 stills and a rough animatic, not as a cut.</p>
+<div class="fn"><span>Sheet 1 of 3 · the film</span><span>design/shot-ledger.json</span></div></div>
+<div class="sheet"><h1>Cast, references, and what is left</h1>
+<p class="sub">Souls read live from the account. Elements counted against what the shot prompts attach.</p>
+<div class="rule"></div>
+<h2>Soul casts<span class="c">all seven trained and ready — none missing</span></h2>
+<table><thead><tr><th style="width:34px">&nbsp;</th><th style="width:130px">Soul</th><th style="width:66px">Verdict</th><th>Note</th></tr></thead><tbody>
+<tr><td><span class="bx on"></span></td><td class="m">oriane</td><td class="m ok">keep</td><td class="dim">Movement I and II</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">alder</td><td class="m ok">keep</td><td class="dim">Movement III</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">wren</td><td class="m ok">keep</td><td class="dim">Movement III</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">caedom-ascended</td><td class="m ok">keep</td><td class="dim">Movement I and S23</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">caedom-before</td><td class="m ok">keep</td><td class="dim">not used by the film</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">caedom-mortal</td><td class="m warn">DELETE</td><td class="dim">contaminated training set</td></tr>
+<tr><td><span class="bx on"></span></td><td class="m">Caedom</td><td class="m warn">DELETE</td><td class="dim">this is Oriane, misnamed</td></tr>
+</tbody></table>
+<p class="note">No Soul is missing. The Threadwright needs none — her face is never fully revealed by design — and the Keepers are an order, carried by an element rather than a face. <b class="warn">One hard limit:</b> a generation takes one Soul only, so the seven shots with two people in frame (S2, S3, S5, S15, S16, S17, S22) must run on elements, not Souls.</p>
+<h2>The Turned<span class="c">consistency comes from the rule, not the faces</span></h2>
+<p class="note">They are written to read as individuals who went wrong separately — no uniforms, no matching costume — so chasing per-face consistency fights the design. Three things must be identical in every Turned shot instead: the aura is black at the centre, the cloth is dark and sodden with no armour, and the rank reads off the aura. Attach <b>one</b> canonical group element everywhere (pick one of the three now in the project and retire the other two), plus <b>aura-grammar</b> so the hollow is decided once, plus the domain sheet only when that power is on screen. Elements take several references in one prompt, which is why this works and Souls cannot do it. Never describe a Turned face in words.</p>
+<div class="fn"><span>Sheet 2 of 3 · cast</span><span>account · show_characters</span></div></div>
+<div class="sheet"><h1>What is left</h1>
+<p class="sub">Ordered by what it blocks, not by when it was thought of.</p>
+<div class="rule"></div>
+<h2>References still outside the project<span class="c">22 handles · blocking all 23 shots</span></h2>
+<table><thead><tr><th style="width:34px">&nbsp;</th><th style="width:150px">Handle</th><th style="width:38px">Shots</th><th>Where it is needed</th></tr></thead><tbody>
+<tr><td><span class="bx"></span></td><td class="m">@plate-ocean-dark</td><td class="m">8</td><td class="m dim" style="font-size:9px">S6, S7, S8, S9, S10, S11, S12, S14</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@plate-sun</td><td class="m">6</td><td class="m dim" style="font-size:9px">S1, S2, S3, S4, S5, S23</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@white-temple</td><td class="m">4</td><td class="m dim" style="font-size:9px">S18, S19, S21, S22</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@plate-bombardment</td><td class="m">4</td><td class="m dim" style="font-size:9px">S17, S18, S19, S20</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@plate-island</td><td class="m">3</td><td class="m dim" style="font-size:9px">S15, S21, S22</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@leviathan-plating</td><td class="m">3</td><td class="m dim" style="font-size:9px">S10, S11, S12</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@keeper</td><td class="m">3</td><td class="m dim" style="font-size:9px">S19, S20, S22</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@iron-spears</td><td class="m">3</td><td class="m dim" style="font-size:9px">S11, S19, S20</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@turned-water</td><td class="m">2</td><td class="m dim" style="font-size:9px">S7, S8</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@nacre-beach</td><td class="m">2</td><td class="m dim" style="font-size:9px">S15, S17</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@machira-orbit</td><td class="m">2</td><td class="m dim" style="font-size:9px">S13, S14</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@keeper-kneel</td><td class="m">2</td><td class="m dim" style="font-size:9px">S19, S20</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@fx-hollow</td><td class="m">2</td><td class="m dim" style="font-size:9px">S11, S12</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@frozen-tear</td><td class="m">2</td><td class="m dim" style="font-size:9px">S5, S23</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@threadwright</td><td class="m">1</td><td class="m dim" style="font-size:9px">S9</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@lev-rider</td><td class="m">1</td><td class="m dim" style="font-size:9px">S10</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@fx-segmented-mind</td><td class="m">1</td><td class="m dim" style="font-size:9px">S13</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@fx-kill-beat</td><td class="m">1</td><td class="m dim" style="font-size:9px">S12</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@fx-floating-mountain</td><td class="m">1</td><td class="m dim" style="font-size:9px">S20</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@founding-stone</td><td class="m">1</td><td class="m dim" style="font-size:9px">S14</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@corals-abyss</td><td class="m">1</td><td class="m dim" style="font-size:9px">S16</td></tr>
+<tr><td><span class="bx"></span></td><td class="m">@aura-shell</td><td class="m">1</td><td class="m dim" style="font-size:9px">S12</td></tr>
+</tbody></table>
+<p class="note">All twenty-two already exist in the account. This is a move, not a rebuild.</p>
+<h2>What is left, in order<span class="c">ordered by what it blocks</span></h2>
+<ol class="todo"><li><b>Move 22 references into the project folder.</b> <span>Four lighting plates first — between them they carry 21 of 23 shots.</span></li><li><b>Rename the four elements carrying novel vocabulary.</b> <span>Production history is public. Cairn Island, the Vigil.</span></li><li><b>Replace prop_leviathan_v1.</b> <span>It holds a video and no still, so it cannot be an image reference.</span></li><li><b>Hold Gate A — identity lock.</b> <span>Gates 17 of the 20 remaining steps.</span></li><li><b>Verify the six upload-backed handles.</b> <span>No real face as input. The only disqualification risk.</span></li><li><b>Re-assign 16 shots off models that cannot do 2.39:1.</b> <span>The motion sheet carries the replacement for each.</span></li><li><b>Generate the 12 shots with no clip at all.</b> <span>S3 S4 S5 S9 S13 S14 S15 S16 S17 S21 S22 S23.</span></li><li><b>Cast three voices.</b> <span>Oriane is Kiki. Caedom, Alder and Wren are not cast.</span></li><li><b>Final pass, all 23.</b> <span>Then deflicker, upscale, grade — in that order.</span></li><li><b>File 87 generations, publish, check it logged out.</b></li></ol>
+<div class="fn"><span>Sheet 3 of 3 · remaining work</span><span>element-map.json · project-folder-gap.json</span></div></div>
