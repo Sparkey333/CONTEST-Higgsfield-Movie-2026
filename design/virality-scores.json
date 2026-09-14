@@ -350,5 +350,32 @@
   "attention_mean": 0.468,
   "dmn_mean": 0.557,
   "dmn_peak_second": 3
+ },
+ "256dfbfe-e18a-4b42-aefa-4962f7f901bc": {
+  "job": "8ec8acd5-da68-4f8f-ab4b-49431fc07068",
+  "overall": 49,
+  "hook": 34,
+  "viral": 48,
+  "engagement": 42,
+  "sustain": 100,
+  "peak_second": 8,
+  "dur": 8,
+  "global": [
+   0.408,
+   0.405,
+   0.429,
+   0.386,
+   0.398,
+   0.403,
+   0.454,
+   0.409,
+   0.459
+  ],
+  "visual_mean": 0.524,
+  "auditory_mean": 0.338,
+  "language_mean": 0.345,
+  "attention_mean": 0.411,
+  "dmn_mean": 0.585,
+  "dmn_peak_second": 3
  }
 }
