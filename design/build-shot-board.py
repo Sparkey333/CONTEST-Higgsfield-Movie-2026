@@ -24,7 +24,7 @@ def mark(t):
 SHOTS = [("S1",1,"Rise out of the fire"),("S2",1,"The courtyard of worlds"),("S3",1,"“There must be risk”"),("S4",1,"“He's your brother”"),
  ("S5",1,"“Tomorrow” — the tear freezes"),("NEW-3",1,"Transition A — the facet becomes ocean"),("S6",2,"108 years later — the run"),("S7",2,"Sixteen behind her, and a wall of ice"),
  ("S8",2,"Up the wall"),("S9",2,"The threadwright's eyes"),("S10",2,"The leviathan"),("S11",2,"Running the flank"),("S12",2,"The lightning river"),
- ("S13",2,"The vortex, from the Sun"),("NEW-1",2,"The mind divides"),("S14",2,"The Stone leaves her"),("NEW-4",2,"Transition B — the streak crosses the world"),
+ ("S15a",3,"Nacre Beach — first look (the first 5s of S15, moved early)"),("S13",2,"The vortex, from the Sun"),("NEW-1",2,"The mind divides"),("S14",2,"The Stone leaves her"),("NEW-4",2,"Transition B — the streak crosses the world"),
  ("S15",3,"Nacre Beach — the same sun"),("S16",3,"Over the abyss"),("S17",3,"Twelve ships"),("S18",3,"The Temple does not answer"),("S19",3,"The Keepers kneel"),
  ("S20",3,"The mountain"),("NEW-2",3,"The mound"),("S21",3,"The garden replants itself"),("S22",3,"What Alder saw"),("S23",1,"Tomorrow, again")]
 NEWDUR = {"NEW-1":16,"NEW-2":16,"NEW-3":8,"NEW-4":12}
@@ -73,10 +73,14 @@ for sid, mv, title in SHOTS:
                 "<p class='why'>Not generated yet. Nothing has been made in the account since 06:57 UTC. This is on the list.</p>")
         cards.append(f'''<article class="shot new" data-mv="{mv}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header>{note}{body}</article>''')
         continue
+    if sid == "S15a":
+        total += 5; ribbon.append(f'<b data-mv="3" style="flex:5" title="S15a · 5s · first half of S15, moved early"></b>')
+        cards.append(f'''<article class="shot merged" data-mv="3" id="S15a"><header><span class="sid">S15a</span><h3>{esc(title)}</h3><span class="dur">5s · same take as S15</span></header><p class="why">Change 1 from the virality read: the audience meets the brothers before Oriane dies. Take <code>aa65cc3d</code>, seconds 0–5, placed here; seconds 5–10 stay in S15's slot after S14. Zero generations. The assembly in pull-picks.sh carries the split; in Resolve, blade S15 at 00:05:00 and drag the first half here.</p></article>''')
+        continue
     if sid == "S2":
         cards.append(f'''<article class="shot merged" data-mv="{mv}" id="S2"><header><span class="sid">S2</span><h3>{esc(title)}</h3><span class="dur">inside S1</span></header><p class="why">{esc(picks["S2"]["why"])}</p></article>''')
         continue
-    p = picks[sid]; pid = p["pick"]; pv = vids[pid]; d = pv["duration"] if sid != "S1" else 30; total += d
+    p = picks[sid]; pid = p["pick"]; pv = vids[pid]; d = (pv["duration"] if sid != "S1" else 30) - (5 if sid == "S15" else 0); total += d
     ribbon.append(f'<b data-mv="{mv}" style="flex:{d}" title="{sid} · {d}s">{sid if d>=10 else ""}</b>')
     ps = vir.get(pid, {}).get("overall")
     alts = "".join(tile(a, "alternate", ps) for a in p["alts"][:3] if a in vids)
@@ -150,7 +154,7 @@ h2{{font-size:clamp(22px,3vw,30px);margin:48px 0 10px}} .callout{{border:1px sol
   <div class="ribbon" aria-hidden="true">{"".join(ribbon)}</div>
   <p class="note">In the published view the clips cannot load — the account's CDN is outside the viewer's sandbox — so each tile shows its identity card and an <em>open the clip</em> link that works. Open the same file from your own copy of the repository and every clip plays inline.</p>
 </header>
-<div class="callout" style="margin-top:22px"><b>Read the hook column with care.</b> Mean hook across the scored renders is in the low thirties because the film opens almost every shot on stillness — a locked frame, a slow crane, a held wide. The Predictor is built for feeds and penalises that; a jury does not. Use the hook numbers for one thing only: choosing the clip for the public post. That is S22's chroma take (hook 41) or S23 (38).</div>
+<div class="callout" style="margin-top:22px"><b>Read the hook column with care.</b> Mean hook across the scored renders is in the low thirties because the film opens almost every shot on stillness — a locked frame, a slow crane, a held wide. The Predictor is built for feeds and penalises that; a jury does not. Use the hook numbers for one thing only: choosing the clip for the public post. That is S22's chroma takes (hooks 43 and 41) or S23 (38).</div>
 {"".join(cards)}
 <h2>Method</h2>
 <p class="note">Built by <code>design/build-shot-board.py</code> from the account's generation history, the shot map, the picks and the Predictor scores. Regenerate, do not hand-edit. Per-shot prompts for the reshoots are in <code>design/recreate-prompts.md</code>; the four unshot prompts are in <code>design/new-shots.md</code>.</p>

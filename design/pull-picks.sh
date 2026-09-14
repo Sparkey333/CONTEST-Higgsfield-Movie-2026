@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Matter of Light — pull every picked clip in cut order, then build a rough assembly.
-# Run on your Mac:  bash pull-picks.sh        (needs curl; ffmpeg only for the assembly step — brew install ffmpeg)
-# Each file is named  NN_SHOT_take.mp4  so a folder sort IS the cut. Drop the folder on a Resolve timeline, or skip Resolve entirely:
-# the assembly at the bottom is a single MP4 you can upload straight into Cinema Studio for the watermark and packshot.
+# Run on your Mac:  bash pull-picks.sh        (needs curl; ffmpeg only for the assembly — brew install ffmpeg)
+# Files are named NN_SHOT_take.mp4 so a folder sort IS the cut. The assembly below applies Change 1 from the
+# virality read: the first 5s of S15 play before S13, the rest of S15 stays in place. Everything else is whole —
+# no ending is ever shortened. The one thing this cannot do is lay the S1 voice: do that in Resolve (A2, 00:00:01:00).
 set -e
 mkdir -p picks alternates && cd picks
 
@@ -24,7 +25,7 @@ curl -sSfL -o 15_S16_e8d1b2a6.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GI
 curl -sSfL -o 16_S17_8c13f573.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_8c13f573-7a01-415f-ac20-8f1f53dcc547.mp4"   # S17 · 8s
 curl -sSfL -o 17_S18_4a85d97a.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_4a85d97a-3368-411a-957f-1bb06442eee5.mp4"   # S18 · 8s
 curl -sSfL -o 18_S19_0a4c3337.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_0a4c3337-498f-49bc-8aac-2ed1c52a3019.mp4"   # S19 · 8s
-curl -sSfL -o 19_S20_2ab9dfa7.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4"   # S20 · 12s
+curl -sSfL -o 19_S20_36e39026.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4"   # S20 · 12s
 curl -sSfL -o 20_S21_d484a959.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_d484a959-482d-4a30-913b-fef46183be71.mp4"   # S21 · 16s
 curl -sSfL -o 21_S22_4bb7a3e9.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54.mp4"   # S22 · 12s
 curl -sSfL -o 22_S23_ca08e6fd.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ca08e6fd-80f4-4b6e-b672-f00c714edce6.mp4"   # S23 · 12s
@@ -62,7 +63,7 @@ cd ../alternates
 # curl -sSfL -o S17_256dfbfe.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_256dfbfe-e18a-4b42-aefa-4962f7f901bc.mp4"
 # curl -sSfL -o S18_ce8cd528.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_ce8cd528-18db-48db-a1a3-b956e45e3de5.mp4"
 # curl -sSfL -o S19_e8858b44.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_e8858b44-44fc-4f2c-b47d-077cde893c5c.mp4"
-# curl -sSfL -o S20_36e39026.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4"
+# curl -sSfL -o S20_2ab9dfa7.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4"
 # curl -sSfL -o S21_25660204.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_25660204-33bc-43b9-80aa-411a0999baeb.mp4"
 # curl -sSfL -o S21_906714ac.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223632_906714ac-f799-4add-9795-cfbdae775335.mp4"
 # curl -sSfL -o S22_4896c8e3.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4"
@@ -71,9 +72,38 @@ cd ../alternates
 # curl -sSfL -o S23_ae644d57.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ae644d57-97fe-4a84-be00-74bac3c644e0.mp4"
 cd ../picks
 
-# ---- rough assembly: every pick, in order, re-encoded to one 1080p-scope 24fps file (safe across takes) ----
+# ---- the assembly list: cut order, with the S15 split (in/out points in seconds) ----
+cat > list.txt <<'LIST'
+file '01_S1_f84a308f.mp4'
+file '02_S3_3ef54818.mp4'
+file '03_S4_fed12f12.mp4'
+file '04_S5_bdf527cd.mp4'
+file '05_S6_f8035ad4.mp4'
+file '06_S7_deedd011.mp4'
+file '07_S8_01714029.mp4'
+file '08_S9_165ab3d9.mp4'
+file '09_S10_1971bd66.mp4'
+file '10_S11_328324f8.mp4'
+file '11_S12_c9da8ff1.mp4'
+file '14_S15_aa65cc3d.mp4'
+inpoint 0
+outpoint 5
+file '12_S13_e4b5998b.mp4'
+file '13_S14_c2e2b8db.mp4'
+file '14_S15_aa65cc3d.mp4'
+inpoint 5
+file '15_S16_e8d1b2a6.mp4'
+file '16_S17_8c13f573.mp4'
+file '17_S18_4a85d97a.mp4'
+file '18_S19_0a4c3337.mp4'
+file '19_S20_36e39026.mp4'
+file '20_S21_d484a959.mp4'
+file '21_S22_4bb7a3e9.mp4'
+file '22_S23_ca08e6fd.mp4'
+LIST
+
+# ---- rough assembly: one 1080p-scope 24fps file (re-encoded, so mixed takes are safe) ----
 if command -v ffmpeg >/dev/null; then
-  ls *.mp4 | sort | sed "s/^/file '/;s/$/'/" > list.txt
   ffmpeg -y -f concat -safe 0 -i list.txt -vf "scale=2560:1098:flags=lanczos,fps=24" -c:v libx264 -preset medium -crf 17 -pix_fmt yuv420p -c:a aac -b:a 192k ../matter-of-light-assembly.mp4
-  echo "assembly written: matter-of-light-assembly.mp4"
-else echo "ffmpeg not found — clips are in ./picks, assembly skipped"; fi
+  echo "assembly written: matter-of-light-assembly.mp4 — add the S1 voice and NEW-2 in Resolve, or ship as is"
+else echo "ffmpeg not found — clips are in ./picks in cut order; list.txt is the edit"; fi
