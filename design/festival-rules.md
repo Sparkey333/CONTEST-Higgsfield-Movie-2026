@@ -17,7 +17,7 @@ unreachable from this container — verify anything below against
 | **Audio** | Music, voice and sound design **AI-generated**, files **uploaded into the submission project**, creator holds the rights. | RUN 31 says exactly this. |
 | **Real people** | Inputs **cannot include a real person's face or voice — not even your own**. | ⚠️ **Open. See below.** |
 | **Language** | Any language, real or fictional, **with English subtitles or voice-over**. | Met — the film is in English. See Gap 2, corrected. |
-| **Format** | MP4 or MOV, up to 4K. | Finish target is 4K; confirm the container at export. |
+| **Format** | MP4 or MOV, **up to 4K**. | Re-verified 14 Sep: *up to* is a ceiling, not a floor, and **no minimum resolution is stated anywhere**. 1080p is fully compliant. |
 | **Team** | Solo or up to four, 18+. | Solo. |
 | **Entries** | Unlimited, each a standalone film. | One. |
 | **Deadline** | **September 14, 11:59 PM UTC.** | Matches what the run sheet already carries. |
@@ -96,6 +96,30 @@ real time.
 **One project, three boards.** The project is what Rule 7 cares about and there must be
 exactly one of those. The boards inside it are a working convenience, and three is right:
 one per lighting plate, because every frame on a board inherits that board's key.
+
+## Resolution — re-verified 14 Sep 2026
+
+The rule reads **"MP4 or MOV, up to 4K"**. Two independent searches of the festival's own listing and of
+four third-party write-ups return the same phrasing, and **none states a minimum resolution**. So:
+
+- **4K is a ceiling, not a requirement.** 1080p is compliant. So, technically, is 720p.
+- The only hard technical walls are the container (MP4 or MOV), the 3-minute floor, and 16:9 or 21:9.
+
+**What that means for this film.** Every web render on 13 Sep came out at **1344×576** — 0.77 megapixels,
+which is below 720p in height. Reaching UHD 4K from there is a **2.86× linear upscale, 8.2× the pixels**.
+That does not produce 4K detail, it produces a soft image with 4K in the filename, and a cinematographer on
+the jury reads that instantly.
+
+**Finish at 1080p scope, 2560×1098.** It is a 1.9× upscale, which Topaz and the platform's upscaler handle
+cleanly, it is comfortably inside the rules, and it looks better than a stretched 4K. If a shot is
+re-rendered at 1080p natively, it needs no upscale at all.
+
+## Aspect ratio — a smaller correction
+
+The bible and the project brief both say **2.39:1**. Every render is **2.333:1**, because that is what the
+platform's 21:9 actually is. The rules accept 16:9 or 21:9, so 2.333 is compliant and 2.39 is not a thing
+the platform outputs. **The film is 21:9. The documents that claim 2.39:1 are the ones that are wrong**, not
+the renders — corrected in PROJECT-BRIEF.md, which is public to the jury.
 
 ## Sources
 

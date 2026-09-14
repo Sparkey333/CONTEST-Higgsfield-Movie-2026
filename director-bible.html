@@ -1420,7 +1420,7 @@ pre.prompt b.ref,pre.paste b.ref{color:var(--ref);font-weight:600;font-style:nor
       <div class="stat"><span class="k">Longest hold</span><span class="v">18s</span><span class="n">Two of them</span></div>
       <div class="stat"><span class="k">Anchor frames</span><span class="v">39</span><span class="n">Images lead, video follows</span></div>
       <div class="stat"><span class="k">Deadline</span><span class="v warn">Sep 14</span><span class="n">23:59 UTC &middot; moved twice</span></div>
-      <div class="stat"><span class="k">Aspect</span><span class="v">21:9</span><span class="n">2.39 scope</span></div>
+      <div class="stat"><span class="k">Aspect</span><span class="v">21:9</span><span class="n">2.333 scope</span></div>
     </div>
   </div>
 </header>
@@ -2081,11 +2081,11 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
   <table class="dials">
     <tbody>
       <tr><td>1 &middot; Deflicker</td><td>Every extended or chained shot, individually, before anything else touches it.</td></tr>
-      <tr><td>2 &middot; Upscale</td><td>To 2K/4K with the <code>aigc</code> preset. Bring the 720p Seedance 2.5 material (<b>S2</b>) up here or it will sit visibly soft beside its 4K neighbours.</td></tr>
+      <tr><td>2 &middot; Upscale</td><td>To <b>1080p scope, 2560&times;1098</b>, with the <code>aigc</code> preset &mdash; not 4K. The renders are 1344&times;576 and 4K would be a 2.86&times; stretch that reads as soft rather than sharp. Bring the 720p Seedance 2.5 material (<b>S2</b>) up here or it will sit visibly soft beside its 4K neighbours.</td></tr>
       <tr><td>3 &middot; Grade</td><td>Three looks, one per movement: gold-on-black, cold blue-grey with no warmth anywhere, then golden hour. The grade is what makes 23 separate generations read as one film.</td></tr>
       <tr><td>4 &middot; Assemble</td><td>Cinema Studio, in shot order, at 2.39:1. Cut each shot to the exact duration in the shot list &mdash; the timing was already proved on the stills reel at Gate C.</td></tr>
       <tr><td>5 &middot; Sound</td><td>Score everything <b>except S13</b>. That shot is 15 seconds of orbital silence and every instinct you have will be to fill it. Do not.</td></tr>
-      <tr><td>6 &middot; Master</td><td>Export the full 4:53 at the festival's stated spec. Keep the per-shot masters &mdash; if one shot gets a note, you re-export one shot, not the film.</td></tr>
+      <tr><td>6 &middot; Master</td><td>Export the full 5:00 as <b>MP4, 21:9, 1080p scope (2560&times;1098)</b> &mdash; the rules cap at 4K and set no floor. Keep the per-shot masters &mdash; if one shot gets a note, you re-export one shot, not the film.</td></tr>
       <tr><td>7 &middot; Submit</td><td>Through the Cinema Studio festival project, with <b>a full day of margin</b>. Re-read all 23 shot prompts and all 39 composed anchor prompts first as a stranger would: they are published after the deadline. Confirm the rules page again &mdash; this festival's timeline has already moved once.</td></tr>
     </tbody>
   </table>
@@ -2123,7 +2123,7 @@ KEEP EXACTLY : hair length, the sash, the wing-aura softness</pre>
       <tr><td>Where generation happens</td><td>On higgsfield.ai. <b>Any model on the platform counts</b> &mdash; the aggregation is the point, so the model matrix is fully available to you. Generating on any other platform or tool is not allowed.</td></tr>
       <tr><td>External tools</td><td>Editing only: cutting, assembly, colour grading, mask-based retouching, titles, transitions. <b>AI upscaling, frame interpolation, generative fill and any VFX that generates new imagery must be done with Higgsfield tools</b> &mdash; so the finishing pass stays on-platform.</td></tr>
       <tr><td>Audio is exempt</td><td>Music, voice, lipsync and sound design may be made anywhere, with any tool, at any time. But <b>every external audio file must be uploaded into the submission project</b>, and you must own it or hold a sufficient licence.</td></tr>
-      <tr><td>Spec</td><td>Minimum <b>3:00</b>, hard. Up to 5:00 recommended, longer fully eligible. <b>MP4 or MOV, up to 4K. 16:9 or 21:9</b> &mdash; our 21:9 is compliant. Any language with English subtitles or voice-over. Upload by <b>11:59 PM PT</b> on the deadline day.</td></tr>
+      <tr><td>Spec</td><td>Minimum <b>3:00</b>, hard. Up to 5:00 recommended, longer fully eligible. <b>MP4 or MOV, up to 4K. 16:9 or 21:9</b> &mdash; our 21:9 is compliant. <b>Re-verified 14 Sep: &ldquo;up to 4K&rdquo; is a ceiling and no minimum resolution is stated anywhere, so 1080p is fully compliant.</b> The 13 Sep renders are 1344&times;576, so <b>finish at 1080p scope (2560&times;1098)</b> &mdash; a 1.9&times; upscale rather than the 2.86&times; that UHD would need. Any language with English subtitles or voice-over. Upload by <b>11:59 PM PT</b> on the deadline day.</td></tr>
       <tr><td>Everything publishes</td><td>After the deadline the project, film, prompts, generation history and retained assets all become publicly viewable, and other users can inspect exactly how the film was made.</td></tr>
     </tbody>
   </table>

@@ -1,6 +1,6 @@
 # MATTER OF LIGHT
 
-**Original screen story by B.L. Barkey · Solo entry · 5:00 · 2.39:1 · 23 shots**
+**Original screen story by B.L. Barkey · Solo entry · 5:00 · 21:9 scope · 23 shots**
 
 A creator stands on the surface of the Sun and decides to release his brother,
 knowing it will probably end everything. A hundred and eight years later a woman
@@ -102,7 +102,7 @@ Every image and video asset is generated inside Higgsfield, in this project,
 within the competition window; nothing is carried over from earlier work. All
 audio — voice, score and sound design — is AI-generated and uploaded here. No
 real person's face or voice is used as an input anywhere in the pipeline. Finish
-is 4K, 2.39:1, delivered as MP4. Dialogue and voice-over are in English.
+is 1080p scope, 21:9, delivered as MP4. Dialogue and voice-over are in English.
 
 ---
 

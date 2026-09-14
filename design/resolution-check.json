@@ -1,0 +1,31 @@
+{
+ "verified": "2026-09-14",
+ "how": "higgsfield.ai is blocked by this container's egress proxy; two independent web searches of the festival listing plus four third-party write-ups all return the same phrasing",
+ "rule": "MP4 or MOV, up to 4K",
+ "finding": {
+  "4k_required": false,
+  "minimum_resolution_stated": false,
+  "1080p_compliant": true,
+  "hard_technical_walls": [
+   "MP4 or MOV container",
+   "3:00 minimum duration",
+   "16:9 or 21:9"
+  ]
+ },
+ "our_renders": {
+  "native": "1344x576",
+  "megapixels": 0.77,
+  "ratio": "2.333:1 (21:9, not 2.39:1)"
+ },
+ "upscale_maths": {
+  "to_1080p_scope_2560x1098": "1.90x linear, 3.6x pixels",
+  "to_UHD_4K_3840x1646": "2.86x linear, 8.2x pixels"
+ },
+ "recommendation": "Finish at 1080p scope, 2560x1098. Compliant, a 1.9x upscale the tools handle cleanly, and it looks better than a soft 4K.",
+ "documents_corrected": [
+  "PROJECT-BRIEF.md said 'Finish is 4K, 2.39:1' — both wrong, and it is public to the jury",
+  "director-bible masthead said '2.39 scope'",
+  "the export table said upscale to 2K/4K",
+  "design/festival-rules.md said 'Finish target is 4K'"
+ ]
+}
