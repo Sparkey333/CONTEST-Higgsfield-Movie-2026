@@ -282,5 +282,6 @@
    "Turn the video model's own generate_audio OFF on every speaking shot or it invents a second voice.",
    "folder_id is unverified — no API lists folders. Test it on one cheap clip before trusting it."
   ]
- }
+ },
+ "correction_2026-09-14": "cinematic_studio_video (v2) outputs 21:9 (1344x576) from the web app even though the API catalogue omits it. Its 2.39:1 flag is withdrawn; the duration ceiling (12s) and no-audio-reference findings stand."
 }
