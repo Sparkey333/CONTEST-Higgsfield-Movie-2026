@@ -191,7 +191,7 @@ top of this file.
 - **Gate E:** picture lock. No further generation.
 - **Sound:** made anywhere, then every file uploaded into the submission project. S13 stays silent.
 - **Watermark and packshot** in Cinema Studio; **rights sweep** of every prompt for surviving novel terms;
-  end card "Adapted from the novel *Anchor Stone*"; **public post** checked in a logged-out browser; verify
+  end card "Based on the book *Stone of Matter*"; **public post** checked in a logged-out browser; verify
   every generation is still in the project; submit.
 
 ---
@@ -599,6 +599,6 @@ python3 design/filing-list.py <images.json> <videos.json> --since <YYYY-MM-DD> \
       off; S20 six attempts; three fails → escalation ladder
 - [ ] Deflicker → upscale (2K, 4K, aigc) → grade (three grades) · **Gate E**
 - [ ] Sound (S13 silent) → upload every audio file into the project
-- [ ] Prompt sweep for novel terms · end card "Adapted from the novel *Anchor Stone*"
+- [ ] Prompt sweep for novel terms · end card "Based on the book *Stone of Matter*"
 - [ ] Watermark + packshot · public post (logged-out check) · verify project · **submit before Sep 14, 11:59 PM UTC, with a day in hand**
 - [ ] Social cuts from S10/S20/S13/S12/S16 only: open on payoff frame, 3:4, 9–10 s, predictor-tested
