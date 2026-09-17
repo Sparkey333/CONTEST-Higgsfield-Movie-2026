@@ -1,0 +1,541 @@
+{
+ "schema": "filmdesk/1",
+ "title": "Matter of Light",
+ "byline": "B.L. Barkey",
+ "kind": "short",
+ "logline": "A creator stands on the surface of a star and frees the brother he sealed away, because a world that cannot be lost cannot grow.",
+ "runtime_target_s": 300,
+ "format": {
+  "aspect": "21:9",
+  "resolution": "1080p",
+  "fps": 24,
+  "container": "mp4"
+ },
+ "higgsfield": {
+  "project_name": "AI Film Festival 1 - Matter of Light",
+  "project_url": "https://higgsfield.ai/canvas?canvasProjectId=fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
+  "folder_id": "fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
+  "video_model": "cinematic_studio_video_4_0",
+  "image_model": "nano_banana_2",
+  "audio_model": "seed_audio",
+  "_": "folder_id is what the web app filed the generations under. No image model and almost no video model accepts it over the API, so the desk enforces the one-folder rule by ledger and cast (see README), not by asking the API."
+ },
+ "window": {
+  "from": "2026-09-10",
+  "to": null
+ },
+ "acts": [
+  {
+   "id": "I",
+   "name": "The Sun",
+   "tone": "sun"
+  },
+  {
+   "id": "II",
+   "name": "The Ocean",
+   "tone": "void"
+  },
+  {
+   "id": "III",
+   "name": "The Island",
+   "tone": "coral"
+  }
+ ],
+ "cast": {
+  "characters": {
+   "caedom-ascended": "b86fb7ed-7b58-440b-a807-0831705e47a5",
+   "char_oriane_v3_battle": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+   "kai_alder_v1": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+   "kai_wren_v1": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+   "keeper": "8a3838aa-6fe1-485d-881c-4c14dfbe492e",
+   "keeper-kneel": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+   "char_oriane_v2_sun": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+   "lev-rider": "f11fd4fb-d32d-4663-a07b-0e59bc01611d",
+   "threadwright": "00c70af8-e0f1-4eda-90ed-c7ff87afc5f5"
+  },
+  "environments": {
+   "plate-sun": "03dbcec8-c65f-482c-8c11-58782c673c93",
+   "plate-island": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+   "plate-bombardment": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+   "white-temple": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+   "courtyard-of-worlds": "afc4fc5d-86be-4072-927c-f890966feaca",
+   "plate-ocean-dark": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+   "machira-orbit": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+   "nacre-beach": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+   "corals-abyss": "0ff096fa-da4b-4a12-a371-5d678fb75651",
+   "loc_sector_isle_v1": "a8daccbb-0819-4de2-915a-d72a0374bfdc"
+  },
+  "props": {
+   "frozen-tear": "58952962-9241-4a19-aedc-031a2374e484",
+   "fx-floating-mountain": "9ca46e73-1df6-41c3-8ace-7fd4c324850f",
+   "iron-spears": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+   "twelve-ships": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+   "prop_leviathan_v1": "b353d96f-721a-4ea9-98e4-6adea64b4e76",
+   "leviathan-plating": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+   "turned-water": "40520841-e9d3-45be-852b-c24f126ad3e1",
+   "prop_the-turned-ones_v1": "3328bfdf-2fd5-4e9b-a821-9b2487d39529",
+   "founding-stone": "45c4d884-b89b-4694-af1f-e06eef545e30"
+  },
+  "fx": {
+   "aura-shell": "b81752ae-2bda-4a57-ba83-02244d1dbeb4",
+   "fx-hollow": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+   "fx-kill-beat": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
+   "fx-segmented-mind": "99737c53-c69a-43a8-af60-8a29fcffa072"
+  }
+ },
+ "souls": {
+  "caedom-ascended": "453e85a7-0fef-411e-8edc-693c998b8c95",
+  "oriane": "c270c1d2-3466-4283-95cd-154dff318d76",
+  "alder": "efde8880-7bab-43fc-9100-4be64504b3e0",
+  "wren": "2d6202b6-277e-49c3-a83a-80a63d9ead1b"
+ },
+ "retired": {
+  "prop_enemy_ships": "43344a12-1cd2-4dd2-893a-76c6c72ee37f",
+  "loc_loc_starsun_v3_courtyard": "e23b9b88-3636-4fd1-8d3a-9a433f89943e"
+ },
+ "shots": [
+  {
+   "id": "S1",
+   "act": "I",
+   "title": "Rise out of the fire",
+   "duration_s": 16,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "f84a308f",
+   "alternates": [
+    "7ad03129",
+    "3a437add",
+    "48c4b641"
+   ],
+   "why": "The only S1 on the current courtyard element, and it is 30s — it carries S1 AND S2 in one crane, which is exactly what the bible asks for. Trim, do not cut.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S2",
+   "act": "I",
+   "title": "The courtyard of worlds",
+   "duration_s": 18,
+   "audio": true,
+   "prompt": "",
+   "status": "merged-into:S1",
+   "pick": "f84a308f",
+   "alternates": [],
+   "why": "No separate S2 exists and none is needed: the second half of the 30s crane is the courtyard.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S3",
+   "act": "I",
+   "title": "“There must be risk”",
+   "duration_s": 14,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "3ef54818",
+   "alternates": [
+    "4874d9e4"
+   ],
+   "why": "Two takes of the same 20s reverse; both on the final identities. First take unless the second holds the faces better on your screen.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S4",
+   "act": "I",
+   "title": "“He's your brother”",
+   "duration_s": 14,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "fed12f12",
+   "alternates": [
+    "ec2aa3e5",
+    "3b4e617c",
+    "d4fdb764"
+   ],
+   "why": "The 75mm locked MCU is the shot as written; the 100mm chroma pair is the C-lane cover.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S5",
+   "act": "I",
+   "title": "“Tomorrow” — the tear freezes",
+   "duration_s": 18,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "bdf527cd",
+   "alternates": [
+    "5bb46cd9",
+    "21e77f5d",
+    "959236d4"
+   ],
+   "why": "All four takes carry the MORTAL Caedom sheet. He is caedom-ascended everywhere else. This is the one identity break a jury will see in the first minute.",
+   "regenerate": true,
+   "notes": "Regenerate on @[caedom-ascended](b86fb7ed-…) — the corrected prompt is in recreate-prompts.md."
+  },
+  {
+   "id": "NEW-3",
+   "act": "I",
+   "title": "Transition A",
+   "duration_s": 8,
+   "audio": false,
+   "prompt": "Macro, locked, no camera move. A single faceted bead of clear ice fills the frame (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)), lying on a floor of pure light. It rotates very slowly until one facet squares up to camera and fills the whole frame. Inside that facet the interior is a moving, living blue.\n\nHold. Then, without a cut and without the frame ever changing shape or colour, the blue inside the facet BECOMES open ocean seen from above — the same blue, the same movement, the same brightness, now water to the horizon under a bruised violet sky. The caustics inside the ice become sunlight on waves. Nothing else changes. The match is on shape and colour alone and it must be seamless enough that a viewer cannot name the moment it happened.\n\n21:9, photoreal, anamorphic, extreme contrast. Warm gold on the ice at the start, fully desaturated storm ocean by the end. No sound.\n\nREFERENCES — attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca).",
+   "status": "unshot",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Redundant — the S6 pick already opens on this match cut."
+  },
+  {
+   "id": "S6",
+   "act": "II",
+   "title": "108 years later — the run",
+   "duration_s": 14,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "f8035ad4",
+   "alternates": [
+    "a89f4676"
+   ],
+   "why": "Opens ON the tear-to-ocean match cut and carries the '108 years later' card. That means NEW-3 is redundant — skip it.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S7",
+   "act": "II",
+   "title": "Sixteen behind her, and a wall of ice",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "deedd011",
+   "alternates": [
+    "fd089667"
+   ],
+   "why": "The single arcing move. Two takes, same prompt.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S8",
+   "act": "II",
+   "title": "Up the wall",
+   "duration_s": 14,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "01714029",
+   "alternates": [
+    "ba9b30eb"
+   ],
+   "why": "Begins on S7's last frame by prompt. Chain it.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S9",
+   "act": "II",
+   "title": "The threadwright's eyes",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "165ab3d9",
+   "alternates": [
+    "ac7a4e25"
+   ],
+   "why": "The one shot from the dark side. Grade it colder than its neighbours.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S10",
+   "act": "II",
+   "title": "The leviathan",
+   "duration_s": 16,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "1971bd66",
+   "alternates": [
+    "bab3224f",
+    "4abb698e",
+    "b34943d9"
+   ],
+   "why": "The water-line pair uses the real leviathan element. The other pair attached prop_dragon_v1_dead — a different creature. Do not use them.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S11",
+   "act": "II",
+   "title": "Running the flank",
+   "duration_s": 10,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "328324f8",
+   "alternates": [
+    "95326675"
+   ],
+   "why": "Lateral track along the flank with the iron spears. 8s — short for the beat; the bible wants 10.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S12",
+   "act": "II",
+   "title": "The lightning river",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "c9da8ff1",
+   "alternates": [
+    "3cc59ef0",
+    "f0a995ac",
+    "5caa2e9f"
+   ],
+   "why": "Pull off the hide, slow-motion, the lightning connects. The 'upgraded form' blends scored the weakest hook of anything analysed (28) — keep them as texture, not as the shot.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S13",
+   "act": "II",
+   "title": "The vortex, from the Sun",
+   "duration_s": 15,
+   "audio": false,
+   "prompt": "",
+   "status": "shot",
+   "pick": "e4b5998b",
+   "alternates": [
+    "416f5f35",
+    "4779332a",
+    "820907db"
+   ],
+   "why": "Four takes of the orbital segmenting mind. Pick on your screen — they are the same prompt. NEW-1 is the intimate version of this beat and still has to be made.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "NEW-1",
+   "act": "II",
+   "title": "The mind divides",
+   "duration_s": 16,
+   "audio": false,
+   "prompt": "Extreme slow motion, camera held wide and low over a storm ocean, no cuts and no camera move at all. ORIANE (@[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1)) hangs in the air at the centre of frame, arms loose at her sides, barefoot, head tilted slightly back. A ring of sixteen translucent warping lenses opens at arm's reach around her and immediately doubles — thirty-two, sixty-four, then more than two hundred — until she is a silhouette seen through layered refraction (@[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072)). Her eyes are closed. Her face is not strained: it is concentration and open joy. Her lips move, forming words, and no sound comes out.\n\nBehind and around her, spread across miles of black water, the enormous armoured leviathans (@[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76)) come apart in total silence. Lightning runs along every seam in the dead-coral plating (@[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473)) and the flesh lifts cleanly away from the bone beneath in long sheets, unwinding outward like paper in wind, leaving pale skeletons standing upright in the air for a full second before they too disperse. No blood. No gore. No fire, no explosion, no shockwave — the separation is clean and slow and looks like something being undone rather than destroyed.\n\nThe whole frame is at peace. Nothing accelerates. Hold to the last frame. 21:9, near-black storm ocean and sky with lightning and the pale unwinding sheets as the only bright shapes in frame, extreme contrast, photoreal, anamorphic. No score, no effect, no sound at all.\n\nREFERENCES — attach before generating: @[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1); @[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072); @[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76); @[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[fx-hollow](89a74d62-615e-4e52-b745-8bb8ceab1628).",
+   "status": "unshot",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "S13 and S14"
+  },
+  {
+   "id": "S14",
+   "act": "II",
+   "title": "The Stone leaves her",
+   "duration_s": 13,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "c2e2b8db",
+   "alternates": [],
+   "why": "One take only. The Stone leaving her is the hinge of the whole film — it deserves a second take before you lock.",
+   "regenerate": true,
+   "notes": "A second take of the same prompt, 1080p. Nothing to change, just coverage."
+  },
+  {
+   "id": "NEW-4",
+   "act": "II",
+   "title": "Transition B",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "Extreme wide, camera high above the curve of a blue-green world (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)), looking down and along the horizon line. A single green-white streak crosses the frame left to right, very fast, very small, trailing a thin line of green light behind it (@[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30)). It is the only moving thing and the only warm colour in a cold frame.\n\nThe camera descends with it — through the exosphere, through cloud, the light going from black to violet to a deep warm orange — and the streak stays exactly the same size in frame the whole way down. It crosses in front of a low setting sun and, as the sky fills with golden hour, the streak thins, fades, and is gone.\n\nThe last two seconds are an empty tropical sunset sky over flat calm water, with iridescent sand just entering the bottom of frame (@[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776)). Nobody in frame. Nothing explained.\n\n21:9, photoreal, anamorphic. Cold and clinical at the top, warm and peaceful at the bottom, one continuous grade between them. No cuts. Sound falls away to wind.\n\nREFERENCES — attach before generating: @[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8); @[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776); @[nacre-beach](db228a3f-576d-4fd0-91c1-1f756d85a4fd).",
+   "status": "unshot",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "S14 and S15"
+  },
+  {
+   "id": "S15",
+   "act": "III",
+   "title": "Nacre Beach — the same sun",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "aa65cc3d",
+   "alternates": [
+    "194f53e7"
+   ],
+   "why": "Brothers at the tide line, warm for the first time.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S16",
+   "act": "III",
+   "title": "Over the abyss",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "e8d1b2a6",
+   "alternates": [
+    "70c01e2f"
+   ],
+   "why": "The swim over the abyss.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S17",
+   "act": "III",
+   "title": "Twelve ships",
+   "duration_s": 10,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "8c13f573",
+   "alternates": [
+    "256dfbfe"
+   ],
+   "why": "Locked wide, the boys drop flat, the ships open fire. The two takes score 48 and 49 — a tie; pick on your screen. The stillness is the point and the Predictor does not reward it.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S18",
+   "act": "III",
+   "title": "The Temple does not answer",
+   "duration_s": 10,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "4a85d97a",
+   "alternates": [
+    "ce8cd528"
+   ],
+   "why": "Three angles in one generation. The temple does not react.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S19",
+   "act": "III",
+   "title": "The Keepers kneel",
+   "duration_s": 10,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "0a4c3337",
+   "alternates": [
+    "e8858b44"
+   ],
+   "why": "Out of the dust wall. Scored 49.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S20",
+   "act": "III",
+   "title": "The mountain",
+   "duration_s": 14,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "36e39026",
+   "alternates": [
+    "2ab9dfa7"
+   ],
+   "why": "The scored take: 52 overall, hook 36, climbing to the last frame. 12s where the bible wants 14 unbroken — v4.0 goes to 16, so a 14s retake is cheap if you have the minute.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "NEW-2",
+   "act": "III",
+   "title": "The mound",
+   "duration_s": 16,
+   "audio": true,
+   "prompt": "Locked-off wide from the shoreline, static, no camera shake at any point, low red sun directly behind the subject line. A hill-sized mass of compacted sand, rock and dead coral hangs above open water, turning slowly (@[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f)). It does not drift — it MOVES, tracking laterally across the frame with the deliberate, heavy, side-to-side undulation of a snake finding its line, the whole mass flexing as it goes. It crosses the sky above twelve tall wooden sailing ships (@[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746)) and stops directly over them. Everything hangs.\n\nThen it falls — not dropping, DRIVEN, straight down and far faster than gravity, the whole mass separating into a million particles on the way and punching the sea white. The ships are simply gone under it. Great waves crash outward toward camera and break at the bottom of frame.\n\nThe camera does not react, does not pan, does not shake, and does not cut. Everything is backlit and rimmed, thick dust and smoke, crimson and rust and deep shadow with no cool tone anywhere (@[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8)). No glow, no beams, no energy, no visible force, nobody gesturing. 21:9, photoreal, immense scale, anamorphic.\n\nREFERENCES — attach before generating: @[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f); @[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746); @[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8); @[keeper-kneel](d1faba5a-bf3e-49bf-886d-e632823f4836); @[iron-spears](e1f4220b-7d1f-45bf-a6d1-4358a09061aa).",
+   "status": "unshot",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "S20 and S21"
+  },
+  {
+   "id": "S21",
+   "act": "III",
+   "title": "The garden replants itself",
+   "duration_s": 8,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "d484a959",
+   "alternates": [
+    "25660204",
+    "906714ac"
+   ],
+   "why": "Your newest render: 16s, chained on F32→F33, on twelve-ships. The 8s take scored 52 and is the fallback if the 16s drags.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S22",
+   "act": "III",
+   "title": "What Alder saw",
+   "duration_s": 14,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "4896c8e3",
+   "alternates": [
+    "4bb7a3e9",
+    "6b0d0fac",
+    "d35da4ef"
+   ],
+   "why": "The two chroma takes are the two highest scores in the account — 59 and 58, hooks 43 and 41, the lowest mind-wandering of anything (DMN 0.45, 0.46). The three 'filthy' takes of the same shot sit at 49. One grade decision, ten points. The chroma take is the ending.",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S23",
+   "act": "I",
+   "title": "Tomorrow, again",
+   "duration_s": 12,
+   "audio": true,
+   "prompt": "",
+   "status": "shot",
+   "pick": "ca08e6fd",
+   "alternates": [
+    "ae644d57"
+   ],
+   "why": "54 overall, the second-best hook (38). Caedom alone, on the current courtyard element.",
+   "regenerate": false,
+   "notes": ""
+  }
+ ],
+ "board": {
+  "max_alternates": 3,
+  "score_over_pick": true
+ },
+ "ledger": {
+  "_": "Every generation the desk submits is appended here with the project id, so it can be pulled back by id regardless of what the API can filter on.",
+  "jobs": []
+ }
+}
