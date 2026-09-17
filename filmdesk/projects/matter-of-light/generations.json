@@ -1,0 +1,2042 @@
+[
+ {
+  "id": "d484a959-482d-4a30-913b-fef46183be71",
+  "createdAt": 1789369075.127349,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "08c4509c-08ee-4075-b6e5-70559af62e34"
+   },
+   {
+    "role": "image",
+    "id": "00f3d097-8e3b-48d9-a963-7d5139842fb4"
+   }
+  ],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   }
+  ],
+  "prompt": "The attcahed reference images are mythic shapes in the red dawn, which turns into the @twelve-ships, which also have subtle glisten of newer solar abosrption tech on the sails, but subtle, similar geometry from the Courtyard of Worlds. Locked-off wide, static. Flat open ocean where the twelve ships (@twelve-ships) were. No wreckage. No particles left in the sky. Waves move up the beach and back. The two lines of white-robed figures rise, turn, and walk back into the temple in file. Three remain behind and move their hands, and the craters in the beach fill themselves in with sand and soil; a trampled garden bed re-grows in seconds, flowers opening in fast motion. Then they follow the others in and the doors close. Golden hour, calm, almost boring — which is the point. REFERENCES &mdash; attach these before generating, do not describe them in words: @plate-island for key direction, colour and contrast; @white-temple for design; @twelve-ships for the ships that were there. Start frame <b>F32</b>, end frame <b>F33</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.\n\n\n",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260814_065452_08c4509c-08ee-4075-b6e5-70559af62e34.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_d484a959-482d-4a30-913b-fef46183be71.mp4",
+  "shot": "S21",
+  "how": "map"
+ },
+ {
+  "id": "25660204-33bc-43b9-80aa-411a0999baeb",
+  "createdAt": 1789369075.127306,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "08c4509c-08ee-4075-b6e5-70559af62e34"
+   },
+   {
+    "role": "image",
+    "id": "00f3d097-8e3b-48d9-a963-7d5139842fb4"
+   }
+  ],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   }
+  ],
+  "prompt": "The attcahed reference images are mythic shapes in the red dawn, which turns into the @twelve-ships, which also have subtle glisten of newer solar abosrption tech on the sails, but subtle, similar geometry from the Courtyard of Worlds. Locked-off wide, static. Flat open ocean where the twelve ships (@twelve-ships) were. No wreckage. No particles left in the sky. Waves move up the beach and back. The two lines of white-robed figures rise, turn, and walk back into the temple in file. Three remain behind and move their hands, and the craters in the beach fill themselves in with sand and soil; a trampled garden bed re-grows in seconds, flowers opening in fast motion. Then they follow the others in and the doors close. Golden hour, calm, almost boring — which is the point. REFERENCES &mdash; attach these before generating, do not describe them in words: @plate-island for key direction, colour and contrast; @white-temple for design; @twelve-ships for the ships that were there. Start frame <b>F32</b>, end frame <b>F33</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.\n\n\n",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260814_065452_08c4509c-08ee-4075-b6e5-70559af62e34.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_25660204-33bc-43b9-80aa-411a0999baeb.mp4",
+  "shot": "S21",
+  "how": "map"
+ },
+ {
+  "id": "f0a995ac-6720-4c59-b395-e60a2760867a",
+  "createdAt": 1789361870.837447,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 14,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "1c3fde8f-6807-41f5-ab57-2291b75fd3f3"
+   },
+   {
+    "role": "image",
+    "id": "32efc438-d3f5-44ec-a96c-7a665ebfb924"
+   },
+   {
+    "role": "start_image",
+    "id": "dd720bb7-6a07-435f-aeaa-7b97a67c567a"
+   }
+  ],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   }
+  ],
+  "prompt": "blend these three images with @char_oriane_v3_battle  but leaning more to her upgraded form in the first attached image here, and the second image Turned collects electricty, then camera pans out to the massive wave, with lightning as the wave crashes down, before the next scene where leviathan dragon arises.",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_193656_dd720bb7-6a07-435f-aeaa-7b97a67c567a.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_045750_f0a995ac-6720-4c59-b395-e60a2760867a.mp4",
+  "shot": "S12",
+  "how": "map"
+ },
+ {
+  "id": "5caa2e9f-d579-4c07-a431-ce5c3d0666ad",
+  "createdAt": 1789361870.837413,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 14,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "1c3fde8f-6807-41f5-ab57-2291b75fd3f3"
+   },
+   {
+    "role": "image",
+    "id": "32efc438-d3f5-44ec-a96c-7a665ebfb924"
+   },
+   {
+    "role": "start_image",
+    "id": "dd720bb7-6a07-435f-aeaa-7b97a67c567a"
+   }
+  ],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   }
+  ],
+  "prompt": "blend these three images with @char_oriane_v3_battle  but leaning more to her upgraded form in the first attached image here, and the second image Turned collects electricty, then camera pans out to the massive wave, with lightning as the wave crashes down, before the next scene where leviathan dragon arises.",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_193656_dd720bb7-6a07-435f-aeaa-7b97a67c567a.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_045750_5caa2e9f-d579-4c07-a431-ce5c3d0666ad.mp4",
+  "shot": "S12",
+  "how": "map"
+ },
+ {
+  "id": "ca08e6fd-80f4-4b6e-b672-f00c714edce6",
+  "createdAt": 1789339302.692399,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   },
+   {
+    "id": "b86fb7ed-7b58-440b-a807-0831705e47a5",
+    "name": "caedom-ascended"
+   }
+  ],
+  "prompt": "Hard cut back to the courtyard of light on the star. CAEDOM (<<<b86fb7ed-7b58-440b-a807-0831705e47a5>>>) stands alone at the edge where two people stood at the start, looking down at the planet. He does not move. Over this, two lines of dialogue from the film's opening return as voice-over — Oriane asking whether he could erase everything, and his answer that there must be risk if there is to be growth. The camera tilts down to the floor of light and finds the frozen tear still lying there, unchanged. Slow crane straight up and away from it until it is a single point of light on a vast luminous floor. Cut to black. Title card: MATTER OF LIGHT. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (voice-over, the same takes as S4 and S3 &mdash; not new ones; 14 words): ORIANE (V.O., tired to the bone and unbroken): &ldquo;He could erase everything.&rdquo; CAEDOM (V.O.): &ldquo;There must be risk if there is to be growth.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<b86fb7ed-7b58-440b-a807-0831705e47a5>>> for identity; <<<afc4fc5d-86be-4072-927c-f890966feaca>>>, <<<58952962-9241-4a19-aedc-031a2374e484>>> for design. Start frame <b>F36</b>, end frame <b>F37</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ca08e6fd-80f4-4b6e-b672-f00c714edce6.mp4",
+  "shot": "S23",
+  "how": "map"
+ },
+ {
+  "id": "ae644d57-97fe-4a84-be00-74bac3c644e0",
+  "createdAt": 1789339302.692356,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   },
+   {
+    "id": "b86fb7ed-7b58-440b-a807-0831705e47a5",
+    "name": "caedom-ascended"
+   }
+  ],
+  "prompt": "Hard cut back to the courtyard of light on the star. CAEDOM (<<<b86fb7ed-7b58-440b-a807-0831705e47a5>>>) stands alone at the edge where two people stood at the start, looking down at the planet. He does not move. Over this, two lines of dialogue from the film's opening return as voice-over — Oriane asking whether he could erase everything, and his answer that there must be risk if there is to be growth. The camera tilts down to the floor of light and finds the frozen tear still lying there, unchanged. Slow crane straight up and away from it until it is a single point of light on a vast luminous floor. Cut to black. Title card: MATTER OF LIGHT. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (voice-over, the same takes as S4 and S3 &mdash; not new ones; 14 words): ORIANE (V.O., tired to the bone and unbroken): &ldquo;He could erase everything.&rdquo; CAEDOM (V.O.): &ldquo;There must be risk if there is to be growth.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<b86fb7ed-7b58-440b-a807-0831705e47a5>>> for identity; <<<afc4fc5d-86be-4072-927c-f890966feaca>>>, <<<58952962-9241-4a19-aedc-031a2374e484>>> for design. Start frame <b>F36</b>, end frame <b>F37</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ae644d57-97fe-4a84-be00-74bac3c644e0.mp4",
+  "shot": "S23",
+  "how": "map"
+ },
+ {
+  "id": "4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54",
+  "createdAt": 1789339266.912883,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) lying in beach grass, high chroma and extreme contrast, golden hour taken to full saturation. The grass burns yellow-green, the sand holds clear pink and violet iridescence, the water is deep saturated turquoise, the low sun rims both brothers hot orange against all of it. The camera begins a slow relentless push toward ALDER's face and does not stop. His brother's voice drops away under the surf. Far behind him, deep out of focus, a single dark cloud sits low over the water — the one desaturated object in a fully saturated frame — motionless while every other cloud moves. Hold on his eyes. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F34</b>, end frame <b>F35</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54.mp4",
+  "shot": "S22",
+  "how": "map"
+ },
+ {
+  "id": "4896c8e3-bbd9-4162-8380-c460de8fcb0d",
+  "createdAt": 1789339266.912847,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) lying in beach grass, high chroma and extreme contrast, golden hour taken to full saturation. The grass burns yellow-green, the sand holds clear pink and violet iridescence, the water is deep saturated turquoise, the low sun rims both brothers hot orange against all of it. The camera begins a slow relentless push toward ALDER's face and does not stop. His brother's voice drops away under the surf. Far behind him, deep out of focus, a single dark cloud sits low over the water — the one desaturated object in a fully saturated frame — motionless while every other cloud moves. Hold on his eyes. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F34</b>, end frame <b>F35</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4",
+  "shot": "S22",
+  "how": "map"
+ },
+ {
+  "id": "6b0d0fac-9889-4ec4-a802-b1db7b0383b6",
+  "createdAt": 1789339240.695387,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) lying in beach grass, filthy, staring out at flat water. Wren is ecstatic, talking fast, hands moving — about his parents, about being proud, about both of them making it in. The camera begins a slow relentless push toward ALDER's face and does not stop for the rest of the shot. His brother's voice drops away under the sound of surf. Alder is not excited. He is calculating. Somewhere in the push his expression settles into something that is not wonder at all. Far behind him, deep out of focus, a single dark cloud sits low over the water, motionless while every other cloud moves. Hold on his eyes. Golden hour, shallow focus, photoreal, natural performance. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (Alder is voice-over over his own held close-up; 14 words): ALDER (V.O.): &ldquo;I want to move mountains. To raise them over the heads of my enemies.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F34</b>, end frame <b>F35</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_6b0d0fac-9889-4ec4-a802-b1db7b0383b6.mp4",
+  "shot": "S22",
+  "how": "map"
+ },
+ {
+  "id": "d35da4ef-22dc-4e4a-9c37-d68e234de39b",
+  "createdAt": 1789339240.695268,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) lying in beach grass, filthy, staring out at flat water. Wren is ecstatic, talking fast, hands moving — about his parents, about being proud, about both of them making it in. The camera begins a slow relentless push toward ALDER's face and does not stop for the rest of the shot. His brother's voice drops away under the sound of surf. Alder is not excited. He is calculating. Somewhere in the push his expression settles into something that is not wonder at all. Far behind him, deep out of focus, a single dark cloud sits low over the water, motionless while every other cloud moves. Hold on his eyes. Golden hour, shallow focus, photoreal, natural performance. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (Alder is voice-over over his own held close-up; 14 words): ALDER (V.O.): &ldquo;I want to move mountains. To raise them over the heads of my enemies.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F34</b>, end frame <b>F35</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_d35da4ef-22dc-4e4a-9c37-d68e234de39b.mp4",
+  "shot": "S22",
+  "how": "map"
+ },
+ {
+  "id": "38eb40d5-4f8d-452c-ac96-a230864a9486",
+  "createdAt": 1789339032.879961,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) lying in beach grass, filthy, staring out at flat water. Wren is ecstatic, talking fast, hands moving — about his parents, about being proud, about both of them making it in. The camera begins a slow relentless push toward ALDER's face and does not stop for the rest of the shot. His brother's voice drops away under the sound of surf. Alder is not excited. He is calculating. Somewhere in the push his expression settles into something that is not wonder at all. Far behind him, deep out of focus, a single dark cloud sits low over the water, motionless while every other cloud moves. Hold on his eyes. Golden hour, shallow focus, photoreal, natural performance. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (Alder is voice-over over his own held close-up; 14 words): ALDER (V.O.): &ldquo;I want to move mountains. To raise them over the heads of my enemies.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F34</b>, end frame <b>F35</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223712_38eb40d5-4f8d-452c-ac96-a230864a9486.mp4",
+  "shot": "S22",
+  "how": "map"
+ },
+ {
+  "id": "906714ac-f799-4add-9795-cfbdae775335",
+  "createdAt": 1789338992.521537,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   }
+  ],
+  "prompt": "Locked-off wide, static. Flat open ocean where the twelve ships (<<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>) were. No wreckage. No particles left in the sky. Waves move up the beach and back. The two lines of white-robed figures rise, turn, and walk back into the temple in file. Three remain behind and move their hands, and the craters in the beach fill themselves in with sand and soil; a trampled garden bed re-grows in seconds, flowers opening in fast motion. Then they follow the others in and the doors close. Golden hour, calm, almost boring — which is the point. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>> for design; <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>> for the ships that were there. Start frame <b>F32</b>, end frame <b>F33</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223632_906714ac-f799-4add-9795-cfbdae775335.mp4",
+  "shot": "S21",
+  "how": "map"
+ },
+ {
+  "id": "2ab9dfa7-14ca-422a-a8cc-3d401575b90f",
+  "createdAt": 1789338974.660322,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "8a3838aa-6fe1-485d-881c-4c14dfbe492e",
+    "name": "keeper"
+   },
+   {
+    "id": "9ca46e73-1df6-41c3-8ace-7fd4c324850f",
+    "name": "fx-floating-mountain"
+   },
+   {
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+    "name": "keeper-kneel"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "One continuous wide shot, fourteen seconds, no cuts, camera rising very slowly and doing nothing else. Two lines of Keepers (<<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>) stand facing the sea. Every projectile in the air stops and hangs suspended. The sand of the beach lifts and converges on the floating metal. Only now, with it already happening, do the standing figures take a knee in unison and bow their heads — not to cause it, but to refuse to watch it. Rock and dead coral erupt out of the ocean and ascend to join the mass. It merges into a single floating mountain the size of a hill, turning slowly. It glides out over the twelve ships and stops above them. Figures leap from the decks into the water. Then the mountain comes apart into a million particles and they fall — faster than gravity should allow — pounding the ships down under the surface. From the kneel onward the Keepers never raise their heads. Photoreal, immense, unhurried. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>, <<<8a3838aa-6fe1-485d-881c-4c14dfbe492e>>>, <<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>> for design; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>> for the ore — torn from rock, never forged; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>> for the kneeling lines. Start frame <b>F30</b>, end frame <b>F31</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4",
+  "shot": "S20",
+  "how": "map"
+ },
+ {
+  "id": "36e39026-52a3-4821-9d04-23ec1ec4aba3",
+  "createdAt": 1789338974.66027,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "8a3838aa-6fe1-485d-881c-4c14dfbe492e",
+    "name": "keeper"
+   },
+   {
+    "id": "9ca46e73-1df6-41c3-8ace-7fd4c324850f",
+    "name": "fx-floating-mountain"
+   },
+   {
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+    "name": "keeper-kneel"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "One continuous wide shot, fourteen seconds, no cuts, camera rising very slowly and doing nothing else. Two lines of Keepers (<<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>) stand facing the sea. Every projectile in the air stops and hangs suspended. The sand of the beach lifts and converges on the floating metal. Only now, with it already happening, do the standing figures take a knee in unison and bow their heads — not to cause it, but to refuse to watch it. Rock and dead coral erupt out of the ocean and ascend to join the mass. It merges into a single floating mountain the size of a hill, turning slowly. It glides out over the twelve ships and stops above them. Figures leap from the decks into the water. Then the mountain comes apart into a million particles and they fall — faster than gravity should allow — pounding the ships down under the surface. From the kneel onward the Keepers never raise their heads. Photoreal, immense, unhurried. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>, <<<8a3838aa-6fe1-485d-881c-4c14dfbe492e>>>, <<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>> for design; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>> for the ore — torn from rock, never forged; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>> for the kneeling lines. Start frame <b>F30</b>, end frame <b>F31</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4",
+  "shot": "S20",
+  "how": "map"
+ },
+ {
+  "id": "e8858b44-44fc-4f2c-b47d-077cde893c5c",
+  "createdAt": 1789338952.717602,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "8a3838aa-6fe1-485d-881c-4c14dfbe492e",
+    "name": "keeper"
+   },
+   {
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+    "name": "keeper-kneel"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "Open inside a churning wall of brown dust that has obscured everything into flat shadow — no shapes legible for the first second. The dust thins. Out of it: the temple (<<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>) doors standing open on a rectangle of blank white light, and two parallel lines of figures walking out in white robes with entirely blank, calm faces. Their pace is fluid and completely unhurried. Metal shot pummels the sand around them and none of it touches them. They form up facing the sea and stand there, doing nothing, while the shot continues to fall around them. They are still standing when the shot ends. Locked-off wide. No camera movement. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>, <<<8a3838aa-6fe1-485d-881c-4c14dfbe492e>>> for design; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>> for the ore — torn from rock, never forged. Start frame <b>B02</b>, end frame <b>F30</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_e8858b44-44fc-4f2c-b47d-077cde893c5c.mp4",
+  "shot": "S19",
+  "how": "map"
+ },
+ {
+  "id": "0a4c3337-498f-49bc-8aac-2ed1c52a3019",
+  "createdAt": 1789338952.717548,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "8a3838aa-6fe1-485d-881c-4c14dfbe492e",
+    "name": "keeper"
+   },
+   {
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+    "name": "keeper-kneel"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "Open inside a churning wall of brown dust that has obscured everything into flat shadow — no shapes legible for the first second. The dust thins. Out of it: the temple (<<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>) doors standing open on a rectangle of blank white light, and two parallel lines of figures walking out in white robes with entirely blank, calm faces. Their pace is fluid and completely unhurried. Metal shot pummels the sand around them and none of it touches them. They form up facing the sea and stand there, doing nothing, while the shot continues to fall around them. They are still standing when the shot ends. Locked-off wide. No camera movement. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>, <<<8a3838aa-6fe1-485d-881c-4c14dfbe492e>>> for design; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>> for the ore — torn from rock, never forged. Start frame <b>B02</b>, end frame <b>F30</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_0a4c3337-498f-49bc-8aac-2ed1c52a3019.mp4",
+  "shot": "S19",
+  "how": "map"
+ },
+ {
+  "id": "4a85d97a-3368-411a-957f-1bb06442eee5",
+  "createdAt": 1789338190.329155,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   }
+  ],
+  "prompt": "Three shots inside one generation, world and light locked across all three. [1] Wide: the white temple (<<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>) taking direct hits, sand and torn flowers raining down its face, lit blood-red by the setting sun. It does not react. [2] Closer, low: the temple doors — shut. Debris strikes and falls away. Still shut. [3] Wide from behind the temple looking out to sea: twelve ships firing into a structure that is simply standing there. No people in any of the three. No movement except falling debris and drifting smoke. The refusal to respond is the subject. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>, <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>> for design; <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>> for the temple. Start frame <b>F29</b>, end frame <b>B02</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_4a85d97a-3368-411a-957f-1bb06442eee5.mp4",
+  "shot": "S18",
+  "how": "map"
+ },
+ {
+  "id": "ce8cd528-18db-48db-a1a3-b956e45e3de5",
+  "createdAt": 1789338190.329118,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8",
+    "name": "white-temple"
+   },
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   }
+  ],
+  "prompt": "Three shots inside one generation, world and light locked across all three. [1] Wide: the white temple (<<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>) taking direct hits, sand and torn flowers raining down its face, lit blood-red by the setting sun. It does not react. [2] Closer, low: the temple doors — shut. Debris strikes and falls away. Still shut. [3] Wide from behind the temple looking out to sea: twelve ships firing into a structure that is simply standing there. No people in any of the three. No movement except falling debris and drifting smoke. The refusal to respond is the subject. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>>, <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>> for design; <<<1ed6a464-2d1e-46b2-8840-e90c2175ebb8>>> for the temple. Start frame <b>F29</b>, end frame <b>B02</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_ce8cd528-18db-48db-a1a3-b956e45e3de5.mp4",
+  "shot": "S18",
+  "how": "map"
+ },
+ {
+  "id": "8c13f573-7a01-415f-ac20-8f1f53dcc547",
+  "createdAt": 1789338172.428974,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "80fd593c-e98f-40b7-a381-fd719bca9f55",
+    "name": "keepers-isle"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   },
+   {
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+    "name": "nacre-beach"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "Locked-off wide, static, no camera shake at any point. ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>), soaked, stagger up a beach out of the surf, arms out, exhausted and happy. The ground jolts — sand leaps from the surface. They drop flat. Behind them and to the left, entering the static frame from the sea, twelve tall wooden sailing ships with billowing sails advance in line and open fire. Metal shot tears overhead. The camera does not react, does not pan, does not shake. Setting sun behind the ships, everything backlit and hazed red. The stillness of the frame against the violence inside it is the entire point. DIALOGUE &mdash; none. This shot plays silent by choice; its lines were cut on Sep 9 because the picture carries the beat alone. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity; <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>, <<<80fd593c-e98f-40b7-a381-fd719bca9f55>>>, <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>> for design. Start frame <b>F27</b>, end frame <b>F28</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_8c13f573-7a01-415f-ac20-8f1f53dcc547.mp4",
+  "shot": "S17",
+  "how": "map"
+ },
+ {
+  "id": "256dfbfe-e18a-4b42-aefa-4962f7f901bc",
+  "createdAt": 1789338172.428928,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "80fd593c-e98f-40b7-a381-fd719bca9f55",
+    "name": "keepers-isle"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   },
+   {
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+    "name": "nacre-beach"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "Locked-off wide, static, no camera shake at any point. ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>), soaked, stagger up a beach out of the surf, arms out, exhausted and happy. The ground jolts — sand leaps from the surface. They drop flat. Behind them and to the left, entering the static frame from the sea, twelve tall wooden sailing ships with billowing sails advance in line and open fire. Metal shot tears overhead. The camera does not react, does not pan, does not shake. Setting sun behind the ships, everything backlit and hazed red. The stillness of the frame against the violence inside it is the entire point. DIALOGUE &mdash; none. This shot plays silent by choice; its lines were cut on Sep 9 because the picture carries the beat alone. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity; <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>, <<<80fd593c-e98f-40b7-a381-fd719bca9f55>>>, <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>> for design. Start frame <b>F27</b>, end frame <b>F28</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_256dfbfe-e18a-4b42-aefa-4962f7f901bc.mp4",
+  "shot": "S17",
+  "how": "map"
+ },
+ {
+  "id": "e8d1b2a6-320a-4226-aa37-a1aca9edf19b",
+  "createdAt": 1789338102.067223,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0ff096fa-da4b-4a12-a371-5d678fb75651",
+    "name": "corals-abyss"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "Underwater, held wide, camera drifting almost imperceptibly. A living coral reef in full colour — fish, stingray, eels, urchins — occupying the top half of frame. ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) cross the surface far above in silhouette, backlit by sun. Below and ahead, the reef shelf ends abruptly and drops into total blackness. The camera holds as the brothers pass over the edge of the drop. Deep in the black, something very large moves and is never resolved into a shape. Do not reveal it. Caustics, particulate, shafts of light. Muffled underwater sound only. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<0ff096fa-da4b-4a12-a371-5d678fb75651>>> for design; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> for identity; <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F25</b>, end frame <b>F26</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222142_e8d1b2a6-320a-4226-aa37-a1aca9edf19b.mp4",
+  "shot": "S16",
+  "how": "map"
+ },
+ {
+  "id": "70c01e2f-bc7b-4399-9c31-ea2d725c1741",
+  "createdAt": 1789338102.067183,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0ff096fa-da4b-4a12-a371-5d678fb75651",
+    "name": "corals-abyss"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "Underwater, held wide, camera drifting almost imperceptibly. A living coral reef in full colour — fish, stingray, eels, urchins — occupying the top half of frame. ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>) cross the surface far above in silhouette, backlit by sun. Below and ahead, the reef shelf ends abruptly and drops into total blackness. The camera holds as the brothers pass over the edge of the drop. Deep in the black, something very large moves and is never resolved into a shape. Do not reveal it. Caustics, particulate, shafts of light. Muffled underwater sound only. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<0ff096fa-da4b-4a12-a371-5d678fb75651>>> for design; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> for identity; <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity. Start frame <b>F25</b>, end frame <b>F26</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222142_70c01e2f-bc7b-4399-9c31-ea2d725c1741.mp4",
+  "shot": "S16",
+  "how": "map"
+ },
+ {
+  "id": "aa65cc3d-fc49-44f2-8007-afc318ee379b",
+  "createdAt": 1789338057.56852,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 10,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+    "name": "nacre-beach"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "Locked-off wide, absolutely static, 32mm, low. Dawn on a tropical beach whose sand is faintly iridescent — pinks and pale greens in the grain. Jungle fills the left third. ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>), nineteen and eighteen, burst out of the treeline laughing and run flat-out across the sand toward the water, small in a very wide frame. They stop hard at the tide line and stand there, breathing, looking out. Beyond them across three miles of reef, a white temple is just visible on a distant isle. The camera does not move at any point. Golden hour, long shadows, warm and completely peaceful. DIALOGUE &mdash; none. This shot plays silent by choice; its lines were cut on Sep 9 because the picture carries the beat alone. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity; <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>> for design. Start frame <b>F23</b>, end frame <b>F24</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_aa65cc3d-fc49-44f2-8007-afc318ee379b.mp4",
+  "shot": "S15",
+  "how": "map"
+ },
+ {
+  "id": "194f53e7-a52a-4b50-92c5-82bdae6e10b2",
+  "createdAt": 1789338057.568478,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 10,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781",
+    "name": "kai_alder_v1"
+   },
+   {
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+    "name": "nacre-beach"
+   },
+   {
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880",
+    "name": "kai_wren_v1"
+   }
+  ],
+  "prompt": "Locked-off wide, absolutely static, 32mm, low. Dawn on a tropical beach whose sand is faintly iridescent — pinks and pale greens in the grain. Jungle fills the left third. ALDER (<<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>>) and WREN (<<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>>), nineteen and eighteen, burst out of the treeline laughing and run flat-out across the sand toward the water, small in a very wide frame. They stop hard at the tide line and stand there, breathing, looking out. Beyond them across three miles of reef, a white temple is just visible on a distant isle. The camera does not move at any point. Golden hour, long shadows, warm and completely peaceful. DIALOGUE &mdash; none. This shot plays silent by choice; its lines were cut on Sep 9 because the picture carries the beat alone. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>> for key direction, colour and contrast; <<<6b8fe17b-3956-43b2-9cfb-4d6903e88781>>> and <<<e6a2888e-b4a0-49ed-ab89-281d93e06880>>> for identity; <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>> for design. Start frame <b>F23</b>, end frame <b>F24</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the alder and wren Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_194f53e7-a52a-4b50-92c5-82bdae6e10b2.mp4",
+  "shot": "S15",
+  "how": "map"
+ },
+ {
+  "id": "c2e2b8db-9973-488e-aee8-0a1d3494855c",
+  "createdAt": 1789337773.311178,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "2e8a246e-935b-4869-9209-d7bee85217ce",
+    "name": "char_oriane_v3"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45c4d884-b89b-4694-af1f-e06eef545e30",
+    "name": "founding-stone"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Close, intimate, back at her level, upside-down as ORIANE (<<<2e8a246e-935b-4869-9209-d7bee85217ce>>>) falls upward out of the atmosphere. The crystal of her body is fracturing and the fractures are filling with light. The Founding Stone (<<<45c4d884-b89b-4694-af1f-e06eef545e30>>>), green-white the size of a fist emerges from her chest — not torn out, released. She holds it a moment, says something we do not hear, and throws it. It leaves as a green streak across the curve of the world and is gone. She looks up toward the star. Then her body comes apart into particles that fall upward and disperse. HOLD THE EMPTY FRAME for the last two and a half seconds — sky, curvature, nothing else. Sound returns only as wind. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<2e8a246e-935b-4869-9209-d7bee85217ce>>> for identity; <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>, <<<45c4d884-b89b-4694-af1f-e06eef545e30>>> for design. Start frame <b>F21</b>, end frame <b>F22</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221613_c2e2b8db-9973-488e-aee8-0a1d3494855c.mp4",
+  "shot": "S14",
+  "how": "map"
+ },
+ {
+  "id": "e4b5998b-1ff3-45e8-901b-a84027c36c49",
+  "createdAt": 1789337689.796895,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+    "name": "fx-segmented-mind"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Extreme wide, camera at sea level inside the storm, looking straight up. Total silence — no music, no effect, nothing. The cloud wall rotates around the frame edge; at its centre, directly overhead, an eye has opened and it is not weather: a black puncture reaching up out of the atmosphere, its rim drawn into a tight spiral. Sixteen specks of matter spiral upward along the wall and are gone. A soundless bloom of pale flame spreads across the opening and collapses inward. The camera does not move. Absolute silence for the full duration. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>> for design; <<<99737c53-c69a-43a8-af60-8a29fcffa072>>> for the ring of lenses. Start frame <b>F19</b>, end frame <b>F20</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221449_e4b5998b-1ff3-45e8-901b-a84027c36c49.mp4",
+  "shot": "S13",
+  "how": "map"
+ },
+ {
+  "id": "416f5f35-9bdc-411c-9b90-76cf3e7ef448",
+  "createdAt": 1789337689.796844,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+    "name": "fx-segmented-mind"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Extreme wide, camera at sea level inside the storm, looking straight up. Total silence — no music, no effect, nothing. The cloud wall rotates around the frame edge; at its centre, directly overhead, an eye has opened and it is not weather: a black puncture reaching up out of the atmosphere, its rim drawn into a tight spiral. Sixteen specks of matter spiral upward along the wall and are gone. A soundless bloom of pale flame spreads across the opening and collapses inward. The camera does not move. Absolute silence for the full duration. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>> for design; <<<99737c53-c69a-43a8-af60-8a29fcffa072>>> for the ring of lenses. Start frame <b>F19</b>, end frame <b>F20</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221449_416f5f35-9bdc-411c-9b90-76cf3e7ef448.mp4",
+  "shot": "S13",
+  "how": "map"
+ },
+ {
+  "id": "4779332a-6a05-457c-93fa-8cb4c60b1744",
+  "createdAt": 1789337649.96985,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+    "name": "fx-segmented-mind"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Extreme wide orbital shot looking down through the exosphere at a storm system on Machira (<<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>), blue-green. Total silence — no music, no effect, nothing. In the centre of the storm an eye has opened, and it is not weather: it is a puncture, a black pupil reaching up out of the atmosphere toward space. Sixteen specks of matter spiral inward along the wall of the vortex and are gone. A soundless bloom of pale flame spreads across the eye and collapses inward. Then the storm begins, slowly, to close. The camera does not move. Cold, clinical, immense. No score, no diegetic sound, absolute silence for the full duration. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>> for design; <<<99737c53-c69a-43a8-af60-8a29fcffa072>>> for the ring of lenses. Start frame <b>F19</b>, end frame <b>F20</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221409_4779332a-6a05-457c-93fa-8cb4c60b1744.mp4",
+  "shot": "S13",
+  "how": "map"
+ },
+ {
+  "id": "820907db-ba74-4ae3-84be-be5dc2423239",
+  "createdAt": 1789337649.969813,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+    "name": "fx-segmented-mind"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Extreme wide orbital shot looking down through the exosphere at a storm system on Machira (<<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>), blue-green. Total silence — no music, no effect, nothing. In the centre of the storm an eye has opened, and it is not weather: it is a puncture, a black pupil reaching up out of the atmosphere toward space. Sixteen specks of matter spiral inward along the wall of the vortex and are gone. A soundless bloom of pale flame spreads across the eye and collapses inward. Then the storm begins, slowly, to close. The camera does not move. Cold, clinical, immense. No score, no diegetic sound, absolute silence for the full duration. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>> for design; <<<99737c53-c69a-43a8-af60-8a29fcffa072>>> for the ring of lenses. Start frame <b>F19</b>, end frame <b>F20</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221409_820907db-ba74-4ae3-84be-be5dc2423239.mp4",
+  "shot": "S13",
+  "how": "map"
+ },
+ {
+  "id": "3cc59ef0-e2f8-4589-b832-eee7dc665bdc",
+  "createdAt": 1789337521.204083,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45cb61a3-0d8c-45fb-8e52-d150884765b0",
+    "name": "turned"
+   },
+   {
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+    "name": "fx-hollow"
+   },
+   {
+    "id": "b81752ae-2bda-4a57-ba83-02244d1dbeb4",
+    "name": "aura-shell"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
+    "name": "fx-kill-beat"
+   }
+  ],
+  "prompt": "Pull back off a wall of dark wet hide into open air. Extreme slow motion. A bolt of lightning connects with ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) and does not pass through her — it is caught in a shell of bent space around her body and forced to circulate, coursing around her limbs like a river held in a channel. She is lit from inside. She smiles, and arcs of electricity spark between her teeth. Two of the Turned (<<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>) in front of her register the sight and are visibly afraid. Time returns to normal in the final second as she launches at them. Photoreal, volumetric, blue-white key on a black storm. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity; <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>, <<<b81752ae-2bda-4a57-ba83-02244d1dbeb4>>> for design; <<<89a74d62-615e-4e52-b745-8bb8ceab1628>>> for the hollow — a lens, never a glow; <<<dda1e304-4f0b-4e44-aca4-db472c0e18a6>>> for the strike and blast; <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>> for the pursuers. Start frame <b>B01</b>, end frame <b>F18</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221201_3cc59ef0-e2f8-4589-b832-eee7dc665bdc.mp4",
+  "shot": "S12",
+  "how": "map"
+ },
+ {
+  "id": "c9da8ff1-1106-425c-8aec-77d06e74eff6",
+  "createdAt": 1789337521.204037,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 11,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45cb61a3-0d8c-45fb-8e52-d150884765b0",
+    "name": "turned"
+   },
+   {
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+    "name": "fx-hollow"
+   },
+   {
+    "id": "b81752ae-2bda-4a57-ba83-02244d1dbeb4",
+    "name": "aura-shell"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
+    "name": "fx-kill-beat"
+   }
+  ],
+  "prompt": "Pull back off a wall of dark wet hide into open air. Extreme slow motion. A bolt of lightning connects with ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) and does not pass through her — it is caught in a shell of bent space around her body and forced to circulate, coursing around her limbs like a river held in a channel. She is lit from inside. She smiles, and arcs of electricity spark between her teeth. Two of the Turned (<<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>) in front of her register the sight and are visibly afraid. Time returns to normal in the final second as she launches at them. Photoreal, volumetric, blue-white key on a black storm. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity; <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>, <<<b81752ae-2bda-4a57-ba83-02244d1dbeb4>>> for design; <<<89a74d62-615e-4e52-b745-8bb8ceab1628>>> for the hollow — a lens, never a glow; <<<dda1e304-4f0b-4e44-aca4-db472c0e18a6>>> for the strike and blast; <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>> for the pursuers. Start frame <b>B01</b>, end frame <b>F18</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221201_c9da8ff1-1106-425c-8aec-77d06e74eff6.mp4",
+  "shot": "S12",
+  "how": "map"
+ },
+ {
+  "id": "328324f8-f861-44ce-abcf-a0936131c0b7",
+  "createdAt": 1789337296.698665,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0acdcc05-9b65-442a-b78c-8b3197041cba",
+    "name": "oriane-ascended"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45cb61a3-0d8c-45fb-8e52-d150884765b0",
+    "name": "turned"
+   },
+   {
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+    "name": "fx-hollow"
+   },
+   {
+    "id": "9fb260d7-6eb0-4e09-85f2-ce1df9731b39",
+    "name": "leviathan"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "Lateral tracking shot moving with ORIANE (<<<0acdcc05-9b65-442a-b78c-8b3197041cba>>>) as she runs barefoot along the flank of the airborne leviathan (<<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>), passing fin after fin. The skin is crusted and spongelike; her feet find purchase on it. Iron ore spears (<<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>>) whip past her from behind, trailing electricity between raindrops. She kicks two of them out of the air and back the way they came — two of the Turned (<<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>) are swept off the flank and gone. The camera stays with her the whole way. In the last second the leviathan's flank swings across the lens and fills the frame completely, going to near-black. Rain, spray, hard side light. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>> for identity; <<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>, <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>> for design; <<<89a74d62-615e-4e52-b745-8bb8ceab1628>>> for the hollow — a lens, never a glow; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>> for the ore — torn from rock, never forged; <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>> for the pursuers. Start frame <b>F17</b>, end frame <b>B01</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_328324f8-f861-44ce-abcf-a0936131c0b7.mp4",
+  "shot": "S11",
+  "how": "map"
+ },
+ {
+  "id": "95326675-0f8e-4bab-8080-da7b36076f69",
+  "createdAt": 1789337296.69862,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0acdcc05-9b65-442a-b78c-8b3197041cba",
+    "name": "oriane-ascended"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45cb61a3-0d8c-45fb-8e52-d150884765b0",
+    "name": "turned"
+   },
+   {
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+    "name": "fx-hollow"
+   },
+   {
+    "id": "9fb260d7-6eb0-4e09-85f2-ce1df9731b39",
+    "name": "leviathan"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "Lateral tracking shot moving with ORIANE (<<<0acdcc05-9b65-442a-b78c-8b3197041cba>>>) as she runs barefoot along the flank of the airborne leviathan (<<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>), passing fin after fin. The skin is crusted and spongelike; her feet find purchase on it. Iron ore spears (<<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>>) whip past her from behind, trailing electricity between raindrops. She kicks two of them out of the air and back the way they came — two of the Turned (<<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>) are swept off the flank and gone. The camera stays with her the whole way. In the last second the leviathan's flank swings across the lens and fills the frame completely, going to near-black. Rain, spray, hard side light. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>> for identity; <<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>, <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>> for design; <<<89a74d62-615e-4e52-b745-8bb8ceab1628>>> for the hollow — a lens, never a glow; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>> for the ore — torn from rock, never forged; <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>> for the pursuers. Start frame <b>F17</b>, end frame <b>B01</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_95326675-0f8e-4bab-8080-da7b36076f69.mp4",
+  "shot": "S11",
+  "how": "map"
+ },
+ {
+  "id": "1971bd66-4b13-468f-9a3d-f962592b2433",
+  "createdAt": 1789337255.006358,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0acdcc05-9b65-442a-b78c-8b3197041cba",
+    "name": "oriane-ascended"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "9fb260d7-6eb0-4e09-85f2-ce1df9731b39",
+    "name": "leviathan"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "f11fd4fb-d32d-4663-a07b-0e59bc01611d",
+    "name": "lev-rider"
+   }
+  ],
+  "prompt": "Camera at the water line, half the frame submerged and half above, held wide, no cuts. The leviathan (<<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>) the size of a city block erupts from the deep directly ahead and rises out of frame, its armoured plating streaming, dead coral sheeting off it in slabs and crashing into the sea around the lens. Below the water line, its bulk continues down into darkness further than the eye can follow. Rows of fins span outward and inflate like leather balloons. A small figure threads between its opening jaws in the final seconds, tiny against it. Hold the wide the entire time. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>> for identity; <<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>, <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>> for design; <<<f11fd4fb-d32d-4663-a07b-0e59bc01611d>>> for the fused wielder set into the skull. Start frame <b>F16</b>, end frame <b>F17</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_1971bd66-4b13-468f-9a3d-f962592b2433.mp4",
+  "shot": "S10",
+  "how": "map"
+ },
+ {
+  "id": "bab3224f-6ea7-4d17-a89e-36ab77b6dd0f",
+  "createdAt": 1789337255.006319,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0acdcc05-9b65-442a-b78c-8b3197041cba",
+    "name": "oriane-ascended"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "9fb260d7-6eb0-4e09-85f2-ce1df9731b39",
+    "name": "leviathan"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "f11fd4fb-d32d-4663-a07b-0e59bc01611d",
+    "name": "lev-rider"
+   }
+  ],
+  "prompt": "Camera at the water line, half the frame submerged and half above, held wide, no cuts. The leviathan (<<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>) the size of a city block erupts from the deep directly ahead and rises out of frame, its armoured plating streaming, dead coral sheeting off it in slabs and crashing into the sea around the lens. Below the water line, its bulk continues down into darkness further than the eye can follow. Rows of fins span outward and inflate like leather balloons. A small figure threads between its opening jaws in the final seconds, tiny against it. Hold the wide the entire time. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>> for identity; <<<9fb260d7-6eb0-4e09-85f2-ce1df9731b39>>>, <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>> for design; <<<f11fd4fb-d32d-4663-a07b-0e59bc01611d>>> for the fused wielder set into the skull. Start frame <b>F16</b>, end frame <b>F17</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_bab3224f-6ea7-4d17-a89e-36ab77b6dd0f.mp4",
+  "shot": "S10",
+  "how": "map"
+ },
+ {
+  "id": "4abb698e-fd51-4350-a51b-80130d5c0204",
+  "createdAt": 1789337241.414949,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0acdcc05-9b65-442a-b78c-8b3197041cba",
+    "name": "oriane-ascended"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "92c5d373-1bdf-439d-85cb-ae7b25153055",
+    "name": "prop_dragon_v1_dead"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "f11fd4fb-d32d-4663-a07b-0e59bc01611d",
+    "name": "lev-rider"
+   }
+  ],
+  "prompt": "Low wide angle, camera near the water looking up. The leviathan (<<<92c5d373-1bdf-439d-85cb-ae7b25153055>>>) the size of a city block erupts from the deep and hangs in the air, held aloft by something unseen. Its natural plating is armoured with centuries of dead coral, sheeting off it in slabs. Dozens of fins span outward and inflate like leather balloons. Set into the crown of its skull, grown into the plating, is the fused wielder (<<<f11fd4fb-d32d-4663-a07b-0e59bc01611d>>>) in dark cloth, arms hanging slack. The plating around him is stained bruise-dark for metres. ORIANE (<<<0acdcc05-9b65-442a-b78c-8b3197041cba>>>) threads between its opening jaws in the final seconds, tiny against it. Hold the wide the entire time — no cutaways, no inserts. Overcast storm light, immense scale, photoreal. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>> for identity; <<<92c5d373-1bdf-439d-85cb-ae7b25153055>>>, <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>> for design; <<<f11fd4fb-d32d-4663-a07b-0e59bc01611d>>> for the fused wielder set into the skull. Start frame <b>F16</b>, end frame <b>F17</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_4abb698e-fd51-4350-a51b-80130d5c0204.mp4",
+  "shot": "S10",
+  "how": "map"
+ },
+ {
+  "id": "b34943d9-635c-4404-9726-9b7ff6fec284",
+  "createdAt": 1789337241.4149,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "0acdcc05-9b65-442a-b78c-8b3197041cba",
+    "name": "oriane-ascended"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "92c5d373-1bdf-439d-85cb-ae7b25153055",
+    "name": "prop_dragon_v1_dead"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   },
+   {
+    "id": "f11fd4fb-d32d-4663-a07b-0e59bc01611d",
+    "name": "lev-rider"
+   }
+  ],
+  "prompt": "Low wide angle, camera near the water looking up. The leviathan (<<<92c5d373-1bdf-439d-85cb-ae7b25153055>>>) the size of a city block erupts from the deep and hangs in the air, held aloft by something unseen. Its natural plating is armoured with centuries of dead coral, sheeting off it in slabs. Dozens of fins span outward and inflate like leather balloons. Set into the crown of its skull, grown into the plating, is the fused wielder (<<<f11fd4fb-d32d-4663-a07b-0e59bc01611d>>>) in dark cloth, arms hanging slack. The plating around him is stained bruise-dark for metres. ORIANE (<<<0acdcc05-9b65-442a-b78c-8b3197041cba>>>) threads between its opening jaws in the final seconds, tiny against it. Hold the wide the entire time — no cutaways, no inserts. Overcast storm light, immense scale, photoreal. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<0acdcc05-9b65-442a-b78c-8b3197041cba>>> for identity; <<<92c5d373-1bdf-439d-85cb-ae7b25153055>>>, <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>> for design; <<<f11fd4fb-d32d-4663-a07b-0e59bc01611d>>> for the fused wielder set into the skull. Start frame <b>F16</b>, end frame <b>F17</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_b34943d9-635c-4404-9726-9b7ff6fec284.mp4",
+  "shot": "S10",
+  "how": "map"
+ },
+ {
+  "id": "165ab3d9-6fe4-4862-b606-83605e88de9d",
+  "createdAt": 1789337122.130644,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 13,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "00c70af8-e0f1-4eda-90ed-c7ff87afc5f5",
+    "name": "threadwright"
+   },
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45cb61a3-0d8c-45fb-8e52-d150884765b0",
+    "name": "turned"
+   }
+  ],
+  "prompt": "Over-the-shoulder from behind THE THREADWRIGHT (<<<00c70af8-e0f1-4eda-90ed-c7ff87afc5f5>>>) in dark rippling cloth, hovering above the storm ocean, watching. Far ahead of her and small in frame, her quarry &mdash; ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) &mdash; runs across the water — distant, fast, hard to hold in the eye. The Threadwright's hands move in small precise gestures at her sides, and every one of the Turned (<<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>) in the middle distance moves as her fingers move: marionettes on invisible string. She is not hurrying. She is enjoying it. Her face is never fully shown. Long lens, heavy compression, rain in the foreground out of focus. Cold blue-grey grade, no warmth anywhere in frame. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<00c70af8-e0f1-4eda-90ed-c7ff87afc5f5>>>, <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>> for design; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity. Start frame <b>F14</b>, end frame <b>F15</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220522_165ab3d9-6fe4-4862-b606-83605e88de9d.mp4",
+  "shot": "S9",
+  "how": "map"
+ },
+ {
+  "id": "ac7a4e25-e6de-4175-bbaa-c543aa36decf",
+  "createdAt": 1789337122.130595,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 13,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "00c70af8-e0f1-4eda-90ed-c7ff87afc5f5",
+    "name": "threadwright"
+   },
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "45cb61a3-0d8c-45fb-8e52-d150884765b0",
+    "name": "turned"
+   }
+  ],
+  "prompt": "Over-the-shoulder from behind THE THREADWRIGHT (<<<00c70af8-e0f1-4eda-90ed-c7ff87afc5f5>>>) in dark rippling cloth, hovering above the storm ocean, watching. Far ahead of her and small in frame, her quarry &mdash; ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) &mdash; runs across the water — distant, fast, hard to hold in the eye. The Threadwright's hands move in small precise gestures at her sides, and every one of the Turned (<<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>>) in the middle distance moves as her fingers move: marionettes on invisible string. She is not hurrying. She is enjoying it. Her face is never fully shown. Long lens, heavy compression, rain in the foreground out of focus. Cold blue-grey grade, no warmth anywhere in frame. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<00c70af8-e0f1-4eda-90ed-c7ff87afc5f5>>>, <<<45cb61a3-0d8c-45fb-8e52-d150884765b0>>> for design; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity. Start frame <b>F14</b>, end frame <b>F15</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220522_ac7a4e25-e6de-4175-bbaa-c543aa36decf.mp4",
+  "shot": "S9",
+  "how": "map"
+ },
+ {
+  "id": "01714029-13dd-4f3b-b145-c0093fb72836",
+  "createdAt": 1789336873.574142,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "40520841-e9d3-45be-852b-c24f126ad3e1",
+    "name": "turned-water"
+   }
+  ],
+  "prompt": "Begin exactly on the previous frame — ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) flat against a vertical ice wall. Space bends around her and the atmosphere throws her upward. Her bare feet blur up the vertical face as she runs straight up it, camera craning to keep pace, the ice streaking past. Behind her one of the Turned (<<<40520841-e9d3-45be-852b-c24f126ad3e1>>>) is pulled sharply backward mid-air, folds, and drops away into the sea. Speed ramps hard on the pull, then returns to normal. The wall loses cohesion and collapses into a mountain of seawater below. Do not cut. Storm, rain, violet lightning. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity; <<<40520841-e9d3-45be-852b-c24f126ad3e1>>> for design. Start frame <b>F12</b>, end frame <b>F13</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220113_01714029-13dd-4f3b-b145-c0093fb72836.mp4",
+  "shot": "S8",
+  "how": "map"
+ },
+ {
+  "id": "ba9b30eb-8875-48da-a5d5-997722cd2c99",
+  "createdAt": 1789336873.574092,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "40520841-e9d3-45be-852b-c24f126ad3e1",
+    "name": "turned-water"
+   }
+  ],
+  "prompt": "Begin exactly on the previous frame — ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) flat against a vertical ice wall. Space bends around her and the atmosphere throws her upward. Her bare feet blur up the vertical face as she runs straight up it, camera craning to keep pace, the ice streaking past. Behind her one of the Turned (<<<40520841-e9d3-45be-852b-c24f126ad3e1>>>) is pulled sharply backward mid-air, folds, and drops away into the sea. Speed ramps hard on the pull, then returns to normal. The wall loses cohesion and collapses into a mountain of seawater below. Do not cut. Storm, rain, violet lightning. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity; <<<40520841-e9d3-45be-852b-c24f126ad3e1>>> for design. Start frame <b>F12</b>, end frame <b>F13</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220113_ba9b30eb-8875-48da-a5d5-997722cd2c99.mp4",
+  "shot": "S8",
+  "how": "map"
+ },
+ {
+  "id": "deedd011-18ca-4c9b-a25e-74f7501aaa96",
+  "createdAt": 1789336085.023237,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "40520841-e9d3-45be-852b-c24f126ad3e1",
+    "name": "turned-water"
+   }
+  ],
+  "prompt": "Unbroken continuation. The camera swings in a single arcing move from alongside ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) as she runs, to directly behind her, and the move reveals what she has not looked back at: sixteen dark human figures pursuing across the water in a loose, disciplined formation, some carried by others. Ahead of her, a wall of ocean rises vertically and solidifies into grey ice, cutting off her line. She veers left; the wall extends to meet her. She braces. Impact — she hits the ice hard and does not break. Hold the final frame on her body pressed flat against the ice, hair spread, unhurt. Storm light, heavy rain, sea spray. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity; <<<40520841-e9d3-45be-852b-c24f126ad3e1>>> for design. Start frame <b>F11</b>, end frame <b>F12</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214805_deedd011-18ca-4c9b-a25e-74f7501aaa96.mp4",
+  "shot": "S7",
+  "how": "map"
+ },
+ {
+  "id": "fd089667-31c3-4fb8-9bbd-0929dab24597",
+  "createdAt": 1789336085.023185,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 12,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "40520841-e9d3-45be-852b-c24f126ad3e1",
+    "name": "turned-water"
+   }
+  ],
+  "prompt": "Unbroken continuation. The camera swings in a single arcing move from alongside ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) as she runs, to directly behind her, and the move reveals what she has not looked back at: sixteen dark human figures pursuing across the water in a loose, disciplined formation, some carried by others. Ahead of her, a wall of ocean rises vertically and solidifies into grey ice, cutting off her line. She veers left; the wall extends to meet her. She braces. Impact — she hits the ice hard and does not break. Hold the final frame on her body pressed flat against the ice, hair spread, unhurt. Storm light, heavy rain, sea spray. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity; <<<40520841-e9d3-45be-852b-c24f126ad3e1>>> for design. Start frame <b>F11</b>, end frame <b>F12</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214805_fd089667-31c3-4fb8-9bbd-0929dab24597.mp4",
+  "shot": "S7",
+  "how": "map"
+ },
+ {
+  "id": "f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520",
+  "createdAt": 1789336054.272174,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   }
+  ],
+  "prompt": "Match cut from a frozen tear's blue facet into open ocean. Card: \"108 years later.\" Aerial tracking shot flying alongside ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) skimming the surface of a storm ocean at impossible speed, camera locked to her velocity so she sits stable in frame while the water tears past in horizontal streaks. Wind rips her hair sideways. Her body is faintly crystalline, catching lightning from above. She does not look back. Far behind her on the horizon the sky is the wrong colour — bruised violet, wrong-shaped clouds converging. 2.39:1, long lens compression, spray on the lens, desaturated except for the crystal. Sound: wind and water only. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity. Start frame <b>F10</b>, end frame <b>F11</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520.mp4",
+  "shot": "S6",
+  "how": "map"
+ },
+ {
+  "id": "a89f4676-3e0d-4506-966d-32dce04f7ab3",
+  "createdAt": 1789336054.272129,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   }
+  ],
+  "prompt": "Match cut from a frozen tear's blue facet into open ocean. Card: \"108 years later.\" Aerial tracking shot flying alongside ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) skimming the surface of a storm ocean at impossible speed, camera locked to her velocity so she sits stable in frame while the water tears past in horizontal streaks. Wind rips her hair sideways. Her body is faintly crystalline, catching lightning from above. She does not look back. Far behind her on the horizon the sky is the wrong colour — bruised violet, wrong-shaped clouds converging. 2.39:1, long lens compression, spray on the lens, desaturated except for the crystal. Sound: wind and water only. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>> for key direction, colour and contrast; <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>> for identity. Start frame <b>F10</b>, end frame <b>F11</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_a89f4676-3e0d-4506-966d-32dce04f7ab3.mp4",
+  "shot": "S6",
+  "how": "map"
+ },
+ {
+  "id": "3b4e617c-1c9f-4f71-afcc-87ab125e98da",
+  "createdAt": 1789335991.259955,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 10,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   }
+  ],
+  "prompt": "Static locked-off close-up, 100mm, no camera movement, high chroma and extreme contrast. ORIANE's face, bare and unobscured, with the aura standing off her shoulders catching a hard key from below and throwing slow-moving bands of saturated violet, cyan and amber across her cheek and throat as the plasma shifts beneath. Her features stay fully legible through the lattice. Deep saturated blue-black everywhere the key does not reach. The eyes go wet and do not spill. One slow blink. The colour moves; she barely does. No score, no glow, no particles. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> for identity. Start frame <b>F06</b>, end frame <b>F07</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214631_3b4e617c-1c9f-4f71-afcc-87ab125e98da.mp4",
+  "shot": "S4",
+  "how": "map"
+ },
+ {
+  "id": "d4fdb764-7f75-4bbd-846d-3328cd9ab6bc",
+  "createdAt": 1789335991.259908,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 10,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   }
+  ],
+  "prompt": "Static locked-off close-up, 100mm, no camera movement, high chroma and extreme contrast. ORIANE's face, bare and unobscured, with the aura standing off her shoulders catching a hard key from below and throwing slow-moving bands of saturated violet, cyan and amber across her cheek and throat as the plasma shifts beneath. Her features stay fully legible through the lattice. Deep saturated blue-black everywhere the key does not reach. The eyes go wet and do not spill. One slow blink. The colour moves; she barely does. No score, no glow, no particles. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> for identity. Start frame <b>F06</b>, end frame <b>F07</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214631_d4fdb764-7f75-4bbd-846d-3328cd9ab6bc.mp4",
+  "shot": "S4",
+  "how": "map"
+ },
+ {
+  "id": "bdf527cd-fcea-4b28-93d2-7b556490b6f5",
+  "createdAt": 1789335875.479373,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "add2f79a-b5a8-4c0a-953b-b83fc36c95b0",
+    "name": "char_caedom_v2_human"
+   }
+  ],
+  "prompt": "Continuous 18-second move. Open on CAEDOM (<<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>>) holding ORIANE (<<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>>)'s face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera until the tear; 6 words): ORIANE: &ldquo;When will you release him?&rdquo; CAEDOM: &ldquo;Tomorrow.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> and <<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>> for identity; <<<58952962-9241-4a19-aedc-031a2374e484>>> for design. Start frame <b>F08</b>, end frame <b>F09</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended and oriane Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214435_bdf527cd-fcea-4b28-93d2-7b556490b6f5.mp4",
+  "shot": "S5",
+  "how": "map"
+ },
+ {
+  "id": "5bb46cd9-4cc2-43d1-b581-ec8b5be6b3c7",
+  "createdAt": 1789335875.479312,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "add2f79a-b5a8-4c0a-953b-b83fc36c95b0",
+    "name": "char_caedom_v2_human"
+   }
+  ],
+  "prompt": "Continuous 18-second move. Open on CAEDOM (<<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>>) holding ORIANE (<<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>>)'s face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera until the tear; 6 words): ORIANE: &ldquo;When will you release him?&rdquo; CAEDOM: &ldquo;Tomorrow.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> and <<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>> for identity; <<<58952962-9241-4a19-aedc-031a2374e484>>> for design. Start frame <b>F08</b>, end frame <b>F09</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended and oriane Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214435_5bb46cd9-4cc2-43d1-b581-ec8b5be6b3c7.mp4",
+  "shot": "S5",
+  "how": "map"
+ },
+ {
+  "id": "21e77f5d-d864-424f-a56b-89348f9aac1c",
+  "createdAt": 1789335275.23514,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "4ddb1ec3-0ab7-4299-a14e-0816a278fa48",
+    "name": "char_oriane_v1_human"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "add2f79a-b5a8-4c0a-953b-b83fc36c95b0",
+    "name": "char_caedom_v2_human"
+   }
+  ],
+  "prompt": "Continuous 18-second move. Open on CAEDOM (<<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>>) holding ORIANE (<<<4ddb1ec3-0ab7-4299-a14e-0816a278fa48>>>)'s face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera until the tear; 6 words): ORIANE: &ldquo;When will you release him?&rdquo; CAEDOM: &ldquo;Tomorrow.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<4ddb1ec3-0ab7-4299-a14e-0816a278fa48>>> and <<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>> for identity; <<<58952962-9241-4a19-aedc-031a2374e484>>> for design. Start frame <b>F08</b>, end frame <b>F09</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended and oriane Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_213435_21e77f5d-d864-424f-a56b-89348f9aac1c.mp4",
+  "shot": "S5",
+  "how": "map"
+ },
+ {
+  "id": "959236d4-4ce2-45a5-9d4c-d03d7292da08",
+  "createdAt": 1789335275.235098,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "4ddb1ec3-0ab7-4299-a14e-0816a278fa48",
+    "name": "char_oriane_v1_human"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "add2f79a-b5a8-4c0a-953b-b83fc36c95b0",
+    "name": "char_caedom_v2_human"
+   }
+  ],
+  "prompt": "Continuous 18-second move. Open on CAEDOM (<<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>>) holding ORIANE (<<<4ddb1ec3-0ab7-4299-a14e-0816a278fa48>>>)'s face in both hands, tender, unhurried. He releases her and turns to look down past the courtyard's edge at a blue-green planet hanging below. The camera pushes slowly past both of them toward the planet, then tilts down to the floor of light. A single tear falls from frame above, strikes the luminous floor, and freezes instantly into a faceted bead of ice. Camera continues down into macro on the bead until one facet fills the frame and its interior is a moving blue. Hold. Sound drops away to nothing in the final two seconds. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera until the tear; 6 words): ORIANE: &ldquo;When will you release him?&rdquo; CAEDOM: &ldquo;Tomorrow.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<4ddb1ec3-0ab7-4299-a14e-0816a278fa48>>> and <<<add2f79a-b5a8-4c0a-953b-b83fc36c95b0>>> for identity; <<<58952962-9241-4a19-aedc-031a2374e484>>> for design. Start frame <b>F08</b>, end frame <b>F09</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended and oriane Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_213435_959236d4-4ce2-45a5-9d4c-d03d7292da08.mp4",
+  "shot": "S5",
+  "how": "map"
+ },
+ {
+  "id": "fed12f12-f8c1-4f40-8baf-fb8890ae92fb",
+  "createdAt": 1789334772.781645,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   }
+  ],
+  "prompt": "Static locked-off medium close-up, 75mm, absolutely no camera movement for the full duration. ORIANE (<<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>>), her body crystalline, lit from below by the star. She is arguing and losing. Micro-expression only: the jaw, the eyes going wet and not spilling, one slow blink. Her lips barely move. Refraction crawls across the crystal as the plasma shifts beneath her — the only motion in frame besides her face. Photoreal skin, visible pores through crystal distortion. No score. Room tone: distant stellar roar. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera, locked close-up &mdash; her lips barely move; Caedom is off-screen; 11 words): ORIANE: &ldquo;He could erase everything. Even Earth.&rdquo; ORIANE: &ldquo;He&rsquo;s your brother.&rdquo; CAEDOM (off-screen): &ldquo;I know.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> for identity. Start frame <b>F06</b>, end frame <b>F07</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_212612_fed12f12-f8c1-4f40-8baf-fb8890ae92fb.mp4",
+  "shot": "S4",
+  "how": "map"
+ },
+ {
+  "id": "ec2aa3e5-c396-46f6-8c85-80860eb23752",
+  "createdAt": 1789334772.78161,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   }
+  ],
+  "prompt": "Static locked-off medium close-up, 75mm, absolutely no camera movement for the full duration. ORIANE (<<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>>), her body crystalline, lit from below by the star. She is arguing and losing. Micro-expression only: the jaw, the eyes going wet and not spilling, one slow blink. Her lips barely move. Refraction crawls across the crystal as the plasma shifts beneath her — the only motion in frame besides her face. Photoreal skin, visible pores through crystal distortion. No score. Room tone: distant stellar roar. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera, locked close-up &mdash; her lips barely move; Caedom is off-screen; 11 words): ORIANE: &ldquo;He could erase everything. Even Earth.&rdquo; ORIANE: &ldquo;He&rsquo;s your brother.&rdquo; CAEDOM (off-screen): &ldquo;I know.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> for identity. Start frame <b>F06</b>, end frame <b>F07</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the oriane Soul. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_212612_ec2aa3e5-c396-46f6-8c85-80860eb23752.mp4",
+  "shot": "S4",
+  "how": "map"
+ },
+ {
+  "id": "3ef54818-5940-444f-85ad-61ae0a30a264",
+  "createdAt": 1789334139.726185,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   },
+   {
+    "id": "b86fb7ed-7b58-440b-a807-0831705e47a5",
+    "name": "caedom-ascended"
+   }
+  ],
+  "prompt": "Two-shot, wide, 40mm. Reverse angle from the previous move: we are now in front of them. Slow lateral dolly, left to right, never settling. CAEDOM (<<<b86fb7ed-7b58-440b-a807-0831705e47a5>>>), an ageless man in robes of light, calm to the point of stillness. ORIANE (<<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>>), her body crystalline beneath a robe of light, luminous and visibly afraid. The burning star fills the background out of focus. She speaks first, quietly, and he answers without raising his voice. Neither gestures. Performance is held entirely in the eyes. Natural dialogue audio, no score. Grade: warm highlights, cold shadows, gold on black. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera, both faces legible &mdash; render with audio on; 18 words): ORIANE: &ldquo;Why release him, if he could annihilate everything?&rdquo; CAEDOM: &ldquo;There must be risk if there is to be growth.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> and <<<b86fb7ed-7b58-440b-a807-0831705e47a5>>> for identity; <<<afc4fc5d-86be-4072-927c-f890966feaca>>> for design. Start frame <b>F04</b>, end frame <b>F05</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended and oriane Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_211539_3ef54818-5940-444f-85ad-61ae0a30a264.mp4",
+  "shot": "S3",
+  "how": "map"
+ },
+ {
+  "id": "4874d9e4-6f43-4838-91cf-803223a44ba0",
+  "createdAt": 1789334139.726139,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   },
+   {
+    "id": "b86fb7ed-7b58-440b-a807-0831705e47a5",
+    "name": "caedom-ascended"
+   }
+  ],
+  "prompt": "Two-shot, wide, 40mm. Reverse angle from the previous move: we are now in front of them. Slow lateral dolly, left to right, never settling. CAEDOM (<<<b86fb7ed-7b58-440b-a807-0831705e47a5>>>), an ageless man in robes of light, calm to the point of stillness. ORIANE (<<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>>), her body crystalline beneath a robe of light, luminous and visibly afraid. The burning star fills the background out of focus. She speaks first, quietly, and he answers without raising his voice. Neither gestures. Performance is held entirely in the eyes. Natural dialogue audio, no score. Grade: warm highlights, cold shadows, gold on black. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (on camera, both faces legible &mdash; render with audio on; 18 words): ORIANE: &ldquo;Why release him, if he could annihilate everything?&rdquo; CAEDOM: &ldquo;There must be risk if there is to be growth.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<217d50aa-b89f-4723-bb4d-d1725f0f12e6>>> and <<<b86fb7ed-7b58-440b-a807-0831705e47a5>>> for identity; <<<afc4fc5d-86be-4072-927c-f890966feaca>>> for design. Start frame <b>F04</b>, end frame <b>F05</b>, both already in the library. Any face at medium or closer is re-run on soul_2 with the caedom-ascended and oriane Souls. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_211539_4874d9e4-6f43-4838-91cf-803223a44ba0.mp4",
+  "shot": "S3",
+  "how": "map"
+ },
+ {
+  "id": "f84a308f-c046-4985-a4f0-deaaacddef31",
+  "createdAt": 1789321738.49404,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 30,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "5f892f87-e936-40c2-8b70-8b51d64a8f37"
+   },
+   {
+    "role": "video",
+    "id": "d7a27191-e0ba-426d-92ca-50ed9998fdfe"
+   }
+  ],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   }
+  ],
+  "prompt": "Cinematic 2.39:1. Open in total black. A slow vertical crane rises out of a churning ocean of liquid white-gold flame — the surface of a star, treated as landscape rather than sphere. Plasma moves like weather, not fire. The camera keeps rising, unhurried, for the full duration. In the final third, structures resolve out of the glare: a courtyard built from solidified beams of light, standing untouched in the flame, casting hard-edged shadows that should be impossible. No people yet. No cuts. Anamorphic flare, deep blacks, heavy atmospheric haze. Sound: low sub-bass and a distant choir of stars, no music. DIALOGUE &mdash; spoken in English, natural pace, silence around it, no score under it (voice-over, no lips in frame; 23 words): CAEDOM (V.O.): &ldquo;It would not be the last tragedy to strike this world. The final act was waiting &mdash; on the release of the Vesper.&rdquo;. REFERENCES &mdash; attach these before generating, do not describe them in words: <<<03dbcec8-c65f-482c-8c11-58782c673c93>>> for key direction, colour and contrast; <<<afc4fc5d-86be-4072-927c-f890966feaca>>> for design. Start frame <b>F01</b>, end frame <b>F02</b>, both already in the library. Chain from the rendered last frame of the previous shot, never from the still.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4",
+  "shot": "S1",
+  "how": "map"
+ },
+ {
+  "id": "7ad03129-7d8d-44a3-8688-08aabfec3d64",
+  "createdAt": 1789321217.445029,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 30,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "5f892f87-e936-40c2-8b70-8b51d64a8f37"
+   },
+   {
+    "role": "video",
+    "id": "d7a27191-e0ba-426d-92ca-50ed9998fdfe"
+   }
+  ],
+  "refs": [],
+  "prompt": "@loc_starsun_v2_build @loc_loc_starsun_v3_courtyard @char_oriane_v2_sun  Opening scene, fade in from black into light water in order of references, to robed figure disguised (Oriane) walks through memories, and a bright light cuts the scene, to camera pan and zoom around the location element Star Sun, into the inside of Star Sun courtyards, where Oriane is revealed in her Sun form, along with Caedom in Sun form.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174017_7ad03129-7d8d-44a3-8688-08aabfec3d64.mp4",
+  "shot": "S1",
+  "how": "map"
+ },
+ {
+  "id": "3a437add-909f-469f-abe4-d4ec1ab1e8c1",
+  "createdAt": 1789072459.346601,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 30,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "5f892f87-e936-40c2-8b70-8b51d64a8f37"
+   },
+   {
+    "role": "video",
+    "id": "d7a27191-e0ba-426d-92ca-50ed9998fdfe"
+   }
+  ],
+  "refs": [
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   },
+   {
+    "id": "cd20861b-9f8b-44a7-b157-92544ed075af",
+    "name": "loc_starsun_v2_build"
+   },
+   {
+    "id": "e23b9b88-3636-4fd1-8d3a-9a433f89943e",
+    "name": "loc_loc_starsun_v3_courtyard"
+   }
+  ],
+  "prompt": "@loc_starsun_v2_build @loc_loc_starsun_v3_courtyard @char_oriane_v2_sun  Opening scene, fade in from black into light water in order of references, to robed figure disguised (Oriane) walks through memories, and a bright light cuts the scene, to camera pan and zoom around the location element Star Sun, into the inside of Star Sun courtyards, where Oriane is revealed in her Sun form, along with Caedom in Sun form.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260910_203419_3a437add-909f-469f-abe4-d4ec1ab1e8c1.mp4",
+  "shot": "S1",
+  "how": "map"
+ },
+ {
+  "id": "48c4b641-9340-43bb-a813-5e4aa2de041f",
+  "createdAt": 1789072453.704865,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 30,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "5f892f87-e936-40c2-8b70-8b51d64a8f37"
+   },
+   {
+    "role": "video",
+    "id": "d7a27191-e0ba-426d-92ca-50ed9998fdfe"
+   }
+  ],
+  "refs": [
+   {
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6",
+    "name": "char_oriane_v2_sun"
+   },
+   {
+    "id": "cd20861b-9f8b-44a7-b157-92544ed075af",
+    "name": "loc_starsun_v2_build"
+   },
+   {
+    "id": "e23b9b88-3636-4fd1-8d3a-9a433f89943e",
+    "name": "loc_loc_starsun_v3_courtyard"
+   }
+  ],
+  "prompt": "@loc_starsun_v2_build @loc_loc_starsun_v3_courtyard @char_oriane_v2_sun  Opening scene, fade in from black into light water in order of references, to robed figure disguised (Oriane) walks through memories, and a bright light cuts the scene, to camera pan and zoom around the location element Star Sun, into the inside of Star Sun courtyards, where Oriane is revealed in her Sun form, along with Caedom in Sun form.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260910_203413_48c4b641-9340-43bb-a813-5e4aa2de041f.mp4",
+  "shot": "S1",
+  "how": "map"
+ }
+]

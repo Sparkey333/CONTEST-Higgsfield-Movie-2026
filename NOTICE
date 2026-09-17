@@ -1,0 +1,32 @@
+NOTICE — scope of the Apache-2.0 licence in this repository
+===========================================================
+
+The Apache License 2.0 in LICENSE applies ONLY to the software and
+tooling in this repository: the HTML documents, scripts, build files
+and configuration.
+
+It does NOT apply to, and no licence of any kind is granted in, the
+narrative and creative content, which includes without limitation:
+
+  * source/  — all files, being manuscript chapters of the unpublished
+    novel "Stone of Matter" by B.L. Barkey
+  * any quotation of, excerpt from, or passage of that novel appearing
+    anywhere in this repository, including inside HTML documents
+  * the characters, names, places, terminology, world, plot and
+    settings of that novel, whether appearing under their original
+    names or under the substitute names used for production
+
+All narrative and creative content is:
+
+    Copyright (c) B.L. Barkey. All rights reserved.
+
+No reproduction, distribution, public display, public performance,
+sublicensing, or preparation of derivative works is permitted without
+the express written permission of the copyright holder.
+
+Nothing in LICENSE should be read as granting any right in that
+content. To the extent LICENSE and this NOTICE conflict as to
+narrative and creative content, this NOTICE governs.
+
+This file is provided under Section 4 of the Apache License 2.0, which
+requires that NOTICE contents be carried in all distributions.

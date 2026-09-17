@@ -1,0 +1,75 @@
+{
+ "checked": "2026-09-14",
+ "source": "show_generations, 60 most recent video jobs; 54 are film renders from 13 Sep 17:40–22:41 UTC",
+ "seen": "metadata only — model, duration, output size, attached elements, prompt, media roles. No frame was viewed from here; the CDN is unreachable from this container.",
+ "coverage": {
+  "rendered": "S1 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20 S21 S22 S23",
+  "no_dedicated_render": "S2 — the 30s S1 at 1080p covers the S1→S2 oner",
+  "engine": "cinematic_studio_video (v2) on every shot",
+  "output": "1344x576 = 2.33:1 at 720p; the S1 extension at 2016x864 1080p"
+ },
+ "identity_breaks": [
+  {
+   "shot": "S5",
+   "what": "Caedom attached as char_caedom_v2_human (mortal) in all 4 takes; caedom-ascended in S3 and S23",
+   "severity": "high — centre of Movement I"
+  },
+  {
+   "shot": "S5",
+   "what": "Oriane attached as char_oriane_v1_human in 2 of 4 takes; char_oriane_v2_sun in S3, S4",
+   "severity": "high"
+  },
+  {
+   "shot": "S14",
+   "what": "Oriane attached as char_oriane_v3 (2e8a246e), a third element; S6–S12 used char_oriane_v3_battle",
+   "severity": "medium — close on her face"
+  },
+  {
+   "shot": "S10",
+   "what": "one pair attached prop_dragon_v1_dead as the leviathan",
+   "severity": "high — but a selection, not a regen"
+  },
+  {
+   "shot": "S10, S11",
+   "what": "Oriane attached as oriane-ascended, not char_oriane_v3_battle",
+   "severity": "low — wide shots, face small"
+  }
+ ],
+ "lane_breaks": {
+  "only_chroma_takes": [
+   "S9",
+   "S12",
+   "S17",
+   "S18",
+   "S20"
+  ],
+  "chroma_takes_alongside_A": [
+   "S4",
+   "S13",
+   "S22"
+  ],
+  "why_it_matters": "C is the chroma pass and the bible says it is not for the film. Movement II is specified fully desaturated."
+ },
+ "structural": {
+  "start_end_frames_used": 0,
+  "of": 54,
+  "meaning": "no seam is frame-matched; every cut is between two independent generations"
+ },
+ "audio": {
+  "generate_audio_on": 54,
+  "of": 54,
+  "meaning": "mute every clip's own track; lip movement on S3 S4 S5 S22 was driven by invented audio, not the takes"
+ },
+ "durations_short_of_spec": {
+  "S11": "8 vs 10",
+  "S15": "10 vs 12",
+  "S16": "8 vs 12",
+  "S17": "8 vs 10",
+  "S18": "8 vs 10",
+  "S19": "8 vs 10",
+  "S20": "12 vs 14",
+  "S22": "12 vs 14"
+ },
+ "correction": "cinematic_studio_video (v2) DID output 21:9 from the web app (1344x576). The API catalogue lists no 21:9 for it; the model audit's flag on v2 was wrong for web-app use.",
+ "elements_now_in_project": "all 22 previously flagged as outside are attached in project generations — the strip of 13 Sep is reversed"
+}

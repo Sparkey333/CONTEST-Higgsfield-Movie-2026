@@ -1,0 +1,151 @@
+{
+  "_about": "Higgsfield Virality Predictor results, recorded per clip so the ranking is reproducible rather than remembered. Job ids and source generation ids only; no CDN URLs and no account handles, so this file is safe to commit.",
+  "_method": {
+    "tool": "virality_predictor",
+    "accepts": "video only - there is no still-image mode",
+    "limits": "clip must be <= 16 s; max 2 concurrent jobs",
+    "cost": "free on the ultra plan (every job below ran at 0.03 credits remaining)",
+    "hook_window_seconds": [0, 3],
+    "dmn_note": "default_mode is the mind-wandering proxy - LOWER is better. Every other region is activation, higher is better.",
+    "sample": "9 clips, 3 video models, spanning Aug 1 - Aug 11.",
+    "disclaimer": "Platform's own wording: predictive proxy metrics, not guaranteed performance or clinical measures. These are proxies, not audience data."
+  },
+  "results": [
+    {
+      "rank": 1, "job": "ffc38e37-45bc-4218-9b6b-32bf96096c3f", "source": "d91bb8cb-7443-4a5c-ac17-9d85e952e41c",
+      "subject": "Slow drift through an immense starless void of absolute black, colossal form",
+      "luminance": "dark ground, high local contrast",
+      "model": "kling3_0_turbo", "ar": "16:9", "duration": 5.04,
+      "hook": 40, "overall": 56, "viral_potential": 55, "brain_engagement": 55, "sustain": 100,
+      "dmn_mean": 0.453, "visual_mean": 0.491, "attention_mean": 0.569, "peak_second": 5,
+      "note": "Best hook, best overall, best engagement, and by a clear margin the lowest mind-wandering figure in the set - on the LOWEST visual-cortex mean of any top-four clip. It is not being looked at harder. It is being wandered away from less."
+    },
+    {
+      "rank": 2, "job": "00c41edc-4997-44bb-a4fe-0ab518d04429", "source": "1ec87639-7a7c-4d6b-a46d-31049aaac85d",
+      "subject": "Extreme slow-motion macro of clear water suspended in mid-air, forming a sphere",
+      "luminance": "dark ground, high local contrast",
+      "model": "kling3_0_turbo", "ar": "16:9", "duration": 5.04,
+      "hook": 39, "overall": 55, "viral_potential": 56, "brain_engagement": 50, "sustain": 100,
+      "dmn_mean": 0.553, "visual_mean": 0.517, "attention_mean": 0.583, "peak_second": 5,
+      "note": "Highest attention mean in the set. The only clip whose FIRST frame is near its own attention peak (0.621 against a 0.685 maximum) - one object, close, legible in a quarter second."
+    },
+    {
+      "rank": 3, "job": "25eec492-ce3c-467e-86c2-c5f65e82daa7", "source": "059f4cdb-85a7-4d04-9b0d-026bee9a31f4",
+      "subject": "Low fast flyover of a vast shallow coral reef",
+      "luminance": "dark ground, high local contrast",
+      "model": "kling3_0_turbo", "ar": "16:9", "duration": 5.04,
+      "hook": 36, "overall": 53, "viral_potential": 52, "brain_engagement": 48, "sustain": 100,
+      "dmn_mean": 0.501, "visual_mean": 0.499, "attention_mean": 0.462, "peak_second": 5,
+      "note": "Second-best mind-wandering figure. No single subject at all, which is what refuted the close-and-singular hypothesis."
+    },
+    {
+      "rank": 4, "job": "53fb49d4-0a56-42ef-a9d3-668c5f677dd8", "source": "d7a27191-e0ba-426d-92ca-50ed9998fdfe",
+      "subject": "Figure walking forward across shallow mirror-flat water",
+      "luminance": "dark ground, high local contrast",
+      "model": "kling3_0_turbo", "ar": "16:9", "duration": 5.04,
+      "hook": 33, "overall": 51, "viral_potential": 54, "brain_engagement": 44, "sustain": 100,
+      "dmn_mean": 0.565, "visual_mean": 0.500, "attention_mean": 0.454, "peak_second": 5,
+      "note": "The best-scoring clip that contains a person."
+    },
+    {
+      "rank": 5, "job": "d9efa5d9-recorded-inline", "source": "d9efa5d9",
+      "subject": "Two figures standing on the surface of the Sun",
+      "luminance": "diffuse bright field",
+      "model": "seedance_2_5", "ar": "4:3", "duration": 5,
+      "hook": 34, "overall": 49, "viral_potential": 48, "brain_engagement": 41, "sustain": 100,
+      "dmn_mean": 0.573, "visual_mean": 0.442, "peak_second": 5,
+      "note": "Best of the bright-field clips, and still below every dark-ground clip."
+    },
+    {
+      "rank": 6, "job": "18c0779c-d735-4812-b6c1-6eb3462311fc", "source": "b42b2ffc-17e4-4abc-b8cc-1ea172b48539",
+      "subject": "Impossible courtyard standing on the blazing surface of the Sun",
+      "luminance": "diffuse bright field",
+      "model": "kling3_0_turbo", "ar": "16:9", "duration": 5.04,
+      "hook": 31, "overall": 48, "viral_potential": 48, "brain_engagement": 40, "sustain": 100,
+      "dmn_mean": 0.605, "visual_mean": 0.479, "attention_mean": 0.386, "peak_second": 5,
+      "note": "THE DECISIVE CONTROL. Same model as ranks 1-4, on the Sun instead of dark ground, and it collapses to the bottom of the table. This is what refuted the model hypothesis."
+    },
+    {
+      "rank": 7, "job": "814e79a3-966b-4a29-a9e9-f51b87fb091c", "source": "9be62a0f-5817-439d-affb-858f881b3aff",
+      "subject": "Light-wielder in the void, purple glow",
+      "luminance": "diffuse bright field on dark - glowing subject fills frame",
+      "model": "seedance_2_5", "ar": "4:3", "duration": 5.06,
+      "hook": 30, "overall": 48, "viral_potential": 49, "brain_engagement": 39, "sustain": 100,
+      "dmn_mean": 0.649, "visual_mean": 0.442, "attention_mean": 0.377, "peak_second": 5,
+      "note": "Worst mind-wandering figure in the whole set. Nominally a void clip, but the glow fills the frame - it behaves like the bright-field group, not the dark-ground group."
+    },
+    {
+      "rank": 8, "job": "e1572c53-d0b6-4f69-a29d-d2c3746d7d2b", "source": "f77f2121-0991-4cfa-8a7a-a2efb5eecf16",
+      "subject": "The Sun, vertical cut",
+      "luminance": "diffuse bright field",
+      "model": "minimax_h3", "ar": "3:4", "duration": 10.13,
+      "hook": 32, "overall": 47, "viral_potential": 44, "brain_engagement": 41, "sustain": 100,
+      "dmn_mean": 0.592, "visual_mean": 0.521, "attention_mean": 0.387, "peak_second": 10,
+      "note": "Carries a finding the score hides: the only clip whose visual response RISES over time (0.500 at t=0 to 0.566 at t=6) rather than decaying from frame one. Same prompt and same day as the wide 5 s cuts."
+    },
+    {
+      "rank": 9, "job": "e95fb85c-recorded-inline", "source": "e95fb85c",
+      "subject": "The Sun, wide",
+      "luminance": "diffuse bright field",
+      "model": "seedance_2_5", "ar": "16:9", "duration": 5,
+      "hook": 31, "overall": 47, "viral_potential": 44, "brain_engagement": 39, "sustain": 100,
+      "dmn_mean": 0.607, "peak_second": 5
+    }
+  ],
+  "findings": [
+    {
+      "id": "luminance-structure",
+      "status": "SURVIVING",
+      "claim": "Luminance structure predicts the score. High-contrast images on a dark ground score 51-56; diffuse bright fields score 47-49. Nothing crosses the line.",
+      "evidence": "Four dark-ground clips: 56, 55, 53, 51. Five bright-field clips: 49, 48, 48, 47, 47. The separation is complete - the worst dark-ground clip beats the best bright-field clip by two points. It holds across three video models, across water, void, reef and figure subjects, across 4:3, 16:9 and 3:4, and across two weeks of generation dates. The mechanism shows in the mind-wandering proxy, which orders the table almost perfectly on its own: 0.453, 0.501, 0.553, 0.565, 0.573, 0.592, 0.605, 0.607, 0.649.",
+      "action": "For social cuts, lead with dark-grounded frames. See the warning below about what this means for Movement I."
+    },
+    {
+      "id": "movement-one-warning",
+      "status": "SURVIVING",
+      "claim": "The film's entire first movement sits in the luminance regime that scores worst, and this was tested four separate ways without a single exception.",
+      "evidence": "Every clip set on the Sun scored 47-49: the wide 16:9 seedance cut (47), the vertical minimax cut (47), the two-figure seedance cut (49), and the kling courtyard (48). Three different models, three aspect ratios, four compositions, one result.",
+      "action": "This is NOT an argument to change Movement I - a sustained bright oner on the Sun is the film's opening argument and the festival cut keeps it. It IS an argument that Movement I must never be the material you cut social posts from. Post the ocean and the island; hold the Sun for the film itself.",
+      "caveat": "Nine clips is a small sample and subject was not randomised against luminance. The regularity is strong and consistent, but it is a proxy metric, not an audience."
+    },
+    {
+      "id": "attention-not-viral",
+      "status": "SURVIVING",
+      "claim": "The frontoparietal attention mean and the DMN mean order the set better than the headline viral score does.",
+      "evidence": "viral_potential puts the void-wielder clip (49) above both Sun cuts (44) while it carries the worst attention and worst mind-wandering figures in the set. dmn_mean is near-monotone against overall across all nine.",
+      "action": "When headline numbers tie, rank on dmn_mean first and attention_mean second. High viral on low attention means a good thumbnail, not a good clip."
+    },
+    {
+      "id": "payoff-lands-last",
+      "status": "SURVIVING",
+      "claim": "Every clip tested peaks on its final second, inside a hook window that only counts the first three.",
+      "evidence": "peak_second equals clip duration in all nine results; hook scores cluster 30-40 while sustain is 100 across the board.",
+      "action": "For social cuts only: open on the payoff frame, then earn it back. The film keeps its own order."
+    },
+    {
+      "id": "sustain-is-not-the-problem",
+      "status": "SURVIVING",
+      "claim": "Retention is not the weakness and needs no work.",
+      "evidence": "sustain scored 100 on all nine clips with zero variance.",
+      "action": "Spend nothing on the middle of a cut. Every point available is in the first three seconds."
+    },
+    {
+      "id": "close-and-singular",
+      "status": "REFUTED",
+      "claim_was": "One legible subject at close range beats spectacle at distance.",
+      "refuted_by": "The coral reef flyover (059f4cdb) has no single subject anywhere in frame and scored 53, above the lone walking figure at 51 and every two-figure and single-figure clip below it.",
+      "kept": "Nothing of the causal claim. The macro water clip does have the best attention mean, so close framing may help attention specifically - but it does not drive the ranking."
+    },
+    {
+      "id": "model-choice",
+      "status": "REFUTED",
+      "claim_was": "kling3_0_turbo outperforms seedance_2_5 and minimax_h3 by roughly six points of overall score. It looked airtight at 4 kling clips (51-56) against 4 non-kling (47-49) with zero overlap.",
+      "refuted_by": "The kling courtyard-on-the-Sun control (b42b2ffc) scored 48 - inside the seedance range, eight points below the worst other kling clip. Model does not separate the set; luminance does. The apparent model effect was an artefact of every early kling clip happening to be shot on dark ground and every seedance clip happening to be shot on the Sun.",
+      "kept": "Nothing. Do not choose a video model on this evidence."
+    }
+  ],
+  "not_testable": {
+    "stills": "The predictor has no still-image mode, so no image in this project can be scored this way. Stills are ranked in asset-ranks.md by provenance, lane and structural fit instead, which is a weaker kind of claim and is labelled as one.",
+    "over_16s": "Both 30 s 21:9 clips and every 20 s seedance clip in the account are refused by the tool on length."
+  }
+}

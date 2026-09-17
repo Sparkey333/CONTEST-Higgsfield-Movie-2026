@@ -1,0 +1,100 @@
+{
+ "schema": "filmdesk/1",
+ "title": "Your Film",
+ "byline": "Your Name",
+ "kind": "short",
+ "logline": "One sentence. What the film is about, not what happens in it.",
+ "runtime_target_s": 300,
+ "format": {
+  "aspect": "21:9",
+  "resolution": "1080p",
+  "fps": 24,
+  "container": "mp4"
+ },
+ "higgsfield": {
+  "project_name": "Your Higgsfield project",
+  "project_url": "https://higgsfield.ai/canvas?canvasProjectId=<uuid>",
+  "folder_id": "<uuid>",
+  "video_model": "cinematic_studio_video_4_0",
+  "image_model": "nano_banana_2",
+  "audio_model": "seed_audio",
+  "_": "folder_id is what the web app filed the generations under. No image model and almost no video model accepts it over the API, so the desk enforces the one-folder rule by ledger and cast (see README), not by asking the API."
+ },
+ "window": {
+  "from": "2026-01-01",
+  "to": null
+ },
+ "acts": [
+  {
+   "id": "I",
+   "name": "Act one",
+   "tone": "sun"
+  },
+  {
+   "id": "II",
+   "name": "Act two",
+   "tone": "void"
+  },
+  {
+   "id": "III",
+   "name": "Act three",
+   "tone": "coral"
+  }
+ ],
+ "cast": {
+  "characters": {
+   "hero": "<element uuid>",
+   "rival": "<element uuid>"
+  },
+  "environments": {
+   "plate-key-light": "<element uuid>",
+   "loc-main": "<element uuid>"
+  },
+  "props": {
+   "the-object": "<element uuid>"
+  },
+  "fx": {}
+ },
+ "souls": {
+  "hero": "<soul uuid>"
+ },
+ "retired": {},
+ "shots": [
+  {
+   "id": "S1",
+   "act": "I",
+   "title": "Opening",
+   "duration_s": 12,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Camera, lens, move. HERO (@[hero](<element uuid>)) does one thing. Key light from @[plate-key-light](<element uuid>). 21:9, photoreal, anamorphic. No text anywhere in frame. REFERENCES — attach before generating: @[hero](<element uuid>); @[plate-key-light](<element uuid>).",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": ""
+  },
+  {
+   "id": "S2",
+   "act": "I",
+   "title": "Second shot",
+   "duration_s": 10,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": ""
+  }
+ ],
+ "board": {
+  "max_alternates": 3,
+  "score_over_pick": true
+ },
+ "ledger": {
+  "_": "Every generation the desk submits is appended here with the project id, so it can be pulled back by id regardless of what the API can filter on.",
+  "jobs": []
+ }
+}

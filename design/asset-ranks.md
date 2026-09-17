@@ -1,0 +1,264 @@
+# Asset ranks — what is measured, what is judged, and what gets promoted
+
+Two different kinds of claim live in this file and they are not interchangeable.
+
+**Videos are measured.** Higgsfield's Virality Predictor returns numbers; those numbers are in
+`virality-results.json` with the job ids that produced them, and the ranking below is just that file
+sorted. Anyone can re-run it and get the same order.
+
+**Stills are judged, structurally.** The predictor has no still-image mode — there is no way to score
+an image with it — and the sandbox this analysis ran in cannot load the account's CDN, so **no image
+in this project was looked at.** The still ranking below is built from things that *are* checkable
+without seeing a picture: which lane it belongs to, how many generations back it, whether one model
+or several rendered it, and whether it has already been promoted to a clean element handle. That is
+a real signal about pipeline health. It is not a claim about whether the picture is good, and it
+should not be read as one.
+
+---
+
+## Videos — measured
+
+Nine clips, three video models, two weeks of generation dates.
+
+| # | Clip | Ground | Model | Hook | Overall | Engage | DMN ↓ |
+|---|------|--------|-------|-----:|--------:|-------:|------:|
+| 1 | Starless void, colossal form | dark | kling3_0_turbo | **40** | **56** | **55** | **0.453** |
+| 2 | Water sphere, macro | dark | kling3_0_turbo | 39 | 55 | 50 | 0.553 |
+| 3 | Coral reef, low and fast | dark | kling3_0_turbo | 36 | 53 | 48 | 0.501 |
+| 4 | Figure on mirror water | dark | kling3_0_turbo | 33 | 51 | 44 | 0.565 |
+| 5 | Two figures on the Sun | bright | seedance_2_5 | 34 | 49 | 41 | 0.573 |
+| 6 | Courtyard on the Sun | bright | kling3_0_turbo | 31 | 48 | 40 | 0.605 |
+| 7 | Light-wielder, glow in void | bright | seedance_2_5 | 30 | 48 | 39 | 0.649 |
+| 8 | The Sun, vertical 10 s | bright | minimax_h3 | 32 | 47 | 41 | 0.592 |
+| 9 | The Sun, wide | bright | seedance_2_5 | 31 | 47 | 39 | 0.607 |
+
+DMN is the mind-wandering proxy: lower is better. Sustain scored **100 on every clip**, zero variance
+— retention is not the problem and needs no work. Every point available is in the first three seconds.
+
+### What actually separates them
+
+Look at the *Ground* column. **Every high-contrast image on a dark ground scores 51–56. Every diffuse
+bright field scores 47–49. Nothing crosses the line** — the worst dark clip beats the best bright clip
+by two points.
+
+That separation survives three video models, four subjects (void, water, reef, figures), three aspect
+ratios, and two weeks of dates. The mind-wandering proxy orders the whole table almost by itself:
+0.453, 0.501, 0.553, 0.565, 0.573, 0.592, 0.605, 0.607, 0.649. A diffuse bright field gives the eye
+nowhere to fix, and attention drifts.
+
+**Two hypotheses were tested and killed on the way to that, recorded so they aren't re-run:**
+
+- *Close and singular beats spectacle at distance.* Refuted by the coral reef flyover, which has no
+  single subject anywhere in frame and outscored the lone walking figure.
+- *kling3_0_turbo beats seedance and minimax by ~6 points.* This looked airtight — four kling clips
+  at 51–56 against four others at 47–49, zero overlap. Then the kling courtyard-on-the-Sun control
+  came back at **48**, inside the seedance range and eight points below every other kling clip. The
+  apparent model effect was an artefact of every early kling clip happening to be shot on dark ground.
+  **Do not choose a video model on this evidence.**
+
+### The warning this produces about the film itself
+
+**Movement I is the Sun, and the Sun scored worst four separate ways with no exception:** wide 16:9
+seedance (47), vertical minimax (47), two figures seedance (49), kling courtyard (48). Three models,
+three aspect ratios, four compositions, one answer.
+
+This is *not* an argument to change Movement I. A sustained bright oner on the Sun is the film's
+opening argument and the festival cut keeps it. It is an argument that **Movement I must never be the
+material the social posts are cut from.** Post the ocean and the island. Hold the Sun for the film.
+
+Caveat worth keeping: nine clips is a small sample, subject was not randomised against luminance, and
+these are the platform's proxy metrics, not audience data.
+
+### Promoted for main asset consideration — video
+
+1. **Starless void, colossal form** — best on hook, overall, engagement and mind-wandering
+   simultaneously. Opens the release stream.
+2. **Water sphere macro** — highest attention mean in the set, and the only clip whose *first* frame
+   sits near its own attention peak.
+3. **Coral reef flyover** — second-best mind-wandering figure. Movement II establishing.
+4. **Figure on mirror water** — the best-scoring clip containing a person.
+
+All four are landscape, water or void with no identifiable character design in them, so they carry
+none of the publication risk the character clips do — nothing in them can be contradicted by the
+finished film. The best-scoring material is also the safest to post, which does not usually happen.
+
+---
+
+## Stills — judged structurally
+
+> **Correction, Sep 5.** The attribution script that produces these counts matched generations to
+> prompts on the first 400 characters. The split-screen character sheets share a preamble longer than
+> that, so Caedom's mortal and ascended forms were attributed to each other, and the first version of
+> this section had them backwards. The script now compares the whole prompt. Every count below is from
+> the corrected index; Tier 3 records what was built on the wrong one before it was caught.
+
+As of the morning of Sep 5, sixteen of the forty-two asset sheets had generations attributed to them,
+and all sixteen were characters. The twenty-six with nothing against them were every location, every
+lighting plate, every prop and creature, every effect, and five Turned domain variants — **the cast was
+cast and the world was not built.** By that evening all forty-two had A-lane generations and every one
+of the twenty-six had a clean element handle. What follows ranks what exists now.
+
+### Ranking signals
+
+- **A lane present** — the continuity lane everything downstream inherits. Its absence is disqualifying.
+- **One model or several** — an A lane rendered by two different engines is drift built into the
+  foundation. This is the signal that separates tier 1 from tier 2 below.
+- **Generation count** — how much selection pressure was applied before something was chosen.
+- **Clean element handle** — already promoted, already named in production vocabulary.
+
+### Tier 1 — promote now
+
+A lane rendered by a single model, backed by eight or more generations, already carrying a clean
+element handle.
+
+| Asset | A lane | Model | Handle |
+|---|---:|---|---|
+| The Keepers | 12 | nano_banana_2 | `@keeper` |
+| The fused Dominion wielder | 12 | nano_banana_2 | `@lev-rider` |
+| Oriane | 14 | text2image_soul_v2 | `@oriane` |
+| The Turned — sixteen pursuers | 8 | nano_banana_2 | `@turned` |
+| Oriane — the ascended state | 8 | nano_banana_2 | `@oriane-ascended` |
+| Oriane — battle damage | 8 | text2image_soul_v2 | `@oriane-damaged` |
+| The Turned — attunement ladder | 8 | nano_banana_2 | — |
+| Aura grammar — core vs hollow | 8 | nano_banana_2 | — |
+
+### Tier 2 — rendered by more than one engine
+
+These have an A lane rendered by more than one model, which is precisely the drift the A lane exists
+to prevent. Counts below are from the **corrected** index (see the correction note above) and include
+the Sep 5 re-renders. The platform labels a Nano Banana Pro request `nano_banana_2` and a Nano Banana 2
+request `nano_banana_flash`; the majority label in every lane is `nano_banana_2`, so "one engine" here
+means *request Pro*.
+
+| Asset | A lane by label | Handle |
+|---|---|---|
+| Alder | 11 × nano_banana_2 · 4 × text2image_soul_v2 · 4 × nano_banana_flash | `@alder` |
+| Wren | 12 × nano_banana_2 · 4 × text2image_soul_v2 · 4 × nano_banana_flash | `@wren` |
+| Caedom — the ascended form | 5 × nano_banana_2 · 4 × text2image_soul_v2 · 4 × nano_banana_flash | `@caedom-ascended` |
+| Caedom — the mortal form | 4 × nano_banana_2 · 4 × nano_banana_flash — **all eight made Sep 5** | `@caedom-mortal` (see below) |
+| The Threadwright | 7 × nano_banana_2 · 2 × text2image_soul_v2 · 4 × nano_banana_flash | `@threadwright` |
+| Turned — Water and its Phases | six labels across 16 images | `turned-water` not yet created |
+| Oriane — battle damage | 8 × text2image_soul_v2 · 1 × seedance_2_5 | `@oriane-damaged` |
+
+Every lane above now has at least seven images under its majority label, which is enough to lock
+identity from. **Select from the majority label only** — the `_flash` and `soul_v2` images are extras,
+not the sheet.
+
+*A worry that turned out to be unfounded, recorded so it is not re-investigated:* several A lanes use
+`text2image_soul_v2`, and the account's oldest Soul is mislabelled — named for Caedom, resolving to
+Oriane's images. If those generations had been Soul-conditioned, they would be wearing Oriane's face.
+They were not: **no `soul_id` is attached to any generation in any A lane.** The sheets are clean.
+
+### Tier 3 — the one that was wrong, and what it cost
+
+The first version of this file said Caedom's **ascended** form had no A lane. The corrected index says
+the opposite: **the ascended form had eight; the mortal form had none until Sep 5.** Three things were
+built on the wrong reading before it was caught:
+
+- The element handle `@caedom-mortal`, created Aug 29, points at an **ascended** image. It has to be
+  swapped in the web UI to one of the eight mortal sheets made Sep 5 (job `e25c1241` is the first).
+- A Soul named `caedom-mortal` was trained Sep 5 on four ascended and four mortal images. It is
+  contaminated and should be deleted. A replacement, `caedom-before`, was trained the same hour from the
+  eight genuine mortal sheets only.
+- The Soul `caedom-ascended` is correct: all five of its training images are the ascended form.
+
+The mortal form is now the character with the *newest* identity sheet rather than the oldest, and it has
+never been looked at by a person. It goes first at Gate A.
+
+### Tier 4 — the twenty-six with nothing
+
+Not ranked, because there is nothing to rank. Ordered for generation in the canvas build queue
+instead — three lighting plates, then six locations, then seven props and creatures, then four
+effects and the five Turned variants. That order is in the director's bible under **Higgsfield → the
+canvas**, and it is an order rather than a list: every location inherits its key from a plate, so a
+plate made late invalidates the locations made before it.
+
+One thing the video results change about how these get made. The three lighting plates are the assets
+that set luminance structure for everything downstream, and the measurements above say luminance
+structure is the single strongest predictor in the whole dataset. So when generating **l2 (the Ocean)**
+and **l3 (the Island)**, push for a dark ground with high local contrast — that is the regime every
+clip in the top four sits in, and those two movements are where the social cuts have to come from.
+**l1 (the Sun)** stays a diffuse bright field because the film requires it; just know while making it
+that it is the plate whose descendants will not travel, and do not spend extra passes trying to make
+it perform on a metric it structurally cannot win.
+
+---
+
+## What could not be done, and why
+
+- **No still was scored.** The predictor is video-only. There is no workaround that does not involve
+  animating each image into a clip first, and generation through the API bills credits the account
+  does not have.
+- **No image was looked at.** The CDN holding every asset is unreachable from the analysis sandbox.
+  Everything above is inference from prompt text, lane structure, model, count and date.
+- **Clips over 16 seconds cannot be tested at all.** That rules out both 30 s 21:9 clips and every
+  20 s seedance clip in the account.
+
+---
+
+## Sep 6 — completion audit, and the two-attribute rule
+
+Every job from Sep 5 was checked against the platform on Sep 6, and the question asked of each asset was the
+one set for the pass: *is it complete, and can more than two attributes of it be improved?*
+
+**Completion.** 76 jobs across seven batches. 73 completed. Three were content-filter rejections — the first
+Thrall sheet (re-worded, then passed), one of four Alder sheets and one of four Threadwright sheets (the identical
+prompt passed three times in the same batch) — and each was covered by a clean pass. Nothing is missing. Every
+one of the 42 assets now has a clean handle: `turned-hollows`, `turned-water`, `ladder-oriane`, `ladder-attunement`
+and `aura-grammar` were created on Sep 6 from stable A-lane jobs, closing the five gaps this file's Tier 1 and
+Tier 2 tables showed as `—`.
+
+**Attributes checked per A lane:** aspect ratio against the lane's spec; whether the references the plan calls
+for were attached (plate for a location, location for a prop, group sheet and ladder for a Turned variant, aura
+rule for an effect); the dark-ground rule where section 6 of `path-to-video.md` places it; the model label; and
+whether the current bible prompt is the one that was generated. Findings:
+
+| Gap | Assets | Count |
+|---|---|---:|
+| Generated text-only, no reference attached | every Sep 5 sheet | 49 |
+| 16:9 where the lane asks for 21:9 | the seven props, `fx-hollow`, `fx-segmented-mind`, the six Turned domain sheets | 14 |
+| Dark-ground rule missing from the prompt | `l2` only (`l3` had it) | 1 |
+| Wrong model label, prompt drift | none | 0 |
+
+No asset reaches three. The props, the two effects and the Turned domain sheets sit at two (aspect ratio plus a
+missing reference); the locations and the other plates at one or none. **So under the rule, nothing was
+regenerated for quality** — the two shared gaps are batch-level decisions rather than per-asset defects, and both
+are corrected at no cost at the anchor stage, where every frame has its plate and its sheets attached by id.
+
+**The one regeneration, and why it does not contradict that.** `l2` sat at one gap, but the gap was an unfinished
+promise: the Sep 5 version of this file and of `path-to-video.md` said the dark-ground rule would go on both the
+Ocean and the Island plates, and only the Island got it. The l2 prompt now carries the rule; the plate was
+regenerated (job `66da2493`) and promoted as `plate-ocean-dark`; every Movement II anchor was generated against
+it. The old `plate-ocean` handle remains only because the API cannot delete it.
+
+**What was made on top of that.** All 39 anchors, one image each, as the skeleton for the canvas — see
+`canvas-skeletons.md`. They have not been looked at and are not ranked here; ranking a frame the person who
+ordered it has never seen would repeat the mistake this file warns about at the top.
+
+---
+
+## Sep 8 — the concept layer, and a caution about comparing it
+
+Eleven shots were animated from their two anchors at 720p on the budget engine, and four were measured.
+
+| Shot | Overall | Hook | Mind-wandering ↓ | Peaks at |
+|---|---:|---:|---:|---:|
+| S1 · rise out of the fire | **49** | 32 | **0.592** | 10 s |
+| S11 · running the flank | 48 | **33** | 0.604 | **7 s** |
+| S10 · the leviathan | 47 | 32 | 0.667 | 10 s |
+| S20 · the mountain | 46 | 30 | 0.649 | 10 s |
+
+**Do not compare these to the nine clips above.** Those were finished renders and split cleanly 51–56 dark
+against 47–49 bright. These four are all dark-ground compositions and all four landed in the *bright* band.
+The honest reading is that the budget tier flattened the luminance advantage — not that the compositions lost
+it. An L1 score is comparable to another L1 score and to nothing else.
+
+**What the layer did show, and it survives the tier.** Every clip is weakest in its opening three seconds and
+peaks in its closing three: hooks of 30–33 against overalls of 46–49, with sustain still 98–100. The shot's own
+order puts its best second last. For the film that is correct. For a post it is backwards, which is the
+measured case for the rule already written down — a social cut opens on the payoff frame and earns it back.
+
+**The one shot that behaves differently is the one to learn from.** S11 peaks at second seven and holds the
+lowest mind-wandering of the four, and it is the only clip in the set that gets darker and closer as it runs,
+ending near-black on the creature's flank. Approach beats reveal, at least here.
+
