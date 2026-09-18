@@ -9,6 +9,7 @@ esc = lambda t: html.escape(str(t), quote=True)
 W = json.load(open(D / "workflow.json")); L = json.load(open(D / "links.json"))
 tips = (D / "tips.md").read_text(); ix = json.load(open(D / "projects" / "index.json")) if (D / "projects" / "index.json").exists() else []
 LINK = {l["id"]: l for g in L["groups"] for l in g["links"]}
+EX = [json.load(open(f)) for f in sorted((D / "projects").glob("*/examples.json"))]
 NOW = datetime.datetime.utcnow().strftime("%d %b %Y %H:%M UTC")
 
 def inline(t):
@@ -46,6 +47,17 @@ code{font:12.5px/1.45 var(--mono);background:var(--surface-2);border:1px solid v
 .chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 24px 8px} .chips .k{font:600 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);align-self:center;margin-right:4px;min-width:64px} .chip{font:11.5px var(--mono);padding:5px 9px;border-radius:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);text-decoration:none} a.chip:hover{border-color:var(--gold-line);color:var(--ink)} .chip.hf{border-color:var(--void-line);background:var(--void-soft);color:var(--void)}
 .stage .foot{padding:12px 24px 16px;border-top:1px solid var(--line-soft);font:12px var(--mono);color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap}
 .gate{margin-top:14px;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:10px;padding:14px 20px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:baseline} .gate .gk{font:700 12px/1 var(--mono);letter-spacing:.16em;color:var(--gold);background:var(--surface);border:1px solid var(--gold-line);border-radius:5px;padding:7px 9px} .gate h3{margin:0;font:600 16px/1.3 var(--body)} .gate p{margin:0;grid-column:2;font-size:14px;color:var(--ink-2)}
+/* the living course: examples + reminders */
+.course{border-top:1px solid var(--line-soft);padding:16px 24px 6px;display:grid;grid-template-columns:minmax(0,2.2fr) minmax(240px,1fr);gap:18px} @media (max-width:820px){.course{grid-template-columns:1fr}}
+.course h4{margin:0 0 10px;font:600 10.5px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)} .course h4 b{color:var(--gold);font-weight:600}
+.exrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px} .xt{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0} .xt.wide{grid-column:span 2} @media (max-width:520px){.xt.wide{grid-column:span 1}}
+.xa{position:relative;border-radius:7px;overflow:hidden;background:#1A1713;border:1px solid var(--line);aspect-ratio:21/9} .xa[data-ar="16/9"]{aspect-ratio:16/9} .xa[data-ar="1/1"]{aspect-ratio:1/1}
+.xa img,.xa video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0} .xa.live img,.xa.live video{opacity:1} .xa.live .xph{display:none}
+.xph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:8px;z-index:1;pointer-events:none} .xph b{font:600 18px var(--display);color:#EDE5D6;opacity:.9;font-weight:400} .xph span{font:9px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9A8F7C}
+.xpair{display:grid;grid-template-columns:1fr 1fr;gap:6px} .xpair .xa{aspect-ratio:21/9} .xpair .xa[data-ar="16/9"]{aspect-ratio:16/9} .xpair .xa[data-ar="1/1"]{aspect-ratio:1/1} .xpair small{display:block;font:10px var(--mono);color:var(--ink-3);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.xt figcaption{font-size:12.5px;color:var(--ink-2);line-height:1.45} .xt figcaption b{display:block;color:var(--ink);font-weight:600;font-size:13px} .xt figcaption .fr{display:block;font:10px var(--mono);color:var(--ink-3);margin-top:3px} .xt figcaption a{color:var(--void);text-decoration:none;font-size:11.5px} .xt figcaption a:hover{text-decoration:underline}
+.xt audio{width:100%;height:36px} .xa.au{aspect-ratio:auto;height:52px;background:var(--surface-2);border-color:var(--line-soft);display:flex;align-items:center;justify-content:center} .xa.au .xph{position:static;flex-direction:row;gap:8px} .xa.au .xph b{color:var(--ink-2);font-size:14px} .xa.au .xph span{color:var(--ink-3)}
+.rem ul{list-style:none;margin:0;padding:0} .rem li{margin:0 0 8px} .rem label{display:grid;grid-template-columns:18px 1fr;gap:9px;align-items:start;font-size:13.5px;color:var(--ink-2);cursor:pointer;line-height:1.45} .rem input{margin:3px 0 0;width:15px;height:15px;accent-color:var(--jade)} .rem input:checked+span{color:var(--ink-3);text-decoration:line-through} .rem .st{font:10px var(--mono);color:var(--ink-3);margin-top:6px}
 /* generic cards */
 .docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px} a.doc,.doc{display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:20px 22px 18px;box-shadow:var(--shadow)} a.doc:hover{border-color:var(--gold-line)} .doc .k{font:600 9.5px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--gold)} .doc h3{font:600 18px/1.25 var(--body);margin:0} .doc p{margin:0;font-size:14px;color:var(--ink-2);flex:1} .doc .f{font:11px/1 var(--mono);color:var(--ink-3);border-top:1px solid var(--line-soft);padding-top:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap} a.doc.primary{border-color:var(--gold-line);background:linear-gradient(180deg,var(--gold-soft),var(--surface) 62%)}
 .stats{display:flex;flex-wrap:wrap;gap:6px 14px;font:12px var(--mono);color:var(--ink-3)} .stats b{color:var(--ink);font-weight:600}
@@ -78,6 +90,30 @@ def linkchips(ids):
         l = LINK.get(i)
         if l: out.append(f'<a class="chip hf" href="{esc(l["url"])}" target="_blank" rel="noopener" title="{esc(l["for"])}">{esc(l["name"])} ↗</a>')
     return f'<div class="chips"><span class="k">links</span>{"".join(out)}</div>' if out else ""
+def xmedia(x):
+    ar = x.get("ar", "21/9"); ph = '<div class="xph"><b>' + esc(x.get("label") or "") + '</b><span>' + esc(x.get("kind", "")) + '</span></div>'
+    if x["kind"] == "image": return '<div class="xa" data-ar="' + ar + '">' + ph + '<img loading="lazy" alt="' + esc(x.get("label", "")) + '" src="' + esc(x["url"]) + '"></div>'
+    if x["kind"] == "video": return '<div class="xa" data-ar="' + ar + '">' + ph + '<video muted playsinline preload="metadata" controls poster="' + esc(x.get("poster", "")) + '" src="' + esc(x["url"]) + '"></video></div>'
+    if x["kind"] == "audio": return '<div class="xa au"><div class="xph"><b>◉ voice</b><span>' + esc(x.get("from", "")) + '</span></div></div><audio controls preload="none" src="' + esc(x["url"]) + '"></audio>'
+    return ""
+def xtile(x):
+    if x["kind"] == "pair":
+        body = '<div class="xpair"><div>' + xmedia(x["a"]) + '<small>' + esc(x["a"].get("label", "")) + '</small></div><div>' + xmedia(x["b"]) + '<small>' + esc(x["b"].get("label", "")) + '</small></div></div>'
+        opens = '<a href="' + esc(x["a"]["url"]) + '" target="_blank" rel="noopener">open left ↗</a> · <a href="' + esc(x["b"]["url"]) + '" target="_blank" rel="noopener">open right ↗</a>'
+        cls = "xt wide"
+    else:
+        body = xmedia(x); opens = '<a href="' + esc(x["url"]) + '" target="_blank" rel="noopener">open ↗</a>'; cls = "xt" + (" wide" if x["kind"] == "audio" and False else "")
+    return '<figure class="' + cls + '">' + body + '<figcaption><b>' + esc(x.get("label", "")) + '</b>' + esc(x.get("why", "")) + '<span class="fr">' + esc(x.get("from", "")) + ' · ' + opens + '</span></figcaption></figure>'
+def course(stage):
+    key = stage["key"]; blocks = []
+    for X in EX:
+        items = X.get("stages", {}).get(key) or []
+        if items: blocks.append('<div class="ex"><h4>From <b>' + esc(X.get("title", X.get("project", ""))) + '</b> — what to look for</h4><div class="exrow">' + "".join(xtile(x) for x in items) + '</div></div>')
+    rem = stage.get("reminders") or []
+    remh = ('<div class="rem"><h4>Reminders</h4><ul>' + "".join('<li><label><input type="checkbox" data-rem="' + key + ':' + str(i) + '"><span>' + esc(r) + '</span></label></li>' for i, r in enumerate(rem)) + '</ul><div class="st" data-remst="' + key + '"></div></div>') if rem else ""
+    if not blocks and not remh: return ""
+    if not blocks: blocks = ['<div class="ex"><h4>Examples</h4><p class="muted" style="font-size:13px;margin:0">No examples for this stage yet — add them to a project\'s <code>examples.json</code>.</p></div>']
+    return '<div class="course">' + "".join(blocks) + remh + '</div>'
 stages_html = []
 for s in W["stages"]:
     it = s["iterate"]; none = it["name"] == "none"
@@ -89,6 +125,7 @@ for s in W["stages"]:
 <p class="goal">{esc(s["goal"])}</p>
 <div class="grid"><div class="col"><h4>Do</h4><ol>{"".join(f"<li>{esc(x)}</li>" for x in s["steps"])}</ol><h4>In</h4><ul>{"".join(f"<li>{esc(x)}</li>" for x in s["inputs"])}</ul><h4>Out</h4><ul>{"".join(f"<li>{esc(x)}</li>" for x in s["outputs"])}</ul></div><div class="col">{iter_html}</div></div>
 {chips("surfaces", s["surfaces"], "hf")}{chips("files", s["files"])}{linkchips(s["links"])}
+{course(s)}
 <div class="foot"><span>{esc(s["mol"]["numbers"])}</span><span>{esc(s["mol"]["dates"])}</span></div></article>{gate_html}''')
 loop_html = "".join(f'<div class="lp"><b>{i+1} · {esc(x["k"])}</b><p>{esc(x["do"])}</p><code>{esc(x["cmd"])}</code></div>' for i, x in enumerate(W["loop"]["steps"]))
 expand_html = "".join(f'<div class="doc"><span class="k">{esc(k)} · unit: {esc(v["unit"])}</span><h3>{esc(v["name"])}</h3><p>{esc(v["scale"])}</p><span class="pill {"built" if v["status"].startswith("built") else "road"}">{esc(v["status"].split(" — ")[0])}</span><span class="f">{esc(v["status"].split(" — ",1)[1] if " — " in v["status"] else "")}</span></div>' for k, v in W["expand"].items() if not k.startswith("_"))
@@ -102,7 +139,14 @@ wf = head(f'{W["name"]} · Workflow', "Eight stages, five gates, one loop — th
 <section id="loop" style="margin-top:54px"><div class="sec-head"><h2><span class="n">INNER LOOP</span>Inside stages 4–6</h2><p>{esc(W["loop"]["_"])}</p></div><div class="loop">{loop_html}</div></section>
 <section id="scale"><div class="sec-head"><h2><span class="n">SCALE</span>From short to feature to game</h2><p>{esc(W["expand"]["_"])}</p></div><div class="docs">{expand_html}</div></section>
 <section id="why"><div class="sec-head"><h2><span class="n">WHY</span>What is different about this</h2></div><div class="docs">{unique_html}</div></section>
-<footer>Built by <code>anchorframe/desk.py</code> from <code>workflow.json</code> and <code>links.json</code>. Regenerate, don't hand-edit.</footer></main></body></html>'''
+<footer>Built by <code>anchorframe/desk.py</code> from <code>workflow.json</code>, <code>links.json</code> and every project's <code>examples.json</code>. Regenerate, don't hand-edit.</footer></main>
+<script>
+document.querySelectorAll('.xa img').forEach(function(i){{i.addEventListener('load',function(){{i.parentNode.classList.add('live')}});i.addEventListener('error',function(){{i.remove()}});if(i.complete&&i.naturalWidth)i.parentNode.classList.add('live')}});
+document.querySelectorAll('.xa video').forEach(function(v){{v.addEventListener('loadeddata',function(){{v.parentNode.classList.add('live')}});v.addEventListener('error',function(){{v.remove()}})}});
+(function(){{var K='anchorframe.course';var st={{}};try{{st=JSON.parse(localStorage.getItem(K)||'{{}}')}}catch(e){{}}
+var boxes=document.querySelectorAll('input[data-rem]');boxes.forEach(function(b){{b.checked=!!st[b.dataset.rem];b.addEventListener('change',function(){{st[b.dataset.rem]=b.checked;try{{localStorage.setItem(K,JSON.stringify(st))}}catch(e){{}}tally()}})}});
+function tally(){{document.querySelectorAll('[data-remst]').forEach(function(el){{var k=el.dataset.remst,all=document.querySelectorAll('input[data-rem^="'+k+':"]'),on=0;all.forEach(function(b){{if(b.checked)on++}});el.textContent=on+' of '+all.length+' ticked — kept in this browser'}})}}tally();}})();
+</script></body></html>'''
 (D / "workflow.html").write_text(wf)
 
 # ---------- links.html ----------
@@ -128,12 +172,13 @@ cards = "".join(f'''<a class="doc primary" href="projects/{esc(r["slug"])}/board
 <div class="stats"><span><b>{r["shots"]}</b> shots</span><span><b>{r["takes"]}</b> takes</span><span><b>{r["picks"]}</b> picks</span><span><b>{r["scored"]}</b> scored</span><span><b>{r["unshot"]}</b> unshot</span><span><b>{esc(r["runtime"])}</b> runtime</span></div>
 <span class="f"><span>{esc(r["byline"])}</span><span>built {esc(r["built"])}</span></span></a>''' for r in ix) or '<p class="muted">No projects yet — the first build.py run adds one here.</p>'
 toplinks = "".join(f'<a class="chip hf" href="{esc(LINK[i]["url"])}" target="_blank" rel="noopener">{esc(LINK[i]["name"])} ↗</a>' for i in ["hf_project","hf_elements","hf_cinema_studio","contest_page","festival_blog","hf_cloud_keys","hf_mcp_credits","hf_contact"] if i in LINK)
+NEX = sum(len(v) for X in EX for v in X.get("stages", {}).values())
 NAV_I = [("Workflow", "#workflow"), ("Projects", "#projects"), ("Start", "#start"), ("The loop", "#loop"), ("One folder", "#rule"), ("Scale", "#scale"), ("Why", "#why"), ("Links", "#links"), ("Keys", "keys.html"), ("Tips", "#tips")]
 idx = head(W["name"], W["tagline"]) + f'''
 <header class="top"><div class="wrap"><span class="eyebrow">{esc(W["name"])} · a folder per film</span><h1>{esc(W["name"])}</h1><p class="tag">{esc(W["tagline"])}</p><p class="lede">{esc(W["promise"])}</p>
-<div class="badges"><span class="badge on">8 stages · 5 gates · 1 loop</span><span class="badge on">{len(ix)} project{"s" if len(ix)!=1 else ""}</span><span class="badge">bring your own keys</span><span class="badge">regenerate, don't hand-edit</span><span class="badge">short → feature → play</span></div></div></header>
+<div class="badges"><span class="badge on">8 stages · 5 gates · 1 loop</span><span class="badge on">{NEX} examples · a living course</span><span class="badge on">{len(ix)} project{"s" if len(ix)!=1 else ""}</span><span class="badge">bring your own keys</span><span class="badge">regenerate, don't hand-edit</span><span class="badge">short → feature → play</span></div></div></header>
 {nav(NAV_I, "#workflow")}<main class="wrap">
-<section id="workflow"><div class="sec-head"><h2><span class="n">01</span>The workflow, at a glance</h2><p>Derived from a finished film, simplified to eight stages. ⟲ marks where you iterate; the gold ticks are the gates that close a stage. <a href="workflow.html">Open the full workflow →</a></p></div>{mapstrip("workflow.html")}</section>
+<section id="workflow"><div class="sec-head"><h2><span class="n">01</span>The workflow, at a glance</h2><p>Derived from a finished film, simplified to eight stages. ⟲ marks where you iterate; the gold ticks are the gates that close a stage. Each stage on the workflow page shows frames, takes and voice from a finished film with what to look for, and a reminders checklist that remembers your ticks. <a href="workflow.html">Open the full workflow →</a></p></div>{mapstrip("workflow.html")}</section>
 <section id="projects"><div class="sec-head"><h2><span class="n">02</span>Projects</h2><p>One card per <code>projects/&lt;slug&gt;/</code>. <code>build.py</code> keeps this list current.</p></div><div class="docs">{cards}</div></section>
 <section id="start"><div class="sec-head"><h2><span class="n">03</span>Start a project</h2></div><div class="steps">
 <div class="step"><span class="sn">01</span><div><h4>Copy the example</h4><p><code>cp anchorframe/project.example.json anchorframe/projects/&lt;slug&gt;/project.json</code></p><p>Title, kind, format, the Higgsfield project URL and folder id, the date window.</p></div></div>
