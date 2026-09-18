@@ -1,6 +1,6 @@
 # project.json — field by field
 
-`schema` · `"filmdesk/1"`.
+`schema` · `"anchorframe/1"`.
 `title`, `byline`, `logline`, `kind` (`short` | `anime` | `feature` | `series`), `runtime_target_s`.
 `format` · `aspect` (`21:9`, `16:9`, `2.39:1`…), `resolution`, `fps`, `container`.
 `higgsfield` · `project_name`, `project_url`, `folder_id`, `video_model`, `image_model`, `audio_model`. The folder id is recorded so the desk can say where a project lives; see the README for what the API can and cannot do with it.

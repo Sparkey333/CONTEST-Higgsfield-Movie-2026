@@ -5,4 +5,4 @@ cd "$(dirname "$0")" || exit 1
 command -v python3 >/dev/null || { echo "python3 is needed (xcode-select --install)"; read -r; exit 1; }
 PORT=8741; while lsof -iTCP:$PORT -sTCP:LISTEN >/dev/null 2>&1; do PORT=$((PORT+1)); done
 ( sleep 0.8; open "http://localhost:$PORT/index.html" ) &
-echo "filmdesk on http://localhost:$PORT — ctrl-C to stop"; python3 -m http.server "$PORT" --bind 127.0.0.1
+echo "anchorframe on http://localhost:$PORT — ctrl-C to stop"; python3 -m http.server "$PORT" --bind 127.0.0.1

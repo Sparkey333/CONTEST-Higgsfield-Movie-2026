@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Submit a generation for one shot of one project, and put it on the project's ledger.
 
-    python3 filmdesk/generate.py filmdesk/projects/<slug> --shot S5 --model <sdk model id> \
+    python3 anchorframe/generate.py anchorframe/projects/<slug> --shot S5 --model <sdk model id> \
         [--prompt "..." | --prompt-from-shot] [--arg key=value ...] [--args-json '{...}'] [--no-wait]
 
-Keys: HF_KEY, or HF_API_KEY + HF_API_SECRET, in the environment or in filmdesk/keys.env
+Keys: HF_KEY, or HF_API_KEY + HF_API_SECRET, in the environment or in anchorframe/keys.env
 (KEY=VALUE lines; *.env is gitignored). Get them at https://cloud.higgsfield.ai/api-keys.
 Needs `pip install higgsfield-client`.
 
@@ -37,7 +37,7 @@ def main():
     a = ap.parse_args()
     load_env(a.keys)
     if not (os.environ.get("HF_KEY") or (os.environ.get("HF_API_KEY") and os.environ.get("HF_API_SECRET"))):
-        sys.exit("no Higgsfield key: set HF_KEY or HF_API_KEY + HF_API_SECRET (env or filmdesk/keys.env). Get one at https://cloud.higgsfield.ai/api-keys")
+        sys.exit("no Higgsfield key: set HF_KEY or HF_API_KEY + HF_API_SECRET (env or anchorframe/keys.env). Get one at https://cloud.higgsfield.ai/api-keys")
     try: import higgsfield_client
     except ImportError: sys.exit("pip install higgsfield-client")
     pdir = pathlib.Path(a.project); pfile = pdir / "project.json"; P = json.load(open(pfile))

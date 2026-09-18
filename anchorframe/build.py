@@ -2,7 +2,7 @@
 """Build the shot board for one project: the cut in order, one pick per shot, the alternates,
 every tile a real render by URL, and the unshot shots with their prompts ready to paste.
 
-    python3 filmdesk/build.py filmdesk/projects/<slug>        ->  projects/<slug>/board.html
+    python3 anchorframe/build.py anchorframe/projects/<slug>        ->  projects/<slug>/board.html
 
 Reads project.json, generations.json (from ingest.py) and scores.json if present.
 Pick order: the shot's explicit `pick` -> highest Predictor score (if board.score_over_pick)
@@ -113,14 +113,14 @@ details summary{{cursor:pointer;color:var(--ink-3);font-size:12px}} pre{{white-s
 h2{{font-size:clamp(22px,3vw,30px);margin:44px 0 10px}} .muted{{color:var(--ink-3)}} footer{{margin-top:40px;color:var(--ink-3);font-size:13px}}
 @media (max-width:760px){{.row{{grid-template-columns:1fr}}}} @media (prefers-reduced-motion:reduce){{*{{transition:none!important}}}}
 </style></head><body><div class="wrap">
-<header class="mast"><p class="eyebrow"><a href="../../index.html">filmdesk</a> · {esc(P["title"])} · built {datetime.datetime.utcnow().strftime("%d %b %Y %H:%M")} UTC</p>
+<header class="mast"><p class="eyebrow"><a href="../../index.html">anchorframe</a> · {esc(P["title"])} · built {datetime.datetime.utcnow().strftime("%d %b %Y %H:%M")} UTC</p>
 <h1>{esc(P["title"])} — the cut, take by take</h1>
 <p class="lede">{esc(P.get("logline",""))}</p>
 <div class="kpis"><div class="kpi"><b>{len(P["shots"])}</b><span>shots in the cut</span></div><div class="kpi"><b>{len(G)}</b><span>takes admitted to this project</span></div><div class="kpi"><b>{placed}</b><span>shots with a pick</span></div><div class="kpi"><b>{n}</b><span>takes scored</span></div><div class="kpi"><b>{regen}</b><span>to make again</span></div><div class="kpi"><b>{unshot}</b><span>not yet shot</span></div><div class="kpi"><b>{mm}</b><span>runtime of picks + unshot</span></div></div>
 <div class="ribbon" aria-hidden="true">{"".join(ribbon)}</div><div class="legend">{legend}<span>dashed — not yet shot</span></div>
 <p class="note">Project folder: <a href="{esc(hf.get("project_url","#"))}">{esc(hf.get("project_name",""))}</a> · video on <code>{esc(hf.get("video_model",""))}</code> · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])} · {P["format"].get("fps",24)} fps. Clips play inline when this file is opened locally; in a sandboxed viewer each tile shows its identity card and an <em>open the clip</em> link.</p></header>
 {"".join(cards)}
-<footer>Built by <code>filmdesk/build.py</code> from <code>project.json</code>, <code>generations.json</code> and <code>scores.json</code>. Change the JSON and rebuild; do not hand-edit this file.</footer></div>
+<footer>Built by <code>anchorframe/build.py</code> from <code>project.json</code>, <code>generations.json</code> and <code>scores.json</code>. Change the JSON and rebuild; do not hand-edit this file.</footer></div>
 <script>
 document.querySelectorAll('.art video').forEach(v=>{{v.addEventListener('loadeddata',()=>v.parentNode.classList.add('live'));v.addEventListener('error',()=>v.remove())}});
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{{const t=b.dataset.copy,o=b.textContent;const done=()=>{{b.textContent='copied';setTimeout(()=>b.textContent=o,1400)}};try{{await navigator.clipboard.writeText(t);done();return}}catch(e){{}}const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{{document.execCommand('copy');done()}}catch(e){{b.textContent='select and ⌘C'}}ta.remove();}}));

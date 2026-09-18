@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Ingest Higgsfield generation history into one project, and nothing else.
 
-    python3 filmdesk/ingest.py filmdesk/projects/<slug> DUMP [DUMP ...] [--images] [--all] [--scores FILE]
+    python3 anchorframe/ingest.py anchorframe/projects/<slug> DUMP [DUMP ...] [--images] [--all] [--scores FILE]
 
 A DUMP is a JSON file in the shape the Higgsfield MCP `show_generations` tool returns
 ({"items":[...]}), a bare list of such items, or a file holding several of either
