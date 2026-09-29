@@ -345,7 +345,8 @@
     "Chain start/end frames on anything over 12 seconds.",
     "Audio off wherever the shot list says silent.",
     "Score every take ≤16s. Read the curve, not the number.",
-    "Keep a 'regenerate this clip on the right sheet' prompt ready for every shot with a face in it."
+    "Keep a 'regenerate this clip on the right sheet' prompt ready for every shot with a face in it.",
+    "Audio off on any regeneration of a silent shot — a regenerate-from-video prompt with audio on invents a line half the time."
    ]
   },
   {
@@ -580,7 +581,7 @@
     "do": "One pass: scenes → diff → three rules. Do not re-cut; the film is delivered. The output is the next project's starting state.",
     "exit": "The lessons are on the desk, the reminders are in the stages, the examples are in the course.",
     "cost": "An hour and no credits. The analyser and the Predictor are free on the plan.",
-    "mol": "Read from the record on Sep 29: 31 favourites (21 on shots), 15 post-deadline jobs, 3 uploads; six look-swaps against the board, three regenerations (S11 taken, S7 not, S10 undecided), one transition the board had called redundant, one splice. The scene analyses of all three uploads were queued and are folded in when they return."
+    "mol": "Read from the record on Sep 29: 31 favourites (21 on shots), 15 post-deadline jobs, 3 uploads; six look-swaps against the board, three regenerations (S11 taken, S7 not, S10 undecided; two of the four deadline-night takes carry phantom speech), one transition the board had called redundant, one splice. The scene analyses of all three uploads were queued and are folded in when they return."
    },
    "gate": null,
    "links": [

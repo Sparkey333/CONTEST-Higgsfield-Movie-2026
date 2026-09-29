@@ -633,5 +633,40 @@
   "dmn_mean": 0.623,
   "dmn_peak_second": 3,
   "note": "S7 regenerated on the battle sheet, Sep 14 23:12; not favourited. Visual falls away over the last three seconds."
+ },
+ "8e2af572-d804-4e12-b923-f5e00a8b8cf6": {
+  "job": "6ea89015-7f30-49af-9b30-f1d6f3303422",
+  "overall": 49,
+  "hook": 34,
+  "viral": 47,
+  "engagement": 44,
+  "sustain": 97,
+  "peak_second": 13,
+  "dur": 15,
+  "global": [
+   0.433,
+   0.421,
+   0.423,
+   0.425,
+   0.425,
+   0.442,
+   0.441,
+   0.445,
+   0.456,
+   0.444,
+   0.444,
+   0.442,
+   0.438,
+   0.475,
+   0.459,
+   0.45
+  ],
+  "visual_mean": 0.547,
+  "auditory_mean": 0.345,
+  "language_mean": 0.374,
+  "attention_mean": 0.43,
+  "dmn_mean": 0.563,
+  "dmn_peak_second": 1,
+  "note": "S7 regenerated on the battle sheet, Sep 14 23:12; not favourited. The model's own audio says 'I'm sorry.' at 12–13s — phantom speech."
  }
 }

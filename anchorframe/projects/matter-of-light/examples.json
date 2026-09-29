@@ -421,7 +421,7 @@
      "from": "take 022381ba · 15s"
     },
     "label": "Fixed by regenerating, not by choosing — S11",
-    "why": "When a shot has one take and it is wrong, the fix is a regeneration on the right sheet, not a different pick. Keep that prompt ready before the deadline, and solo the tail of every audio-on take.",
+    "why": "When a shot has one take and it is wrong, the fix is a regeneration on the right sheet, not a different pick. Keep that prompt ready before the deadline — and regenerate silent shots with audio off: two of the four deadline-night regenerations came back with the model's own voice in them.",
     "from": "take 328324f8 · 8s  ·  take 022381ba · 15s"
    },
    {
