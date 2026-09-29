@@ -26,14 +26,14 @@ plans = D["plans"]
 bib = [dict(id=s["id"], dur=s["dur"], mv=s["mv"]) for s in plans["bible"]["shots"]]
 brd = [dict(id=c["id"], dur=c["dur"], mv=c["mv"], title=c["title"], ghost=c["status"] == "unshot") for c in plans["shot_board"]["cards"]]
 scenes = N.get("scenes", [])
-cut = [dict(id=sc.get("shot") or "?", dur=sc["t1"] - sc["t0"], mv=mvof(sc.get("shot") or ""), title=(sc.get("desc") or "")[:60], ghost=not sc.get("shot")) for sc in scenes]
+cut = [dict(id=sc.get("shot") or "?", dur=sc["t1"] - sc["t0"], mv=sc.get("mv") or mvof(sc.get("shot") or ""), title=(sc.get("desc") or "")[:60], ghost=(sc.get("shot") in (None, "", "X", "PACK", "BLACK"))) for sc in scenes]
 cut_total = N.get("final_runtime_s") or (scenes[-1]["t1"] if scenes else 0)
 cut_label = (fmt(cut_total) + " · " + str(len(cut)) + " scenes") if cut else "pending"
 cut_rib = ribbon(cut) if cut else '<div class="ribbon thin"><div class="seg ghost" style="flex:1 0 0"></div></div>'
 rib = ('<div class="ribbon-block">'
        '<div class="ribbon-row"><div class="ribbon-label"><span class="lt">The bible · 23 shots · planned Aug 29</span><span class="lr">' + fmt(plans["bible"]["total"]) + '</span></div>' + ribbon(bib, True) + '</div>'
        '<div class="ribbon-row"><div class="ribbon-label"><span class="lt">The shot board · 27 cards · Sep 14, 22:53 UTC — the scene-clip artefact the cut was made from</span><span class="lr">' + fmt(plans["shot_board"]["total"]) + ' · grey = not yet shot</span></div>' + ribbon(brd, True) + '</div>'
-       '<div class="ribbon-row"><div class="ribbon-label"><span class="lt">The final cut · as analysed scene by scene</span><span class="lr">' + cut_label + '</span></div>' + cut_rib + '</div>'
+       '<div class="ribbon-row"><div class="ribbon-label"><span class="lt">The final cut · the Sep 16 master, scene by scene (grey = packshot, black, or a take on no board)</span><span class="lr">' + cut_label + '</span></div>' + cut_rib + '</div>'
        '<div class="legend"><span><i class="dot" style="background:var(--gold)"></i> I · the Sun</span><span><i class="dot" style="background:var(--void)"></i> II · the Ocean</span><span><i class="dot" style="background:var(--coral)"></i> III · the Island</span><span><i class="dot" style="background:var(--ink-3);opacity:.42"></i> planned but unshot, or unattributed</span></div></div>')
 
 # ---------- 2. scenes ----------

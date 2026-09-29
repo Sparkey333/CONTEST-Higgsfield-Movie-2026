@@ -44,9 +44,9 @@ for s in proj["shots"]:
                      favourites=[dict(id8=g["id"][:8], dur=g.get("duration"), at=str(g.get("createdAt"))[:10] if isinstance(g.get("createdAt"), str) else ts(g["createdAt"])[:10], model=g.get("model")) for g in f]))
 
 uploads = [dict(id="7b801917-51e4-4cfc-b62b-e8560f2b8f3e", role="master · the MOV cut after the Sep 15 generations", uploaded="2026-09-16 18:32 UTC", in_project="root · 2026-09-16 21:52 UTC"),
-           dict(id="bd28d7c2-25e7-4f5e-9e7f-90c5f710b131", role="Sep 18 upload · 18:55 UTC (the low or the HQ)", uploaded="2026-09-18 18:55 UTC", in_project="—"),
-           dict(id="c0bdbe0e-44cb-478c-86a9-f1fc2845e6f5", role="Sep 18 upload · 19:28 UTC (the low or the HQ)", uploaded="2026-09-18 19:28 UTC", in_project="—")]
-analyses = [dict(id="b51a7a53-5bd0-4ba0-91fb-a2a7dd004c57", on="7b801917", status="queued"), dict(id="c4da8f1e-583f-48c1-9b74-b6f1d767464f", on="c0bdbe0e", status="queued")]
+           dict(id="bd28d7c2-25e7-4f5e-9e7f-90c5f710b131", role="Sep 18 upload · 18:55 UTC · still in the analyser's queue", uploaded="2026-09-18 18:55 UTC", in_project="—"),
+           dict(id="c0bdbe0e-44cb-478c-86a9-f1fc2845e6f5", role="Sep 18 upload · 19:28 UTC · a 15s leviathan clip, not the film", uploaded="2026-09-18 19:28 UTC", in_project="—")]
+analyses = [dict(id="b51a7a53-5bd0-4ba0-91fb-a2a7dd004c57", on="7b801917", status="completed 23:15 UTC · 108 scenes · 6:17"), dict(id="c4da8f1e-583f-48c1-9b74-b6f1d767464f", on="c0bdbe0e", status="completed 23:17 UTC · 9 scenes · 0:15 — not the film"), dict(id="0fd8b8c7-87f5-447b-bbff-d34410a19b9b", on="bd28d7c2", status="queued since 22:30 UTC")]
 out = dict(_="Data half of the final-cut read. Regenerate with design/assemble-final-cut.py; the authored half is design/final-cut.notes.json.",
            generated=datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"), plans=plans, post_deadline_work=work, favourites=favs, uploads=uploads, analyses=analyses)
 json.dump(out, open(ROOT / "design" / "final-cut.data.json", "w"), indent=1, ensure_ascii=False)

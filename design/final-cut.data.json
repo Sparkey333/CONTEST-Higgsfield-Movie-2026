@@ -1,6 +1,6 @@
 {
  "_": "Data half of the final-cut read. Regenerate with design/assemble-final-cut.py; the authored half is design/final-cut.notes.json.",
- "generated": "2026-09-29 22:31 UTC",
+ "generated": "2026-09-29 23:46 UTC",
  "plans": {
   "bible": {
    "total": 300,
@@ -1316,13 +1316,13 @@
   },
   {
    "id": "bd28d7c2-25e7-4f5e-9e7f-90c5f710b131",
-   "role": "Sep 18 upload · 18:55 UTC (the low or the HQ)",
+   "role": "Sep 18 upload · 18:55 UTC · still in the analyser's queue",
    "uploaded": "2026-09-18 18:55 UTC",
    "in_project": "—"
   },
   {
    "id": "c0bdbe0e-44cb-478c-86a9-f1fc2845e6f5",
-   "role": "Sep 18 upload · 19:28 UTC (the low or the HQ)",
+   "role": "Sep 18 upload · 19:28 UTC · a 15s leviathan clip, not the film",
    "uploaded": "2026-09-18 19:28 UTC",
    "in_project": "—"
   }
@@ -1331,12 +1331,17 @@
   {
    "id": "b51a7a53-5bd0-4ba0-91fb-a2a7dd004c57",
    "on": "7b801917",
-   "status": "queued"
+   "status": "completed 23:15 UTC · 108 scenes · 6:17"
   },
   {
    "id": "c4da8f1e-583f-48c1-9b74-b6f1d767464f",
    "on": "c0bdbe0e",
-   "status": "queued"
+   "status": "completed 23:17 UTC · 9 scenes · 0:15 — not the film"
+  },
+  {
+   "id": "0fd8b8c7-87f5-447b-bbff-d34410a19b9b",
+   "on": "bd28d7c2",
+   "status": "queued since 22:30 UTC"
   }
  ]
 }
