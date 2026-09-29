@@ -33,7 +33,7 @@
    "shot": "S11",
    "kind": "regenerate · from the record",
    "board": "328324f8 — 8s, flagged short (the bible wants 10) and on the wrong sheet.",
-   "cut": "Four regenerations at 23:04–23:12 on deadline night, 15s, 'replace all assets with the battle sheet'; ♥ on 022381ba and 58f2b685. Scored 46 and 48 — the same band as the 8s take. One of them speaks 'Thank you' at 14–15s in its own audio.",
+   "cut": "Four regenerations at 23:04–23:12 on deadline night, 15s, 'replace all assets with the battle sheet'; ♥ on 022381ba and 58f2b685. Scored 46 and 48 — the same band as the 8s take. One of them speaks 'Thank you' at 14–15s in its own audio; the S7 pair made eight minutes later has one saying 'I'm sorry.' Two of the four deadline-night regenerations carry the model's voice.",
    "priced": "one generation + one retry, ~10 min",
    "why": "The identity break was fixed by regenerating the shot, not by choosing a different take — there was no other take. The regeneration bought length and the right face and cost nothing in score. The phantom speech is the risk that comes with it."
   },
@@ -41,7 +41,7 @@
    "shot": "S7",
    "kind": "regenerated · unused",
    "board": "deedd011.",
-   "cut": "Two regenerations on the battle sheet at 23:12 (e322ed61 scored 46, visual falling away over the last three seconds); neither favourited.",
+   "cut": "Two regenerations on the battle sheet at 23:12 (e322ed61 scored 46; 8e2af572 scored 49 — and says 'I'm sorry.' in its own audio at 12–13s); neither favourited.",
    "priced": "one generation, unused",
    "why": "Made in the same breath as S11 and not taken. The board's pick stood."
   },
@@ -164,7 +164,7 @@
   {
    "tag": "Next time",
    "t": "Mute before you grade",
-   "p": "One favourited take carries the model's own voice saying 'Thank you' in its last second. Solo every audio-on take's tail before the sound pass; a phantom line survives a grade and ruins a screening."
+   "p": "Two of the four deadline-night regenerations carry the model's own voice — 'Thank you' in a favourited S11 take, 'I'm sorry.' in an S7 take. Solo every audio-on take's tail before the sound pass, and regenerate silent shots with audio off; a phantom line survives a grade and ruins a screening."
   }
  ],
  "three_changes": [
@@ -213,9 +213,9 @@
   },
   {
    "c": "Cut",
-   "t": "Phantom speech in a silent shot",
-   "w": "One of the two favourited S11 regenerations carries the model's own audio saying 'Thank you' at 14–15s — a flank run with no dialogue in it.",
-   "r": "Solo the last two seconds of every audio-on take before it goes in the timeline. Generated ambience can carry a voice, and it is inaudible in a browser tile."
+   "t": "Phantom speech in two of four regenerations",
+   "w": "Two of the four 'regenerate this clip' takes made on deadline night carry the model's own voice — 'Thank you' at 14–15s in a favourited S11 take, 'I'm sorry.' at 12–13s in an S7 take. Both are flank runs with no dialogue in them. Neither is audible in a browser tile.",
+   "r": "A regenerate-from-video prompt with audio on invents a line half the time. Turn the model's audio off on any regeneration of a silent shot, and solo the last three seconds of every audio-on take before it goes in the timeline."
   },
   {
    "c": "Process",
