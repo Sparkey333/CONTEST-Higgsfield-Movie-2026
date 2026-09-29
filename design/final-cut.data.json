@@ -1,0 +1,1342 @@
+{
+ "_": "Data half of the final-cut read. Regenerate with design/assemble-final-cut.py; the authored half is design/final-cut.notes.json.",
+ "generated": "2026-09-29 22:31 UTC",
+ "plans": {
+  "bible": {
+   "total": 300,
+   "shots": [
+    {
+     "id": "S1",
+     "mv": 1,
+     "dur": 16,
+     "at": 0
+    },
+    {
+     "id": "S2",
+     "mv": 1,
+     "dur": 18,
+     "at": 16
+    },
+    {
+     "id": "S3",
+     "mv": 1,
+     "dur": 14,
+     "at": 34
+    },
+    {
+     "id": "S4",
+     "mv": 1,
+     "dur": 14,
+     "at": 48
+    },
+    {
+     "id": "S5",
+     "mv": 1,
+     "dur": 18,
+     "at": 62
+    },
+    {
+     "id": "S6",
+     "mv": 2,
+     "dur": 14,
+     "at": 80
+    },
+    {
+     "id": "S7",
+     "mv": 2,
+     "dur": 12,
+     "at": 94
+    },
+    {
+     "id": "S8",
+     "mv": 2,
+     "dur": 14,
+     "at": 106
+    },
+    {
+     "id": "S9",
+     "mv": 2,
+     "dur": 12,
+     "at": 120
+    },
+    {
+     "id": "S10",
+     "mv": 2,
+     "dur": 16,
+     "at": 132
+    },
+    {
+     "id": "S11",
+     "mv": 2,
+     "dur": 10,
+     "at": 148
+    },
+    {
+     "id": "S12",
+     "mv": 2,
+     "dur": 12,
+     "at": 158
+    },
+    {
+     "id": "S13",
+     "mv": 2,
+     "dur": 15,
+     "at": 170
+    },
+    {
+     "id": "S14",
+     "mv": 2,
+     "dur": 13,
+     "at": 185
+    },
+    {
+     "id": "S15",
+     "mv": 3,
+     "dur": 12,
+     "at": 198
+    },
+    {
+     "id": "S16",
+     "mv": 3,
+     "dur": 12,
+     "at": 210
+    },
+    {
+     "id": "S17",
+     "mv": 3,
+     "dur": 10,
+     "at": 222
+    },
+    {
+     "id": "S18",
+     "mv": 3,
+     "dur": 10,
+     "at": 232
+    },
+    {
+     "id": "S19",
+     "mv": 3,
+     "dur": 10,
+     "at": 242
+    },
+    {
+     "id": "S20",
+     "mv": 3,
+     "dur": 14,
+     "at": 252
+    },
+    {
+     "id": "S21",
+     "mv": 3,
+     "dur": 8,
+     "at": 266
+    },
+    {
+     "id": "S22",
+     "mv": 3,
+     "dur": 14,
+     "at": 274
+    },
+    {
+     "id": "S23",
+     "mv": 1,
+     "dur": 12,
+     "at": 288
+    }
+   ]
+  },
+  "shot_board": {
+   "total": 343,
+   "cards": [
+    {
+     "id": "S1",
+     "mv": 1,
+     "title": "Rise out of the fire",
+     "dur": 30,
+     "at": 0,
+     "pick": "f84a308f",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "1080p",
+     "audio": true
+    },
+    {
+     "id": "S3",
+     "mv": 1,
+     "title": "“There must be risk”",
+     "dur": 20,
+     "at": 30,
+     "pick": "3ef54818",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S4",
+     "mv": 1,
+     "title": "“He's your brother”",
+     "dur": 20,
+     "at": 50,
+     "pick": "fed12f12",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S5",
+     "mv": 1,
+     "title": "“Tomorrow” — the tear freezes",
+     "dur": 15,
+     "at": 70,
+     "pick": "bdf527cd",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "NEW-3",
+     "mv": 1,
+     "title": "Transition A — the facet becomes ocean",
+     "dur": 8,
+     "at": 85,
+     "pick": null,
+     "status": "unshot",
+     "model": null,
+     "res": null,
+     "audio": null
+    },
+    {
+     "id": "S6",
+     "mv": 2,
+     "title": "108 years later — the run",
+     "dur": 15,
+     "at": 93,
+     "pick": "f8035ad4",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S7",
+     "mv": 2,
+     "title": "Sixteen behind her, and a wall of ice",
+     "dur": 12,
+     "at": 108,
+     "pick": "deedd011",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S8",
+     "mv": 2,
+     "title": "Up the wall",
+     "dur": 15,
+     "at": 120,
+     "pick": "01714029",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S9",
+     "mv": 2,
+     "title": "The threadwright's eyes",
+     "dur": 13,
+     "at": 135,
+     "pick": "165ab3d9",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S10",
+     "mv": 2,
+     "title": "The leviathan",
+     "dur": 16,
+     "at": 148,
+     "pick": "1971bd66",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S11",
+     "mv": 2,
+     "title": "Running the flank",
+     "dur": 8,
+     "at": 164,
+     "pick": "328324f8",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S12",
+     "mv": 2,
+     "title": "The lightning river",
+     "dur": 11,
+     "at": 172,
+     "pick": "c9da8ff1",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S15a",
+     "mv": 3,
+     "title": "Nacre Beach — first look",
+     "dur": 5,
+     "at": 183,
+     "pick": "aa65cc3d",
+     "status": "split",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S13",
+     "mv": 2,
+     "title": "The vortex, from the Sun",
+     "dur": 11,
+     "at": 188,
+     "pick": "e4b5998b",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "NEW-1",
+     "mv": 2,
+     "title": "The mind divides",
+     "dur": 16,
+     "at": 199,
+     "pick": null,
+     "status": "unshot",
+     "model": null,
+     "res": null,
+     "audio": null
+    },
+    {
+     "id": "S14",
+     "mv": 2,
+     "title": "The Stone leaves her",
+     "dur": 11,
+     "at": 215,
+     "pick": "c2e2b8db",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "NEW-4",
+     "mv": 2,
+     "title": "Transition B — the streak crosses the world",
+     "dur": 12,
+     "at": 226,
+     "pick": null,
+     "status": "unshot",
+     "model": null,
+     "res": null,
+     "audio": null
+    },
+    {
+     "id": "S15",
+     "mv": 3,
+     "title": "Nacre Beach — the same sun",
+     "dur": 5,
+     "at": 238,
+     "pick": "aa65cc3d",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S16",
+     "mv": 3,
+     "title": "Over the abyss",
+     "dur": 8,
+     "at": 243,
+     "pick": "e8d1b2a6",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S17",
+     "mv": 3,
+     "title": "Twelve ships",
+     "dur": 8,
+     "at": 251,
+     "pick": "8c13f573",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S18",
+     "mv": 3,
+     "title": "The Temple does not answer",
+     "dur": 8,
+     "at": 259,
+     "pick": "4a85d97a",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S19",
+     "mv": 3,
+     "title": "The Keepers kneel",
+     "dur": 8,
+     "at": 267,
+     "pick": "0a4c3337",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S20",
+     "mv": 3,
+     "title": "The mountain",
+     "dur": 12,
+     "at": 275,
+     "pick": "36e39026",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "NEW-2",
+     "mv": 3,
+     "title": "The mound",
+     "dur": 16,
+     "at": 287,
+     "pick": null,
+     "status": "unshot",
+     "model": null,
+     "res": null,
+     "audio": null
+    },
+    {
+     "id": "S21",
+     "mv": 3,
+     "title": "The garden replants itself",
+     "dur": 16,
+     "at": 303,
+     "pick": "d484a959",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S22",
+     "mv": 3,
+     "title": "What Alder saw",
+     "dur": 12,
+     "at": 319,
+     "pick": "4896c8e3",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    },
+    {
+     "id": "S23",
+     "mv": 1,
+     "title": "Tomorrow, again",
+     "dur": 12,
+     "at": 331,
+     "pick": "ca08e6fd",
+     "status": "shot",
+     "model": "cinematic_studio_video_4_0",
+     "res": "720p",
+     "audio": true
+    }
+   ]
+  },
+  "anchorframe": {
+   "total": 364,
+   "shots": [
+    {
+     "id": "S1",
+     "act": "I",
+     "title": "Rise out of the fire",
+     "dur": 16,
+     "at": 0,
+     "pick": "f84a308f",
+     "status": "shot"
+    },
+    {
+     "id": "S2",
+     "act": "I",
+     "title": "The courtyard of worlds",
+     "dur": 18,
+     "at": 16,
+     "pick": "c437bc36",
+     "status": "shot"
+    },
+    {
+     "id": "S3",
+     "act": "I",
+     "title": "“There must be risk”",
+     "dur": 14,
+     "at": 34,
+     "pick": "3ef54818",
+     "status": "shot"
+    },
+    {
+     "id": "S4",
+     "act": "I",
+     "title": "“He's your brother”",
+     "dur": 14,
+     "at": 48,
+     "pick": "fed12f12",
+     "status": "shot"
+    },
+    {
+     "id": "S5",
+     "act": "I",
+     "title": "“Tomorrow” — the tear freezes",
+     "dur": 18,
+     "at": 62,
+     "pick": "bdf527cd",
+     "status": "shot"
+    },
+    {
+     "id": "NEW-3",
+     "act": "I",
+     "title": "Transition A",
+     "dur": 8,
+     "at": 80,
+     "pick": null,
+     "status": "unshot"
+    },
+    {
+     "id": "S6",
+     "act": "II",
+     "title": "108 years later — the run",
+     "dur": 14,
+     "at": 88,
+     "pick": "f8035ad4",
+     "status": "shot"
+    },
+    {
+     "id": "S7",
+     "act": "II",
+     "title": "Sixteen behind her, and a wall of ice",
+     "dur": 12,
+     "at": 102,
+     "pick": "deedd011",
+     "status": "shot"
+    },
+    {
+     "id": "S8",
+     "act": "II",
+     "title": "Up the wall",
+     "dur": 14,
+     "at": 114,
+     "pick": "01714029",
+     "status": "shot"
+    },
+    {
+     "id": "S9",
+     "act": "II",
+     "title": "The threadwright's eyes",
+     "dur": 12,
+     "at": 128,
+     "pick": "165ab3d9",
+     "status": "shot"
+    },
+    {
+     "id": "S10",
+     "act": "II",
+     "title": "The leviathan",
+     "dur": 16,
+     "at": 140,
+     "pick": "1971bd66",
+     "status": "shot"
+    },
+    {
+     "id": "S11",
+     "act": "II",
+     "title": "Running the flank",
+     "dur": 10,
+     "at": 156,
+     "pick": "328324f8",
+     "status": "shot"
+    },
+    {
+     "id": "S12",
+     "act": "II",
+     "title": "The lightning river",
+     "dur": 12,
+     "at": 166,
+     "pick": "c9da8ff1",
+     "status": "shot"
+    },
+    {
+     "id": "S13",
+     "act": "II",
+     "title": "The vortex, from the Sun",
+     "dur": 15,
+     "at": 178,
+     "pick": "e4b5998b",
+     "status": "shot"
+    },
+    {
+     "id": "NEW-1",
+     "act": "II",
+     "title": "The mind divides",
+     "dur": 16,
+     "at": 193,
+     "pick": null,
+     "status": "shot"
+    },
+    {
+     "id": "S14",
+     "act": "II",
+     "title": "The Stone leaves her",
+     "dur": 13,
+     "at": 209,
+     "pick": "c2e2b8db",
+     "status": "shot"
+    },
+    {
+     "id": "NEW-4",
+     "act": "II",
+     "title": "Transition B",
+     "dur": 12,
+     "at": 222,
+     "pick": null,
+     "status": "shot"
+    },
+    {
+     "id": "S15",
+     "act": "III",
+     "title": "Nacre Beach — the same sun",
+     "dur": 12,
+     "at": 234,
+     "pick": "aa65cc3d",
+     "status": "shot"
+    },
+    {
+     "id": "S16",
+     "act": "III",
+     "title": "Over the abyss",
+     "dur": 12,
+     "at": 246,
+     "pick": "e8d1b2a6",
+     "status": "shot"
+    },
+    {
+     "id": "S17",
+     "act": "III",
+     "title": "Twelve ships",
+     "dur": 10,
+     "at": 258,
+     "pick": "8c13f573",
+     "status": "shot"
+    },
+    {
+     "id": "S18",
+     "act": "III",
+     "title": "The Temple does not answer",
+     "dur": 10,
+     "at": 268,
+     "pick": "4a85d97a",
+     "status": "shot"
+    },
+    {
+     "id": "S19",
+     "act": "III",
+     "title": "The Keepers kneel",
+     "dur": 10,
+     "at": 278,
+     "pick": "0a4c3337",
+     "status": "shot"
+    },
+    {
+     "id": "S20",
+     "act": "III",
+     "title": "The mountain",
+     "dur": 14,
+     "at": 288,
+     "pick": "36e39026",
+     "status": "shot"
+    },
+    {
+     "id": "NEW-2",
+     "act": "III",
+     "title": "The mound",
+     "dur": 16,
+     "at": 302,
+     "pick": null,
+     "status": "shot"
+    },
+    {
+     "id": "S21",
+     "act": "III",
+     "title": "The garden replants itself",
+     "dur": 8,
+     "at": 318,
+     "pick": "d484a959",
+     "status": "shot"
+    },
+    {
+     "id": "S22",
+     "act": "III",
+     "title": "What Alder saw",
+     "dur": 14,
+     "at": 326,
+     "pick": "4896c8e3",
+     "status": "shot"
+    },
+    {
+     "id": "S23",
+     "act": "I",
+     "title": "Tomorrow, again",
+     "dur": 12,
+     "at": 340,
+     "pick": "ca08e6fd",
+     "status": "shot"
+    },
+    {
+     "id": "END",
+     "act": "I",
+     "title": "End card — the tear goes out",
+     "dur": 12,
+     "at": 352,
+     "pick": null,
+     "status": "shot"
+    }
+   ]
+  }
+ },
+ "post_deadline_work": [
+  {
+   "id": "58f2b685-4159-47d3-945f-f3914f34f4c8",
+   "id8": "58f2b685",
+   "at": "2026-09-14 23:04 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 15,
+   "res": "1080p",
+   "audio": true,
+   "label": "S11 regenerated on the battle sheet",
+   "sources": [
+    "b1b71c32:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_230433_58f2b685-4159-47d3-945f-f3914f34f4c8.mp4",
+   "favourite": true
+  },
+  {
+   "id": "022381ba-9cd9-4931-b280-582ad8550662",
+   "id8": "022381ba",
+   "at": "2026-09-14 23:04 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 15,
+   "res": "1080p",
+   "audio": true,
+   "label": "S11 regenerated on the battle sheet",
+   "sources": [
+    "b1b71c32:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_230433_022381ba-9cd9-4931-b280-582ad8550662.mp4",
+   "favourite": true
+  },
+  {
+   "id": "e322ed61-3cff-43d3-9cd8-547c55883b9e",
+   "id8": "e322ed61",
+   "at": "2026-09-14 23:12 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 15,
+   "res": "1080p",
+   "audio": true,
+   "label": "S7 regenerated on the battle sheet",
+   "sources": [
+    "32efc438:image",
+    "1c3fde8f:image",
+    "fd089667:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_231234_e322ed61-3cff-43d3-9cd8-547c55883b9e.mp4",
+   "favourite": false
+  },
+  {
+   "id": "8e2af572-d804-4e12-b923-f5e00a8b8cf6",
+   "id8": "8e2af572",
+   "at": "2026-09-14 23:12 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 15,
+   "res": "1080p",
+   "audio": true,
+   "label": "S7 regenerated on the battle sheet",
+   "sources": [
+    "32efc438:image",
+    "1c3fde8f:image",
+    "fd089667:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_231234_8e2af572-d804-4e12-b923-f5e00a8b8cf6.mp4",
+   "favourite": false
+  },
+  {
+   "id": "01b9e343-8f84-4565-9afb-bc3f2b49d68d",
+   "id8": "01b9e343",
+   "at": "2026-09-15 21:46 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 8,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-3 · Transition A (the facet becomes ocean)",
+   "sources": [
+    "ec2aa3e5:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_214642_01b9e343-8f84-4565-9afb-bc3f2b49d68d.mp4",
+   "favourite": true
+  },
+  {
+   "id": "1abebd64-3d95-4ac7-a6b2-9ebf0f336dc1",
+   "id8": "1abebd64",
+   "at": "2026-09-15 21:46 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 8,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-3 · Transition A (the facet becomes ocean)",
+   "sources": [
+    "ec2aa3e5:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_214642_1abebd64-3d95-4ac7-a6b2-9ebf0f336dc1.mp4",
+   "favourite": false
+  },
+  {
+   "id": "85ec43a9-df94-4668-a42c-ae105f81e662",
+   "id8": "85ec43a9",
+   "at": "2026-09-15 22:34 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-1 · The mind divides",
+   "sources": [],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223459_85ec43a9-df94-4668-a42c-ae105f81e662.mp4",
+   "favourite": false
+  },
+  {
+   "id": "21a9e62f-d935-4291-895c-def425f365b7",
+   "id8": "21a9e62f",
+   "at": "2026-09-15 22:34 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-1 · The mind divides",
+   "sources": [],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223459_21a9e62f-d935-4291-895c-def425f365b7.mp4",
+   "favourite": false
+  },
+  {
+   "id": "1792c59a-9188-4d0c-bafd-d2f0e8614c07",
+   "id8": "1792c59a",
+   "at": "2026-09-15 22:35 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-4 · Transition B (the streak crosses the world)",
+   "sources": [],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223517_1792c59a-9188-4d0c-bafd-d2f0e8614c07.mp4",
+   "favourite": false
+  },
+  {
+   "id": "44fa46fc-21d5-41e2-b52f-1ea644b84b67",
+   "id8": "44fa46fc",
+   "at": "2026-09-15 22:35 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-4 · Transition B (the streak crosses the world)",
+   "sources": [],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223517_44fa46fc-21d5-41e2-b52f-1ea644b84b67.mp4",
+   "favourite": false
+  },
+  {
+   "id": "9b3983d5-45d6-4ac8-ba9a-16b3dfcfcc73",
+   "id8": "9b3983d5",
+   "at": "2026-09-15 22:36 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-2 · The mound",
+   "sources": [],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223652_9b3983d5-45d6-4ac8-ba9a-16b3dfcfcc73.mp4",
+   "favourite": false
+  },
+  {
+   "id": "d496e087-9995-4ef2-bbc6-e66897dfa816",
+   "id8": "d496e087",
+   "at": "2026-09-15 22:36 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "NEW-2 · The mound",
+   "sources": [],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223652_d496e087-9995-4ef2-bbc6-e66897dfa816.mp4",
+   "favourite": false
+  },
+  {
+   "id": "b98bcb94-7dc0-42e4-911b-49728151fa71",
+   "id8": "b98bcb94",
+   "at": "2026-09-15 22:43 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "S10 upgraded to the leviathan element",
+   "sources": [
+    "32efc438:image",
+    "7757668a:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_224356_b98bcb94-7dc0-42e4-911b-49728151fa71.mp4",
+   "favourite": false
+  },
+  {
+   "id": "644f3251-767a-49dc-8025-9dceab04b75f",
+   "id8": "644f3251",
+   "at": "2026-09-15 22:43 UTC",
+   "model": "cinematic_studio_video_4_0",
+   "status": "completed",
+   "dur": 16,
+   "res": "1080p",
+   "audio": true,
+   "label": "S10 upgraded to the leviathan element",
+   "sources": [
+    "32efc438:image",
+    "7757668a:video"
+   ],
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_224356_644f3251-767a-49dc-8025-9dceab04b75f.mp4",
+   "favourite": false
+  },
+  {
+   "id": "3104ecc6-9ff9-4c53-88ee-a0785dc9af7d",
+   "id8": "3104ecc6",
+   "at": "2026-09-15 23:02 UTC",
+   "model": "cinematic_video_editor",
+   "status": "completed",
+   "dur": null,
+   "res": null,
+   "audio": null,
+   "label": "Editor splice of an S12 take",
+   "sources": [
+    "3cc59ef0:video"
+   ],
+   "url": "https://cdn.higgsfield.ai/cinematic/splice/job/3104ecc6-9ff9-4c53-88ee-a0785dc9af7d/spliced.mp4",
+   "favourite": true
+  }
+ ],
+ "favourites": [
+  {
+   "shot": "S1",
+   "title": "Rise out of the fire",
+   "pick": "f84a308f",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "3a437add",
+     "dur": 30,
+     "at": "2026-09-10",
+     "model": "cinematic_studio_video_4_0"
+    },
+    {
+     "id8": "48c4b641",
+     "dur": 30,
+     "at": "2026-09-10",
+     "model": "cinematic_studio_video_4_0"
+    },
+    {
+     "id8": "339f05e1",
+     "dur": 20,
+     "at": "2026-09-08",
+     "model": "seedance_2_5"
+    },
+    {
+     "id8": "3c5d65d9",
+     "dur": 20,
+     "at": "2026-09-08",
+     "model": "seedance_2_5"
+    }
+   ]
+  },
+  {
+   "shot": "S2",
+   "title": "The courtyard of worlds",
+   "pick": "c437bc36",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "c437bc36",
+     "dur": 20,
+     "at": "2026-09-08",
+     "model": "seedance_2_5"
+    }
+   ]
+  },
+  {
+   "shot": "S3",
+   "title": "“There must be risk”",
+   "pick": "3ef54818",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "3ef54818",
+     "dur": 20,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S4",
+   "title": "“He's your brother”",
+   "pick": "fed12f12",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "fed12f12",
+     "dur": 20,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S5",
+   "title": "“Tomorrow” — the tear freezes",
+   "pick": "bdf527cd",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "NEW-3",
+   "title": "Transition A",
+   "pick": "01b9e343",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "01b9e343",
+     "dur": 8,
+     "at": "2026-09-15",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S6",
+   "title": "108 years later — the run",
+   "pick": "f8035ad4",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S7",
+   "title": "Sixteen behind her, and a wall of ice",
+   "pick": "deedd011",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S8",
+   "title": "Up the wall",
+   "pick": "01714029",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S9",
+   "title": "The threadwright's eyes",
+   "pick": "165ab3d9",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S10",
+   "title": "The leviathan",
+   "pick": "1971bd66",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S11",
+   "title": "Running the flank",
+   "pick": "328324f8",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "022381ba",
+     "dur": 15,
+     "at": "2026-09-14",
+     "model": "cinematic_studio_video_4_0"
+    },
+    {
+     "id8": "58f2b685",
+     "dur": 15,
+     "at": "2026-09-14",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S12",
+   "title": "The lightning river",
+   "pick": "c9da8ff1",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "3104ecc6",
+     "dur": null,
+     "at": "2026-09-15",
+     "model": "cinematic_video_editor"
+    },
+    {
+     "id8": "f0a995ac",
+     "dur": 14,
+     "at": "2026-09-14",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S13",
+   "title": "The vortex, from the Sun",
+   "pick": "e4b5998b",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "NEW-1",
+   "title": "The mind divides",
+   "pick": null,
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S14",
+   "title": "The Stone leaves her",
+   "pick": "c2e2b8db",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "NEW-4",
+   "title": "Transition B",
+   "pick": null,
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S15",
+   "title": "Nacre Beach — the same sun",
+   "pick": "aa65cc3d",
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S16",
+   "title": "Over the abyss",
+   "pick": "e8d1b2a6",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "70c01e2f",
+     "dur": 8,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S17",
+   "title": "Twelve ships",
+   "pick": "8c13f573",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "8c13f573",
+     "dur": 8,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S18",
+   "title": "The Temple does not answer",
+   "pick": "4a85d97a",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "ce8cd528",
+     "dur": 8,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S19",
+   "title": "The Keepers kneel",
+   "pick": "0a4c3337",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "0a4c3337",
+     "dur": 8,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S20",
+   "title": "The mountain",
+   "pick": "36e39026",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "2ab9dfa7",
+     "dur": 12,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "NEW-2",
+   "title": "The mound",
+   "pick": null,
+   "pick_favourited": false,
+   "favourites": []
+  },
+  {
+   "shot": "S21",
+   "title": "The garden replants itself",
+   "pick": "d484a959",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "d484a959",
+     "dur": 16,
+     "at": "2026-09-14",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S22",
+   "title": "What Alder saw",
+   "pick": "4896c8e3",
+   "pick_favourited": false,
+   "favourites": [
+    {
+     "id8": "4bb7a3e9",
+     "dur": 12,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "S23",
+   "title": "Tomorrow, again",
+   "pick": "ca08e6fd",
+   "pick_favourited": true,
+   "favourites": [
+    {
+     "id8": "ca08e6fd",
+     "dur": 12,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    },
+    {
+     "id8": "ae644d57",
+     "dur": 12,
+     "at": "2026-09-13",
+     "model": "cinematic_studio_video_4_0"
+    }
+   ]
+  },
+  {
+   "shot": "END",
+   "title": "End card — the tear goes out",
+   "pick": null,
+   "pick_favourited": false,
+   "favourites": []
+  }
+ ],
+ "uploads": [
+  {
+   "id": "7b801917-51e4-4cfc-b62b-e8560f2b8f3e",
+   "role": "master · the MOV cut after the Sep 15 generations",
+   "uploaded": "2026-09-16 18:32 UTC",
+   "in_project": "root · 2026-09-16 21:52 UTC"
+  },
+  {
+   "id": "bd28d7c2-25e7-4f5e-9e7f-90c5f710b131",
+   "role": "Sep 18 upload · 18:55 UTC (the low or the HQ)",
+   "uploaded": "2026-09-18 18:55 UTC",
+   "in_project": "—"
+  },
+  {
+   "id": "c0bdbe0e-44cb-478c-86a9-f1fc2845e6f5",
+   "role": "Sep 18 upload · 19:28 UTC (the low or the HQ)",
+   "uploaded": "2026-09-18 19:28 UTC",
+   "in_project": "—"
+  }
+ ],
+ "analyses": [
+  {
+   "id": "b51a7a53-5bd0-4ba0-91fb-a2a7dd004c57",
+   "on": "7b801917",
+   "status": "queued"
+  },
+  {
+   "id": "c4da8f1e-583f-48c1-9b74-b6f1d767464f",
+   "on": "c0bdbe0e",
+   "status": "queued"
+  }
+ ]
+}
