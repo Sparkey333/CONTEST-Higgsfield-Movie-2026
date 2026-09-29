@@ -7,10 +7,10 @@ Anchorframe is the production method that carried *Matter of Light* (5:43, 21:9,
 Nothing goes to video until it already exists as stills that are right. Every face is attached by id, never re-described. Every take is on a ledger. The cut is chosen from evidence.
 
 ## The workflow
-Eight stages, five gates, one inner loop. `workflow.json` is the source; `workflow.html` is the page. Every stage carries its **iterate here** card — what triggers a loop, what you do, what lets you out, what it costs — and what actually happened on the film.
+Nine stages, five gates, one inner loop — the ninth reads the finished cut back against the board. `workflow.json` is the source; `workflow.html` is the page. Every stage carries its **iterate here** card — what triggers a loop, what you do, what lets you out, what it costs — and what actually happened on the film.
 
 ```
-0 Story → 1 Cast ⟲ ─A─ 2 Anchors ⟲ ─B─ 3 Timing ⟲ ─C─ 4 Motion ⟲ ─D─ 5 Sound ⟲ → 6 Cut ⟲ ─E─ 7 Deliver
+0 Story → 1 Cast ⟲ ─A─ 2 Anchors ⟲ ─B─ 3 Timing ⟲ ─C─ 4 Motion ⟲ ─D─ 5 Sound ⟲ → 6 Cut ⟲ ─E─ 7 Deliver → 8 Learn ⟲
 ```
 
 ## Run it
@@ -32,7 +32,7 @@ Exclusive to one Higgsfield project. Since Sep 29 the connector exposes `list_pr
 ## Files
 | | |
 | --- | --- |
-| `workflow.json` → `workflow.html` | the eight stages, gates and iteration loops |
+| `workflow.json` → `workflow.html` | the nine stages, gates and iteration loops |
 | `links.json` → `links.html` | every link used, by stage, verified or not |
 | `desk.py` → `index.html` | the front door |
 | `ingest.py` · `build.py` · `generate.py` | the loop |

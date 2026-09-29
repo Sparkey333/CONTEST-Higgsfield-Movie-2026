@@ -304,6 +304,30 @@
     "a": {
      "kind": "video",
      "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4",
+     "poster": "",
+     "label": "S1 · the board's pick · current courtyard element",
+     "why": "Chosen for continuity with the S23 bookend.",
+     "from": "take f84a308f · 30s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260910_203413_48c4b641-9340-43bb-a813-5e4aa2de041f.mp4",
+     "poster": "",
+     "label": "S1 · the cut's ♥ · retired courtyard element",
+     "why": "Chosen for the crane.",
+     "from": "take 48c4b641 · 30s"
+    },
+    "label": "Element continuity is invisible at a wide — S1",
+    "why": "The board argued element; the editor argued motion. At 21:9 the two courtyards are one place. Rank continuity arguments by whether a viewer can see them at the shot's size.",
+    "from": "take f84a308f · 30s  ·  take 48c4b641 · 30s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4",
      "poster": "",
      "label": "S22 · chroma · scored 59",
@@ -341,6 +365,98 @@
     "from": "frame F37 · a26c5697"
    }
   ],
-  "deliver": []
+  "deliver": [],
+  "learn": [
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/7b801917-51e4-4cfc-b62b-e8560f2b8f3e.mp4",
+    "poster": "",
+    "label": "The delivered master · Sep 16",
+    "why": "The MOV cut after the Sep 15 generations, uploaded into the project root. Stage 8 starts here: upload the master, run the scene analysis, read the favourites against the picks.",
+    "from": "upload 7b801917 · in the project root 2026-09-16 21:52 UTC"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4",
+     "poster": "",
+     "label": "S20 · the board's pick · scored 52",
+     "why": "The rescoring moved the board to this take.",
+     "from": "take 36e39026 · 12s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4",
+     "poster": "",
+     "label": "S20 · the cut's ♥ · scored 51",
+     "why": "The editor kept the first-read take; one point behind, which is noise.",
+     "from": "take 2ab9dfa7 · 12s"
+    },
+    "label": "The board's pick lost to the editor's eye — S20",
+    "why": "The cut favourited the alternate. The board had moved to the scored take; the timeline never did. Show alternates at the pick's size: a board is a proposal.",
+    "from": "take 36e39026 · 12s  ·  take 2ab9dfa7 · 12s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_328324f8-f861-44ce-abcf-a0936131c0b7.mp4",
+     "poster": "",
+     "label": "S11 · the board's pick · 8s",
+     "why": "One take, wrong sheet, too short.",
+     "from": "take 328324f8 · 8s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_230433_022381ba-9cd9-4931-b280-582ad8550662.mp4",
+     "poster": "",
+     "label": "S11 · regenerated on the battle sheet · 15s · 46",
+     "why": "Made at 23:04 on deadline night; favourited. Its own audio says 'Thank you' in the last second.",
+     "from": "take 022381ba · 15s"
+    },
+    "label": "Fixed by regenerating, not by choosing — S11",
+    "why": "When a shot has one take and it is wrong, the fix is a regeneration on the right sheet, not a different pick. Keep that prompt ready before the deadline, and solo the tail of every audio-on take.",
+    "from": "take 328324f8 · 8s  ·  take 022381ba · 15s"
+   },
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_214642_01b9e343-8f84-4565-9afb-bc3f2b49d68d.mp4",
+    "poster": "",
+    "label": "NEW-3 · the transition the board called redundant",
+    "why": "Generated the next day from the S4 take as a video reference, and favourited. Never call a transition redundant on the board; show both and let the timeline decide.",
+    "from": "take 01b9e343 · 8s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223459_85ec43a9-df94-4668-a42c-ae105f81e662.mp4",
+     "poster": "",
+     "label": "NEW-1 · the mind divides · 16s · Sep 15",
+     "why": "Written on the board on Sep 14, shot on Sep 15, text-only.",
+     "from": "take 85ec43a9 · 16s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223652_9b3983d5-45d6-4ac8-ba9a-16b3dfcfcc73.mp4",
+     "poster": "",
+     "label": "NEW-2 · the mound · 16s · Sep 15",
+     "why": "Change 3's one generation, made exactly as written.",
+     "from": "take 9b3983d5 · 16s"
+    },
+    "label": "Shot the day after — the board's prompts, verbatim",
+    "why": "Six generations from the board's own prompts, made after the deadline. Neither favourited. Whether they are in the delivered cut is what the scene analysis answers; the record only says they exist.",
+    "from": "take 85ec43a9 · 16s  ·  take 9b3983d5 · 16s"
+   }
+  ]
  }
 }

@@ -37,3 +37,11 @@ Each of these cost a day, a shot, or a scare on *Matter of Light*. They are in t
 22. **Every submission goes on the ledger before you wait for it.** `generate.py` writes the request id to `project.json` on acceptance. If the wait dies, the id survives.
 23. **Keys in `keys.env`, never in a prompt, never in a commit.** The keys page exports to a gitignored filename on purpose.
 24. **Regenerate, don't hand-edit.** `board.html` is a function of three JSON files. If it is wrong, the JSON is wrong.
+
+## After the cut
+25. **The board is the plan; the cut is the truth; the difference is the course.** Put the delivered film back through the desk. Upload the master into the project root, run the scene analysis, diff the scenes against the board as it stood at picture lock, and write each delta as a lesson, a reminder on the stage that could have caught it, and an example. Stage 8 exists for this.
+26. **Favourites are the cut's own record.** Read them against the picks before any analyser returns: a favourite on a take that is not the pick is the editor telling you where the board was wrong. On this film seven of the favourited takes were the board's *alternates*, and every one was a look decision, not a score decision.
+27. **A 16-second render is 16.1 seconds.** The Predictor refuses it. Score the 15s and 8s takes; for the 16s ones trim a quarter-second off the tail before you upload, or accept that the longest shots go unscored.
+28. **Listen to the last two seconds of every audio-on take.** A regenerated silent flank run came back with the model's own voice saying "Thank you" at 14–15s. Generated ambience can carry phantom speech; it is inaudible in a browser tile and very audible in a cinema.
+29. **The analyser queues, and it is slow on a six-minute film.** Start it the moment the master exists, not the day you need the read — and do the favourites diff by hand while it runs.
+30. **Keep the master and the low proxy as two uploads in the project root.** The proxy is what you analyse and share; the master is what the jury saw. Name both in `project.json → final` so the next reader knows which is which.

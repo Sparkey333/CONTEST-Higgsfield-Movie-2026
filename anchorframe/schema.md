@@ -18,3 +18,7 @@
 `scores.json` — `job id → Virality Predictor record` (`overall`, `hook`, `engagement`, `viral`, `dmn_mean`, `peak_second`, `dur`, `global[]`).
 `shotmap.json` — optional hand placement, `8-char id → {shot, title}`.
 `board.html` — the output. Never edit it.
+
+## `final` — the delivered film
+
+Written at stage 8. `master` is the file the jury saw (upload id, container, when uploaded, where it sits in the project); `exports` are the later encodes (the low proxy, the HQ); `analyses` are the platform's scene-analysis job ids on each; `read` points at where the diff against the board lives. Every id here is an upload, not a generation, so `ingest.py` never admits them — they are the film, not a take.

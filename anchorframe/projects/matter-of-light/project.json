@@ -200,10 +200,12 @@
    "duration_s": 8,
    "audio": false,
    "prompt": "Macro, locked, no camera move. A single faceted bead of clear ice fills the frame (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)), lying on a floor of pure light. It rotates very slowly until one facet squares up to camera and fills the whole frame. Inside that facet the interior is a moving, living blue.\n\nHold. Then, without a cut and without the frame ever changing shape or colour, the blue inside the facet BECOMES open ocean seen from above — the same blue, the same movement, the same brightness, now water to the horizon under a bruised violet sky. The caustics inside the ice become sunlight on waves. Nothing else changes. The match is on shape and colour alone and it must be seamless enough that a viewer cannot name the moment it happened.\n\n21:9, photoreal, anamorphic, extreme contrast. Warm gold on the ice at the start, fully desaturated storm ocean by the end. No sound.\n\nREFERENCES — attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca).",
-   "status": "unshot",
-   "pick": null,
-   "alternates": [],
-   "why": "",
+   "status": "shot",
+   "pick": "01b9e343-8f84-4565-9afb-bc3f2b49d68d",
+   "alternates": [
+    "1abebd64-3d95-4ac7-a6b2-9ebf0f336dc1"
+   ],
+   "why": "Generated Sep 15 from the S4 take as a video reference — the facet-to-ocean match cut on its own. Favourited; the other take is the alternate.",
    "regenerate": false,
    "notes": "Redundant — the S6 pick already opens on this match cut."
   },
@@ -551,12 +553,12 @@
    "duration_s": 12,
    "audio": false,
    "prompt": "Macro, locked off, absolutely no camera movement for the full duration. A single faceted bead of clear ice (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)) rests at the centre of an immense floor of solidified light stretching to a horizonless edge (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca)). The bead is small in frame — one bright point, far more black than light. Inside it the interior still moves, a slow living blue.\n\nNothing enters. Nothing moves except the light.\n\nThe luminous floor begins to cool from the outer edges inward — not a cut, not a wipe, a fade in the material itself. The gold goes amber, then rust, then to nothing, the darkness closing in a slow even contraction toward the centre. The bead holds its own light after everything around it has gone, alone in black for a full two seconds, the blue still turning inside it.\n\nThen that goes too. The point contracts to a pinprick and is out. The last three seconds are total, absolute black — no grain, no glow, no residue, no haze, nothing in frame at all.\n\n21:9, photoreal, anamorphic, extreme contrast, warm gold cooling to pure black (@[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). Shallow depth of field on the bead. No people. No text, no letters, no writing, no numerals, no watermark, no logo, no titles, no captions anywhere in frame at any point. Silent.\n\nREFERENCES — attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93).",
-   "status": "shot",
+   "status": "unshot",
    "pick": null,
    "alternates": [],
    "why": "The plate under the credits: F01 run backwards, the film's first image returning as its last residue. Type goes on after, in the NLE.",
    "regenerate": false,
-   "notes": "Generate the plate with no text — say it three ways. Credits are laid over black after it, in the NLE."
+   "notes": "Generate the plate with no text — say it three ways. Credits are laid over black after it, in the NLE. The two Sep 15 macro takes once filed here are Transition A (NEW-3); the end-card plate itself was never generated — the credits were laid in the NLE."
   }
  ],
  "board": {
@@ -571,5 +573,45 @@
   "submitted": true,
   "public_url": "https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light",
   "note": "Submitted to the Higgsfield Global Film Festival; the project page is public."
+ },
+ "final": {
+  "_": "The delivered film, by upload id, so the next reader knows which file is which. Stage 8 (Learn) reads these.",
+  "master": {
+   "upload_id": "7b801917-51e4-4cfc-b62b-e8560f2b8f3e",
+   "container": "MOV",
+   "uploaded": "2026-09-16T18:32Z",
+   "in_project": "root · 2026-09-16T21:52Z",
+   "note": "Cut after the Sep 15 generations; the version filed in the project."
+  },
+  "exports": [
+   {
+    "upload_id": "bd28d7c2-25e7-4f5e-9e7f-90c5f710b131",
+    "uploaded": "2026-09-18T18:55Z",
+    "note": "Sep 18 export — the low or the HQ"
+   },
+   {
+    "upload_id": "c0bdbe0e-44cb-478c-86a9-f1fc2845e6f5",
+    "uploaded": "2026-09-18T19:28Z",
+    "note": "Sep 18 export — the low or the HQ"
+   }
+  ],
+  "analyses": [
+   {
+    "id": "b51a7a53-5bd0-4ba0-91fb-a2a7dd004c57",
+    "on": "7b801917",
+    "started": "2026-09-29T22:16Z"
+   },
+   {
+    "id": "c4da8f1e-583f-48c1-9b74-b6f1d767464f",
+    "on": "c0bdbe0e",
+    "started": "2026-09-29T22:17Z"
+   },
+   {
+    "id": "0fd8b8c7-87f5-447b-bbff-d34410a19b9b",
+    "on": "bd28d7c2",
+    "started": "2026-09-29T22:30Z"
+   }
+  ],
+  "read": "design/final-cut.data.json + design/final-cut.notes.json on the msx5dw branch; the Final Cut chapter of director-bible.html"
  }
 }
