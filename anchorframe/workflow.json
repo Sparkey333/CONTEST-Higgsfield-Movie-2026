@@ -257,7 +257,7 @@
     "do": "Move an establishing beat, not a scene. One new anchor at most.",
     "exit": "Gate C — timing lock.",
     "cost": "Cheap here (one anchor), expensive after (re-rendered video).",
-    "mol": "Option B — the first five seconds of the brothers' beach placed before the vortex — was priced at one anchor on Sep 8 and finally applied on Sep 14 as an edit-only split of an existing take. Zero generations."
+    "mol": "Option B — the first five seconds of the brothers' beach placed before the vortex — was priced at one anchor on Sep 8 and finally applied on Sep 14 as an edit-only split of an existing take. Zero generations. It was not applied: the brothers first appear at 4:59 of the delivered film."
    },
    "gate": {
     "id": "C",
@@ -272,7 +272,8 @@
    "reminders": [
     "Sit through the stills at duration before anything moves.",
     "Decide the structure now — after Gate C a change is video, not images.",
-    "Freeze runtime, order and count. Write the date down."
+    "Freeze runtime, order and count. Write the date down.",
+    "If the sound might be a song, lock the song here and cut the stills reel to it — the music-video rule applies the moment there are lyrics."
    ]
   },
   {
@@ -403,7 +404,8 @@
     "Generate the voice first; attach it as an audio reference; model audio off on that shot.",
     "Never more than four takes per line — choose, and write it down.",
     "Every audio file uploaded into the project before you submit.",
-    "Credit the music honestly on the end card. Keep the rights receipt."
+    "Credit the music honestly on the end card. Keep the rights receipt.",
+    "A silence rule cannot survive a lyric on the climax. If the score is a song, place the silence between verses or drop the rule on paper first."
    ]
   },
   {
@@ -433,6 +435,7 @@
     "virality-read.html"
    ],
    "steps": [
+    "Decide the rhythm before you pick: held frames or montage to a song. A board built for holds cannot supply a montage; the editor will reach past it for coverage.",
     "Pick by look, tie-break by score; write why under each pick.",
     "Trim from the head. 17 of 18 takes paid on their last second.",
     "Where a chroma take and a flat take exist, the chroma take is the grade. No colour pass across two lighting worlds in an hour.",
@@ -445,7 +448,7 @@
     "do": "Three changes, one per judge, priced in generations — prefer the zero-generation edit (a split, a voice under black, a take swap).",
     "exit": "Gate E — picture lock. Nothing is generated after it.",
     "cost": "Minutes. The whole point is to spend edits, not credits, this late.",
-    "mol": "Change 1: the brothers' first 5s before the vortex (edit only). Change 2: cut on the tail; S22 on the chroma take (59 vs 49). Change 3: the S1 narration under the black; NEW-2 the one generation worth starting. What the cut then did (read back on Sep 29): overruled the board's pick on look six times and on score never; regenerated S11 on the right sheet at 23:04; made the 'redundant' NEW-3 the next day; assembled S12 from two takes with a splice."
+    "mol": "Change 1: the brothers' first 5s before the vortex (edit only). Change 2: cut on the tail; S22 on the chroma take (59 vs 49). Change 3: the S1 narration under the black; NEW-2 the one generation worth starting. What the cut then did (read back on Sep 29): overruled the board's pick on look six times and on score never; regenerated S11 on the right sheet at 23:04; made the 'redundant' NEW-3 the next day; assembled S12 from two takes with a splice. The picture then showed the rest: a hundred scenes cut to two songs, the excluded dragon as the set piece, the bookend moved to the act-out, an underwater ending no board had."
    },
    "gate": {
     "id": "E",
@@ -465,7 +468,9 @@
     "Timeline aspect = film aspect before export, or the bars bake in.",
     "End-card plate generated with no text; end-card type in the NLE.",
     "Favourite the pick of every shot as you lay it — the record is the only one the platform keeps.",
-    "Show alternates at the pick's size; the pick is a proposal, the timeline decides."
+    "Show alternates at the pick's size; the pick is a proposal, the timeline decides.",
+    "Plan coverage or plan montage — decide before Gate D, because one generation per shot gives the editor one angle.",
+    "Show excluded takes greyed with the reason; the editor decides what a wrong element costs at the shot's size."
    ]
   },
   {
@@ -510,7 +515,7 @@
     "do": "This stage is a checklist, not a loop.",
     "exit": "Submitted; links checked logged-out.",
     "cost": "Zero if the rules were read on day one.",
-    "mol": "Watermark question answered at 21:17 UTC on deadline day; final MOV at ~23:30; the recorded deadline had passed by the next check. Posts, loglines and support contacts were prepared the day after."
+    "mol": "Watermark question answered at 21:17 UTC on deadline day; final MOV at ~23:30; the recorded deadline had passed by the next check. Posts, loglines and support contacts were prepared the day after. The Sep 18 'HQ' upload turned out to be a 15s clip; the full cut exists in the account once, as the Sep 16 MOV."
    },
    "gate": null,
    "links": [
@@ -534,7 +539,8 @@
     "Public post AND public account. Check both in a private window.",
     "The deadline in its own timezone; two records disagreed here — work to the earlier one.",
     "Verify every generation is inside the project. Submit. Stop.",
-    "Write down which file was submitted and which is in the project — by id and date — the day you submit."
+    "Write down which file was submitted and which is in the project — by id and date — the day you submit.",
+    "Check where the submit flow puts the packshot before the last export; on this film it led the file by nine seconds."
    ]
   },
   {
@@ -581,21 +587,23 @@
     "do": "One pass: scenes → diff → three rules. Do not re-cut; the film is delivered. The output is the next project's starting state.",
     "exit": "The lessons are on the desk, the reminders are in the stages, the examples are in the course.",
     "cost": "An hour and no credits. The analyser and the Predictor are free on the plan.",
-    "mol": "Read from the record on Sep 29: 31 favourites (21 on shots), 15 post-deadline jobs, 3 uploads; six look-swaps against the board, three regenerations (S11 taken, S7 not, S10 undecided; two of the four deadline-night takes carry phantom speech), one transition the board had called redundant, one splice. The scene analyses of all three uploads were queued and are folded in when they return."
+    "mol": "Read on Sep 29 from the record and then from the picture. The record: 31 favourites, 15 post-deadline jobs, 3 uploads. The picture (the platform's scene analysis of the Sep 16 master, 6:17, 108 scenes): a hundred scenes at 3.7s against a plan of 23 at 13s; six look-swaps and never a score-swap; the excluded dragon pair as a 23s set piece; S11 regenerated and used; the bookend moved to 2:04; an ending found underwater; five Orianes on the timeline; the swim read as children by the analyser; nine seconds of packshot at the head. Of the three changes recommended with an hour left: one applied, one half, one not."
    },
    "gate": null,
    "links": [
     "hf_public_project"
    ],
    "mol": {
-    "numbers": "6 swaps · 3 regenerations · 6 new-shot takes · 1 splice · 0 credits for the read",
+    "numbers": "108 scenes · 6:17 · 3.7s mean · 6 swaps · 3 regenerations · 2 of 3 additions in the cut · 0 credits for the read",
     "dates": "Sep 14 master at ~23:30 UTC · Sep 15 six new takes, six regenerations and a splice · Sep 16 the MOV into the project root · Sep 18 the low and the HQ · Sep 29 the read"
    },
    "reminders": [
     "Upload the master into the project root; keep the low proxy beside it.",
     "Read the favourites against the picks before the analyser returns.",
     "Diff order · durations · swaps · trims · drops/additions, and price each as edit or generation.",
-    "Every delta becomes a lesson, a reminder on the stage that could have caught it, and an example."
+    "Every delta becomes a lesson, a reminder on the stage that could have caught it, and an example.",
+    "Run the continuity audit on the assembled timeline at Gate E, not on the board.",
+    "Read every wide with a minor-looking figure back through the analyser before delivery — the 18+ rule is per take."
    ]
   }
  ],
