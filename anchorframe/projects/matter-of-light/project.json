@@ -130,10 +130,14 @@
    "duration_s": 18,
    "audio": true,
    "prompt": "",
-   "status": "merged-into:S1",
-   "pick": "f84a308f",
-   "alternates": [],
-   "why": "No separate S2 exists and none is needed: the second half of the 30s crane is the courtyard.",
+   "status": "shot",
+   "pick": "c437bc36",
+   "alternates": [
+    "394484bc",
+    "b9c5d61d",
+    "acec24ac"
+   ],
+   "why": "Four takes from the Sep 8 cheap pass on seedance_2_5, continuing S1's move through the courtyard; the favourited one is the pick. In the final cut the 30s S1 crane carried this beat, so these are the alternates to it — kept because they are the only takes of the courtyard as its own shot.",
    "regenerate": false,
    "notes": ""
   },
