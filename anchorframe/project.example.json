@@ -18,7 +18,8 @@
   "video_model": "cinematic_studio_video_4_0",
   "image_model": "nano_banana_2",
   "audio_model": "seed_audio",
-  "_": "folder_id is what the web app filed the generations under. No image model and almost no video model accepts it over the API, so the desk enforces the one-folder rule by ledger and cast (see README), not by asking the API."
+  "_": "folder_id is what the web app filed the generations under. No image model and almost no video model accepts it over the API, so the desk enforces the one-folder rule by ledger and cast (see README), not by asking the API.",
+  "public_url": "https://higgsfield.ai/@<handle>/projects/<slug>  — filled in after submission; the published page"
  },
  "window": {
   "from": "2026-01-01",

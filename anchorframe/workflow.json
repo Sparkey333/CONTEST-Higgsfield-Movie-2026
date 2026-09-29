@@ -295,7 +295,8 @@
     "Cinema Studio — cinematic_studio_video_4_0 (web app; 8–16s; 720p→1080p; 21:9) inside the project",
     "minimax_h3 — the one API model with two frames + audio references + 21:9 + folder_id",
     "Virality Predictor — every take ≤16s, 2 concurrent on the plan, free",
-    "MCP connector for batch and history; Cloud API for scripted submission"
+    "MCP connector for batch and history; Cloud API for scripted submission",
+    "list_projects / list_folders / list_project_assets (MCP) — project membership, item by item, with folder: what ingest.py admits by first"
    ],
    "files": [
     "anchorframe/ingest.py",
@@ -307,7 +308,7 @@
     "design/recreate-prompts.md"
    ],
    "steps": [
-    "Read what you are actually using before you spec a run — pull the history. (The notes said v2 · 12s · 720p. The account said v4.0 · 16s.)",
+    "Read what you are actually using before you spec a run — pull the project's placements and its history. (The notes said v2 · 12s · 720p. The account said v4.0 · 16s.)",
     "Cheap pass on every shot first; finals per act after.",
     "Two takes per prompt. A third take on the same prompt is a different prompt.",
     "Audio off on the shots the shot list marks silent. Audio references, not model audio, wherever there is dialogue.",
@@ -478,7 +479,8 @@
     "the public post (and its logged-out check)",
     "the submission",
     "posts and descriptions for X / Instagram / YouTube",
-    "a support email on file if anything errored"
+    "a support email on file if anything errored",
+    "the published project page — film, prompts and history, public"
    ],
    "surfaces": [
     "Cinema Studio submit flow (watermark + packshot)",
@@ -508,6 +510,7 @@
    },
    "gate": null,
    "links": [
+    "hf_public_project",
     "contest_page",
     "festival_page",
     "festival_blog",
@@ -519,7 +522,7 @@
     "yt_studio"
    ],
    "mol": {
-    "numbers": "MVS = 2 components · 3 support addresses verified · 3 loglines ≤140",
+    "numbers": "MVS = 2 components · 3 support addresses verified · 3 loglines ≤140 · published at https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light",
     "dates": "Sep 14–17"
    },
    "reminders": [

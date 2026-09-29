@@ -18,10 +18,21 @@
   "video_model": "cinematic_studio_video_4_0",
   "image_model": "nano_banana_2",
   "audio_model": "seed_audio",
-  "_": "folder_id is what the web app filed the generations under. No image model and almost no video model accepts it over the API, so the desk enforces the one-folder rule by ledger and cast (see README), not by asking the API."
+  "_": "project_id and workspace_id are what list_project_assets takes; placements.tsv is its answer, and ingest.py admits by it first. The folders map names the scene subfolders under 'Matter of Light'. A second project with the same name (7b209962…) is a copy made on Sep 16 during submission.",
+  "public_url": "https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light",
+  "folders": {
+   "root": "fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
+   "film": "64ccc4f2-bdd0-4372-a45f-e00b4c4f645a",
+   "scene1": "c21874c6-145d-4b63-b39b-93001985d618",
+   "scene2": "2ea379ef-5c0d-4768-b4ba-a33c7bf9990e",
+   "scene3": "340b1265-cfe2-4b1e-bdf3-90fffec54224",
+   "overall": "b4214e87-93e1-4b52-954a-09cc11a14508"
+  },
+  "workspace_id": "21b0d1dd-c71c-4318-b687-6b1baee45e98",
+  "project_id": "fd65cff2-8d25-44cf-a5b2-19a9267f3bcf"
  },
  "window": {
-  "from": "2026-09-10",
+  "from": "2026-09-08",
   "to": null
  },
  "acts": [
@@ -333,7 +344,7 @@
    "duration_s": 16,
    "audio": false,
    "prompt": "Extreme slow motion, camera held wide and low over a storm ocean, no cuts and no camera move at all. ORIANE (@[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1)) hangs in the air at the centre of frame, arms loose at her sides, barefoot, head tilted slightly back. A ring of sixteen translucent warping lenses opens at arm's reach around her and immediately doubles — thirty-two, sixty-four, then more than two hundred — until she is a silhouette seen through layered refraction (@[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072)). Her eyes are closed. Her face is not strained: it is concentration and open joy. Her lips move, forming words, and no sound comes out.\n\nBehind and around her, spread across miles of black water, the enormous armoured leviathans (@[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76)) come apart in total silence. Lightning runs along every seam in the dead-coral plating (@[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473)) and the flesh lifts cleanly away from the bone beneath in long sheets, unwinding outward like paper in wind, leaving pale skeletons standing upright in the air for a full second before they too disperse. No blood. No gore. No fire, no explosion, no shockwave — the separation is clean and slow and looks like something being undone rather than destroyed.\n\nThe whole frame is at peace. Nothing accelerates. Hold to the last frame. 21:9, near-black storm ocean and sky with lightning and the pale unwinding sheets as the only bright shapes in frame, extreme contrast, photoreal, anamorphic. No score, no effect, no sound at all.\n\nREFERENCES — attach before generating: @[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1); @[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072); @[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76); @[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[fx-hollow](89a74d62-615e-4e52-b745-8bb8ceab1628).",
-   "status": "unshot",
+   "status": "shot",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -361,7 +372,7 @@
    "duration_s": 12,
    "audio": true,
    "prompt": "Extreme wide, camera high above the curve of a blue-green world (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)), looking down and along the horizon line. A single green-white streak crosses the frame left to right, very fast, very small, trailing a thin line of green light behind it (@[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30)). It is the only moving thing and the only warm colour in a cold frame.\n\nThe camera descends with it — through the exosphere, through cloud, the light going from black to violet to a deep warm orange — and the streak stays exactly the same size in frame the whole way down. It crosses in front of a low setting sun and, as the sky fills with golden hour, the streak thins, fades, and is gone.\n\nThe last two seconds are an empty tropical sunset sky over flat calm water, with iridescent sand just entering the bottom of frame (@[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776)). Nobody in frame. Nothing explained.\n\n21:9, photoreal, anamorphic. Cold and clinical at the top, warm and peaceful at the bottom, one continuous grade between them. No cuts. Sound falls away to wind.\n\nREFERENCES — attach before generating: @[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8); @[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776); @[nacre-beach](db228a3f-576d-4fd0-91c1-1f756d85a4fd).",
-   "status": "unshot",
+   "status": "shot",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -471,7 +482,7 @@
    "duration_s": 16,
    "audio": true,
    "prompt": "Locked-off wide from the shoreline, static, no camera shake at any point, low red sun directly behind the subject line. A hill-sized mass of compacted sand, rock and dead coral hangs above open water, turning slowly (@[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f)). It does not drift — it MOVES, tracking laterally across the frame with the deliberate, heavy, side-to-side undulation of a snake finding its line, the whole mass flexing as it goes. It crosses the sky above twelve tall wooden sailing ships (@[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746)) and stops directly over them. Everything hangs.\n\nThen it falls — not dropping, DRIVEN, straight down and far faster than gravity, the whole mass separating into a million particles on the way and punching the sea white. The ships are simply gone under it. Great waves crash outward toward camera and break at the bottom of frame.\n\nThe camera does not react, does not pan, does not shake, and does not cut. Everything is backlit and rimmed, thick dust and smoke, crimson and rust and deep shadow with no cool tone anywhere (@[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8)). No glow, no beams, no energy, no visible force, nobody gesturing. 21:9, photoreal, immense scale, anamorphic.\n\nREFERENCES — attach before generating: @[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f); @[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746); @[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8); @[keeper-kneel](d1faba5a-bf3e-49bf-886d-e632823f4836); @[iron-spears](e1f4220b-7d1f-45bf-a6d1-4358a09061aa).",
-   "status": "unshot",
+   "status": "shot",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -528,6 +539,20 @@
    "why": "54 overall, the second-best hook (38). Caedom alone, on the current courtyard element.",
    "regenerate": false,
    "notes": ""
+  },
+  {
+   "id": "END",
+   "act": "I",
+   "title": "End card — the tear goes out",
+   "duration_s": 12,
+   "audio": false,
+   "prompt": "Macro, locked off, absolutely no camera movement for the full duration. A single faceted bead of clear ice (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)) rests at the centre of an immense floor of solidified light stretching to a horizonless edge (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca)). The bead is small in frame — one bright point, far more black than light. Inside it the interior still moves, a slow living blue.\n\nNothing enters. Nothing moves except the light.\n\nThe luminous floor begins to cool from the outer edges inward — not a cut, not a wipe, a fade in the material itself. The gold goes amber, then rust, then to nothing, the darkness closing in a slow even contraction toward the centre. The bead holds its own light after everything around it has gone, alone in black for a full two seconds, the blue still turning inside it.\n\nThen that goes too. The point contracts to a pinprick and is out. The last three seconds are total, absolute black — no grain, no glow, no residue, no haze, nothing in frame at all.\n\n21:9, photoreal, anamorphic, extreme contrast, warm gold cooling to pure black (@[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). Shallow depth of field on the bead. No people. No text, no letters, no writing, no numerals, no watermark, no logo, no titles, no captions anywhere in frame at any point. Silent.\n\nREFERENCES — attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93).",
+   "status": "shot",
+   "pick": null,
+   "alternates": [],
+   "why": "The plate under the credits: F01 run backwards, the film's first image returning as its last residue. Type goes on after, in the NLE.",
+   "regenerate": false,
+   "notes": "Generate the plate with no text — say it three ways. Credits are laid over black after it, in the NLE."
   }
  ],
  "board": {
@@ -537,5 +562,10 @@
  "ledger": {
   "_": "Every generation the desk submits is appended here with the project id, so it can be pulled back by id regardless of what the API can filter on.",
   "jobs": []
+ },
+ "status": {
+  "submitted": true,
+  "public_url": "https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light",
+  "note": "Submitted to the Higgsfield Global Film Festival; the project page is public."
  }
 }

@@ -1,5 +1,594 @@
 [
  {
+  "id": "3104ecc6-9ff9-4c53-88ee-a0785dc9af7d",
+  "createdAt": 1789513372.909938,
+  "type": "video",
+  "model": "cinematic_video_editor",
+  "duration": null,
+  "resolution": null,
+  "w": null,
+  "h": null,
+  "audio": null,
+  "frames": [
+   {
+    "role": "video",
+    "id": "3cc59ef0-e2f8-4589-b832-eee7dc665bdc"
+   }
+  ],
+  "refs": [],
+  "prompt": "",
+  "thumb": "",
+  "mp4": "https://cdn.higgsfield.ai/cinematic/splice/job/3104ecc6-9ff9-4c53-88ee-a0785dc9af7d/spliced.mp4",
+  "shot": "S12",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "644f3251-767a-49dc-8025-9dceab04b75f",
+  "createdAt": 1789512236.947456,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "32efc438-d3f5-44ec-a96c-7a665ebfb924"
+   },
+   {
+    "role": "video",
+    "id": "7757668a-dd61-4834-b7f8-301abf7df326"
+   }
+  ],
+  "refs": [
+   {
+    "id": "b353d96f-721a-4ea9-98e4-6adea64b4e76",
+    "name": "prop_leviathan_v1"
+   }
+  ],
+  "prompt": "upgrade this attached video gen and turn the beast into the @prop_leviathan_v1  with more realistic look and blend into the second attached image as last frame",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260830_223509_32efc438-d3f5-44ec-a96c-7a665ebfb924.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_224356_644f3251-767a-49dc-8025-9dceab04b75f.mp4",
+  "shot": "S10",
+  "how": "map",
+  "folder": "root",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "b98bcb94-7dc0-42e4-911b-49728151fa71",
+  "createdAt": 1789512236.947419,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "32efc438-d3f5-44ec-a96c-7a665ebfb924"
+   },
+   {
+    "role": "video",
+    "id": "7757668a-dd61-4834-b7f8-301abf7df326"
+   }
+  ],
+  "refs": [
+   {
+    "id": "b353d96f-721a-4ea9-98e4-6adea64b4e76",
+    "name": "prop_leviathan_v1"
+   }
+  ],
+  "prompt": "upgrade this attached video gen and turn the beast into the @prop_leviathan_v1  with more realistic look and blend into the second attached image as last frame",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260830_223509_32efc438-d3f5-44ec-a96c-7a665ebfb924.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_224356_b98bcb94-7dc0-42e4-911b-49728151fa71.mp4",
+  "shot": "S10",
+  "how": "map",
+  "folder": "root",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "d496e087-9995-4ef2-bbc6-e66897dfa816",
+  "createdAt": 1789511812.67627,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "9ca46e73-1df6-41c3-8ace-7fd4c324850f",
+    "name": "fx-floating-mountain"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   },
+   {
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+    "name": "keeper-kneel"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "Locked-off wide from the shoreline, static, no camera shake at any point, low red sun directly behind the subject line. A hill-sized mass of compacted sand, rock and dead coral hangs above open water, turning slowly (<<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>>). It does not drift — it MOVES, tracking laterally across the frame with the deliberate, heavy, side-to-side undulation of a snake finding its line, the whole mass flexing as it goes. It crosses the sky above twelve tall wooden sailing ships (<<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>) and stops directly over them. Everything hangs.\n\nThen it falls — not dropping, DRIVEN, straight down and far faster than gravity, the whole mass separating into a million particles on the way and punching the sea white. The ships are simply gone under it. Great waves crash outward toward camera and break at the bottom of frame.\n\nThe camera does not react, does not pan, does not shake, and does not cut. Everything is backlit and rimmed, thick dust and smoke, crimson and rust and deep shadow with no cool tone anywhere (<<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>>). No glow, no beams, no energy, no visible force, nobody gesturing. 21:9, photoreal, immense scale, anamorphic.\n\nREFERENCES — attach before generating: <<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>>; <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>; <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>>; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223652_d496e087-9995-4ef2-bbc6-e66897dfa816.mp4",
+  "shot": "NEW-2",
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "9b3983d5-45d6-4ac8-ba9a-16b3dfcfcc73",
+  "createdAt": 1789511812.676228,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8",
+    "name": "plate-bombardment"
+   },
+   {
+    "id": "9ca46e73-1df6-41c3-8ace-7fd4c324850f",
+    "name": "fx-floating-mountain"
+   },
+   {
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746",
+    "name": "twelve-ships"
+   },
+   {
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836",
+    "name": "keeper-kneel"
+   },
+   {
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa",
+    "name": "iron-spears"
+   }
+  ],
+  "prompt": "Locked-off wide from the shoreline, static, no camera shake at any point, low red sun directly behind the subject line. A hill-sized mass of compacted sand, rock and dead coral hangs above open water, turning slowly (<<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>>). It does not drift — it MOVES, tracking laterally across the frame with the deliberate, heavy, side-to-side undulation of a snake finding its line, the whole mass flexing as it goes. It crosses the sky above twelve tall wooden sailing ships (<<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>) and stops directly over them. Everything hangs.\n\nThen it falls — not dropping, DRIVEN, straight down and far faster than gravity, the whole mass separating into a million particles on the way and punching the sea white. The ships are simply gone under it. Great waves crash outward toward camera and break at the bottom of frame.\n\nThe camera does not react, does not pan, does not shake, and does not cut. Everything is backlit and rimmed, thick dust and smoke, crimson and rust and deep shadow with no cool tone anywhere (<<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>>). No glow, no beams, no energy, no visible force, nobody gesturing. 21:9, photoreal, immense scale, anamorphic.\n\nREFERENCES — attach before generating: <<<9ca46e73-1df6-41c3-8ace-7fd4c324850f>>>; <<<c661f844-e65e-4eb0-b9ff-076b9edf1746>>>; <<<389aa7b5-5de8-495f-b899-b588e51c7ab8>>>; <<<d1faba5a-bf3e-49bf-886d-e632823f4836>>>; <<<e1f4220b-7d1f-45bf-a6d1-4358a09061aa>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223652_9b3983d5-45d6-4ac8-ba9a-16b3dfcfcc73.mp4",
+  "shot": "NEW-2",
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "44fa46fc-21d5-41e2-b52f-1ea644b84b67",
+  "createdAt": 1789511717.817571,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "45c4d884-b89b-4694-af1f-e06eef545e30",
+    "name": "founding-stone"
+   },
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+    "name": "nacre-beach"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Extreme wide, camera high above the curve of a blue-green world (<<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>), looking down and along the horizon line. A single green-white streak crosses the frame left to right, very fast, very small, trailing a thin line of green light behind it (<<<45c4d884-b89b-4694-af1f-e06eef545e30>>>). It is the only moving thing and the only warm colour in a cold frame.\n\nThe camera descends with it — through the exosphere, through cloud, the light going from black to violet to a deep warm orange — and the streak stays exactly the same size in frame the whole way down. It crosses in front of a low setting sun and, as the sky fills with golden hour, the streak thins, fades, and is gone.\n\nThe last two seconds are an empty tropical sunset sky over flat calm water, with iridescent sand just entering the bottom of frame (<<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>>). Nobody in frame. Nothing explained.\n\n21:9, photoreal, anamorphic. Cold and clinical at the top, warm and peaceful at the bottom, one continuous grade between them. No cuts. Sound falls away to wind.\n\nREFERENCES — attach before generating: <<<45c4d884-b89b-4694-af1f-e06eef545e30>>>; <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>; <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>>; <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223517_44fa46fc-21d5-41e2-b52f-1ea644b84b67.mp4",
+  "shot": "NEW-4",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "1792c59a-9188-4d0c-bafd-d2f0e8614c07",
+  "createdAt": 1789511717.817534,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "45c4d884-b89b-4694-af1f-e06eef545e30",
+    "name": "founding-stone"
+   },
+   {
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+    "name": "plate-island"
+   },
+   {
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd",
+    "name": "nacre-beach"
+   },
+   {
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+    "name": "machira-orbit"
+   }
+  ],
+  "prompt": "Extreme wide, camera high above the curve of a blue-green world (<<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>), looking down and along the horizon line. A single green-white streak crosses the frame left to right, very fast, very small, trailing a thin line of green light behind it (<<<45c4d884-b89b-4694-af1f-e06eef545e30>>>). It is the only moving thing and the only warm colour in a cold frame.\n\nThe camera descends with it — through the exosphere, through cloud, the light going from black to violet to a deep warm orange — and the streak stays exactly the same size in frame the whole way down. It crosses in front of a low setting sun and, as the sky fills with golden hour, the streak thins, fades, and is gone.\n\nThe last two seconds are an empty tropical sunset sky over flat calm water, with iridescent sand just entering the bottom of frame (<<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>>). Nobody in frame. Nothing explained.\n\n21:9, photoreal, anamorphic. Cold and clinical at the top, warm and peaceful at the bottom, one continuous grade between them. No cuts. Sound falls away to wind.\n\nREFERENCES — attach before generating: <<<45c4d884-b89b-4694-af1f-e06eef545e30>>>; <<<e7b2e80e-59db-44be-a654-7534a042e2c8>>>; <<<527aca60-04e0-4f86-8f4d-8c1f46c0f776>>>; <<<db228a3f-576d-4fd0-91c1-1f756d85a4fd>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223517_1792c59a-9188-4d0c-bafd-d2f0e8614c07.mp4",
+  "shot": "NEW-4",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "21a9e62f-d935-4291-895c-def425f365b7",
+  "createdAt": 1789511699.33561,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+    "name": "fx-hollow"
+   },
+   {
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+    "name": "fx-segmented-mind"
+   },
+   {
+    "id": "b353d96f-721a-4ea9-98e4-6adea64b4e76",
+    "name": "prop_leviathan_v1"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   }
+  ],
+  "prompt": "Extreme slow motion, camera held wide and low over a storm ocean, no cuts and no camera move at all. ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) hangs in the air at the centre of frame, arms loose at her sides, barefoot, head tilted slightly back. A ring of sixteen translucent warping lenses opens at arm's reach around her and immediately doubles — thirty-two, sixty-four, then more than two hundred — until she is a silhouette seen through layered refraction (<<<99737c53-c69a-43a8-af60-8a29fcffa072>>>). Her eyes are closed. Her face is not strained: it is concentration and open joy. Her lips move, forming words, and no sound comes out.\n\nBehind and around her, spread across miles of black water, the enormous armoured leviathans (<<<b353d96f-721a-4ea9-98e4-6adea64b4e76>>>) come apart in total silence. Lightning runs along every seam in the dead-coral plating (<<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>) and the flesh lifts cleanly away from the bone beneath in long sheets, unwinding outward like paper in wind, leaving pale skeletons standing upright in the air for a full second before they too disperse. No blood. No gore. No fire, no explosion, no shockwave — the separation is clean and slow and looks like something being undone rather than destroyed.\n\nThe whole frame is at peace. Nothing accelerates. Hold to the last frame. 21:9, near-black storm ocean and sky with lightning and the pale unwinding sheets as the only bright shapes in frame, extreme contrast, photoreal, anamorphic. No score, no effect, no sound at all.\n\nREFERENCES — attach before generating: <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>; <<<99737c53-c69a-43a8-af60-8a29fcffa072>>>; <<<b353d96f-721a-4ea9-98e4-6adea64b4e76>>>; <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>; <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>>; <<<89a74d62-615e-4e52-b745-8bb8ceab1628>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223459_21a9e62f-d935-4291-895c-def425f365b7.mp4",
+  "shot": "NEW-1",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "85ec43a9-df94-4668-a42c-ae105f81e662",
+  "createdAt": 1789511699.335566,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 16,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+    "name": "fx-hollow"
+   },
+   {
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072",
+    "name": "fx-segmented-mind"
+   },
+   {
+    "id": "b353d96f-721a-4ea9-98e4-6adea64b4e76",
+    "name": "prop_leviathan_v1"
+   },
+   {
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473",
+    "name": "leviathan-plating"
+   }
+  ],
+  "prompt": "Extreme slow motion, camera held wide and low over a storm ocean, no cuts and no camera move at all. ORIANE (<<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>) hangs in the air at the centre of frame, arms loose at her sides, barefoot, head tilted slightly back. A ring of sixteen translucent warping lenses opens at arm's reach around her and immediately doubles — thirty-two, sixty-four, then more than two hundred — until she is a silhouette seen through layered refraction (<<<99737c53-c69a-43a8-af60-8a29fcffa072>>>). Her eyes are closed. Her face is not strained: it is concentration and open joy. Her lips move, forming words, and no sound comes out.\n\nBehind and around her, spread across miles of black water, the enormous armoured leviathans (<<<b353d96f-721a-4ea9-98e4-6adea64b4e76>>>) come apart in total silence. Lightning runs along every seam in the dead-coral plating (<<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>) and the flesh lifts cleanly away from the bone beneath in long sheets, unwinding outward like paper in wind, leaving pale skeletons standing upright in the air for a full second before they too disperse. No blood. No gore. No fire, no explosion, no shockwave — the separation is clean and slow and looks like something being undone rather than destroyed.\n\nThe whole frame is at peace. Nothing accelerates. Hold to the last frame. 21:9, near-black storm ocean and sky with lightning and the pale unwinding sheets as the only bright shapes in frame, extreme contrast, photoreal, anamorphic. No score, no effect, no sound at all.\n\nREFERENCES — attach before generating: <<<30b9bf89-3fcf-4544-b110-a74aeccbb7c1>>>; <<<99737c53-c69a-43a8-af60-8a29fcffa072>>>; <<<b353d96f-721a-4ea9-98e4-6adea64b4e76>>>; <<<cb3d6271-76d8-4a73-90c5-5165a4bde473>>>; <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>>; <<<89a74d62-615e-4e52-b745-8bb8ceab1628>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223459_85ec43a9-df94-4668-a42c-ae105f81e662.mp4",
+  "shot": "NEW-1",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "1abebd64-3d95-4ac7-a6b2-9ebf0f336dc1",
+  "createdAt": 1789508802.656895,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "ec2aa3e5-c396-46f6-8c85-80860eb23752"
+   }
+  ],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   }
+  ],
+  "prompt": "Macro, locked, no camera move. A single faceted bead of clear ice fills the frame (<<<58952962-9241-4a19-aedc-031a2374e484>>>), lying on a floor of pure light. It rotates very slowly until one facet squares up to camera and fills the whole frame. Inside that facet the interior is a moving, living blue.\n\nHold. Then, without a cut and without the frame ever changing shape or colour, the blue inside the facet BECOMES open ocean seen from above — the same blue, the same movement, the same brightness, now water to the horizon under a bruised violet sky. The caustics inside the ice become sunlight on waves. Nothing else changes. The match is on shape and colour alone and it must be seamless enough that a viewer cannot name the moment it happened.\n\n21:9, photoreal, anamorphic, extreme contrast. Warm gold on the ice at the start, fully desaturated storm ocean by the end. No sound.\n\nREFERENCES — attach before generating: <<<58952962-9241-4a19-aedc-031a2374e484>>>; <<<03dbcec8-c65f-482c-8c11-58782c673c93>>>; <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>>; <<<afc4fc5d-86be-4072-927c-f890966feaca>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_214642_1abebd64-3d95-4ac7-a6b2-9ebf0f336dc1.mp4",
+  "shot": "END",
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "01b9e343-8f84-4565-9afb-bc3f2b49d68d",
+  "createdAt": 1789508802.656854,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 8,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "ec2aa3e5-c396-46f6-8c85-80860eb23752"
+   }
+  ],
+  "refs": [
+   {
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93",
+    "name": "plate-sun"
+   },
+   {
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+    "name": "plate-ocean-dark"
+   },
+   {
+    "id": "58952962-9241-4a19-aedc-031a2374e484",
+    "name": "frozen-tear"
+   },
+   {
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca",
+    "name": "courtyard-of-worlds"
+   }
+  ],
+  "prompt": "Macro, locked, no camera move. A single faceted bead of clear ice fills the frame (<<<58952962-9241-4a19-aedc-031a2374e484>>>), lying on a floor of pure light. It rotates very slowly until one facet squares up to camera and fills the whole frame. Inside that facet the interior is a moving, living blue.\n\nHold. Then, without a cut and without the frame ever changing shape or colour, the blue inside the facet BECOMES open ocean seen from above — the same blue, the same movement, the same brightness, now water to the horizon under a bruised violet sky. The caustics inside the ice become sunlight on waves. Nothing else changes. The match is on shape and colour alone and it must be seamless enough that a viewer cannot name the moment it happened.\n\n21:9, photoreal, anamorphic, extreme contrast. Warm gold on the ice at the start, fully desaturated storm ocean by the end. No sound.\n\nREFERENCES — attach before generating: <<<58952962-9241-4a19-aedc-031a2374e484>>>; <<<03dbcec8-c65f-482c-8c11-58782c673c93>>>; <<<398d0b9f-e0c6-4a98-b75d-5a727b604632>>>; <<<afc4fc5d-86be-4072-927c-f890966feaca>>>.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_214642_01b9e343-8f84-4565-9afb-bc3f2b49d68d.mp4",
+  "shot": "END",
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "8e2af572-d804-4e12-b923-f5e00a8b8cf6",
+  "createdAt": 1789427554.704349,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "32efc438-d3f5-44ec-a96c-7a665ebfb924"
+   },
+   {
+    "role": "image",
+    "id": "1c3fde8f-6807-41f5-ab57-2291b75fd3f3"
+   },
+   {
+    "role": "video",
+    "id": "fd089667-31c3-4fb8-9bbd-0929dab24597"
+   }
+  ],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   }
+  ],
+  "prompt": "Regenerate this clip, but replace all assets with @char_oriane_v3_battle  for the girl, and replace the wings on her back to be more subtle aura light, burning like a saiyan flame, roaring with righteous rage like a lions main. and the ice wall instead becomes the wall in the attached image, which is used in another generation , which leads to the depowered look of the last frame attachment of lightning around faded sillouthette.",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260830_223509_32efc438-d3f5-44ec-a96c-7a665ebfb924.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_231234_8e2af572-d804-4e12-b923-f5e00a8b8cf6.mp4",
+  "shot": "S7",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "e322ed61-3cff-43d3-9cd8-547c55883b9e",
+  "createdAt": 1789427554.704316,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "image",
+    "id": "32efc438-d3f5-44ec-a96c-7a665ebfb924"
+   },
+   {
+    "role": "image",
+    "id": "1c3fde8f-6807-41f5-ab57-2291b75fd3f3"
+   },
+   {
+    "role": "video",
+    "id": "fd089667-31c3-4fb8-9bbd-0929dab24597"
+   }
+  ],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   }
+  ],
+  "prompt": "Regenerate this clip, but replace all assets with @char_oriane_v3_battle  for the girl, and replace the wings on her back to be more subtle aura light, burning like a saiyan flame, roaring with righteous rage like a lions main. and the ice wall instead becomes the wall in the attached image, which is used in another generation , which leads to the depowered look of the last frame attachment of lightning around faded sillouthette.",
+  "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260830_223509_32efc438-d3f5-44ec-a96c-7a665ebfb924.png",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_231234_e322ed61-3cff-43d3-9cd8-547c55883b9e.mp4",
+  "shot": "S7",
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "022381ba-9cd9-4931-b280-582ad8550662",
+  "createdAt": 1789427073.608261,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "b1b71c32-7d1a-402f-af57-9041bcf6e34f"
+   }
+  ],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   }
+  ],
+  "prompt": "Regenerate this clip, but replace all assets with @char_oriane_v3_battle  for the girl, and replace the lame crystal armor in the original clip attachment with the wings structure look from @char_oriane_v3_battle. and the beast.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_230433_022381ba-9cd9-4931-b280-582ad8550662.mp4",
+  "shot": "S11",
+  "how": "map",
+  "folder": "root",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "58f2b685-4159-47d3-945f-f3914f34f4c8",
+  "createdAt": 1789427073.608227,
+  "type": "video",
+  "model": "cinematic_studio_video_4_0",
+  "duration": 15,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [
+   {
+    "role": "video",
+    "id": "b1b71c32-7d1a-402f-af57-9041bcf6e34f"
+   }
+  ],
+  "refs": [
+   {
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1",
+    "name": "char_oriane_v3_battle"
+   }
+  ],
+  "prompt": "Regenerate this clip, but replace all assets with @char_oriane_v3_battle  for the girl, and replace the lame crystal armor in the original clip attachment with the wings structure look from @char_oriane_v3_battle. and the beast.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_230433_58f2b685-4159-47d3-945f-f3914f34f4c8.mp4",
+  "shot": "S11",
+  "how": "map",
+  "folder": "root",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
   "id": "d484a959-482d-4a30-913b-fef46183be71",
   "createdAt": 1789369075.127349,
   "type": "video",
@@ -37,7 +626,11 @@
   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260814_065452_08c4509c-08ee-4075-b6e5-70559af62e34.png",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_d484a959-482d-4a30-913b-fef46183be71.mp4",
   "shot": "S21",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "25660204-33bc-43b9-80aa-411a0999baeb",
@@ -77,7 +670,11 @@
   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260814_065452_08c4509c-08ee-4075-b6e5-70559af62e34.png",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_25660204-33bc-43b9-80aa-411a0999baeb.mp4",
   "shot": "S21",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "f0a995ac-6720-4c59-b395-e60a2760867a",
@@ -113,7 +710,11 @@
   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_193656_dd720bb7-6a07-435f-aeaa-7b97a67c567a.png",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_045750_f0a995ac-6720-4c59-b395-e60a2760867a.mp4",
   "shot": "S12",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "5caa2e9f-d579-4c07-a431-ce5c3d0666ad",
@@ -149,7 +750,11 @@
   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_193656_dd720bb7-6a07-435f-aeaa-7b97a67c567a.png",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_045750_5caa2e9f-d579-4c07-a431-ce5c3d0666ad.mp4",
   "shot": "S12",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "ca08e6fd-80f4-4b6e-b672-f00c714edce6",
@@ -184,7 +789,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ca08e6fd-80f4-4b6e-b672-f00c714edce6.mp4",
   "shot": "S23",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "ae644d57-97fe-4a84-be00-74bac3c644e0",
@@ -219,7 +828,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ae644d57-97fe-4a84-be00-74bac3c644e0.mp4",
   "shot": "S23",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54",
@@ -250,7 +863,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54.mp4",
   "shot": "S22",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "4896c8e3-bbd9-4162-8380-c460de8fcb0d",
@@ -281,7 +898,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4",
   "shot": "S22",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "6b0d0fac-9889-4ec4-a802-b1db7b0383b6",
@@ -312,7 +933,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_6b0d0fac-9889-4ec4-a802-b1db7b0383b6.mp4",
   "shot": "S22",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "d35da4ef-22dc-4e4a-9c37-d68e234de39b",
@@ -343,7 +968,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_d35da4ef-22dc-4e4a-9c37-d68e234de39b.mp4",
   "shot": "S22",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "38eb40d5-4f8d-452c-ac96-a230864a9486",
@@ -374,7 +1003,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223712_38eb40d5-4f8d-452c-ac96-a230864a9486.mp4",
   "shot": "S22",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "906714ac-f799-4add-9795-cfbdae775335",
@@ -405,7 +1038,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223632_906714ac-f799-4add-9795-cfbdae775335.mp4",
   "shot": "S21",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "2ab9dfa7-14ca-422a-a8cc-3d401575b90f",
@@ -444,7 +1081,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4",
   "shot": "S20",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "36e39026-52a3-4821-9d04-23ec1ec4aba3",
@@ -483,7 +1124,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4",
   "shot": "S20",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "e8858b44-44fc-4f2c-b47d-077cde893c5c",
@@ -522,7 +1167,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_e8858b44-44fc-4f2c-b47d-077cde893c5c.mp4",
   "shot": "S19",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "0a4c3337-498f-49bc-8aac-2ed1c52a3019",
@@ -561,7 +1210,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_0a4c3337-498f-49bc-8aac-2ed1c52a3019.mp4",
   "shot": "S19",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "4a85d97a-3368-411a-957f-1bb06442eee5",
@@ -592,7 +1245,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_4a85d97a-3368-411a-957f-1bb06442eee5.mp4",
   "shot": "S18",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "ce8cd528-18db-48db-a1a3-b956e45e3de5",
@@ -623,7 +1280,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_ce8cd528-18db-48db-a1a3-b956e45e3de5.mp4",
   "shot": "S18",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "8c13f573-7a01-415f-ac20-8f1f53dcc547",
@@ -666,7 +1327,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_8c13f573-7a01-415f-ac20-8f1f53dcc547.mp4",
   "shot": "S17",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "256dfbfe-e18a-4b42-aefa-4962f7f901bc",
@@ -709,7 +1374,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_256dfbfe-e18a-4b42-aefa-4962f7f901bc.mp4",
   "shot": "S17",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "e8d1b2a6-320a-4226-aa37-a1aca9edf19b",
@@ -740,7 +1409,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222142_e8d1b2a6-320a-4226-aa37-a1aca9edf19b.mp4",
   "shot": "S16",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "70c01e2f-bc7b-4399-9c31-ea2d725c1741",
@@ -771,7 +1444,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222142_70c01e2f-bc7b-4399-9c31-ea2d725c1741.mp4",
   "shot": "S16",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "aa65cc3d-fc49-44f2-8007-afc318ee379b",
@@ -806,7 +1483,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_aa65cc3d-fc49-44f2-8007-afc318ee379b.mp4",
   "shot": "S15",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "194f53e7-a52a-4b50-92c5-82bdae6e10b2",
@@ -841,7 +1522,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_194f53e7-a52a-4b50-92c5-82bdae6e10b2.mp4",
   "shot": "S15",
-  "how": "map"
+  "how": "map",
+  "folder": "scene3",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "c2e2b8db-9973-488e-aee8-0a1d3494855c",
@@ -876,7 +1561,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221613_c2e2b8db-9973-488e-aee8-0a1d3494855c.mp4",
   "shot": "S14",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "e4b5998b-1ff3-45e8-901b-a84027c36c49",
@@ -903,7 +1592,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221449_e4b5998b-1ff3-45e8-901b-a84027c36c49.mp4",
   "shot": "S13",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "416f5f35-9bdc-411c-9b90-76cf3e7ef448",
@@ -930,7 +1623,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221449_416f5f35-9bdc-411c-9b90-76cf3e7ef448.mp4",
   "shot": "S13",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "4779332a-6a05-457c-93fa-8cb4c60b1744",
@@ -957,7 +1654,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221409_4779332a-6a05-457c-93fa-8cb4c60b1744.mp4",
   "shot": "S13",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "820907db-ba74-4ae3-84be-be5dc2423239",
@@ -984,7 +1685,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221409_820907db-ba74-4ae3-84be-be5dc2423239.mp4",
   "shot": "S13",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "3cc59ef0-e2f8-4589-b832-eee7dc665bdc",
@@ -1031,7 +1736,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221201_3cc59ef0-e2f8-4589-b832-eee7dc665bdc.mp4",
   "shot": "S12",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "c9da8ff1-1106-425c-8aec-77d06e74eff6",
@@ -1078,7 +1787,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221201_c9da8ff1-1106-425c-8aec-77d06e74eff6.mp4",
   "shot": "S12",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "328324f8-f861-44ce-abcf-a0936131c0b7",
@@ -1125,7 +1838,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_328324f8-f861-44ce-abcf-a0936131c0b7.mp4",
   "shot": "S11",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "95326675-0f8e-4bab-8080-da7b36076f69",
@@ -1172,7 +1889,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_95326675-0f8e-4bab-8080-da7b36076f69.mp4",
   "shot": "S11",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "1971bd66-4b13-468f-9a3d-f962592b2433",
@@ -1211,7 +1932,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_1971bd66-4b13-468f-9a3d-f962592b2433.mp4",
   "shot": "S10",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "bab3224f-6ea7-4d17-a89e-36ab77b6dd0f",
@@ -1250,7 +1975,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_bab3224f-6ea7-4d17-a89e-36ab77b6dd0f.mp4",
   "shot": "S10",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "4abb698e-fd51-4350-a51b-80130d5c0204",
@@ -1289,7 +2018,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_4abb698e-fd51-4350-a51b-80130d5c0204.mp4",
   "shot": "S10",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "b34943d9-635c-4404-9726-9b7ff6fec284",
@@ -1328,7 +2061,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_b34943d9-635c-4404-9726-9b7ff6fec284.mp4",
   "shot": "S10",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "165ab3d9-6fe4-4862-b606-83605e88de9d",
@@ -1363,7 +2100,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220522_165ab3d9-6fe4-4862-b606-83605e88de9d.mp4",
   "shot": "S9",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "ac7a4e25-e6de-4175-bbaa-c543aa36decf",
@@ -1398,7 +2139,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220522_ac7a4e25-e6de-4175-bbaa-c543aa36decf.mp4",
   "shot": "S9",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "01714029-13dd-4f3b-b145-c0093fb72836",
@@ -1429,7 +2174,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220113_01714029-13dd-4f3b-b145-c0093fb72836.mp4",
   "shot": "S8",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "ba9b30eb-8875-48da-a5d5-997722cd2c99",
@@ -1460,7 +2209,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220113_ba9b30eb-8875-48da-a5d5-997722cd2c99.mp4",
   "shot": "S8",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "deedd011-18ca-4c9b-a25e-74f7501aaa96",
@@ -1491,7 +2244,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214805_deedd011-18ca-4c9b-a25e-74f7501aaa96.mp4",
   "shot": "S7",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "fd089667-31c3-4fb8-9bbd-0929dab24597",
@@ -1522,7 +2279,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214805_fd089667-31c3-4fb8-9bbd-0929dab24597.mp4",
   "shot": "S7",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520",
@@ -1549,7 +2310,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520.mp4",
   "shot": "S6",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "a89f4676-3e0d-4506-966d-32dce04f7ab3",
@@ -1576,7 +2341,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_a89f4676-3e0d-4506-966d-32dce04f7ab3.mp4",
   "shot": "S6",
-  "how": "map"
+  "how": "map",
+  "folder": "scene2",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "3b4e617c-1c9f-4f71-afcc-87ab125e98da",
@@ -1603,7 +2372,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214631_3b4e617c-1c9f-4f71-afcc-87ab125e98da.mp4",
   "shot": "S4",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "d4fdb764-7f75-4bbd-846d-3328cd9ab6bc",
@@ -1630,7 +2403,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214631_d4fdb764-7f75-4bbd-846d-3328cd9ab6bc.mp4",
   "shot": "S4",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "bdf527cd-fcea-4b28-93d2-7b556490b6f5",
@@ -1665,7 +2442,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214435_bdf527cd-fcea-4b28-93d2-7b556490b6f5.mp4",
   "shot": "S5",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "5bb46cd9-4cc2-43d1-b581-ec8b5be6b3c7",
@@ -1700,7 +2481,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214435_5bb46cd9-4cc2-43d1-b581-ec8b5be6b3c7.mp4",
   "shot": "S5",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "21e77f5d-d864-424f-a56b-89348f9aac1c",
@@ -1735,7 +2520,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_213435_21e77f5d-d864-424f-a56b-89348f9aac1c.mp4",
   "shot": "S5",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "959236d4-4ce2-45a5-9d4c-d03d7292da08",
@@ -1770,7 +2559,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_213435_959236d4-4ce2-45a5-9d4c-d03d7292da08.mp4",
   "shot": "S5",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "fed12f12-f8c1-4f40-8baf-fb8890ae92fb",
@@ -1797,7 +2590,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_212612_fed12f12-f8c1-4f40-8baf-fb8890ae92fb.mp4",
   "shot": "S4",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "ec2aa3e5-c396-46f6-8c85-80860eb23752",
@@ -1824,7 +2621,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_212612_ec2aa3e5-c396-46f6-8c85-80860eb23752.mp4",
   "shot": "S4",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "3ef54818-5940-444f-85ad-61ae0a30a264",
@@ -1859,7 +2660,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_211539_3ef54818-5940-444f-85ad-61ae0a30a264.mp4",
   "shot": "S3",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "4874d9e4-6f43-4838-91cf-803223a44ba0",
@@ -1894,7 +2699,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_211539_4874d9e4-6f43-4838-91cf-803223a44ba0.mp4",
   "shot": "S3",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "f84a308f-c046-4985-a4f0-deaaacddef31",
@@ -1930,7 +2739,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4",
   "shot": "S1",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "7ad03129-7d8d-44a3-8688-08aabfec3d64",
@@ -1957,7 +2770,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174017_7ad03129-7d8d-44a3-8688-08aabfec3d64.mp4",
   "shot": "S1",
-  "how": "map"
+  "how": "map",
+  "folder": "film",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "3a437add-909f-469f-abe4-d4ec1ab1e8c1",
@@ -1997,7 +2814,11 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260910_203419_3a437add-909f-469f-abe4-d4ec1ab1e8c1.mp4",
   "shot": "S1",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  },
  {
   "id": "48c4b641-9340-43bb-a813-5e4aa2de041f",
@@ -2037,6 +2858,142 @@
   "thumb": "",
   "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260910_203413_48c4b641-9340-43bb-a813-5e4aa2de041f.mp4",
   "shot": "S1",
-  "how": "map"
+  "how": "map",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "c437bc36-25ea-470f-a562-7ad886fa9fb1",
+  "createdAt": 1788837512.129634,
+  "type": "video",
+  "model": "seedance_2_5",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [],
+  "prompt": "Continue the same unbroken move, now travelling laterally through the courtyard at chest height rather than approaching from behind. Flowerbeds planted with small living worlds on stems pass through the foreground, each turning slowly with visible cloud systems. Light beams read as architecture: solid, load-bearing, faintly humming. The two figures come into frame from the left in profile, standing at the parapet looking down. Both wear robes woven from light; the woman's body beneath hers is crystalline. The man shivers once. The camera continues past them without stopping. Same lens, same grade, same haze.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260908_031832_c437bc36-25ea-470f-a562-7ad886fa9fb1.mp4",
+  "shot": null,
+  "how": "unplaced",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "394484bc-42d0-4148-b1dd-7154c6213801",
+  "createdAt": 1788837512.129601,
+  "type": "video",
+  "model": "seedance_2_5",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [],
+  "prompt": "Continue the same unbroken move, now travelling laterally through the courtyard at chest height rather than approaching from behind. Flowerbeds planted with small living worlds on stems pass through the foreground, each turning slowly with visible cloud systems. Light beams read as architecture: solid, load-bearing, faintly humming. The two figures come into frame from the left in profile, standing at the parapet looking down. Both wear robes woven from light; the woman's body beneath hers is crystalline. The man shivers once. The camera continues past them without stopping. Same lens, same grade, same haze.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260908_031832_394484bc-42d0-4148-b1dd-7154c6213801.mp4",
+  "shot": null,
+  "how": "unplaced",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "b9c5d61d-c23f-47bb-b16c-38a6522f3c6b",
+  "createdAt": 1788837489.752107,
+  "type": "video",
+  "model": "seedance_2_5",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [],
+  "prompt": "Continue the same unbroken move. The camera drifts forward at walking pace through a luxurious courtyard whose flowerbeds are planted with worlds — small living planets on stems, each turning slowly, clouds visible on their surfaces. Light beams read as architecture: solid, load-bearing, faintly humming. At the far end, two figures stand with their backs to us, looking down at something below. Both wear robes woven from light. The woman's body beneath hers is crystalline — faceted, refracting the star below. The man shivers once, which is the wrong way round and is the point. The camera keeps approaching and does not stop. Same lens, same grade, same haze as before.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260908_031809_b9c5d61d-c23f-47bb-b16c-38a6522f3c6b.mp4",
+  "shot": null,
+  "how": "unplaced",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "acec24ac-45af-4555-b08c-e5c7157608e5",
+  "createdAt": 1788837489.752076,
+  "type": "video",
+  "model": "seedance_2_5",
+  "duration": 20,
+  "resolution": "720p",
+  "w": 1344,
+  "h": 576,
+  "audio": true,
+  "frames": [],
+  "refs": [],
+  "prompt": "Continue the same unbroken move. The camera drifts forward at walking pace through a luxurious courtyard whose flowerbeds are planted with worlds — small living planets on stems, each turning slowly, clouds visible on their surfaces. Light beams read as architecture: solid, load-bearing, faintly humming. At the far end, two figures stand with their backs to us, looking down at something below. Both wear robes woven from light. The woman's body beneath hers is crystalline — faceted, refracting the star below. The man shivers once, which is the wrong way round and is the point. The camera keeps approaching and does not stop. Same lens, same grade, same haze as before.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260908_031809_acec24ac-45af-4555-b08c-e5c7157608e5.mp4",
+  "shot": null,
+  "how": "unplaced",
+  "folder": "scene1",
+  "favourite": false,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "339f05e1-c78e-4b9d-a7f9-b9b5fb28d1e1",
+  "createdAt": 1788837419.466159,
+  "type": "video",
+  "model": "seedance_2_5",
+  "duration": 20,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [],
+  "prompt": "Cinematic 2.39:1. Open in total black. A slow vertical crane rises out of a churning ocean of liquid white-gold flame — the surface of a star, treated as landscape rather than sphere. Plasma moves like weather, not fire. The camera keeps rising, unhurried, for the full duration. In the final third, structures resolve out of the glare: a courtyard built from solidified beams of light, standing untouched in the flame, casting hard-edged shadows that should be impossible. No people yet. No cuts. Anamorphic flare, deep blacks, heavy atmospheric haze. Sound: low sub-bass and a distant choir of stars, no music.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260908_031659_339f05e1-c78e-4b9d-a7f9-b9b5fb28d1e1.mp4",
+  "shot": null,
+  "how": "unplaced",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
+ },
+ {
+  "id": "3c5d65d9-6451-47fc-bdae-9e850561c4aa",
+  "createdAt": 1788837419.466123,
+  "type": "video",
+  "model": "seedance_2_5",
+  "duration": 20,
+  "resolution": "1080p",
+  "w": 2016,
+  "h": 864,
+  "audio": true,
+  "frames": [],
+  "refs": [],
+  "prompt": "Cinematic 2.39:1. Open in total black. A slow vertical crane rises out of a churning ocean of liquid white-gold flame — the surface of a star, treated as landscape rather than sphere. Plasma moves like weather, not fire. The camera keeps rising, unhurried, for the full duration. In the final third, structures resolve out of the glare: a courtyard built from solidified beams of light, standing untouched in the flame, casting hard-edged shadows that should be impossible. No people yet. No cuts. Anamorphic flare, deep blacks, heavy atmospheric haze. Sound: low sub-bass and a distant choir of stars, no music.",
+  "thumb": "",
+  "mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260908_031659_3c5d65d9-6451-47fc-bdae-9e850561c4aa.mp4",
+  "shot": null,
+  "how": "unplaced",
+  "folder": "scene1",
+  "favourite": true,
+  "placement_status": "completed",
+  "member": true
  }
 ]

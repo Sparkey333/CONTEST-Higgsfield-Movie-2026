@@ -8,6 +8,7 @@ A DUMP is a JSON file in the shape the Higgsfield MCP `show_generations` tool re
 concatenated. Big pulls land on disk as files, which is exactly what this reads.
 
 The one-folder rule, enforced the only way the API allows: a generation is admitted if
+    (0) it is placed in the project (list_project_assets → --placements) — the API can now say so, or
     (a) any reference element it was made with is in this project's cast, or
     (b) its job id is on this project's ledger (the desk made it), or
     (c) its id or prompt is in projects/<slug>/shotmap.json (you placed it by hand),
@@ -45,6 +46,7 @@ def main():
     ap.add_argument("--images", action="store_true", help="admit image generations too (default: video only)")
     ap.add_argument("--all", action="store_true", help="admit everything in the window regardless of cast (audit mode)")
     ap.add_argument("--scores", help="a scores.json to copy alongside (id -> Virality Predictor record)")
+    ap.add_argument("--placements", help="project membership from list_project_assets: a TSV (item_id, folder, ...) or a JSON file/list of {items:[...]} pages. When given, membership is the first admission rule and the folder rides on each take.")
     a = ap.parse_args()
     pdir = pathlib.Path(a.project); P = json.load(open(pdir / "project.json"))
     cast_ids = {v for grp in P["cast"].values() for v in grp.values() if not str(v).startswith("<")}
@@ -53,6 +55,16 @@ def main():
     smap = json.load(open(pdir / "shotmap.json")) if (pdir / "shotmap.json").exists() else {}
     w = P.get("window", {}); t0 = epoch(w.get("from")) if w.get("from") else 0; t1 = epoch(w.get("to")) + 86400 if w.get("to") else 1e12
     shots = {s["id"]: s for s in P["shots"]}
+    member = {}
+    if a.placements:
+        raw = pathlib.Path(a.placements).read_text()
+        if a.placements.endswith(".tsv"):
+            for line in raw.splitlines()[1:]:
+                c = line.split("\t")
+                if len(c) >= 2 and c[0]: member[c[0]] = {"folder": c[1], "status": c[3] if len(c) > 3 else "", "favourite": (c[4] == "1") if len(c) > 4 else False}
+        else:
+            for pg in load_items(a.placements) if raw.lstrip().startswith("[") or raw.lstrip().startswith("{") else []:
+                if isinstance(pg, dict) and pg.get("item_id"): member[pg["item_id"]] = {"folder": pg.get("folder_id", ""), "status": pg.get("status", ""), "favourite": bool(pg.get("is_favourite"))}
     by_pick = {}
     for s in P["shots"]:
         if s.get("pick"): by_pick[s["pick"][:8]] = (s["id"], "pick")
@@ -71,7 +83,7 @@ def main():
             if not (t0 <= ts <= t1): rejected["window"] += 1; continue
             prm = it.get("params") or {}
             refs = [{"id": r.get("id"), "name": r.get("name")} for r in (prm.get("reference_elements") or [])]
-            ok = a.all or gid in ledger or gid[:8] in smap or any(r["id"] in cast_ids or r["name"] in cast_names for r in refs)
+            ok = a.all or gid in member or gid in ledger or gid[:8] in smap or any(r["id"] in cast_ids or r["name"] in cast_names for r in refs)
             if not ok: rejected["cast"] += 1; continue
             res = it.get("results") or {}
             if isinstance(res, list): res = res[0] if res else {}
@@ -95,6 +107,8 @@ def main():
                     if j > bs: best, bs = sid, j
                 if best and bs >= 0.35: shot, how = best, f"prompt:{bs:.2f}"
             g["shot"], g["how"] = shot, how
+            if gid in member: g["folder"] = member[gid]["folder"]; g["favourite"] = member[gid]["favourite"]; g["placement_status"] = member[gid]["status"]; g["member"] = True
+            else: g["member"] = False
             admitted.append(g)
     admitted.sort(key=lambda g: -g["createdAt"])
     (pdir / "generations.json").write_text(json.dumps(admitted, indent=1, ensure_ascii=False))
@@ -103,7 +117,7 @@ def main():
         (pdir / "scores.json").write_text(json.dumps(keep, indent=1)); print(f"scores: {len(keep)} kept of {len(sc)}")
     from collections import Counter
     per = Counter(g["shot"] for g in admitted if g["shot"]); zero = [s for s in shots if s not in per and shots[s].get("status") not in ("unshot",) and not str(shots[s].get("status","")).startswith("merged")]
-    print(f"admitted {len(admitted)}  rejected {rejected}  unplaced {sum(1 for g in admitted if not g['shot'])}")
+    print(f"admitted {len(admitted)}  rejected {rejected}  unplaced {sum(1 for g in admitted if not g['shot'])}  members {sum(1 for g in admitted if g.get('member'))}" + (f"  (placements listed {len(member)}, {sum(1 for m in member if m not in seen)} not in any dump)" if member else ""))
     print("takes per shot:", dict(sorted(per.items(), key=lambda kv: (len(kv[0]), kv[0]))))
     if zero: print("shots with zero takes:", zero)
     return 0

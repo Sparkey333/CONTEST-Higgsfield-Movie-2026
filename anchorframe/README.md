@@ -27,7 +27,7 @@ python3 anchorframe/generate.py anchorframe/projects/<slug> --shot S5 --model <c
 ```
 
 ## The one-folder rule, and what the API can enforce
-Exclusive to one Higgsfield project, enforced the only way the API allows: **admission by cast** (a take is yours if it was made with an element in your cast), **ledger on submission** (the request id is on `project.json` before anyone waits), and a **hand map** for anything placed by eye. Folder placement itself stays in the web app — no image model and almost no video model accepts a folder id over the API. `links.json` records every Higgsfield surface the production used, marked verified or not.
+Exclusive to one Higgsfield project. Since Sep 29 the connector exposes `list_projects`, `list_folders` and `list_project_assets`, so **membership is now the first admission rule**: page the project's assets, save them as `placements.tsv`, and `ingest.py --placements` admits every item placed in the project, with its folder and favourite flag on the take. The older rules still apply behind it — **admission by cast**, **ledger on submission**, a **hand map** — because a project can hold takes made with a retired cast, and the desk can make takes the web app has not filed yet. Generation still lands in the folder only when made in the web app or on a model that takes `folder_id`; `create_folder` / `create_project` now exist for the desk to file into. `links.json` records every Higgsfield surface the production used, marked verified or not.
 
 ## Files
 | | |
