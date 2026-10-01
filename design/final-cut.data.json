@@ -1,6 +1,6 @@
 {
  "_": "Data half of the final-cut read. Regenerate with design/assemble-final-cut.py; the authored half is design/final-cut.notes.json.",
- "generated": "2026-09-29 23:46 UTC",
+ "generated": "2026-10-01 21:32 UTC",
  "plans": {
   "bible": {
    "total": 300,
@@ -1316,7 +1316,7 @@
   },
   {
    "id": "bd28d7c2-25e7-4f5e-9e7f-90c5f710b131",
-   "role": "Sep 18 upload · 18:55 UTC · still in the analyser's queue",
+   "role": "Sep 18 upload · 18:55 UTC · a 15-second leviathan clip, not the film",
    "uploaded": "2026-09-18 18:55 UTC",
    "in_project": "—"
   },
@@ -1341,7 +1341,7 @@
   {
    "id": "0fd8b8c7-87f5-447b-bbff-d34410a19b9b",
    "on": "bd28d7c2",
-   "status": "queued since 22:30 UTC"
+   "status": "completed Sep 30 00:08 UTC · 8 scenes · 0:15 · the leviathan clip, not the film"
   }
  ]
 }
