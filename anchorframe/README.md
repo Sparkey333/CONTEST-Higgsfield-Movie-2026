@@ -39,6 +39,10 @@ Exclusive to one Higgsfield project. Since Sep 29 the connector exposes `list_pr
 | `keys.html` | bring your own keys, local only |
 | `tips.md` · `schema.md` · `project.example.json` | the tips, the format, the blank |
 | `projects/matter-of-light/` | the worked example on real data: 27 shots, 59 of 130 takes admitted, none unplaced, 18 scored |
+| `projects/stone-of-matter-ep2-darkness/` | the second film, written before a frame exists: 26 shots in four movements, every pending sheet briefed, the previous film's lessons applied as rules |
+
+## The second film
+`projects/stone-of-matter-ep2-darkness/` is the desk's first sequel: a board written from the Episode 2 screenplay the day after the Episode 1 read, with nothing generated yet. It inherits the first film's plates and Souls **by id** (`project.json → inherits`), carries the Learn stage's findings as rules (`inherits.lessons_applied`), briefs every new face and place in one line (`sheets`) and locks its three cues before the stills reel (`music`). Its board renders every shot as an unshot prompt, ready to paste; `schema.md` documents the four optional blocks.
 
 ## From short to feature to game
 Same primitives — cast ids, anchors, takes, board, ledger — three products. The short is built. Feature and Series need multi-project cast sharing and an act-level board. Play (games) needs a sheet type per asset class, an export to an engine folder layout, and a review board keyed by asset rather than shot. `workflow.json → expand` states each honestly as built or roadmap.

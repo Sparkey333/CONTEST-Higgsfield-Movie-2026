@@ -5,7 +5,7 @@
 `format` · `aspect` (`21:9`, `16:9`, `2.39:1`…), `resolution`, `fps`, `container`.
 `higgsfield` · `project_name`, `project_url`, `folder_id`, `video_model`, `image_model`, `audio_model`. The folder id is recorded so the desk can say where a project lives; see the README for what the API can and cannot do with it.
 `window` · `from` / `to` (ISO dates). Ingest drops anything outside it.
-`acts[]` · `id`, `name`, `tone` (`sun` | `void` | `coral` — the board's colour for that act).
+`acts[]` · `id`, `name`, `tone` (`sun` | `void` | `coral` | `stardust` | `forest` | `lake` | `dark` — the board's colour for that act).
 `cast` · `characters`, `environments`, `props`, `fx` — each `name → element uuid`. This is the admission list: a generation is this project's if any element it was made with is here.
 `souls` · `name → soul uuid`. One Soul per generation is the platform limit; multi-person shots run on elements.
 `retired` · `old name → old uuid`. Swept out of prompts; kept so old renders still attribute.
@@ -22,3 +22,11 @@
 ## `final` — the delivered film
 
 Written at stage 8. `master` is the file the jury saw (upload id, container, when uploaded, where it sits in the project); `exports` are the later encodes (the low proxy, the HQ); `analyses` are the platform's scene-analysis job ids on each; `read` points at where the diff against the board lives. Every id here is an upload, not a generation, so `ingest.py` never admits them — they are the film, not a take.
+
+## Sequels — `series`, `inherits`, `sheets`, `music` (optional)
+
+Added for the second film. None of them is read by `build.py`; they are the record the next reader needs.
+`series` · where the film sits: `world`, `book`, `episode`, `follows` (the previous project's slug), `source`, `codex` (the note in the story codex), `form`, `names` (which name set the prompts use, and why).
+`inherits` · what this film takes from the previous one **by id**: `elements` (`name → uuid`, attached in prompts exactly as before), `souls`, `read` (one paragraph of what the previous film's Learn stage found) and `lessons_applied[]` (what this board does differently because of it).
+`sheets` · for a board written before anything is generated: one-line briefs for every pending element under `characters`, `environments`, `props`, `fx`, so Stage 1 can run from the project file alone. A pending id is the literal `<element uuid>`; prompts reference it as `@name` so the board marks it, and switch to `@[name](uuid)` when the sheet exists.
+`music` · the cues, which shots each covers, and the words the cuts land on — written at Stage 0, because tip 32 says so.
