@@ -1,0 +1,6 @@
+# the novel-to-production name mapping, and anything else marked local, never leaves this machine
+*.local.*
+# Obsidian's per-machine state
+.obsidian/workspace*.json
+.obsidian/cache
+.trash/
