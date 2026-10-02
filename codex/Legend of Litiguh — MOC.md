@@ -17,8 +17,9 @@ The world of *Stone of Matter* and the series made from it. Zoom out from here t
 
 ## Zoom in — the series
 - [[Series/_Series — MOC|Series]] — the ladder from chapter to episode to short film
-- [[Series/Ep 1 — Matter of Light|Ep 1 — Matter of Light]] — made; the film record
-- [[Series/Ep 2 — Darkness|Ep 2 — Darkness]] — boarded; 26 shots, nothing generated yet
+- [[Series/Ep 1 — Matter of Light|Ep 1 — Matter of Light]] — SoM V1, made; the film record
+- [[Series/Ep 2 — Darkness|Ep 2 — Darkness]] — SoM V2, boarded in every length; [[Series/Ep 2 — Soundtrack|the soundtrack]]
+- [[Series/Transitions|Transitions]] — how one episode hands to the next
 - [[Series/Episode map|Episode map]] — the proposed episodes for the rest of Book I
 
 ## Scripts
