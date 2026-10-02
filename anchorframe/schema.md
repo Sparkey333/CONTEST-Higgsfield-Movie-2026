@@ -30,3 +30,14 @@ Added for the second film. None of them is read by `build.py`; they are the reco
 `inherits` · what this film takes from the previous one **by id**: `elements` (`name → uuid`, attached in prompts exactly as before), `souls`, `read` (one paragraph of what the previous film's Learn stage found) and `lessons_applied[]` (what this board does differently because of it).
 `sheets` · for a board written before anything is generated: one-line briefs for every pending element under `characters`, `environments`, `props`, `fx`, so Stage 1 can run from the project file alone. A pending id is the literal `<element uuid>`; prompts reference it as `@name` so the board marks it, and switch to `@[name](uuid)` when the sheet exists.
 `music` · the cues, which shots each covers, and the words the cuts land on — written at Stage 0, because tip 32 says so.
+
+## Lanes, forms, the episode, bridges, themes (optional, rendered by `build.py`)
+
+`shots[].lanes[]` · the Matter of Light shot grammar: `{c, name, why, prompt}` with `c` = `A` (ships — the one the forms and the frame string assume), `B` (coverage — a second angle so the editor has more than one), `C` (chroma — graded to its ceiling for spots, key art and the music video). `prompt` on the shot stays lane A, so `generate.py --prompt-from-shot` is unchanged.
+`forms[]` · one story at every length, cut from the same shots: `{id, kind, name, target_s, why, cut[]}` where each cut entry is `{shot, lane, s, note?, part?}` or an editorial `{card, s}`; `auto: "shots"` builds the cut from the board in order. The board draws a ribbon and a timed cut list per form.
+`episode` · the long form (20–60 minutes): `{title, note, scenes[{n, scene, pages, min, shots[], adds}], grow}` — the screenplay's scenes at a page a minute, which shots of the short cover each, and what the episode puts back.
+`bridges` · transitions between episodes: `{note, in{title, status, links[{from, to}]}, out{…}}`. A transition belongs to the episode it opens and is listed by the one it closes.
+`themes` · the soundtrack: `{title, note, songs[{id, title, use, theme, from, fit, style, lyrics}]}` — `style` and `lyrics` are paste-ready for a music generator (section tags in brackets).
+
+## `desk.json` (optional, one per branch)
+`{title, edition, series, episode, current, eyebrow, description, editions_note, editions[{edition, episode, title, state, branch, url, note}]}` — which desk this branch is. `desk.py` uses it for the page title, the edition badge and the Editions panel, and lists the `current` project first.

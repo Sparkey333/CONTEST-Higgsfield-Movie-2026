@@ -1,6 +1,24 @@
-# Stone of Matter — Ep. 2 Darkness · the treatment
+# Stone of Matter — Ep. 2 Darkness · the treatment (SoM V2)
 
 A short-film trailer music video, like *Matter of Light*, cut from the Episode 2 screenplay and the novel's chapters IV and VII–X; a direct sequel to the film, not only to the book. Target 5:00, board 5:24, 21:9, Cinema Studio video 4.0. Nothing is generated yet; this folder is the board before the first frame.
+
+## One story, every length
+The board now carries the Matter of Light grammar and every form it can be cut to (`project.json → forms`, drawn on the board):
+| Form | Length | What it is |
+|---|---|---|
+| Spot :30 | 0:30 | Commercial. Peak first: the burst of light, three lines, the dark cue's hit, the title. |
+| Spot :60 | 1:00 | Commercial with room: the prologue's line, two lines of the song, the stone alone before the fist. |
+| Music video | 3:30 | Cut to the main title song, *Every Light Casts a Shadow*, mostly on C lanes. |
+| Trailer short | 5:24 | The 26-shot board on lane A. |
+| Episode | ~36 min | The screenplay in full, 15 scenes at a page a minute (`project.json → episode`); 24 to 60 minutes by what is kept. |
+
+Every shot has three prompt lanes: **A** ships, **B** is coverage (a second angle, so the editor is never left with one), **C** is chroma (the graded key-art take for the spots and the music video).
+
+## Bridges
+Episode 1's last pages (the courtyard, the point of light, the cloud let in) and the delivered film's coda (the mountain and the lake) open this episode; Master Lyon's “significant day” and Drowning's pursuit of the Stone of Matter close it (`project.json → bridges`).
+
+## Soundtrack
+Six songs, each with Suno-ready lyrics and a style line (`project.json → themes`): *Every Light Casts a Shadow* (main title, music video), *We Are One*, *Seeds of Darkness*, *Little Worlds*, *Conqueror*, *Before They Follow*.
 
 ## Four movements
 | | Movement | Shots | Time | Cue | What it is |

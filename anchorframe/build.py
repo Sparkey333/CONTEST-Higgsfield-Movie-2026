@@ -53,6 +53,94 @@ def resolve(s):
     rest = sorted([t for t in takes if t != pick and t not in alts], key=lambda t: (-(sc8.get(t, {}).get("overall", -1)), -vids[t]["createdAt"]))
     return pick, (alts + rest)[:maxalt]
 
+LANE = {"A": "ships", "B": "coverage", "C": "chroma"}
+def lanes_html(s, d):
+    meta = f'{d}s · audio {"on" if s.get("audio") else "off"} on lane A · {esc(P["higgsfield"].get("video_model",""))} · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])}'
+    out = []
+    for l in s["lanes"]:
+        c = l["c"]
+        out.append(f'<div class="lane" data-lane="{esc(c)}"><div class="lh"><b class="lc">{esc(c)}</b><span class="ln">{esc(LANE.get(c, ""))}</span><h4>{esc(l.get("name",""))}</h4></div>'
+                   f'<p class="lw">{esc(l.get("why",""))}</p><pre class="prompt">{mark(l["prompt"])}</pre><div class="acts pad"><button type="button" class="copy" data-copy="{esc(l["prompt"])}">Copy lane {esc(c)}</button></div></div>')
+    return '<div class="lanes">' + "".join(out) + f'</div><p class="meta pad lanemeta">{meta}</p>'
+SHOT = {s["id"]: s for s in P["shots"]}
+def clock(x): x = int(round(x)); return f"{x//60}:{x%60:02d}"
+def form_html(f):
+    cut = f.get("cut") or []
+    if f.get("auto") == "shots": cut = [{"shot": s["id"], "lane": "A", "s": s.get("duration_s", 0)} for s in P["shots"] if not str(s.get("status","")).startswith("merged-into:")]
+    tot = sum(e.get("s", 0) for e in cut) or 1
+    segs, rows, t0, part = [], [], 0, None
+    for e in cut:
+        sec = e.get("s", 0); sid = e.get("shot"); lane = e.get("lane", "A")
+        if sid and sid in SHOT:
+            tone = TONE.get(SHOT[sid]["act"], "sun"); lab = sid + ("" if lane == "A" else lane); title = SHOT[sid].get("title", sid)
+        else:
+            tone = "card"; lab = "card"; title = e.get("card", "card")
+        tip = f'{lab} · {sec}s · {title}' + (f' — {e["note"]}' if e.get("note") else "")
+        segs.append(f'<b data-tone="{tone}" style="flex:{sec}" title="{esc(tip)}">{esc(lab) if sec / tot >= 0.045 else ""}</b>')
+        if e.get("part") and e["part"] != part:
+            part = e["part"]; rows.append(f'<li class="part">{esc(part)}</li>')
+        rows.append(f'<li><span class="tc">{clock(t0)}</span><span class="sh" data-tone="{tone}">{esc(lab)}</span><span class="se">{sec}s</span><span class="tt">{esc(title)}{(" — " + esc(e["note"])) if e.get("note") else ""}</span></li>')
+        t0 += sec
+    tgt = f.get("target_s")
+    return (f'<article class="form" id="form-{esc(f["id"])}"><header><span class="fk">{esc(f.get("kind",""))}</span><h3>{esc(f["name"])}</h3><span class="rt">{clock(t0)}' + (f' of {clock(tgt)} target' if tgt else "") + '</span></header>'
+            f'<p class="fw">{esc(f.get("why",""))}</p><div class="ribbon" aria-hidden="true">{"".join(segs)}</div>'
+            f'<details><summary>The cut, in order · {len(cut)} pieces</summary><ol class="cutlist">{"".join(rows)}</ol></details></article>')
+def sections():
+    out, nav = [], []
+    if P.get("forms"):
+        nav.append(("Forms", "#forms"))
+        out.append('<section class="xs" id="forms"><h2>One story, every length</h2><p class="note">' + esc(P.get("forms_note", "Every form is cut from the same shots. Lane A ships, B is coverage, C is the graded key-art take.")) + "</p>" + "".join(form_html(f) for f in P["forms"]) + "</section>")
+    ep = P.get("episode")
+    if ep:
+        nav.append(("Episode", "#episode"))
+        rows = "".join(f'<tr><td class="n">{esc(r["n"])}</td><td><b>{esc(r["scene"])}</b></td><td class="n">{esc(r["pages"])}</td><td class="n">{esc(r["min"])}</td><td>{esc(", ".join(r.get("shots", [])) or "—")}</td><td>{esc(r.get("adds",""))}</td></tr>' for r in ep["scenes"])
+        out.append(f'<section class="xs" id="episode"><h2>{esc(ep.get("title","The episode"))}</h2><p class="note">{esc(ep.get("note",""))}</p><div class="tw"><table class="ep"><thead><tr><th>#</th><th>Scene</th><th>Pages</th><th>Min</th><th>In the short</th><th>The episode puts back</th></tr></thead><tbody>{rows}</tbody></table></div>'
+                   + (f'<p class="note">{esc(ep["grow"])}</p>' if ep.get("grow") else "") + "</section>")
+    br = P.get("bridges")
+    if br:
+        nav.append(("Bridges", "#bridges"))
+        def bcard(k, label):
+            b = br.get(k)
+            if not b: return ""
+            items = "".join(f'<li><b>{esc(i["from"])}</b> → {esc(i["to"])}</li>' for i in b.get("links", []))
+            return f'<div class="bridge"><span class="fk">{label}</span><h3>{esc(b.get("title",""))}</h3><ul>{items}</ul>' + (f'<p class="meta">{esc(b["status"])}</p>' if b.get("status") else "") + "</div>"
+        out.append(f'<section class="xs" id="bridges"><h2>Bridges</h2><p class="note">{esc(br.get("note",""))}</p><div class="bridges">{bcard("in", "In · from the episode before")}{bcard("out", "Out · to the episode after")}</div></section>')
+    th = P.get("themes")
+    if th:
+        nav.append(("Soundtrack", "#soundtrack"))
+        cards = "".join(
+            f'<article class="theme" id="theme-{esc(x["id"])}"><header><span class="fk">{esc(x.get("use",""))}</span><h3>{esc(x["title"])}</h3></header><p class="fw"><b>{esc(x["theme"])}</b> {esc(x.get("from",""))}</p>'
+            f'<dl class="fit"><dt>Track</dt><dd>{esc(x.get("fit",""))}</dd><dt>Style</dt><dd><code>{esc(x["style"])}</code> <button type="button" class="copy sm" data-copy="{esc(x["style"])}">Copy style</button></dd></dl>'
+            f'<details><summary>Lyrics · {len(x["lyrics"].split())} words</summary><pre class="lyr">{esc(x["lyrics"])}</pre><div class="acts pad"><button type="button" class="copy" data-copy="{esc(x["lyrics"])}">Copy lyrics</button></div></details></article>' for x in th["songs"])
+        out.append(f'<section class="xs" id="soundtrack"><h2>{esc(th.get("title","Soundtrack"))}</h2><p class="note">{esc(th.get("note",""))}</p><div class="themes">{cards}</div></section>')
+    if not out: return ""
+    nav.append(("Shots", "#shots"))
+    jump = '<nav class="jump">' + "".join(f'<a href="{h}">{esc(n)}</a>' for n, h in nav) + "</nav>"
+    return jump + "".join(out) + '<h2 class="xs-h" id="shots">The shots</h2>'
+XCSS = """
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 4px}.jump a{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:6px 11px;background:var(--surface)}.jump a:hover{color:var(--ink)}
+.xs{margin-top:34px}.xs>h2,.xs-h{font-size:clamp(22px,3vw,30px);margin:40px 0 8px}.xs .note{color:var(--ink-2);max-width:90ch;margin:0 0 14px}
+.form,.theme,.bridge{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 20px;margin-top:14px;min-width:0}
+.form header,.theme header{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}.form h3,.theme h3,.bridge h3{font-size:19px;margin:0}
+.fk{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}.rt{margin-left:auto;font:500 13px var(--mono);font-variant-numeric:tabular-nums}
+.fw{color:var(--ink-2);margin:6px 0 10px;max-width:95ch}.form .ribbon{height:26px}
+[data-tone="card"]{--t:var(--ink-3)}
+.cutlist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:3px;font-size:13.5px}.cutlist li{display:grid;grid-template-columns:44px 56px 36px minmax(0,1fr);gap:8px;align-items:baseline}
+.cutlist li.part{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.cutlist .tc,.cutlist .se{font:12px var(--mono);color:var(--ink-3);font-variant-numeric:tabular-nums}.cutlist .sh{font:500 12px var(--mono);color:var(--t)}
+.tw{overflow-x:auto}table.ep{border-collapse:collapse;width:100%;font-size:14px;min-width:760px}table.ep th,table.ep td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}table.ep th{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}table.ep td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bridges{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.bridge ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2)}.bridge li{margin:6px 0}
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;align-items:start}.theme{margin-top:0}
+.fit{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0 0 10px;font-size:14px}.fit dt{font:500 10.5px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}.fit dd{margin:0;color:var(--ink-2)}.fit code{font:12px var(--mono);overflow-wrap:anywhere}
+.lyr{white-space:pre-wrap;font:13px/1.6 var(--mono);max-height:none}
+.copy.sm{padding:5px 9px;font-size:10px;margin-left:6px}
+.lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 22px}@media (max-width:1000px){.lanes{grid-template-columns:1fr}}
+.lane{border:1px solid var(--line);border-radius:10px;background:var(--surface-2,var(--surface));min-width:0;display:flex;flex-direction:column}
+.lane .lh{display:flex;align-items:baseline;gap:8px;padding:10px 12px 0}.lane .lc{font:600 13px var(--mono);width:22px;height:22px;display:inline-grid;place-items:center;border-radius:5px;background:var(--ink);color:var(--ground)}
+.lane[data-lane="B"] .lc{background:var(--void)}.lane[data-lane="C"] .lc{background:var(--coral)}
+.lane .ln{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}.lane h4{margin:0;font-size:15px}
+.lane .lw{margin:6px 12px 0;font-size:13px;color:var(--ink-2)}.lane .prompt{margin:8px 12px;flex:1}.lane .acts{padding:0 12px 12px}.lanemeta{padding:8px 22px 18px;margin:0}
+"""
 cards, ribbon, total, unshot, regen, placed = [], [], 0, 0, 0, 0
 for s in P["shots"]:
     sid, mv, title, tone = s["id"], s["act"], s.get("title", s["id"]), TONE.get(s["act"], "sun")
@@ -64,6 +152,7 @@ for s in P["shots"]:
         d = s.get("duration_s", 0); total += d; unshot += 1
         ribbon.append(f'<b data-tone="{tone}" class="new" style="flex:{d}" title="{sid} · {d}s · not yet shot">{sid}</b>')
         body = (f'<pre class="prompt">{mark(s["prompt"])}</pre><div class="acts pad"><button type="button" class="copy" data-copy="{esc(s["prompt"])}">Copy prompt</button><span class="meta">{d}s · audio {"on" if s.get("audio") else "off"} · {esc(P["higgsfield"].get("video_model",""))} · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])}</span></div>') if s.get("prompt") else '<p class="why muted">No prompt written yet.</p>'
+        if s.get("lanes"): body = lanes_html(s, d)
         cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{body}</article>'); continue
     placed += 1; d = vids[pick].get("duration") or s.get("duration_s", 0); total += d
     ribbon.append(f'<b data-tone="{tone}" style="flex:{d}" title="{sid} · {d}s">{sid if d >= 10 else ""}</b>')
@@ -112,14 +201,14 @@ details summary{{cursor:pointer;color:var(--ink-3);font-size:12px}} pre{{white-s
 .copy{{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--ground);border:0;border-radius:6px;padding:9px 14px;cursor:pointer}} .copy:focus-visible,.jid:focus-visible{{outline:2px solid var(--sun);outline-offset:2px}}
 h2{{font-size:clamp(22px,3vw,30px);margin:44px 0 10px}} .muted{{color:var(--ink-3)}} footer{{margin-top:40px;color:var(--ink-3);font-size:13px}}
 @media (max-width:760px){{.row{{grid-template-columns:1fr}}}} @media (prefers-reduced-motion:reduce){{*{{transition:none!important}}}}
-</style></head><body><div class="wrap">
+{XCSS}</style></head><body><div class="wrap">
 <header class="mast"><p class="eyebrow"><a href="../../index.html">anchorframe</a> · {esc(P["title"])} · built {datetime.datetime.utcnow().strftime("%d %b %Y %H:%M")} UTC</p>
 <h1>{esc(P["title"])} — the cut, take by take</h1>
 <p class="lede">{esc(P.get("logline",""))}</p>
 <div class="kpis"><div class="kpi"><b>{len(P["shots"])}</b><span>shots in the cut</span></div><div class="kpi"><b>{len(G)}</b><span>takes admitted to this project</span></div><div class="kpi"><b>{placed}</b><span>shots with a pick</span></div><div class="kpi"><b>{n}</b><span>takes scored</span></div><div class="kpi"><b>{regen}</b><span>to make again</span></div><div class="kpi"><b>{unshot}</b><span>not yet shot</span></div><div class="kpi"><b>{mm}</b><span>runtime of picks + unshot</span></div></div>
 <div class="ribbon" aria-hidden="true">{"".join(ribbon)}</div><div class="legend">{legend}<span>dashed — not yet shot</span></div>
 <p class="note">Project folder: <a href="{esc(hf.get("project_url","#"))}">{esc(hf.get("project_name",""))}</a> · video on <code>{esc(hf.get("video_model",""))}</code> · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])} · {P["format"].get("fps",24)} fps. Clips play inline when this file is opened locally; in a sandboxed viewer each tile shows its identity card and an <em>open the clip</em> link.</p></header>
-{"".join(cards)}
+{sections()}{"".join(cards)}
 <footer>Built by <code>anchorframe/build.py</code> from <code>project.json</code>, <code>generations.json</code> and <code>scores.json</code>. Change the JSON and rebuild; do not hand-edit this file.</footer></div>
 <script>
 document.querySelectorAll('.art video').forEach(v=>{{v.addEventListener('loadeddata',()=>v.parentNode.classList.add('live'));v.addEventListener('error',()=>v.remove())}});
