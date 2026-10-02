@@ -41,3 +41,9 @@ Added for the second film. None of them is read by `build.py`; they are the reco
 
 ## `desk.json` (optional, one per branch)
 `{title, edition, series, episode, current, eyebrow, description, editions_note, editions[{edition, episode, title, state, branch, url, note}]}` — which desk this branch is. `desk.py` uses it for the page title, the edition badge and the Editions panel, and lists the `current` project first.
+
+## The studio's data (`intake.json`, `projects/<slug>/intake.json`, `parity.json`, and the shared store)
+`intake.json` · `{sections[{id, name}], questions[{id, section, kind: text|long|choice|multi, options?, upload?, feeds, q, why}]}` — the template's questions; `feeds` names the project field each answer fills.
+`projects/<slug>/intake.json` · `{proposed: {qid: text | [options]}}` — what the repository already knows, shown as a proposal, never as an answer.
+`parity.json` · `{columns[{id, name, note}], groups[{name, rows[{f, <column id>: built|partial|planned|none, n}]}], plan[{phase, items[]}]}`.
+The studio's shared store (read by Claude on sync): `answers/<qid>` `{value, by, at}` · `uploads/<asset id>` `{asset, name, kind, tag, note, contentType, size, by, at}` · `ideas/<id>` `{text, tag, by, at}` · `shots/<shot id>` `{status, note, by, at}` · `jobs/<id>` `{target, label, tool, model, seconds, aspect, credits, ids[], status, payload, by, at}` · `links/<Higgsfield item id>` `{target: "sheet:<name>" | "shot:<id>:<lane>", kind, model, auto?, by, at}`.

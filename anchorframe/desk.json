@@ -9,9 +9,24 @@
  "description": "The Anchorframe desk for Stone of Matter, Episode 2: Darkness — one board in every length from a 30-second spot to a 36-minute episode.",
  "editions_note": "One desk per episode, one branch per desk. V1 made Matter of Light; V2 is building Darkness on the same method with V1's lessons applied as rules.",
  "editions": [
-  {"edition": "SoM V1", "episode": 1, "title": "Matter of Light", "state": "delivered", "branch": "claude/anchorframe", "url": "https://claude.ai/artifact/7fRUUuQPYvDEGCU6H9txfD",
-   "note": "The festival short, delivered at 6:17. 28 shots, 27 picks, 24 scored, and the Learn stage's read of the cut."},
-  {"edition": "SoM V2", "episode": 2, "title": "Darkness", "state": "boarded", "branch": "claude/anchorframe-ep2", "url": "https://claude.ai/artifact/AB4LmdcxtuYpEWiEgGtd4y",
-   "note": "26 shots × three lanes, a :30 and :60 spot, a 3:30 music video, the trailer short, a 36-minute episode outline and six songs. Nothing generated yet."}
- ]
+  {
+   "edition": "SoM V1",
+   "episode": 1,
+   "title": "Matter of Light",
+   "state": "delivered",
+   "branch": "claude/anchorframe",
+   "url": "https://claude.ai/artifact/7fRUUuQPYvDEGCU6H9txfD",
+   "note": "The festival short, delivered at 6:17. 28 shots, 27 picks, 24 scored, and the Learn stage's read of the cut."
+  },
+  {
+   "edition": "SoM V2",
+   "episode": 2,
+   "title": "Darkness",
+   "state": "boarded",
+   "branch": "claude/anchorframe-ep2",
+   "url": "https://claude.ai/artifact/AB4LmdcxtuYpEWiEgGtd4y",
+   "note": "26 shots × three lanes, a :30 and :60 spot, a 3:30 music video, the trailer short, a 36-minute episode outline and six songs. Nothing generated yet."
+  }
+ ],
+ "studio": "studio.html"
 }

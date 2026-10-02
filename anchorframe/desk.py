@@ -178,6 +178,7 @@ toplinks = "".join(f'<a class="chip hf" href="{esc(LINK[i]["url"])}" target="_bl
 NEX = sum(len(v) for X in EX for v in X.get("stages", {}).values())
 NAV_I = [("Workflow", "#workflow"), ("Projects", "#projects"), ("Start", "#start"), ("The loop", "#loop"), ("One folder", "#rule"), ("Scale", "#scale"), ("Why", "#why"), ("Links", "#links"), ("Keys", "keys.html"), ("Tips", "#tips")]
 EDB = (f'<span class="badge on">{esc(DK["edition"])} · Episode {esc(DK.get("episode",""))}</span>') if DK.get("edition") else ""
+if DK.get("studio"): EDB = f'<a class="badge on" href="{esc(DK["studio"])}" style="text-decoration:none">open the studio →</a>' + EDB
 def ed_card(e):
     here = e.get("edition") == DK.get("edition")
     link = ('<b>this desk</b>' if here else f'<a href="{esc(e["url"])}" target="_blank" rel="noopener">open {esc(e["edition"])} ↗</a>') if e.get("url") else ""

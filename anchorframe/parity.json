@@ -1,0 +1,61 @@
+{
+ "_": "Feature parity across the four things this repository has built or is building. Status: built · partial · planned · none. The studio's Parity tab renders this file.",
+ "columns": [
+  {"id": "bible", "name": "Director's Bible", "note": "The Matter of Light document: 31 sections, local ticks"},
+  {"id": "v1", "name": "Anchorframe SoM V1", "note": "The desk that made Episode 1"},
+  {"id": "v2", "name": "SoM V2 studio", "note": "This app, Episode 2"},
+  {"id": "svc", "name": "Template service", "note": "Any film, any user"}
+ ],
+ "groups": [
+  {"name": "Story and source", "rows": [
+   {"f": "Source library: manuscript, screenplays, transitions", "bible": "partial", "v1": "none", "v2": "built", "svc": "built", "n": "V2 stores PDFs, Markdown and text in Uploads; the novel and screenplay are in the codex."},
+   {"f": "Intake questions that fill the project", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "Sixteen questions, saved for everyone, written into project.json on sync."},
+   {"f": "Logline, turn and thesis", "bible": "built", "v1": "partial", "v2": "built", "svc": "built", "n": ""},
+   {"f": "Source backcheck: prompts read against the text", "bible": "built", "v1": "none", "v2": "planned", "svc": "planned", "n": "The canon seat does it today by hand."},
+   {"f": "Story codex (Obsidian vault)", "bible": "none", "v1": "none", "v2": "built", "svc": "planned", "n": "claude/codex: the novel by chapter, the world, the series ladder."}]},
+  {"name": "Cast and assets", "rows": [
+   {"f": "Cast as element ids and Souls", "bible": "built", "v1": "built", "v2": "partial", "svc": "built", "n": "V2 has a brief for every pending sheet; ids arrive after sync."},
+   {"f": "Generate cast sheets from the app", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "One still per sheet on nano_banana_2, filed in the project, cost previewed."},
+   {"f": "Turn a sheet into an element", "bible": "none", "v1": "none", "v2": "partial", "svc": "planned", "n": "Assign the image in the studio; Claude creates the element on sync."},
+   {"f": "Asset prompts in four lanes", "bible": "built", "v1": "none", "v2": "planned", "svc": "planned", "n": "Continuity, in-world plate, alternate medium, chroma."},
+   {"f": "Reference uploads, tagged", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "Look, cast, music, source, other."}]},
+  {"name": "Anchors and timing", "rows": [
+   {"f": "Frame string: shared, bridge, match frames", "bible": "built", "v1": "partial", "v2": "planned", "svc": "planned", "n": ""},
+   {"f": "Generate anchor stills per shot", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "Any lane as a 21:9 still before any video."},
+   {"f": "Stills reel and timing lock", "bible": "built", "v1": "built", "v2": "partial", "svc": "planned", "n": "V2 shows every form's ribbon; a stills player is planned."}]},
+  {"name": "Prompts and generation", "rows": [
+   {"f": "Shot prompts in three lanes", "bible": "built", "v1": "partial", "v2": "built", "svc": "built", "n": "78 prompts on V2."},
+   {"f": "Generate video from the app", "bible": "none", "v1": "partial", "v2": "built", "svc": "built", "n": "V1 had generate.py with your keys; V2 uses your Higgsfield connector."},
+   {"f": "Cost preview before every generation", "bible": "partial", "v1": "none", "v2": "built", "svc": "built", "n": ""},
+   {"f": "Ledger of every submission", "bible": "none", "v1": "built", "v2": "built", "svc": "built", "n": ""},
+   {"f": "Live view of the Higgsfield project", "bible": "none", "v1": "partial", "v2": "built", "svc": "built", "n": "V1 needed Claude to pull placements; V2 lists them live."},
+   {"f": "Chained start and end frames", "bible": "built", "v1": "partial", "v2": "planned", "svc": "planned", "n": "Use the web app for chained shots until then."}]},
+  {"name": "Selection", "rows": [
+   {"f": "Board: pick, alternates, why", "bible": "partial", "v1": "built", "v2": "partial", "svc": "built", "n": "V2's board fills once takes exist."},
+   {"f": "Assign takes to shots", "bible": "none", "v1": "partial", "v2": "built", "svc": "built", "n": ""},
+   {"f": "Virality Predictor scores", "bible": "partial", "v1": "built", "v2": "planned", "svc": "planned", "n": "Claude scores takes on sync today."}]},
+  {"name": "Sound and music", "rows": [
+   {"f": "Voice casting and takes", "bible": "built", "v1": "partial", "v2": "planned", "svc": "planned", "n": ""},
+   {"f": "Soundtrack lyrics for Suno", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "Six songs on the board."},
+   {"f": "Tracks mapped to cues", "bible": "partial", "v1": "none", "v2": "built", "svc": "built", "n": "Question 10."}]},
+  {"name": "Cut and forms", "rows": [
+   {"f": "Spots, music video, short", "bible": "partial", "v1": "built", "v2": "built", "svc": "built", "n": ""},
+   {"f": "Episode outline, 20 to 60 minutes", "bible": "none", "v1": "built", "v2": "built", "svc": "built", "n": ""},
+   {"f": "Final-cut read against the board", "bible": "built", "v1": "built", "v2": "planned", "svc": "built", "n": "After delivery."}]},
+  {"name": "Delivery and the desk", "rows": [
+   {"f": "Festival rules and submission checklist", "bible": "built", "v1": "built", "v2": "partial", "svc": "planned", "n": ""},
+   {"f": "Shared state for everyone you invite", "bible": "partial", "v1": "partial", "v2": "built", "svc": "built", "n": "Bible and V1 kept ticks in one browser."},
+   {"f": "Asset storage with the project", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "Up to 20 MiB a file."},
+   {"f": "Ask Claude inside the app", "bible": "none", "v1": "none", "v2": "built", "svc": "built", "n": "Suggest an answer; ask about the project."},
+   {"f": "Keys", "bible": "built", "v1": "built", "v2": "built", "svc": "built", "n": "V2 needs none: the connector signs in as you."},
+   {"f": "Printable kit and cheat sheet", "bible": "built", "v1": "none", "v2": "planned", "svc": "planned", "n": ""},
+   {"f": "Many episodes in one place", "bible": "none", "v1": "partial", "v2": "partial", "svc": "planned", "n": "Editions link V1 and V2."},
+   {"f": "Start a new project from the intake", "bible": "none", "v1": "partial", "v2": "none", "svc": "planned", "n": "The service's first screen: answer, then the desk builds the folder and the Higgsfield project."}]}
+ ],
+ "plan": [
+  {"phase": "Now", "items": ["Answer the sixteen questions", "Upload the source pages, references and track links", "Connect Higgsfield and generate the cast sheets", "Assign each sheet image to its element, then sync with Claude"]},
+  {"phase": "After the first sync", "items": ["Claude turns assigned sheets into elements and fills every pending id", "Prompts switch from @name to attached ids, and shots become generatable", "Anchor stills per shot, then Gate B"]},
+  {"phase": "Next build", "items": ["Frame string and a stills-reel player", "Predictor scores in the app", "Asset prompts in four lanes", "Chained start and end frames"]},
+  {"phase": "The template service", "items": ["New project from the intake: folder, project.json and Higgsfield project in one step", "One studio for every episode of a series", "Printable kit from the same data"]}
+ ]
+}
