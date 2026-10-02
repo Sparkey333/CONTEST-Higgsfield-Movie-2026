@@ -11,6 +11,9 @@ tips = (D / "tips.md").read_text(); ix = json.load(open(D / "projects" / "index.
 LINK = {l["id"]: l for g in L["groups"] for l in g["links"]}
 EX = [json.load(open(f)) for f in sorted((D / "projects").glob("*/examples.json"))]
 NOW = datetime.datetime.utcnow().strftime("%d %b %Y %H:%M UTC")
+DK = json.load(open(D / "desk.json")) if (D / "desk.json").exists() else {}
+NAME = DK.get("title", W["name"])
+if DK.get("current"): ix = sorted(ix, key=lambda r: r.get("slug") != DK["current"])
 
 def inline(t):
     t = esc(t); t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t); t = re.sub(r"`(.+?)`", r"<code>\1</code>", t); return re.sub(r"(?<!\*)\*(?!\*)(.+?)\*", r"<em>\1</em>", t)
@@ -131,8 +134,8 @@ loop_html = "".join(f'<div class="lp"><b>{i+1} · {esc(x["k"])}</b><p>{esc(x["do
 expand_html = "".join(f'<div class="doc"><span class="k">{esc(k)} · unit: {esc(v["unit"])}</span><h3>{esc(v["name"])}</h3><p>{esc(v["scale"])}</p><span class="pill {"built" if v["status"].startswith("built") else "road"}">{esc(v["status"].split(" — ")[0])}</span><span class="f">{esc(v["status"].split(" — ",1)[1] if " — " in v["status"] else "")}</span></div>' for k, v in W["expand"].items() if not k.startswith("_"))
 unique_html = "".join(f'<div class="doc"><h3>{esc(u["k"])}</h3><p>{esc(u["d"])}</p></div>' for u in W["unique"])
 NAV_W = [("Overview", "index.html"), ("The map", "#map"), ("Stages", "#s-story"), ("The loop", "#loop"), ("Scale", "#scale"), ("Links", "links.html"), ("Keys", "keys.html")]
-wf = head(f'{W["name"]} · Workflow', "Nine stages, five gates, one loop — the end-to-end workflow with its iteration points, derived from a finished film.") + f'''
-<header class="top"><div class="wrap"><span class="eyebrow"><a href="index.html">{esc(W["name"])}</a> · the workflow · built {NOW}</span><h1>Nine stages. Five gates. One loop.</h1><p class="tag">{esc(W["promise"])}</p><p class="lede">{esc(W["derived_from"])}</p></div></header>
+wf = head(f'{NAME} · Workflow', "Nine stages, five gates, one loop — the end-to-end workflow with its iteration points, derived from a finished film.") + f'''
+<header class="top"><div class="wrap"><span class="eyebrow"><a href="index.html">{esc(NAME)}</a> · the workflow · built {NOW}</span><h1>Nine stages. Five gates. One loop.</h1><p class="tag">{esc(W["promise"])}</p><p class="lede">{esc(W["derived_from"])}</p></div></header>
 {nav(NAV_W, "#map")}<main class="wrap">
 <section id="map"><div class="sec-head"><h2><span class="n">MAP</span>Where the loops are, and what closes them</h2><p>Every stage with a ⟲ has an <em>iterate here</em> card: what triggers the loop, what you do, what lets you out, what it costs — and what it cost on the film. Gates are the exits; nothing downstream begins until the gate above holds.</p></div>{mapstrip()}</section>
 {"".join(stages_html)}
@@ -157,8 +160,8 @@ for g in L["groups"]:
         rows.append(f'<tr><td><a href="{esc(l["url"])}" target="_blank" rel="noopener"><b>{esc(l["name"])}</b></a><br><a href="{esc(l["url"])}" target="_blank" rel="noopener" class="muted" style="font:11px var(--mono);color:var(--ink-3)">{esc(l["url"])}</a></td><td>{esc(l["for"])}</td><td>{" ".join(f"<span class=chip>{esc(s)}</span>" for s in l["stages"])}</td><td><span class="pill {"built" if l["verified"] else "road"}">{"verified" if l["verified"] else "unverified"}</span></td></tr>')
     rows.append("</tbody></table></div>")
 NAV_L = [("Overview", "index.html"), ("Workflow", "workflow.html"), ("Links", "links.html"), ("Keys", "keys.html")]
-lk = head(f'{W["name"]} · Links', "Every Higgsfield surface and outside link the production used, by stage, verified or not.") + f'''
-<header class="top"><div class="wrap"><span class="eyebrow"><a href="index.html">{esc(W["name"])}</a> · links · built {NOW}</span><h1>Every link, by stage</h1><p class="lede">{esc(L["_"])}</p></div></header>{nav(NAV_L, "links.html")}<main class="wrap">{"".join(rows)}
+lk = head(f'{NAME} · Links', "Every Higgsfield surface and outside link the production used, by stage, verified or not.") + f'''
+<header class="top"><div class="wrap"><span class="eyebrow"><a href="index.html">{esc(NAME)}</a> · links · built {NOW}</span><h1>Every link, by stage</h1><p class="lede">{esc(L["_"])}</p></div></header>{nav(NAV_L, "links.html")}<main class="wrap">{"".join(rows)}
 <footer>Built by <code>anchorframe/desk.py</code> from <code>links.json</code>. Add a link there, rebuild.</footer></main></body></html>'''
 (D / "links.html").write_text(lk)
 
@@ -174,12 +177,19 @@ cards = "".join(f'''<a class="doc primary" href="projects/{esc(r["slug"])}/board
 toplinks = "".join(f'<a class="chip hf" href="{esc(LINK[i]["url"])}" target="_blank" rel="noopener">{esc(LINK[i]["name"])} ↗</a>' for i in ["hf_project","hf_elements","hf_cinema_studio","contest_page","festival_blog","hf_cloud_keys","hf_mcp_credits","hf_contact"] if i in LINK)
 NEX = sum(len(v) for X in EX for v in X.get("stages", {}).values())
 NAV_I = [("Workflow", "#workflow"), ("Projects", "#projects"), ("Start", "#start"), ("The loop", "#loop"), ("One folder", "#rule"), ("Scale", "#scale"), ("Why", "#why"), ("Links", "#links"), ("Keys", "keys.html"), ("Tips", "#tips")]
-idx = head(W["name"], W["tagline"]) + f'''
-<header class="top"><div class="wrap"><span class="eyebrow">{esc(W["name"])} · a folder per film</span><h1>{esc(W["name"])}</h1><p class="tag">{esc(W["tagline"])}</p><p class="lede">{esc(W["promise"])}</p>
-<div class="badges"><span class="badge on">{len(W["stages"])} stages · {sum(1 for s in W["stages"] if s["gate"])} gates · 1 loop</span><span class="badge on">{NEX} examples · a living course</span><span class="badge on">{len(ix)} project{"s" if len(ix)!=1 else ""}</span><span class="badge">bring your own keys</span><span class="badge">regenerate, don't hand-edit</span><span class="badge">short → feature → play</span></div></div></header>
+EDB = (f'<span class="badge on">{esc(DK["edition"])} · Episode {esc(DK.get("episode",""))}</span>') if DK.get("edition") else ""
+def ed_card(e):
+    here = e.get("edition") == DK.get("edition")
+    link = ('<b>this desk</b>' if here else f'<a href="{esc(e["url"])}" target="_blank" rel="noopener">open {esc(e["edition"])} ↗</a>') if e.get("url") else ""
+    return (f'<div class="doc{" primary" if here else ""}"><span class="k">{esc(e["edition"])} · Episode {esc(e.get("episode",""))} · {esc(e.get("state",""))}</span><h3>{esc(e.get("title",""))}</h3>'
+            f'<p>{esc(e.get("note",""))}</p><span class="f"><span>branch <code>{esc(e.get("branch",""))}</code></span><span>{link}</span></span></div>')
+EDH = ('<h3 class="g">Editions</h3><p class="muted" style="margin:0 0 14px;font-size:14px">' + esc(DK.get("editions_note", "One desk per episode, one branch per desk.")) + '</p><div class="docs" style="margin-bottom:26px">' + "".join(ed_card(e) for e in DK.get("editions", [])) + '</div><h3 class="g">Projects on this desk</h3>') if DK.get("editions") else ""
+idx = head(NAME, DK.get("description", W["tagline"])) + f'''
+<header class="top"><div class="wrap"><span class="eyebrow">{esc(DK.get("eyebrow", W["name"] + " · a folder per film"))}</span><h1>{esc(NAME)}</h1><p class="tag">{esc(W["tagline"])}</p><p class="lede">{esc(W["promise"])}</p>
+<div class="badges">{EDB}<span class="badge on">{len(W["stages"])} stages · {sum(1 for s in W["stages"] if s["gate"])} gates · 1 loop</span><span class="badge on">{NEX} examples · a living course</span><span class="badge on">{len(ix)} project{"s" if len(ix)!=1 else ""}</span><span class="badge">bring your own keys</span><span class="badge">regenerate, don't hand-edit</span><span class="badge">short → feature → play</span></div></div></header>
 {nav(NAV_I, "#workflow")}<main class="wrap">
 <section id="workflow"><div class="sec-head"><h2><span class="n">01</span>The workflow, at a glance</h2><p>Derived from a finished film, simplified to nine stages — the ninth is the read of the finished cut. ⟲ marks where you iterate; the gold ticks are the gates that close a stage. Each stage on the workflow page shows frames, takes and voice from a finished film with what to look for, and a reminders checklist that remembers your ticks. <a href="workflow.html">Open the full workflow →</a></p></div>{mapstrip("workflow.html")}</section>
-<section id="projects"><div class="sec-head"><h2><span class="n">02</span>Projects</h2><p>One card per <code>projects/&lt;slug&gt;/</code>. <code>build.py</code> keeps this list current.</p></div><div class="docs">{cards}</div></section>
+<section id="projects"><div class="sec-head"><h2><span class="n">02</span>Projects</h2><p>One card per <code>projects/&lt;slug&gt;/</code>. <code>build.py</code> keeps this list current.</p></div>{EDH}<div class="docs">{cards}</div></section>
 <section id="start"><div class="sec-head"><h2><span class="n">03</span>Start a project</h2></div><div class="steps">
 <div class="step"><span class="sn">01</span><div><h4>Copy the example</h4><p><code>cp anchorframe/project.example.json anchorframe/projects/&lt;slug&gt;/project.json</code></p><p>Title, kind, format, the Higgsfield project URL and folder id, the date window.</p></div></div>
 <div class="step"><span class="sn">02</span><div><h4>Write the cast as ids</h4><p>Characters, environments, props, effects — <code>name → element uuid</code>. This list is what makes a generation yours. Souls one per name.</p></div></div>

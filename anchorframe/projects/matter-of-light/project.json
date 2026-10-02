@@ -616,5 +616,344 @@
    }
   ],
   "read": "design/final-cut.data.json + design/final-cut.notes.json on the msx5dw branch; the Final Cut chapter of director-bible.html"
+ },
+ "series": {
+  "edition": "SoM V1",
+  "episode": 1,
+  "follows": null,
+  "next": "stone-of-matter-ep2-darkness (SoM V2, branch claude/anchorframe-ep2)",
+  "form": "festival short, to be expanded to a 20\u201360 minute episode",
+  "names": "Production names throughout; the crosswalk to the source stays local."
+ },
+ "forms_note": "Every form is cut from the picks on this board. The spots open peak-first on the highest-scored final seconds (S22 at 59, S23 at 54, S20 at 52), as tip 11 says. The delivered film itself (6:17, 108 scenes, three songs) is the music-video cut; its read is the Final Cut chapter of the Director's Bible.",
+ "forms": [
+  {
+   "id": "spot30",
+   "kind": "Commercial",
+   "name": "Spot :30",
+   "target_s": 30,
+   "why": "Peak first from the highest-scored pick, then one image per beat of the film, then the title.",
+   "cut": [
+    {
+     "shot": "S22",
+     "lane": "A",
+     "s": 3,
+     "note": "peak-first: the last seconds of the top-scored pick (59)"
+    },
+    {
+     "shot": "S1",
+     "lane": "A",
+     "s": 3,
+     "note": "rise out of the fire"
+    },
+    {
+     "shot": "S2",
+     "lane": "A",
+     "s": 2
+    },
+    {
+     "shot": "S5",
+     "lane": "A",
+     "s": 3,
+     "note": "\u201cTomorrow\u201d \u2014 the tear freezes"
+    },
+    {
+     "shot": "S6",
+     "lane": "A",
+     "s": 3,
+     "note": "108 years later"
+    },
+    {
+     "shot": "S10",
+     "lane": "A",
+     "s": 3,
+     "note": "the leviathan"
+    },
+    {
+     "shot": "S12",
+     "lane": "A",
+     "s": 2
+    },
+    {
+     "shot": "S13",
+     "lane": "A",
+     "s": 3,
+     "note": "the vortex"
+    },
+    {
+     "shot": "S14",
+     "lane": "A",
+     "s": 2,
+     "note": "the Stone leaves her"
+    },
+    {
+     "shot": "S20",
+     "lane": "A",
+     "s": 3,
+     "note": "the mountain (52)"
+    },
+    {
+     "card": "Title \u00b7 MATTER OF LIGHT",
+     "s": 3
+    }
+   ]
+  },
+  {
+   "id": "spot60",
+   "kind": "Commercial",
+   "name": "Spot :60",
+   "target_s": 60,
+   "why": "The :30 with the two lines that carry the film and the island's last act.",
+   "cut": [
+    {
+     "shot": "S22",
+     "lane": "A",
+     "s": 4,
+     "note": "peak-first (59)"
+    },
+    {
+     "shot": "S23",
+     "lane": "A",
+     "s": 3,
+     "note": "(54)"
+    },
+    {
+     "shot": "S1",
+     "lane": "A",
+     "s": 4
+    },
+    {
+     "shot": "S2",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S3",
+     "lane": "A",
+     "s": 4,
+     "note": "\u201cThere must be risk\u201d"
+    },
+    {
+     "shot": "S4",
+     "lane": "A",
+     "s": 3,
+     "note": "\u201cHe's your brother\u201d"
+    },
+    {
+     "shot": "S5",
+     "lane": "A",
+     "s": 4,
+     "note": "the tear freezes"
+    },
+    {
+     "shot": "NEW-3",
+     "lane": "A",
+     "s": 3,
+     "note": "the facet becomes the ocean"
+    },
+    {
+     "shot": "S6",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S7",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S9",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S10",
+     "lane": "A",
+     "s": 4
+    },
+    {
+     "shot": "S12",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S13",
+     "lane": "A",
+     "s": 4
+    },
+    {
+     "shot": "S14",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S20",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S21",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "card": "Title \u00b7 MATTER OF LIGHT",
+     "s": 3
+    }
+   ]
+  },
+  {
+   "id": "short",
+   "kind": "Short film",
+   "name": "The board",
+   "target_s": 300,
+   "auto": "shots",
+   "why": "The 28-shot board at picture lock, in order. The delivered cut departs from it; the Final Cut chapter is the diff."
+  }
+ ],
+ "episode": {
+  "title": "The episode \u00b7 20 to 60 minutes",
+  "note": "The production screenplay runs 21 pages after its title page, about 21 minutes: the low end of the range. The short cut its 556 words of dialogue to 89; the episode puts them back. The shot column is approximate, because the film interleaves its three movements.",
+  "scenes": [
+   {
+    "n": "1",
+    "scene": "Machira from orbit",
+    "pages": "2",
+    "min": "0.5",
+    "shots": [],
+    "adds": "The opening narration over the world, seen whole."
+   },
+   {
+    "n": "2",
+    "scene": "The Sun \u2014 the courtyard of worlds",
+    "pages": "2\u20138",
+    "min": "6",
+    "shots": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "NEW-3"
+    ],
+    "adds": "The courtyard scene as written: the worlds in the flowerbeds and every line of the argument the short cut to three."
+   },
+   {
+    "n": "3",
+    "scene": "Open ocean \u2014 the storm",
+    "pages": "8\u201310",
+    "min": "2",
+    "shots": [
+     "S6",
+     "S7",
+     "S8"
+    ],
+    "adds": "108 years later: Oriane's run across the storm in full."
+   },
+   {
+    "n": "4",
+    "scene": "Nacre Beach \u2014 Cairn Island",
+    "pages": "10\u201312",
+    "min": "2",
+    "shots": [
+     "S15"
+    ],
+    "adds": "The brothers' first scene in full: the birthday, the iridescent sand, the run into the water."
+   },
+   {
+    "n": "5",
+    "scene": "The storm and the Bloom (intercut)",
+    "pages": "12\u201314",
+    "min": "2",
+    "shots": [
+     "S9",
+     "S10",
+     "S11",
+     "S16"
+    ],
+    "adds": "The Threadwright's pack, the leviathan raised, the reef and its clean edge."
+   },
+   {
+    "n": "6",
+    "scene": "Keeper's Isle and the storm (intercut)",
+    "pages": "14\u201316",
+    "min": "2",
+    "shots": [
+     "S12",
+     "S17",
+     "S18"
+    ],
+    "adds": "The brothers reach the Vigil Temple; the spear through Oriane's calf; she pushes on."
+   },
+   {
+    "n": "7",
+    "scene": "From orbit \u2014 the upper atmosphere",
+    "pages": "16",
+    "min": "1",
+    "shots": [
+     "S13",
+     "NEW-1",
+     "S14",
+     "NEW-4"
+    ],
+    "adds": "The eye that is not weather; the Founding Stone of Hollows released."
+   },
+   {
+    "n": "8",
+    "scene": "Keeper's Isle \u2014 beach at sunset",
+    "pages": "16\u201320",
+    "min": "4",
+    "shots": [
+     "S19",
+     "S20",
+     "NEW-2",
+     "S21"
+    ],
+    "adds": "The green streak, the Keepers, the mountain raised, the twelve ships, the garden replanting itself."
+   },
+   {
+    "n": "9",
+    "scene": "The beach grass",
+    "pages": "20",
+    "min": "1",
+    "shots": [
+     "S22"
+    ],
+    "adds": "Wren and Alder in full, and Alder's \u201cI want to move mountains.\u201d"
+   },
+   {
+    "n": "10",
+    "scene": "The Sun \u2014 the courtyard, again",
+    "pages": "20\u201322",
+    "min": "1",
+    "shots": [
+     "S23",
+     "END"
+    ],
+    "adds": "Caedom alone; \u201cThere must be risk if there is to be growth\u201d; the frozen tear."
+   }
+  ],
+  "grow": "To reach 30\u201345 minutes, restore what the festival abridgement skipped from the source (the codex has it, chapter by chapter), under the production names, and give each of the three movements a full act."
+ },
+ "bridges": {
+  "note": "A transition belongs to the episode it opens and is listed by the episode it closes.",
+  "out": {
+   "title": "To SoM V2 \u00b7 Darkness",
+   "status": "Boarded on claude/anchorframe-ep2. The last pages of the Episode 1 source screenplay will sharpen it.",
+   "links": [
+    {
+     "from": "Caedom alone at the courtyard; a crane up to a single point of light",
+     "to": "Episode 2 S1 lifts that point of light off the same courtyard, on the same two element ids"
+    },
+    {
+     "from": "The dark cloud low over the water: \u201cIt has been let in.\u201d",
+     "to": "Episode 2's cloud of darkness over the abyss, and its one black seed"
+    },
+    {
+     "from": "The delivered film's coda: the mountain and the crater lake",
+     "to": "Episode 2 S7, the mountain ten years later, with its person in it"
+    }
+   ]
+  }
  }
 }
