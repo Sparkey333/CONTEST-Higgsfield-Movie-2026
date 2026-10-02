@@ -1,0 +1,388 @@
+{
+ "_": "Every link this production actually used or verified, keyed so the workflow can point at them. 'verified' means the URL was used from the project or returned by a source search during the production; 'unverified' means it was recorded but never opened from a reachable network.",
+ "groups": [
+  {
+   "g": "your project",
+   "links": [
+    {
+     "id": "hf_public_project",
+     "name": "The published project — final film and submission",
+     "url": "https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light",
+     "for": "The public page the festival publishes after the deadline: the film, the prompts, the generation history. This is the link for the post descriptions and the credits.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_project",
+     "name": "The festival project on Canvas",
+     "url": "https://higgsfield.ai/canvas?canvasProjectId=fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
+     "for": "The one folder. Every generation that counts lives here. Replace the id for a new project.",
+     "stages": [
+      "cast",
+      "anchors",
+      "motion",
+      "sound"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_elements",
+     "name": "The project's Elements panel",
+     "url": "https://higgsfield.ai/generate/@drawingsquid1334/ai-film-festival?elements=1&canvasProjectId=fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
+     "for": "Where handles are dragged from. Names are permanent from the API side; rename and delete only here.",
+     "stages": [
+      "cast"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_assets",
+     "name": "Assets",
+     "url": "https://higgsfield.ai/assets",
+     "for": "Uploads, liked generations, the library the board pulls from.",
+     "stages": [
+      "cast",
+      "anchors"
+     ],
+     "verified": true
+    }
+   ]
+  },
+  {
+   "g": "making",
+   "links": [
+    {
+     "id": "hf_cinema_studio",
+     "name": "Cinema Studio",
+     "url": "https://higgsfield.ai/cinema-studio",
+     "for": "Video generation inside the project; the submit flow that applies watermark and packshot.",
+     "stages": [
+      "motion",
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_image",
+     "name": "Image",
+     "url": "https://higgsfield.ai/image",
+     "for": "Sheets, plates, anchors. nano_banana_2 was the cast's model on this film.",
+     "stages": [
+      "cast",
+      "anchors"
+     ],
+     "verified": true
+    },
+    {
+     "id": "canvas_intro",
+     "name": "AI Canvas — node-based image and video workflow",
+     "url": "https://higgsfield.ai/canvas-intro",
+     "for": "Why one board per plate: every frame on a board inherits its key.",
+     "stages": [
+      "cast",
+      "anchors"
+     ],
+     "verified": true
+    },
+    {
+     "id": "help_canvas",
+     "name": "Help: how do I use Canvas",
+     "url": "https://higgsfield.ai/creator-hub/help-center/tools/how-do-i-use-canvas",
+     "for": "Reference nodes from the Assets panel, delete with Backspace, save a board as a template.",
+     "stages": [
+      "cast",
+      "anchors"
+     ],
+     "verified": true
+    },
+    {
+     "id": "help_which_tool",
+     "name": "Help: which Higgsfield tool should I use",
+     "url": "https://higgsfield.ai/creator-hub/help-center/tools/which-higgsfield-tool-should-i-use",
+     "for": "Canvas is for one reference set driving several shots — a movement, an episode.",
+     "stages": [
+      "cast"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_camera",
+     "name": "Camera controls",
+     "url": "https://higgsfield.ai/camera-controls",
+     "for": "The named moves. The swing method on this film used motion transfer from a driving clip instead.",
+     "stages": [
+      "motion"
+     ],
+     "verified": true
+    },
+    {
+     "id": "blog_cinema_studio",
+     "name": "Blog: Cinema Studio guide",
+     "url": "https://higgsfield.ai/blog/cinema-studio-guide",
+     "for": "The platform's own account of the tool.",
+     "stages": [
+      "motion"
+     ],
+     "verified": true
+    },
+    {
+     "id": "blog_camera",
+     "name": "Blog: AI video camera control",
+     "url": "https://higgsfield.ai/blog/ai-video-camera-control",
+     "for": "Background on camera moves in generation.",
+     "stages": [
+      "motion"
+     ],
+     "verified": true
+    }
+   ]
+  },
+  {
+   "g": "rules and the festival",
+   "links": [
+    {
+     "id": "contest_page",
+     "name": "Global Film Festival — contest page (submit here)",
+     "url": "https://higgsfield.ai/contests/higgsfield-global-film-festival",
+     "for": "The entry flow. Watermarked file + public post link.",
+     "stages": [
+      "story",
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "festival_page",
+     "name": "Global Film Festival — festival page",
+     "url": "https://higgsfield.ai/global-film-festival",
+     "for": "The other door to the same festival.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "festival_blog",
+     "name": "Blog: how to enter, rules, prize pool",
+     "url": "https://higgsfield.ai/blog/higgsfield-global-film-festival",
+     "for": "Length ≥3:00, made inside Higgsfield, project history kept, MVS = watermark + packshot + public post.",
+     "stages": [
+      "story",
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "festival_rules",
+     "name": "Rules as read against this film (repo)",
+     "url": "../design/festival-rules.md",
+     "for": "The rule table with where the film stands on each row, re-verified Sep 14: 4K is a ceiling, 1080p complies.",
+     "stages": [
+      "story",
+      "cut",
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "guide_lamina",
+     "name": "Third-party: entry rules and prizes",
+     "url": "https://uselamina.ai/blog/higgsfield-global-film-festival-rules-and-entry-guide",
+     "for": "Independent write-up used to corroborate the rules.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "guide_sensei",
+     "name": "Third-party: how to actually enter",
+     "url": "https://aivideosensei.com/guides/higgsfield-global-film-festival-guide",
+     "for": "Second corroboration; the platform page itself was egress-blocked from the build environment.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    }
+   ]
+  },
+  {
+   "g": "keys and API",
+   "links": [
+    {
+     "id": "hf_cloud_keys",
+     "name": "Higgsfield Cloud API — API keys",
+     "url": "https://cloud.higgsfield.ai/api-keys",
+     "for": "HF_API_KEY + HF_API_SECRET for generate.py. Authorization: Key id:secret.",
+     "stages": [
+      "motion"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_api_docs",
+     "name": "Higgsfield API docs",
+     "url": "https://docs.higgsfield.ai/docs",
+     "for": "Model ids, arguments, reference attachment per model. Index at /docs/llms.txt.",
+     "stages": [
+      "motion"
+     ],
+     "verified": false
+    },
+    {
+     "id": "hf_api_generations",
+     "name": "Cloud API — generations list (recorded, unverified)",
+     "url": "https://platform.higgsfield.ai/v1/generations?limit=100",
+     "for": "A history endpoint noted during research. Not reachable from the build environment; if it answers with a list of jobs, ingest.py already accepts that shape.",
+     "stages": [
+      "motion"
+     ],
+     "verified": false
+    },
+    {
+     "id": "hf_sdk_py",
+     "name": "higgsfield-client (Python SDK)",
+     "url": "https://github.com/higgsfield-ai/higgsfield-client",
+     "for": "pip install higgsfield-client · submit / subscribe / status / result. What generate.py uses.",
+     "stages": [
+      "motion"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_sdk_js",
+     "name": "higgsfield-js (Node / TypeScript SDK)",
+     "url": "https://github.com/higgsfield-ai/higgsfield-js",
+     "for": "The same API from JavaScript, for a future in-browser desk.",
+     "stages": [
+      "motion"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_mcp_credits",
+     "name": "Higgsfield in Claude — MCP credits and connection",
+     "url": "https://higgsfield.ai/mcp-credits",
+     "for": "The connector route: history pulls, batch generation, the Virality Predictor (2 concurrent on Ultra).",
+     "stages": [
+      "motion",
+      "cut"
+     ],
+     "verified": true
+    },
+    {
+     "id": "elevenlabs_keys",
+     "name": "ElevenLabs — API keys",
+     "url": "https://elevenlabs.io/app/settings/api-keys",
+     "for": "Optional; voices the platform doesn't carry. Files still go into the project.",
+     "stages": [
+      "sound"
+     ],
+     "verified": true
+    },
+    {
+     "id": "anthropic_keys",
+     "name": "Anthropic — API keys",
+     "url": "https://console.anthropic.com/settings/keys",
+     "for": "Prompt drafting, continuity reads, the seat briefs.",
+     "stages": [
+      "story",
+      "cut"
+     ],
+     "verified": true
+    },
+    {
+     "id": "openai_keys",
+     "name": "OpenAI — API keys",
+     "url": "https://platform.openai.com/api-keys",
+     "for": "Only if a script of yours needs it.",
+     "stages": [],
+     "verified": true
+    },
+    {
+     "id": "suno",
+     "name": "Suno",
+     "url": "https://suno.com/",
+     "for": "Score. No public API — app, export, upload into the project, credit honestly.",
+     "stages": [
+      "sound"
+     ],
+     "verified": true
+    }
+   ]
+  },
+  {
+   "g": "help and contact",
+   "links": [
+    {
+     "id": "hf_help",
+     "name": "Help Center",
+     "url": "https://higgsfield.ai/creator-hub/help-center",
+     "for": "Setup and troubleshooting.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_contact",
+     "name": "Contact — Discord is the fast channel",
+     "url": "https://higgsfield.ai/contact",
+     "for": "support@higgsfield.ai (billing and general), contact@higgsfield.ai (general). Discord for anything time-critical.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_trust",
+     "name": "Trust, safety and platform policies",
+     "url": "https://higgsfield.ai/trust",
+     "for": "The no-real-people rule and what publishes after a festival.",
+     "stages": [
+      "cast",
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
+     "id": "hf_x",
+     "name": "@higgsfield_ai on X",
+     "url": "https://x.com/higgsfield_ai",
+     "for": "Tag it on the public post. Festival announcements land here first.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    }
+   ]
+  },
+  {
+   "g": "finishing",
+   "links": [
+    {
+     "id": "resolve",
+     "name": "DaVinci Resolve",
+     "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+     "for": "Assembly, titles, sound. Timeline aspect = film aspect before export. Not for generated imagery.",
+     "stages": [
+      "cut"
+     ],
+     "verified": true
+    },
+    {
+     "id": "yt_studio",
+     "name": "YouTube Studio",
+     "url": "https://studio.youtube.com/",
+     "for": "The safest of the four post targets: no aspect fight, Public not Unlisted, mark synthetic content Yes.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    }
+   ]
+  }
+ ]
+}

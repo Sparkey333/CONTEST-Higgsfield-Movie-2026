@@ -108,3 +108,8 @@ is 1080p scope, 21:9, delivered as MP4. Dialogue and voice-over are in English.
 
 **Written, directed and produced by B.L. Barkey**
 Made with Higgsfield — Cinema Studio, Soul, Canvas, Image, Upscale
+
+---
+
+**Submitted.** The published project — the film, every prompt and the generation history — is public at
+https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light

@@ -1,0 +1,658 @@
+{
+ "schema": "anchorframe/workflow/1",
+ "name": "Anchorframe",
+ "tagline": "One folder per film. Cast as ids, shots as prompts, takes as a board.",
+ "promise": "Nothing goes to video until it already exists as stills that are right. Every face is attached by id, never re-described. Every take is on a ledger. The cut is chosen from evidence.",
+ "derived_from": "MATTER OF LIGHT — 5:43, 21:9, 27 shots, made entirely in Higgsfield for the Higgsfield Global Film Festival, Aug 8 – Sep 14 2026. Every number below is that production's, not an estimate.",
+ "loop": {
+  "_": "The inner loop that runs inside stages 4–6, and once more, after delivery, in stage 8 until the picks are the film.",
+  "steps": [
+   {
+    "k": "ingest",
+    "do": "Admit this project's takes — by cast id, by ledger, by hand map. Drop and count the rest.",
+    "cmd": "ingest.py <slug> dump…"
+   },
+   {
+    "k": "score",
+    "do": "Run every take ≤16s through the Virality Predictor, two at a time. Free.",
+    "cmd": "ingest.py … --scores scores.json"
+   },
+   {
+    "k": "build",
+    "do": "Lay the board. Pick by your call, else by score, else newest.",
+    "cmd": "build.py <slug>"
+   },
+   {
+    "k": "choose",
+    "do": "Look, then write pick + alternates into the shot, with why.",
+    "cmd": "project.json → shots[]"
+   },
+   {
+    "k": "generate",
+    "do": "Make only what is missing or broken. Ledger on acceptance.",
+    "cmd": "generate.py … --prompt-from-shot"
+   },
+   {
+    "k": "deliver",
+    "do": "Pull the picks in cut order. Native size ×2 at most. Titles in the NLE.",
+    "cmd": "board.html → open the clip"
+   }
+  ]
+ },
+ "stages": [
+  {
+   "id": 0,
+   "key": "story",
+   "name": "Story",
+   "question": "What is the film about, and who changes?",
+   "goal": "A logline, a screenplay, a shot list whose durations sum to the target, and a dialogue cut small enough to be spoken by a machine and believed.",
+   "inputs": [
+    "source text or premise",
+    "runtime target",
+    "the rules of the venue (minimum length, format, what must be made inside the platform)"
+   ],
+   "outputs": [
+    "logline (≤140 chars, three variants)",
+    "screenplay",
+    "shot list with durations and acts",
+    "dialogue cut (lines per shot, words per second budget)",
+    "the turn — which character changes and in which shot"
+   ],
+   "surfaces": [
+    "writing, not generation — optional Claude for drafting and the seat briefs"
+   ],
+   "files": [
+    "PROJECT-BRIEF.md",
+    "design/dialogue.json",
+    "matter-of-light-screenplay.pdf",
+    "anchorframe/projects/<slug>/project.json → shots[]"
+   ],
+   "steps": [
+    "Write the logline first; if it needs a second sentence the film has two subjects.",
+    "Cut the screenplay to shots at cinema length (mean 13s), not sizzle length (4s). Motivate every cut by point of view, time or revelation.",
+    "Cut dialogue to what a synthetic voice can carry: 556 → 89 words here. Mark the shots that are silent on purpose.",
+    "Name the turn. The last held close-up belongs to whoever changes."
+   ],
+   "iterate": {
+    "name": "the ending",
+    "trigger": "The turn lands on the wrong character, or lands too late.",
+    "do": "Rewrite the last two shots only. Everything upstream survives.",
+    "exit": "The logline still describes the film.",
+    "cost": "Hours of writing, zero generations.",
+    "mol": "The ending was reversed on Sep 14 — Alder, not Wren, learns the right lesson: “There's something more.” S22 rewritten in all three lanes; nothing else moved."
+   },
+   "gate": null,
+   "links": [
+    "festival_rules",
+    "festival_blog",
+    "contest_page"
+   ],
+   "mol": {
+    "numbers": "23 shots at 13.0s mean; 3 movements 80/118/102s; 12 lines, 89 words, 6 speaking shots; 3 silent by design incl. the climax",
+    "dates": "Aug 8 – Sep 9"
+   },
+   "reminders": [
+    "Logline in one sentence. Two sentences means two films.",
+    "Mark the shots that are silent on purpose — now, in the shot list.",
+    "Name who changes, and in which shot. The last held close-up is theirs."
+   ]
+  },
+  {
+   "id": 1,
+   "key": "cast",
+   "name": "Cast",
+   "question": "Does every face, place and thing exist once, by id?",
+   "goal": "Every character, lighting plate, location, prop, creature and effect generated on a plain background inside the project, each an element with a uuid, each Soul trained once. Nothing downstream describes a face; it attaches one.",
+   "inputs": [
+    "shot list",
+    "the world's rules written as sheets (here: the aura hierarchy — bright rim/black centre for adepts, bright centre/no edge for bearers)"
+   ],
+   "outputs": [
+    "cast: characters / environments / props / fx as name → uuid",
+    "souls: one per lead",
+    "retired: old name → old uuid, so old renders still attribute",
+    "one Canvas board per lighting plate"
+   ],
+   "surfaces": [
+    "Image (nano_banana_2 / nano_banana_pro) for sheets",
+    "Soul Cast (soul_2, budget 10–500) for identities",
+    "Elements panel — every handle dragged, never typed",
+    "Canvas — one board per plate, shelf row first",
+    "Cinema Studio project folder — generate inside it"
+   ],
+   "files": [
+    "design/cast-latest.json",
+    "design/element-map.json",
+    "design/shot-element-ids.json",
+    "roster.html",
+    "canvas-boards.html",
+    "gate-a.html"
+   ],
+   "steps": [
+    "Rule sheets before any character (the aura rule; the attunement ladder).",
+    "Leads: train a Soul, then generate state sheets from it (damaged, ascended, mortal) — never re-describe the face.",
+    "Plates: one per act plus one for any lighting exception (the bombardment). Every frame inherits its board's key.",
+    "Locations, props, creatures, effects: plain background, three views on one sheet where it helps.",
+    "Record every id. Reference as @[name](uuid) in every prompt from here on."
+   ],
+   "iterate": {
+    "name": "identity",
+    "trigger": "A face moved between sheets · a shot used a superseded sheet · an element was replaced in the web app and the repo didn't know.",
+    "do": "Retire the old id (record old → new), regenerate the sheet from the Soul, sweep every prompt for the old reference, rebuild.",
+    "exit": "Gate A — everything from this stage on one screen; no face moved.",
+    "cost": "Images are cheap; a Soul retrain is the expensive one. A missed swap costs a shot later.",
+    "mol": "Two swaps happened by hand and went unrecorded (prop_enemy_ships → twelve-ships, courtyard). S5's four takes all carried the mortal Caedom sheet. Seven Souls existed; four match the cast in use; three marked superseded. 32 element ids in the project at lock."
+   },
+   "gate": {
+    "id": "A",
+    "name": "Identity lock",
+    "test": "All sheets on one screen, in the canvas. Look for a face that moved. A gate is a person looking at a screen; record the answer."
+   },
+   "links": [
+    "hf_project",
+    "help_canvas",
+    "help_which_tool",
+    "canvas_intro",
+    "hf_elements"
+   ],
+   "mol": {
+    "numbers": "42 reference sheets · 37 handles · 5 Souls trained (4 active) · 4 plates · 3 boards",
+    "dates": "Sep 5 done; Gate A held Sep 8"
+   },
+   "reminders": [
+    "Every prompt attaches @[name](uuid). Never a described face.",
+    "Record old → new the moment you replace an element; sweep every prompt.",
+    "One Soul per generation. Two-person shots run on elements.",
+    "Generate inside the project folder — the API cannot file it for you."
+   ]
+  },
+  {
+   "id": 2,
+   "key": "anchors",
+   "name": "Anchors",
+   "question": "Does the film exist as stills, in order, that are already right?",
+   "goal": "Two frames per shot — first and last — generated in film order on the right board, chained from the previous frame. Shared frames end one shot and start the next; bridge frames are near-black hidden cuts; match pairs are two images designed together.",
+   "inputs": [
+    "cast ids",
+    "shot list",
+    "boards"
+   ],
+   "outputs": [
+    "anchor plan: F01…Fnn with role (single / shared / bridge / match), handles, dependency, job id, url",
+    "the motion sheet"
+   ],
+   "surfaces": [
+    "Image, on the board, from the shelf",
+    "Canvas — anchors left to right in shot order, spans drawn under them"
+   ],
+   "files": [
+    "design/anchor-plan.json",
+    "frame-index.html",
+    "design/build-frame-index.py"
+   ],
+   "steps": [
+    "Generate F01 first: the film's first frame should be almost nothing.",
+    "Chain: each frame references the previous frame's job id, not its prompt.",
+    "One image doing two jobs (shared) is generated once. A bridge must go genuinely near-black. A match pair is made as a pair.",
+    "No text, no watermark, no logo in any frame — say it three ways in the prompt."
+   ],
+   "iterate": {
+    "name": "the frame",
+    "trigger": "A composition will not survive being held for its duration · a shared frame reads as two rooms · a bridge is only 70% black.",
+    "do": "Two passes on the prompt, then rewrite it. Promote any draft that beats its anchor.",
+    "exit": "Gate B — every frame on one contact sheet, read left to right twice, no drift.",
+    "cost": "One image per pass. Drift here costs an image; drift later costs a video.",
+    "mol": "39 frames for 23 shots; skeleton pass one generation each on Sep 6; the selection pass was where time went."
+   },
+   "gate": {
+    "id": "B",
+    "name": "String lock",
+    "test": "The contact sheet. Read it twice. Anything that drifts is regenerated before a single video."
+   },
+   "links": [
+    "hf_project",
+    "help_canvas"
+   ],
+   "mol": {
+    "numbers": "39 anchors · 6 shared · 2 bridges · 3 match pairs",
+    "dates": "Sep 6 skeleton; selection open through Sep 12"
+   },
+   "reminders": [
+    "First and last frame of every shot, in film order, on the plate's board.",
+    "Chain from the previous frame's job id, not its prompt.",
+    "Say 'no text, no letters, no watermark' three ways.",
+    "A bridge frame goes truly black, or it is an honest cut."
+   ]
+  },
+  {
+   "id": 3,
+   "key": "timing",
+   "name": "Stills reel & timing",
+   "question": "Does it play, at length, before anything moves?",
+   "goal": "Assemble the anchors at their shot durations and watch the whole runtime as stills. Then freeze runtime, order and count — after this a structural change costs video, not images.",
+   "inputs": [
+    "anchors",
+    "shot durations"
+   ],
+   "outputs": [
+    "the stills reel",
+    "the structural decision (which ordering)",
+    "timing lock"
+   ],
+   "surfaces": [
+    "any NLE, or the board itself"
+   ],
+   "files": [
+    "canvas-boards.html → the four orderings",
+    "status.html"
+   ],
+   "steps": [
+    "Cut the stills at duration. Sit through it. Where attention drops is where a shot is too long or a cut is unmotivated.",
+    "Decide the structure now: linear, prologue splice, fold, interlace. Price each in new anchors.",
+    "Freeze: runtime, shot order, shot count."
+   ],
+   "iterate": {
+    "name": "structure",
+    "trigger": "The lead dies before the audience has met whoever carries the ending · the peak lands too early.",
+    "do": "Move an establishing beat, not a scene. One new anchor at most.",
+    "exit": "Gate C — timing lock.",
+    "cost": "Cheap here (one anchor), expensive after (re-rendered video).",
+    "mol": "Option B — the first five seconds of the brothers' beach placed before the vortex — was priced at one anchor on Sep 8 and finally applied on Sep 14 as an edit-only split of an existing take. Zero generations. It was not applied: the brothers first appear at 4:59 of the delivered film."
+   },
+   "gate": {
+    "id": "C",
+    "name": "Timing lock",
+    "test": "Runtime, order and count frozen. Any change after this is a re-render."
+   },
+   "links": [],
+   "mol": {
+    "numbers": "300s target; landed 5:43 with the new shots",
+    "dates": "planned Sep 9; the split applied Sep 14"
+   },
+   "reminders": [
+    "Sit through the stills at duration before anything moves.",
+    "Decide the structure now — after Gate C a change is video, not images.",
+    "Freeze runtime, order and count. Write the date down.",
+    "If the sound might be a song, lock the song here and cut the stills reel to it — the music-video rule applies the moment there are lyrics."
+   ]
+  },
+  {
+   "id": 4,
+   "key": "motion",
+   "name": "Motion",
+   "question": "Is every shot a move between two frames that are already right?",
+   "goal": "Video for every shot, generated inside the project, two takes each, on the model whose ceiling, reference support and audio behaviour fit the shot. Chain start and end frames on anything over 12 seconds.",
+   "inputs": [
+    "anchors",
+    "cast ids",
+    "the model matrix (duration ceiling · two-frame · audio refs · aspect · folder)"
+   ],
+   "outputs": [
+    "takes, admitted to the project by cast",
+    "scores for every take ≤16s",
+    "picks and alternates per shot"
+   ],
+   "surfaces": [
+    "Cinema Studio — cinematic_studio_video_4_0 (web app; 8–16s; 720p→1080p; 21:9) inside the project",
+    "minimax_h3 — the one API model with two frames + audio references + 21:9 + folder_id",
+    "Virality Predictor — every take ≤16s, 2 concurrent on the plan, free",
+    "MCP connector for batch and history; Cloud API for scripted submission",
+    "list_projects / list_folders / list_project_assets (MCP) — project membership, item by item, with folder: what ingest.py admits by first"
+   ],
+   "files": [
+    "anchorframe/ingest.py",
+    "anchorframe/build.py",
+    "anchorframe/generate.py",
+    "design/model-audit.json",
+    "design/continuity-audit.json",
+    "design/new-shots.md",
+    "design/recreate-prompts.md"
+   ],
+   "steps": [
+    "Read what you are actually using before you spec a run — pull the project's placements and its history. (The notes said v2 · 12s · 720p. The account said v4.0 · 16s.)",
+    "Cheap pass on every shot first; finals per act after.",
+    "Two takes per prompt. A third take on the same prompt is a different prompt.",
+    "Audio off on the shots the shot list marks silent. Audio references, not model audio, wherever there is dialogue.",
+    "Every take through the Predictor. Read the curve, not the number."
+   ],
+   "iterate": {
+    "name": "the take",
+    "trigger": "An identity break the model can't see (wrong sheet) · a shot that exists only as a chroma lane · a beat with no take at all · a score that is a clear outlier against its pair.",
+    "do": "Regenerate only that: the corrected prompt, the same references, the right sheet. Ledger on acceptance. Re-ingest, re-score, rebuild.",
+    "exit": "Gate D — motion lock: every shot has a pick you would ship.",
+    "cost": "~5 min and one video credit per 16s take at 1080p. Scoring is free.",
+    "mol": "59 takes admitted of 130 in the account; 18 scored; 17 of 18 peaked on their last second; S5 flagged (mortal Caedom), S14 single take, S10 dragon-dead pair excluded, four new shots written and unshot at deadline."
+   },
+   "gate": {
+    "id": "D",
+    "name": "Motion lock",
+    "test": "A pick per shot, chained where it must be, no identity break in any pick."
+   },
+   "links": [
+    "hf_project",
+    "hf_cloud_keys",
+    "hf_api_docs",
+    "hf_sdk_py",
+    "hf_sdk_js",
+    "hf_mcp_credits"
+   ],
+   "mol": {
+    "numbers": "51 v4.0 renders Sep 10–14 · durations 8/12/14/16 · 1344×576 at 720p · 2 of 16 chained · 540 credits left",
+    "dates": "Sep 8 cheap pass (seam shots); Sep 13 the big run (43 renders); Sep 14 the last pair"
+   },
+   "reminders": [
+    "Pull the history before you spec a run. Read what you are actually using.",
+    "Two takes, then rewrite the prompt.",
+    "Chain start/end frames on anything over 12 seconds.",
+    "Audio off wherever the shot list says silent.",
+    "Score every take ≤16s. Read the curve, not the number.",
+    "Keep a 'regenerate this clip on the right sheet' prompt ready for every shot with a face in it.",
+    "Audio off on any regeneration of a silent shot — a regenerate-from-video prompt with audio on invents a line half the time."
+   ]
+  },
+  {
+   "id": 5,
+   "key": "sound",
+   "name": "Voice & sound",
+   "question": "Is every sound in the project, and is every silence a decision?",
+   "goal": "Dialogue generated per line, several takes each, chosen for the scene's mood and routed into the shots as audio references. Score and sound design made wherever is honest, then every file uploaded into the project.",
+   "inputs": [
+    "dialogue cut",
+    "voice casting",
+    "the scene moods"
+   ],
+   "outputs": [
+    "takes per line with settings",
+    "selected take per line",
+    "music and sound design files",
+    "every audio file in the submission project"
+   ],
+   "surfaces": [
+    "seed_audio (0.1 credit/line; speech_rate −50..100, pitch −12..12; no seed)",
+    "text2speech_v2 / ElevenLabs-via-Higgsfield (3 fields)",
+    "qwen_audio_tts (the one with a real seed + instruction)",
+    "Suno for score (no API — app, then upload)"
+   ],
+   "files": [
+    "design/dialogue.json → takes, settings, cast_colour",
+    "director-bible.html → Voice tab"
+   ],
+   "steps": [
+    "Cast two candidates per character on the same line; pick; write it down.",
+    "Four takes per line with mood settings from the scene. Keep the spec take as take 1.",
+    "Route: generate the voice first, attach it as an audio reference on a model that accepts one, turn the model's own audio off on that shot.",
+    "Credit music honestly on the end card. Keep the rights receipt."
+   ],
+   "iterate": {
+    "name": "the read",
+    "trigger": "A line reads flat against its picture · a take is the wrong tempo for the shot's duration.",
+    "do": "One more take at ±12 speech rate. Never more than four per line; choose.",
+    "exit": "Every speaking shot has one selected take and it is in the project.",
+    "cost": "0.1 credit a take. The cheapest thing in the production.",
+    "mol": "12 lines · 40 takes · Kiki and Alistair · 2 speaking scenes silent by design incl. the climax; the S1 narration existed but was not under the black at submission."
+   },
+   "gate": null,
+   "links": [
+    "hf_project",
+    "elevenlabs_keys"
+   ],
+   "mol": {
+    "numbers": "40 voice takes · 4 per line · 0.1 credit each",
+    "dates": "Sep 13"
+   },
+   "reminders": [
+    "Generate the voice first; attach it as an audio reference; model audio off on that shot.",
+    "Never more than four takes per line — choose, and write it down.",
+    "Every audio file uploaded into the project before you submit.",
+    "Credit the music honestly on the end card. Keep the rights receipt.",
+    "A silence rule cannot survive a lyric on the climax. If the score is a song, place the silence between verses or drop the rule on paper first."
+   ]
+  },
+  {
+   "id": 6,
+   "key": "cut",
+   "name": "The cut",
+   "question": "Which take, in what order, and why?",
+   "goal": "The board: one pick per shot, alternates beside it, the continuance from first shot to last. Cut on the tail, never the head. Selection is the grade. Fix structure with edits before generations. End-card plate generated; end-card type in the NLE.",
+   "inputs": [
+    "takes + scores",
+    "the shot list",
+    "voice takes"
+   ],
+   "outputs": [
+    "board.html",
+    "pull-picks.sh — the picks in cut order + a rough assembly",
+    "the export"
+   ],
+   "surfaces": [
+    "the board",
+    "DaVinci Resolve (assembly, titles, sound — permitted outside the platform)",
+    "Cinema Studio for anything that is picture"
+   ],
+   "files": [
+    "anchorframe/projects/<slug>/board.html",
+    "design/pull-picks.sh",
+    "virality-read.html"
+   ],
+   "steps": [
+    "Decide the rhythm before you pick: held frames or montage to a song. A board built for holds cannot supply a montage; the editor will reach past it for coverage.",
+    "Pick by look, tie-break by score; write why under each pick.",
+    "Trim from the head. 17 of 18 takes paid on their last second.",
+    "Where a chroma take and a flat take exist, the chroma take is the grade. No colour pass across two lighting worlds in an hour.",
+    "Timeline resolution = the film's aspect before export, or the bars bake in. 2560×1098 · 24 · H.264 CRF 17 · AAC 320.",
+    "End card: generate the plate with no text (say it three ways); lay the credits in the NLE at 12s+."
+   ],
+   "iterate": {
+    "name": "the cut",
+    "trigger": "A read of the scores against the judges: an arc problem (who changes and when), a light problem (drift, a flat take), a hook problem (a silent first three seconds).",
+    "do": "Three changes, one per judge, priced in generations — prefer the zero-generation edit (a split, a voice under black, a take swap).",
+    "exit": "Gate E — picture lock. Nothing is generated after it.",
+    "cost": "Minutes. The whole point is to spend edits, not credits, this late.",
+    "mol": "Change 1: the brothers' first 5s before the vortex (edit only). Change 2: cut on the tail; S22 on the chroma take (59 vs 49). Change 3: the S1 narration under the black; NEW-2 the one generation worth starting. What the cut then did (read back on Sep 29): overruled the board's pick on look six times and on score never; regenerated S11 on the right sheet at 23:04; made the 'redundant' NEW-3 the next day; assembled S12 from two takes with a splice. The picture then showed the rest: a hundred scenes cut to two songs, the excluded dragon as the set piece, the bookend moved to the act-out, an underwater ending no board had."
+   },
+   "gate": {
+    "id": "E",
+    "name": "Picture lock",
+    "test": "No further generation. The export exists and plays end to end."
+   },
+   "links": [
+    "resolve"
+   ],
+   "mol": {
+    "numbers": "22 picks · 3 alternates each · 5:43 planned · the cut favourited 21 takes, 6 of them the board's alternates",
+    "dates": "Sep 14, 21:30–23:59 UTC"
+   },
+   "reminders": [
+    "Trim from the head, never the tail.",
+    "Chroma take over flat take. No colour pass across two lighting worlds in an hour.",
+    "Timeline aspect = film aspect before export, or the bars bake in.",
+    "End-card plate generated with no text; end-card type in the NLE.",
+    "Favourite the pick of every shot as you lay it — the record is the only one the platform keeps.",
+    "Show alternates at the pick's size; the pick is a proposal, the timeline decides.",
+    "Plan coverage or plan montage — decide before Gate D, because one generation per shot gives the editor one angle.",
+    "Show excluded takes greyed with the reason; the editor decides what a wrong element costs at the shot's size."
+   ]
+  },
+  {
+   "id": 7,
+   "key": "deliver",
+   "name": "Deliver",
+   "question": "Does it count?",
+   "goal": "Rights pass, watermark and packshot from inside the platform, a public post on a public account, every file verified inside the project, submitted before the deadline in the deadline's own timezone.",
+   "inputs": [
+    "the export",
+    "the rules, read again today"
+   ],
+   "outputs": [
+    "the watermarked file",
+    "the public post (and its logged-out check)",
+    "the submission",
+    "posts and descriptions for X / Instagram / YouTube",
+    "a support email on file if anything errored",
+    "the published project page — film, prompts and history, public"
+   ],
+   "surfaces": [
+    "Cinema Studio submit flow (watermark + packshot)",
+    "the contest page",
+    "YouTube / X / Instagram / Reddit",
+    "support@ / contact@ / Discord"
+   ],
+   "files": [
+    "design/festival-rules.md",
+    ".claude/agents/proctor.md",
+    "PROJECT-BRIEF.md"
+   ],
+   "steps": [
+    "Rights: end card credits the source and the AI audio honestly; no real face or voice anywhere in the inputs.",
+    "MVS 1 — watermark + packshot applied by the platform's own flow, never recreated.",
+    "MVS 2 — public post, public account, checked in a private window.",
+    "Verify every generation is inside the project. Submit. Then stop.",
+    "Deadline in its own timezone. Two files in this repo disagreed (UTC vs PT). Work to the earlier one."
+   ],
+   "iterate": {
+    "name": "none",
+    "trigger": "—",
+    "do": "This stage is a checklist, not a loop.",
+    "exit": "Submitted; links checked logged-out.",
+    "cost": "Zero if the rules were read on day one.",
+    "mol": "Watermark question answered at 21:17 UTC on deadline day; final MOV at ~23:30; the recorded deadline had passed by the next check. Posts, loglines and support contacts were prepared the day after. The Sep 18 'HQ' upload turned out to be a 15s clip; the full cut exists in the account once, as the Sep 16 MOV."
+   },
+   "gate": null,
+   "links": [
+    "hf_public_project",
+    "contest_page",
+    "festival_page",
+    "festival_blog",
+    "festival_rules",
+    "hf_x",
+    "hf_contact",
+    "hf_help",
+    "hf_trust",
+    "yt_studio"
+   ],
+   "mol": {
+    "numbers": "MVS = 2 components · 3 support addresses verified · 3 loglines ≤140 · published at https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light · three uploads of the film (Sep 16 master, Sep 18 low and HQ)",
+    "dates": "Sep 14–17"
+   },
+   "reminders": [
+    "Watermark and packshot from the platform's own flow — never recreated.",
+    "Public post AND public account. Check both in a private window.",
+    "The deadline in its own timezone; two records disagreed here — work to the earlier one.",
+    "Verify every generation is inside the project. Submit. Stop.",
+    "Write down which file was submitted and which is in the project — by id and date — the day you submit.",
+    "Check where the submit flow puts the packshot before the last export; on this film it led the file by nine seconds."
+   ]
+  },
+  {
+   "id": 8,
+   "key": "learn",
+   "name": "Learn",
+   "question": "What did the cut change, and what does the next film inherit?",
+   "goal": "After delivery, put the finished film back through the desk: upload the master into the project root, run the scene analysis, diff the scenes against the board as it stood at picture lock, and write every delta as a lesson the next project starts with. The board is the plan; the cut is the truth; the difference between them is the course.",
+   "inputs": [
+    "the delivered master, and the low proxy beside it",
+    "board.html as it stood at picture lock",
+    "the post-deadline generations, if any",
+    "the favourites in the project — the cut's own record of what it used"
+   ],
+   "outputs": [
+    "final-cut.data.json — plans, post-deadline work, favourites, uploads, analyses",
+    "final-cut.notes.json — scenes, the diff, feel, grade, lessons",
+    "new reminders on the stages that could have caught each delta",
+    "the examples the next project sees under Cut and Learn"
+   ],
+   "surfaces": [
+    "video_analysis_create → video_analysis_status (MCP) — scene by scene on an uploaded video; slow and queued on a six-minute film",
+    "Virality Predictor on any post-deadline take ≤16s (a 16s render is usually 16.1s and is refused — score the 15s and 8s ones)",
+    "list_project_assets — favourites and folders, item by item",
+    "show_medias type=video — every upload, with its URL"
+   ],
+   "files": [
+    "design/assemble-final-cut.py",
+    "design/build-final-cut.py",
+    "design/final-cut.data.json",
+    "design/final-cut.notes.json",
+    "anchorframe/projects/<slug>/examples.json"
+   ],
+   "steps": [
+    "Upload the master into the project root and keep the low proxy beside it. The analyser takes either; the jury took the master.",
+    "Start the scene analysis, then do not wait for it: read the favourites against the picks first. A favourite on a take that is not the pick is the cut telling you where the board was wrong.",
+    "Diff in five columns: order, durations, take swaps, trims, drops and additions. Price every delta — an edit, or a generation?",
+    "Read the feel and the grade off the scenes: where the light drifts between neighbours, where a hold ran long, where a cut was unmotivated.",
+    "Write each delta three ways: a lesson (what happened → the rule now), a reminder on the stage that could have caught it, and an example the next project sees."
+   ],
+   "iterate": {
+    "name": "the read",
+    "trigger": "A finished film exists and the board disagrees with it.",
+    "do": "One pass: scenes → diff → three rules. Do not re-cut; the film is delivered. The output is the next project's starting state.",
+    "exit": "The lessons are on the desk, the reminders are in the stages, the examples are in the course.",
+    "cost": "An hour and no credits. The analyser and the Predictor are free on the plan.",
+    "mol": "Read on Sep 29 from the record and then from the picture. The record: 31 favourites, 15 post-deadline jobs, 3 uploads. The picture (the platform's scene analysis of the Sep 16 master, 6:17, 108 scenes): a hundred scenes at 3.7s against a plan of 23 at 13s; six look-swaps and never a score-swap; the excluded dragon pair as a 23s set piece; S11 regenerated and used; the bookend moved to 2:04; an ending found underwater; five Orianes on the timeline; the swim read as children by the analyser; nine seconds of packshot at the head. Of the three changes recommended with an hour left: one applied, one half, one not."
+   },
+   "gate": null,
+   "links": [
+    "hf_public_project"
+   ],
+   "mol": {
+    "numbers": "108 scenes · 6:17 · 3.7s mean · 6 swaps · 3 regenerations · 2 of 3 additions in the cut · 0 credits for the read",
+    "dates": "Sep 14 master at ~23:30 UTC · Sep 15 six new takes, six regenerations and a splice · Sep 16 the MOV into the project root · Sep 18 the low and the HQ · Sep 29 the read"
+   },
+   "reminders": [
+    "Upload the master into the project root; keep the low proxy beside it.",
+    "Read the favourites against the picks before the analyser returns.",
+    "Diff order · durations · swaps · trims · drops/additions, and price each as edit or generation.",
+    "Every delta becomes a lesson, a reminder on the stage that could have caught it, and an example.",
+    "Run the continuity audit on the assembled timeline at Gate E, not on the board.",
+    "Read every wide with a minor-looking figure back through the analyser before delivery — the 18+ rule is per take."
+   ]
+  }
+ ],
+ "expand": {
+  "_": "The same primitives, three products. What changes is scale and the shape of a 'shot'.",
+  "short": {
+   "name": "Anchorframe",
+   "unit": "shot",
+   "scale": "1 project · 20–40 shots · 1–3 boards · one cast",
+   "status": "built — this repo"
+  },
+  "feature": {
+   "name": "Anchorframe Feature",
+   "unit": "scene → sequence → act",
+   "scale": "1 project per act or per sequence sharing one cast file · 20+ boards · a continuity audit that runs across projects · a stills reel per act",
+   "status": "roadmap — needs: multi-project cast sharing, cross-project ingest, an act-level board, per-scene ledgers"
+  },
+  "series": {
+   "name": "Anchorframe Series",
+   "unit": "episode",
+   "scale": "1 project per episode · one cast file with per-episode overrides",
+   "status": "roadmap — same as feature plus a season board"
+  },
+  "play": {
+   "name": "Anchorframe Play",
+   "unit": "asset",
+   "scale": "cast → character sheets, turnarounds, expression sheets · plates → level key art and lighting · shots → cutscenes · takes → animation and sprite variants · the board → asset review · the ledger → provenance for every shipped asset",
+   "status": "roadmap — needs: a sheet type per asset class, an export to engine folder structure, and a review board keyed by asset rather than by shot"
+  }
+ },
+ "unique": [
+  {
+   "k": "Continuity by id",
+   "d": "Faces, places and things are attached, never described. A rename cannot break a reference; a retired element is recorded, not forgotten."
+  },
+  {
+   "k": "Provenance you can hand to a jury",
+   "d": "Every take the desk makes is on a ledger before anyone waits for it. Admission to a project is by cast, not by folder — which is the only thing the API can actually enforce."
+  },
+  {
+   "k": "Evidence, then taste",
+   "d": "Every take scored; the curves read against what a jury sits there to see. The cut is chosen with numbers on the table and a person making the call."
+  },
+  {
+   "k": "Gates are people",
+   "d": "Five gates, each a person looking at a screen, each recorded. Nothing downstream begins until the gate above holds."
+  }
+ ],
+ "course": {
+  "_": "The living course: each stage shows examples from a finished project with what to look for, and a reminders checklist that remembers your ticks in this browser. Any project can add examples.json beside its project.json and they appear here, labelled."
+ }
+}

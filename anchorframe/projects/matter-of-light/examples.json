@@ -1,0 +1,462 @@
+{
+ "project": "matter-of-light",
+ "title": "Matter of Light",
+ "note": "Every asset here was generated inside the festival project and is public under the festival's rules. They are examples, not templates: look for the thing named under each one, then make your own.",
+ "stages": {
+  "story": [
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4",
+    "poster": "",
+    "label": "S22 · the turn",
+    "why": "The last held close-up belongs to whoever changes. The ending was rewritten on Sep 14 to make it Alder's, and this take carries it.",
+    "from": "take 4896c8e3 · 12s"
+   },
+   {
+    "kind": "image",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_044621_4595a2ac-06ce-4fee-852f-247508e68e9d.png",
+    "label": "F35 · the most important single image",
+    "why": "Alder at the end of the push, one dark cloud out of focus behind him. Written and anchored before a second of video existed.",
+    "from": "frame F35 · 4595a2ac"
+   },
+   {
+    "kind": "image",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_30403126-ae0d-4926-8df8-fcf14da302ef.png",
+    "label": "F01 · almost nothing",
+    "why": "The first frame of the film. Everything the opening does, it does by revealing.",
+    "from": "frame F01 · 30403126"
+   }
+  ],
+  "cast": [
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "1/1",
+     "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/3eb248ba-0858-4f4c-971a-930e7a577fec.png",
+     "label": "oriane",
+     "why": "",
+     "from": "soul oriane"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "1/1",
+     "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/212bcdc1-b55e-48c0-93ea-4a89a2e66bd5.png",
+     "label": "caedom-ascended",
+     "why": "",
+     "from": "soul caedom-ascended"
+    },
+    "label": "Two of the four Souls",
+    "why": "One identity, trained once. Every state sheet — damaged, ascended, mortal — is generated from it, never re-described.",
+    "from": "soul oriane  ·  soul caedom-ascended"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "1/1",
+     "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/68fc0492-219e-4c18-99fa-b7d22de8398c.png",
+     "label": "alder",
+     "why": "",
+     "from": "soul alder"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "1/1",
+     "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/1a4944fa-82d6-4e7e-9d51-26d1a00c1065.png",
+     "label": "wren",
+     "why": "",
+     "from": "soul wren"
+    },
+    "label": "The brothers",
+    "why": "Same height, age only in the face. Two-person shots cannot use a Soul at all — they run on the elements.",
+    "from": "soul alder  ·  soul wren"
+   },
+   {
+    "kind": "image",
+    "ar": "16/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_2230917c-4191-49dc-88ec-6d34fe25e65a_min.webp",
+    "label": "A location, three ways on one sheet",
+    "why": "Intact in daylight, under cannon fire, and from behind looking out to sea. One id, three uses, no drift between them.",
+    "from": "element @white-temple"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "16/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_21db1b5a-0188-40a2-9747-5996928c8538_min.webp",
+     "label": "plate-sun",
+     "why": "",
+     "from": "element @plate-sun"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "16/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162054_66da2493-5ab7-4e8d-a86b-f9936370ea7e_min.webp",
+     "label": "plate-ocean-dark",
+     "why": "",
+     "from": "element @plate-ocean-dark"
+    },
+    "label": "Two of the four lighting plates",
+    "why": "Every frame on a board inherits its plate's key. One board per plate is what stops the light drifting.",
+    "from": "element @plate-sun  ·  element @plate-ocean-dark"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "16/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_194030_1ccb8e16-c394-4d80-bd13-1681df51399d_min.webp",
+     "label": "caedom-ascended (the film)",
+     "why": "",
+     "from": "element @caedom-ascended"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "16/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260814_052250_b1cc7e7d-1b30-4361-a4dc-cefa3f76432a_min.webp",
+     "label": "char_caedom_v2_human (S5's mistake)",
+     "why": "",
+     "from": "element @char_caedom_v2_human"
+    },
+    "label": "The identity break the model can't see",
+    "why": "All four takes of S5 attached the mortal sheet while every other shot used the ascended one. Scores rank takes; only a continuity read catches the wrong face.",
+    "from": "element @caedom-ascended  ·  element @char_caedom_v2_human"
+   },
+   {
+    "kind": "image",
+    "ar": "16/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151726_ebc798d9-7cfa-4a43-b96f-498d6463f195_min.webp",
+    "label": "Replaced by hand — and the repo didn't know",
+    "why": "This element replaced prop_enemy_ships in the web app. Four prompts pointed at the dead id for days. Record old → new the moment you swap.",
+    "from": "element @twelve-ships"
+   }
+  ],
+  "anchors": [
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_30403126-ae0d-4926-8df8-fcf14da302ef.png",
+     "label": "F01",
+     "why": "",
+     "from": "frame F01 · 30403126"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_0e3fbd76-dd81-4105-81c6-6078dacde732.png",
+     "label": "F02 · shared",
+     "why": "",
+     "from": "frame F02 · 0e3fbd76"
+    },
+    "label": "A shared frame",
+    "why": "F02 ends S1 and starts S2. One image doing two jobs, generated once; the seam lives inside the glare.",
+    "from": "frame F01 · 30403126  ·  frame F02 · 0e3fbd76"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162243_5a726527-40f7-4405-9859-d56715418592.png",
+     "label": "F09 · the facet",
+     "why": "",
+     "from": "frame F09 · 5a726527"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_fd757328-a2e8-4ffc-bd6c-961b21bc3db2.png",
+     "label": "F10 · the ocean",
+     "why": "",
+     "from": "frame F10 · fd757328"
+    },
+    "label": "The match pair",
+    "why": "The tear's blue facet becomes open water. Designed as a pair, not found in the edit — made independently, the 108-year jump costs the audience a beat.",
+    "from": "frame F09 · 5a726527  ·  frame F10 · fd757328"
+   },
+   {
+    "kind": "image",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_f3f3ca6e-5f93-4e76-b098-e43c3c9aae74.png",
+    "label": "B01 · a bridge",
+    "why": "The leviathan's flank filling frame to near-black. It has to go genuinely black — 70% obscured reads as a hidden cut that failed.",
+    "from": "frame B01 · f3f3ca6e"
+   },
+   {
+    "kind": "image",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164024_e47cb162-4e85-4f35-80f6-8a76e12d4a0f.png",
+    "label": "F17 · scale in one frame",
+    "why": "Oriane tiny between the opening jaws. This frame has to carry the shot's whole point alone, because the shot will not cut.",
+    "from": "frame F17 · e47cb162"
+   }
+  ],
+  "timing": [
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_fff821a8-7d38-4afe-9aa5-8ab34ca6cd97.png",
+     "label": "F22 · the streak in orbit",
+     "why": "",
+     "from": "frame F22 · fff821a8"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_173918_3cb92044-851c-45a8-bccd-e1157967ec7b.png",
+     "label": "F23 · its residue on the beach",
+     "why": "",
+     "from": "frame F23 · 3cb92044"
+    },
+    "label": "One object carries the cut across a day and three thousand miles",
+    "why": "The structural hinge between movements. Deciding where this lands is a Gate C decision — after it, moving it costs video.",
+    "from": "frame F22 · fff821a8  ·  frame F23 · 3cb92044"
+   },
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_aa65cc3d-fc49-44f2-8007-afc318ee379b.mp4",
+    "poster": "",
+    "label": "S15 · the zero-generation fix",
+    "why": "The first five seconds of this take were moved before the vortex so the audience meets the brothers before Oriane dies. The rest stayed. One blade cut, no render.",
+    "from": "take aa65cc3d · 10s"
+   }
+  ],
+  "motion": [
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_065755_d484a959-482d-4a30-913b-fef46183be71.mp4",
+    "poster": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260814_065452_08c4509c-08ee-4075-b6e5-70559af62e34.png",
+    "label": "S21 · chained, 16s",
+    "why": "Chained on F32→F33. Only 2 of 16 renders in the account used start/end frames — both the longest shots, which is exactly right. Chain anything over 12s.",
+    "from": "take d484a959 · 16s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_1971bd66-4b13-468f-9a3d-f962592b2433.mp4",
+     "poster": "",
+     "label": "S10 · @leviathan",
+     "why": "",
+     "from": "take 1971bd66 · 16s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_4abb698e-fd51-4350-a51b-80130d5c0204.mp4",
+     "poster": "",
+     "label": "S10 · @prop_dragon_v1_dead",
+     "why": "",
+     "from": "take 4abb698e · 16s"
+    },
+    "label": "Same shot, two creature sheets",
+    "why": "The left take attaches the film's leviathan; the right attached a different creature entirely. Both scored fine. Read the references, not just the numbers.",
+    "from": "take 1971bd66 · 16s  ·  take 4abb698e · 16s"
+   },
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4",
+    "poster": "",
+    "label": "S1 · one 30s crane",
+    "why": "It carries S1 and S2 in a single move, exactly as the bible asked. If it has to lose time, it comes off the front — every take here paid on its last second.",
+    "from": "take f84a308f · 30s"
+   }
+  ],
+  "sound": [
+   {
+    "kind": "audio",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163203_d139f65b-edd9-4d93-b721-804d760cadfa.wav",
+    "label": "The opening narration",
+    "why": "Measured, vast, already grieving. Lay it under the black so the first three seconds are not silent; the crane rises under the voice.",
+    "from": "S1-CAEDOM · take 1 · rate -12"
+   },
+   {
+    "kind": "audio",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163342_a4ef14ad-1c2e-4a3f-a4b8-3bd03028c79b.wav",
+    "label": "“There's something more.”",
+    "why": "The smile arriving — hope, relief, something braver than either. Four words carry the ending.",
+    "from": "S22-ALDER-b · take 1 · rate -8"
+   },
+   {
+    "kind": "audio",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_163301_91a7b086-3ae8-4e10-87ef-b2a775d28089.wav",
+    "label": "“Tomorrow.”",
+    "why": "One word, and it ends the scene. Generate the voice first; attach it as an audio reference; turn the model's own audio off on that shot.",
+    "from": "S5-CAEDOM · take 1 · rate -10"
+   }
+  ],
+  "cut": [
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4",
+     "poster": "",
+     "label": "S1 · the board's pick · current courtyard element",
+     "why": "Chosen for continuity with the S23 bookend.",
+     "from": "take f84a308f · 30s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260910_203413_48c4b641-9340-43bb-a813-5e4aa2de041f.mp4",
+     "poster": "",
+     "label": "S1 · the cut's ♥ · retired courtyard element",
+     "why": "Chosen for the crane.",
+     "from": "take 48c4b641 · 30s"
+    },
+    "label": "Element continuity is invisible at a wide — S1",
+    "why": "The board argued element; the editor argued motion. At 21:9 the two courtyards are one place. Rank continuity arguments by whether a viewer can see them at the shot's size.",
+    "from": "take f84a308f · 30s  ·  take 48c4b641 · 30s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4",
+     "poster": "",
+     "label": "S22 · chroma · scored 59",
+     "why": "",
+     "from": "take 4896c8e3 · 12s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_6b0d0fac-9889-4ec4-a802-b1db7b0383b6.mp4",
+     "poster": "",
+     "label": "S22 · flat · scored 49",
+     "why": "",
+     "from": "take 6b0d0fac · 12s"
+    },
+    "label": "Selection is the grade",
+    "why": "Same shot, same boys, one look decision, ten points. A colour pass across two lighting worlds in an hour drifts; picking the graded take does not.",
+    "from": "take 4896c8e3 · 12s  ·  take 6b0d0fac · 12s"
+   },
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520.mp4",
+    "poster": "",
+    "label": "S6 · already opens on the match cut",
+    "why": "It carries the tear-to-ocean cut and the card — which made a planned transition shot redundant. Check what you have before you generate what you planned.",
+    "from": "take f8035ad4 · 15s"
+   },
+   {
+    "kind": "image",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_164335_a26c5697-1d07-4e1e-873f-a4fd82092b68.png",
+    "label": "F37 · the last frame",
+    "why": "The frozen tear as one point of light on a vast floor. It rhymes with F01; the end-card plate continues it to black, and the credits go on after, in the NLE.",
+    "from": "frame F37 · a26c5697"
+   }
+  ],
+  "deliver": [],
+  "learn": [
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/7b801917-51e4-4cfc-b62b-e8560f2b8f3e.mp4",
+    "poster": "",
+    "label": "The delivered master · Sep 16",
+    "why": "The MOV cut after the Sep 15 generations, uploaded into the project root — the only full cut in the account. The analyser read it as 108 scenes in 6:17, 3.7s each, against a board of 27 cards at 12.7s. Stage 8 starts here: upload the master, run the scenes, read them against the board.",
+    "from": "upload 7b801917 · in the project root 2026-09-16 21:52 UTC"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4",
+     "poster": "",
+     "label": "S20 · the board's pick · scored 52",
+     "why": "The rescoring moved the board to this take.",
+     "from": "take 36e39026 · 12s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4",
+     "poster": "",
+     "label": "S20 · the cut's ♥ · scored 51",
+     "why": "The editor kept the first-read take; one point behind, which is noise.",
+     "from": "take 2ab9dfa7 · 12s"
+    },
+    "label": "The board's pick lost to the editor's eye — S20",
+    "why": "The cut favourited the alternate. The board had moved to the scored take; the timeline never did. Show alternates at the pick's size: a board is a proposal.",
+    "from": "take 36e39026 · 12s  ·  take 2ab9dfa7 · 12s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_328324f8-f861-44ce-abcf-a0936131c0b7.mp4",
+     "poster": "",
+     "label": "S11 · the board's pick · 8s",
+     "why": "One take, wrong sheet, too short.",
+     "from": "take 328324f8 · 8s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260914_230433_022381ba-9cd9-4931-b280-582ad8550662.mp4",
+     "poster": "",
+     "label": "S11 · regenerated on the battle sheet · 15s · 46",
+     "why": "Made at 23:04 on deadline night; favourited. Its own audio says 'Thank you' in the last second.",
+     "from": "take 022381ba · 15s"
+    },
+    "label": "Fixed by regenerating, not by choosing — S11",
+    "why": "When a shot has one take and it is wrong, the fix is a regeneration on the right sheet, not a different pick. Keep that prompt ready before the deadline — and regenerate silent shots with audio off: two of the four deadline-night regenerations came back with the model's own voice in them.",
+    "from": "take 328324f8 · 8s  ·  take 022381ba · 15s"
+   },
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_214642_01b9e343-8f84-4565-9afb-bc3f2b49d68d.mp4",
+    "poster": "",
+    "label": "NEW-3 · the transition the board called redundant",
+    "why": "Generated the next day from the S4 take as a video reference, and favourited. Never call a transition redundant on the board; show both and let the timeline decide.",
+    "from": "take 01b9e343 · 8s"
+   },
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223459_85ec43a9-df94-4668-a42c-ae105f81e662.mp4",
+     "poster": "",
+     "label": "NEW-1 · the mind divides · 16s · Sep 15",
+     "why": "Written on the board on Sep 14, shot on Sep 15, text-only.",
+     "from": "take 85ec43a9 · 16s"
+    },
+    "b": {
+     "kind": "video",
+     "ar": "21/9",
+     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260915_223652_9b3983d5-45d6-4ac8-ba9a-16b3dfcfcc73.mp4",
+     "poster": "",
+     "label": "NEW-2 · the mound · 16s · Sep 15",
+     "why": "Change 3's one generation, made exactly as written.",
+     "from": "take 9b3983d5 · 16s"
+    },
+    "label": "Shot the day after — the board's prompts, verbatim",
+    "why": "Six generations from the board's own prompts, made after the deadline. Neither favourited. Whether they are in the delivered cut is what the scene analysis answers; the record only says they exist.",
+    "from": "take 85ec43a9 · 16s  ·  take 9b3983d5 · 16s"
+   }
+  ]
+ }
+}

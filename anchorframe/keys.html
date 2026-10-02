@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>filmdesk · Keys</title>
+<title>anchorframe · Keys</title>
 <meta name="description" content="Bring your own keys. Stored in this browser only, exported to a gitignored env file, never committed.">
 <style>
 :root{--ground:#EDEFF5;--surface:#FFFFFF;--surface-2:#E3E6EF;--line:#BFC6D8;--line-soft:#DCE1EC;--ink:#0E1017;--ink-2:#3D4459;--ink-3:#646B80;--gold:#8A5A00;--gold-soft:#FBEBC4;--gold-line:#D9AC46;--jade:#046B45;--jade-soft:#CDF0E0;--jade-line:#5EBE95;--coral:#BC3317;--coral-soft:#FFDCD1;--coral-line:#EE9273;
@@ -22,7 +22,7 @@
 .st{font:12px var(--mono);color:var(--ink-3)} textarea{width:100%;min-height:170px;font:12.5px/1.6 var(--mono);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:10px}
 @media (max-width:640px){.f{grid-template-columns:1fr}.svc .get,.svc .none{margin-left:0}}
 </style></head><body><div class="wrap">
-<span class="eyebrow"><a href="index.html">filmdesk</a> · keys</span>
+<span class="eyebrow"><a href="index.html">anchorframe</a> · keys</span>
 <h1>Bring your own keys</h1>
 <p class="lede">Every key on this page lives in <b>this browser's local storage and nowhere else</b>. Export writes a <code>keys.env</code> file for the command-line tools; that filename is gitignored. Nothing here is sent anywhere by this page.</p>
 <div class="warn"><b>Two rules.</b> Never paste a key into a prompt, a commit, a screenshot or a shared page. If you ever have — rotate it at the link on its card; the old one is gone in seconds and nothing you built depends on it.</div>
@@ -54,18 +54,18 @@
 
 <div class="bar"><button class="btn" id="save" type="button">Save to this browser</button><button class="btn ghost" id="export" type="button">Export keys.env</button><button class="btn ghost" id="show" type="button">Show as text</button><button class="btn ghost" id="clear" type="button">Forget all</button><span class="st" id="st"></span></div>
 <textarea id="out" hidden readonly spellcheck="false"></textarea>
-<p class="lede" style="margin-top:22px;font-size:14px">Put the exported file at <code>filmdesk/keys.env</code>. <code>generate.py</code> reads it; git ignores it. If your browser blocks the download (a sandboxed viewer will), use <em>Show as text</em> and paste it into the file yourself.</p>
+<p class="lede" style="margin-top:22px;font-size:14px">Put the exported file at <code>anchorframe/keys.env</code>. <code>generate.py</code> reads it; git ignores it. If your browser blocks the download (a sandboxed viewer will), use <em>Show as text</em> and paste it into the file yourself.</p>
 </div>
 <script>
-const KEYS=["HF_API_KEY","HF_API_SECRET","ELEVENLABS_API_KEY","ANTHROPIC_API_KEY","OPENAI_API_KEY"],K="filmdesk.keys",st=document.getElementById("st");
+const KEYS=["HF_API_KEY","HF_API_SECRET","ELEVENLABS_API_KEY","ANTHROPIC_API_KEY","OPENAI_API_KEY"],K="anchorframe.keys",st=document.getElementById("st");
 const get=()=>{try{return JSON.parse(localStorage.getItem(K)||"{}")}catch(e){return{}}};
 const put=o=>{try{localStorage.setItem(K,JSON.stringify(o));return true}catch(e){return false}};
 (()=>{const o=get();KEYS.forEach(k=>{const el=document.getElementById(k);if(el&&o[k])el.value=o[k]});if(Object.keys(o).length)st.textContent=Object.keys(o).length+" key(s) loaded from this browser"})();
 document.querySelectorAll("[data-eye]").forEach(b=>b.addEventListener("click",()=>{const i=document.getElementById(b.dataset.eye);i.type=i.type==="password"?"text":"password";b.textContent=i.type==="password"?"show":"hide"}));
 const collect=()=>{const o={};KEYS.forEach(k=>{const v=document.getElementById(k).value.trim();if(v)o[k]=v});return o};
-const env=o=>{const l=["# filmdesk keys — local only, gitignored (*.env). Generated "+new Date().toISOString().slice(0,19)+"Z"];KEYS.forEach(k=>{if(o[k])l.push(k+"="+o[k])});if(o.HF_API_KEY&&o.HF_API_SECRET)l.push("HF_KEY="+o.HF_API_KEY+":"+o.HF_API_SECRET);return l.join("\n")+"\n"};
+const env=o=>{const l=["# anchorframe keys — local only, gitignored (*.env). Generated "+new Date().toISOString().slice(0,19)+"Z"];KEYS.forEach(k=>{if(o[k])l.push(k+"="+o[k])});if(o.HF_API_KEY&&o.HF_API_SECRET)l.push("HF_KEY="+o.HF_API_KEY+":"+o.HF_API_SECRET);return l.join("\n")+"\n"};
 document.getElementById("save").onclick=()=>{const o=collect();st.textContent=put(o)?"saved — "+Object.keys(o).length+" key(s), this browser only":"this browser refused local storage; use Export instead"};
-document.getElementById("export").onclick=()=>{const t=env(collect());try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:"text/plain"}));a.download="keys.env";document.body.appendChild(a);a.click();a.remove();st.textContent="keys.env downloaded — move it into filmdesk/"}catch(e){st.textContent="download blocked here — use Show as text"}};
+document.getElementById("export").onclick=()=>{const t=env(collect());try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:"text/plain"}));a.download="keys.env";document.body.appendChild(a);a.click();a.remove();st.textContent="keys.env downloaded — move it into anchorframe/"}catch(e){st.textContent="download blocked here — use Show as text"}};
 document.getElementById("show").onclick=()=>{const o=document.getElementById("out");o.value=env(collect());o.hidden=!o.hidden;if(!o.hidden){o.focus();o.select()}};
 document.getElementById("clear").onclick=()=>{try{localStorage.removeItem(K)}catch(e){}KEYS.forEach(k=>document.getElementById(k).value="");st.textContent="forgotten"};
 </script></body></html>

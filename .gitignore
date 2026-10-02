@@ -26,7 +26,7 @@ crosswalk.local.js
 # Produced by design/higgsfield-snapshot.py, read by the bible if present.
 higgsfield.local.json
 
-# filmdesk BYOK export (already matched by *.env; named here so nobody wonders)
-filmdesk/keys.env
+# anchorframe BYOK export (already matched by *.env; named here so nobody wonders)
+anchorframe/keys.env
 __pycache__/
 *.pyc
