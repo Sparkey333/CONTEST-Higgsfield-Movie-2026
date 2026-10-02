@@ -1,0 +1,1525 @@
+{
+ "generated": "2026-09-08",
+ "how_a_shot_counts": {
+  "drafts": "any clip made for this shot, including the text-only ones. Evidence, not progress.",
+  "concept": "720p, generated FROM the shot's two anchors with the scene's elements named. This is RUN 23.",
+  "final": "the model in the bible's SHOTS row, 1080p or 4K, from the rendered last frame of the previous shot.",
+  "finished": "deflickered, upscaled and graded."
+ },
+ "elements_since_snapshot": {
+  "turned-hollows": "6e8dc05f-2e10-4984-b39e-6fa822fe46b5",
+  "ladder-oriane": "cd2aa79a-43ab-445a-a298-f1071884cc50",
+  "ladder-attunement": "447665c3-9c7d-4d95-ad8a-89b9a82d4fe4",
+  "aura-grammar": "86f7d638-b403-459f-af68-e9365a5da336",
+  "turned-water": "40520841-e9d3-45be-852b-c24f126ad3e1",
+  "plate-ocean-dark": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+  "caedom-before": "bb651816-ce13-4472-a4ef-8fd304973822",
+  "caedom-ascended-1": "fcc3b4b7-1d0e-4c0e-aa8e-ca096e978855",
+  "caedom-mortal-1": "66fadd7e-0890-4528-9c99-cd9c000e5f55"
+ },
+ "souls_since_snapshot": {
+  "caedom-ascended": "ready",
+  "caedom-before": "ready"
+ },
+ "shots": {
+  "S1": {
+   "title": "Rise out of the fire",
+   "mv": 1,
+   "d": 16,
+   "model": "wan3_0 · 16s · 1080p · 21:9",
+   "concept": {
+    "job": "3f413c2d-8799-4557-ae68-9c6b29153f02",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F01",
+     "F02"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [
+    {
+     "job": "339f05e1-c78e-4b9d-a7f9-b9b5fb28d1e1",
+     "lane": "A",
+     "res": "1080p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "3c5d65d9-6451-47fc-bdae-9e850561c4aa",
+     "lane": "A",
+     "res": "1080p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    }
+   ],
+   "renders_web": [
+    {
+     "job": "f84a308f-c046-4985-a4f0-deaaacddef31",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 30,
+     "res": "2016x864",
+     "elements": [
+      "plate-sun",
+      "courtyard-of-worlds"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4"
+    }
+   ]
+  },
+  "S2": {
+   "title": "The courtyard of worlds",
+   "mv": 1,
+   "d": 18,
+   "model": "seedance_2_5 · video_extension forward · 18s",
+   "concept": {
+    "job": "6e850701-c65d-4648-9d1a-5228ceb282c5",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F02",
+     "F03"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [
+    {
+     "job": "b9c5d61d-c23f-47bb-b16c-38a6522f3c6b",
+     "lane": "A",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "acec24ac-45af-4555-b08c-e5c7157608e5",
+     "lane": "A",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "c437bc36-25ea-470f-a562-7ad886fa9fb1",
+     "lane": "B",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    },
+    {
+     "job": "394484bc-42d0-4148-b1dd-7154c6213801",
+     "lane": "B",
+     "res": "720p",
+     "dur": 20,
+     "model": "seedance_2_5",
+     "on": "2026-09-08",
+     "text_only": true,
+     "why_not_concept": "generated with medias:[] and reference_elements:[] — no anchor, no element, so nothing in it holds an identity"
+    }
+   ]
+  },
+  "S3": {
+   "title": "“There must be risk”",
+   "mv": 1,
+   "d": 14,
+   "model": "cinematic_studio_3_0 · 14s · genre drama · audio on",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "3ef54818-5940-444f-85ad-61ae0a30a264",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 20,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun",
+      "courtyard-of-worlds",
+      "caedom-ascended"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_211539_3ef54818-5940-444f-85ad-61ae0a30a264.mp4"
+    },
+    {
+     "job": "4874d9e4-6f43-4838-91cf-803223a44ba0",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 20,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun",
+      "courtyard-of-worlds",
+      "caedom-ascended"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_211539_4874d9e4-6f43-4838-91cf-803223a44ba0.mp4"
+    }
+   ]
+  },
+  "S4": {
+   "title": "“He's your brother”",
+   "mv": 1,
+   "d": 14,
+   "model": "minimax_hailuo (2.3) · 10s + hold, or cinematic_studio_3_0 · 14s",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "3b4e617c-1c9f-4f71-afcc-87ab125e98da",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 10,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214631_3b4e617c-1c9f-4f71-afcc-87ab125e98da.mp4"
+    },
+    {
+     "job": "d4fdb764-7f75-4bbd-846d-3328cd9ab6bc",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 10,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214631_d4fdb764-7f75-4bbd-846d-3328cd9ab6bc.mp4"
+    },
+    {
+     "job": "fed12f12-f8c1-4f40-8baf-fb8890ae92fb",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 20,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_212612_fed12f12-f8c1-4f40-8baf-fb8890ae92fb.mp4"
+    },
+    {
+     "job": "ec2aa3e5-c396-46f6-8c85-80860eb23752",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 20,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_212612_ec2aa3e5-c396-46f6-8c85-80860eb23752.mp4"
+    }
+   ]
+  },
+  "S5": {
+   "title": "“Tomorrow” — the tear freezes",
+   "mv": 1,
+   "d": 18,
+   "model": "cinematic_studio_3_0 · 15s · 4K + 3s extension",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "bdf527cd-fcea-4b28-93d2-7b556490b6f5",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 15,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun",
+      "frozen-tear",
+      "char_caedom_v2_human"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214435_bdf527cd-fcea-4b28-93d2-7b556490b6f5.mp4"
+    },
+    {
+     "job": "5bb46cd9-4cc2-43d1-b581-ec8b5be6b3c7",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 15,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v2_sun",
+      "frozen-tear",
+      "char_caedom_v2_human"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214435_5bb46cd9-4cc2-43d1-b581-ec8b5be6b3c7.mp4"
+    },
+    {
+     "job": "21e77f5d-d864-424f-a56b-89348f9aac1c",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 20,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v1_human",
+      "frozen-tear",
+      "char_caedom_v2_human"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_213435_21e77f5d-d864-424f-a56b-89348f9aac1c.mp4"
+    },
+    {
+     "job": "959236d4-4ce2-45a5-9d4c-d03d7292da08",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 20,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "char_oriane_v1_human",
+      "frozen-tear",
+      "char_caedom_v2_human"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_213435_959236d4-4ce2-45a5-9d4c-d03d7292da08.mp4"
+    }
+   ]
+  },
+  "S6": {
+   "title": "108 years later — the run",
+   "mv": 2,
+   "d": 14,
+   "model": "cinematic_studio_video_v2 · 12s pro · speedramp auto + 2s ext",
+   "concept": {
+    "job": "91ebc1cd-9338-44f5-956b-3540b7cf19ed",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F10",
+     "F11"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 15,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_f8035ad4-f4ad-48e8-a7aa-b7f7a4b27520.mp4"
+    },
+    {
+     "job": "a89f4676-3e0d-4506-966d-32dce04f7ab3",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 15,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214734_a89f4676-3e0d-4506-966d-32dce04f7ab3.mp4"
+    }
+   ]
+  },
+  "S7": {
+   "title": "Sixteen behind her, and a wall of ice",
+   "mv": 2,
+   "d": 12,
+   "model": "kling3_0 · 12s · pro · start+end frame",
+   "concept": {
+    "job": "10bfa119-960f-4d45-89eb-1c062d655ba4",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F11",
+     "F12"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "deedd011-18ca-4c9b-a25e-74f7501aaa96",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned-water"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214805_deedd011-18ca-4c9b-a25e-74f7501aaa96.mp4"
+    },
+    {
+     "job": "fd089667-31c3-4fb8-9bbd-0929dab24597",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned-water"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_214805_fd089667-31c3-4fb8-9bbd-0929dab24597.mp4"
+    }
+   ]
+  },
+  "S8": {
+   "title": "Up the wall",
+   "mv": 2,
+   "d": 14,
+   "model": "cinematic_studio_video_v2 · 12s · speedramp impact + 2s ext",
+   "concept": {
+    "job": "8ae7fc97-8768-49ba-b99c-424bccc4cda4",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F12",
+     "F13"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "01714029-13dd-4f3b-b145-c0093fb72836",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 15,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned-water"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220113_01714029-13dd-4f3b-b145-c0093fb72836.mp4"
+    },
+    {
+     "job": "ba9b30eb-8875-48da-a5d5-997722cd2c99",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 15,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned-water"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220113_ba9b30eb-8875-48da-a5d5-997722cd2c99.mp4"
+    }
+   ]
+  },
+  "S9": {
+   "title": "The threadwright's eyes",
+   "mv": 2,
+   "d": 12,
+   "model": "veo3_1 · 8s ultra + 4s ext, or cinematic_studio_3_0 · 12s",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "165ab3d9-6fe4-4862-b606-83605e88de9d",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 13,
+     "res": "1344x576",
+     "elements": [
+      "threadwright",
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220522_165ab3d9-6fe4-4862-b606-83605e88de9d.mp4"
+    },
+    {
+     "job": "ac7a4e25-e6de-4175-bbaa-c543aa36decf",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 13,
+     "res": "1344x576",
+     "elements": [
+      "threadwright",
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220522_ac7a4e25-e6de-4175-bbaa-c543aa36decf.mp4"
+    }
+   ]
+  },
+  "S10": {
+   "title": "The leviathan",
+   "mv": 2,
+   "d": 16,
+   "model": "seedance_2_0 · 15s · 4K · genre epic + ext",
+   "concept": {
+    "job": "000b90fd-fb31-4f54-8319-3b80157f9b95",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F16",
+     "F17"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "1971bd66-4b13-468f-9a3d-f962592b2433",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 16,
+     "res": "1344x576",
+     "elements": [
+      "oriane-ascended",
+      "plate-ocean-dark",
+      "leviathan",
+      "leviathan-plating",
+      "lev-rider"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_1971bd66-4b13-468f-9a3d-f962592b2433.mp4"
+    },
+    {
+     "job": "bab3224f-6ea7-4d17-a89e-36ab77b6dd0f",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 16,
+     "res": "1344x576",
+     "elements": [
+      "oriane-ascended",
+      "plate-ocean-dark",
+      "leviathan",
+      "leviathan-plating",
+      "lev-rider"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220735_bab3224f-6ea7-4d17-a89e-36ab77b6dd0f.mp4"
+    },
+    {
+     "job": "4abb698e-fd51-4350-a51b-80130d5c0204",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 16,
+     "res": "1344x576",
+     "elements": [
+      "oriane-ascended",
+      "plate-ocean-dark",
+      "prop_dragon_v1_dead",
+      "leviathan-plating",
+      "lev-rider"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_4abb698e-fd51-4350-a51b-80130d5c0204.mp4"
+    },
+    {
+     "job": "b34943d9-635c-4404-9726-9b7ff6fec284",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 16,
+     "res": "1344x576",
+     "elements": [
+      "oriane-ascended",
+      "plate-ocean-dark",
+      "prop_dragon_v1_dead",
+      "leviathan-plating",
+      "lev-rider"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220721_b34943d9-635c-4404-9726-9b7ff6fec284.mp4"
+    }
+   ]
+  },
+  "S11": {
+   "title": "Running the flank",
+   "mv": 2,
+   "d": 10,
+   "model": "kling3_0 · 10s · motion_control from a driving clip",
+   "concept": {
+    "job": "bb9045fc-23f7-478f-bcb5-0b5b23dd22e4",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F17",
+     "B01"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "328324f8-f861-44ce-abcf-a0936131c0b7",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "oriane-ascended",
+      "plate-ocean-dark",
+      "turned",
+      "fx-hollow",
+      "leviathan",
+      "leviathan-plating",
+      "iron-spears"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_328324f8-f861-44ce-abcf-a0936131c0b7.mp4"
+    },
+    {
+     "job": "95326675-0f8e-4bab-8080-da7b36076f69",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "oriane-ascended",
+      "plate-ocean-dark",
+      "turned",
+      "fx-hollow",
+      "leviathan",
+      "leviathan-plating",
+      "iron-spears"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_220816_95326675-0f8e-4bab-8080-da7b36076f69.mp4"
+    }
+   ]
+  },
+  "S12": {
+   "title": "The lightning river",
+   "mv": 2,
+   "d": 12,
+   "model": "cinematic_studio_video_v2 · 12s · speedramp slowmo · pro",
+   "concept": {
+    "job": "92d87626-73e7-4b75-8c79-5f8b09ae062e",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "B01",
+     "F18"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "3cc59ef0-e2f8-4589-b832-eee7dc665bdc",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned",
+      "fx-hollow",
+      "aura-shell",
+      "leviathan-plating",
+      "fx-kill-beat"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221201_3cc59ef0-e2f8-4589-b832-eee7dc665bdc.mp4"
+    },
+    {
+     "job": "c9da8ff1-1106-425c-8aec-77d06e74eff6",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3_battle",
+      "plate-ocean-dark",
+      "turned",
+      "fx-hollow",
+      "aura-shell",
+      "leviathan-plating",
+      "fx-kill-beat"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221201_c9da8ff1-1106-425c-8aec-77d06e74eff6.mp4"
+    }
+   ]
+  },
+  "S13": {
+   "title": "The vortex, from the Sun",
+   "mv": 2,
+   "d": 15,
+   "model": "wan3_0 · 15s · 1080p · generate_audio false",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "e4b5998b-1ff3-45e8-901b-a84027c36c49",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "fx-segmented-mind",
+      "machira-orbit"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221449_e4b5998b-1ff3-45e8-901b-a84027c36c49.mp4"
+    },
+    {
+     "job": "416f5f35-9bdc-411c-9b90-76cf3e7ef448",
+     "lane": "B",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "fx-segmented-mind",
+      "machira-orbit"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221449_416f5f35-9bdc-411c-9b90-76cf3e7ef448.mp4"
+    },
+    {
+     "job": "4779332a-6a05-457c-93fa-8cb4c60b1744",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "fx-segmented-mind",
+      "machira-orbit"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221409_4779332a-6a05-457c-93fa-8cb4c60b1744.mp4"
+    },
+    {
+     "job": "820907db-ba74-4ae3-84be-be5dc2423239",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "fx-segmented-mind",
+      "machira-orbit"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221409_820907db-ba74-4ae3-84be-be5dc2423239.mp4"
+    }
+   ]
+  },
+  "S14": {
+   "title": "The Stone leaves her",
+   "mv": 2,
+   "d": 13,
+   "model": "cinematic_studio_3_0 · 13s · 4K · genre drama",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "c2e2b8db-9973-488e-aee8-0a1d3494855c",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 11,
+     "res": "1344x576",
+     "elements": [
+      "char_oriane_v3",
+      "plate-ocean-dark",
+      "founding-stone",
+      "machira-orbit"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_221613_c2e2b8db-9973-488e-aee8-0a1d3494855c.mp4"
+    }
+   ]
+  },
+  "S15": {
+   "title": "Nacre Beach — the same sun",
+   "mv": 3,
+   "d": 12,
+   "model": "cinematic_studio_3_0 · 12s · 4K",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "aa65cc3d-fc49-44f2-8007-afc318ee379b",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 10,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "nacre-beach",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_aa65cc3d-fc49-44f2-8007-afc318ee379b.mp4"
+    },
+    {
+     "job": "194f53e7-a52a-4b50-92c5-82bdae6e10b2",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 10,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "nacre-beach",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222057_194f53e7-a52a-4b50-92c5-82bdae6e10b2.mp4"
+    }
+   ]
+  },
+  "S16": {
+   "title": "Over the abyss",
+   "mv": 3,
+   "d": 12,
+   "model": "kling2_6 · 10s + ext, or seedance_2_0 · 12s (water physics)",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "e8d1b2a6-320a-4226-aa37-a1aca9edf19b",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "corals-abyss",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222142_e8d1b2a6-320a-4226-aa37-a1aca9edf19b.mp4"
+    },
+    {
+     "job": "70c01e2f-bc7b-4399-9c31-ea2d725c1741",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "corals-abyss",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222142_70c01e2f-bc7b-4399-9c31-ea2d725c1741.mp4"
+    }
+   ]
+  },
+  "S17": {
+   "title": "Twelve ships",
+   "mv": 3,
+   "d": 10,
+   "model": "cinematic_studio_3_0 · 10s · 4K · genre epic",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "8c13f573-7a01-415f-ac20-8f1f53dcc547",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "plate-bombardment",
+      "kai_alder_v1",
+      "keepers-isle",
+      "twelve-ships",
+      "nacre-beach",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_8c13f573-7a01-415f-ac20-8f1f53dcc547.mp4"
+    },
+    {
+     "job": "256dfbfe-e18a-4b42-aefa-4962f7f901bc",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "plate-bombardment",
+      "kai_alder_v1",
+      "keepers-isle",
+      "twelve-ships",
+      "nacre-beach",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222252_256dfbfe-e18a-4b42-aefa-4962f7f901bc.mp4"
+    }
+   ]
+  },
+  "S18": {
+   "title": "The Temple does not answer",
+   "mv": 3,
+   "d": 10,
+   "model": "cinematic_studio_video_v2 · 10s · multi_shots · multi_prompt",
+   "concept": {
+    "job": "3f21d3a4-e42a-4f1a-aeef-78712c378a75",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F29",
+     "B02"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "4a85d97a-3368-411a-957f-1bb06442eee5",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "white-temple",
+      "plate-bombardment",
+      "twelve-ships"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_4a85d97a-3368-411a-957f-1bb06442eee5.mp4"
+    },
+    {
+     "job": "ce8cd528-18db-48db-a1a3-b956e45e3de5",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "white-temple",
+      "plate-bombardment",
+      "twelve-ships"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_222310_ce8cd528-18db-48db-a1a3-b956e45e3de5.mp4"
+    }
+   ]
+  },
+  "S19": {
+   "title": "The Keepers kneel",
+   "mv": 3,
+   "d": 10,
+   "model": "seedance_2_0 · 10s · 4K · start_image from dust",
+   "concept": {
+    "job": "7906d8a2-19ba-4a31-adb5-64b02550a45a",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "B02",
+     "F30"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "e8858b44-44fc-4f2c-b47d-077cde893c5c",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "white-temple",
+      "plate-bombardment",
+      "keeper",
+      "keeper-kneel",
+      "iron-spears"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_e8858b44-44fc-4f2c-b47d-077cde893c5c.mp4"
+    },
+    {
+     "job": "0a4c3337-498f-49bc-8aac-2ed1c52a3019",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "white-temple",
+      "plate-bombardment",
+      "keeper",
+      "keeper-kneel",
+      "iron-spears"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223552_0a4c3337-498f-49bc-8aac-2ed1c52a3019.mp4"
+    }
+   ]
+  },
+  "S20": {
+   "title": "The mountain",
+   "mv": 3,
+   "d": 14,
+   "model": "wan3_0 · 14s · 1080p · enable_thinking",
+   "concept": {
+    "job": "0c9aaa9e-0987-463c-824c-0ce06dcc4fb7",
+    "layer": "L1",
+    "model": "seedance_2_0_mini",
+    "res": "720p",
+    "ar": "21:9",
+    "dur": 10,
+    "on": "2026-09-08",
+    "from_anchors": [
+     "F30",
+     "F31"
+    ],
+    "how": "start_image = the shot's A anchor, end_image = its B anchor, prompt = the bible's A-lane motion text with the reference tail stripped"
+   },
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "2ab9dfa7-14ca-422a-a8cc-3d401575b90f",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-bombardment",
+      "keeper",
+      "fx-floating-mountain",
+      "keeper-kneel",
+      "iron-spears"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_2ab9dfa7-14ca-422a-a8cc-3d401575b90f.mp4"
+    },
+    {
+     "job": "36e39026-52a3-4821-9d04-23ec1ec4aba3",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-bombardment",
+      "keeper",
+      "fx-floating-mountain",
+      "keeper-kneel",
+      "iron-spears"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223614_36e39026-52a3-4821-9d04-23ec1ec4aba3.mp4"
+    }
+   ]
+  },
+  "S21": {
+   "title": "The garden replants itself",
+   "mv": 3,
+   "d": 8,
+   "model": "veo3_1_lite · 8s, or cinematic_studio_3_0 · 8s",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "906714ac-f799-4add-9795-cfbdae775335",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "white-temple",
+      "plate-island",
+      "twelve-ships"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223632_906714ac-f799-4add-9795-cfbdae775335.mp4"
+    }
+   ]
+  },
+  "S22": {
+   "title": "What Alder saw",
+   "mv": 3,
+   "d": 14,
+   "model": "veo3_1 · 8s ultra + ext, or minimax_hailuo 2.3 · 10s (emotion)",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4bb7a3e9-2341-4ce3-8e3d-a8df8f592c54.mp4"
+    },
+    {
+     "job": "4896c8e3-bbd9-4162-8380-c460de8fcb0d",
+     "lane": "C",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224106_4896c8e3-bbd9-4162-8380-c460de8fcb0d.mp4"
+    },
+    {
+     "job": "6b0d0fac-9889-4ec4-a802-b1db7b0383b6",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_6b0d0fac-9889-4ec4-a802-b1db7b0383b6.mp4"
+    },
+    {
+     "job": "d35da4ef-22dc-4e4a-9c37-d68e234de39b",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224040_d35da4ef-22dc-4e4a-9c37-d68e234de39b.mp4"
+    },
+    {
+     "job": "38eb40d5-4f8d-452c-ac96-a230864a9486",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 8,
+     "res": "1344x576",
+     "elements": [
+      "plate-island",
+      "kai_alder_v1",
+      "kai_wren_v1"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_223712_38eb40d5-4f8d-452c-ac96-a230864a9486.mp4"
+    }
+   ]
+  },
+  "S23": {
+   "title": "Tomorrow, again",
+   "mv": 3,
+   "d": 12,
+   "model": "cinematic_studio_3_0 · 12s · 4K · genre drama",
+   "concept": null,
+   "final": null,
+   "finished": null,
+   "drafts": [],
+   "renders_web": [
+    {
+     "job": "ca08e6fd-80f4-4b6e-b672-f00c714edce6",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "frozen-tear",
+      "courtyard-of-worlds",
+      "caedom-ascended"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ca08e6fd-80f4-4b6e-b672-f00c714edce6.mp4"
+    },
+    {
+     "job": "ae644d57-97fe-4a84-be00-74bac3c644e0",
+     "lane": "A",
+     "on": "2026-09-13",
+     "model": "cinematic_studio_video_4_0",
+     "dur": 12,
+     "res": "1344x576",
+     "elements": [
+      "plate-sun",
+      "frozen-tear",
+      "courtyard-of-worlds",
+      "caedom-ascended"
+     ],
+     "frames_used": false,
+     "model_audio": true,
+     "file": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_224142_ae644d57-97fe-4a84-be00-74bac3c644e0.mp4"
+    }
+   ]
+  }
+ },
+ "scores": {
+  "_method": "virality_predictor on the L1 concept clip. Free on ultra, video only, 16s cap, 2 concurrent.",
+  "S10": {
+   "overall": 47,
+   "hook": 32,
+   "engagement": 45,
+   "dmn": 0.667,
+   "sustain": 100,
+   "peak_second": 10,
+   "job": "615867e5-b9af-42da-8adc-30eb9df09acf"
+  },
+  "S20": {
+   "overall": 46,
+   "hook": 30,
+   "engagement": 44,
+   "dmn": 0.649,
+   "sustain": 100,
+   "peak_second": 10,
+   "job": "5def4a8b-969a-4efd-aa6a-f50f08edebfd"
+  },
+  "S1": {
+   "overall": 49,
+   "hook": 32,
+   "engagement": 48,
+   "dmn": 0.592,
+   "sustain": 100,
+   "peak_second": 10,
+   "job": "ccbff27b-ef61-49d3-b817-366b89960f50"
+  },
+  "S11": {
+   "overall": 48,
+   "hook": 33,
+   "engagement": 44,
+   "dmn": 0.604,
+   "sustain": 98,
+   "peak_second": 7,
+   "job": "31c0e60b-3826-4b0b-81eb-dd7c1ee7ea33"
+  },
+  "_read_this_before_comparing": "These are L1 scores and they are only comparable to each other. The nine clips measured on Sep 5 were finished renders and scored 46-56 with a clean dark/bright split. These four are 720p budget renders of dark-ground compositions and they all land at 46-49 — the tier flattened the luminance advantage rather than the compositions losing it. Do not read a 47 here as the same thing as a 47 there.",
+  "_what_L1_did_show": "Every one of the four peaks in its last three seconds and every one is weakest in the hook window: hooks 30-33 against overalls 46-49. The shot order buries its best second at the end, which is right for a film and wrong for a post. S11 is the exception that proves the rule — it peaks at second 7 and carries the lowest mind-wandering of the four (0.604), because it is the one shot that gets darker and closer as it runs. Sustain is 98-100 across the board, so retention still needs no work."
+ },
+ "concept_ladder": {
+  "L1": "720p, budget engine (seedance_2_0_mini), 10s, from the two anchors. Tests whether the A frame can reach the B frame at all. Done 2026-09-08 for the 11 seam-bearing shots.",
+  "L2": "720p, the shot's real engine from the SHOTS row, real duration, chained from L1's rendered last frame. Tests the seam between shots, not inside them.",
+  "final": "1080p or 4K on the engine in the SHOTS row, chained from the rendered last frame of the previous shot. Only after Gate C freezes the timing.",
+  "why": "Three passes on rising cost. A failure found at L1 costs one budget clip; the same failure found at final costs a 4K generation and the shot behind it."
+ },
+ "credits": {
+  "checked": "2026-09-08",
+  "higgsfield_remaining": 2323.53,
+  "spent_today": "about 1300 — 14 world sheets re-rendered at 21:9 with references, plus 11 concept clips",
+  "measured_cost_per_L1_clip": "about 112 credits for 10s of 720p on the budget engine",
+  "why_this_now_decides_the_plan": "23 final clips on premium engines at 1080p or 4K, with a second attempt on most and six on S20, does not fit in 2323 credits. The API cannot pay for the final pass. The web app's unlimited allowance can."
+ },
+ "selection_passes": {
+  "scene-1": {
+   "_what": "Stage 6 selection pass — batch of four per anchor, choose one. Generated 2026-09-08 on nano_banana_pro (the platform labels the result nano_banana_2), 21:9, 2k, inside the account. The skeleton job in anchor-plan.json is the placeholder these replace once one is chosen.",
+   "on": "2026-09-08",
+   "chosen": null,
+   "_chosen_shape": {
+    "F01": "<job id>",
+    "F02": "<job id>",
+    "F03": "<job id>"
+   },
+   "frames": {
+    "F01": {
+     "skeleton": "30403126-ae0d-4926-8df8-fcf14da302ef",
+     "attach": [
+      "plate-sun"
+     ],
+     "variants": [
+      "622f1c5a-44e0-42df-b944-efe4d741a313",
+      "7af85cfb-0218-49b3-995d-09efd761cc9d",
+      "33f87edb-ec40-4536-99ae-8c09a0f63bf1",
+      "4a8300a5-06ab-42bc-ae2b-d868574dbb5c"
+     ]
+    },
+    "F02": {
+     "skeleton": "0e3fbd76-dd81-4105-81c6-6078dacde732",
+     "attach": [
+      "plate-sun",
+      "courtyard-of-worlds"
+     ],
+     "variants": [
+      "3e3c8855-0646-4827-893b-57e5638c9aaf",
+      "58a154bc-b5de-4219-95cd-fb8e93499952",
+      "91512d7d-3575-4d0e-932a-6484663f26e7",
+      "0684db4a-40fa-453d-bd7f-171a43d852d4"
+     ]
+    },
+    "F03": {
+     "skeleton": "06d8c310-c4ba-459d-aef7-b18430ca781c",
+     "attach": [
+      "plate-sun",
+      "courtyard-of-worlds",
+      "oriane",
+      "caedom-ascended-1"
+     ],
+     "chained_from": "0e3fbd76-dd81-4105-81c6-6078dacde732",
+     "provisional": "chained from the SKELETON F02, not a chosen one — re-run this batch once F02 is picked",
+     "variants": [
+      "1a7d48d5-4724-4369-824f-482bb444a030",
+      "5377d75c-b961-452d-afac-38ad6d904a50",
+      "31d5e449-8e7f-4dec-9a93-586508e3f1ad",
+      "ee236f3e-7d11-4928-bdcb-a7dd2bbfdb99"
+     ]
+    }
+   }
+  },
+  "caedom-identity": {
+   "_what": "Caedom was the one character whose identity handles traced to UPLOADS rather than to generations with prompts in this repo — caedom-before and caedom-ascended-1. That is the weakest link going into Gate A and it is also the open half of the festival's no-real-people rule, because a Soul inherits whatever was trained into it. This pass replaces both with traceable generations.",
+   "on": "2026-09-09",
+   "model": "nano_banana_pro (labelled nano_banana_2)",
+   "credits": 16,
+   "how": "The two prompts reference each other's upload, so the circle was broken: the mortal sheet was generated from TEXT ALONE (its prompt fully describes the bone structure), and the ascended sheet from the Aug 29 generation 1ccb8e16 — which is an image_job, not an upload. Both chains now end in a Higgsfield generation whose prompt is in this repo.",
+   "chosen": null,
+   "frames": {
+    "caedom-mortal-A": {
+     "replaces_handle": "caedom-before",
+     "was": "media_input 3031ec8f-a77c-413c-b94a-9f414bf03a7b (upload)",
+     "attach": [],
+     "note": "text-only by design — nothing upstream to inherit",
+     "variants": [
+      "4a0d4610-1636-46d6-8b8f-a11507b73b7a",
+      "b4faae0e-0748-4818-b5d0-8687549361b4",
+      "f7cb2ef6-0b49-4b9b-ba7a-ebd550a41961",
+      "1f926d21-0469-4e20-a89a-2b0d774911b0"
+     ]
+    },
+    "caedom-ascended-A": {
+     "replaces_handle": "caedom-ascended-1",
+     "was": "media_input 212bcdc1-b55e-48c0-93ea-4a89a2e66bd5 (upload)",
+     "attach": [
+      "image_job 1ccb8e16 — the Aug 29 ascended generation"
+     ],
+     "variants": [
+      "206916d3-7511-432a-bde5-0dab8b265d35",
+      "895ebfa4-06a8-4954-a853-d910449f082b",
+      "fac2b5e5-9fd7-476f-9522-362056dbc3ee",
+      "2191b136-68cc-4428-9c26-b67d48fac122"
+     ],
+     "note": "one variant returned status:failed with no reason and was resubmitted unchanged — the third failure kind this production has seen, alongside content-filter and stochastic rejection"
+    }
+   },
+   "then": "Choose one of each, create the two elements from the chosen image_job (the API can create), and delete the two uploads plus caedom-mortal-1 in the web UI. Retrain the caedom-before and caedom-ascended Souls from the chosen sheets if you want the provenance to be clean all the way down."
+  }
+ },
+ "renders_web_note": "Renders made in the web app on 13 Sep, matched to shots by prompt text. None used a start or end frame; all carry model-generated audio. See design/continuity-audit.json and design/recreate-prompts.md."
+}

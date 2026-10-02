@@ -1,0 +1,469 @@
+<meta charset="utf-8">
+<title>Gate A</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F2EFE8; --surface:#FBF9F5; --surface-2:#E9E4D9; --surface-3:#DED8CA;
+  --line:#CFC7B6; --line-soft:#E2DCCE;
+  --ink:#171410; --ink-2:#4A443B; --ink-3:#7A7264;
+  --sun:#9A6208; --sun-soft:#FAEBCB; --sun-line:#D9A64A;
+  --void:#3E39C9; --void-soft:#E0DEFB; --void-line:#9793EF;
+  --coral:#B33A18; --coral-soft:#FBDDD1; --coral-line:#E89272;
+  --good:#0A6B45; --good-soft:#CFEEE0; --good-line:#5EBE95;
+  --warn:#8A4B00; --warn-soft:#FBE6CC; --warn-line:#D9A64A;
+  --bad:#A81E12; --bad-soft:#FBD9D4; --bad-line:#E08276;
+  --tile:#1A1713;
+  --shadow:0 1px 2px rgba(23,20,16,.06), 0 10px 28px -16px rgba(23,20,16,.30);
+  --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --body:"Archivo",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0D0B09; --surface:#161311; --surface-2:#211D19; --surface-3:#2C2722;
+  --line:#3B342C; --line-soft:#241F1A;
+  --ink:#F4EFE4; --ink-2:#B0A797; --ink-3:#7D7466;
+  --sun:#EDB44C; --sun-soft:#33260E; --sun-line:#6C4F17;
+  --void:#9B97FF; --void-soft:#1B1A3E; --void-line:#3F3CA6;
+  --coral:#FF8D63; --coral-soft:#37190F; --coral-line:#7C3A22;
+  --good:#4FD9A2; --good-soft:#082C1F; --good-line:#1D6B4C;
+  --warn:#F0B36A; --warn-soft:#33220C; --warn-line:#6B4E18;
+  --bad:#FF7C6C; --bad-soft:#3A1410; --bad-line:#7A2E24;
+  --tile:#0A0908;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px -18px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  --ground:#0D0B09; --surface:#161311; --surface-2:#211D19; --surface-3:#2C2722;
+  --line:#3B342C; --line-soft:#241F1A;
+  --ink:#F4EFE4; --ink-2:#B0A797; --ink-3:#7D7466;
+  --sun:#EDB44C; --sun-soft:#33260E; --sun-line:#6C4F17;
+  --void:#9B97FF; --void-soft:#1B1A3E; --void-line:#3F3CA6;
+  --coral:#FF8D63; --coral-soft:#37190F; --coral-line:#7C3A22;
+  --good:#4FD9A2; --good-soft:#082C1F; --good-line:#1D6B4C;
+  --warn:#F0B36A; --warn-soft:#33220C; --warn-line:#6B4E18;
+  --bad:#FF7C6C; --bad-soft:#3A1410; --bad-line:#7A2E24;
+  --tile:#0A0908;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.012em;text-wrap:balance}
+p{margin:0}
+code{font-family:var(--mono);font-size:.87em}
+:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--ink-3)}
+
+.mast{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--ground))}
+.mast-in{padding:40px 0 30px;display:flex;flex-direction:column;gap:16px}
+.mast h1{font-size:clamp(30px,4.6vw,50px);line-height:1.04}
+.lede{font-size:16.5px;color:var(--ink-2);max-width:70ch}
+.lede b{color:var(--ink);font-weight:600}
+
+nav.jump{position:sticky;top:0;z-index:40;background:var(--surface);border-bottom:1px solid var(--line)}
+.jump-in{display:flex;gap:2px;overflow-x:auto;align-items:center}
+.jump a{flex:0 0 auto;padding:12px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap}
+.jump a:hover{color:var(--ink);background:var(--surface-2)}
+.jump .tally{margin-left:auto;flex:0 0 auto;font-family:var(--mono);font-size:11px;padding:10px 14px;color:var(--ink-2);white-space:nowrap}
+.jump .tally b{color:var(--good)}
+#tt{flex:0 0 auto;padding:12px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);background:none;border:0;cursor:pointer}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.sec-hd{display:flex;flex-direction:column;gap:9px;margin-bottom:22px;max-width:76ch}
+.sec-hd h2{font-size:clamp(22px,3.2vw,32px);line-height:1.12}
+.sec-hd p{color:var(--ink-2);font-size:15.5px}
+
+.callout{border:1px solid var(--warn-line);background:var(--warn-soft);border-radius:10px;
+  padding:15px 19px;margin-top:16px;font-size:14.5px;line-height:1.6}
+.callout b{font-weight:600}
+
+/* ---- the check blocks: big images, side by side ---- */
+.check{border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  margin-top:20px;overflow:hidden;box-shadow:var(--shadow)}
+.check-hd{padding:18px 22px 14px;border-bottom:1px solid var(--line-soft);display:flex;
+  gap:12px;align-items:baseline;flex-wrap:wrap}
+.check-hd .n{font-family:var(--mono);font-size:11px;color:#fff;background:var(--ink);
+  border-radius:999px;padding:3px 10px}
+.check-hd h3{font-size:20px}
+.check-hd .q{width:100%;font-size:14.5px;color:var(--ink-2);margin-top:4px}
+.check-hd .q b{color:var(--ink)}
+.pair{display:grid;gap:14px;padding:20px 22px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{display:flex;flex-direction:column;gap:8px}
+.card .art{position:relative;aspect-ratio:16/9;border-radius:9px;overflow:hidden;background:var(--tile);
+  border:1px solid var(--line);display:grid;place-items:center;cursor:zoom-in}
+.card .art img{width:100%;height:100%;object-fit:contain;display:block}
+.card .art .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:5px;padding:10px;text-align:center}
+.card .art .ph b{font-family:var(--display);font-size:20px;color:#EDE5D6}
+.card .art .ph i{font-family:var(--mono);font-size:9.5px;font-style:normal;color:#9A8F7C;letter-spacing:.1em}
+.card.has-img .ph{display:none}
+.card .nm{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.card .nm b{font-family:var(--mono);font-size:13px}
+.card .nm .on{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.card .desc{font-size:12.5px;color:var(--ink-3);line-height:1.45}
+
+/* verdict */
+.vd{display:flex;gap:5px;flex-wrap:wrap}
+.vd button{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:6px 10px;
+  border-radius:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);cursor:pointer}
+.vd button:hover{border-color:var(--ink-3);color:var(--ink)}
+.vd button[aria-pressed="true"][data-v="ok"]{background:var(--good-soft);border-color:var(--good);color:var(--good);font-weight:600}
+.vd button[aria-pressed="true"][data-v="watch"]{background:var(--warn-soft);border-color:var(--warn);color:var(--warn);font-weight:600}
+.vd button[aria-pressed="true"][data-v="redo"]{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);font-weight:600}
+.note{width:100%;font:12px var(--body);color:var(--ink);background:var(--surface-2);
+  border:1px solid var(--line-soft);border-radius:6px;padding:6px 9px;resize:vertical;min-height:32px}
+
+/* the full sheet */
+.grp{margin-top:26px}
+.grp h3{font-size:17px;padding-bottom:8px;border-bottom:2px solid var(--line);margin-bottom:14px;
+  display:flex;align-items:baseline;gap:10px}
+.grp h3 span{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-weight:400}
+.sheet{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+.sheet .card .art{aspect-ratio:16/9}
+.sheet .card .nm b{font-size:12px}
+.badge{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 6px;border-radius:3px;background:var(--coral-soft);color:var(--coral);
+  border:1px solid var(--coral-line)}
+
+/* canvas drop list */
+.pg{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-top:16px;overflow:hidden}
+.pg-hd{padding:15px 20px;background:var(--surface-2);border-bottom:1px solid var(--line);
+  display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.pg-hd h4{font-size:17px}
+.pg-hd .c{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.pg-body{padding:14px 20px 18px}
+.pg-body p{font-size:13.5px;color:var(--ink-2);margin-bottom:10px}
+.names{display:flex;flex-wrap:wrap;gap:6px}
+.names button{font-family:var(--mono);font-size:12px;padding:6px 11px;border-radius:6px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink);cursor:pointer}
+.names button:hover{border-color:var(--ink-3)}
+.names button.copied{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.names button.plate{border-color:var(--ink);font-weight:600}
+
+.act{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;align-items:center}
+.abtn{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 16px;border-radius:7px;border:1px solid var(--ink);background:var(--ink);
+  color:var(--ground);cursor:pointer;font-weight:600}
+.abtn.ghost{background:none;color:var(--ink-2);border-color:var(--line)}
+.abtn.ghost:hover{color:var(--ink);border-color:var(--ink-3)}
+.stat{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+
+/* lightbox — you cannot judge a face at thumbnail size */
+#lb{position:fixed;inset:0;z-index:99;background:rgba(8,6,4,.92);display:flex;
+  align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lb img{max-width:100%;max-height:92vh;object-fit:contain;border-radius:6px}
+#lb .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;
+  font-family:var(--mono);font-size:12px;color:#CFC5B4}
+#cb{position:fixed;inset:0;z-index:99;background:rgba(8,6,4,.75);display:flex;
+  align-items:center;justify-content:center;padding:24px}
+#cb .p{background:var(--surface);border:1px solid var(--line);border-radius:12px;max-width:720px;
+  width:100%;padding:20px;display:flex;flex-direction:column;gap:12px}
+#cb textarea{width:100%;min-height:280px;font:12px/1.6 var(--mono);color:var(--ink);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:12px}
+footer{padding:34px 0 54px;color:var(--ink-3);font-size:13px;line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="mast"><div class="wrap mast-in">
+  <p class="eyebrow">Matter of Light · run step 16</p>
+  <h1>Gate A — identity lock</h1>
+  <p class="lede">Every reference the film keeps, on one screen, read twice, looking for one thing:
+  <b>a face that moved.</b> Nothing downstream of this gate is generated until it holds — and
+  seventeen of the remaining twenty steps are behind it. Drift caught here costs one image;
+  the same drift caught after the motion pass costs a clip.</p>
+  <p class="lede"><b>Click any frame to see it full size.</b> A face cannot be judged at thumbnail
+  size, and this gate is almost entirely about faces.</p>
+</div></header>
+
+<nav class="jump"><div class="wrap jump-in">
+  <a href="#checks">The three checks</a>
+  <a href="#sheet">The full sheet</a>
+  <a href="#canvas">Canvas drop list</a>
+  <a href="#record">Record the gate</a>
+  <span class="tally" id="tally"></span>
+  <button id="tt" type="button">Theme</button>
+</div></nav>
+
+<section id="checks"><div class="wrap">
+  <div class="sec-hd">
+    <p class="eyebrow">Start here</p>
+    <h2>The three checks the gate turns on</h2>
+    <p>Everything else on this page fails loudly — a wrong location or a wrong plate is obvious the
+    moment you see it. These three fail quietly, and a quiet failure propagates into every frame
+    built on top of it.</p>
+  </div>
+  <div id="checkhost"></div>
+  <div class="callout">
+    <b>If the images do not appear.</b> They live on the account's CDN, which a sandboxed page is not
+    allowed to reach — so in the published view you get each frame's identity card instead. Open this
+    file from your own copy of the repository and the real frames load. The handles, job ids and
+    verdict capture work either way.
+  </div>
+</div></section>
+
+<section id="sheet"><div class="wrap">
+  <div class="sec-hd">
+    <p class="eyebrow">Then</p>
+    <h2>The full sheet</h2>
+    <p>The rest of the kept references, grouped. Read left to right twice. You are not judging whether
+    an image is good — that is the selection pass. You are judging whether it is <em>the same thing</em>
+    as its neighbours claim it is.</p>
+  </div>
+  <div id="sheethost"></div>
+</div></section>
+
+<section id="canvas"><div class="wrap">
+  <div class="sec-hd">
+    <p class="eyebrow">While you are in there</p>
+    <h2>Canvas drop list — what goes on each page</h2>
+    <p>Adding references is fiddly because the Assets panel searches by name and the names have to be
+    exact. Click any name below to copy it, then paste it into the panel's search. Each page carries
+    its plate first, because every frame on that page inherits it.</p>
+  </div>
+  <div id="pagehost"></div>
+</div></section>
+
+<section id="record"><div class="wrap">
+  <div class="sec-hd">
+    <p class="eyebrow">Last</p>
+    <h2>Record the gate</h2>
+    <p>A gate that is not written down is not held. This produces the block to paste into
+    <code>design/gates.json</code>, plus the regenerate list if anything drifted.</p>
+  </div>
+  <div class="act">
+    <button class="abtn" id="export">Build the gate record</button>
+    <button class="abtn ghost" id="reset">Clear every verdict</button>
+    <span class="stat" id="stat"></span>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><p>Generated from <code>design/element-map.json</code> and the Sep 9 Caedom
+pass. Verdicts are stored in this browser only — nothing leaves the page until you export.</p></div></footer>
+
+<script>
+const D = /*DATA-START*/{"groups": {"Plates": [{"h": "plate-sun", "job": "21db1b5a-0188-40a2-9747-5996928c8538", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_21db1b5a-0188-40a2-9747-5996928c8538_min.webp", "replace": false, "role": ""}, {"h": "plate-ocean-dark", "job": "66da2493-5ab7-4e8d-a86b-f9936370ea7e", "on": "2026-09-06", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260906_162054_66da2493-5ab7-4e8d-a86b-f9936370ea7e_min.webp", "replace": false, "role": ""}, {"h": "plate-island", "job": "5e545b8b-1676-4795-90a3-9fc18d8e3e7c", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151724_5e545b8b-1676-4795-90a3-9fc18d8e3e7c_min.webp", "replace": false, "role": ""}, {"h": "plate-bombardment", "job": "cfa81e5e-93fd-4a0c-bb3b-46fe964b7463", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_cfa81e5e-93fd-4a0c-bb3b-46fe964b7463_min.webp", "replace": false, "role": ""}], "Locations": [{"h": "courtyard-of-worlds", "job": "e1e6902a-3b4d-4796-b872-9266d2d8f251", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_e1e6902a-3b4d-4796-b872-9266d2d8f251_min.webp", "replace": false, "role": ""}, {"h": "nacre-beach", "job": "5e1023d3-4559-4f5b-89de-0b3c965e3d8a", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_5e1023d3-4559-4f5b-89de-0b3c965e3d8a_min.webp", "replace": false, "role": ""}, {"h": "corals-abyss", "job": "a309c71d-2fbd-4309-a949-b889a5af7df8", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_a309c71d-2fbd-4309-a949-b889a5af7df8_min.webp", "replace": false, "role": ""}, {"h": "white-temple", "job": "2230917c-4191-49dc-88ec-6d34fe25e65a", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_2230917c-4191-49dc-88ec-6d34fe25e65a_min.webp", "replace": false, "role": ""}, {"h": "keepers-isle", "job": "5ac8a64d-43fc-4739-9e07-5fa98243d288", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_5ac8a64d-43fc-4739-9e07-5fa98243d288_min.webp", "replace": false, "role": ""}, {"h": "machira-orbit", "job": "1460be9e-466c-4cbc-a83f-594380e52a95", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_1460be9e-466c-4cbc-a83f-594380e52a95_min.webp", "replace": false, "role": ""}], "Props & creatures": [{"h": "founding-stone", "job": "c640e786-5284-4367-9103-5a103e8a923b", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_c640e786-5284-4367-9103-5a103e8a923b_min.webp", "replace": false, "role": ""}, {"h": "aura-shell", "job": "62047c7a-509e-4f58-aa2e-4bdfe73c4fca", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151117_62047c7a-509e-4f58-aa2e-4bdfe73c4fca_min.webp", "replace": false, "role": ""}, {"h": "leviathan", "job": "14592903-e982-4472-89c3-88ed7a54be72", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151724_14592903-e982-4472-89c3-88ed7a54be72_min.webp", "replace": false, "role": ""}, {"h": "leviathan-plating", "job": "35a9dc9f-d8bb-414a-b27c-74e6a4b98686", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151725_35a9dc9f-d8bb-414a-b27c-74e6a4b98686_min.webp", "replace": false, "role": ""}, {"h": "twelve-ships", "job": "ebc798d9-7cfa-4a43-b96f-498d6463f195", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151726_ebc798d9-7cfa-4a43-b96f-498d6463f195_min.webp", "replace": false, "role": ""}, {"h": "frozen-tear", "job": "9b033dbf-8a98-4b84-8596-7d821769b353", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151725_9b033dbf-8a98-4b84-8596-7d821769b353_min.webp", "replace": false, "role": ""}, {"h": "fx-floating-mountain", "job": "333f2c9a-1b29-4f91-9951-4f58323a8900", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151724_333f2c9a-1b29-4f91-9951-4f58323a8900_min.webp", "replace": false, "role": ""}], "Rule sheets": [{"h": "iron-spears", "job": "bdb8aca8-4031-4968-ad34-ca36fe704d5d", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151725_bdb8aca8-4031-4968-ad34-ca36fe704d5d_min.webp", "replace": false, "role": "effect rule sheet \u2014 attached to the shots that depict it, so the effect is decided once"}, {"h": "fx-hollow", "job": "7d496e4b-5d73-4fcf-95f9-06fd1c1b5937", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151725_7d496e4b-5d73-4fcf-95f9-06fd1c1b5937_min.webp", "replace": false, "role": "effect rule sheet \u2014 attached to the shots that depict it, so the effect is decided once"}, {"h": "fx-segmented-mind", "job": "18f1eca5-f976-4962-8376-86666db17fd6", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151724_18f1eca5-f976-4962-8376-86666db17fd6_min.webp", "replace": false, "role": "effect rule sheet \u2014 attached to the shots that depict it, so the effect is decided once"}, {"h": "fx-kill-beat", "job": "b03d9d69-dee5-4381-9724-a3d734c09e10", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_151725_b03d9d69-dee5-4381-9724-a3d734c09e10_min.webp", "replace": false, "role": "effect rule sheet \u2014 attached to the shots that depict it, so the effect is decided once"}, {"h": "aura-grammar", "job": "669fadfc-facc-476b-a09e-96b74a918507", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_190302_669fadfc-facc-476b-a09e-96b74a918507_min.webp", "replace": false, "role": "rule sheet \u2014 attached when a Turned or effect sheet is generated, never to a shot"}, {"h": "ladder-oriane", "job": "c01c00db-48d2-4e52-bdf7-6fb060092327", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_201410_c01c00db-48d2-4e52-bdf7-6fb060092327_min.webp", "replace": false, "role": "rule sheet \u2014 attached when a Turned or effect sheet is generated, never to a shot"}, {"h": "ladder-attunement", "job": "d8a9b7e0-cc1d-464d-9b0c-5aacff2f232f", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_201940_d8a9b7e0-cc1d-464d-9b0c-5aacff2f232f_min.webp", "replace": false, "role": "rule sheet \u2014 attached when a Turned or effect sheet is generated, never to a shot"}, {"h": "caedom-before", "job": null, "on": null, "img": "", "replace": true, "role": "the 'before' form, kept as a pair with caedom-ascended-1 at the director's request; no shot uses it"}], "Characters": [{"h": "oriane", "job": "2a390144-0546-4ed4-930d-f6541ab55c09", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_190751_2a390144-0546-4ed4-930d-f6541ab55c09_min.webp", "replace": false, "role": ""}, {"h": "oriane-damaged", "job": "ccc9fbfb-fc2b-4542-ae23-93b6678bfd4d", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_190841_ccc9fbfb-fc2b-4542-ae23-93b6678bfd4d_min.webp", "replace": false, "role": ""}, {"h": "oriane-ascended", "job": "2d4cdcbc-b912-42c1-af12-1d71b8e0a476", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_193544_2d4cdcbc-b912-42c1-af12-1d71b8e0a476_min.webp", "replace": false, "role": ""}, {"h": "alder", "job": "cb258167-6f5c-418d-8098-e1a7069dd926", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_194853_cb258167-6f5c-418d-8098-e1a7069dd926_min.webp", "replace": false, "role": ""}, {"h": "wren", "job": "35c07bdb-8abd-48cf-b989-7fef8c51b6aa", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_195448_35c07bdb-8abd-48cf-b989-7fef8c51b6aa_min.webp", "replace": false, "role": ""}, {"h": "threadwright", "job": "7116198c-e7ed-4925-9774-1bb661621fac", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_195825_7116198c-e7ed-4925-9774-1bb661621fac_min.webp", "replace": false, "role": ""}, {"h": "keeper", "job": "205ec84d-0904-409a-9d10-03c5906645cf", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_200350_205ec84d-0904-409a-9d10-03c5906645cf_min.webp", "replace": false, "role": ""}, {"h": "keeper-kneel", "job": "22e33df1-58f7-4e34-a6e2-3f4407404f93", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_200403_22e33df1-58f7-4e34-a6e2-3f4407404f93_min.webp", "replace": false, "role": ""}, {"h": "turned", "job": "5fdfc755-3389-40af-95ce-c087b60be75b", "on": "2026-08-29", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260829_200556_5fdfc755-3389-40af-95ce-c087b60be75b_min.webp", "replace": false, "role": ""}, {"h": "turned-water", "job": "0a7a84fc-6a50-491b-bc28-6ed9c6ceb9db", "on": "2026-09-05", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260905_205726_0a7a84fc-6a50-491b-bc28-6ed9c6ceb9db_min.webp", "replace": false, "role": ""}, {"h": "caedom-ascended-1", "job": null, "on": null, "img": "", "replace": true, "role": ""}]}, "candidates": {"caedom-mortal-A": [{"job": "4a0d4610-1636-46d6-8b8f-a11507b73b7a", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_023940_4a0d4610-1636-46d6-8b8f-a11507b73b7a.png"}, {"job": "b4faae0e-0748-4818-b5d0-8687549361b4", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_023939_b4faae0e-0748-4818-b5d0-8687549361b4.png"}, {"job": "f7cb2ef6-0b49-4b9b-ba7a-ebd550a41961", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_023939_f7cb2ef6-0b49-4b9b-ba7a-ebd550a41961.png"}, {"job": "1f926d21-0469-4e20-a89a-2b0d774911b0", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_023939_1f926d21-0469-4e20-a89a-2b0d774911b0.png"}], "caedom-ascended-A": [{"job": "206916d3-7511-432a-bde5-0dab8b265d35", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_024050_206916d3-7511-432a-bde5-0dab8b265d35.png"}, {"job": "895ebfa4-06a8-4954-a853-d910449f082b", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_024049_895ebfa4-06a8-4954-a853-d910449f082b.png"}, {"job": "2191b136-68cc-4428-9c26-b67d48fac122", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_024049_2191b136-68cc-4428-9c26-b67d48fac122.png"}, {"job": "fac2b5e5-9fd7-476f-9522-362056dbc3ee", "img": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260909_025320_fac2b5e5-9fd7-476f-9522-362056dbc3ee.png"}]}, "pages": {"1": ["plate-sun", "courtyard-of-worlds", "oriane", "caedom-ascended-1", "caedom-before", "frozen-tear", "aura-shell", "aura-grammar", "ladder-oriane"], "2": ["plate-ocean-dark", "corals-abyss", "machira-orbit", "oriane", "oriane-damaged", "oriane-ascended", "turned", "turned-water", "threadwright", "leviathan", "leviathan-plating", "founding-stone", "fx-hollow", "fx-kill-beat", "fx-segmented-mind", "aura-grammar", "ladder-attunement"], "3": ["plate-island", "plate-bombardment", "nacre-beach", "keepers-isle", "white-temple", "alder", "wren", "keeper", "keeper-kneel", "twelve-ships", "iron-spears", "fx-floating-mountain"]}, "order": ["Characters", "Plates", "Locations", "Props & creatures", "Rule sheets"]}/*DATA-END*/;
+const KEY = "msm.gatea";
+let V = {};
+try { V = JSON.parse(localStorage.getItem(KEY) || "{}") } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(V)) } catch (e) {} };
+const el = (t, c, h) => { const n = document.createElement(t); if (c) n.className = c;
+  if (h != null) n.innerHTML = h; return n; };
+const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+
+/* ---- one card: image, name, verdict, note ---- */
+function card(o){
+  const c = el("div", "card");
+  const art = el("div", "art");
+  art.appendChild(el("div", "ph", "<b>@" + esc(o.h) + "</b><i>" + (o.img ? "loading" : "no image") + "</i>"));
+  if (o.img){
+    const im = new Image();
+    im.alt = o.h; im.loading = "lazy"; im.referrerPolicy = "no-referrer";
+    im.addEventListener("load", () => c.classList.add("has-img"));
+    im.addEventListener("error", () => { im.remove();
+      art.querySelector(".ph i").textContent = "not reachable here" });
+    im.src = o.img;
+    art.appendChild(im);
+    art.addEventListener("click", () => lightbox(o.img, "@" + o.h + "  ·  " + (o.job || "")));
+  }
+  c.appendChild(art);
+  c.appendChild(el("div", "nm", "<b>@" + esc(o.h) + "</b>" +
+    (o.replace ? '<span class="badge">replace</span>' : "") +
+    '<span class="on">' + esc(o.on || "") + "</span>"));
+  if (o.desc) c.appendChild(el("div", "desc", esc(o.desc)));
+
+  const key = o.key || o.h;
+  const vd = el("div", "vd");
+  [["ok", "holds"], ["watch", "watch it"], ["redo", "regenerate"]].forEach(([v, lab]) => {
+    const b = el("button", "", lab);
+    b.type = "button"; b.dataset.v = v;
+    b.setAttribute("aria-pressed", (V[key] || {}).v === v ? "true" : "false");
+    b.addEventListener("click", () => {
+      const cur = (V[key] || {}).v;
+      V[key] = Object.assign({}, V[key], { v: cur === v ? null : v });
+      vd.querySelectorAll("button").forEach(x =>
+        x.setAttribute("aria-pressed", x.dataset.v === V[key].v ? "true" : "false"));
+      save(); tally();
+    });
+    vd.appendChild(b);
+  });
+  c.appendChild(vd);
+  const n = el("textarea", "note");
+  n.placeholder = "what you saw"; n.value = (V[key] || {}).n || "";
+  n.addEventListener("input", () => { V[key] = Object.assign({}, V[key], { n: n.value }); save() });
+  c.appendChild(n);
+  return c;
+}
+
+function lightbox(src, cap){
+  const w = el("div"); w.id = "lb";
+  w.innerHTML = '<img alt="" referrerpolicy="no-referrer" src="' + src + '"><div class="cap">' +
+                esc(cap) + '</div>';
+  w.addEventListener("click", () => w.remove());
+  document.addEventListener("keydown", function k(e){
+    if (e.key === "Escape"){ w.remove(); document.removeEventListener("keydown", k) } });
+  document.body.appendChild(w);
+}
+
+/* ---- the three checks ---- */
+const find = h => { for (const g of Object.values(D.groups)) {
+  const m = g.find(x => x.h === h); if (m) return m; } return { h: h, img: "" } };
+
+const CHECKS = [
+  { n: 1, t: "Alder beside Wren",
+    q: "<b>Same height, exactly.</b> The age reads in the face and nowhere else. If one is taller, " +
+       "the brothers stop being brothers in every Movement III frame at once — and Movement III is " +
+       "where the film ends.",
+    cards: [find("alder"), find("wren")] },
+  { n: 2, t: "Caedom, both forms",
+    q: "<b>Same bone structure, no other resemblance.</b> Long face, square jaw, high flat cheekbones, " +
+       "narrow-bridged nose. Judge these eight new sheets, not the uploads they replace — the mortal " +
+       "was generated from text alone and the ascended from the Aug 29 generation, so both now trace " +
+       "to a Higgsfield generation. Pick one of each.",
+    cards: D.candidates["caedom-mortal-A"].map((x, i) => ({ h: "caedom-mortal", key: "cand-mortal-" + i,
+        img: x.img, job: x.job, on: "2026-09-09", desc: "candidate " + (i + 1) + " · text-only" }))
+      .concat(D.candidates["caedom-ascended-A"].map((x, i) => ({ h: "caedom-ascended", key: "cand-asc-" + i,
+        img: x.img, job: x.job, on: "2026-09-09", desc: "candidate " + (i + 1) + " · from the Aug 29 generation" }))) },
+  { n: 3, t: "Oriane across three states",
+    q: "<b>Same face in all three.</b> Only the garment, the three damage marks and the feet change. " +
+       "She carries more screen time than anyone; a drift here is a drift through the whole middle " +
+       "of the film.",
+    cards: [find("oriane"), find("oriane-damaged"), find("oriane-ascended")] }
+];
+const ch = document.getElementById("checkhost");
+CHECKS.forEach(c => {
+  const b = el("div", "check");
+  b.appendChild(el("div", "check-hd", '<span class="n">' + c.n + '</span><h3>' + c.t +
+    '</h3><div class="q">' + c.q + "</div>"));
+  const p = el("div", "pair");
+  c.cards.forEach(o => p.appendChild(card(o)));
+  b.appendChild(p);
+  ch.appendChild(b);
+});
+
+/* ---- the full sheet ---- */
+const sh = document.getElementById("sheethost");
+const SEEN = new Set(["alder", "wren", "oriane", "oriane-damaged", "oriane-ascended"]);
+D.order.forEach(g => {
+  const items = (D.groups[g] || []).filter(x => !SEEN.has(x.h));
+  if (!items.length) return;
+  const w = el("div", "grp");
+  w.appendChild(el("h3", "", g + " <span>" + items.length + "</span>"));
+  const grid = el("div", "sheet");
+  items.forEach(o => grid.appendChild(card(Object.assign({}, o,
+    { desc: o.role ? "rule sheet — attached when a Turned or effect sheet is made" : "" }))));
+  w.appendChild(grid);
+  sh.appendChild(w);
+});
+
+/* ---- canvas drop list ---- */
+const PAGE_NAME = { 1: "Page 1 · The Sun", 2: "Page 2 · The Ocean", 3: "Page 3 · The Island" };
+const PLATE = { 1: "plate-sun", 2: "plate-ocean-dark", 3: "plate-island" };
+const ph = document.getElementById("pagehost");
+[1, 2, 3].forEach(p => {
+  const names = D.pages[p] || [];
+  const box = el("div", "pg");
+  box.appendChild(el("div", "pg-hd", "<h4>" + PAGE_NAME[p] + '</h4><span class="c">' +
+    names.length + " references</span>"));
+  const body = el("div", "pg-body");
+  body.appendChild(el("p", "", "Drop the plate first, then the rest in this order. A handle that " +
+    "appears on more than one page is dropped on each — the same reference, used twice."));
+  const row = el("div", "names");
+  names.forEach(n => {
+    const b = el("button", n === PLATE[p] ? "plate" : "", n);
+    b.type = "button";
+    b.addEventListener("click", () => copy(n, b));
+    row.appendChild(b);
+  });
+  const all = el("button", "", "⧉ copy all " + names.length);
+  all.type = "button";
+  all.addEventListener("click", () => copy(names.join("\n"), all));
+  row.appendChild(all);
+  body.appendChild(row);
+  box.appendChild(body);
+  ph.appendChild(box);
+});
+
+function copy(txt, btn){
+  const ok = () => { const o = btn.textContent; btn.classList.add("copied");
+    btn.textContent = "copied"; setTimeout(() => { btn.textContent = o;
+    btn.classList.remove("copied") }, 1100) };
+  try { if (navigator.clipboard && navigator.clipboard.writeText)
+    return navigator.clipboard.writeText(txt).then(ok, () => manual(txt)) } catch (e) {}
+  manual(txt);
+}
+function manual(txt){
+  const w = el("div"); w.id = "cb";
+  w.innerHTML = '<div class="p"><h3>Copy this</h3><textarea readonly></textarea>' +
+    '<button class="abtn ghost" type="button">Close</button></div>';
+  w.querySelector("textarea").value = txt;
+  w.addEventListener("click", e => { if (e.target === w || e.target.tagName === "BUTTON") w.remove() });
+  document.body.appendChild(w);
+  const t = w.querySelector("textarea"); t.focus(); t.select();
+}
+
+/* ---- tally + export ---- */
+function total(){
+  let n = 0;
+  D.order.forEach(g => n += (D.groups[g] || []).length);
+  return n + 8; // the eight Caedom candidates
+}
+function tally(){
+  const done = Object.values(V).filter(x => x && x.v).length;
+  const bad = Object.values(V).filter(x => x && x.v === "redo").length;
+  document.getElementById("tally").innerHTML =
+    "<b>" + done + "</b> / " + total() + " judged" + (bad ? " · " + bad + " to regenerate" : "");
+  const s = document.getElementById("stat");
+  if (s) s.textContent = done === 0 ? "nothing judged yet"
+    : done < total() ? (total() - done) + " still to judge"
+    : bad ? "every reference judged — " + bad + " needs regenerating, so the gate does not hold yet"
+    : "every reference judged and none drifted";
+}
+tally();
+
+document.getElementById("export").addEventListener("click", () => {
+  const judged = Object.entries(V).filter(([, x]) => x && x.v);
+  const redo = judged.filter(([, x]) => x.v === "redo").map(([k]) => k);
+  const watch = judged.filter(([, x]) => x.v === "watch").map(([k]) => k);
+  const held = judged.length === total() && !redo.length;
+  const notes = judged.filter(([, x]) => x.n && x.n.trim())
+    .map(([k, x]) => "    " + k + ": " + x.n.trim()).join("\n");
+  const out =
+"design/gates.json — replace the \"A\" block with this\n" +
+"=".repeat(64) + "\n\n" +
+' "A": {\n' +
+'  "held": ' + held + ',\n' +
+'  "on": "' + new Date().toISOString().slice(0, 10) + '",\n' +
+'  "by": "B.L. Barkey",\n' +
+'  "note": "' + judged.length + " of " + total() + " references judged" +
+  (redo.length ? "; " + redo.length + " to regenerate" : "; none drifted") +
+  (watch.length ? "; " + watch.length + " on watch" : "") + '",\n' +
+'  "blocks": "steps 17-19 — anchors inherit whatever drift is in the references"\n' +
+' }\n\n' +
+(redo.length ? "REGENERATE — these did not hold\n" + "-".repeat(64) + "\n" +
+  redo.map(r => "  " + r).join("\n") + "\n\n" : "") +
+(watch.length ? "ON WATCH — usable, but look again at Gate B\n" + "-".repeat(64) + "\n" +
+  watch.map(r => "  " + r).join("\n") + "\n\n" : "") +
+(notes ? "NOTES\n" + "-".repeat(64) + "\n" + notes + "\n" : "");
+  manual(out);
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  if (!confirm("Clear every verdict and note on this page?")) return;
+  V = {}; save(); location.reload();
+});
+
+/* theme */
+(function(){
+  const r = document.documentElement, b = document.getElementById("tt"), K = "msm.theme";
+  try { const t = localStorage.getItem(K); if (t === "dark" || t === "light") r.setAttribute("data-theme", t) } catch (e) {}
+  const dark = () => { const a = r.getAttribute("data-theme");
+    return a ? a === "dark" : window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches };
+  const lab = () => b.textContent = dark() ? "Light" : "Dark";
+  lab();
+  b.addEventListener("click", () => { const n = dark() ? "light" : "dark";
+    r.setAttribute("data-theme", n); try { localStorage.setItem(K, n) } catch (e) {} lab() });
+})();
+</script>

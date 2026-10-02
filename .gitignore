@@ -1,0 +1,27 @@
+# --- secrets ---------------------------------------------------------------
+# Browsers cannot save a leading-dot filename: Chromium strips the dot and
+# appends .txt. So an exported vault lands as production-desk.env or env.txt,
+# never as .env. All three names are covered here on purpose.
+.env
+.env.*
+!.env.example
+*.env
+env.txt
+
+# exported key configs
+litiguh.config.json
+director-bible.config.json
+*.config.json
+
+# --- IP separation ---------------------------------------------------------
+# The novel to production name mapping. This is the one file that reverses the
+# separation, so it stays local and is never pushed.
+crosswalk.local.js
+
+# --- local ------------------------------------------------------------------
+*.zip
+.DS_Store
+
+# Higgsfield account snapshot: holds account handles and asset URLs.
+# Produced by design/higgsfield-snapshot.py, read by the bible if present.
+higgsfield.local.json
