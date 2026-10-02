@@ -94,7 +94,8 @@
    "reminders": [
     "Logline in one sentence. Two sentences means two films.",
     "Mark the shots that are silent on purpose — now, in the shot list.",
-    "Name who changes, and in which shot. The last held close-up is theirs."
+    "Name who changes, and in which shot. The last held close-up is theirs.",
+    "If this is a sequel, read the previous film's Learn stage before writing a shot, and write the cues before the stills reel."
    ]
   },
   {
@@ -163,7 +164,8 @@
     "Every prompt attaches @[name](uuid). Never a described face.",
     "Record old → new the moment you replace an element; sweep every prompt.",
     "One Soul per generation. Two-person shots run on elements.",
-    "Generate inside the project folder — the API cannot file it for you."
+    "Generate inside the project folder — the API cannot file it for you.",
+    "A sequel attaches the previous film's plates and Souls by their old ids — never re-describe a face or a place that already has one."
    ]
   },
   {

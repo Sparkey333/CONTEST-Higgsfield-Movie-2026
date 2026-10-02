@@ -1,0 +1,53 @@
+{
+ "project": "stone-of-matter-ep2-darkness",
+ "title": "Stone of Matter — Ep. 2 Darkness",
+ "note": "Nothing has been generated for this film yet. The examples here are what it inherits from Matter of Light, by id; they are replaced by its own takes as the stages fill.",
+ "stages": {
+  "story": [
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/7b801917-51e4-4cfc-b62b-e8560f2b8f3e.mp4",
+    "poster": "",
+    "label": "Matter of Light · the film this one follows",
+    "why": "Episode 2 opens where this ends: the sun courtyard of its first shot is the first thing Stardust leaves, on the same two element ids. Watch the last twenty seconds — the mountain and the crater lake are S7.",
+    "from": "Episode 1 master · upload 7b801917"
+   }
+  ],
+  "cast": [
+   {
+    "kind": "pair",
+    "a": {
+     "kind": "image",
+     "ar": "1/1",
+     "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/3eb248ba-0858-4f4c-971a-930e7a577fec.png",
+     "label": "oriane",
+     "why": "",
+     "from": "soul oriane"
+    },
+    "b": {
+     "kind": "image",
+     "ar": "1/1",
+     "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/212bcdc1-b55e-48c0-93ea-4a89a2e66bd5.png",
+     "label": "caedom-ascended",
+     "why": "",
+     "from": "soul caedom-ascended"
+    },
+    "label": "The Souls a sequel can reach",
+    "why": "Trained once in Episode 1 and still attached by id. This film's leads are new, so Ammon and Sadie get Souls of their own before any shot; these stay reachable if a face recurs.",
+    "from": "soul oriane  ·  soul caedom-ascended"
+   }
+  ],
+  "motion": [
+   {
+    "kind": "video",
+    "ar": "21/9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20260913_174858_f84a308f-c046-4985-a4f0-deaaacddef31.mp4",
+    "poster": "",
+    "label": "Episode 1 S1 · the place S1 leaves",
+    "why": "The courtyard-of-worlds and plate-sun elements are attached to Episode 2's S1 by their Episode 1 ids. Nothing about them is re-described.",
+    "from": "Episode 1 take f84a308f · 30s"
+   }
+  ]
+ }
+}

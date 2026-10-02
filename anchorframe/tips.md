@@ -49,3 +49,7 @@ Each of these cost a day, a shot, or a scare on *Matter of Light*. They are in t
 32. **Lock the song before the stills reel.** Three songs scored this film and the cuts land on their lyrics; the silent climax did not survive 'In the sky!' over the eye of the storm. The bible's own music-video rule applied and nobody noticed it applying.
 33. **Audit the timeline, not the board.** Five costume states of the lead and two different beasts for one creature reached the jury. The continuity audit ran on the board, where every pick was clean; the seams only exist on the timeline. Run it at Gate E, before sound.
 34. **Read every wide back through the analyser before delivery.** It described the reef swimmers as toddlers and the beach runners as young boys. The sheets say nineteen and eighteen; a wide does not carry the age, and a juror reads the wide.
+
+## The next film
+35. **A sequel starts from ids, not descriptions.** The previous film's plates, locations and Souls are attached by their old ids; the first shot of the new film can stand in the last place of the old one on the same two elements, and the join is a fact. Write the new faces as one-line sheet briefs in `project.json → sheets` so Stage 1 runs from the file.
+36. **Write the lessons into the board before Gate A.** `inherits.lessons_applied` is where the last Learn stage becomes this film's rules: shot ceilings, audio off on silent shots, the B lane named per set piece, the song locked, every sheet 18+. A lesson that is only in a chapter is a lesson that will be relearned.

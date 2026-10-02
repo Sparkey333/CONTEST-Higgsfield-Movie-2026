@@ -1,0 +1,1760 @@
+{
+ "schema": "anchorframe/1",
+ "title": "Stone of Matter — Ep. 2 Darkness",
+ "byline": "B.L. Barkey",
+ "kind": "short",
+ "logline": "A light being seeds a young world against the dark, and thousands of years later a boy who can hear the wind learns that the dark has four of the seven stones and is coming for the fifth.",
+ "runtime_target_s": 300,
+ "format": {
+  "aspect": "21:9",
+  "resolution": "1080p",
+  "fps": 24,
+  "container": "mp4"
+ },
+ "higgsfield": {
+  "project_name": "Stone of Matter — Ep. 2 Darkness",
+  "project_url": "https://higgsfield.ai/canvas?canvasProjectId=e6e807a9-49a8-41f1-bb4c-9247468606cb",
+  "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+  "project_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+  "workspace_id": "21b0d1dd-c71c-4318-b687-6b1baee45e98",
+  "video_model": "cinematic_studio_video_4_0",
+  "image_model": "nano_banana_2",
+  "audio_model": "seed_audio",
+  "folders": {
+   "root": "e6e807a9-49a8-41f1-bb4c-9247468606cb"
+  },
+  "public_url": null,
+  "created": "2026-10-01",
+  "idempotency_key": "anchorframe-ep2-darkness-2026-10-01",
+  "_": "Created from the desk with create_project(surface=cinematic_studio). The root is the only folder so far; make scene subfolders at Gate B and record them here. 'AI Film Festival 2' (93a4a8a7…) is a different film and is not this project."
+ },
+ "window": {
+  "from": "2026-10-01",
+  "to": null
+ },
+ "series": {
+  "world": "Legend of Litiguh",
+  "book": "Stone of Matter (Book I)",
+  "episode": 2,
+  "follows": "matter-of-light",
+  "source": "Stone of Matter — Ep. 2 Darkness (screenplay, LoL Movie Night draft); novel chapters IV and VII–X, with the prologue, dream and Outer Darkness scenes",
+  "codex": "codex/Series/Ep 2 — Darkness.md (claude/codex branch → main)",
+  "form": "short-film trailer music video, to be expanded to episode length later",
+  "names": "This board uses the screenplay's names. Episode 1 shipped under production names because its prompts are public on the festival page; if this film goes the same way, rename the elements before Gate A — the ids do not change, and the crosswalk stays local.",
+  "edition": "SoM V2"
+ },
+ "inherits": {
+  "_": "What a sequel takes from the previous film by id, so nothing is re-described. Elements listed here are attached with their Episode 1 ids; the Souls are reachable if a face recurs.",
+  "from": "matter-of-light",
+  "elements": {
+   "plate-sun": "03dbcec8-c65f-482c-8c11-58782c673c93",
+   "courtyard-of-worlds": "afc4fc5d-86be-4072-927c-f890966feaca",
+   "machira-orbit": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+   "plate-ocean-dark": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+   "plate-island": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+   "corals-abyss": "0ff096fa-da4b-4a12-a371-5d678fb75651",
+   "fx-kill-beat": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
+   "fx-hollow": "89a74d62-615e-4e52-b745-8bb8ceab1628"
+  },
+  "souls": {
+   "caedom-ascended": "453e85a7-0fef-411e-8edc-693c998b8c95",
+   "oriane": "c270c1d2-3466-4283-95cd-154dff318d76",
+   "alder": "efde8880-7bab-43fc-9100-4be64504b3e0",
+   "wren": "2d6202b6-277e-49c3-a83a-80a63d9ead1b"
+  },
+  "read": "anchorframe/projects/matter-of-light/project.json → final, and workflow.json → stage 8 (Learn): the delivered film ran 100 scenes at 3.7s against a 23-shot board; cuts landed on lyrics; five costume states of the lead reached the jury; the Predictor refused 16s renders; two silent regenerations came back with phantom speech; a wide read adults as children.",
+  "lessons_applied": [
+   "Every shot is 16s or under, and the 16s set pieces (S1, S5, S11, S18, S22, S23) get a 15s take too, so the Predictor can score them.",
+   "Audio is off on every silent shot (15 of 26) so the model cannot add speech; the tail of every audio-on take is soloed at Gate E.",
+   "Each set piece names its B lane in `notes`; generate it before Gate D. Montage shots are 8–12s because the cut will run short.",
+   "The middle cue is diegetic and its lyrics are the screenplay's own, so the board is written to the song instead of discovering it in the cut (tip 32).",
+   "One Soul per face before any shot — Ammon and Sadie first. No second design of a lead reaches the board.",
+   "Every sheet says 18+ and every wide with a figure in it is read back through the analyser before delivery (tip 34). Matteo is sixteen in the source; the sheet renders him as a young man and S21–S22 keep him in storm light.",
+   "No packshot and no title card inside a generated shot; the end card is editorial.",
+   "The continuity audit runs on the timeline at Gate E, not on the board."
+  ]
+ },
+ "music": {
+  "_": "Three cues, like the last film — but locked before the stills reel this time (tip 32). The middle cue is the film's own song.",
+  "cues": [
+   {
+    "id": "A",
+    "name": "Stardust",
+    "shots": "S1–S6",
+    "about_s": 82,
+    "kind": "choral / ambient, no lyrics",
+    "cuts": "on the burst in S5 and the seed in S6",
+    "song": "Seeds of Darkness"
+   },
+   {
+    "id": "B",
+    "name": "The word",
+    "shots": "S7–S18",
+    "about_s": 142,
+    "kind": "acoustic guitar with Ammon's spoken words, diegetic from S9 to S13, instrumental tail under S14–S18",
+    "cuts": "on 'Intelligence is light', 'a single word', 'We are one'; the wind hits on the last chord",
+    "song": "Every Light Casts a Shadow · We Are One"
+   },
+   {
+    "id": "C",
+    "name": "Outer Darkness",
+    "shots": "S19–END",
+    "about_s": 100,
+    "kind": "dark orchestral; one hit",
+    "cuts": "the hit lands on 'Four of the Seven'; the lantern and the corridor play under the decay",
+    "song": "Conqueror · Before They Follow"
+   }
+  ]
+ },
+ "acts": [
+  {
+   "id": "I",
+   "name": "Stardust",
+   "tone": "stardust"
+  },
+  {
+   "id": "II",
+   "name": "High Forest",
+   "tone": "forest"
+  },
+  {
+   "id": "III",
+   "name": "Lake of Light",
+   "tone": "lake"
+  },
+  {
+   "id": "IV",
+   "name": "The Leviticum",
+   "tone": "dark"
+  }
+ ],
+ "cast": {
+  "_": "Pending ids are '<element uuid>' until the sheet is generated at Stage 1; prompts reference them as @name so the board marks them. Inherited Episode 1 ids are real and already attached in the prompts.",
+  "characters": {
+   "stardust": "<element uuid>",
+   "lucille": "<element uuid>",
+   "ammon": "<element uuid>",
+   "mikael": "<element uuid>",
+   "krystal": "<element uuid>",
+   "bastion": "<element uuid>",
+   "sadie": "<element uuid>",
+   "viola": "<element uuid>",
+   "vothek": "<element uuid>",
+   "matteo": "<element uuid>",
+   "venetia": "<element uuid>",
+   "morningstar": "<element uuid>",
+   "master-lyon": "<element uuid>"
+  },
+  "environments": {
+   "plate-stardust": "<element uuid>",
+   "abyss-of-four-waterfalls": "<element uuid>",
+   "cloud-mountain": "<element uuid>",
+   "high-forest-lantern-path": "<element uuid>",
+   "wind-caves-stage": "<element uuid>",
+   "lake-of-light": "<element uuid>",
+   "old-lands": "<element uuid>",
+   "leviticum-exterior": "<element uuid>",
+   "leviticum-study-room": "<element uuid>",
+   "leviticum-elevator": "<element uuid>",
+   "leviticum-corridor": "<element uuid>",
+   "ilan-storm": "<element uuid>",
+   "outer-darkness": "<element uuid>",
+   "plate-sun": "03dbcec8-c65f-482c-8c11-58782c673c93",
+   "courtyard-of-worlds": "afc4fc5d-86be-4072-927c-f890966feaca",
+   "machira-orbit": "e7b2e80e-59db-44be-a654-7534a042e2c8",
+   "plate-ocean-dark": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
+   "plate-island": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
+   "corals-abyss": "0ff096fa-da4b-4a12-a371-5d678fb75651"
+  },
+  "props": {
+   "lantern": "<element uuid>",
+   "ammons-guitar": "<element uuid>",
+   "glisc-projector": "<element uuid>",
+   "heart-of-ilan": "<element uuid>",
+   "stone-of-energy": "<element uuid>"
+  },
+  "fx": {
+   "fx-dark-cloud": "<element uuid>",
+   "fx-light-wave": "<element uuid>",
+   "fx-wind": "<element uuid>",
+   "fx-pillar-of-fire": "<element uuid>",
+   "fx-kill-beat": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
+   "fx-hollow": "89a74d62-615e-4e52-b745-8bb8ceab1628"
+  }
+ },
+ "souls": {
+  "_": "None yet. Train Ammon and Sadie first (one identity each); the Episode 1 Souls are listed under inherits.souls."
+ },
+ "retired": {},
+ "sheets": {
+  "_": "The brief for each pending sheet, one line, so Stage 1 has what it needs without reading the screenplay. All people 18+ on the sheet. Generate with the character-sheet workflow, one id per face or place.",
+  "characters": {
+   "stardust": "A light being in a small humanoid form of clear glass — not a woman in white; faceted, refracting, a little light moving inside; no face detail beyond the suggestion of one. Three states: blanket of light, glass figure, fading.",
+   "lucille": "A demon crouched on four limbs and a head, features a distorted mockery of a man, hollow eyes blacker than the dark, teeth hidden; second state: the same figure wearing a spirit woman's face.",
+   "ammon": "The lead. A young man of eighteen, lean, long dark hair, open face; plain forest clothes; a worn acoustic guitar. States: on the mountain at dawn, on the lantern path, on the stage, in the elevator.",
+   "mikael": "Ammon's brother, a little older, broader, quick to laugh; the one who gets shoved first.",
+   "krystal": "A young woman of the group, sharp and watchful; carries her lantern highest.",
+   "bastion": "Ammon's best friend, big, gentle, a zoo-keeper's hands; lantern in one hand.",
+   "sadie": "A young woman of eighteen from the Cephasonian family of Iceland, calm eyes; two states: in the crowd at the Wind Caves, in the water at the Lake of Light.",
+   "viola": "The singer at the Wind Caves, hands out, lantern-lit from below.",
+   "vothek": "The storyteller: a man with a serious face and playful eyes, on a small stage by a rock wall, firelight.",
+   "matteo": "A young man (rendered as 18+) with long brown hair whipped by storm wind, bare feet on sacred sand; second state: kneeling in the Outer Darkness as 'Conqueror'.",
+   "venetia": "The Prison of Voids: a woman who becomes a panther with wrong angles; both states on one sheet; a smell of decay you can see in the air around her.",
+   "morningstar": "The master of the Outer Darkness: tall, still, lit only by what others give off; no horns, no cliché — a figure whose stillness is the threat.",
+   "master-lyon": "An old master of the Leviticum with a Levitian lantern; kind, awake at night because his dream walked here."
+  },
+  "environments": {
+   "plate-stardust": "The key light of Movement I: pure white light in black, with a violet edge. Every prologue frame inherits it.",
+   "abyss-of-four-waterfalls": "A drained, colourless land centred on an abyss darker than black; four waterfalls pour in from pure sources on the rim; everything around it dead. Three views: from the air, from the rim, from inside facing one waterfall.",
+   "cloud-mountain": "A mountain peak above a crater lake that reflects the whole mountain (Mirror Lake), dawn mist — the place Episode 1 ended.",
+   "high-forest-lantern-path": "Night path between enormous trunks, lantern light sliding up the bark, a glow of the Leviticum through the trees.",
+   "wind-caves-stage": "A stage in the mouth of a cave, lanterns and fire, ledges for the crowd, the wind audible in the rock; lit from below.",
+   "lake-of-light": "Translucent water with suspended limestone motes and glowing insects (blue-green), trees anchored in the lake with high roots, a small stage against the rock wall of the North Hills; moonlight. Views: from the trees, from the water, from under it.",
+   "old-lands": "The ancient world of the Angel Killer legend, day, painted light, a bare rock — warmer and softer than the rest of the film.",
+   "leviticum-exterior": "A seven-floor circular library of stone and glass above the forest, candles in every window, steps up to main doors with a band of gold inscription (illegible) above them.",
+   "leviticum-study-room": "A small study room: foam mattresses, books, a glisc projector throwing constellations on the ceiling, very low light.",
+   "leviticum-elevator": "A glass elevator in a stone shaft; a glowing green call button; numbered buttons where only the 1 glows; the seventh-floor hall beyond the doors, dark.",
+   "leviticum-corridor": "The ground-floor corridor, lantern-lit, a passage at the end.",
+   "ilan-storm": "A hidden island at night as a storm tears it apart: sacred sand, a blackened tree, a giant glowing beast in the sky; two lights in the sky, violet and emerald.",
+   "outer-darkness": "A place with no light; a ring of twelve kneeling figures; the only light is what the bodies and the Stone give off."
+  },
+  "props": {
+   "lantern": "A Levitian lantern: brass and glass, warm flame; the same lantern on the forest path and in Master Lyon's hand.",
+   "ammons-guitar": "A worn acoustic guitar, plain wood, one scratch on the lower bout.",
+   "glisc-projector": "A floor-set projector that throws shifting constellations on a ceiling.",
+   "heart-of-ilan": "A jagged, unrefined emerald stone, glowing from inside; also seen buried inches in sand.",
+   "stone-of-energy": "A stone of white-violet light seated in a woman's chest, blasting power outward."
+  },
+  "fx": {
+   "fx-dark-cloud": "A massive cloud of darkness over a land; it collapses in on itself when the light comes.",
+   "fx-light-wave": "Light moving as an ocean wave: cresting over a lip of rock and pouring down over dead land, colour returning in its wake.",
+   "fx-wind": "A strong wind as it is seen: lantern flames leaning, hair and cloth lifting, dust lifting off a floor.",
+   "fx-pillar-of-fire": "A pillar of fire descending onto a rock in daylight, painted-light style."
+  }
+ },
+ "shots": [
+  {
+   "id": "S1",
+   "act": "I",
+   "title": "Leaving the sun",
+   "duration_s": 16,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Slow crane back, 35mm anamorphic. We open on the white courtyard on the surface of the star where the last film stood (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca), key light @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). One point of purer white detaches from the surface and lifts — a blanket of STARDUST, spinning, the purest white there is, leaving particles behind that compress into stars as the camera follows it out of the glare into black space (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)). The star shrinks to one light among many. Hold on the blanket of light moving away, stepping over time. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8).",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The sequel's handshake. The last place Episode 1 stood is the first place Episode 2 leaves, on the same two elements, so the join is a fact and not a caption.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Slow crane back, 35mm anamorphic. We open on the white courtyard on the surface of the star where the last film stood (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca), key light @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). One point of purer white detaches from the surface and lifts — a blanket of STARDUST, spinning, the purest white there is, leaving particles behind that compress into stars as the camera follows it out of the glare into black space (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)). The star shrinks to one light among many. Hold on the blanket of light moving away, stepping over time. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+    },
+    {
+     "c": "B",
+     "name": "From the dark, looking back",
+     "why": "The reverse of the crane gives the cut a second angle on the departure and a clean cutaway for every spot.",
+     "prompt": "Reverse angle, locked, 50mm, from deep black space looking back at the star: the blanket of white light lifts off the courtyard on the star's surface and travels toward camera, passing through frame and leaving a wake of particles that compress into small new stars. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+    },
+    {
+     "c": "C",
+     "name": "White on black, violet edge",
+     "why": "The poster frame of the episode: the sequel's first image at the top of its grade.",
+     "prompt": "The same slow crane back, graded to its ceiling: the star's surface pushed to molten white-gold, the courtyard's shadows falling to deep violet, the blanket of stardust pure white with a thin violet fringe against absolute black. Hard contrast, no grey. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "act": "I",
+   "title": "Eight days old",
+   "duration_s": 12,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Wide, locked, then a slow push. Stardust halts and suspends herself between a young sun and a young planet, dimming herself so as not to destroy it (@plate-stardust). A beam of particles leaves her toward the planet; as it meets the atmosphere the particles converge into a small humanoid of clear glass (@stardust), falling without hurry, unaffected by gravity or the thick air. The planet below is raw and new. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust; @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8).",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The light being is the one new design in Movement I that has to be right: a glass figure, not a woman in white. Sheet her at Gate A as glass.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide, locked, then a slow push. Stardust halts and suspends herself between a young sun and a young planet, dimming herself so as not to destroy it (@plate-stardust). A beam of particles leaves her toward the planet; as it meets the atmosphere the particles converge into a small humanoid of clear glass (@stardust), falling without hurry, unaffected by gravity or the thick air. The planet below is raw and new. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust; @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+    },
+    {
+     "c": "B",
+     "name": "The fall, close",
+     "why": "Moves with her instead of watching her, so the cut can hold her face-height for a beat.",
+     "prompt": "Close, 85mm, tracking down with her: the small humanoid of clear glass falling through thick air toward a young planet, light refracting and moving inside her body, her limbs calm, untouched by gravity; the raw surface rising beneath, out of focus. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust; @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+    },
+    {
+     "c": "C",
+     "name": "Prism",
+     "why": "The beam split into colour is the cleanest single image for a spot's first second.",
+     "prompt": "Wide: the beam of particles splits into a full spectrum as it meets the atmosphere, the glass figure a single refracting point at its head, violet sky below, black space above. Saturated spectrum against black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust; @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "act": "I",
+   "title": "The abyss of four waterfalls",
+   "duration_s": 14,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@stardust) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "One environment sheet carries S3, S4 and S5. Design the four waterfalls on it so they read from the air and from the rim.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@stardust) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust."
+    },
+    {
+     "c": "B",
+     "name": "From the rim",
+     "why": "Ground level gives the abyss scale against something the audience can stand on.",
+     "prompt": "Ground level at the abyss's rim, 24mm, low: one of the four waterfalls pours past camera into a black that swallows it; dead grey grass in the foreground; high in the dark sky, a small glass figure crosses toward the abyss. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust."
+    },
+    {
+     "c": "C",
+     "name": "Drained",
+     "why": "A near-monochrome frame makes the light in S5 land harder.",
+     "prompt": "The aerial descent graded to near-monochrome: ash greys, the abyss pure black, the only colour in frame the clean blue-white at the sources of the four waterfalls on the rim. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust."
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "act": "I",
+   "title": "Lucille",
+   "duration_s": 12,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Medium, handheld tremor, 50mm. The glass figure (@stardust) is stopped mid-flight before one of the waterfalls, held by a power not her own; the glass of her body creaks and moans. A demon (@lucille) appears crouched before her — four limbs and a head, distorted features in mockery of a man, hollow eyes blacker than the surrounding dark, teeth hidden. He speaks: 'Why have you come? Into the depths of my power.' Then he laughs and his face slides into the face of a spirit woman and back. Audio on; the only sound is the waterfall, the creak of glass and his voice. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The one dialogue shot of the prologue. The face-change is the beat; ask for it once, late in the shot, so the model does not flicker it.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Medium, handheld tremor, 50mm. The glass figure (@stardust) is stopped mid-flight before one of the waterfalls, held by a power not her own; the glass of her body creaks and moans. A demon (@lucille) appears crouched before her — four limbs and a head, distorted features in mockery of a man, hollow eyes blacker than the surrounding dark, teeth hidden. He speaks: 'Why have you come? Into the depths of my power.' Then he laughs and his face slides into the face of a spirit woman and back. Audio on; the only sound is the waterfall, the creak of glass and his voice. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls."
+    },
+    {
+     "c": "B",
+     "name": "Over his shoulder",
+     "why": "Coverage for the dialogue: the editor can cut his line onto her face.",
+     "prompt": "Over the shoulder of the crouched demon, 35mm: the glass figure held motionless in the air before the waterfall, cracks of light moving across her glass as it creaks; his head stays a shape against her light. Audio on: the waterfall, the glass creaking, and his voice: 'Why have you come?' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls."
+    },
+    {
+     "c": "C",
+     "name": "Carved by her light",
+     "why": "The demon lit only by the glass figure is the image the dark cue can hit.",
+     "prompt": "Medium close: the demon lit only by the light coming off the glass figure, white light carving his distorted features out of black, hollow eyes darker than the dark around them; the waterfall a silver curtain behind. Extreme contrast. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls."
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "act": "I",
+   "title": "The wave of light",
+   "duration_s": 16,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Wide to very wide, no cut. Stardust explodes in showering light (@[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6) for the burst), conquering every crevice of the abyss; the demon reduces to dark matter, then to nothing. The light rises as a great ocean wave (@fx-light-wave), crests over the lip of the abyss and pours out over the dead land; colour returns to the plants and animals as it passes; the dark cloud above collapses in on itself and vanishes. End on the renewed land under a clear sky. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6).",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The set piece of Movement I. Generate the B lane for it (a ground-level shot of the light passing over dead grass) before Gate D — the cut will want two angles here.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide to very wide, no cut. Stardust explodes in showering light (@[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6) for the burst), conquering every crevice of the abyss; the demon reduces to dark matter, then to nothing. The light rises as a great ocean wave (@fx-light-wave), crests over the lip of the abyss and pours out over the dead land; colour returns to the plants and animals as it passes; the dark cloud above collapses in on itself and vanishes. End on the renewed land under a clear sky. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6)."
+    },
+    {
+     "c": "B",
+     "name": "Ground level",
+     "why": "The B lane the board asked for: the light passing over the dead grass.",
+     "prompt": "Ground level, 24mm, on dead grey grass at the rim of the abyss: the wave of light pours over the lip and passes over camera; colour floods back into the grass, insects lift into the air, the dark cloud above tears open to a clear sky. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6)."
+    },
+    {
+     "c": "C",
+     "name": "Past white",
+     "why": "Clipping to pure light then resolving gives a spot its hook in one second.",
+     "prompt": "The burst graded past white: the whole frame clips to pure light, then the wave resolves out of it in gold and new green against a violet sky, pouring over the lip of the abyss. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6)."
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "act": "I",
+   "title": "Seeds of darkness",
+   "duration_s": 12,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Medium then tilt down, 40mm. Stardust (@stardust) ascends slowly, head hung, pauses above the surface and looks far over the renewed land; her glass form begins to fade. She says, quietly: 'What a magnificent world she is to become. Proleum.' As she goes, the camera drops to the new green soil, where one black seed lies among the roots. Hold on the seed. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The last line of the prologue and the title of the episode in one image. The seed is the only prop in Movement I; it is also the first thing the trailer's dark cue can land on.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Medium then tilt down, 40mm. Stardust (@stardust) ascends slowly, head hung, pauses above the surface and looks far over the renewed land; her glass form begins to fade. She says, quietly: 'What a magnificent world she is to become. Proleum.' As she goes, the camera drops to the new green soil, where one black seed lies among the roots. Hold on the seed. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust."
+    },
+    {
+     "c": "B",
+     "name": "The seed alone",
+     "why": "A silent insert the cut can place anywhere the dark cue needs a beat.",
+     "prompt": "Macro, locked, 100mm: one black seed among new green roots in dark soil; above it, soft and out of focus, a fading glass figure rises out of the top of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust."
+    },
+    {
+     "c": "C",
+     "name": "Black in green",
+     "why": "The seed as the only black thing in a saturated world.",
+     "prompt": "The seed graded as the only black object in a saturated green world, the glass figure a white streak leaving the top of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @plate-stardust."
+    }
+   ]
+  },
+  {
+   "id": "S7",
+   "act": "II",
+   "title": "Cloud Mountain, ten years later",
+   "duration_s": 10,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Very wide, locked, dawn. A young man (@ammon) sits alone on the peak of a mountain above a crater lake (@cloud-mountain), the whole mountain reflected in the still water below — the image the last film ended on. He is thinking about how the world was made. Mist in the valleys. One slow lift of his head. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The present-day bridge. Episode 1's coda was this mountain and this lake; Episode 2's first present-day frame is the same place with its person in it. Title-safe hold.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Very wide, locked, dawn. A young man (@ammon) sits alone on the peak of a mountain above a crater lake (@cloud-mountain), the whole mountain reflected in the still water below — the image the last film ended on. He is thinking about how the world was made. Mist in the valleys. One slow lift of his head. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain."
+    },
+    {
+     "c": "B",
+     "name": "The reflection",
+     "why": "The mountain upside-down in the lake is the shot that rhymes with Episode 1's last image.",
+     "prompt": "Locked, low on the shore of the crater lake at dawn: the mountain and the small seated figure on its peak reflected upside-down in perfectly still water; mist drifts across the reflection. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain."
+    },
+    {
+     "c": "C",
+     "name": "Dawn blue",
+     "why": "Matches the cool morning of Episode 1's coda, the one daylight blue in that film.",
+     "prompt": "The same very wide, graded cool: steel-blue dawn, the peak catching the first gold, the crater lake a mirror, mist white. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain."
+    }
+   ]
+  },
+  {
+   "id": "S8",
+   "act": "II",
+   "title": "The lantern path",
+   "duration_s": 14,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Tracking, 35mm, night. Four friends with lanterns (@ammon, @mikael, @krystal, @bastion; the lantern @lantern) walk a path between enormous trunks of the High Forest (@high-forest-lantern-path) toward a glow through the trees. Then Ammon shoves Mikael and takes off; the other two laugh and chase, lanterns swinging, light sliding up the trunks. The camera is pulled along with them. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Four faces in one frame means no Soul can be used — this shot runs on the four element sheets, and the sheets must agree on scale and age (all 18+).",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Tracking, 35mm, night. Four friends with lanterns (@ammon, @mikael, @krystal, @bastion; the lantern @lantern) walk a path between enormous trunks of the High Forest (@high-forest-lantern-path) toward a glow through the trees. Then Ammon shoves Mikael and takes off; the other two laugh and chase, lanterns swinging, light sliding up the trunks. The camera is pulled along with them. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path."
+    },
+    {
+     "c": "B",
+     "name": "From the canopy",
+     "why": "A high angle gives the run geography and four lights to follow.",
+     "prompt": "High angle from the canopy, 35mm, night: four lanterns moving along a path between enormous trunks, then breaking apart as their bearers start to run; lantern light slides up the bark. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path."
+    },
+    {
+     "c": "C",
+     "name": "Amber in black",
+     "why": "Lantern amber against green-black is the High Forest's look in one frame.",
+     "prompt": "The run graded to lantern amber against green-black: faces and lantern glass hot, the forest falling to near-black around them. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path."
+    }
+   ]
+  },
+  {
+   "id": "S9",
+   "act": "II",
+   "title": "Wind Caves",
+   "duration_s": 12,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Wide, slow dolly in, night. A stage set in the mouth of a cave (@wind-caves-stage), lit by lanterns and fire; the wind moves through the cave like breath through pipes. A young woman (@viola) sings with her hands out; two brothers play behind her; a crowd of young Cephasonians sits on the cave floor and the ledges, faces lit from below. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @viola; @wind-caves-stage.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The concert is the music video's venue. Sheet the stage with its lantern key once and every shot from S9 to S13 inherits it.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide, slow dolly in, night. A stage set in the mouth of a cave (@wind-caves-stage), lit by lanterns and fire; the wind moves through the cave like breath through pipes. A young woman (@viola) sings with her hands out; two brothers play behind her; a crowd of young Cephasonians sits on the cave floor and the ledges, faces lit from below. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @viola; @wind-caves-stage."
+    },
+    {
+     "c": "B",
+     "name": "From the stage",
+     "why": "The reverse puts the audience in the frame for the song that follows.",
+     "prompt": "Reverse angle from behind the singer, 28mm: her raised hands in the foreground, the crowd on the cave floor and the ledges lit from below, the wind moving every lantern flame the same way. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @viola; @wind-caves-stage."
+    },
+    {
+     "c": "C",
+     "name": "Firelight",
+     "why": "The cave as a black frame around a lit figure.",
+     "prompt": "Graded to firelight red-amber: the cave mouth a black frame, the singer a silhouette with lantern light on her hands. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @viola; @wind-caves-stage."
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "act": "II",
+   "title": "Hands",
+   "duration_s": 10,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Close, 85mm, shallow. Ammon (@ammon) walks up to the front of the cave mouth with an acoustic guitar (@ammons-guitar), looks down and pretends to tune it. His hands are trembling on the strings. Then — without a cut — his hands grow steady. Only the hands and the guitar, the crowd a glow out of focus. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The smallest shot on the board and the one that tells the audience who the film is about. Hold it.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Close, 85mm, shallow. Ammon (@ammon) walks up to the front of the cave mouth with an acoustic guitar (@ammons-guitar), looks down and pretends to tune it. His hands are trembling on the strings. Then — without a cut — his hands grow steady. Only the hands and the guitar, the crowd a glow out of focus. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage."
+    },
+    {
+     "c": "B",
+     "name": "The face",
+     "why": "Lane A is the hands; this is the face that goes with them.",
+     "prompt": "Close, 85mm, shallow: Ammon's face as he looks down at the guitar, breath unsteady, then settling; the crowd a warm glow behind him. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage."
+    },
+    {
+     "c": "C",
+     "name": "One lantern",
+     "why": "Hands and strings in a single hard key, for the music video's quiet bar.",
+     "prompt": "Hands and strings in a single hard lantern key, everything else black; the trembling stops. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage."
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "act": "II",
+   "title": "Intelligence is light",
+   "duration_s": 16,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Steadicam, 40mm, walking with him. Ammon (@ammon) strums a progression as pleasant and simple as a gentle wave and speaks over it, not sings: 'Intelligence is light. There are different glories, all emanating from this one central source that reaches through everything. Every light casts a shadow.' He walks up the left bank of the cave as he plays; faces in the crowd turn with him; near the front a young woman (@sadie) watches, and he finds her. Audio on: the guitar, his voice, the cave. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The spoken song is the middle cue. Its lyrics are the screenplay's own; the board is written so the cuts can land on them (see music).",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Steadicam, 40mm, walking with him. Ammon (@ammon) strums a progression as pleasant and simple as a gentle wave and speaks over it, not sings: 'Intelligence is light. There are different glories, all emanating from this one central source that reaches through everything. Every light casts a shadow.' He walks up the left bank of the cave as he plays; faces in the crowd turn with him; near the front a young woman (@sadie) watches, and he finds her. Audio on: the guitar, his voice, the cave. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage."
+    },
+    {
+     "c": "B",
+     "name": "Through the crowd",
+     "why": "Coverage from the audience side so the song can be cut without losing the words.",
+     "prompt": "Steadicam through the crowd toward the stage, 35mm: faces turning to follow Ammon as he walks the left bank playing; at the front, Sadie sees him find her. Audio on: the guitar and his spoken words from the stage, 'Every light casts a shadow.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage."
+    },
+    {
+     "c": "C",
+     "name": "His shadow on the wall",
+     "why": "The line made literal: the shot the music video's chorus lands on.",
+     "prompt": "Ammon walks through a band of lantern light so his shadow is thrown huge across the cave wall behind him as he plays; the shadow is larger than he is. Graded amber light against deep black shadow. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage."
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "act": "II",
+   "title": "We are one",
+   "duration_s": 10,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Wide from behind the crowd, 24mm. The strumming rises in tempo and volume to the last chord and Ammon (@ammon) speaks the last words: 'We are one.' On the chord a strong wind blankets the crowd (@fx-wind) — lantern flames lean, hair and cloth lift, dust lifts off the cave floor — and the crowd erupts. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The wind is the effect the whole film turns on; it must read as wind, not as a particle effect. Lanterns leaning is how a viewer knows.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide from behind the crowd, 24mm. The strumming rises in tempo and volume to the last chord and Ammon (@ammon) speaks the last words: 'We are one.' On the chord a strong wind blankets the crowd (@fx-wind) — lantern flames lean, hair and cloth lift, dust lifts off the cave floor — and the crowd erupts. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind."
+    },
+    {
+     "c": "B",
+     "name": "The wind arrives",
+     "why": "The wind seen travelling, front to back, which A can only show at once.",
+     "prompt": "Locked at the cave mouth looking in, 24mm: the wind enters past camera and the lantern flames bow in a wave across the cave from front to back; hair and cloth lift row by row; the crowd rises. Audio on: the last chord, then the wind and the roar. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind."
+    },
+    {
+     "c": "C",
+     "name": "Flames bowing",
+     "why": "The single image of the wind for every spot.",
+     "prompt": "Macro on a row of lantern flames bending together in one direction, graded amber on black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind."
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "act": "II",
+   "title": "The wind calls",
+   "duration_s": 8,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Close, 85mm, backstage. The cheering stops as if a door closed. Ammon's left hand is still on the neck of the guitar (@ammons-guitar), and the hand is vibrating with something that is not nerves. He looks at it. A voice, not his, somewhere behind the air: 'He did it. He is beginning to understand.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Solo the tail of this take: an 8-second audio-on close is exactly where Episode 1's phantom 'Thank you' appeared.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Close, 85mm, backstage. The cheering stops as if a door closed. Ammon's left hand is still on the neck of the guitar (@ammons-guitar), and the hand is vibrating with something that is not nerves. He looks at it. A voice, not his, somewhere behind the air: 'He did it. He is beginning to understand.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar."
+    },
+    {
+     "c": "B",
+     "name": "The corridor",
+     "why": "A wide to hold the silence after the cheering.",
+     "prompt": "Wide, 28mm, backstage: Ammon alone in a rock corridor, the crowd's noise cut off; he stops and looks at his hand. Audio on: near silence, then a voice not his: 'He is beginning to understand.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar."
+    },
+    {
+     "c": "C",
+     "name": "The strings move",
+     "why": "The vibration made visible.",
+     "prompt": "Macro on the guitar neck and his fingers: the strings trembling with no one playing them, a faint blue-white light at the edges of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar."
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "act": "III",
+   "title": "Fireflies",
+   "duration_s": 12,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Handheld, 35mm, moonlight. Ammon (@ammon) and Sadie (@sadie) dance between fireflies and other couples gliding by, among trunks that grow thicker toward the water (@lake-of-light). They are a little silly at first, drifting apart and together, then close. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Silent on purpose: this is where the middle cue's instrumental tail carries the picture.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Handheld, 35mm, moonlight. Ammon (@ammon) and Sadie (@sadie) dance between fireflies and other couples gliding by, among trunks that grow thicker toward the water (@lake-of-light). They are a little silly at first, drifting apart and together, then close. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light."
+    },
+    {
+     "c": "B",
+     "name": "Overhead",
+     "why": "Geography for the dance and a cutaway for the song's instrumental tail.",
+     "prompt": "Overhead, 24mm: two figures dancing among fireflies between huge trunks, other couples drifting through frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light."
+    },
+    {
+     "c": "C",
+     "name": "Bokeh",
+     "why": "The couple sharp and the world dissolved: the romance in one image.",
+     "prompt": "Long lens: the couple sharp, everything else fireflies dissolved into gold and green bokeh. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light."
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "act": "III",
+   "title": "Lake of Light",
+   "duration_s": 14,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Wide, slow reveal, night. The trees open to water and light showers in a billion degrees (@lake-of-light): translucent, clear water with suspended motes of limestone and glowing insects making blue-green shades; trees anchored in the lake with high roots that young people sit on and jump from; axolotls and minnows under the surface; a small stage against the rock wall of the North Hills, which rises straight up. The camera drifts in over the water. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lake-of-light.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The second hero environment. The water is translucent, not luminous — the light is in it, not from it.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide, slow reveal, night. The trees open to water and light showers in a billion degrees (@lake-of-light): translucent, clear water with suspended motes of limestone and glowing insects making blue-green shades; trees anchored in the lake with high roots that young people sit on and jump from; axolotls and minnows under the surface; a small stage against the rock wall of the North Hills, which rises straight up. The camera drifts in over the water. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lake-of-light."
+    },
+    {
+     "c": "B",
+     "name": "From the water",
+     "why": "A lens at the waterline lets the lake be both surface and depth.",
+     "prompt": "Waterline, 24mm, half-submerged lens: glowing motes under the surface, young people on high roots above, the small stage on the rock wall in the distance. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lake-of-light."
+    },
+    {
+     "c": "C",
+     "name": "Blue-green",
+     "why": "The lake at full saturation: the Movement III look.",
+     "prompt": "Graded to saturated blue-green bioluminescence under silver moonlight; the trees black silhouettes against the light in the water. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lake-of-light."
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "act": "III",
+   "title": "Under the water",
+   "duration_s": 10,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Underwater, 24mm, slow. Sadie (@sadie) pulls Ammon (@ammon) under; they sink to the shallow bottom in blue-green water full of glowing motes (@[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651) for the underwater light). Sound goes muted. She kisses him under the water. They come up for air, smiling, in one continuous move. Audio on, but the only sound is the muted underwater pressure and the surface breaking. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651).",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Both faces are adults on the sheets and the wide must say so too — read it back through the analyser before Gate E.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Underwater, 24mm, slow. Sadie (@sadie) pulls Ammon (@ammon) under; they sink to the shallow bottom in blue-green water full of glowing motes (@[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651) for the underwater light). Sound goes muted. She kisses him under the water. They come up for air, smiling, in one continuous move. Audio on, but the only sound is the muted underwater pressure and the surface breaking. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
+    },
+    {
+     "c": "B",
+     "name": "From the surface",
+     "why": "Seen from above, the rise reads as joy, not danger.",
+     "prompt": "Overhead through the surface: two figures below in blue-green water with light motes rising around them; they rise toward camera and break the surface together. Audio on: muted underwater pressure, then air. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
+    },
+    {
+     "c": "C",
+     "name": "Lit by the water",
+     "why": "Faces lit only by the motes: the music video's softest shot.",
+     "prompt": "Underwater close: two faces lit only by the glowing motes, everything else deep teal. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "act": "III",
+   "title": "Vothek",
+   "duration_s": 10,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Medium close, 50mm, firelight. A man (@vothek) stands on the small stage by the rock wall with a serious face and playful eyes; the friends gather below. He says: 'The story of the Angel Killer is the oldest of the land. To some, it is true. Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The storyteller's line sets up S18 and gives the dark cue its first words.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Medium close, 50mm, firelight. A man (@vothek) stands on the small stage by the rock wall with a serious face and playful eyes; the friends gather below. He says: 'The story of the Angel Killer is the oldest of the land. To some, it is true. Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light."
+    },
+    {
+     "c": "B",
+     "name": "The listeners",
+     "why": "The reverse lets the line play over faces.",
+     "prompt": "Reverse angle: the friends' faces in firelight looking up at the stage while the storyteller's voice continues: 'Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light."
+    },
+    {
+     "c": "C",
+     "name": "Firelight",
+     "why": "One frame of the storyteller for the spots.",
+     "prompt": "Graded firelight orange against the black rock wall, the storyteller's playful eyes catching the light. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light."
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "act": "III",
+   "title": "The Angel Killer",
+   "duration_s": 16,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Told, not lived: painted light, long lens, slightly slower than life. Day, the old lands of the world many years ago (@old-lands). A boy stands alone on a rock and swallows a radiant seedling. A pillar of fire descends upon the rock (@fx-pillar-of-fire). Two angels, one of light and one of dark, fall. The boy stands in the ash with light in his chest. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "A legend inside the film: give it its own grade (warmer, softer) so the audience knows it is being told.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Told, not lived: painted light, long lens, slightly slower than life. Day, the old lands of the world many years ago (@old-lands). A boy stands alone on a rock and swallows a radiant seedling. A pillar of fire descends upon the rock (@fx-pillar-of-fire). Two angels, one of light and one of dark, fall. The boy stands in the ash with light in his chest. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire."
+    },
+    {
+     "c": "B",
+     "name": "The pillar from afar",
+     "why": "Scale for the legend: the boy a dot under the fire.",
+     "prompt": "Very wide, painted light: a pillar of fire falls onto a distant rock in an empty land; the boy is a dot beneath it. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire."
+    },
+    {
+     "c": "C",
+     "name": "Ochre and gold",
+     "why": "The legend's own grade, pushed to the top.",
+     "prompt": "Painted light graded to ochre and gold, the two angels falling in two colours, one light and one dark, through the fire. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire."
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "act": "IV",
+   "title": "Remember who you are",
+   "duration_s": 12,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Low wide, 24mm, night. The Leviticum (@leviticum-exterior): a seven-floor circular library of stone and glass, lamps and candles in every window, standing above the forest. The four friends (@ammon, @mikael, @krystal, @bastion) climb the steps laughing. Above the main doors the inscription is a band of gold light, its letters not legible from here. They go in. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The quote above the doors ('Remember who you are…') is text, and text in frame fails. Render it as a gold band and put the words in the sound or the cut.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Low wide, 24mm, night. The Leviticum (@leviticum-exterior): a seven-floor circular library of stone and glass, lamps and candles in every window, standing above the forest. The four friends (@ammon, @mikael, @krystal, @bastion) climb the steps laughing. Above the main doors the inscription is a band of gold light, its letters not legible from here. They go in. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion."
+    },
+    {
+     "c": "B",
+     "name": "Under the inscription",
+     "why": "The gold band of light as the friends pass beneath it, no legible letters.",
+     "prompt": "Low, 35mm, under the main doors: the band of gold light above the doors (no legible letters) as the four friends pass beneath it into the library. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion."
+    },
+    {
+     "c": "C",
+     "name": "Candle tower",
+     "why": "The library as a lit column against the night.",
+     "prompt": "Graded: the seven-floor circular library as a column of warm candle windows against a violet-black night sky. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion."
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "act": "IV",
+   "title": "Movie night",
+   "duration_s": 10,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@ammon) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The hinge into the dream. End on closed eyes so S21 can open on open ones.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@ammon) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector."
+    },
+    {
+     "c": "B",
+     "name": "The ceiling",
+     "why": "What he is watching as his eyes close.",
+     "prompt": "Locked, looking straight up at the ceiling: constellations from the glisc projector drifting slowly; one constellation brightens. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector."
+    },
+    {
+     "c": "C",
+     "name": "Constellations",
+     "why": "Sharp stars on deep blue-black: the dream's doorway.",
+     "prompt": "Graded deep blue-black with the projected stars sharp white, the sleepers' faces barely lit. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector."
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "act": "IV",
+   "title": "The Panther",
+   "duration_s": 14,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Handheld, 35mm, night, wind. A hidden island (@ilan-storm) as a storm materialises from nowhere and begins to tear it apart. A young man with long brown hair whipped back (@matteo) watches a figure step from the shadows — a woman (@venetia) who, as she comes closer, becomes a PANTHER with odd shapes and angles that seem wrong. In the sky behind, a giant glowing beast screeches. Storm key from @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632). 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632).",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Venetia's sheet carries two states, woman and panther, on one id. The transformation is asked for once, mid-shot.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Handheld, 35mm, night, wind. A hidden island (@ilan-storm) as a storm materialises from nowhere and begins to tear it apart. A young man with long brown hair whipped back (@matteo) watches a figure step from the shadows — a woman (@venetia) who, as she comes closer, becomes a PANTHER with odd shapes and angles that seem wrong. In the sky behind, a giant glowing beast screeches. Storm key from @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632). 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
+    },
+    {
+     "c": "B",
+     "name": "Matteo's face",
+     "why": "Coverage for the transformation: his face as he watches it.",
+     "prompt": "Close on the young man in storm wind, rain on his face, eyes fixed on something off frame; behind him, soft, a woman's silhouette changes shape. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
+    },
+    {
+     "c": "C",
+     "name": "Storm violet",
+     "why": "The dream's palette: violet storm, green eyes.",
+     "prompt": "Graded violet storm light, the panther's eyes the only green in frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "act": "IV",
+   "title": "The heart of Ilan",
+   "duration_s": 16,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@venetia) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@matteo) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "Set piece two. B lane: the stone alone in the sand, 8s, silent — the cut will want to breathe before the fist goes in.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@venetia) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@matteo) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm."
+    },
+    {
+     "c": "B",
+     "name": "The stone alone",
+     "why": "The B lane the board asked for: the cut can breathe before the fist goes in.",
+     "prompt": "Macro, locked, silent: a jagged emerald stone glowing beneath an inch of sand beside a blackened tree; the sand trembles; no hand yet. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm."
+    },
+    {
+     "c": "C",
+     "name": "Violet eats green",
+     "why": "The two lights in the sky at full saturation.",
+     "prompt": "The two lights in the sky graded to full saturation, violet and emerald, the violet swallowing the green, the island black beneath them. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm."
+    }
+   ]
+  },
+  {
+   "id": "S23",
+   "act": "IV",
+   "title": "Four of the Seven",
+   "duration_s": 16,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@stone-of-energy), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The antagonist's one scene. Keep him still; let the ring move. The line is the dark cue's hit.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@stone-of-energy), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy."
+    },
+    {
+     "c": "B",
+     "name": "The ring from above",
+     "why": "Overhead makes the ring of twelve a shape the audience can read.",
+     "prompt": "Overhead, locked: a ring of twelve kneeling figures around a woman whose chest blazes white-violet; a wave of light ripples outward and two figures at the edge of the ring turn to dust. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy."
+    },
+    {
+     "c": "C",
+     "name": "No light but the Stone",
+     "why": "The antagonist as a silhouette: the dark cue's hit frame.",
+     "prompt": "Graded so the only light in frame is the Stone of Energy: the ring's faces lit from below, Morningstar a tall silhouette against nothing. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy."
+    }
+   ]
+  },
+  {
+   "id": "S24",
+   "act": "IV",
+   "title": "The seventh floor",
+   "duration_s": 14,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Continuous, 28mm, near dark. Ammon (@ammon) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The horror beat is the glass doors opening slowly on nothing we can quite see. Do not show the thing with the eyes.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Continuous, 28mm, near dark. Ammon (@ammon) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator."
+    },
+    {
+     "c": "B",
+     "name": "From the hall",
+     "why": "The doors opening, from the side of whatever is watching.",
+     "prompt": "From inside the dark seventh-floor hall looking at the glass elevator: the doors slide open on Ammon small in the lit car, staring out toward camera. Audio on: a voice from beside camera, 'Leave this place. Leave. Before they follow.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator."
+    },
+    {
+     "c": "C",
+     "name": "Only the 1 glows",
+     "why": "An insert that tells the story of the ride without a face.",
+     "prompt": "Macro of the elevator panel: only the 1 glowing green, then the floor numbers lighting upward one by one to 7. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator."
+    }
+   ]
+  },
+  {
+   "id": "S25",
+   "act": "IV",
+   "title": "The lantern",
+   "duration_s": 10,
+   "audio": true,
+   "status": "unshot",
+   "prompt": "Medium, 50mm. The elevator doors open on the third floor and an old master (@master-lyon) stands there holding a Levitian lantern (@lantern). He steps in beside Ammon (@ammon) and, as the elevator descends, raises the lantern to Ammon's face and looks at him. He says: 'Stay true to what you believe is right. If you do this, then no matter which path you take, you will end up where you need to go.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "The last held close-up belongs to whoever changes — and in this episode that is still Ammon, so the lantern is on his face, not the master's.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Medium, 50mm. The elevator doors open on the third floor and an old master (@master-lyon) stands there holding a Levitian lantern (@lantern). He steps in beside Ammon (@ammon) and, as the elevator descends, raises the lantern to Ammon's face and looks at him. He says: 'Stay true to what you believe is right. If you do this, then no matter which path you take, you will end up where you need to go.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator."
+    },
+    {
+     "c": "B",
+     "name": "The master's face",
+     "why": "His face for the line, in his own lantern light.",
+     "prompt": "Close, 85mm: the old master in lantern light, kind and tired, as he says: 'Stay true to what you believe is right.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator."
+    },
+    {
+     "c": "C",
+     "name": "Lantern gold",
+     "why": "Two faces, one flame.",
+     "prompt": "Two faces in the elevator lit only by the lantern, gold on black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator."
+    }
+   ]
+  },
+  {
+   "id": "END",
+   "act": "IV",
+   "title": "Tomorrow is promised to no one",
+   "duration_s": 8,
+   "audio": false,
+   "status": "unshot",
+   "prompt": "Wide, locked, 35mm. The ground-floor corridor of the Leviticum (@leviticum-corridor), lantern-lit. Ammon (@ammon) walks away down it, reaches the passage and turns to speak — but the master (@master-lyon) has already stopped where he was and only smiles. Ammon turns and goes on. Fade to black. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon.",
+   "pick": null,
+   "alternates": [],
+   "why": "",
+   "regenerate": false,
+   "notes": "No packshot, no title card inside a generated shot. The end card is added in the cut.",
+   "lanes": [
+    {
+     "c": "A",
+     "name": "As boarded",
+     "why": "The version that ships. The forms, the timing and the frame string assume this one.",
+     "prompt": "Wide, locked, 35mm. The ground-floor corridor of the Leviticum (@leviticum-corridor), lantern-lit. Ammon (@ammon) walks away down it, reaches the passage and turns to speak — but the master (@master-lyon) has already stopped where he was and only smiles. Ammon turns and goes on. Fade to black. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon."
+    },
+    {
+     "c": "B",
+     "name": "Walking toward us",
+     "why": "The reverse ending: Ammon comes toward camera and out of the light.",
+     "prompt": "Reverse: Ammon walks toward camera down the lantern-lit corridor, the master small behind him under the lantern. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon."
+    },
+    {
+     "c": "C",
+     "name": "Out of the light",
+     "why": "The last frame's grade: gold falling to black.",
+     "prompt": "Lantern gold falling off to black as Ammon walks out of the light. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon."
+    }
+   ]
+  }
+ ],
+ "board": {
+  "max_alternates": 3,
+  "score_over_pick": true
+ },
+ "ledger": {
+  "_": "Every generation the desk submits is appended here with the project id, so it can be pulled back by id regardless of what the API can filter on.",
+  "jobs": []
+ },
+ "status": {
+  "submitted": false,
+  "public_url": null,
+  "note": "Board written 2026-10-01 from the Ep. 2 screenplay; nothing generated yet. Next: Souls for Ammon and Sadie, then the sheets, then Gate A."
+ },
+ "forms_note": "One shot pool, every length. Lane A ships, B is the coverage angle, C is the graded key-art take. The spots open peak-first, because the Predictor's hook score reads the first three seconds; the short film holds; the music video is cut to the main title song. The 20–60 minute episode is the next section.",
+ "forms": [
+  {
+   "id": "spot30",
+   "kind": "Commercial",
+   "name": "Spot :30",
+   "target_s": 30,
+   "why": "Peak first: the burst of light in the first second, three lines of dialogue, the dark cue's hit, the title. Built for the public post.",
+   "cut": [
+    {
+     "shot": "S5",
+     "lane": "C",
+     "s": 3,
+     "note": "hook: the burst, past white"
+    },
+    {
+     "shot": "S3",
+     "lane": "A",
+     "s": 2
+    },
+    {
+     "shot": "S4",
+     "lane": "B",
+     "s": 2
+    },
+    {
+     "shot": "S7",
+     "lane": "C",
+     "s": 3,
+     "note": "the mountain Episode 1 ended on"
+    },
+    {
+     "shot": "S11",
+     "lane": "C",
+     "s": 3,
+     "note": "“Every light casts a shadow.”"
+    },
+    {
+     "shot": "S12",
+     "lane": "A",
+     "s": 3,
+     "note": "“We are one.” The wind."
+    },
+    {
+     "shot": "S16",
+     "lane": "C",
+     "s": 2
+    },
+    {
+     "shot": "S21",
+     "lane": "C",
+     "s": 2
+    },
+    {
+     "shot": "S22",
+     "lane": "A",
+     "s": 3,
+     "note": "the fist in the sand"
+    },
+    {
+     "shot": "S23",
+     "lane": "C",
+     "s": 3,
+     "note": "“Four of the Seven.”"
+    },
+    {
+     "shot": "S24",
+     "lane": "A",
+     "s": 2,
+     "note": "“Leave this place.”"
+    },
+    {
+     "card": "Title · STONE OF MATTER — DARKNESS",
+     "s": 2
+    }
+   ]
+  },
+  {
+   "id": "spot60",
+   "kind": "Commercial",
+   "name": "Spot :60",
+   "target_s": 60,
+   "why": "The :30 with room to breathe: the prologue gets its line, the song gets two, the dream gets the stone alone before the fist.",
+   "cut": [
+    {
+     "shot": "S5",
+     "lane": "C",
+     "s": 3,
+     "note": "hook"
+    },
+    {
+     "shot": "S1",
+     "lane": "C",
+     "s": 3
+    },
+    {
+     "shot": "S2",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S3",
+     "lane": "C",
+     "s": 3
+    },
+    {
+     "shot": "S4",
+     "lane": "A",
+     "s": 4,
+     "note": "“Why have you come?”"
+    },
+    {
+     "shot": "S6",
+     "lane": "B",
+     "s": 3,
+     "note": "the seed"
+    },
+    {
+     "shot": "S7",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S8",
+     "lane": "C",
+     "s": 3
+    },
+    {
+     "shot": "S10",
+     "lane": "A",
+     "s": 3,
+     "note": "the hands steady"
+    },
+    {
+     "shot": "S11",
+     "lane": "A",
+     "s": 5,
+     "note": "“Intelligence is light… every light casts a shadow.”"
+    },
+    {
+     "shot": "S12",
+     "lane": "B",
+     "s": 3,
+     "note": "the wind arrives"
+    },
+    {
+     "shot": "S15",
+     "lane": "C",
+     "s": 3
+    },
+    {
+     "shot": "S16",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S18",
+     "lane": "C",
+     "s": 3
+    },
+    {
+     "shot": "S21",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S22",
+     "lane": "B",
+     "s": 2,
+     "note": "the stone alone"
+    },
+    {
+     "shot": "S23",
+     "lane": "A",
+     "s": 4,
+     "note": "“Four of the Seven.”"
+    },
+    {
+     "shot": "S24",
+     "lane": "C",
+     "s": 2
+    },
+    {
+     "shot": "S25",
+     "lane": "A",
+     "s": 2
+    },
+    {
+     "card": "Title · STONE OF MATTER — DARKNESS",
+     "s": 2
+    }
+   ]
+  },
+  {
+   "id": "mv",
+   "kind": "Music video",
+   "name": "Every Light Casts a Shadow",
+   "target_s": 210,
+   "why": "Cut to the main title song (soundtrack, song 1) at about 84 BPM: spoken verses over the prologue and the forest, the chorus on the shadow and the wind, the bridge on the stones, the outro on the seed. Mostly C lanes; the same pools re-cut to “We Are One” or “Conqueror” for alternates.",
+   "cut": [
+    {
+     "shot": "S1",
+     "lane": "C",
+     "s": 8,
+     "part": "Intro · spoken"
+    },
+    {
+     "shot": "S2",
+     "lane": "B",
+     "s": 6
+    },
+    {
+     "shot": "S20",
+     "lane": "C",
+     "s": 6
+    },
+    {
+     "shot": "S3",
+     "lane": "B",
+     "s": 6,
+     "part": "Verse 1 · spoken"
+    },
+    {
+     "shot": "S4",
+     "lane": "C",
+     "s": 5
+    },
+    {
+     "shot": "S6",
+     "lane": "B",
+     "s": 5
+    },
+    {
+     "shot": "S7",
+     "lane": "C",
+     "s": 8
+    },
+    {
+     "shot": "S10",
+     "lane": "C",
+     "s": 6
+    },
+    {
+     "shot": "S8",
+     "lane": "C",
+     "s": 8,
+     "part": "Pre-chorus"
+    },
+    {
+     "shot": "S9",
+     "lane": "B",
+     "s": 7
+    },
+    {
+     "shot": "S11",
+     "lane": "C",
+     "s": 6,
+     "note": "his shadow on the wall",
+     "part": "Chorus"
+    },
+    {
+     "shot": "S5",
+     "lane": "C",
+     "s": 6
+    },
+    {
+     "shot": "S12",
+     "lane": "C",
+     "s": 5
+    },
+    {
+     "shot": "S16",
+     "lane": "C",
+     "s": 4
+    },
+    {
+     "shot": "S14",
+     "lane": "C",
+     "s": 4
+    },
+    {
+     "shot": "S15",
+     "lane": "B",
+     "s": 7,
+     "part": "Verse 2"
+    },
+    {
+     "shot": "S17",
+     "lane": "C",
+     "s": 5
+    },
+    {
+     "shot": "S18",
+     "lane": "C",
+     "s": 8,
+     "note": "the boy who swallowed fire"
+    },
+    {
+     "shot": "S19",
+     "lane": "C",
+     "s": 6
+    },
+    {
+     "shot": "S20",
+     "lane": "B",
+     "s": 4
+    },
+    {
+     "shot": "S21",
+     "lane": "C",
+     "s": 8,
+     "note": "“Water, Voids, Dominion…”",
+     "part": "Bridge"
+    },
+    {
+     "shot": "S22",
+     "lane": "C",
+     "s": 8
+    },
+    {
+     "shot": "S23",
+     "lane": "B",
+     "s": 8
+    },
+    {
+     "shot": "S13",
+     "lane": "C",
+     "s": 6
+    },
+    {
+     "shot": "S12",
+     "lane": "B",
+     "s": 6,
+     "part": "Final chorus"
+    },
+    {
+     "shot": "S5",
+     "lane": "B",
+     "s": 6
+    },
+    {
+     "shot": "S16",
+     "lane": "B",
+     "s": 5
+    },
+    {
+     "shot": "S11",
+     "lane": "B",
+     "s": 6
+    },
+    {
+     "shot": "S8",
+     "lane": "B",
+     "s": 7
+    },
+    {
+     "shot": "S24",
+     "lane": "C",
+     "s": 7,
+     "part": "Outro · spoken"
+    },
+    {
+     "shot": "S25",
+     "lane": "C",
+     "s": 7
+    },
+    {
+     "shot": "END",
+     "lane": "C",
+     "s": 8
+    },
+    {
+     "shot": "S12",
+     "lane": "C",
+     "s": 4,
+     "note": "“We are one.”"
+    },
+    {
+     "shot": "S6",
+     "lane": "C",
+     "s": 4,
+     "note": "the seed: it will return"
+    }
+   ]
+  },
+  {
+   "id": "short",
+   "kind": "Short film",
+   "name": "The trailer short",
+   "target_s": 300,
+   "auto": "shots",
+   "why": "The board as written: 26 shots in four movements on lane A, the Matter of Light form. Gate C freezes this one."
+  }
+ ],
+ "episode": {
+  "title": "The episode · 20 to 60 minutes",
+  "note": "The screenplay as written runs 36 pages, about 36 minutes at a page a minute. The short keeps 26 shots of it; the episode puts the scenes back in full. S7 is the one shot from outside the screenplay: the book's Chapter IV, the bridge from Episode 1.",
+  "scenes": [
+   {
+    "n": "1",
+    "scene": "Space — thousands of years ago",
+    "pages": "1",
+    "min": "1",
+    "shots": [
+     "S1"
+    ],
+    "adds": "The journey: Stardust as a blanket of light jumping through black holes, compressing dust into stars."
+   },
+   {
+    "n": "2",
+    "scene": "Proleum — the abyss of four waterfalls",
+    "pages": "1–8",
+    "min": "7",
+    "shots": [
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "S6"
+    ],
+    "adds": "The whole exchange with Lucille: the spirit-woman face, his threat to take bodies, spirits and minds, her answer that some will fight for the light; the land healing."
+   },
+   {
+    "n": "3",
+    "scene": "High Forest — the lantern path",
+    "pages": "8–14",
+    "min": "6",
+    "shots": [
+     "S8"
+    ],
+    "adds": "The calendar talk, the race, Chalice Amber with Maison and Leilani, the Sector Guard Trials, Master Bozolf's class against Master Kodin's, “Delkai spawn”."
+   },
+   {
+    "n": "4",
+    "scene": "Wind Caves — the concert",
+    "pages": "14–22",
+    "min": "8",
+    "shots": [
+     "S9",
+     "S10",
+     "S11",
+     "S12",
+     "S13"
+    ],
+    "adds": "Viola with Tsusani and Tank, Ammon's stage fright and the whole spoken song, the legend of the wind and what each friend heard (Krystal: “Trust your true friends”), Sadie."
+   },
+   {
+    "n": "5",
+    "scene": "Lake of Light",
+    "pages": "22–23",
+    "min": "1.5",
+    "shots": [
+     "S14",
+     "S15",
+     "S16"
+    ],
+    "adds": "The lake's life, Viola and Tsusani, Elizabeth waiting, the brother's date."
+   },
+   {
+    "n": "6",
+    "scene": "The stage — Vothek the Storyteller",
+    "pages": "23–24",
+    "min": "0.5",
+    "shots": [
+     "S17"
+    ],
+    "adds": "His full introduction: decide for yourself what you believe."
+   },
+   {
+    "n": "7",
+    "scene": "The old lands — the Angel Killer (flashback)",
+    "pages": "24–27",
+    "min": "3",
+    "shots": [
+     "S18"
+    ],
+    "adds": "The whole legend told over the flashback, and the visitor's opposing account."
+   },
+   {
+    "n": "8–11",
+    "scene": "The Leviticum — doors, corridor, movie night",
+    "pages": "27–29",
+    "min": "2",
+    "shots": [
+     "S19",
+     "S20"
+    ],
+    "adds": "The inscription read aloud, Jonah's glisc projector and the foam beds, the movie itself."
+   },
+   {
+    "n": "12",
+    "scene": "The dream — Ilan",
+    "pages": "29–32",
+    "min": "3",
+    "shots": [
+     "S21",
+     "S22"
+    ],
+    "adds": "The Panther's speech, Matteo's question about his family, Venetia's promise, the stone fighting back."
+   },
+   {
+    "n": "13",
+    "scene": "The Outer Darkness",
+    "pages": "32–34",
+    "min": "2",
+    "shots": [
+     "S23"
+    ],
+    "adds": "Morningstar's full speech: Ethera under the bedrock, Drowning and the flood, the Stone of Matter pursued, “seek out Matter, Gravity and Rest”."
+   },
+   {
+    "n": "14–15",
+    "scene": "The Leviticum — the seventh floor, the lantern",
+    "pages": "34–36",
+    "min": "2",
+    "shots": [
+     "S24",
+     "S25",
+     "END"
+    ],
+    "adds": "The whole conversation with Master Lyon: Ammon's father Erik, the dream that walked him there, “tomorrow is promised to no one”."
+   }
+  ],
+  "grow": "To land near 24 minutes, keep the High Forest walk and the Angel Killer flashback at their short-film beats. To reach 45–60, open on the book's present-day bridge (Chapters IV–VI: Cloud Mountain, Cephas Island, the Master Levitian) as a cold open and give the Outer Darkness an act of its own."
+ },
+ "bridges": {
+  "note": "A transition belongs to the episode it opens and is listed by the episode it closes. In the short it is a 10–20 second tag; in the 20–60 minute episode it grows into the cold open.",
+  "in": {
+   "title": "From SoM V1 · Matter of Light",
+   "status": "From the Episode 1 production screenplay and the delivered film. The last pages of the Episode 1 source screenplay are not in the codex yet; with them, this bridge is rewritten from the source.",
+   "links": [
+    {
+     "from": "Episode 1 ends on Caedom alone at the courtyard and a crane up to a single point of light",
+     "to": "S1 lifts that point of light off the same courtyard, on the same two element ids"
+    },
+    {
+     "from": "The dark cloud low over the water: “It has been let in.”",
+     "to": "S3's cloud of darkness over the abyss, and S6's one black seed"
+    },
+    {
+     "from": "The delivered film's coda: the mountain and the crater lake",
+     "to": "S7, Cloud Mountain ten years later, with its person in it"
+    }
+   ]
+  },
+  "out": {
+   "title": "To Episode 3",
+   "status": "Proposed. Both threads are in the Episode 2 screenplay; the tag shot is not on the board yet.",
+   "links": [
+    {
+     "from": "Master Lyon: “You have quite a significant day approaching.”",
+     "to": "the Trials of Guardians: Episode 3 opens on the day"
+    },
+    {
+     "from": "Morningstar: Drowning “is already in pursuit of… the very Stone of Matter”",
+     "to": "a 10–15s tag after the end card: water rising in the dark, somewhere"
+    }
+   ]
+  }
+ },
+ "themes": {
+  "title": "Soundtrack · six songs for Suno",
+  "note": "Six themes from the episode, each written as lyrics with Suno section tags and a style line to paste beside them. Every song names the tempo and shape of track it fits, so it can be laid over a track you already have. Lines in quotation marks in the source notes are the screenplay's own; the lyrics are new. Trim a section rather than squeeze one: Suno follows the tags.",
+  "songs": [
+   {
+    "id": "light",
+    "title": "Every Light Casts a Shadow",
+    "use": "Main title · music video · cue B",
+    "theme": "Light makes its own shadow, and the shadow can outgrow what made it.",
+    "from": "Ammon's spoken song at the Wind Caves: “Every light casts a shadow. This shadow, birthed of light, may be the one that finds itself larger than its creator.”",
+    "fit": "78–92 BPM. Starts sparse on acoustic or piano, spoken verses, the sung chorus lifts at about 1:05, a darker bridge, the biggest chorus last. The music-video form above is cut to this shape at 3:30.",
+    "style": "cinematic folk rock, fingerpicked acoustic intro, spoken-word verses, soaring choir chorus, building drums, minor to major lift, 84 bpm",
+    "lyrics": "[Intro]\n[Spoken Word]\nIntelligence is light.\nAnd every light casts a shadow.\n\n[Verse 1]\n[Spoken Word]\nBefore the world there was a word,\na promise spoken into the dark;\nevery glory, great or small,\nwas burning from that single spark.\nBut set a hard heart in the light\nand watch the shape it throws:\na shadow born of brightness,\nand how the shadow grows.\n\n[Pre-Chorus]\nSo lift the lantern higher,\ndon't let it fall behind you...\n\n[Chorus]\nEvery light casts a shadow,\nevery shadow knows your name;\nthe dark was born of brightness,\nand it wants the light again.\nHold on to what you're made of,\nthe sun, the moon, the stars;\nevery light casts a shadow,\nso remember who you are.\n\n[Verse 2]\nThere's a black seed in the new green ground\nwhere the wave of light came through;\nthere's a story of a boy who swallowed fire\nand the angels that it slew.\nThe shadow learns to talk like you,\nit says you're meant for more,\nbut the voice that calls you from the storm\nis a voice that's lied before.\n\n[Bridge]\nWater, Voids, Dominion,\nand Energy makes four;\nthe storm is calling names now,\nand it's coming back for more.\nDon't answer when it calls you,\ndon't reach out for its hand;\na shadow needs a light to live,\nalone it cannot stand.\n\n[Final Chorus]\nEvery light casts a shadow,\nevery shadow knows your name;\nthe dark was born of brightness,\nand it wants the light again.\nHold on to what you're made of,\nthe sun, the moon, the stars;\nevery light casts a shadow,\nso remember who you are.\n\n[Outro]\n[Spoken Word]\nCreation began with a single word.\nWe are one."
+   },
+   {
+    "id": "one",
+    "title": "We Are One",
+    "use": "Wind Caves · spot :60 · crowd anthem",
+    "theme": "Creation began with one word, and it takes every voice together to say it.",
+    "from": "“Creation began with a single word… It takes all coming together as one.” The wind answers on the last chord (S12).",
+    "fit": "96–112 BPM. A stomp-and-clap or driving acoustic groove, a call-and-response chorus a crowd can sing. Put the wind on the last chord.",
+    "style": "uplifting folk anthem, driving acoustic guitar, stomps and claps, gang vocals, call and response chorus, big final chord, 104 bpm",
+    "lyrics": "[Intro]\n(hey) (hey)\n\n[Verse 1]\nLanterns in the cave mouth, faces in the glow,\nhands that wouldn't settle till the first chord let them go;\nI looked for you in all of them, I found you in the crowd,\nand every word I'd swallowed started coming out loud.\n\n[Pre-Chorus]\nThere's a word that no one voice can say,\nit takes all of us to say it.\n\n[Chorus]\nWe are one (we are one),\none word before the world;\nwe are one (we are one),\nevery voice and every heart that heard.\nSing it to the rafters, sing it to the stone,\nnobody says it on their own:\nwe are one.\n\n[Verse 2]\nThey say the wind will call you, and it calls to everyone,\nbut what it says is only yours, and only when it's done;\nmine said hold your fire, yours said trust your true friends,\nand every word it ever spoke is where the song begins.\n\n[Pre-Chorus]\nThere's a word that no one voice can say,\nit takes all of us to say it.\n\n[Chorus]\nWe are one (we are one),\none word before the world;\nwe are one (we are one),\nevery voice and every heart that heard.\n\n[Bridge]\nAnd the flames all bowed together\nwhen the last chord hit the air,\nand the wind came through the cave mouth\nlike it had always been there.\n\n[Final Chorus]\nWe are one (we are one),\none word before the world;\nwe are one (we are one),\nevery voice and every heart that heard.\nSing it to the rafters, sing it to the stone,\nnobody says it on their own:\nwe are one.\n\n[Outro]\n[Spoken Word]\nHe is beginning to understand."
+   },
+   {
+    "id": "seeds",
+    "title": "Seeds of Darkness",
+    "use": "Prologue · cue A · spot :30 cold open",
+    "theme": "The light wins the first war and leaves one seed behind.",
+    "from": "Stardust and Lucille at the abyss of four waterfalls: “Nothing is yours. Nothing will be yours.” “Yet seeds of darkness remain on the planet. It will return.”",
+    "fit": "60–76 BPM. An epic trailer build of drones and choir, a duet of a clear high voice and a low whispered one, one huge hit where the light breaks (S5), then quiet.",
+    "style": "dark epic orchestral, cinematic choir, deep drones, ethereal female lead vocal, whispered low male vocal, massive trailer hits, 68 bpm",
+    "lyrics": "[Intro]\n[Choir]\nAhh...\n\n[Verse 1]\n[Male Vocal, whispered]\nWhy have you come\nto the depths of my power,\nto the heart of my land\nin my hour?\n\n[Verse 2]\n[Female Vocal]\nNothing is yours,\nand nothing will be;\nyou chose to have nothing\nfor eternity.\n\n[Pre-Chorus]\n[Male Vocal]\nThey will come in their blindness,\nwe will take them one by one.\n[Female Vocal]\nSome will follow you willing,\nbut some will fight for the sun.\n\n[Chorus]\n[Choir]\nSeeds of darkness in the new green ground,\nwhat the light has buried will come back around;\nProleum, magnificent, what a world you'll be,\nbut the seed is sleeping where no light can see.\nIt will return. It will return.\n\n[Instrumental Break]\n\n[Bridge]\n[Female Vocal]\nLight like an ocean over the edge,\npouring through the valleys, over every ledge;\nthe cloud falls in, the colour comes home,\nand I leave you, little world, to grow on your own.\n\n[Final Chorus]\n[Choir]\nSeeds of darkness in the new green ground,\nwhat the light has buried will come back around;\nProleum, magnificent, what a world you'll be,\nbut the seed is sleeping where no light can see.\n\n[Outro]\n[Whispered]\nIt will return."
+   },
+   {
+    "id": "worlds",
+    "title": "Little Worlds",
+    "use": "Lake of Light · love theme · second single",
+    "theme": "Every person is a world with its own sun, moon and stars.",
+    "from": "The gold inscription over the Leviticum doors: “Remember who you are, within you live true potential. You are all little worlds, within you the Sun, the Moon, the Stars.” The Lake of Light (S14–S16).",
+    "fit": "84–100 BPM. Dreamy and buoyant, shimmer and pads, a duet or a lead with soft harmonies; the underwater kiss sits in a hushed breakdown.",
+    "style": "dreamy indie pop, shimmering synths, soft electric guitar, airy duet vocals, warm bass, gentle beat, hushed breakdown, 92 bpm",
+    "lyrics": "[Verse 1]\nFireflies are dancing where the old roots meet the shore,\nyou pulled me through the treeline and I didn't ask what for;\nthe water's full of starlight, every insect is a spark,\nyou laughed and took my hand and pulled me further from the dark.\n\n[Pre-Chorus]\nThey wrote it over the door in gold;\nI never knew what it meant till now.\n\n[Chorus]\nRemember who you are,\nthere's a light inside you, a whole world inside you;\nwe're little worlds\nwith the sun, the moon, the stars;\nremember who you are.\n\n[Verse 2]\nElizabeth is waiting and the music's on the stone,\nthe storyteller's climbing up, we've got a minute on our own;\nyou count to three and pull me down where every sound goes blue,\nthe quietest place I've ever been is underwater next to you.\n\n[Pre-Chorus]\nThey wrote it over the door in gold;\nI never knew what it meant till now.\n\n[Chorus]\nRemember who you are,\nthere's a light inside you, a whole world inside you;\nwe're little worlds\nwith the sun, the moon, the stars;\nremember who you are.\n\n[Breakdown]\n(hushed)\nUnder the water the world goes quiet,\nunder the water it's only you.\n\n[Final Chorus]\nRemember who you are,\nthere's a light inside you, a whole world inside you;\nwe're little worlds, spinning far,\nwith the sun, the moon, the stars;\nremember who you are."
+   },
+   {
+    "id": "conqueror",
+    "title": "Conqueror",
+    "use": "The dream and the Outer Darkness · cue C · villain theme",
+    "theme": "A boy is promised everything and gives up his name for it.",
+    "from": "“You have been chosen by Lord Morning… You are to wield the new stone.” “Matteo is dead. I am now Conqueror.” “Four of the Seven… Seek out the Stones of Matter, Gravity, and Rest.”",
+    "fit": "Heavy half-time, 130–150 BPM felt at 65–75, distorted low end and a chant hook. Episode 1's metal cue is the template; the hook lands on “Four of the Seven” (S23).",
+    "style": "dark cinematic metal, heavy half-time riffs, industrial percussion, choir chants, menacing male vocal, storm sound design, 140 bpm",
+    "lyrics": "[Intro]\n[Spoken Word, low]\nCome to me, child.\nAccept new power.\nYou are the one.\n\n[Verse 1]\nStorm on the island, rain in my eyes,\na woman in the shadows in a panther's disguise;\nshe said they're all liars, my family, my friends,\nthe storm's coming in and the storm makes amends.\n\n[Pre-Chorus]\nViolet ate the emerald, the sky went black;\nthe heart of my island, I'm not giving it back.\n\n[Chorus]\nMatteo is dead!\nI am Conqueror!\nI swallowed the stone and I'm asking for more;\nMatteo is dead,\nI don't hear him anymore;\nI am Conqueror.\n\n[Verse 2]\n[Chant]\nFour of the seven:\nWater, Voids, Dominion, Energy;\nfour of the seven,\nand the rest will come to me.\nMatter, Gravity and Rest,\nseek them out, don't slow, don't stop;\nwe kindled once the world in fire,\nwe'll take it from the top.\n\n[Bridge]\n[Female Vocal, whispered]\nYou'll see your family again,\nif you come with me.\n[Male Vocal]\nI'm doing this for them,\neven if it hurts them at first.\n\n[Final Chorus]\nMatteo is dead!\nI am Conqueror!\nI swallowed the stone and I'm asking for more;\nMatteo is dead,\nI don't hear him anymore;\nI am Conqueror.\n\n[Outro]\n[Chant]\nDo not slow.\nDo not be diminished.\nDo not let us down."
+   },
+   {
+    "id": "follow",
+    "title": "Before They Follow",
+    "use": "The ending · end credits · bridge to Episode 3",
+    "theme": "A warning in the dark, and an old man's lantern that says go anyway.",
+    "from": "The seventh floor: “Leave this place. Leave. Before they follow.” Master Lyon: “Stay true to what you believe is right… where you need to go will become where you want to go.” “Tomorrow is promised to no one.”",
+    "fit": "66–80 BPM. A haunting piano or music-box opening, a whispered refrain, strings that warm into hope by the last chorus; it ends unresolved for the next episode.",
+    "style": "haunting piano ballad, music box, whispered refrain, warm cello and strings build, intimate male vocal, hopeful final chorus, 72 bpm",
+    "lyrics": "[Intro]\n[Whispered]\nLeave this place.\nLeave.\nBefore they follow.\n\n[Verse 1]\nI pressed the button for the ground floor and the car began to rise,\nonly the one was glowing, but the seventh floor arrived;\nthe glass doors opened on the dark, and something in the hall\nhad eyes that didn't blink at all.\n\n[Pre-Chorus]\n[Whispered]\nLeave this place...\n\n[Chorus]\nBefore they follow,\nbefore they find the door,\nI hear the warning in the hollow\nand I don't know what it's for;\nbut there's a lantern on the third floor\nand an old man who knows my name;\nbefore they follow,\nI'll be ready all the same.\n\n[Verse 2]\nHe said, I walked here in a dream, and so I came;\nhe said, your father used to do the same;\nhe said tomorrow's promised to no one,\nso when you feel the prompting, go.\n\n[Bridge]\nStay true to what you know is right,\nand every road will lead you home;\nwhere you need to go\nbecomes where you want to go.\n\n[Final Chorus]\nBefore they follow,\nbefore they find the door,\nI hear the warning in the hollow\nand I know now what it's for;\nthere's a lantern on the third floor\nand an old man who knows my name;\nbefore they follow,\nI'll be ready all the same.\n\n[Outro]\n[Whispered]\nA significant day is coming.\nAre you prepared?"
+   }
+  ]
+ }
+}
