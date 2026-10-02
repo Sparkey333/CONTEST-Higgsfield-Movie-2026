@@ -18,7 +18,7 @@
   "video_model": "cinematic_studio_video_4_0",
   "image_model": "nano_banana_2",
   "audio_model": "seed_audio",
-  "_": "project_id and workspace_id are what list_project_assets takes; placements.tsv is its answer, and ingest.py admits by it first. The folders map names the scene subfolders under 'Matter of Light'. A second project with the same name (7b209962…) is a copy made on Sep 16 during submission.",
+  "_": "project_id and workspace_id are what list_project_assets takes; placements.tsv is its answer, and ingest.py admits by it first. The folders map names the scene subfolders under 'Matter of Light'. A second project with the same name (7b209962\u2026) is a copy made on Sep 16 during submission.",
   "public_url": "https://higgsfield.ai/@drawingsquid1334/projects/matter-of-light",
   "folders": {
    "root": "fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
@@ -119,7 +119,7 @@
     "3a437add",
     "48c4b641"
    ],
-   "why": "The only S1 on the current courtyard element, and it is 30s — it carries S1 AND S2 in one crane, which is exactly what the bible asks for. Trim, do not cut.",
+   "why": "The only S1 on the current courtyard element, and it is 30s \u2014 it carries S1 AND S2 in one crane, which is exactly what the bible asks for. Trim, do not cut.",
    "regenerate": false,
    "notes": ""
   },
@@ -137,14 +137,14 @@
     "b9c5d61d",
     "acec24ac"
    ],
-   "why": "Four takes from the Sep 8 cheap pass on seedance_2_5, continuing S1's move through the courtyard; the favourited one is the pick. In the final cut the 30s S1 crane carried this beat, so these are the alternates to it — kept because they are the only takes of the courtyard as its own shot.",
+   "why": "Four takes from the Sep 8 cheap pass on seedance_2_5, continuing S1's move through the courtyard; the favourited one is the pick. In the final cut the 30s S1 crane carried this beat, so these are the alternates to it \u2014 kept because they are the only takes of the courtyard as its own shot.",
    "regenerate": false,
    "notes": ""
   },
   {
    "id": "S3",
    "act": "I",
-   "title": "“There must be risk”",
+   "title": "\u201cThere must be risk\u201d",
    "duration_s": 14,
    "audio": true,
    "prompt": "",
@@ -160,7 +160,7 @@
   {
    "id": "S4",
    "act": "I",
-   "title": "“He's your brother”",
+   "title": "\u201cHe's your brother\u201d",
    "duration_s": 14,
    "audio": true,
    "prompt": "",
@@ -178,7 +178,7 @@
   {
    "id": "S5",
    "act": "I",
-   "title": "“Tomorrow” — the tear freezes",
+   "title": "\u201cTomorrow\u201d \u2014 the tear freezes",
    "duration_s": 18,
    "audio": true,
    "prompt": "",
@@ -191,7 +191,7 @@
    ],
    "why": "All four takes carry the MORTAL Caedom sheet. He is caedom-ascended everywhere else. This is the one identity break a jury will see in the first minute.",
    "regenerate": true,
-   "notes": "Regenerate on @[caedom-ascended](b86fb7ed-…) — the corrected prompt is in recreate-prompts.md."
+   "notes": "Regenerate on @[caedom-ascended](b86fb7ed-\u2026) \u2014 the corrected prompt is in recreate-prompts.md."
   },
   {
    "id": "NEW-3",
@@ -199,20 +199,20 @@
    "title": "Transition A",
    "duration_s": 8,
    "audio": false,
-   "prompt": "Macro, locked, no camera move. A single faceted bead of clear ice fills the frame (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)), lying on a floor of pure light. It rotates very slowly until one facet squares up to camera and fills the whole frame. Inside that facet the interior is a moving, living blue.\n\nHold. Then, without a cut and without the frame ever changing shape or colour, the blue inside the facet BECOMES open ocean seen from above — the same blue, the same movement, the same brightness, now water to the horizon under a bruised violet sky. The caustics inside the ice become sunlight on waves. Nothing else changes. The match is on shape and colour alone and it must be seamless enough that a viewer cannot name the moment it happened.\n\n21:9, photoreal, anamorphic, extreme contrast. Warm gold on the ice at the start, fully desaturated storm ocean by the end. No sound.\n\nREFERENCES — attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca).",
+   "prompt": "Macro, locked, no camera move. A single faceted bead of clear ice fills the frame (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)), lying on a floor of pure light. It rotates very slowly until one facet squares up to camera and fills the whole frame. Inside that facet the interior is a moving, living blue.\n\nHold. Then, without a cut and without the frame ever changing shape or colour, the blue inside the facet BECOMES open ocean seen from above \u2014 the same blue, the same movement, the same brightness, now water to the horizon under a bruised violet sky. The caustics inside the ice become sunlight on waves. Nothing else changes. The match is on shape and colour alone and it must be seamless enough that a viewer cannot name the moment it happened.\n\n21:9, photoreal, anamorphic, extreme contrast. Warm gold on the ice at the start, fully desaturated storm ocean by the end. No sound.\n\nREFERENCES \u2014 attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca).",
    "status": "shot",
    "pick": "01b9e343-8f84-4565-9afb-bc3f2b49d68d",
    "alternates": [
     "1abebd64-3d95-4ac7-a6b2-9ebf0f336dc1"
    ],
-   "why": "Generated Sep 15 from the S4 take as a video reference — the facet-to-ocean match cut on its own. Favourited; the other take is the alternate.",
+   "why": "Generated Sep 15 from the S4 take as a video reference \u2014 the facet-to-ocean match cut on its own. Favourited; the other take is the alternate.",
    "regenerate": false,
-   "notes": "Redundant — the S6 pick already opens on this match cut."
+   "notes": "Redundant \u2014 the S6 pick already opens on this match cut."
   },
   {
    "id": "S6",
    "act": "II",
-   "title": "108 years later — the run",
+   "title": "108 years later \u2014 the run",
    "duration_s": 14,
    "audio": true,
    "prompt": "",
@@ -221,7 +221,7 @@
    "alternates": [
     "a89f4676"
    ],
-   "why": "Opens ON the tear-to-ocean match cut and carries the '108 years later' card. That means NEW-3 is redundant — skip it.",
+   "why": "Opens ON the tear-to-ocean match cut and carries the '108 years later' card. That means NEW-3 is redundant \u2014 skip it.",
    "regenerate": false,
    "notes": ""
   },
@@ -287,7 +287,7 @@
     "4abb698e",
     "b34943d9"
    ],
-   "why": "The water-line pair uses the real leviathan element. The other pair attached prop_dragon_v1_dead — a different creature. Do not use them.",
+   "why": "The water-line pair uses the real leviathan element. The other pair attached prop_dragon_v1_dead \u2014 a different creature. Do not use them.",
    "regenerate": false,
    "notes": ""
   },
@@ -303,7 +303,7 @@
    "alternates": [
     "95326675"
    ],
-   "why": "Lateral track along the flank with the iron spears. 8s — short for the beat; the bible wants 10.",
+   "why": "Lateral track along the flank with the iron spears. 8s \u2014 short for the beat; the bible wants 10.",
    "regenerate": false,
    "notes": ""
   },
@@ -321,7 +321,7 @@
     "f0a995ac",
     "5caa2e9f"
    ],
-   "why": "Pull off the hide, slow-motion, the lightning connects. The 'upgraded form' blends scored the weakest hook of anything analysed (28) — keep them as texture, not as the shot.",
+   "why": "Pull off the hide, slow-motion, the lightning connects. The 'upgraded form' blends scored the weakest hook of anything analysed (28) \u2014 keep them as texture, not as the shot.",
    "regenerate": false,
    "notes": ""
   },
@@ -339,7 +339,7 @@
     "4779332a",
     "820907db"
    ],
-   "why": "Four takes of the orbital segmenting mind. Pick on your screen — they are the same prompt. NEW-1 is the intimate version of this beat and still has to be made.",
+   "why": "Four takes of the orbital segmenting mind. Pick on your screen \u2014 they are the same prompt. NEW-1 is the intimate version of this beat and still has to be made.",
    "regenerate": false,
    "notes": ""
   },
@@ -349,7 +349,7 @@
    "title": "The mind divides",
    "duration_s": 16,
    "audio": false,
-   "prompt": "Extreme slow motion, camera held wide and low over a storm ocean, no cuts and no camera move at all. ORIANE (@[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1)) hangs in the air at the centre of frame, arms loose at her sides, barefoot, head tilted slightly back. A ring of sixteen translucent warping lenses opens at arm's reach around her and immediately doubles — thirty-two, sixty-four, then more than two hundred — until she is a silhouette seen through layered refraction (@[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072)). Her eyes are closed. Her face is not strained: it is concentration and open joy. Her lips move, forming words, and no sound comes out.\n\nBehind and around her, spread across miles of black water, the enormous armoured leviathans (@[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76)) come apart in total silence. Lightning runs along every seam in the dead-coral plating (@[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473)) and the flesh lifts cleanly away from the bone beneath in long sheets, unwinding outward like paper in wind, leaving pale skeletons standing upright in the air for a full second before they too disperse. No blood. No gore. No fire, no explosion, no shockwave — the separation is clean and slow and looks like something being undone rather than destroyed.\n\nThe whole frame is at peace. Nothing accelerates. Hold to the last frame. 21:9, near-black storm ocean and sky with lightning and the pale unwinding sheets as the only bright shapes in frame, extreme contrast, photoreal, anamorphic. No score, no effect, no sound at all.\n\nREFERENCES — attach before generating: @[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1); @[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072); @[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76); @[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[fx-hollow](89a74d62-615e-4e52-b745-8bb8ceab1628).",
+   "prompt": "Extreme slow motion, camera held wide and low over a storm ocean, no cuts and no camera move at all. ORIANE (@[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1)) hangs in the air at the centre of frame, arms loose at her sides, barefoot, head tilted slightly back. A ring of sixteen translucent warping lenses opens at arm's reach around her and immediately doubles \u2014 thirty-two, sixty-four, then more than two hundred \u2014 until she is a silhouette seen through layered refraction (@[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072)). Her eyes are closed. Her face is not strained: it is concentration and open joy. Her lips move, forming words, and no sound comes out.\n\nBehind and around her, spread across miles of black water, the enormous armoured leviathans (@[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76)) come apart in total silence. Lightning runs along every seam in the dead-coral plating (@[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473)) and the flesh lifts cleanly away from the bone beneath in long sheets, unwinding outward like paper in wind, leaving pale skeletons standing upright in the air for a full second before they too disperse. No blood. No gore. No fire, no explosion, no shockwave \u2014 the separation is clean and slow and looks like something being undone rather than destroyed.\n\nThe whole frame is at peace. Nothing accelerates. Hold to the last frame. 21:9, near-black storm ocean and sky with lightning and the pale unwinding sheets as the only bright shapes in frame, extreme contrast, photoreal, anamorphic. No score, no effect, no sound at all.\n\nREFERENCES \u2014 attach before generating: @[char_oriane_v3_battle](30b9bf89-3fcf-4544-b110-a74aeccbb7c1); @[fx-segmented-mind](99737c53-c69a-43a8-af60-8a29fcffa072); @[prop_leviathan_v1](b353d96f-721a-4ea9-98e4-6adea64b4e76); @[leviathan-plating](cb3d6271-76d8-4a73-90c5-5165a4bde473); @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632); @[fx-hollow](89a74d62-615e-4e52-b745-8bb8ceab1628).",
    "status": "shot",
    "pick": null,
    "alternates": [],
@@ -367,7 +367,7 @@
    "status": "shot",
    "pick": "c2e2b8db",
    "alternates": [],
-   "why": "One take only. The Stone leaving her is the hinge of the whole film — it deserves a second take before you lock.",
+   "why": "One take only. The Stone leaving her is the hinge of the whole film \u2014 it deserves a second take before you lock.",
    "regenerate": true,
    "notes": "A second take of the same prompt, 1080p. Nothing to change, just coverage."
   },
@@ -377,7 +377,7 @@
    "title": "Transition B",
    "duration_s": 12,
    "audio": true,
-   "prompt": "Extreme wide, camera high above the curve of a blue-green world (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)), looking down and along the horizon line. A single green-white streak crosses the frame left to right, very fast, very small, trailing a thin line of green light behind it (@[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30)). It is the only moving thing and the only warm colour in a cold frame.\n\nThe camera descends with it — through the exosphere, through cloud, the light going from black to violet to a deep warm orange — and the streak stays exactly the same size in frame the whole way down. It crosses in front of a low setting sun and, as the sky fills with golden hour, the streak thins, fades, and is gone.\n\nThe last two seconds are an empty tropical sunset sky over flat calm water, with iridescent sand just entering the bottom of frame (@[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776)). Nobody in frame. Nothing explained.\n\n21:9, photoreal, anamorphic. Cold and clinical at the top, warm and peaceful at the bottom, one continuous grade between them. No cuts. Sound falls away to wind.\n\nREFERENCES — attach before generating: @[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8); @[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776); @[nacre-beach](db228a3f-576d-4fd0-91c1-1f756d85a4fd).",
+   "prompt": "Extreme wide, camera high above the curve of a blue-green world (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)), looking down and along the horizon line. A single green-white streak crosses the frame left to right, very fast, very small, trailing a thin line of green light behind it (@[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30)). It is the only moving thing and the only warm colour in a cold frame.\n\nThe camera descends with it \u2014 through the exosphere, through cloud, the light going from black to violet to a deep warm orange \u2014 and the streak stays exactly the same size in frame the whole way down. It crosses in front of a low setting sun and, as the sky fills with golden hour, the streak thins, fades, and is gone.\n\nThe last two seconds are an empty tropical sunset sky over flat calm water, with iridescent sand just entering the bottom of frame (@[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776)). Nobody in frame. Nothing explained.\n\n21:9, photoreal, anamorphic. Cold and clinical at the top, warm and peaceful at the bottom, one continuous grade between them. No cuts. Sound falls away to wind.\n\nREFERENCES \u2014 attach before generating: @[founding-stone](45c4d884-b89b-4694-af1f-e06eef545e30); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8); @[plate-island](527aca60-04e0-4f86-8f4d-8c1f46c0f776); @[nacre-beach](db228a3f-576d-4fd0-91c1-1f756d85a4fd).",
    "status": "shot",
    "pick": null,
    "alternates": [],
@@ -388,7 +388,7 @@
   {
    "id": "S15",
    "act": "III",
-   "title": "Nacre Beach — the same sun",
+   "title": "Nacre Beach \u2014 the same sun",
    "duration_s": 12,
    "audio": true,
    "prompt": "",
@@ -429,7 +429,7 @@
    "alternates": [
     "256dfbfe"
    ],
-   "why": "Locked wide, the boys drop flat, the ships open fire. The two takes score 48 and 49 — a tie; pick on your screen. The stillness is the point and the Predictor does not reward it.",
+   "why": "Locked wide, the boys drop flat, the ships open fire. The two takes score 48 and 49 \u2014 a tie; pick on your screen. The stillness is the point and the Predictor does not reward it.",
    "regenerate": false,
    "notes": ""
   },
@@ -477,7 +477,7 @@
    "alternates": [
     "2ab9dfa7"
    ],
-   "why": "The scored take: 52 overall, hook 36, climbing to the last frame. 12s where the bible wants 14 unbroken — v4.0 goes to 16, so a 14s retake is cheap if you have the minute.",
+   "why": "The scored take: 52 overall, hook 36, climbing to the last frame. 12s where the bible wants 14 unbroken \u2014 v4.0 goes to 16, so a 14s retake is cheap if you have the minute.",
    "regenerate": false,
    "notes": ""
   },
@@ -487,7 +487,7 @@
    "title": "The mound",
    "duration_s": 16,
    "audio": true,
-   "prompt": "Locked-off wide from the shoreline, static, no camera shake at any point, low red sun directly behind the subject line. A hill-sized mass of compacted sand, rock and dead coral hangs above open water, turning slowly (@[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f)). It does not drift — it MOVES, tracking laterally across the frame with the deliberate, heavy, side-to-side undulation of a snake finding its line, the whole mass flexing as it goes. It crosses the sky above twelve tall wooden sailing ships (@[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746)) and stops directly over them. Everything hangs.\n\nThen it falls — not dropping, DRIVEN, straight down and far faster than gravity, the whole mass separating into a million particles on the way and punching the sea white. The ships are simply gone under it. Great waves crash outward toward camera and break at the bottom of frame.\n\nThe camera does not react, does not pan, does not shake, and does not cut. Everything is backlit and rimmed, thick dust and smoke, crimson and rust and deep shadow with no cool tone anywhere (@[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8)). No glow, no beams, no energy, no visible force, nobody gesturing. 21:9, photoreal, immense scale, anamorphic.\n\nREFERENCES — attach before generating: @[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f); @[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746); @[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8); @[keeper-kneel](d1faba5a-bf3e-49bf-886d-e632823f4836); @[iron-spears](e1f4220b-7d1f-45bf-a6d1-4358a09061aa).",
+   "prompt": "Locked-off wide from the shoreline, static, no camera shake at any point, low red sun directly behind the subject line. A hill-sized mass of compacted sand, rock and dead coral hangs above open water, turning slowly (@[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f)). It does not drift \u2014 it MOVES, tracking laterally across the frame with the deliberate, heavy, side-to-side undulation of a snake finding its line, the whole mass flexing as it goes. It crosses the sky above twelve tall wooden sailing ships (@[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746)) and stops directly over them. Everything hangs.\n\nThen it falls \u2014 not dropping, DRIVEN, straight down and far faster than gravity, the whole mass separating into a million particles on the way and punching the sea white. The ships are simply gone under it. Great waves crash outward toward camera and break at the bottom of frame.\n\nThe camera does not react, does not pan, does not shake, and does not cut. Everything is backlit and rimmed, thick dust and smoke, crimson and rust and deep shadow with no cool tone anywhere (@[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8)). No glow, no beams, no energy, no visible force, nobody gesturing. 21:9, photoreal, immense scale, anamorphic.\n\nREFERENCES \u2014 attach before generating: @[fx-floating-mountain](9ca46e73-1df6-41c3-8ace-7fd4c324850f); @[twelve-ships](c661f844-e65e-4eb0-b9ff-076b9edf1746); @[plate-bombardment](389aa7b5-5de8-495f-b899-b588e51c7ab8); @[keeper-kneel](d1faba5a-bf3e-49bf-886d-e632823f4836); @[iron-spears](e1f4220b-7d1f-45bf-a6d1-4358a09061aa).",
    "status": "shot",
    "pick": null,
    "alternates": [],
@@ -508,7 +508,7 @@
     "25660204",
     "906714ac"
    ],
-   "why": "Your newest render: 16s, chained on F32→F33, on twelve-ships. The 8s take scored 52 and is the fallback if the 16s drags.",
+   "why": "Your newest render: 16s, chained on F32\u2192F33, on twelve-ships. The 8s take scored 52 and is the fallback if the 16s drags.",
    "regenerate": false,
    "notes": ""
   },
@@ -526,7 +526,7 @@
     "6b0d0fac",
     "d35da4ef"
    ],
-   "why": "The two chroma takes are the two highest scores in the account — 59 and 58, hooks 43 and 41, the lowest mind-wandering of anything (DMN 0.45, 0.46). The three 'filthy' takes of the same shot sit at 49. One grade decision, ten points. The chroma take is the ending.",
+   "why": "The two chroma takes are the two highest scores in the account \u2014 59 and 58, hooks 43 and 41, the lowest mind-wandering of anything (DMN 0.45, 0.46). The three 'filthy' takes of the same shot sit at 49. One grade decision, ten points. The chroma take is the ending.",
    "regenerate": false,
    "notes": ""
   },
@@ -549,16 +549,16 @@
   {
    "id": "END",
    "act": "I",
-   "title": "End card — the tear goes out",
+   "title": "End card \u2014 the tear goes out",
    "duration_s": 12,
    "audio": false,
-   "prompt": "Macro, locked off, absolutely no camera movement for the full duration. A single faceted bead of clear ice (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)) rests at the centre of an immense floor of solidified light stretching to a horizonless edge (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca)). The bead is small in frame — one bright point, far more black than light. Inside it the interior still moves, a slow living blue.\n\nNothing enters. Nothing moves except the light.\n\nThe luminous floor begins to cool from the outer edges inward — not a cut, not a wipe, a fade in the material itself. The gold goes amber, then rust, then to nothing, the darkness closing in a slow even contraction toward the centre. The bead holds its own light after everything around it has gone, alone in black for a full two seconds, the blue still turning inside it.\n\nThen that goes too. The point contracts to a pinprick and is out. The last three seconds are total, absolute black — no grain, no glow, no residue, no haze, nothing in frame at all.\n\n21:9, photoreal, anamorphic, extreme contrast, warm gold cooling to pure black (@[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). Shallow depth of field on the bead. No people. No text, no letters, no writing, no numerals, no watermark, no logo, no titles, no captions anywhere in frame at any point. Silent.\n\nREFERENCES — attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93).",
+   "prompt": "Macro, locked off, absolutely no camera movement for the full duration. A single faceted bead of clear ice (@[frozen-tear](58952962-9241-4a19-aedc-031a2374e484)) rests at the centre of an immense floor of solidified light stretching to a horizonless edge (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca)). The bead is small in frame \u2014 one bright point, far more black than light. Inside it the interior still moves, a slow living blue.\n\nNothing enters. Nothing moves except the light.\n\nThe luminous floor begins to cool from the outer edges inward \u2014 not a cut, not a wipe, a fade in the material itself. The gold goes amber, then rust, then to nothing, the darkness closing in a slow even contraction toward the centre. The bead holds its own light after everything around it has gone, alone in black for a full two seconds, the blue still turning inside it.\n\nThen that goes too. The point contracts to a pinprick and is out. The last three seconds are total, absolute black \u2014 no grain, no glow, no residue, no haze, nothing in frame at all.\n\n21:9, photoreal, anamorphic, extreme contrast, warm gold cooling to pure black (@[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). Shallow depth of field on the bead. No people. No text, no letters, no writing, no numerals, no watermark, no logo, no titles, no captions anywhere in frame at any point. Silent.\n\nREFERENCES \u2014 attach before generating: @[frozen-tear](58952962-9241-4a19-aedc-031a2374e484); @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93).",
    "status": "unshot",
    "pick": null,
    "alternates": [],
    "why": "The plate under the credits: F01 run backwards, the film's first image returning as its last residue. Type goes on after, in the NLE.",
    "regenerate": false,
-   "notes": "Generate the plate with no text — say it three ways. Credits are laid over black after it, in the NLE. The two Sep 15 macro takes once filed here are Transition A (NEW-3); the end-card plate itself was never generated — the credits were laid in the NLE."
+   "notes": "Generate the plate with no text \u2014 say it three ways. Credits are laid over black after it, in the NLE. The two Sep 15 macro takes once filed here are Transition A (NEW-3); the end-card plate itself was never generated \u2014 the credits were laid in the NLE."
   }
  ],
  "board": {
@@ -575,43 +575,385 @@
   "note": "Submitted to the Higgsfield Global Film Festival; the project page is public."
  },
  "final": {
-  "_": "The delivered film, by upload id, so the next reader knows which file is which. Stage 8 (Learn) reads these.",
+  "_": "The delivered film, by upload id, so the next reader knows which file is which. Stage 8 (Learn) reads these. Only the Sep 16 MOV is the full film; both Sep 18 uploads are a 15-second leviathan clip, and the low and HQ exports live outside the platform.",
   "master": {
    "upload_id": "7b801917-51e4-4cfc-b62b-e8560f2b8f3e",
    "container": "MOV",
    "uploaded": "2026-09-16T18:32Z",
-   "in_project": "root · 2026-09-16T21:52Z",
+   "in_project": "root \u00b7 2026-09-16T21:52Z",
    "note": "Cut after the Sep 15 generations; the version filed in the project."
   },
   "exports": [
    {
     "upload_id": "bd28d7c2-25e7-4f5e-9e7f-90c5f710b131",
     "uploaded": "2026-09-18T18:55Z",
-    "note": "Sep 18 export — the low or the HQ"
+    "note": "Sep 18 upload \u00b7 a 15-second leviathan clip, not the film (analysis 0fd8b8c7 completed Sep 30: 8 scenes, 0:15)"
    },
    {
     "upload_id": "c0bdbe0e-44cb-478c-86a9-f1fc2845e6f5",
     "uploaded": "2026-09-18T19:28Z",
-    "note": "Sep 18 export — the low or the HQ"
+    "note": "Sep 18 upload \u00b7 a 15-second leviathan clip, not the film (analysis c4da8f1e: 8 scenes, 0:15)"
    }
   ],
   "analyses": [
    {
     "id": "b51a7a53-5bd0-4ba0-91fb-a2a7dd004c57",
     "on": "7b801917",
-    "started": "2026-09-29T22:16Z"
+    "started": "2026-09-29T22:16Z",
+    "status": "completed Sep 29 23:15 UTC \u00b7 108 scenes \u00b7 6:17"
    },
    {
     "id": "c4da8f1e-583f-48c1-9b74-b6f1d767464f",
     "on": "c0bdbe0e",
-    "started": "2026-09-29T22:17Z"
+    "started": "2026-09-29T22:17Z",
+    "status": "completed \u00b7 8 scenes \u00b7 0:15 \u00b7 not the film"
    },
    {
     "id": "0fd8b8c7-87f5-447b-bbff-d34410a19b9b",
     "on": "bd28d7c2",
-    "started": "2026-09-29T22:30Z"
+    "started": "2026-09-29T22:30Z",
+    "status": "completed Sep 30 00:08 UTC \u00b7 8 scenes \u00b7 0:15 \u00b7 not the film"
    }
   ],
   "read": "design/final-cut.data.json + design/final-cut.notes.json on the msx5dw branch; the Final Cut chapter of director-bible.html"
+ },
+ "series": {
+  "edition": "SoM V1",
+  "episode": 1,
+  "follows": null,
+  "next": "stone-of-matter-ep2-darkness (SoM V2, branch claude/anchorframe-ep2)",
+  "form": "festival short, to be expanded to a 20\u201360 minute episode",
+  "names": "Production names throughout; the crosswalk to the source stays local."
+ },
+ "forms_note": "Every form is cut from the picks on this board. The spots open peak-first on the highest-scored final seconds (S22 at 59, S23 at 54, S20 at 52), as tip 11 says. The delivered film itself (6:17, 108 scenes, three songs) is the music-video cut; its read is the Final Cut chapter of the Director's Bible.",
+ "forms": [
+  {
+   "id": "spot30",
+   "kind": "Commercial",
+   "name": "Spot :30",
+   "target_s": 30,
+   "why": "Peak first from the highest-scored pick, then one image per beat of the film, then the title.",
+   "cut": [
+    {
+     "shot": "S22",
+     "lane": "A",
+     "s": 3,
+     "note": "peak-first: the last seconds of the top-scored pick (59)"
+    },
+    {
+     "shot": "S1",
+     "lane": "A",
+     "s": 3,
+     "note": "rise out of the fire"
+    },
+    {
+     "shot": "S2",
+     "lane": "A",
+     "s": 2
+    },
+    {
+     "shot": "S5",
+     "lane": "A",
+     "s": 3,
+     "note": "\u201cTomorrow\u201d \u2014 the tear freezes"
+    },
+    {
+     "shot": "S6",
+     "lane": "A",
+     "s": 3,
+     "note": "108 years later"
+    },
+    {
+     "shot": "S10",
+     "lane": "A",
+     "s": 3,
+     "note": "the leviathan"
+    },
+    {
+     "shot": "S12",
+     "lane": "A",
+     "s": 2
+    },
+    {
+     "shot": "S13",
+     "lane": "A",
+     "s": 3,
+     "note": "the vortex"
+    },
+    {
+     "shot": "S14",
+     "lane": "A",
+     "s": 2,
+     "note": "the Stone leaves her"
+    },
+    {
+     "shot": "S20",
+     "lane": "A",
+     "s": 3,
+     "note": "the mountain (52)"
+    },
+    {
+     "card": "Title \u00b7 MATTER OF LIGHT",
+     "s": 3
+    }
+   ]
+  },
+  {
+   "id": "spot60",
+   "kind": "Commercial",
+   "name": "Spot :60",
+   "target_s": 60,
+   "why": "The :30 with the two lines that carry the film and the island's last act.",
+   "cut": [
+    {
+     "shot": "S22",
+     "lane": "A",
+     "s": 4,
+     "note": "peak-first (59)"
+    },
+    {
+     "shot": "S23",
+     "lane": "A",
+     "s": 3,
+     "note": "(54)"
+    },
+    {
+     "shot": "S1",
+     "lane": "A",
+     "s": 4
+    },
+    {
+     "shot": "S2",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S3",
+     "lane": "A",
+     "s": 4,
+     "note": "\u201cThere must be risk\u201d"
+    },
+    {
+     "shot": "S4",
+     "lane": "A",
+     "s": 3,
+     "note": "\u201cHe's your brother\u201d"
+    },
+    {
+     "shot": "S5",
+     "lane": "A",
+     "s": 4,
+     "note": "the tear freezes"
+    },
+    {
+     "shot": "NEW-3",
+     "lane": "A",
+     "s": 3,
+     "note": "the facet becomes the ocean"
+    },
+    {
+     "shot": "S6",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S7",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S9",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S10",
+     "lane": "A",
+     "s": 4
+    },
+    {
+     "shot": "S12",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S13",
+     "lane": "A",
+     "s": 4
+    },
+    {
+     "shot": "S14",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S20",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "shot": "S21",
+     "lane": "A",
+     "s": 3
+    },
+    {
+     "card": "Title \u00b7 MATTER OF LIGHT",
+     "s": 3
+    }
+   ]
+  },
+  {
+   "id": "short",
+   "kind": "Short film",
+   "name": "The board",
+   "target_s": 300,
+   "auto": "shots",
+   "why": "The 28-shot board at picture lock, in order. The delivered cut departs from it; the Final Cut chapter is the diff."
+  }
+ ],
+ "episode": {
+  "title": "The episode \u00b7 20 to 60 minutes",
+  "note": "The production screenplay runs 21 pages after its title page, about 21 minutes: the low end of the range. The short cut its 556 words of dialogue to 89; the episode puts them back. The shot column is approximate, because the film interleaves its three movements.",
+  "scenes": [
+   {
+    "n": "1",
+    "scene": "Machira from orbit",
+    "pages": "2",
+    "min": "0.5",
+    "shots": [],
+    "adds": "The opening narration over the world, seen whole."
+   },
+   {
+    "n": "2",
+    "scene": "The Sun \u2014 the courtyard of worlds",
+    "pages": "2\u20138",
+    "min": "6",
+    "shots": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "NEW-3"
+    ],
+    "adds": "The courtyard scene as written: the worlds in the flowerbeds and every line of the argument the short cut to three."
+   },
+   {
+    "n": "3",
+    "scene": "Open ocean \u2014 the storm",
+    "pages": "8\u201310",
+    "min": "2",
+    "shots": [
+     "S6",
+     "S7",
+     "S8"
+    ],
+    "adds": "108 years later: Oriane's run across the storm in full."
+   },
+   {
+    "n": "4",
+    "scene": "Nacre Beach \u2014 Cairn Island",
+    "pages": "10\u201312",
+    "min": "2",
+    "shots": [
+     "S15"
+    ],
+    "adds": "The brothers' first scene in full: the birthday, the iridescent sand, the run into the water."
+   },
+   {
+    "n": "5",
+    "scene": "The storm and the Bloom (intercut)",
+    "pages": "12\u201314",
+    "min": "2",
+    "shots": [
+     "S9",
+     "S10",
+     "S11",
+     "S16"
+    ],
+    "adds": "The Threadwright's pack, the leviathan raised, the reef and its clean edge."
+   },
+   {
+    "n": "6",
+    "scene": "Keeper's Isle and the storm (intercut)",
+    "pages": "14\u201316",
+    "min": "2",
+    "shots": [
+     "S12",
+     "S17",
+     "S18"
+    ],
+    "adds": "The brothers reach the Vigil Temple; the spear through Oriane's calf; she pushes on."
+   },
+   {
+    "n": "7",
+    "scene": "From orbit \u2014 the upper atmosphere",
+    "pages": "16",
+    "min": "1",
+    "shots": [
+     "S13",
+     "NEW-1",
+     "S14",
+     "NEW-4"
+    ],
+    "adds": "The eye that is not weather; the Founding Stone of Hollows released."
+   },
+   {
+    "n": "8",
+    "scene": "Keeper's Isle \u2014 beach at sunset",
+    "pages": "16\u201320",
+    "min": "4",
+    "shots": [
+     "S19",
+     "S20",
+     "NEW-2",
+     "S21"
+    ],
+    "adds": "The green streak, the Keepers, the mountain raised, the twelve ships, the garden replanting itself."
+   },
+   {
+    "n": "9",
+    "scene": "The beach grass",
+    "pages": "20",
+    "min": "1",
+    "shots": [
+     "S22"
+    ],
+    "adds": "Wren and Alder in full, and Alder's \u201cI want to move mountains.\u201d"
+   },
+   {
+    "n": "10",
+    "scene": "The Sun \u2014 the courtyard, again",
+    "pages": "20\u201322",
+    "min": "1",
+    "shots": [
+     "S23",
+     "END"
+    ],
+    "adds": "Caedom alone; \u201cThere must be risk if there is to be growth\u201d; the frozen tear."
+   }
+  ],
+  "grow": "To reach 30\u201345 minutes, restore what the festival abridgement skipped from the source (the codex has it, chapter by chapter), under the production names, and give each of the three movements a full act."
+ },
+ "bridges": {
+  "note": "A transition belongs to the episode it opens and is listed by the episode it closes.",
+  "out": {
+   "title": "To SoM V2 \u00b7 Darkness",
+   "status": "Boarded on claude/anchorframe-ep2. The last pages of the Episode 1 source screenplay will sharpen it.",
+   "links": [
+    {
+     "from": "Caedom alone at the courtyard; a crane up to a single point of light",
+     "to": "Episode 2 S1 lifts that point of light off the same courtyard, on the same two element ids"
+    },
+    {
+     "from": "The dark cloud low over the water: \u201cIt has been let in.\u201d",
+     "to": "Episode 2's cloud of darkness over the abyss, and its one black seed"
+    },
+    {
+     "from": "The delivered film's coda: the mountain and the crater lake",
+     "to": "Episode 2 S7, the mountain ten years later, with its person in it"
+    }
+   ]
+  }
  }
 }
