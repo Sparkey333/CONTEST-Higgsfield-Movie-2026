@@ -104,7 +104,18 @@ def sections():
             if not b: return ""
             items = "".join(f'<li><b>{esc(i["from"])}</b> → {esc(i["to"])}</li>' for i in b.get("links", []))
             return f'<div class="bridge"><span class="fk">{label}</span><h3>{esc(b.get("title",""))}</h3><ul>{items}</ul>' + (f'<p class="meta">{esc(b["status"])}</p>' if b.get("status") else "") + "</div>"
-        out.append(f'<section class="xs" id="bridges"><h2>Bridges</h2><p class="note">{esc(br.get("note",""))}</p><div class="bridges">{bcard("in", "In · from the episode before")}{bcard("out", "Out · to the episode after")}</div></section>')
+        out.append(f'<section class="xs" id="bridges"><h2>Bridges</h2><p class="note">{esc(br.get("note",""))}</p><div class="bridges">{bcard("in", "In · from the episode before")}{bcard("out", "Out · to the episode after")}</div>{stills_html("bridge-out")}</section>')
+    ca = P.get("carried")
+    if ca:
+        nav.append(("Cast", "#cast"))
+        sheet = {x["id"]: x for x in P.get("stills", [])}
+        def ccard(i):
+            st = sheet.get(i.get("sheet", ""))
+            art = f'<a href="{esc(st["url"])}" target="_blank" rel="noopener"><img src="{esc(st["thumb"])}" alt="{esc(i["name"])} for Episode 2" loading="lazy"></a>' if st else '<div class="noimg">not re-rendered</div>'
+            soul = P.get("souls", {}).get(i["name"])
+            return (f'<article class="carry">{art}<div class="cb"><h3>@{esc(i["name"])}</h3><p class="meta">from {esc(i.get("from",""))}' + (f' · Soul {esc(soul["soul_id"][:8])}' if isinstance(soul, dict) else "") + '</p>'
+                    f'<p class="fw">{esc(i.get("tweak",""))}</p><button type="button" class="jid" data-copy="{esc(i["id"])}">{esc(i["id"])}</button></div></article>')
+        out.append(f'<section class="xs" id="cast"><h2>Cast carried over</h2><p class="note">{esc(ca.get("_",""))}</p><div class="carries">{"".join(ccard(i) for i in ca["items"])}</div></section>')
     th = P.get("themes")
     if th:
         nav.append(("Soundtrack", "#soundtrack"))
@@ -129,6 +140,10 @@ XCSS = """
 .cutlist li.part{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
 .cutlist .tc,.cutlist .se{font:12px var(--mono);color:var(--ink-3);font-variant-numeric:tabular-nums}.cutlist .sh{font:500 12px var(--mono);color:var(--t)}
 .tw{overflow-x:auto}table.ep{border-collapse:collapse;width:100%;font-size:14px;min-width:760px}table.ep th,table.ep td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}table.ep th{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}table.ep td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.carries{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}.carry{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.carry img,.carry .noimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--tile)}.carry .noimg{display:grid;place-items:center;font:12px var(--mono);color:var(--ink-3)}
+.carry .cb{padding:12px 16px 14px;display:grid;gap:6px}.carry h3{margin:0;font:600 16px var(--mono)}.carry .meta,.carry .fw{margin:0}.carry .jid{justify-self:start;max-width:100%;overflow-wrap:anywhere}
+#bridges .stills{padding:14px 0 0}
 .bridges{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.bridge ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2)}.bridge li{margin:6px 0}
 .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;align-items:start}.theme{margin-top:0}
 .fit{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0 0 10px;font-size:14px}.fit dt{font:500 10.5px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}.fit dd{margin:0;color:var(--ink-2)}.fit code{font:12px var(--mono);overflow-wrap:anywhere}
@@ -141,6 +156,17 @@ XCSS = """
 .lane .ln{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}.lane h4{margin:0;font-size:15px}
 .lane .lw{margin:6px 12px 0;font-size:13px;color:var(--ink-2)}.lane .prompt{margin:8px 12px;flex:1}.lane .acts{padding:0 12px 12px}.lanemeta{padding:8px 22px 18px;margin:0}
 """
+STILLS = {}
+for x in P.get("stills", []): STILLS.setdefault(x["shot"], []).append(x)
+def stills_html(sid):
+    xs = STILLS.get(sid)
+    if not xs: return ""
+    figs = "".join(f'<figure class="still"><a href="{esc(x["url"])}" target="_blank" rel="noopener"><img src="{esc(x.get("thumb") or x["url"])}" alt="{esc(sid)} lane {esc(x.get("lane",""))} still" loading="lazy"></a>'
+                   f'<figcaption><b>{esc(x.get("lane",""))}</b> {esc(x.get("note",""))} <code>{esc(x["id"][:8])}</code>{" · animated" if x.get("animated") else ""}</figcaption></figure>' for x in xs)
+    return f'<div class="stills"><span class="fk">Anchor stills · {esc(xs[0].get("model",""))}</span><div class="srow">{figs}</div></div>'
+SCSS = """.stills{padding:0 22px 14px}.stills .srow{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:6px}
+.still{margin:0;min-width:0}.still img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:7px;border:1px solid var(--line);display:block;background:var(--tile)}
+.still figcaption{font-size:12px;color:var(--ink-3);margin-top:4px}.still figcaption b{color:var(--ink);font-family:var(--mono)}"""
 cards, ribbon, total, unshot, regen, placed = [], [], 0, 0, 0, 0
 for s in P["shots"]:
     sid, mv, title, tone = s["id"], s["act"], s.get("title", s["id"]), TONE.get(s["act"], "sun")
@@ -153,14 +179,14 @@ for s in P["shots"]:
         ribbon.append(f'<b data-tone="{tone}" class="new" style="flex:{d}" title="{sid} · {d}s · not yet shot">{sid}</b>')
         body = (f'<pre class="prompt">{mark(s["prompt"])}</pre><div class="acts pad"><button type="button" class="copy" data-copy="{esc(s["prompt"])}">Copy prompt</button><span class="meta">{d}s · audio {"on" if s.get("audio") else "off"} · {esc(P["higgsfield"].get("video_model",""))} · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])}</span></div>') if s.get("prompt") else '<p class="why muted">No prompt written yet.</p>'
         if s.get("lanes"): body = lanes_html(s, d)
-        cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{body}</article>'); continue
+        cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{stills_html(sid)}{body}</article>'); continue
     placed += 1; d = vids[pick].get("duration") or s.get("duration_s", 0); total += d
     ribbon.append(f'<b data-tone="{tone}" style="flex:{d}" title="{sid} · {d}s">{sid if d >= 10 else ""}</b>')
     ps = sc8.get(pick, {}).get("overall")
     if s.get("regenerate"): regen += 1
     rg = f'<div class="regen"><b>Make again.</b> {esc(s.get("notes",""))}</div>' if s.get("regenerate") else ""
     altdiv = "".join(tile(a, "alternate", ps) for a in alts) or '<p class="meta">No alternates in the ledger.</p>'
-    cards.append(f'<article class="shot" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s</span></header><p class="why">{esc(s.get("why",""))}</p>{rg}<div class="row"><div class="pickcol">{tile(pick, "pick")}</div><div class="altcol">{altdiv}</div></div></article>')
+    cards.append(f'<article class="shot" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s</span></header><p class="why">{esc(s.get("why",""))}</p>{rg}{stills_html(sid)}<div class="row"><div class="pickcol">{tile(pick, "pick")}</div><div class="altcol">{altdiv}</div></div></article>')
 
 mm = f"{int(total)//60}:{int(total)%60:02d}"; n = len([k for k in sc8 if k in vids]); hf = P["higgsfield"]
 legend = " ".join(f'<span><i data-tone="{a.get("tone","sun")}"></i>{esc(a["id"])} · {esc(a["name"])}</span>' for a in P["acts"])
@@ -201,7 +227,7 @@ details summary{{cursor:pointer;color:var(--ink-3);font-size:12px}} pre{{white-s
 .copy{{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--ground);border:0;border-radius:6px;padding:9px 14px;cursor:pointer}} .copy:focus-visible,.jid:focus-visible{{outline:2px solid var(--sun);outline-offset:2px}}
 h2{{font-size:clamp(22px,3vw,30px);margin:44px 0 10px}} .muted{{color:var(--ink-3)}} footer{{margin-top:40px;color:var(--ink-3);font-size:13px}}
 @media (max-width:760px){{.row{{grid-template-columns:1fr}}}} @media (prefers-reduced-motion:reduce){{*{{transition:none!important}}}}
-{XCSS}</style></head><body><div class="wrap">
+{XCSS}{SCSS}</style></head><body><div class="wrap">
 <header class="mast"><p class="eyebrow"><a href="../../index.html">anchorframe</a> · {esc(P["title"])} · built {datetime.datetime.utcnow().strftime("%d %b %Y %H:%M")} UTC</p>
 <h1>{esc(P["title"])} — the cut, take by take</h1>
 <p class="lede">{esc(P.get("logline",""))}</p>

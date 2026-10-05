@@ -14,6 +14,11 @@ anything on the ledger regardless of what the API can filter on, so a generation
 this script can always be pulled back into the same project. Filing it into the Higgsfield
 web-app folder is still done in the web app for models that take no folder_id over the API.
 
+Folder lock: a project whose project.json carries higgsfield.lock is pinned to one Higgsfield
+project folder. The Cloud API cannot file into a project folder, so this script refuses to submit
+for a locked project unless --outside-lock is passed; generate through the studio or through
+Claude's Higgsfield connection instead, which file every take into the locked folder.
+
 Model ids are the Cloud API's (e.g. "bytedance/seedream/v4/text-to-image"), not the web app's.
 Reference-element attachment is model-specific — pass whatever the model's docs name via --arg.
 """
@@ -33,8 +38,13 @@ def main():
     ap.add_argument("--prompt"); ap.add_argument("--prompt-from-shot", action="store_true")
     ap.add_argument("--arg", action="append", default=[], help="key=value, repeatable (numbers and true/false are parsed)")
     ap.add_argument("--args-json", help="a JSON object merged into the arguments")
+    ap.add_argument("--outside-lock", action="store_true", help="submit even though the project is locked to a Higgsfield folder this API cannot file into")
     ap.add_argument("--no-wait", action="store_true"); ap.add_argument("--keys", default=str(pathlib.Path(__file__).parent / "keys.env"))
     a = ap.parse_args()
+    P0 = json.load(open(pathlib.Path(a.project) / "project.json")); lock = P0.get("higgsfield", {}).get("lock")
+    if lock and not a.outside_lock:
+        sys.exit(f"refused: {P0['title']} is locked to the Higgsfield folder '{lock['project']}' ({lock['folder_id']}). "
+                 "The Cloud API cannot file a generation into it. Generate from the studio or through Claude instead, or pass --outside-lock to submit anyway.")
     load_env(a.keys)
     if not (os.environ.get("HF_KEY") or (os.environ.get("HF_API_KEY") and os.environ.get("HF_API_SECRET"))):
         sys.exit("no Higgsfield key: set HF_KEY or HF_API_KEY + HF_API_SECRET (env or anchorframe/keys.env). Get one at https://cloud.higgsfield.ai/api-keys")
@@ -56,7 +66,7 @@ def main():
     digest = hashlib.sha256(json.dumps(args, sort_keys=True).encode()).hexdigest()[:12]
     ctl = higgsfield_client.submit(a.model, arguments=args)
     rid = getattr(ctl, "request_id", None) or getattr(ctl, "id", None) or str(ctl)
-    entry = {"request_id": rid, "project": P["title"], "shot": a.shot, "model": a.model, "args_digest": digest,
+    entry = {"request_id": rid, "project": P["title"], "outside_lock": bool(lock), "shot": a.shot, "model": a.model, "args_digest": digest,
              "submitted_at": datetime.datetime.utcnow().isoformat(timespec="seconds") + "Z", "status": "submitted"}
     P.setdefault("ledger", {}).setdefault("jobs", []).append(entry); pfile.write_text(json.dumps(P, indent=1, ensure_ascii=False))
     print(f"submitted {rid} for {a.shot} on {a.model} — on the ledger")

@@ -54,7 +54,7 @@ ctx = [f"Film: {P['title']} ({DK.get('edition','')}), by {P.get('byline','')}. L
 data = {
  "desk": {k: DK.get(k) for k in ("title", "edition", "episode", "editions")},
  "project": {"slug": slug, "title": P["title"], "logline": P.get("logline", ""), "acts": acts,
-             "hf": {k: hf.get(k) for k in ("project_id", "workspace_id", "folder_id", "project_url", "video_model", "image_model")}},
+             "hf": {k: hf.get(k) for k in ("project_id", "workspace_id", "folder_id", "project_url", "video_model", "image_model", "lock")}},
  "intake": I, "proposed": PR.get("proposed", {}), "shots": shots, "cast": cast, "sheets": sheets, "parity": PAR,
  "links": {"desk": "index.html", "board": f"projects/{slug}/board.html", "workflow": "workflow.html", "links": "links.html", "keys": "keys.html"},
  "context": "\n".join(ctx), "built": datetime.datetime.utcnow().strftime("%d %b %Y %H:%M UTC")}
@@ -149,7 +149,8 @@ JS = r"""
 'use strict';
 const D = JSON.parse(document.getElementById('studio-data').textContent);
 const HF = 'Higgsfield', PID = D.project.hf.project_id, WS = D.project.hf.workspace_id, FOLDER = D.project.hf.folder_id;
-const VIDEO_MODEL = D.project.hf.video_model, IMAGE_MODEL = D.project.hf.image_model;
+const VIDEO_MODEL = D.project.hf.video_model, IMAGE_MODEL = D.project.hf.image_model, LOCK = D.project.hf.lock || null;
+const lockOk = () => !!LOCK && LOCK.folder_id === FOLDER && LOCK.project_id === PID;
 const QS = D.intake.questions, SECTIONS = D.intake.sections;
 const PENDING = new Set(Object.keys(D.cast).filter(n => !D.cast[n].id));
 const KINDS = [
@@ -387,10 +388,13 @@ function renderHF(){
  if (mcp && s.state === 'live') btns.append(h('button', {type:'button', class:'btn', onclick: () => { mcp.invalidate(HF).catch(() => {}).then(connectHF); }}, 'Refresh'));
  if (perms && s.err && s.err.code === 'not_in_manifest') btns.append(h('button', {type:'button', class:'btn', onclick: () => perms.manage().catch(() => {})}, 'Open permissions'));
  btns.append(h('a', {class:'btn', href: D.project.hf.project_url, target:'_blank', rel:'noopener'}, 'Open the project in Higgsfield ↗'));
+ body.push(h('p', {class: lockOk() ? 'msg ok' : 'msg bad'}, lockOk() ? 'Locked: every generation and remix from this studio is filed into ' + LOCK.project + ' and nowhere else.' : 'Not locked to a folder: generation is off until the project names its Higgsfield folder.'));
  st.replaceChildren(...body, btns);
 }
 const TARGETS = () => [['', 'Not assigned']].concat(D.sheets.map(s => ['sheet:' + s.name, 'Sheet · @' + s.name]),
  [].concat(...D.shots.map(s => s.lanes.map(l => ['shot:' + s.id + ':' + l.c, s.id + ' lane ' + l.c + ' · ' + s.title])))); 
+function laneOf(target){ const m = target.split(':'); const s = D.shots.find(x => x.id === m[1]); if (!s) return null; const l = s.lanes.find(x => x.c === m[2]) || s.lanes[0]; return {prompt: l.prompt, d: s.d}; }
+function motionOf(prompt){ const i = prompt.indexOf(' REFERENCES — attach before generating:'); return (i >= 0 ? prompt.slice(0, i) : prompt).replace(/@\[([a-z0-9_-]+)\]\([0-9a-f-]{36}\)/gi, (m, n) => n.replace(/-/g, ' ')).replace(/@([a-z][a-z0-9_-]{2,40})/gi, (m, n) => n.replace(/-/g, ' ')).trim(); }
 function renderHFItems(){
  const root = $('#hf-items'); if (!root) return; const items = S.hf.items;
  if (S.hf.state !== 'live' && !items.length){ root.replaceChildren(h('p', {class:'muted'}, 'Connect Higgsfield to list this project’s generations and uploads.')); return; }
@@ -400,11 +404,20 @@ function renderHFItems(){
   const sel = h('select', {'aria-label':'Assign ' + it.item_id, disabled: !db || S.ro, onchange: () => { const v = sel.value; write('links/' + it.item_id, () => v ? db.doc('links/' + it.item_id).set({target: v, kind: it.output_kind, model: it.model_id, by: S.uid, at: now()}) : db.doc('links/' + it.item_id).delete()); }},
    opts.map(o => h('option', {value:o[0]}, o[1])));
   sel.value = link ? link.target : '';
+  let remix = null;
+  if (it.output_kind === 'image' && it.status === 'completed' && it.type === 'job'){
+   remix = h('button', {type:'button', class:'btn sm', onclick: () => {
+    const lane = link && link.target.indexOf('shot:') === 0 ? laneOf(link.target) : null;
+    const ta = h('textarea', {'aria-label':'What moves', placeholder:'What moves in this still, and how the camera moves'}); ta.value = lane ? motionOf(lane.prompt) : '';
+    const tr = h('tr', null, h('td', {colspan:'8'}, h('div', {class:'card', style:'box-shadow:none'}, h('label', {class:'lb'}, 'Animate this still · start frame ' + String(it.item_id).slice(0, 8)), ta,
+     genControls({target: link ? link.target : 'remix:' + it.item_id, label: 'Animate ' + String(it.item_id).slice(0, 8), prompt: '', promptEl: ta, kind: 'video', fixedKind: 'video', duration: lane ? lane.d : 8, medias: [{role: 'start_image', value: it.item_id}]}))));
+    remix.closest('tr').after(tr); remix.disabled = true; }}, 'Animate');
+  }
   return h('tr', null, h('td', {class:'num'}, when(it.created_at)), h('td', null, it.output_kind || it.type), h('td', null, it.model_id || (it.type || '').replace('_', ' ')),
-   h('td', null, it.status), h('td', null, it.is_favourite ? '♥' : ''), h('td', {class:'num'}, h('code', null, String(it.item_id).slice(0, 8))), h('td', null, sel)); });
+   h('td', null, it.status), h('td', null, it.is_favourite ? '♥' : ''), h('td', {class:'num'}, h('code', null, String(it.item_id).slice(0, 8))), h('td', null, sel), h('td', null, remix)); });
  const more = S.hf.more ? h('button', {type:'button', class:'btn sm', onclick: e => loadMore(e.currentTarget)}, 'Load more') : null;
  const fresh = S.hf.storedAt ? h('p', {class:'feeds'}, 'Listed ' + new Date(S.hf.storedAt).toLocaleTimeString() + '. Refreshes every minute.') : null;
- root.replaceChildren(h('div', {class:'tw'}, h('table', null, h('thead', null, h('tr', null, ['Made', 'Kind', 'Model', 'Status', '♥', 'Id', 'Assign to'].map(t => h('th', null, t)))), h('tbody', null, rows))), more, fresh);
+ root.replaceChildren(h('div', {class:'tw'}, h('table', null, h('thead', null, h('tr', null, ['Made', 'Kind', 'Model', 'Status', '♥', 'Id', 'Assign to', ''].map(t => h('th', null, t)))), h('tbody', null, rows))), more, fresh);
 }
 
 /* ---------- generate ---------- */
@@ -424,37 +437,52 @@ function extractIds(payload){ const ids = new Set(), skip = new Set([PID, WS, FO
 function genControls(spec){
  // spec: {target, label, prompt, kind: 'video'|'still', aspect, duration, fixedKind}
  const wrap = h('div', {class:'gen'}), res = h('div', {class:'res'});
- const pend = pendingIn(spec.prompt); let asWords = false;
+ const promptOf = () => spec.promptEl ? spec.promptEl.value : spec.prompt;
+ const pend = spec.promptEl ? [] : pendingIn(spec.prompt); let asWords = false;
  const kindSel = spec.fixedKind ? null : h('select', {'aria-label':'What to make'}, h('option', {value:'video'}, 'Video · ' + VIDEO_MODEL), h('option', {value:'still'}, 'Still · ' + IMAGE_MODEL));
  if (kindSel) kindSel.value = spec.kind || 'video';
  const dur = h('input', {type:'number', min:'4', max:'16', step:'1', value: String(Math.min(16, spec.duration || 8)), 'aria-label':'Seconds'});
+ const res720 = h('select', {'aria-label':'Resolution'}, h('option', {value:'720p'}, '720p'), h('option', {value:'1080p'}, '1080p'));
+ const aud = h('label', {class:'ow'}, h('input', {type:'checkbox'}), ' model audio');
  const kind = () => spec.fixedKind || kindSel.value;
- const sync = () => { dur.hidden = kind() !== 'video'; };
+ const sync = () => { const v = kind() !== 'video'; dur.hidden = v; res720.hidden = v; aud.hidden = v; };
  if (kindSel) kindSel.addEventListener('change', sync); sync();
  const pv = h('button', {type:'button', class:'btn sm', onclick: () => run(true)}, 'Preview cost');
  const ow = pend.length ? h('label', {class:'ow'}, h('input', {type:'checkbox', onchange: e => { asWords = e.target.checked; }}), ' send pending names as plain words') : null;
- function params(preview){ const p = {model: kind() === 'video' ? VIDEO_MODEL : IMAGE_MODEL, prompt: toApi(spec.prompt, asWords), aspect_ratio: kind() === 'video' ? '21:9' : (spec.aspect || '21:9'), folder_id: FOLDER};
-  if (kind() === 'video') p.duration = Math.max(4, Math.min(16, parseInt(dur.value, 10) || 8)); if (preview) p.get_cost = true; return p; }
+ function params(preview){ const p = {model: kind() === 'video' ? VIDEO_MODEL : IMAGE_MODEL, prompt: toApi(promptOf(), asWords), aspect_ratio: kind() === 'video' ? '21:9' : (spec.aspect || '21:9'), folder_id: FOLDER};
+  if (kind() === 'video'){ p.duration = Math.max(4, Math.min(16, parseInt(dur.value, 10) || 8)); p.resolution = res720.value; p.generate_audio = !!aud.querySelector('input').checked; }
+  else if (IMAGE_MODEL === 'cinematic_studio_2_5') p.resolution = '2k';
+  if (spec.medias){ p.medias = spec.medias; if (kind() === 'video') p.mode = 'omni_reference'; }
+  if (spec.declinedPreset) p.declined_preset_id = spec.declinedPreset;
+  if (preview) p.get_cost = true; return p; }
  async function run(preview, unlim){
   if (!mcp){ res.textContent = 'Open the studio in claude.ai to generate.'; res.className = 'res bad'; return; }
+  if (!lockOk()){ res.textContent = 'Refused: this studio is not linked to its locked Higgsfield folder. Nothing was sent.'; res.className = 'res bad'; return; }
+  if (spec.promptEl && !spec.promptEl.value.trim()){ res.textContent = 'Write what should move first.'; res.className = 'res bad'; return; }
   if (pend.length && !asWords){ res.textContent = 'Needs sheets first: ' + pend.map(n => '@' + n).join(', ') + '. Sync with Claude after the sheets are assigned, or tick “send pending names as plain words”.'; res.className = 'res bad'; return; }
   const tool = kind() === 'video' ? 'generate_video' : 'generate_image', p = params(preview); if (unlim != null) p.use_unlim = unlim;
   res.textContent = preview ? 'Asking Higgsfield for the cost…' : 'Submitting…'; res.className = 'res';
   try {
    const r = await mcp.callTool(HF, tool, {params: p}, preview ? {cache: false} : undefined); const pay = r.payload;
    if (preview){ const c = pay && pay.cost ? pay.cost.credits : null; if (c == null){ res.textContent = 'Higgsfield answered without a cost: ' + JSON.stringify(pay).slice(0, 200); return; }
-    res.replaceChildren(h('span', {class:'confirm'}, 'This ' + (kind() === 'video' ? p.duration + 's video' : 'still') + ' costs ' + c + ' credits.',
+    res.replaceChildren(h('span', {class:'confirm'}, 'This ' + (kind() === 'video' ? p.duration + 's ' + p.resolution + ' video' + (spec.medias ? ' from the still' : '') : 'still') + ' costs ' + c + ' credits, filed to ' + (LOCK ? LOCK.project : 'the project') + '.',
      h('button', {type:'button', class:'btn sm go', onclick: () => run(false)}, 'Generate · ' + c), h('button', {type:'button', class:'btn sm', onclick: () => { res.textContent = ''; }}, 'Cancel'))); spec.lastCost = c; return; }
    if (pay && pay.unlim_choice){ res.replaceChildren(h('span', {class:'confirm'}, typeof pay.unlim_choice === 'string' ? pay.unlim_choice : 'Higgsfield asks which balance pays: your unlimited generations or your credits.',
      h('button', {type:'button', class:'btn sm go', onclick: () => run(false, true)}, 'Use unlimited'), h('button', {type:'button', class:'btn sm', onclick: () => run(false, false)}, 'Use credits'))); return; }
-   const ids = extractIds(pay); await logJob(spec, tool, p, ids, 'submitted', pay);
+   const ids = extractIds(pay);
+   const ptxt = JSON.stringify(pay || '');
+   if (!ids.length && /preset/i.test(ptxt)){ const m = ptxt.match(/declined_preset_id[^0-9a-f]{0,6}([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i) || ptxt.match(/preset[^0-9a-f]{0,40}([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i);
+    res.replaceChildren(h('span', {class:'confirm'}, 'Higgsfield suggested one of its presets instead of making this take. Nothing was charged.',
+     m ? h('button', {type:'button', class:'btn sm go', onclick: () => { spec.declinedPreset = m[1]; run(false); }}, 'Make it without the preset') : null,
+     h('button', {type:'button', class:'btn sm', onclick: () => { res.textContent = ''; }}, 'Cancel'))); return; }
+   await logJob(spec, tool, p, ids, 'submitted', pay);
    res.textContent = 'Submitted' + (ids.length ? ': ' + ids.map(x => x.slice(0, 8)).join(', ') : '') + '. It appears in the Higgsfield tab when the project lists it.'; res.className = 'res ok';
    mcp.invalidate(HF, 'list_project_assets').catch(() => {}); mcp.invalidate(HF, 'balance').catch(() => {});
   } catch(e){ const c = e && e.code;
    if (!preview && (c === 'server_unavailable' || c === 'upstream_error' || c === 'cancelled')){ await logJob(spec, tool, p, [], 'unknown', {error: c, message: e.message}); res.textContent = 'The outcome is unknown: Higgsfield may have started it. Check the Higgsfield tab before trying again.'; res.className = 'res bad'; return; }
    res.textContent = c === 'tool_error' ? 'Higgsfield refused: ' + (e.message || 'no reason given') : hfMsg(e); res.className = 'res bad'; }
  }
- wrap.append(...[kindSel, dur, pv, ow].filter(Boolean));
+ wrap.append(...[kindSel, dur, res720, aud, pv, ow].filter(Boolean));
  return h('div', null, wrap, res);
 }
 async function logJob(spec, tool, params, ids, status, payload){
@@ -632,7 +660,8 @@ def body(desk_href):
 <div class="grid2"><div class="card" id="hf-state"></div>
 <div class="card"><h3 style="font:600 16px var(--body)">How making things works</h3><ul style="margin:8px 0 0;padding-left:18px;font-size:14px;color:var(--ink-2)">
 <li>Every Generate button asks Higgsfield for the cost first; nothing is spent until you press the button that shows the price.</li>
-<li>Stills use <code>{esc(P0["hf"]["image_model"])}</code>; video uses <code>{esc(P0["hf"]["video_model"])}</code> at 21:9.</li>
+<li>Stills use <code>{esc(P0["hf"]["image_model"])}</code>; video uses <code>{esc(P0["hf"]["video_model"])}</code> at 21:9, 720p by default, with the model's own audio off unless you tick it.</li>
+<li><b>Animate</b> on any finished still makes a video that starts on that frame: a remix, filed into the same folder.</li>
 <li>Chained start and end frames, Souls and audio references still go through the web app: copy the lane's prompt there.</li>
 <li>Whatever you make, assign it below to the sheet or shot lane it belongs to. That is what Claude reads on sync.</li></ul></div></div>
 <h3 class="qsec" style="margin-top:26px">In this project</h3><div id="hf-items"></div><p class="msg bad" id="hf-items-msg"></p>

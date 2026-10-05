@@ -18,7 +18,7 @@
   "project_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
   "workspace_id": "21b0d1dd-c71c-4318-b687-6b1baee45e98",
   "video_model": "cinematic_studio_video_4_0",
-  "image_model": "nano_banana_2",
+  "image_model": "cinematic_studio_2_5",
   "audio_model": "seed_audio",
   "folders": {
    "root": "e6e807a9-49a8-41f1-bb4c-9247468606cb"
@@ -26,7 +26,15 @@
   "public_url": null,
   "created": "2026-10-01",
   "idempotency_key": "anchorframe-ep2-darkness-2026-10-01",
-  "_": "Created from the desk with create_project(surface=cinematic_studio). The root is the only folder so far; make scene subfolders at Gate B and record them here. 'AI Film Festival 2' (93a4a8a7…) is a different film and is not this project."
+  "_": "Created from the desk with create_project(surface=cinematic_studio). The root is the only folder so far; make scene subfolders at Gate B and record them here. 'AI Film Festival 2' (93a4a8a7…) is a different film and is not this project. The image model moved to Cinema Studio Image 2.5 on Oct 5 (2 credits a 2K still at 21:9, takes reference elements); video is Cinema Studio 4.0 (56 credits for 8s at 720p, 96 at 1080p; model audio is on unless generate_audio is false).",
+  "lock": {
+   "project": "Stone of Matter — Ep. 2 Darkness",
+   "project_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "workspace_id": "21b0d1dd-c71c-4318-b687-6b1baee45e98",
+   "set": "2026-10-05",
+   "rule": "Every generation and remix for SoM V2 (stills, video, start- and end-frame animations, reference remixes, edits and extensions) is filed into this project's folder and nowhere else. Claude passes folder_id on every call; the studio refuses to submit unless its folder matches this lock; generate.py refuses, because the Cloud API cannot file into a project folder."
+  }
  },
  "window": {
   "from": "2026-10-01",
@@ -72,7 +80,8 @@
    "Every sheet says 18+ and every wide with a figure in it is read back through the analyser before delivery (tip 34). Matteo is sixteen in the source; the sheet renders him as a young man and S21–S22 keep him in storm light.",
    "No packshot and no title card inside a generated shot; the end card is editorial.",
    "The continuity audit runs on the timeline at Gate E, not on the board."
-  ]
+  ],
+  "carried": "See carried: Alder → Ammon and Wren → Mikael (same faces, Episode 2 wardrobe), Keeper → the Guardians, Kephas town → Cephas town, turned-energy → the Stone of Energy, drowning_v1 → Drowning, founding-stone → how a Stone looks."
  },
  "music": {
   "_": "Three cues, like the last film — but locked before the stills reel this time (tip 32). The middle cue is the film's own song.",
@@ -129,12 +138,12 @@
   }
  ],
  "cast": {
-  "_": "Pending ids are '<element uuid>' until the sheet is generated at Stage 1; prompts reference them as @name so the board marks them. Inherited Episode 1 ids are real and already attached in the prompts.",
+  "_": "Pending ids are '<element uuid>' until the sheet is generated at Stage 1; prompts reference them as @name so the board marks them. Real ids are attached in the prompts as @[name](id): the Episode 1 elements inherited as they are, and the cast carried over from Episode 1 and dressed for Episode 2 (see carried).",
   "characters": {
    "stardust": "<element uuid>",
    "lucille": "<element uuid>",
-   "ammon": "<element uuid>",
-   "mikael": "<element uuid>",
+   "ammon": "0506e54b-81d7-43ba-9d50-d68411d9f4cc",
+   "mikael": "66e16226-2809-449b-85e1-fb98732942dc",
    "krystal": "<element uuid>",
    "bastion": "<element uuid>",
    "sadie": "<element uuid>",
@@ -143,7 +152,9 @@
    "matteo": "<element uuid>",
    "venetia": "<element uuid>",
    "morningstar": "<element uuid>",
-   "master-lyon": "<element uuid>"
+   "master-lyon": "<element uuid>",
+   "guardians": "2ea82739-6aa3-4ba6-82a0-d758aab26a54",
+   "drowning": "57bb92bb-f84d-4097-ab88-5bc1e2c4b01c"
   },
   "environments": {
    "plate-stardust": "<element uuid>",
@@ -164,14 +175,16 @@
    "machira-orbit": "e7b2e80e-59db-44be-a654-7534a042e2c8",
    "plate-ocean-dark": "398d0b9f-e0c6-4a98-b75d-5a727b604632",
    "plate-island": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
-   "corals-abyss": "0ff096fa-da4b-4a12-a371-5d678fb75651"
+   "corals-abyss": "0ff096fa-da4b-4a12-a371-5d678fb75651",
+   "cephas-town": "bda5eff0-c2ff-48ba-bc10-e0e8710b508c"
   },
   "props": {
    "lantern": "<element uuid>",
    "ammons-guitar": "<element uuid>",
    "glisc-projector": "<element uuid>",
    "heart-of-ilan": "<element uuid>",
-   "stone-of-energy": "<element uuid>"
+   "stone-of-energy": "aee791f3-73d2-4604-8a88-7c9a3f45bd69",
+   "stone-language": "b6ed2008-8a52-4a1e-be7a-8cd5914eb012"
   },
   "fx": {
    "fx-dark-cloud": "<element uuid>",
@@ -183,7 +196,17 @@
   }
  },
  "souls": {
-  "_": "None yet. Train Ammon and Sadie first (one identity each); the Episode 1 Souls are listed under inherits.souls."
+  "_": "Reused by id from Episode 1, not duplicated: a Soul is one trained identity and cannot be copied. The same face plays the Episode 2 part. Souls run only on Soul 2.0 and Soul Cinematic (soul_id); every Cinema Studio shot uses the element of the same name instead. Sadie still needs one.",
+  "ammon": {
+   "soul_id": "efde8880-7bab-43fc-9100-4be64504b3e0",
+   "was": "alder",
+   "element": "0506e54b-81d7-43ba-9d50-d68411d9f4cc"
+  },
+  "mikael": {
+   "soul_id": "2d6202b6-277e-49c3-a83a-80a63d9ead1b",
+   "was": "wren",
+   "element": "66e16226-2809-449b-85e1-fb98732942dc"
+  }
  },
  "retired": {},
  "sheets": {
@@ -191,17 +214,17 @@
   "characters": {
    "stardust": "A light being in a small humanoid form of clear glass — not a woman in white; faceted, refracting, a little light moving inside; no face detail beyond the suggestion of one. Three states: blanket of light, glass figure, fading.",
    "lucille": "A demon crouched on four limbs and a head, features a distorted mockery of a man, hollow eyes blacker than the dark, teeth hidden; second state: the same figure wearing a spirit woman's face.",
-   "ammon": "The lead. A young man of eighteen, lean, long dark hair, open face; plain forest clothes; a worn acoustic guitar. States: on the mountain at dawn, on the lantern path, on the stage, in the elevator.",
-   "mikael": "Ammon's brother, a little older, broader, quick to laugh; the one who gets shoved first.",
-   "krystal": "A young woman of the group, sharp and watchful; carries her lantern highest.",
+   "ammon": "DONE as element ammon (sheet 68ea4428). The lead and the elder brother, about twenty: the Episode 1 face of Alder. Dirty-blonde dishevelled hair, sun-tanned, crystal blue eyes, slightly taller than average, lean and quick. Plain forest clothes; a worn acoustic guitar (prop). States still to make: on the mountain at dawn, on the lantern path, on the stage, in the elevator.",
+   "mikael": "DONE as element mikael (sheet d4f67501). Ammon's little brother, about nineteen: the Episode 1 face of Wren. Looks a lot like Ammon, the same crystal blue eyes and dishevelled hair, thicker in stature, the same height; quick to laugh, the one who gets shoved first.",
+   "krystal": "A young woman of the group, loud and sharp, wavy brown hair and bright green eyes; carries her lantern highest.",
    "bastion": "Ammon's best friend, big, gentle, a zoo-keeper's hands; lantern in one hand.",
-   "sadie": "A young woman of eighteen from the Cephasonian family of Iceland, calm eyes; two states: in the crowd at the Wind Caves, in the water at the Lake of Light.",
+   "sadie": "A young woman the same age as Ammon, daughter of Guardian Iceland: blonde hair, a sassy smile, calm eyes; two states: in the crowd at the Wind Caves, in the water at the Lake of Light.",
    "viola": "The singer at the Wind Caves, hands out, lantern-lit from below.",
    "vothek": "The storyteller: a man with a serious face and playful eyes, on a small stage by a rock wall, firelight.",
    "matteo": "A young man (rendered as 18+) with long brown hair whipped by storm wind, bare feet on sacred sand; second state: kneeling in the Outer Darkness as 'Conqueror'.",
    "venetia": "The Prison of Voids: a woman who becomes a panther with wrong angles; both states on one sheet; a smell of decay you can see in the air around her.",
    "morningstar": "The master of the Outer Darkness: tall, still, lit only by what others give off; no horns, no cliché — a figure whose stillness is the threat.",
-   "master-lyon": "An old master of the Leviticum with a Levitian lantern; kind, awake at night because his dream walked here."
+   "master-lyon": "An old master of the Leviticum, a foot taller than Ammon, well-groomed silver hair brushed back on head and chin, a Levitian lantern; kind, awake at night because his dream walked here."
   },
   "environments": {
    "plate-stardust": "The key light of Movement I: pure white light in black, with a violet edge. Every prologue frame inherits it.",
@@ -230,7 +253,8 @@
    "fx-light-wave": "Light moving as an ocean wave: cresting over a lip of rock and pouring down over dead land, colour returning in its wake.",
    "fx-wind": "A strong wind as it is seen: lantern flames leaning, hair and cloth lifting, dust lifting off a floor.",
    "fx-pillar-of-fire": "A pillar of fire descending onto a rock in daylight, painted-light style."
-  }
+  },
+  "_book": "Corrected against the book on Oct 5: Mikael is Ammon's little brother, and Ammon is dirty-blonde with blue eyes. The first briefs had them the other way round and dark-haired."
  },
  "shots": [
   {
@@ -239,11 +263,11 @@
    "title": "Leaving the sun",
    "duration_s": 16,
    "audio": false,
-   "status": "unshot",
+   "status": "shot",
    "prompt": "Slow crane back, 35mm anamorphic. We open on the white courtyard on the surface of the star where the last film stood (@[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca), key light @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93)). One point of purer white detaches from the surface and lifts — a blanket of STARDUST, spinning, the purest white there is, leaving particles behind that compress into stars as the camera follows it out of the glare into black space (@[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)). The star shrinks to one light among many. Hold on the blanket of light moving away, stepping over time. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8).",
-   "pick": null,
+   "pick": "dd53d785-3e9c-4795-b151-9a4a71087f58",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still 1589375f as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "The sequel's handshake. The last place Episode 1 stood is the first place Episode 2 leaves, on the same two elements, so the join is a fact and not a caption.",
    "lanes": [
@@ -307,11 +331,11 @@
    "title": "The abyss of four waterfalls",
    "duration_s": 14,
    "audio": false,
-   "status": "unshot",
+   "status": "shot",
    "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@stardust) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust.",
-   "pick": null,
+   "pick": "0fee402c-0b26-4316-972a-48ff9cf0b73b",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still 7897de06 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "One environment sheet carries S3, S4 and S5. Design the four waterfalls on it so they read from the air and from the rim.",
    "lanes": [
@@ -375,11 +399,11 @@
    "title": "The wave of light",
    "duration_s": 16,
    "audio": false,
-   "status": "unshot",
+   "status": "shot",
    "prompt": "Wide to very wide, no cut. Stardust explodes in showering light (@[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6) for the burst), conquering every crevice of the abyss; the demon reduces to dark matter, then to nothing. The light rises as a great ocean wave (@fx-light-wave), crests over the lip of the abyss and pours out over the dead land; colour returns to the plants and animals as it passes; the dark cloud above collapses in on itself and vanishes. End on the renewed land under a clear sky. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6).",
-   "pick": null,
+   "pick": "5b9a8ffb-6d7a-4875-a008-642f67b3d7ff",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still 93a9d4e9 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "The set piece of Movement I. Generate the B lane for it (a ground-level shot of the light passing over dead grass) before Gate D — the cut will want two angles here.",
    "lanes": [
@@ -443,11 +467,11 @@
    "title": "Cloud Mountain, ten years later",
    "duration_s": 10,
    "audio": false,
-   "status": "unshot",
-   "prompt": "Very wide, locked, dawn. A young man (@ammon) sits alone on the peak of a mountain above a crater lake (@cloud-mountain), the whole mountain reflected in the still water below — the image the last film ended on. He is thinking about how the world was made. Mist in the valleys. One slow lift of his head. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain.",
-   "pick": null,
+   "status": "shot",
+   "prompt": "Very wide, locked, dawn. A young man (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) sits alone on the peak of a mountain above a crater lake (@cloud-mountain), the whole mountain reflected in the still water below — the image the last film ended on. He is thinking about how the world was made. Mist in the valleys. One slow lift of his head. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @cloud-mountain.",
+   "pick": "baaeb69a-6997-4b79-b78b-d462413840bc",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still 34ec191b as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "The present-day bridge. Episode 1's coda was this mountain and this lake; Episode 2's first present-day frame is the same place with its person in it. Title-safe hold.",
    "lanes": [
@@ -455,19 +479,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Very wide, locked, dawn. A young man (@ammon) sits alone on the peak of a mountain above a crater lake (@cloud-mountain), the whole mountain reflected in the still water below — the image the last film ended on. He is thinking about how the world was made. Mist in the valleys. One slow lift of his head. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain."
+     "prompt": "Very wide, locked, dawn. A young man (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) sits alone on the peak of a mountain above a crater lake (@cloud-mountain), the whole mountain reflected in the still water below — the image the last film ended on. He is thinking about how the world was made. Mist in the valleys. One slow lift of his head. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @cloud-mountain."
     },
     {
      "c": "B",
      "name": "The reflection",
      "why": "The mountain upside-down in the lake is the shot that rhymes with Episode 1's last image.",
-     "prompt": "Locked, low on the shore of the crater lake at dawn: the mountain and the small seated figure on its peak reflected upside-down in perfectly still water; mist drifts across the reflection. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain."
+     "prompt": "Locked, low on the shore of the crater lake at dawn: the mountain and the small seated figure on its peak reflected upside-down in perfectly still water; mist drifts across the reflection. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @cloud-mountain."
     },
     {
      "c": "C",
      "name": "Dawn blue",
      "why": "Matches the cool morning of Episode 1's coda, the one daylight blue in that film.",
-     "prompt": "The same very wide, graded cool: steel-blue dawn, the peak catching the first gold, the crater lake a mirror, mist white. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @cloud-mountain."
+     "prompt": "The same very wide, graded cool: steel-blue dawn, the peak catching the first gold, the crater lake a mirror, mist white. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @cloud-mountain."
     }
    ]
   },
@@ -478,7 +502,7 @@
    "duration_s": 14,
    "audio": false,
    "status": "unshot",
-   "prompt": "Tracking, 35mm, night. Four friends with lanterns (@ammon, @mikael, @krystal, @bastion; the lantern @lantern) walk a path between enormous trunks of the High Forest (@high-forest-lantern-path) toward a glow through the trees. Then Ammon shoves Mikael and takes off; the other two laugh and chase, lanterns swinging, light sliding up the trunks. The camera is pulled along with them. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path.",
+   "prompt": "Tracking, 35mm, night. Four friends with lanterns (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc), @[mikael](66e16226-2809-449b-85e1-fb98732942dc), @krystal, @bastion; the lantern @lantern) walk a path between enormous trunks of the High Forest (@high-forest-lantern-path) toward a glow through the trees. Then Ammon shoves Mikael and takes off; the other two laugh and chase, lanterns swinging, light sliding up the trunks. The camera is pulled along with them. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion; @lantern; @high-forest-lantern-path.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -489,19 +513,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Tracking, 35mm, night. Four friends with lanterns (@ammon, @mikael, @krystal, @bastion; the lantern @lantern) walk a path between enormous trunks of the High Forest (@high-forest-lantern-path) toward a glow through the trees. Then Ammon shoves Mikael and takes off; the other two laugh and chase, lanterns swinging, light sliding up the trunks. The camera is pulled along with them. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path."
+     "prompt": "Tracking, 35mm, night. Four friends with lanterns (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc), @[mikael](66e16226-2809-449b-85e1-fb98732942dc), @krystal, @bastion; the lantern @lantern) walk a path between enormous trunks of the High Forest (@high-forest-lantern-path) toward a glow through the trees. Then Ammon shoves Mikael and takes off; the other two laugh and chase, lanterns swinging, light sliding up the trunks. The camera is pulled along with them. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion; @lantern; @high-forest-lantern-path."
     },
     {
      "c": "B",
      "name": "From the canopy",
      "why": "A high angle gives the run geography and four lights to follow.",
-     "prompt": "High angle from the canopy, 35mm, night: four lanterns moving along a path between enormous trunks, then breaking apart as their bearers start to run; lantern light slides up the bark. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path."
+     "prompt": "High angle from the canopy, 35mm, night: four lanterns moving along a path between enormous trunks, then breaking apart as their bearers start to run; lantern light slides up the bark. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion; @lantern; @high-forest-lantern-path."
     },
     {
      "c": "C",
      "name": "Amber in black",
      "why": "Lantern amber against green-black is the High Forest's look in one frame.",
-     "prompt": "The run graded to lantern amber against green-black: faces and lantern glass hot, the forest falling to near-black around them. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @mikael; @krystal; @bastion; @lantern; @high-forest-lantern-path."
+     "prompt": "The run graded to lantern amber against green-black: faces and lantern glass hot, the forest falling to near-black around them. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion; @lantern; @high-forest-lantern-path."
     }
    ]
   },
@@ -546,7 +570,7 @@
    "duration_s": 10,
    "audio": false,
    "status": "unshot",
-   "prompt": "Close, 85mm, shallow. Ammon (@ammon) walks up to the front of the cave mouth with an acoustic guitar (@ammons-guitar), looks down and pretends to tune it. His hands are trembling on the strings. Then — without a cut — his hands grow steady. Only the hands and the guitar, the crowd a glow out of focus. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage.",
+   "prompt": "Close, 85mm, shallow. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) walks up to the front of the cave mouth with an acoustic guitar (@ammons-guitar), looks down and pretends to tune it. His hands are trembling on the strings. Then — without a cut — his hands grow steady. Only the hands and the guitar, the crowd a glow out of focus. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar; @wind-caves-stage.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -557,19 +581,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Close, 85mm, shallow. Ammon (@ammon) walks up to the front of the cave mouth with an acoustic guitar (@ammons-guitar), looks down and pretends to tune it. His hands are trembling on the strings. Then — without a cut — his hands grow steady. Only the hands and the guitar, the crowd a glow out of focus. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage."
+     "prompt": "Close, 85mm, shallow. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) walks up to the front of the cave mouth with an acoustic guitar (@ammons-guitar), looks down and pretends to tune it. His hands are trembling on the strings. Then — without a cut — his hands grow steady. Only the hands and the guitar, the crowd a glow out of focus. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar; @wind-caves-stage."
     },
     {
      "c": "B",
      "name": "The face",
      "why": "Lane A is the hands; this is the face that goes with them.",
-     "prompt": "Close, 85mm, shallow: Ammon's face as he looks down at the guitar, breath unsteady, then settling; the crowd a warm glow behind him. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage."
+     "prompt": "Close, 85mm, shallow: Ammon's face as he looks down at the guitar, breath unsteady, then settling; the crowd a warm glow behind him. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar; @wind-caves-stage."
     },
     {
      "c": "C",
      "name": "One lantern",
      "why": "Hands and strings in a single hard key, for the music video's quiet bar.",
-     "prompt": "Hands and strings in a single hard lantern key, everything else black; the trembling stops. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar; @wind-caves-stage."
+     "prompt": "Hands and strings in a single hard lantern key, everything else black; the trembling stops. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar; @wind-caves-stage."
     }
    ]
   },
@@ -580,7 +604,7 @@
    "duration_s": 16,
    "audio": true,
    "status": "unshot",
-   "prompt": "Steadicam, 40mm, walking with him. Ammon (@ammon) strums a progression as pleasant and simple as a gentle wave and speaks over it, not sings: 'Intelligence is light. There are different glories, all emanating from this one central source that reaches through everything. Every light casts a shadow.' He walks up the left bank of the cave as he plays; faces in the crowd turn with him; near the front a young woman (@sadie) watches, and he finds her. Audio on: the guitar, his voice, the cave. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage.",
+   "prompt": "Steadicam, 40mm, walking with him. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) strums a progression as pleasant and simple as a gentle wave and speaks over it, not sings: 'Intelligence is light. There are different glories, all emanating from this one central source that reaches through everything. Every light casts a shadow.' He walks up the left bank of the cave as he plays; faces in the crowd turn with him; near the front a young woman (@sadie) watches, and he finds her. Audio on: the guitar, his voice, the cave. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @ammons-guitar; @wind-caves-stage.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -591,19 +615,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Steadicam, 40mm, walking with him. Ammon (@ammon) strums a progression as pleasant and simple as a gentle wave and speaks over it, not sings: 'Intelligence is light. There are different glories, all emanating from this one central source that reaches through everything. Every light casts a shadow.' He walks up the left bank of the cave as he plays; faces in the crowd turn with him; near the front a young woman (@sadie) watches, and he finds her. Audio on: the guitar, his voice, the cave. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage."
+     "prompt": "Steadicam, 40mm, walking with him. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) strums a progression as pleasant and simple as a gentle wave and speaks over it, not sings: 'Intelligence is light. There are different glories, all emanating from this one central source that reaches through everything. Every light casts a shadow.' He walks up the left bank of the cave as he plays; faces in the crowd turn with him; near the front a young woman (@sadie) watches, and he finds her. Audio on: the guitar, his voice, the cave. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @ammons-guitar; @wind-caves-stage."
     },
     {
      "c": "B",
      "name": "Through the crowd",
      "why": "Coverage from the audience side so the song can be cut without losing the words.",
-     "prompt": "Steadicam through the crowd toward the stage, 35mm: faces turning to follow Ammon as he walks the left bank playing; at the front, Sadie sees him find her. Audio on: the guitar and his spoken words from the stage, 'Every light casts a shadow.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage."
+     "prompt": "Steadicam through the crowd toward the stage, 35mm: faces turning to follow Ammon as he walks the left bank playing; at the front, Sadie sees him find her. Audio on: the guitar and his spoken words from the stage, 'Every light casts a shadow.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @ammons-guitar; @wind-caves-stage."
     },
     {
      "c": "C",
      "name": "His shadow on the wall",
      "why": "The line made literal: the shot the music video's chorus lands on.",
-     "prompt": "Ammon walks through a band of lantern light so his shadow is thrown huge across the cave wall behind him as he plays; the shadow is larger than he is. Graded amber light against deep black shadow. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @ammons-guitar; @wind-caves-stage."
+     "prompt": "Ammon walks through a band of lantern light so his shadow is thrown huge across the cave wall behind him as he plays; the shadow is larger than he is. Graded amber light against deep black shadow. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @ammons-guitar; @wind-caves-stage."
     }
    ]
   },
@@ -613,11 +637,11 @@
    "title": "We are one",
    "duration_s": 10,
    "audio": true,
-   "status": "unshot",
-   "prompt": "Wide from behind the crowd, 24mm. The strumming rises in tempo and volume to the last chord and Ammon (@ammon) speaks the last words: 'We are one.' On the chord a strong wind blankets the crowd (@fx-wind) — lantern flames lean, hair and cloth lift, dust lifts off the cave floor — and the crowd erupts. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind.",
-   "pick": null,
+   "status": "shot",
+   "prompt": "Wide from behind the crowd, 24mm. The strumming rises in tempo and volume to the last chord and Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) speaks the last words: 'We are one.' On the chord a strong wind blankets the crowd (@fx-wind) — lantern flames lean, hair and cloth lift, dust lifts off the cave floor — and the crowd erupts. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @wind-caves-stage; @fx-wind.",
+   "pick": "f04bb089-061b-4312-b633-178e052fb5f5",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still 5ffc75b1 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "The wind is the effect the whole film turns on; it must read as wind, not as a particle effect. Lanterns leaning is how a viewer knows.",
    "lanes": [
@@ -625,19 +649,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Wide from behind the crowd, 24mm. The strumming rises in tempo and volume to the last chord and Ammon (@ammon) speaks the last words: 'We are one.' On the chord a strong wind blankets the crowd (@fx-wind) — lantern flames lean, hair and cloth lift, dust lifts off the cave floor — and the crowd erupts. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind."
+     "prompt": "Wide from behind the crowd, 24mm. The strumming rises in tempo and volume to the last chord and Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) speaks the last words: 'We are one.' On the chord a strong wind blankets the crowd (@fx-wind) — lantern flames lean, hair and cloth lift, dust lifts off the cave floor — and the crowd erupts. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @wind-caves-stage; @fx-wind."
     },
     {
      "c": "B",
      "name": "The wind arrives",
      "why": "The wind seen travelling, front to back, which A can only show at once.",
-     "prompt": "Locked at the cave mouth looking in, 24mm: the wind enters past camera and the lantern flames bow in a wave across the cave from front to back; hair and cloth lift row by row; the crowd rises. Audio on: the last chord, then the wind and the roar. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind."
+     "prompt": "Locked at the cave mouth looking in, 24mm: the wind enters past camera and the lantern flames bow in a wave across the cave from front to back; hair and cloth lift row by row; the crowd rises. Audio on: the last chord, then the wind and the roar. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @wind-caves-stage; @fx-wind."
     },
     {
      "c": "C",
      "name": "Flames bowing",
      "why": "The single image of the wind for every spot.",
-     "prompt": "Macro on a row of lantern flames bending together in one direction, graded amber on black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @wind-caves-stage; @fx-wind."
+     "prompt": "Macro on a row of lantern flames bending together in one direction, graded amber on black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @wind-caves-stage; @fx-wind."
     }
    ]
   },
@@ -648,7 +672,7 @@
    "duration_s": 8,
    "audio": true,
    "status": "unshot",
-   "prompt": "Close, 85mm, backstage. The cheering stops as if a door closed. Ammon's left hand is still on the neck of the guitar (@ammons-guitar), and the hand is vibrating with something that is not nerves. He looks at it. A voice, not his, somewhere behind the air: 'He did it. He is beginning to understand.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar.",
+   "prompt": "Close, 85mm, backstage. The cheering stops as if a door closed. Ammon's left hand is still on the neck of the guitar (@ammons-guitar), and the hand is vibrating with something that is not nerves. He looks at it. A voice, not his, somewhere behind the air: 'He did it. He is beginning to understand.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -659,19 +683,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Close, 85mm, backstage. The cheering stops as if a door closed. Ammon's left hand is still on the neck of the guitar (@ammons-guitar), and the hand is vibrating with something that is not nerves. He looks at it. A voice, not his, somewhere behind the air: 'He did it. He is beginning to understand.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar."
+     "prompt": "Close, 85mm, backstage. The cheering stops as if a door closed. Ammon's left hand is still on the neck of the guitar (@ammons-guitar), and the hand is vibrating with something that is not nerves. He looks at it. A voice, not his, somewhere behind the air: 'He did it. He is beginning to understand.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar."
     },
     {
      "c": "B",
      "name": "The corridor",
      "why": "A wide to hold the silence after the cheering.",
-     "prompt": "Wide, 28mm, backstage: Ammon alone in a rock corridor, the crowd's noise cut off; he stops and looks at his hand. Audio on: near silence, then a voice not his: 'He is beginning to understand.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar."
+     "prompt": "Wide, 28mm, backstage: Ammon alone in a rock corridor, the crowd's noise cut off; he stops and looks at his hand. Audio on: near silence, then a voice not his: 'He is beginning to understand.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar."
     },
     {
      "c": "C",
      "name": "The strings move",
      "why": "The vibration made visible.",
-     "prompt": "Macro on the guitar neck and his fingers: the strings trembling with no one playing them, a faint blue-white light at the edges of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @ammons-guitar."
+     "prompt": "Macro on the guitar neck and his fingers: the strings trembling with no one playing them, a faint blue-white light at the edges of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @ammons-guitar."
     }
    ]
   },
@@ -682,7 +706,7 @@
    "duration_s": 12,
    "audio": false,
    "status": "unshot",
-   "prompt": "Handheld, 35mm, moonlight. Ammon (@ammon) and Sadie (@sadie) dance between fireflies and other couples gliding by, among trunks that grow thicker toward the water (@lake-of-light). They are a little silly at first, drifting apart and together, then close. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light.",
+   "prompt": "Handheld, 35mm, moonlight. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) and Sadie (@sadie) dance between fireflies and other couples gliding by, among trunks that grow thicker toward the water (@lake-of-light). They are a little silly at first, drifting apart and together, then close. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -693,19 +717,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Handheld, 35mm, moonlight. Ammon (@ammon) and Sadie (@sadie) dance between fireflies and other couples gliding by, among trunks that grow thicker toward the water (@lake-of-light). They are a little silly at first, drifting apart and together, then close. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light."
+     "prompt": "Handheld, 35mm, moonlight. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) and Sadie (@sadie) dance between fireflies and other couples gliding by, among trunks that grow thicker toward the water (@lake-of-light). They are a little silly at first, drifting apart and together, then close. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light."
     },
     {
      "c": "B",
      "name": "Overhead",
      "why": "Geography for the dance and a cutaway for the song's instrumental tail.",
-     "prompt": "Overhead, 24mm: two figures dancing among fireflies between huge trunks, other couples drifting through frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light."
+     "prompt": "Overhead, 24mm: two figures dancing among fireflies between huge trunks, other couples drifting through frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light."
     },
     {
      "c": "C",
      "name": "Bokeh",
      "why": "The couple sharp and the world dissolved: the romance in one image.",
-     "prompt": "Long lens: the couple sharp, everything else fireflies dissolved into gold and green bokeh. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light."
+     "prompt": "Long lens: the couple sharp, everything else fireflies dissolved into gold and green bokeh. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light."
     }
    ]
   },
@@ -749,11 +773,11 @@
    "title": "Under the water",
    "duration_s": 10,
    "audio": true,
-   "status": "unshot",
-   "prompt": "Underwater, 24mm, slow. Sadie (@sadie) pulls Ammon (@ammon) under; they sink to the shallow bottom in blue-green water full of glowing motes (@[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651) for the underwater light). Sound goes muted. She kisses him under the water. They come up for air, smiling, in one continuous move. Audio on, but the only sound is the muted underwater pressure and the surface breaking. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651).",
-   "pick": null,
+   "status": "shot",
+   "prompt": "Underwater, 24mm, slow. Sadie (@sadie) pulls Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) under; they sink to the shallow bottom in blue-green water full of glowing motes (@[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651) for the underwater light). Sound goes muted. She kisses him under the water. They come up for air, smiling, in one continuous move. Audio on, but the only sound is the muted underwater pressure and the surface breaking. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651).",
+   "pick": "21c170ee-06dd-4d69-92a5-bfb296292117",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still acd01649 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "Both faces are adults on the sheets and the wide must say so too — read it back through the analyser before Gate E.",
    "lanes": [
@@ -761,19 +785,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Underwater, 24mm, slow. Sadie (@sadie) pulls Ammon (@ammon) under; they sink to the shallow bottom in blue-green water full of glowing motes (@[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651) for the underwater light). Sound goes muted. She kisses him under the water. They come up for air, smiling, in one continuous move. Audio on, but the only sound is the muted underwater pressure and the surface breaking. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
+     "prompt": "Underwater, 24mm, slow. Sadie (@sadie) pulls Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) under; they sink to the shallow bottom in blue-green water full of glowing motes (@[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651) for the underwater light). Sound goes muted. She kisses him under the water. They come up for air, smiling, in one continuous move. Audio on, but the only sound is the muted underwater pressure and the surface breaking. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
     },
     {
      "c": "B",
      "name": "From the surface",
      "why": "Seen from above, the rise reads as joy, not danger.",
-     "prompt": "Overhead through the surface: two figures below in blue-green water with light motes rising around them; they rise toward camera and break the surface together. Audio on: muted underwater pressure, then air. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
+     "prompt": "Overhead through the surface: two figures below in blue-green water with light motes rising around them; they rise toward camera and break the surface together. Audio on: muted underwater pressure, then air. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
     },
     {
      "c": "C",
      "name": "Lit by the water",
      "why": "Faces lit only by the motes: the music video's softest shot.",
-     "prompt": "Underwater close: two faces lit only by the glowing motes, everything else deep teal. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
+     "prompt": "Underwater close: two faces lit only by the glowing motes, everything else deep teal. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @sadie; @lake-of-light; @[corals-abyss](0ff096fa-da4b-4a12-a371-5d678fb75651)."
     }
    ]
   },
@@ -852,7 +876,7 @@
    "duration_s": 12,
    "audio": false,
    "status": "unshot",
-   "prompt": "Low wide, 24mm, night. The Leviticum (@leviticum-exterior): a seven-floor circular library of stone and glass, lamps and candles in every window, standing above the forest. The four friends (@ammon, @mikael, @krystal, @bastion) climb the steps laughing. Above the main doors the inscription is a band of gold light, its letters not legible from here. They go in. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion.",
+   "prompt": "Low wide, 24mm, night. The Leviticum (@leviticum-exterior): a seven-floor circular library of stone and glass, lamps and candles in every window, standing above the forest. The four friends (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc), @[mikael](66e16226-2809-449b-85e1-fb98732942dc), @krystal, @bastion) climb the steps laughing. Above the main doors the inscription is a band of gold light, its letters not legible from here. They go in. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -863,19 +887,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Low wide, 24mm, night. The Leviticum (@leviticum-exterior): a seven-floor circular library of stone and glass, lamps and candles in every window, standing above the forest. The four friends (@ammon, @mikael, @krystal, @bastion) climb the steps laughing. Above the main doors the inscription is a band of gold light, its letters not legible from here. They go in. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion."
+     "prompt": "Low wide, 24mm, night. The Leviticum (@leviticum-exterior): a seven-floor circular library of stone and glass, lamps and candles in every window, standing above the forest. The four friends (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc), @[mikael](66e16226-2809-449b-85e1-fb98732942dc), @krystal, @bastion) climb the steps laughing. Above the main doors the inscription is a band of gold light, its letters not legible from here. They go in. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion."
     },
     {
      "c": "B",
      "name": "Under the inscription",
      "why": "The gold band of light as the friends pass beneath it, no legible letters.",
-     "prompt": "Low, 35mm, under the main doors: the band of gold light above the doors (no legible letters) as the four friends pass beneath it into the library. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion."
+     "prompt": "Low, 35mm, under the main doors: the band of gold light above the doors (no legible letters) as the four friends pass beneath it into the library. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion."
     },
     {
      "c": "C",
      "name": "Candle tower",
      "why": "The library as a lit column against the night.",
-     "prompt": "Graded: the seven-floor circular library as a column of warm candle windows against a violet-black night sky. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @ammon; @mikael; @krystal; @bastion."
+     "prompt": "Graded: the seven-floor circular library as a column of warm candle windows against a violet-black night sky. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-exterior; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[mikael](66e16226-2809-449b-85e1-fb98732942dc); @krystal; @bastion."
     }
    ]
   },
@@ -886,7 +910,7 @@
    "duration_s": 10,
    "audio": false,
    "status": "unshot",
-   "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@ammon) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector.",
+   "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -897,19 +921,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@ammon) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector."
+     "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector."
     },
     {
      "c": "B",
      "name": "The ceiling",
      "why": "What he is watching as his eyes close.",
-     "prompt": "Locked, looking straight up at the ceiling: constellations from the glisc projector drifting slowly; one constellation brightens. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector."
+     "prompt": "Locked, looking straight up at the ceiling: constellations from the glisc projector drifting slowly; one constellation brightens. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector."
     },
     {
      "c": "C",
      "name": "Constellations",
      "why": "Sharp stars on deep blue-black: the dream's doorway.",
-     "prompt": "Graded deep blue-black with the projected stars sharp white, the sleepers' faces barely lit. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-study-room; @glisc-projector."
+     "prompt": "Graded deep blue-black with the projected stars sharp white, the sleepers' faces barely lit. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector."
     }
    ]
   },
@@ -953,11 +977,11 @@
    "title": "The heart of Ilan",
    "duration_s": 16,
    "audio": true,
-   "status": "unshot",
+   "status": "shot",
    "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@venetia) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@matteo) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm.",
-   "pick": null,
+   "pick": "18b25dc4-f744-4f14-ac58-478a4233544b",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-B still 46b7ce9a as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "Set piece two. B lane: the stone alone in the sand, 8s, silent — the cut will want to breathe before the fist goes in.",
    "lanes": [
@@ -987,11 +1011,11 @@
    "title": "Four of the Seven",
    "duration_s": 16,
    "audio": true,
-   "status": "unshot",
-   "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@stone-of-energy), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy.",
-   "pick": null,
+   "status": "shot",
+   "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69).",
+   "pick": "26e78a8d-92b7-4406-8a43-41fc08420d3d",
    "alternates": [],
-   "why": "",
+   "why": "First pass, Oct 5: animated from its lane-A still ea50daaf as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
    "notes": "The antagonist's one scene. Keep him still; let the ring move. The line is the dark cue's hit.",
    "lanes": [
@@ -999,19 +1023,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@stone-of-energy), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy."
+     "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
     },
     {
      "c": "B",
      "name": "The ring from above",
      "why": "Overhead makes the ring of twelve a shape the audience can read.",
-     "prompt": "Overhead, locked: a ring of twelve kneeling figures around a woman whose chest blazes white-violet; a wave of light ripples outward and two figures at the edge of the ring turn to dust. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy."
+     "prompt": "Overhead, locked: a ring of twelve kneeling figures around a woman whose chest blazes white-violet; a wave of light ripples outward and two figures at the edge of the ring turn to dust. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
     },
     {
      "c": "C",
      "name": "No light but the Stone",
      "why": "The antagonist as a silhouette: the dark cue's hit frame.",
-     "prompt": "Graded so the only light in frame is the Stone of Energy: the ring's faces lit from below, Morningstar a tall silhouette against nothing. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @stone-of-energy."
+     "prompt": "Graded so the only light in frame is the Stone of Energy: the ring's faces lit from below, Morningstar a tall silhouette against nothing. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
     }
    ]
   },
@@ -1022,7 +1046,7 @@
    "duration_s": 14,
    "audio": true,
    "status": "unshot",
-   "prompt": "Continuous, 28mm, near dark. Ammon (@ammon) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator.",
+   "prompt": "Continuous, 28mm, near dark. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -1033,19 +1057,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Continuous, 28mm, near dark. Ammon (@ammon) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator."
+     "prompt": "Continuous, 28mm, near dark. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator."
     },
     {
      "c": "B",
      "name": "From the hall",
      "why": "The doors opening, from the side of whatever is watching.",
-     "prompt": "From inside the dark seventh-floor hall looking at the glass elevator: the doors slide open on Ammon small in the lit car, staring out toward camera. Audio on: a voice from beside camera, 'Leave this place. Leave. Before they follow.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator."
+     "prompt": "From inside the dark seventh-floor hall looking at the glass elevator: the doors slide open on Ammon small in the lit car, staring out toward camera. Audio on: a voice from beside camera, 'Leave this place. Leave. Before they follow.' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator."
     },
     {
      "c": "C",
      "name": "Only the 1 glows",
      "why": "An insert that tells the story of the ride without a face.",
-     "prompt": "Macro of the elevator panel: only the 1 glowing green, then the floor numbers lighting upward one by one to 7. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @ammon; @leviticum-elevator."
+     "prompt": "Macro of the elevator panel: only the 1 glowing green, then the floor numbers lighting upward one by one to 7. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator."
     }
    ]
   },
@@ -1056,7 +1080,7 @@
    "duration_s": 10,
    "audio": true,
    "status": "unshot",
-   "prompt": "Medium, 50mm. The elevator doors open on the third floor and an old master (@master-lyon) stands there holding a Levitian lantern (@lantern). He steps in beside Ammon (@ammon) and, as the elevator descends, raises the lantern to Ammon's face and looks at him. He says: 'Stay true to what you believe is right. If you do this, then no matter which path you take, you will end up where you need to go.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator.",
+   "prompt": "Medium, 50mm. The elevator doors open on the third floor and an old master (@master-lyon) stands there holding a Levitian lantern (@lantern). He steps in beside Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) and, as the elevator descends, raises the lantern to Ammon's face and looks at him. He says: 'Stay true to what you believe is right. If you do this, then no matter which path you take, you will end up where you need to go.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @lantern; @leviticum-elevator.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -1067,19 +1091,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Medium, 50mm. The elevator doors open on the third floor and an old master (@master-lyon) stands there holding a Levitian lantern (@lantern). He steps in beside Ammon (@ammon) and, as the elevator descends, raises the lantern to Ammon's face and looks at him. He says: 'Stay true to what you believe is right. If you do this, then no matter which path you take, you will end up where you need to go.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator."
+     "prompt": "Medium, 50mm. The elevator doors open on the third floor and an old master (@master-lyon) stands there holding a Levitian lantern (@lantern). He steps in beside Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) and, as the elevator descends, raises the lantern to Ammon's face and looks at him. He says: 'Stay true to what you believe is right. If you do this, then no matter which path you take, you will end up where you need to go.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @lantern; @leviticum-elevator."
     },
     {
      "c": "B",
      "name": "The master's face",
      "why": "His face for the line, in his own lantern light.",
-     "prompt": "Close, 85mm: the old master in lantern light, kind and tired, as he says: 'Stay true to what you believe is right.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator."
+     "prompt": "Close, 85mm: the old master in lantern light, kind and tired, as he says: 'Stay true to what you believe is right.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @lantern; @leviticum-elevator."
     },
     {
      "c": "C",
      "name": "Lantern gold",
      "why": "Two faces, one flame.",
-     "prompt": "Two faces in the elevator lit only by the lantern, gold on black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @ammon; @lantern; @leviticum-elevator."
+     "prompt": "Two faces in the elevator lit only by the lantern, gold on black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @master-lyon; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @lantern; @leviticum-elevator."
     }
    ]
   },
@@ -1090,7 +1114,7 @@
    "duration_s": 8,
    "audio": false,
    "status": "unshot",
-   "prompt": "Wide, locked, 35mm. The ground-floor corridor of the Leviticum (@leviticum-corridor), lantern-lit. Ammon (@ammon) walks away down it, reaches the passage and turns to speak — but the master (@master-lyon) has already stopped where he was and only smiles. Ammon turns and goes on. Fade to black. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon.",
+   "prompt": "Wide, locked, 35mm. The ground-floor corridor of the Leviticum (@leviticum-corridor), lantern-lit. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) walks away down it, reaches the passage and turns to speak — but the master (@master-lyon) has already stopped where he was and only smiles. Ammon turns and goes on. Fade to black. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @master-lyon.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -1101,19 +1125,19 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Wide, locked, 35mm. The ground-floor corridor of the Leviticum (@leviticum-corridor), lantern-lit. Ammon (@ammon) walks away down it, reaches the passage and turns to speak — but the master (@master-lyon) has already stopped where he was and only smiles. Ammon turns and goes on. Fade to black. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon."
+     "prompt": "Wide, locked, 35mm. The ground-floor corridor of the Leviticum (@leviticum-corridor), lantern-lit. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) walks away down it, reaches the passage and turns to speak — but the master (@master-lyon) has already stopped where he was and only smiles. Ammon turns and goes on. Fade to black. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @master-lyon."
     },
     {
      "c": "B",
      "name": "Walking toward us",
      "why": "The reverse ending: Ammon comes toward camera and out of the light.",
-     "prompt": "Reverse: Ammon walks toward camera down the lantern-lit corridor, the master small behind him under the lantern. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon."
+     "prompt": "Reverse: Ammon walks toward camera down the lantern-lit corridor, the master small behind him under the lantern. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @master-lyon."
     },
     {
      "c": "C",
      "name": "Out of the light",
      "why": "The last frame's grade: gold falling to black.",
-     "prompt": "Lantern gold falling off to black as Ammon walks out of the light. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @ammon; @master-lyon."
+     "prompt": "Lantern gold falling off to black as Ammon walks out of the light. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @leviticum-corridor; @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @master-lyon."
     }
    ]
   }
@@ -1124,12 +1148,579 @@
  },
  "ledger": {
   "_": "Every generation the desk submits is appended here with the project id, so it can be pulled back by id regardless of what the API can filter on.",
-  "jobs": []
+  "jobs": [
+   {
+    "request_id": "1589375f-b565-4009-8f05-8775b3bd85a8",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S1",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "e69d1784-dd51-4410-8593-f599f62f3d9b",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S1",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "9457edb9-699e-4dc4-8993-76af98e133ca",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S2",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "73f2c69f-4f70-4465-ba94-18517a0d662c",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S2",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "7897de06-2fc5-42da-82ff-e097eeef1aea",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S3",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "030afb0c-5572-48d9-b5d2-f53219ede4fd",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S3",
+    "lane": "B",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "1d53e2a5-ae96-4883-a05d-53a1c4d0af19",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S4",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "8280b6b9-d021-4d26-b883-e733e7715a57",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S4",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "93a9d4e9-09f4-47d1-b756-7a6cbfc8b38d",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S5",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "4a18bc42-d731-4672-863a-626b1d85d9dc",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S5",
+    "lane": "B",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "34ec191b-3e30-4840-8079-7889658c0f6c",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S7",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "c5d0f23c-a8b0-4769-91a3-25fc2fbf8c96",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S7",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "5ffc75b1-736b-497b-a619-bfe6dfe781bf",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S12",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "50b568fe-a2ca-49da-b97d-5ed7fbae956d",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S11",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "acd01649-42db-4ae5-8401-60a79b417716",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S16",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "61855de6-396b-470f-affe-6f09fef21e1c",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S16",
+    "lane": "B",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "1dbcfc69-b145-450b-810f-2779b650ed7a",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S21",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "02c115d8-86fe-49d1-af0b-808651ce94d8",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S21",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "46b7ce9a-db00-4071-8f96-20cb841898d6",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "B",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "32197d19-07f9-42eb-85ff-8f50767beb79",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "ea50daaf-dee1-40d7-b315-eb7f33415e99",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S23",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "9849d013-2852-4005-954f-891104e81d21",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S23",
+    "lane": "C",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "a7093bc0-6780-43d2-9dfd-feb3750dcb77",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S24",
+    "lane": "A",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "3acdd47d-8b49-48bf-861f-c6b6ca1ef5ee",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S24",
+    "lane": "B",
+    "kind": "still",
+    "model": "cinematic_studio_2_5",
+    "credits": 2,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "dd53d785-3e9c-4795-b151-9a4a71087f58",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S1",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "1589375f-b565-4009-8f05-8775b3bd85a8",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "0fee402c-0b26-4316-972a-48ff9cf0b73b",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S3",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "7897de06-2fc5-42da-82ff-e097eeef1aea",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "5b9a8ffb-6d7a-4875-a008-642f67b3d7ff",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S5",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "93a9d4e9-09f4-47d1-b756-7a6cbfc8b38d",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "baaeb69a-6997-4b79-b78b-d462413840bc",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S7",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "34ec191b-3e30-4840-8079-7889658c0f6c",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "f04bb089-061b-4312-b633-178e052fb5f5",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S12",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "5ffc75b1-736b-497b-a619-bfe6dfe781bf",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "21c170ee-06dd-4d69-92a5-bfb296292117",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S16",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "acd01649-42db-4ae5-8401-60a79b417716",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "26e78a8d-92b7-4406-8a43-41fc08420d3d",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S23",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "ea50daaf-dee1-40d7-b315-eb7f33415e99",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "18b25dc4-f744-4f14-ac58-478a4233544b",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "B",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "46b7ce9a-db00-4071-8f96-20cb841898d6",
+    "seconds": 8,
+    "resolution": "720p",
+    "generate_audio": false,
+    "credits": 56,
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:26Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector"
+   },
+   {
+    "request_id": "e51a7c45-6642-4851-b685-af638a8ed9f1",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "A",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "start_image": "32197d19-07f9-42eb-85ff-8f50767beb79",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:15:27Z",
+    "status": "ip_detected",
+    "via": "Claude · Higgsfield connector",
+    "note": "Stopped by Higgsfield's IP check: a fist gripping a glowing gemstone reads too close to a famous film prop. Replaced by 18b25dc4."
+   },
+   {
+    "request_id": "68ea4428-1b35-4a80-872b-ea87b61d47ae",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "cast",
+    "lane": "sheet",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:09Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "Ammon · Episode 2 sheet"
+   },
+   {
+    "request_id": "d4f67501-cd0e-4286-bb09-ccdc54d7baa0",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "cast",
+    "lane": "sheet",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:06Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "Mikael · Episode 2 sheet"
+   },
+   {
+    "request_id": "5af5e410-b3e7-4897-b4aa-088865bfe590",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S8",
+    "lane": "A",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:08Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the brothers on the lantern path, locked faces"
+   },
+   {
+    "request_id": "48634ecf-29f4-4917-91af-7a2c7c9d4d51",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S10",
+    "lane": "A",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:07Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "Ammon at the mouth of the Wind Caves, locked face"
+   },
+   {
+    "request_id": "df1d3e33-ecc8-4147-bff3-8e343d032183",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S19",
+    "lane": "B",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:11Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "Cephas town at night, the Leviticum on the far hill"
+   },
+   {
+    "request_id": "9827e534-73cb-419d-af48-215114399a46",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "bridge-out",
+    "lane": "tag",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:10Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the Guardians wait at the Leviticum steps"
+   },
+   {
+    "request_id": "d4ec4622-178c-4e8e-8785-dc42ed10b273",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S23",
+    "lane": "B",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:08Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the Stone of Energy bearer, ring of twelve"
+   },
+   {
+    "request_id": "bfe048a7-59a9-4387-a049-6ea862f11e5a",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "bridge-out",
+    "lane": "tag",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-05T02:30:07Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "Drowning rises from black water"
+   }
+  ]
  },
  "status": {
   "submitted": false,
   "public_url": null,
-  "note": "Board written 2026-10-01 from the Ep. 2 screenplay; nothing generated yet. Next: Souls for Ammon and Sadie, then the sheets, then Gate A."
+  "note": "Oct 5: first pass (24 stills, 8 video takes) and the cast carry-over (Ammon and Mikael locked as elements on the Episode 1 faces, plus the town, the Guardians, the Stone of Energy and Drowning), all in the locked folder. Next: re-render the moments with the brothers on the locked faces, a Soul and sheet for Sadie, then the finals."
  },
  "forms_note": "One shot pool, every length. Lane A ships, B is the coverage angle, C is the graded key-art take. The spots open peak-first, because the Predictor's hook score reads the first three seconds; the short film holds; the music video is cut to the main title song. The 20–60 minute episode is the next section.",
  "forms": [
@@ -1754,6 +2345,553 @@
     "fit": "66–80 BPM. A haunting piano or music-box opening, a whispered refrain, strings that warm into hope by the last chorus; it ends unresolved for the next episode.",
     "style": "haunting piano ballad, music box, whispered refrain, warm cello and strings build, intimate male vocal, hopeful final chorus, 72 bpm",
     "lyrics": "[Intro]\n[Whispered]\nLeave this place.\nLeave.\nBefore they follow.\n\n[Verse 1]\nI pressed the button for the ground floor and the car began to rise,\nonly the one was glowing, but the seventh floor arrived;\nthe glass doors opened on the dark, and something in the hall\nhad eyes that didn't blink at all.\n\n[Pre-Chorus]\n[Whispered]\nLeave this place...\n\n[Chorus]\nBefore they follow,\nbefore they find the door,\nI hear the warning in the hollow\nand I don't know what it's for;\nbut there's a lantern on the third floor\nand an old man who knows my name;\nbefore they follow,\nI'll be ready all the same.\n\n[Verse 2]\nHe said, I walked here in a dream, and so I came;\nhe said, your father used to do the same;\nhe said tomorrow's promised to no one,\nso when you feel the prompting, go.\n\n[Bridge]\nStay true to what you know is right,\nand every road will lead you home;\nwhere you need to go\nbecomes where you want to go.\n\n[Final Chorus]\nBefore they follow,\nbefore they find the door,\nI hear the warning in the hollow\nand I know now what it's for;\nthere's a lantern on the third floor\nand an old man who knows my name;\nbefore they follow,\nI'll be ready all the same.\n\n[Outro]\n[Whispered]\nA significant day is coming.\nAre you prepared?"
+   }
+  ]
+ },
+ "stills": [
+  {
+   "shot": "S1",
+   "lane": "A",
+   "id": "1589375f-b565-4009-8f05-8775b3bd85a8",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021127_1589375f-b565-4009-8f05-8775b3bd85a8.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021127_1589375f-b565-4009-8f05-8775b3bd85a8_min.webp",
+   "note": "courtyard, stardust lifts off",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S1",
+   "lane": "C",
+   "id": "e69d1784-dd51-4410-8593-f599f62f3d9b",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021129_e69d1784-dd51-4410-8593-f599f62f3d9b.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021129_e69d1784-dd51-4410-8593-f599f62f3d9b_min.webp",
+   "note": "poster grade, violet edge",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S2",
+   "lane": "A",
+   "id": "9457edb9-699e-4dc4-8993-76af98e133ca",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021128_9457edb9-699e-4dc4-8993-76af98e133ca.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021128_9457edb9-699e-4dc4-8993-76af98e133ca_min.webp",
+   "note": "glass figure falling",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S2",
+   "lane": "C",
+   "id": "73f2c69f-4f70-4465-ba94-18517a0d662c",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021130_73f2c69f-4f70-4465-ba94-18517a0d662c.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021130_73f2c69f-4f70-4465-ba94-18517a0d662c_min.webp",
+   "note": "prism beam",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S3",
+   "lane": "A",
+   "id": "7897de06-2fc5-42da-82ff-e097eeef1aea",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021126_7897de06-2fc5-42da-82ff-e097eeef1aea.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021126_7897de06-2fc5-42da-82ff-e097eeef1aea_min.webp",
+   "note": "aerial into the abyss",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S3",
+   "lane": "B",
+   "id": "030afb0c-5572-48d9-b5d2-f53219ede4fd",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021130_030afb0c-5572-48d9-b5d2-f53219ede4fd.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021130_030afb0c-5572-48d9-b5d2-f53219ede4fd_min.webp",
+   "note": "rim, one waterfall",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S4",
+   "lane": "A",
+   "id": "1d53e2a5-ae96-4883-a05d-53a1c4d0af19",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021130_1d53e2a5-ae96-4883-a05d-53a1c4d0af19.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021130_1d53e2a5-ae96-4883-a05d-53a1c4d0af19_min.webp",
+   "note": "Lucille before the glass figure",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S4",
+   "lane": "C",
+   "id": "8280b6b9-d021-4d26-b883-e733e7715a57",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021127_8280b6b9-d021-4d26-b883-e733e7715a57.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021127_8280b6b9-d021-4d26-b883-e733e7715a57_min.webp",
+   "note": "Lucille lit by her light",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S5",
+   "lane": "A",
+   "id": "93a9d4e9-09f4-47d1-b756-7a6cbfc8b38d",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021131_93a9d4e9-09f4-47d1-b756-7a6cbfc8b38d.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021131_93a9d4e9-09f4-47d1-b756-7a6cbfc8b38d_min.webp",
+   "note": "the wave of light, very wide",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S5",
+   "lane": "B",
+   "id": "4a18bc42-d731-4672-863a-626b1d85d9dc",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021131_4a18bc42-d731-4672-863a-626b1d85d9dc.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021131_4a18bc42-d731-4672-863a-626b1d85d9dc_min.webp",
+   "note": "ground level as the wave passes",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S7",
+   "lane": "A",
+   "id": "34ec191b-3e30-4840-8079-7889658c0f6c",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021128_34ec191b-3e30-4840-8079-7889658c0f6c.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021128_34ec191b-3e30-4840-8079-7889658c0f6c_min.webp",
+   "note": "Cloud Mountain at dawn",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S7",
+   "lane": "C",
+   "id": "c5d0f23c-a8b0-4769-91a3-25fc2fbf8c96",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021129_c5d0f23c-a8b0-4769-91a3-25fc2fbf8c96.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021129_c5d0f23c-a8b0-4769-91a3-25fc2fbf8c96_min.webp",
+   "note": "the mountain in the lake",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S12",
+   "lane": "A",
+   "id": "5ffc75b1-736b-497b-a619-bfe6dfe781bf",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021152_5ffc75b1-736b-497b-a619-bfe6dfe781bf.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021152_5ffc75b1-736b-497b-a619-bfe6dfe781bf_min.webp",
+   "note": "the wind through the Wind Caves",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S11",
+   "lane": "C",
+   "id": "50b568fe-a2ca-49da-b97d-5ed7fbae956d",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021149_50b568fe-a2ca-49da-b97d-5ed7fbae956d.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021149_50b568fe-a2ca-49da-b97d-5ed7fbae956d_min.webp",
+   "note": "his shadow on the wall",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S16",
+   "lane": "A",
+   "id": "acd01649-42db-4ae5-8401-60a79b417716",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021154_acd01649-42db-4ae5-8401-60a79b417716.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021154_acd01649-42db-4ae5-8401-60a79b417716_min.webp",
+   "note": "the kiss under the water",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S16",
+   "lane": "B",
+   "id": "61855de6-396b-470f-affe-6f09fef21e1c",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021153_61855de6-396b-470f-affe-6f09fef21e1c.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021153_61855de6-396b-470f-affe-6f09fef21e1c_min.webp",
+   "note": "from above through the surface",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S21",
+   "lane": "A",
+   "id": "1dbcfc69-b145-450b-810f-2779b650ed7a",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021151_1dbcfc69-b145-450b-810f-2779b650ed7a.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021151_1dbcfc69-b145-450b-810f-2779b650ed7a_min.webp",
+   "note": "the woman becomes the panther",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S21",
+   "lane": "C",
+   "id": "02c115d8-86fe-49d1-af0b-808651ce94d8",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021155_02c115d8-86fe-49d1-af0b-808651ce94d8.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021155_02c115d8-86fe-49d1-af0b-808651ce94d8_min.webp",
+   "note": "the panther in violet rain",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S22",
+   "lane": "B",
+   "id": "46b7ce9a-db00-4071-8f96-20cb841898d6",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021150_46b7ce9a-db00-4071-8f96-20cb841898d6.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021150_46b7ce9a-db00-4071-8f96-20cb841898d6_min.webp",
+   "note": "the stone under the sand, violet eats green",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S22",
+   "lane": "A",
+   "id": "32197d19-07f9-42eb-85ff-8f50767beb79",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021152_32197d19-07f9-42eb-85ff-8f50767beb79.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021152_32197d19-07f9-42eb-85ff-8f50767beb79_min.webp",
+   "note": "the fist and the stone",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S23",
+   "lane": "A",
+   "id": "ea50daaf-dee1-40d7-b315-eb7f33415e99",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021150_ea50daaf-dee1-40d7-b315-eb7f33415e99.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021150_ea50daaf-dee1-40d7-b315-eb7f33415e99_min.webp",
+   "note": "the ring of twelve, overhead",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S23",
+   "lane": "C",
+   "id": "9849d013-2852-4005-954f-891104e81d21",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021153_9849d013-2852-4005-954f-891104e81d21.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021153_9849d013-2852-4005-954f-891104e81d21_min.webp",
+   "note": "Morningstar, lit from below",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S24",
+   "lane": "A",
+   "id": "a7093bc0-6780-43d2-9dfd-feb3750dcb77",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021149_a7093bc0-6780-43d2-9dfd-feb3750dcb77.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021149_a7093bc0-6780-43d2-9dfd-feb3750dcb77_min.webp",
+   "note": "the seventh floor, eyes in the dark",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "S24",
+   "lane": "B",
+   "id": "3acdd47d-8b49-48bf-861f-c6b6ca1ef5ee",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021150_3acdd47d-8b49-48bf-861f-c6b6ca1ef5ee.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_021150_3acdd47d-8b49-48bf-861f-c6b6ca1ef5ee_min.webp",
+   "note": "from the dark hall",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:11Z"
+  },
+  {
+   "shot": "cast",
+   "lane": "sheet",
+   "id": "68ea4428-1b35-4a80-872b-ea87b61d47ae",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 2752×1536",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023009_68ea4428-1b35-4a80-872b-ea87b61d47ae.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023009_68ea4428-1b35-4a80-872b-ea87b61d47ae_min.webp",
+   "note": "Ammon · Episode 2 sheet",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "cast",
+   "lane": "sheet",
+   "id": "d4f67501-cd0e-4286-bb09-ccdc54d7baa0",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 2752×1536",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023006_d4f67501-cd0e-4286-bb09-ccdc54d7baa0.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023006_d4f67501-cd0e-4286-bb09-ccdc54d7baa0_min.webp",
+   "note": "Mikael · Episode 2 sheet",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "S8",
+   "lane": "A",
+   "id": "5af5e410-b3e7-4897-b4aa-088865bfe590",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023008_5af5e410-b3e7-4897-b4aa-088865bfe590.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023008_5af5e410-b3e7-4897-b4aa-088865bfe590_min.webp",
+   "note": "the brothers on the lantern path, locked faces",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "S10",
+   "lane": "A",
+   "id": "48634ecf-29f4-4917-91af-7a2c7c9d4d51",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023007_48634ecf-29f4-4917-91af-7a2c7c9d4d51.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023007_48634ecf-29f4-4917-91af-7a2c7c9d4d51_min.webp",
+   "note": "Ammon at the mouth of the Wind Caves, locked face",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "S19",
+   "lane": "B",
+   "id": "df1d3e33-ecc8-4147-bff3-8e343d032183",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023011_df1d3e33-ecc8-4147-bff3-8e343d032183.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023011_df1d3e33-ecc8-4147-bff3-8e343d032183_min.webp",
+   "note": "Cephas town at night, the Leviticum on the far hill",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "bridge-out",
+   "lane": "tag",
+   "id": "9827e534-73cb-419d-af48-215114399a46",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023010_9827e534-73cb-419d-af48-215114399a46.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023010_9827e534-73cb-419d-af48-215114399a46_min.webp",
+   "note": "the Guardians wait at the Leviticum steps",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "S23",
+   "lane": "B",
+   "id": "d4ec4622-178c-4e8e-8785-dc42ed10b273",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023008_d4ec4622-178c-4e8e-8785-dc42ed10b273.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023008_d4ec4622-178c-4e8e-8785-dc42ed10b273_min.webp",
+   "note": "the Stone of Energy bearer, ring of twelve",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  },
+  {
+   "shot": "bridge-out",
+   "lane": "tag",
+   "id": "bfe048a7-59a9-4387-a049-6ea862f11e5a",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023007_bfe048a7-59a9-4387-a049-6ea862f11e5a.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261005_023007_bfe048a7-59a9-4387-a049-6ea862f11e5a_min.webp",
+   "note": "Drowning rises from black water",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-05T02:30Z",
+   "pass": "cast"
+  }
+ ],
+ "passes": [
+  {
+   "date": "2026-10-05",
+   "name": "First pass: the best moments",
+   "stills": 24,
+   "videos": 8,
+   "blocked": 1,
+   "credits": 496,
+   "how": "Twelve moments from the screenplay as 2K stills on Cinema Studio Image 2.5, two looks each (the boarded composition and its coverage or chroma grade); the boarded still of eight moments animated as its start frame on Cinema Studio 4.0 at 8s, 720p, model audio off. Everything filed into the locked folder.",
+   "learned": [
+    "Start and end frames need mode omni_reference on Cinema Studio 4.0; t2v refuses reference media.",
+    "Model audio is on by default (generate_audio true); every take here was made with it off.",
+    "The service can answer a generation with a preset suggestion instead of a job (here 'IN THE DARK'); declined_preset_id makes the take as asked, and nothing is charged for the suggestion.",
+    "A fist gripping a glowing gem was stopped by the IP check. Show the stone in the sand or the light, not the grip.",
+    "No faces are locked yet: Ammon and the others differ from still to still until the Souls and sheets exist."
+   ]
+  },
+  {
+   "date": "2026-10-05",
+   "name": "Cast carried over from Episode 1",
+   "stills": 8,
+   "videos": 0,
+   "blocked": 0,
+   "credits": 16,
+   "how": "Seven Episode 1 elements duplicated (the submitted originals untouched), then dressed for Episode 2 on Cinema Studio Image 2.5 at 2K: two split-screen sheets that became the elements ammon and mikael, and six scene stills on the duplicates. The Souls are reused by id. Everything filed into the locked folder.",
+   "learned": [
+    "Read the book before the brief: Ammon is the elder brother and dirty-blonde, Mikael the little brother. The first Episode 2 briefs had both wrong; the Episode 1 faces already matched.",
+    "An element is made from up to several images: the Episode 2 sheet goes first, the Episode 1 portrait second, so wardrobe and face both carry.",
+    "Elements are workspace-wide; only generations are filed into folders. The lock covers every generation that made an element.",
+    "The drowning_v1 reference from Episode 1 is flagged by the IP check. Its still came back; test one short take before building a shot on it."
+   ]
+  }
+ ],
+ "carried": {
+  "_": "Brought over from the Episode 1 contest folder (Contest 1 / Stone of Matter Ep. 1). The Episode 1 elements were duplicated and left as submitted; the duplicates were then dressed for Episode 2 in the locked folder. Elements live in the workspace, not in a folder; the generations that made them are filed in the locked folder.",
+  "set": "2026-10-05",
+  "items": [
+   {
+    "name": "ammon",
+    "id": "0506e54b-81d7-43ba-9d50-d68411d9f4cc",
+    "base": "53f7582a-03fe-4c27-b789-a08104c95aa8",
+    "from": "Alder (kai_alder_v1, Soul alder)",
+    "sheet": "68ea4428-1b35-4a80-872b-ea87b61d47ae",
+    "tweak": "Episode 2 wardrobe on the Episode 1 face: undyed linen shirt, open moss-green wool overshirt, brown canvas trousers, worn boots, cord bracelet. The guitar stays a separate prop."
+   },
+   {
+    "name": "mikael",
+    "id": "66e16226-2809-449b-85e1-fb98732942dc",
+    "base": "05236725-55ce-4ceb-a5df-16c67a99964a",
+    "from": "Wren (kai_wren_v1, Soul wren)",
+    "sheet": "d4f67501-cd0e-4286-bb09-ccdc54d7baa0",
+    "tweak": "Episode 2 wardrobe: rust-brown wool henley, sheepskin-lined leather vest, grey-green canvas trousers, leather wrist cuff; thicker-set than Ammon, same height."
+   },
+   {
+    "name": "cephas-town",
+    "id": "bda5eff0-c2ff-48ba-bc10-e0e8710b508c",
+    "from": "the Kephas Island town and concept elements",
+    "sheet": "df1d3e33-ecc8-4147-bff3-8e343d032183",
+    "tweak": "The same town ten years on, at night, lanterns in every window, the Leviticum on the far hill."
+   },
+   {
+    "name": "guardians",
+    "id": "2ea82739-6aa3-4ba6-82a0-d758aab26a54",
+    "from": "keeper (8a3838aa) — the Vigil",
+    "sheet": "9827e534-73cb-419d-af48-215114399a46",
+    "tweak": "The Guardians at the Leviticum steps, waiting for the Trials: the Episode 3 hand-off."
+   },
+   {
+    "name": "stone-of-energy",
+    "id": "aee791f3-73d2-4604-8a88-7c9a3f45bd69",
+    "from": "turned-energy",
+    "sheet": "d4ec4622-178c-4e8e-8785-dc42ed10b273",
+    "tweak": "The bearer in the Outer Darkness, the Stone's light the only key: S23."
+   },
+   {
+    "name": "drowning",
+    "id": "57bb92bb-f84d-4097-ab88-5bc1e2c4b01c",
+    "from": "drowning_v1 (a886edff)",
+    "sheet": "bfe048a7-59a9-4387-a049-6ea862f11e5a",
+    "tweak": "Rising from black water: the Episode 3 tag. The Episode 1 reference image carries an IP flag; the still came back, but watch it on video."
+   },
+   {
+    "name": "stone-language",
+    "id": "b6ed2008-8a52-4a1e-be7a-8cd5914eb012",
+    "from": "founding-stone (45c4d884)",
+    "tweak": "Not re-rendered: it is the look reference every Stone obeys, including the heart of Ilan."
    }
   ]
  }
