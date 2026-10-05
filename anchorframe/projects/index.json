@@ -1,22 +1,5 @@
 [
  {
-  "slug": "stone-of-matter-ep2-darkness",
-  "title": "Stone of Matter — Ep. 2 Darkness",
-  "byline": "B.L. Barkey",
-  "kind": "short",
-  "logline": "A light being seeds a young world against the dark, and thousands of years later a boy who can hear the wind learns that the dark has four of the seven stones and is coming for the fifth.",
-  "aspect": "21:9",
-  "shots": 26,
-  "takes": 8,
-  "picks": 8,
-  "scored": 0,
-  "unshot": 18,
-  "regen": 0,
-  "runtime": "4:40",
-  "project_url": "https://higgsfield.ai/canvas?canvasProjectId=e6e807a9-49a8-41f1-bb4c-9247468606cb",
-  "built": "2026-10-05 02:33 UTC"
- },
- {
   "slug": "matter-of-light",
   "title": "Matter of Light",
   "byline": "B.L. Barkey",
@@ -31,6 +14,23 @@
   "regen": 2,
   "runtime": "6:19",
   "project_url": "https://higgsfield.ai/canvas?canvasProjectId=fd65cff2-8d25-44cf-a5b2-19a9267f3bcf",
-  "built": "2026-10-05 02:33 UTC"
+  "built": "2026-10-05 03:08 UTC"
+ },
+ {
+  "slug": "stone-of-matter-ep2-darkness",
+  "title": "Stone of Matter — Ep. 2 Darkness",
+  "byline": "B.L. Barkey",
+  "kind": "short",
+  "logline": "A light being seeds a young world against the dark, and thousands of years later a boy who can hear the wind learns that the dark has four of the seven stones and is coming for the fifth.",
+  "aspect": "21:9",
+  "shots": 26,
+  "takes": 18,
+  "picks": 13,
+  "scored": 18,
+  "unshot": 13,
+  "regen": 0,
+  "runtime": "4:11",
+  "project_url": "https://higgsfield.ai/canvas?canvasProjectId=e6e807a9-49a8-41f1-bb4c-9247468606cb",
+  "built": "2026-10-05 03:08 UTC"
  }
 ]

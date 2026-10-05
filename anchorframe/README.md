@@ -26,6 +26,13 @@ Keys, when the desk should generate: `keys.html` → export `keys.env` into `anc
 python3 anchorframe/generate.py anchorframe/projects/<slug> --shot S5 --model <cloud model id> --prompt-from-shot
 ```
 
+Starting the next episode (the workflow page's *Carry over* section has the ten steps):
+```
+python3 anchorframe/carry.py plan  anchorframe/projects/<next>   # the bins, written to carry-plan.json
+python3 anchorframe/carry.py link  anchorframe/projects/<next>   # @name → @[name](id) once elements exist
+python3 anchorframe/carry.py check anchorframe/projects/<next>   # fails on a backward reference or a row outside the lock
+```
+
 ## The one-folder rule, and what the API can enforce
 Exclusive to one Higgsfield project. Since Sep 29 the connector exposes `list_projects`, `list_folders` and `list_project_assets`, so **membership is now the first admission rule**: page the project's assets, save them as `placements.tsv`, and `ingest.py --placements` admits every item placed in the project, with its folder and favourite flag on the take. The older rules still apply behind it — **admission by cast**, **ledger on submission**, a **hand map** — because a project can hold takes made with a retired cast, and the desk can make takes the web app has not filed yet. Generation still lands in the folder only when made in the web app or on a model that takes `folder_id`; `create_folder` / `create_project` now exist for the desk to file into. `links.json` records every Higgsfield surface the production used, marked verified or not.
 
@@ -36,6 +43,7 @@ Exclusive to one Higgsfield project. Since Sep 29 the connector exposes `list_pr
 | `links.json` → `links.html` | every link used, by stage, verified or not |
 | `desk.py` → `index.html` | the front door |
 | `ingest.py` · `build.py` · `generate.py` | the loop |
+| `carry.py` (`plan` · `link` · `check`) | one episode to the next: which elements to inherit, carry and dress, or make new; ids linked into every prompt; nothing pointing back at the submitted episode, nothing outside the folder lock |
 | `keys.html` | bring your own keys, local only |
 | `tips.md` · `schema.md` · `project.example.json` | the tips, the format, the blank |
 | `projects/matter-of-light/` | the worked example on real data: 27 shots, 59 of 130 takes admitted, none unplaced, 18 scored |

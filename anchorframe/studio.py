@@ -151,6 +151,8 @@ const D = JSON.parse(document.getElementById('studio-data').textContent);
 const HF = 'Higgsfield', PID = D.project.hf.project_id, WS = D.project.hf.workspace_id, FOLDER = D.project.hf.folder_id;
 const VIDEO_MODEL = D.project.hf.video_model, IMAGE_MODEL = D.project.hf.image_model, LOCK = D.project.hf.lock || null;
 const lockOk = () => !!LOCK && LOCK.folder_id === FOLDER && LOCK.project_id === PID;
+// A locked studio lists exactly the locked folder (no other folders, no descendants), so what it shows is what the episode holds.
+const listArgs = () => Object.assign({workspace_id: WS, project_id: PID, size: 50}, lockOk() ? {folder_id: FOLDER} : {});
 const QS = D.intake.questions, SECTIONS = D.intake.sections;
 const PENDING = new Set(Object.keys(D.cast).filter(n => !D.cast[n].id));
 const KINDS = [
@@ -366,13 +368,13 @@ function connectHF(){
   if (ev.type === 'data'){ const p = ev.result.payload || {}; S.hf.credits = typeof p.credits === 'number' ? p.credits : null; S.hf.plan = p.subscription_plan_type || null; S.hf.state = 'live'; S.hf.err = null; }
   else { S.hf.err = ev.error; if (['needs_reauth', 'server_not_connected', 'blocked_by_policy', 'approval_required', 'not_in_manifest', 'selection_required', 'not_granted', 'capability_disabled'].indexOf(ev.error.code) >= 0){ S.hf.state = 'error'; S.hf.credits = null; } }
   renderHF(); renderStatus(); renderStart(); }, {refetchInterval: 120000}));
- unwatch.push(mcp.watchTool(HF, 'list_project_assets', {workspace_id: WS, project_id: PID, size: 50}, ev => {
+ unwatch.push(mcp.watchTool(HF, 'list_project_assets', listArgs(), ev => {
   if (ev.type === 'data'){ const p = ev.result.payload || {}; S.hf.items = p.items || []; S.hf.more = !!p.has_more; S.hf.cursor = p.cursor || null; S.hf.storedAt = ev.result.cache ? ev.result.cache.storedAt : Date.now(); }
   else if (['needs_reauth', 'server_not_connected', 'blocked_by_policy', 'not_in_manifest', 'not_granted'].indexOf(ev.error.code) >= 0){ S.hf.items = []; }
   renderHFItems(); }, {refetchInterval: 60000}));
 }
 async function loadMore(btn){ if (!S.hf.cursor) return; btn.disabled = true;
- try { const r = await mcp.callTool(HF, 'list_project_assets', {workspace_id: WS, project_id: PID, size: 50, cursor: S.hf.cursor}); const p = r.payload || {};
+ try { const r = await mcp.callTool(HF, 'list_project_assets', Object.assign(listArgs(), {cursor: S.hf.cursor})); const p = r.payload || {};
   S.hf.items = S.hf.items.concat(p.items || []); S.hf.more = !!p.has_more; S.hf.cursor = p.cursor || null; renderHFItems(); }
  catch(e){ $('#hf-items-msg').textContent = hfMsg(e); } btn.disabled = false; }
 function renderHF(){
@@ -387,7 +389,7 @@ function renderHF(){
  if (mcp && s.state !== 'live') btns.append(h('button', {type:'button', class:'btn pri', onclick: connectHF}, s.state === 'error' ? 'Try again' : 'Connect Higgsfield'));
  if (mcp && s.state === 'live') btns.append(h('button', {type:'button', class:'btn', onclick: () => { mcp.invalidate(HF).catch(() => {}).then(connectHF); }}, 'Refresh'));
  if (perms && s.err && s.err.code === 'not_in_manifest') btns.append(h('button', {type:'button', class:'btn', onclick: () => perms.manage().catch(() => {})}, 'Open permissions'));
- btns.append(h('a', {class:'btn', href: D.project.hf.project_url, target:'_blank', rel:'noopener'}, 'Open the project in Higgsfield ↗'));
+ btns.append(h('a', {class:'btn', href: D.project.hf.project_url, target:'_blank', rel:'noopener'}, lockOk() ? 'Open ' + LOCK.project + ' in Higgsfield ↗' : 'Open the project in Higgsfield ↗'));
  body.push(h('p', {class: lockOk() ? 'msg ok' : 'msg bad'}, lockOk() ? 'Locked: every generation and remix from this studio is filed into ' + LOCK.project + ' and nowhere else.' : 'Not locked to a folder: generation is off until the project names its Higgsfield folder.'));
  st.replaceChildren(...body, btns);
 }

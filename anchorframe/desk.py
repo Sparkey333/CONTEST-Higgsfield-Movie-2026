@@ -14,6 +14,13 @@ NOW = datetime.datetime.utcnow().strftime("%d %b %Y %H:%M UTC")
 DK = json.load(open(D / "desk.json")) if (D / "desk.json").exists() else {}
 NAME = DK.get("title", W["name"])
 if DK.get("current"): ix = sorted(ix, key=lambda r: r.get("slug") != DK["current"])
+# The desk's own project links (the folder, its Elements, its public page) come from the current
+# project's higgsfield.links, so every edition's desk opens its own episode and nothing else.
+CUR = D / "projects" / DK.get("current", "") / "project.json"
+for lid, over in (json.load(open(CUR)).get("higgsfield", {}).get("links", {}) if DK.get("current") and CUR.exists() else {}).items():
+    if lid.startswith("_"): continue
+    if lid in LINK: LINK[lid].update(over)
+    else: LINK[lid] = dict(over, id=lid); L["groups"][0]["links"].append(LINK[lid])
 
 def inline(t):
     t = esc(t); t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t); t = re.sub(r"`(.+?)`", r"<code>\1</code>", t); return re.sub(r"(?<!\*)\*(?!\*)(.+?)\*", r"<em>\1</em>", t)
@@ -132,14 +139,17 @@ for s in W["stages"]:
 <div class="foot"><span>{esc(s["mol"]["numbers"])}</span><span>{esc(s["mol"]["dates"])}</span></div></article>{gate_html}''')
 loop_html = "".join(f'<div class="lp"><b>{i+1} · {esc(x["k"])}</b><p>{esc(x["do"])}</p><code>{esc(x["cmd"])}</code></div>' for i, x in enumerate(W["loop"]["steps"]))
 expand_html = "".join(f'<div class="doc"><span class="k">{esc(k)} · unit: {esc(v["unit"])}</span><h3>{esc(v["name"])}</h3><p>{esc(v["scale"])}</p><span class="pill {"built" if v["status"].startswith("built") else "road"}">{esc(v["status"].split(" — ")[0])}</span><span class="f">{esc(v["status"].split(" — ",1)[1] if " — " in v["status"] else "")}</span></div>' for k, v in W["expand"].items() if not k.startswith("_"))
+carry_html = "".join(f'<div class="lp"><b>{i+1} · {esc(x["k"])}</b><p>{esc(x["do"])}</p><code>{esc(x["cmd"])}</code></div>' for i, x in enumerate(W.get("carry", {}).get("steps", [])))
 unique_html = "".join(f'<div class="doc"><h3>{esc(u["k"])}</h3><p>{esc(u["d"])}</p></div>' for u in W["unique"])
-NAV_W = [("Overview", "index.html"), ("The map", "#map"), ("Stages", "#s-story"), ("The loop", "#loop"), ("Scale", "#scale"), ("Links", "links.html"), ("Keys", "keys.html")]
+carry_sec = (f'<section id="carry" style="margin-top:54px"><div class="sec-head"><h2><span class="n">CARRY OVER</span>From one episode to the next</h2><p>{esc(W["carry"]["_"])}</p></div><div class="loop">{carry_html}</div></section>') if W.get("carry") else ""
+NAV_W = [("Overview", "index.html"), ("The map", "#map"), ("Stages", "#s-story"), ("The loop", "#loop")] + ([("Carry over", "#carry")] if W.get("carry") else []) + [("Scale", "#scale"), ("Links", "links.html"), ("Keys", "keys.html")]
 wf = head(f'{NAME} · Workflow', "Nine stages, five gates, one loop — the end-to-end workflow with its iteration points, derived from a finished film.") + f'''
 <header class="top"><div class="wrap"><span class="eyebrow"><a href="index.html">{esc(NAME)}</a> · the workflow · built {NOW}</span><h1>Nine stages. Five gates. One loop.</h1><p class="tag">{esc(W["promise"])}</p><p class="lede">{esc(W["derived_from"])}</p></div></header>
 {nav(NAV_W, "#map")}<main class="wrap">
 <section id="map"><div class="sec-head"><h2><span class="n">MAP</span>Where the loops are, and what closes them</h2><p>Every stage with a ⟲ has an <em>iterate here</em> card: what triggers the loop, what you do, what lets you out, what it costs — and what it cost on the film. Gates are the exits; nothing downstream begins until the gate above holds.</p></div>{mapstrip()}</section>
 {"".join(stages_html)}
 <section id="loop" style="margin-top:54px"><div class="sec-head"><h2><span class="n">INNER LOOP</span>Inside stages 4–6</h2><p>{esc(W["loop"]["_"])}</p></div><div class="loop">{loop_html}</div></section>
+{carry_sec}
 <section id="scale"><div class="sec-head"><h2><span class="n">SCALE</span>From short to feature to game</h2><p>{esc(W["expand"]["_"])}</p></div><div class="docs">{expand_html}</div></section>
 <section id="why"><div class="sec-head"><h2><span class="n">WHY</span>What is different about this</h2></div><div class="docs">{unique_html}</div></section>
 <footer>Built by <code>anchorframe/desk.py</code> from <code>workflow.json</code>, <code>links.json</code> and every project's <code>examples.json</code>. Regenerate, don't hand-edit.</footer></main>

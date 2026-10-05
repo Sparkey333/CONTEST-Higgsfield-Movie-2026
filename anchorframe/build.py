@@ -113,9 +113,11 @@ def sections():
             st = sheet.get(i.get("sheet", ""))
             art = f'<a href="{esc(st["url"])}" target="_blank" rel="noopener"><img src="{esc(st["thumb"])}" alt="{esc(i["name"])} for Episode 2" loading="lazy"></a>' if st else '<div class="noimg">not re-rendered</div>'
             soul = P.get("souls", {}).get(i["name"])
-            return (f'<article class="carry">{art}<div class="cb"><h3>@{esc(i["name"])}</h3><p class="meta">from {esc(i.get("from",""))}' + (f' · Soul {esc(soul["soul_id"][:8])}' if isinstance(soul, dict) else "") + '</p>'
+            return (f'<article class="carry">{art}<div class="cb"><h3>@{esc(i["name"])}</h3><p class="meta">{esc(i.get("label") or "from " + i.get("from",""))}' + (f' · Soul {esc(soul["soul_id"][:8])}' if isinstance(soul, dict) else "") + '</p>'
                     f'<p class="fw">{esc(i.get("tweak",""))}</p><button type="button" class="jid" data-copy="{esc(i["id"])}">{esc(i["id"])}</button></div></article>')
-        out.append(f'<section class="xs" id="cast"><h2>Cast carried over</h2><p class="note">{esc(ca.get("_",""))}</p><div class="carries">{"".join(ccard(i) for i in ca["items"])}</div></section>')
+        mk = P.get("made") or {}
+        made = (f'<h3 class="xs-sub">Made for this episode</h3><p class="note">{esc(mk.get("_",""))}</p><div class="carries">{"".join(ccard(dict(i, tweak=i.get("note",""), label="new in this episode · " + i.get("kind",""))) for i in mk.get("items", []))}</div>') if mk.get("items") else ""
+        out.append(f'<section class="xs" id="cast"><h2>Cast</h2><h3 class="xs-sub">Carried over</h3><p class="note">{esc(ca.get("_",""))}</p><div class="carries">{"".join(ccard(i) for i in ca["items"])}</div>{made}</section>')
     th = P.get("themes")
     if th:
         nav.append(("Soundtrack", "#soundtrack"))
@@ -144,6 +146,7 @@ XCSS = """
 .carry img,.carry .noimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--tile)}.carry .noimg{display:grid;place-items:center;font:12px var(--mono);color:var(--ink-3)}
 .carry .cb{padding:12px 16px 14px;display:grid;gap:6px}.carry h3{margin:0;font:600 16px var(--mono)}.carry .meta,.carry .fw{margin:0}.carry .jid{justify-self:start;max-width:100%;overflow-wrap:anywhere}
 #bridges .stills{padding:14px 0 0}
+.xs-sub{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:22px 0 6px}
 .bridges{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.bridge ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2)}.bridge li{margin:6px 0}
 .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;align-items:start}.theme{margin-top:0}
 .fit{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0 0 10px;font-size:14px}.fit dt{font:500 10.5px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}.fit dd{margin:0;color:var(--ink-2)}.fit code{font:12px var(--mono);overflow-wrap:anywhere}
@@ -167,6 +170,13 @@ def stills_html(sid):
 SCSS = """.stills{padding:0 22px 14px}.stills .srow{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:6px}
 .still{margin:0;min-width:0}.still img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:7px;border:1px solid var(--line);display:block;background:var(--tile)}
 .still figcaption{font-size:12px;color:var(--ink-3);margin-top:4px}.still figcaption b{color:var(--ink);font-family:var(--mono)}"""
+# The folder line: this board's own folder, unless the desk it ships in is another episode's. Then it is
+# labelled as a reference, and the desk's lock is named as the one place this edition generates.
+DESK = json.load(open(pdir.parent.parent / "desk.json")) if (pdir.parent.parent / "desk.json").exists() else {}
+CURP = pdir.parent / DESK.get("current", "") / "project.json"
+CURL = json.load(open(CURP)).get("higgsfield", {}).get("lock") if DESK.get("current") and DESK["current"] != pdir.name and CURP.exists() else None
+FOLDER_NOTE = (f'Project folder (reference, read only): <a href="{esc(P["higgsfield"].get("project_url","#"))}">{esc(P["higgsfield"].get("project_name",""))}</a>. This desk generates only in {esc(CURL["project"])}'
+               if CURL else f'Project folder: <a href="{esc(P["higgsfield"].get("project_url","#"))}">{esc(P["higgsfield"].get("project_name",""))}</a>')
 cards, ribbon, total, unshot, regen, placed = [], [], 0, 0, 0, 0
 for s in P["shots"]:
     sid, mv, title, tone = s["id"], s["act"], s.get("title", s["id"]), TONE.get(s["act"], "sun")
@@ -233,7 +243,7 @@ h2{{font-size:clamp(22px,3vw,30px);margin:44px 0 10px}} .muted{{color:var(--ink-
 <p class="lede">{esc(P.get("logline",""))}</p>
 <div class="kpis"><div class="kpi"><b>{len(P["shots"])}</b><span>shots in the cut</span></div><div class="kpi"><b>{len(G)}</b><span>takes admitted to this project</span></div><div class="kpi"><b>{placed}</b><span>shots with a pick</span></div><div class="kpi"><b>{n}</b><span>takes scored</span></div><div class="kpi"><b>{regen}</b><span>to make again</span></div><div class="kpi"><b>{unshot}</b><span>not yet shot</span></div><div class="kpi"><b>{mm}</b><span>runtime of picks + unshot</span></div></div>
 <div class="ribbon" aria-hidden="true">{"".join(ribbon)}</div><div class="legend">{legend}<span>dashed — not yet shot</span></div>
-<p class="note">Project folder: <a href="{esc(hf.get("project_url","#"))}">{esc(hf.get("project_name",""))}</a> · video on <code>{esc(hf.get("video_model",""))}</code> · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])} · {P["format"].get("fps",24)} fps. Clips play inline when this file is opened locally; in a sandboxed viewer each tile shows its identity card and an <em>open the clip</em> link.</p></header>
+<p class="note">{FOLDER_NOTE} · video on <code>{esc(hf.get("video_model",""))}</code> · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])} · {P["format"].get("fps",24)} fps. Clips play inline when this file is opened locally; in a sandboxed viewer each tile shows its identity card and an <em>open the clip</em> link.</p></header>
 {sections()}{"".join(cards)}
 <footer>Built by <code>anchorframe/build.py</code> from <code>project.json</code>, <code>generations.json</code> and <code>scores.json</code>. Change the JSON and rebuild; do not hand-edit this file.</footer></div>
 <script>
