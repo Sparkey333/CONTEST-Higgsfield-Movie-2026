@@ -143,6 +143,16 @@
    "g": "rules and the festival",
    "links": [
     {
+     "id": "contest_radar",
+     "name": "Contest Radar — every contest to aim at next",
+     "url": "https://claude.ai/artifact/3ixSmK1SWLMHC8hKWCF1Yu",
+     "for": "The separate tracker: Higgsfield's own contests first, then the five closest AI video platforms, then independent AI, music, traditional festivals and writing prizes. Each contest has a status and a note, shared with everyone who opens it. Rebuilt by contests.py from contests.json.",
+     "stages": [
+      "deliver"
+     ],
+     "verified": true
+    },
+    {
      "id": "contest_page",
      "name": "Global Film Festival — contest page (submit here)",
      "url": "https://higgsfield.ai/contests/higgsfield-global-film-festival",

@@ -94,7 +94,8 @@
    "reminders": [
     "Logline in one sentence. Two sentences means two films.",
     "Mark the shots that are silent on purpose — now, in the shot list.",
-    "Name who changes, and in which shot. The last held close-up is theirs."
+    "Name who changes, and in which shot. The last held close-up is theirs.",
+    "If this is a sequel, read the previous film's Learn stage before writing a shot, and write the cues before the stills reel."
    ]
   },
   {
@@ -163,7 +164,8 @@
     "Every prompt attaches @[name](uuid). Never a described face.",
     "Record old → new the moment you replace an element; sweep every prompt.",
     "One Soul per generation. Two-person shots run on elements.",
-    "Generate inside the project folder — the API cannot file it for you."
+    "Generate inside the project folder — the API cannot file it for you.",
+    "A sequel attaches the previous film's plates and Souls by their old ids — never re-describe a face or a place that already has one."
    ]
   },
   {
@@ -654,5 +656,60 @@
  ],
  "course": {
   "_": "The living course: each stage shows examples from a finished project with what to look for, and a reminders checklist that remembers your ticks in this browser. Any project can add examples.json beside its project.json and they appear here, labelled."
+ },
+ "carry": {
+  "_": "How one episode hands its cast, places, plates and Souls to the next without touching what was submitted. Worked out carrying Matter of Light into Darkness; run it at the start of every sequel, before Stage 1 (Cast) closes.",
+  "steps": [
+   {
+    "k": "Freeze the old folder",
+    "do": "The submitted episode's elements and takes are the record. Never generate on them, rename them or edit them. Read them; do not write to them.",
+    "cmd": "list_project_assets (old project) — read only"
+   },
+   {
+    "k": "Lock the new folder first",
+    "do": "Pin the new episode to its own Higgsfield folder before the first generation. Every call passes that folder_id; the studio refuses any other; generate.py refuses outright.",
+    "cmd": "project.json → higgsfield.lock"
+   },
+   {
+    "k": "Sort into bins",
+    "do": "Inherit by id what will look the same (plates, places, effects). Duplicate and dress what changes (faces, wardrobe, age, state). Sheet from a brief what is new. Leave the rest, on record.",
+    "cmd": "python3 anchorframe/carry.py plan anchorframe/projects/<next>"
+   },
+   {
+    "k": "Check the book before the brief",
+    "do": "Ages, who is older, hair and eyes, who plays whom. Map each old face to its new part from the source, not from memory; write the mapping into carried.map.",
+    "cmd": "codex → the book · project.json → sheets"
+   },
+   {
+    "k": "Duplicate, never move",
+    "do": "Make a copy of each old element named ep<N>-<name>-base, its description saying where it came from. The original stays exactly as the jury saw it.",
+    "cmd": "manage_reference_elements create (old media ids)"
+   },
+   {
+    "k": "Dress on the duplicate",
+    "do": "One split-screen sheet per face in the new wardrobe, filed in the new folder. Then the final element, named for the part: the new sheet first, the old portrait second, so wardrobe and face both carry.",
+    "cmd": "generate_image → manage_reference_elements create"
+   },
+   {
+    "k": "Souls by id",
+    "do": "A Soul is one trained identity and cannot be copied. Reuse it by id and write which part it now plays in souls. Train new Souls only for new faces: the sheet plus four portraits.",
+    "cmd": "project.json → souls · show_characters train"
+   },
+   {
+    "k": "One plate per movement",
+    "do": "Make a lighting plate for each movement of the new episode and attach it to every frame for key direction, colour and contrast — the Episode 1 method that made its worlds hold together.",
+    "cmd": "plate-<movement> element"
+   },
+   {
+    "k": "Link and check",
+    "do": "Rewrite every @name to @[name](id) once its element exists, then check: nothing attaches an old element that is not inherited, every row is inside the lock, no id plays two parts.",
+    "cmd": "python3 anchorframe/carry.py link … && python3 anchorframe/carry.py check …"
+   },
+   {
+    "k": "Score before you spend more",
+    "do": "Run the Predictor on every new take of 16s or under. Re-roll the weakest by the rules — open on the strongest image, dark ground with one bright subject — not by taste.",
+    "cmd": "virality_predictor create (2 at a time) → scores.json"
+   }
+  ]
  }
 }

@@ -31,6 +31,18 @@ Added for the second film. None of them is read by `build.py`; they are the reco
 `sheets` · for a board written before anything is generated: one-line briefs for every pending element under `characters`, `environments`, `props`, `fx`, so Stage 1 can run from the project file alone. A pending id is the literal `<element uuid>`; prompts reference it as `@name` so the board marks it, and switch to `@[name](uuid)` when the sheet exists.
 `music` · the cues, which shots each covers, and the words the cuts land on — written at Stage 0, because tip 32 says so.
 
+## Carrying a cast over — `higgsfield.lock`, `higgsfield.links`, `souls`, `carried`, `made`, `stills`, `passes`
+
+The record of moving from one episode to the next (the process is on the workflow page under *Carry over*, and `carry.py` runs it).
+`higgsfield.lock` · `{project, project_id, folder_id, workspace_id, set, rule}` — the one folder every generation and remix is filed into. The studio refuses to submit unless its folder matches; `generate.py` refuses for a locked project; `carry.py check` fails on any `stills` or `ledger` row outside it.
+`higgsfield.links` · `{id: {name, url, for, verified}}` — overrides for the desk's own project links (`hf_project`, `hf_elements`, `hf_public_project`, `hf_assets`), so each edition's desk opens its own episode's folder and nothing else.
+`souls` · `{name: {soul_id, was, element, status}}` — a Soul is reused by id across episodes (`was` names the part it played before); it is never duplicated.
+`carried` · `{_, set, map{old: new}, items[{name, id, base, from, sheet, tweak}]}` — what came over from the previous episode: `base` is the untouched duplicate (`ep<N>-<name>-base`), `id` the dressed element the prompts attach, `sheet` the generation it was dressed from.
+`made` · `{_, items[{name, id, kind, sheet, note}]}` — elements first made in this episode.
+`stills[]` · `{shot, lane, id, model, res, credits, url, thumb, note, animated, folder_id, at, pass}` — anchor frames by shot; `shot` may be `cast` (sheets and plates) or `bridge-out` (tags), and `build.py` draws them on the cards, the Cast section and Bridges.
+`passes[]` · one entry per generation pass: `{date, name, stills, videos, blocked, credits, how, learned[]}`.
+`inherits.pace_and_look` · the previous film's rhythm and grade turned into this film's generation rules.
+
 ## Lanes, forms, the episode, bridges, themes (optional, rendered by `build.py`)
 
 `shots[].lanes[]` · the Matter of Light shot grammar: `{c, name, why, prompt}` with `c` = `A` (ships — the one the forms and the frame string assume), `B` (coverage — a second angle so the editor has more than one), `C` (chroma — graded to its ceiling for spots, key art and the music video). `prompt` on the shot stays lane A, so `generate.py --prompt-from-shot` is unchanged.
@@ -41,3 +53,9 @@ Added for the second film. None of them is read by `build.py`; they are the reco
 
 ## `desk.json` (optional, one per branch)
 `{title, edition, series, episode, current, eyebrow, description, editions_note, editions[{edition, episode, title, state, branch, url, note}]}` — which desk this branch is. `desk.py` uses it for the page title, the edition badge and the Editions panel, and lists the `current` project first.
+
+## The studio's data (`intake.json`, `projects/<slug>/intake.json`, `parity.json`, and the shared store)
+`intake.json` · `{sections[{id, name}], questions[{id, section, kind: text|long|choice|multi, options?, upload?, feeds, q, why}]}` — the template's questions; `feeds` names the project field each answer fills.
+`projects/<slug>/intake.json` · `{proposed: {qid: text | [options]}}` — what the repository already knows, shown as a proposal, never as an answer.
+`parity.json` · `{columns[{id, name, note}], groups[{name, rows[{f, <column id>: built|partial|planned|none, n}]}], plan[{phase, items[]}]}`.
+The studio's shared store (read by Claude on sync): `answers/<qid>` `{value, by, at}` · `uploads/<asset id>` `{asset, name, kind, tag, note, contentType, size, by, at}` · `ideas/<id>` `{text, tag, by, at}` · `shots/<shot id>` `{status, note, by, at}` · `jobs/<id>` `{target, label, tool, model, seconds, aspect, credits, ids[], status, payload, by, at}` · `links/<Higgsfield item id>` `{target: "sheet:<name>" | "shot:<id>:<lane>", kind, model, auto?, by, at}`.

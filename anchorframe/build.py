@@ -104,7 +104,43 @@ def sections():
             if not b: return ""
             items = "".join(f'<li><b>{esc(i["from"])}</b> → {esc(i["to"])}</li>' for i in b.get("links", []))
             return f'<div class="bridge"><span class="fk">{label}</span><h3>{esc(b.get("title",""))}</h3><ul>{items}</ul>' + (f'<p class="meta">{esc(b["status"])}</p>' if b.get("status") else "") + "</div>"
-        out.append(f'<section class="xs" id="bridges"><h2>Bridges</h2><p class="note">{esc(br.get("note",""))}</p><div class="bridges">{bcard("in", "In · from the episode before")}{bcard("out", "Out · to the episode after")}</div></section>')
+        out.append(f'<section class="xs" id="bridges"><h2>Bridges</h2><p class="note">{esc(br.get("note",""))}</p><div class="bridges">{bcard("in", "In · from the episode before")}{bcard("out", "Out · to the episode after")}</div>{stills_html("bridge-out")}</section>')
+    pw = P.get("power")
+    if pw:
+        nav.append(("Power", "#power"))
+        def tcard(t):
+            here = "".join(f"<li>{esc(h)}</li>" for h in t.get("here", []))
+            rungs = "".join(f'<span class="chip-t" title="{esc(v)}">{esc(k)}</span>' for k, v in (t.get("rungs") or {}).items())
+            return (f'<article class="tier" id="tier-{esc(t["id"])}"><header><span class="fk">{esc(t.get("rung",""))}</span><h3>{esc(t["name"])}</h3></header>'
+                    f'<p class="fw">{esc(t.get("look",""))}</p>' + (f'<div class="sig">{rungs}</div>' if rungs else "") +
+                    f'<dl class="fit"><dt>Book</dt><dd>{esc(t.get("book",""))}</dd><dt>Film 1</dt><dd>{esc("[" + t["mol"] + "]" if t.get("mol","").startswith("Matter") else t.get("mol",""))}</dd>'
+                    f'<dt>Prompt</dt><dd><code>{esc(t.get("prompt",""))}</code></dd></dl>' + (f'<p class="fk">In this episode</p><ul class="here">{here}</ul>' if here else "") +
+                    (f'<p class="meta">Next: {esc(t["next"])}</p>' if t.get("next") else "") + '</article>')
+        srows = "".join(f'<tr><td><b>{esc(x["stone"])}</b></td><td>{esc(x.get("order",""))}</td><td>{esc(x.get("island",""))}</td><td>{esc(x.get("bearer",""))}</td><td>{esc(x.get("colour",""))}</td><td>{esc(("[" + x["mol"] + "]") if x.get("mol") else "")}</td></tr>' for x in pw.get("stones", []))
+        en = pw.get("endings", {})
+        rules = "".join(f"<li>{esc(r)}</li>" for r in pw.get("rules", []))
+        out.append(f'<section class="xs" id="power"><h2>Power tiers</h2><p class="note">{esc(pw.get("_",""))}</p><ul class="rules">{rules}</ul><div class="tiers">{"".join(tcard(t) for t in pw.get("tiers", []))}</div>'
+                   f'<h3 class="xs-sub">The Seven Stones</h3><div class="tw"><table class="ep"><thead><tr><th>Stone</th><th>Order</th><th>Island</th><th>Bearer</th><th>Colour</th><th>Film 1</th></tr></thead><tbody>{srows}</tbody></table></div>'
+                   + (f'<h3 class="xs-sub">When a bearer dies</h3><dl class="fit"><dt>Book</dt><dd>{esc(en.get("book",""))}</dd><dt>Film 1</dt><dd>{esc(en.get("film1",""))}</dd><dt>Episode 2</dt><dd>{esc(en.get("episode2",""))}</dd></dl>' if en else "") + '</section>')
+    cw = P.get("series", {}).get("crosswalk")
+    if cw:
+        nav.append(("Names", "#names"))
+        rows = "".join(f'<tr><td><b>{esc(r["book"])}</b></td><td>[Matter of Light: {esc(r["film1"])}]</td><td>{esc(r["kind"])}</td><td>{esc(r["proof"])}</td></tr>' for r in cw["rows"])
+        out.append(f'<section class="xs" id="names"><h2>Names: the book, and film 1</h2><p class="note">{esc(P["series"].get("names",""))} {esc(cw.get("_",""))}</p>'
+                   f'<div class="tw"><table class="ep"><thead><tr><th>Book</th><th>Film 1</th><th>Kind</th><th>Proof</th></tr></thead><tbody>{rows}</tbody></table></div></section>')
+    ca = P.get("carried")
+    if ca:
+        nav.append(("Cast", "#cast"))
+        sheet = {x["id"]: x for x in P.get("stills", [])}
+        def ccard(i):
+            st = sheet.get(i.get("sheet", ""))
+            art = f'<a href="{esc(st["url"])}" target="_blank" rel="noopener"><img src="{esc(st["thumb"])}" alt="{esc(i["name"])} for Episode 2" loading="lazy"></a>' if st else '<div class="noimg">not re-rendered</div>'
+            soul = P.get("souls", {}).get(i["name"])
+            return (f'<article class="carry">{art}<div class="cb"><h3>@{esc(i["name"])}</h3><p class="meta">{esc(i.get("label") or "from " + i.get("from",""))}' + (f' · Soul {esc(soul["soul_id"][:8])}' if isinstance(soul, dict) else "") + '</p>'
+                    f'<p class="fw">{esc(i.get("tweak",""))}</p><button type="button" class="jid" data-copy="{esc(i["id"])}">{esc(i["id"])}</button></div></article>')
+        mk = P.get("made") or {}
+        made = (f'<h3 class="xs-sub">Made for this episode</h3><p class="note">{esc(mk.get("_",""))}</p><div class="carries">{"".join(ccard(dict(i, tweak=i.get("note",""), label="new in this episode · " + i.get("kind",""))) for i in mk.get("items", []))}</div>') if mk.get("items") else ""
+        out.append(f'<section class="xs" id="cast"><h2>Cast</h2><h3 class="xs-sub">Carried over</h3><p class="note">{esc(ca.get("_",""))}</p><div class="carries">{"".join(ccard(i) for i in ca["items"])}</div>{made}</section>')
     th = P.get("themes")
     if th:
         nav.append(("Soundtrack", "#soundtrack"))
@@ -129,6 +165,16 @@ XCSS = """
 .cutlist li.part{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
 .cutlist .tc,.cutlist .se{font:12px var(--mono);color:var(--ink-3);font-variant-numeric:tabular-nums}.cutlist .sh{font:500 12px var(--mono);color:var(--t)}
 .tw{overflow-x:auto}table.ep{border-collapse:collapse;width:100%;font-size:14px;min-width:760px}table.ep th,table.ep td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}table.ep th{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}table.ep td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.carries{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}.carry{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.carry img,.carry .noimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--tile)}.carry .noimg{display:grid;place-items:center;font:12px var(--mono);color:var(--ink-3)}
+.carry .cb{padding:12px 16px 14px;display:grid;gap:6px}.carry h3{margin:0;font:600 16px var(--mono)}.carry .meta,.carry .fw{margin:0}.carry .jid{justify-self:start;max-width:100%;overflow-wrap:anywhere}
+#bridges .stills{padding:14px 0 0}
+.refs{padding:0 22px 12px;display:grid;gap:6px}.sig{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.sig .fk{margin-right:4px}
+.chip-s,.chip-t{font:500 11.5px var(--mono);border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--ink-2);background:var(--surface)}.chip-t{border-style:dashed}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;margin-top:14px}.tier{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 20px;min-width:0}.tier h3{font-size:19px;margin:2px 0 0}.tier .here{margin:4px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink-2)}.rules{max-width:95ch;color:var(--ink-2);padding-left:20px}.rules li{margin:4px 0}
+a.chip-t{text-decoration:none}.bk{margin:2px 0;font-size:13.5px;color:var(--ink-2);max-width:100ch}.bk .fk{margin-right:6px}
+.mol ul{margin:4px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}.mol li{margin:2px 0}.mol b{font:500 12px var(--mono);color:var(--ink)}.mol code{font-size:11px}
+.xs-sub{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:22px 0 6px}
 .bridges{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.bridge ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2)}.bridge li{margin:6px 0}
 .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;align-items:start}.theme{margin-top:0}
 .fit{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0 0 10px;font-size:14px}.fit dt{font:500 10.5px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}.fit dd{margin:0;color:var(--ink-2)}.fit code{font:12px var(--mono);overflow-wrap:anywhere}
@@ -141,6 +187,38 @@ XCSS = """
 .lane .ln{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}.lane h4{margin:0;font-size:15px}
 .lane .lw{margin:6px 12px 0;font-size:13px;color:var(--ink-2)}.lane .prompt{margin:8px 12px;flex:1}.lane .acts{padding:0 12px 12px}.lanemeta{padding:8px 22px 18px;margin:0}
 """
+STYLE = {x["id"]: x for x in (json.load(open(pdir.parent.parent / "style.json")).get("signatures", []) if (pdir.parent.parent / "style.json").exists() else [])}
+TIERS = {t["id"]: t for t in P.get("power", {}).get("tiers", [])}
+def refs_html(s):
+    out = []
+    if s.get("style"):
+        out.append('<div class="sig"><span class="fk">House style</span>' + "".join(f'<span class="chip-s" title="{esc(STYLE[k]["rule"])}">{esc(STYLE[k]["name"])}</span>' for k in s["style"] if k in STYLE) + '</div>')
+    if s.get("tiers"):
+        out.append('<div class="sig"><span class="fk">Power</span>' + "".join(f'<a class="chip-t" href="#tier-{esc(t.rsplit(":",1)[-1])}" title="{esc(TIERS.get(t.rsplit(":",1)[-1], {}).get("look",""))}">{esc(t.rsplit(":",1)[0])} · {esc(TIERS.get(t.rsplit(":",1)[-1], {}).get("name", t.rsplit(":",1)[-1]))}</a>' for t in s["tiers"]) + '</div>')
+    if s.get("mol_refs"):
+        out.append('<div class="mol"><span class="fk">From Matter of Light (film 1)</span><ul>' + "".join(
+            f'<li><b>{esc(r.get("tc") or r.get("what",""))}</b> {esc(r.get("what","") if r.get("tc") else "")}' + (f' <code>{esc(r["element"])}</code>' if r.get("element") else "") + '</li>' for r in s["mol_refs"]) + '</ul></div>')
+    if s.get("book"): out.append(f'<p class="bk"><span class="fk">The book</span> {esc(s["book"])}</p>')
+    if s.get("echo"): out.append(f'<p class="bk"><span class="fk">Echo of film 1</span> {esc(s["echo"])}</p>')
+    return ('<div class="refs">' + "".join(out) + '</div>') if out else ""
+STILLS = {}
+for x in P.get("stills", []): STILLS.setdefault(x["shot"], []).append(x)
+def stills_html(sid):
+    xs = STILLS.get(sid)
+    if not xs: return ""
+    figs = "".join(f'<figure class="still"><a href="{esc(x["url"])}" target="_blank" rel="noopener"><img src="{esc(x.get("thumb") or x["url"])}" alt="{esc(sid)} lane {esc(x.get("lane",""))} still" loading="lazy"></a>'
+                   f'<figcaption><b>{esc(x.get("lane",""))}</b> {esc(x.get("note",""))} <code>{esc(x["id"][:8])}</code>{" · animated" if x.get("animated") else ""}</figcaption></figure>' for x in xs)
+    return f'<div class="stills"><span class="fk">Anchor stills · {esc(xs[0].get("model",""))}</span><div class="srow">{figs}</div></div>'
+SCSS = """.stills{padding:0 22px 14px}.stills .srow{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:6px}
+.still{margin:0;min-width:0}.still img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:7px;border:1px solid var(--line);display:block;background:var(--tile)}
+.still figcaption{font-size:12px;color:var(--ink-3);margin-top:4px}.still figcaption b{color:var(--ink);font-family:var(--mono)}"""
+# The folder line: this board's own folder, unless the desk it ships in is another episode's. Then it is
+# labelled as a reference, and the desk's lock is named as the one place this edition generates.
+DESK = json.load(open(pdir.parent.parent / "desk.json")) if (pdir.parent.parent / "desk.json").exists() else {}
+CURP = pdir.parent / DESK.get("current", "") / "project.json"
+CURL = json.load(open(CURP)).get("higgsfield", {}).get("lock") if DESK.get("current") and DESK["current"] != pdir.name and CURP.exists() else None
+FOLDER_NOTE = (f'Project folder (reference, read only): <a href="{esc(P["higgsfield"].get("project_url","#"))}">{esc(P["higgsfield"].get("project_name",""))}</a>. This desk generates only in {esc(CURL["project"])}'
+               if CURL else f'Project folder: <a href="{esc(P["higgsfield"].get("project_url","#"))}">{esc(P["higgsfield"].get("project_name",""))}</a>')
 cards, ribbon, total, unshot, regen, placed = [], [], 0, 0, 0, 0
 for s in P["shots"]:
     sid, mv, title, tone = s["id"], s["act"], s.get("title", s["id"]), TONE.get(s["act"], "sun")
@@ -153,14 +231,14 @@ for s in P["shots"]:
         ribbon.append(f'<b data-tone="{tone}" class="new" style="flex:{d}" title="{sid} · {d}s · not yet shot">{sid}</b>')
         body = (f'<pre class="prompt">{mark(s["prompt"])}</pre><div class="acts pad"><button type="button" class="copy" data-copy="{esc(s["prompt"])}">Copy prompt</button><span class="meta">{d}s · audio {"on" if s.get("audio") else "off"} · {esc(P["higgsfield"].get("video_model",""))} · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])}</span></div>') if s.get("prompt") else '<p class="why muted">No prompt written yet.</p>'
         if s.get("lanes"): body = lanes_html(s, d)
-        cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{body}</article>'); continue
+        cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{refs_html(s)}{stills_html(sid)}{body}</article>'); continue
     placed += 1; d = vids[pick].get("duration") or s.get("duration_s", 0); total += d
     ribbon.append(f'<b data-tone="{tone}" style="flex:{d}" title="{sid} · {d}s">{sid if d >= 10 else ""}</b>')
     ps = sc8.get(pick, {}).get("overall")
     if s.get("regenerate"): regen += 1
     rg = f'<div class="regen"><b>Make again.</b> {esc(s.get("notes",""))}</div>' if s.get("regenerate") else ""
     altdiv = "".join(tile(a, "alternate", ps) for a in alts) or '<p class="meta">No alternates in the ledger.</p>'
-    cards.append(f'<article class="shot" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s</span></header><p class="why">{esc(s.get("why",""))}</p>{rg}<div class="row"><div class="pickcol">{tile(pick, "pick")}</div><div class="altcol">{altdiv}</div></div></article>')
+    cards.append(f'<article class="shot" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s</span></header><p class="why">{esc(s.get("why",""))}</p>{rg}{refs_html(s)}{stills_html(sid)}<div class="row"><div class="pickcol">{tile(pick, "pick")}</div><div class="altcol">{altdiv}</div></div></article>')
 
 mm = f"{int(total)//60}:{int(total)%60:02d}"; n = len([k for k in sc8 if k in vids]); hf = P["higgsfield"]
 legend = " ".join(f'<span><i data-tone="{a.get("tone","sun")}"></i>{esc(a["id"])} · {esc(a["name"])}</span>' for a in P["acts"])
@@ -201,13 +279,13 @@ details summary{{cursor:pointer;color:var(--ink-3);font-size:12px}} pre{{white-s
 .copy{{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--ground);border:0;border-radius:6px;padding:9px 14px;cursor:pointer}} .copy:focus-visible,.jid:focus-visible{{outline:2px solid var(--sun);outline-offset:2px}}
 h2{{font-size:clamp(22px,3vw,30px);margin:44px 0 10px}} .muted{{color:var(--ink-3)}} footer{{margin-top:40px;color:var(--ink-3);font-size:13px}}
 @media (max-width:760px){{.row{{grid-template-columns:1fr}}}} @media (prefers-reduced-motion:reduce){{*{{transition:none!important}}}}
-{XCSS}</style></head><body><div class="wrap">
+{XCSS}{SCSS}</style></head><body><div class="wrap">
 <header class="mast"><p class="eyebrow"><a href="../../index.html">anchorframe</a> · {esc(P["title"])} · built {datetime.datetime.utcnow().strftime("%d %b %Y %H:%M")} UTC</p>
 <h1>{esc(P["title"])} — the cut, take by take</h1>
 <p class="lede">{esc(P.get("logline",""))}</p>
 <div class="kpis"><div class="kpi"><b>{len(P["shots"])}</b><span>shots in the cut</span></div><div class="kpi"><b>{len(G)}</b><span>takes admitted to this project</span></div><div class="kpi"><b>{placed}</b><span>shots with a pick</span></div><div class="kpi"><b>{n}</b><span>takes scored</span></div><div class="kpi"><b>{regen}</b><span>to make again</span></div><div class="kpi"><b>{unshot}</b><span>not yet shot</span></div><div class="kpi"><b>{mm}</b><span>runtime of picks + unshot</span></div></div>
 <div class="ribbon" aria-hidden="true">{"".join(ribbon)}</div><div class="legend">{legend}<span>dashed — not yet shot</span></div>
-<p class="note">Project folder: <a href="{esc(hf.get("project_url","#"))}">{esc(hf.get("project_name",""))}</a> · video on <code>{esc(hf.get("video_model",""))}</code> · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])} · {P["format"].get("fps",24)} fps. Clips play inline when this file is opened locally; in a sandboxed viewer each tile shows its identity card and an <em>open the clip</em> link.</p></header>
+<p class="note">{FOLDER_NOTE} · video on <code>{esc(hf.get("video_model",""))}</code> · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])} · {P["format"].get("fps",24)} fps. Clips play inline when this file is opened locally; in a sandboxed viewer each tile shows its identity card and an <em>open the clip</em> link.</p></header>
 {sections()}{"".join(cards)}
 <footer>Built by <code>anchorframe/build.py</code> from <code>project.json</code>, <code>generations.json</code> and <code>scores.json</code>. Change the JSON and rebuild; do not hand-edit this file.</footer></div>
 <script>

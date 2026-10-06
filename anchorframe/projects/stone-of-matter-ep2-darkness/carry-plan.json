@@ -1,0 +1,358 @@
+{
+ "from": "anchorframe/projects/matter-of-light",
+ "to": "anchorframe/projects/stone-of-matter-ep2-darkness",
+ "lock": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+ "bins": {
+  "inherit": [
+   {
+    "name": "plate-sun",
+    "id": "03dbcec8-c65f-482c-8c11-58782c673c93"
+   },
+   {
+    "name": "courtyard-of-worlds",
+    "id": "afc4fc5d-86be-4072-927c-f890966feaca"
+   },
+   {
+    "name": "machira-orbit",
+    "id": "e7b2e80e-59db-44be-a654-7534a042e2c8"
+   },
+   {
+    "name": "plate-ocean-dark",
+    "id": "398d0b9f-e0c6-4a98-b75d-5a727b604632"
+   },
+   {
+    "name": "plate-island",
+    "id": "527aca60-04e0-4f86-8f4d-8c1f46c0f776"
+   },
+   {
+    "name": "corals-abyss",
+    "id": "0ff096fa-da4b-4a12-a371-5d678fb75651"
+   },
+   {
+    "name": "fx-kill-beat",
+    "id": "dda1e304-4f0b-4e44-aca4-db472c0e18a6"
+   },
+   {
+    "name": "fx-hollow",
+    "id": "89a74d62-615e-4e52-b745-8bb8ceab1628"
+   },
+   {
+    "name": "aura-grammar",
+    "id": "86f7d638-b403-459f-af68-e9365a5da336"
+   },
+   {
+    "name": "aura-shell",
+    "id": "b81752ae-2bda-4a57-ba83-02244d1dbeb4"
+   },
+   {
+    "name": "ladder-attunement",
+    "id": "447665c3-9c7d-4d95-ad8a-89b9a82d4fe4"
+   },
+   {
+    "name": "ladder-mind",
+    "id": "cd2aa79a-43ab-445a-a298-f1071884cc50"
+   },
+   {
+    "name": "fx-segmented-mind",
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072"
+   }
+  ],
+  "carried": [
+   {
+    "name": "ammon",
+    "id": "0506e54b-81d7-43ba-9d50-d68411d9f4cc",
+    "from": "Ammon as a boy [Matter of Light: Alder · element kai_alder_v1 · Soul alder]",
+    "tweak": "Episode 2 wardrobe on the Episode 1 face: undyed linen shirt, open moss-green wool overshirt, brown canvas trousers, worn boots, cord bracelet. The guitar stays a separate prop."
+   },
+   {
+    "name": "mikael",
+    "id": "66e16226-2809-449b-85e1-fb98732942dc",
+    "from": "Mikael as a boy [Matter of Light: Wren · element kai_wren_v1 · Soul wren]",
+    "tweak": "Episode 2 wardrobe: rust-brown wool henley, sheepskin-lined leather vest, grey-green canvas trousers, leather wrist cuff; thicker-set than Ammon, same height."
+   },
+   {
+    "name": "cephas-town",
+    "id": "bda5eff0-c2ff-48ba-bc10-e0e8710b508c",
+    "from": "Cephas, the island of matter [Matter of Light: the Kephas Island town and concept elements]",
+    "tweak": "The same town ten years on, at night, lanterns in every window, the Leviticum on the far hill."
+   },
+   {
+    "name": "guardians",
+    "id": "2ea82739-6aa3-4ba6-82a0-d758aab26a54",
+    "from": "the Guardians of the Sector Guard [Matter of Light: keeper 8a3838aa — the Keepers of the Vigil]",
+    "tweak": "The Guardians at the Leviticum steps, waiting for the Trials: the Episode 3 hand-off."
+   },
+   {
+    "name": "stone-of-energy",
+    "id": "aee791f3-73d2-4604-8a88-7c9a3f45bd69",
+    "from": "a dark adept of energy, 'He lacks the core' [Matter of Light: turned-energy]",
+    "tweak": "The bearer in the Outer Darkness, the Stone's light the only key: S23."
+   },
+   {
+    "name": "drowning",
+    "id": "57bb92bb-f84d-4097-ab88-5bc1e2c4b01c",
+    "from": "Drowning, Prison of Phases [Matter of Light: drowning_v1 a886edff]",
+    "tweak": "Rising from black water: the Episode 3 tag. The Episode 1 reference image carries an IP flag; the still came back, but watch it on video."
+   },
+   {
+    "name": "stone-language",
+    "id": "b6ed2008-8a52-4a1e-be7a-8cd5914eb012",
+    "from": "the Creation Stone of Voids [Matter of Light: founding-stone 45c4d884 — the Founding Stone of Hollows]",
+    "tweak": "Not re-rendered. Its crystal shape and the way its light sits are still the reference for every Stone; its green-white is not — colour belongs to each Stone (power.stones): Voids violet, Dominion emerald. The heart of Ilan is emerald going violet."
+   }
+  ],
+  "to_carry": [],
+  "new": [
+   {
+    "name": "viola",
+    "kind": "characters",
+    "brief": "The singer at the Wind Caves, hands out, lantern-lit from below."
+   },
+   {
+    "name": "abyss-of-four-waterfalls",
+    "kind": "environments",
+    "brief": "A drained, colourless land centred on an abyss darker than black; four waterfalls pour in from pure sources on the rim; everything around it dead. Three views: from the air, from the rim, from inside facing one waterfall."
+   },
+   {
+    "name": "cloud-mountain",
+    "kind": "environments",
+    "brief": "A mountain peak above a crater lake that reflects the whole mountain (Mirror Lake), dawn mist — the place Episode 1 ended."
+   },
+   {
+    "name": "lake-of-light",
+    "kind": "environments",
+    "brief": "Translucent water with suspended limestone motes and glowing insects (blue-green), trees anchored in the lake with high roots, a small stage against the rock wall of the North Hills; moonlight. Views: from the trees, from the water, from under it."
+   },
+   {
+    "name": "old-lands",
+    "kind": "environments",
+    "brief": "The ancient world of the Angel Killer legend, day, painted light, a bare rock — warmer and softer than the rest of the film."
+   },
+   {
+    "name": "leviticum-exterior",
+    "kind": "environments",
+    "brief": "A seven-floor circular library of stone and glass above the forest, candles in every window, steps up to main doors with a band of gold inscription (illegible) above them."
+   },
+   {
+    "name": "leviticum-study-room",
+    "kind": "environments",
+    "brief": "A small study room: foam mattresses, books, a glisc projector throwing constellations on the ceiling, very low light."
+   },
+   {
+    "name": "leviticum-elevator",
+    "kind": "environments",
+    "brief": "A glass elevator in a stone shaft; a glowing green call button; numbered buttons where only the 1 glows; the seventh-floor hall beyond the doors, dark."
+   },
+   {
+    "name": "leviticum-corridor",
+    "kind": "environments",
+    "brief": "The ground-floor corridor, lantern-lit, a passage at the end."
+   },
+   {
+    "name": "ilan-storm",
+    "kind": "environments",
+    "brief": "A hidden island at night as a storm tears it apart: sacred sand, a blackened tree, a giant glowing beast in the sky; two lights in the sky, violet and emerald."
+   },
+   {
+    "name": "outer-darkness",
+    "kind": "environments",
+    "brief": "A place with no light; a ring of twelve kneeling figures; the only light is what the bodies and the Stone give off."
+   },
+   {
+    "name": "glisc-projector",
+    "kind": "props",
+    "brief": "A floor-set projector that throws shifting constellations on a ceiling."
+   },
+   {
+    "name": "heart-of-ilan",
+    "kind": "props",
+    "brief": "A jagged, unrefined emerald stone, glowing from inside; also seen buried inches in sand."
+   },
+   {
+    "name": "fx-dark-cloud",
+    "kind": "fx",
+    "brief": "A massive cloud of darkness over a land; it collapses in on itself when the light comes."
+   },
+   {
+    "name": "fx-light-wave",
+    "kind": "fx",
+    "brief": "Light moving as an ocean wave: cresting over a lip of rock and pouring down over dead land, colour returning in its wake."
+   },
+   {
+    "name": "fx-wind",
+    "kind": "fx",
+    "brief": "A strong wind as it is seen: lantern flames leaning, hair and cloth lifting, dust lifting off a floor."
+   },
+   {
+    "name": "fx-pillar-of-fire",
+    "kind": "fx",
+    "brief": "A pillar of fire descending onto a rock in daylight, painted-light style."
+   }
+  ],
+  "left": [
+   {
+    "name": "caedom-ascended",
+    "kind": "characters",
+    "id": "b86fb7ed-7b58-440b-a807-0831705e47a5"
+   },
+   {
+    "name": "char_oriane_v3_battle",
+    "kind": "characters",
+    "id": "30b9bf89-3fcf-4544-b110-a74aeccbb7c1"
+   },
+   {
+    "name": "kai_alder_v1",
+    "kind": "characters",
+    "id": "6b8fe17b-3956-43b2-9cfb-4d6903e88781"
+   },
+   {
+    "name": "kai_wren_v1",
+    "kind": "characters",
+    "id": "e6a2888e-b4a0-49ed-ab89-281d93e06880"
+   },
+   {
+    "name": "keeper",
+    "kind": "characters",
+    "id": "8a3838aa-6fe1-485d-881c-4c14dfbe492e"
+   },
+   {
+    "name": "keeper-kneel",
+    "kind": "characters",
+    "id": "d1faba5a-bf3e-49bf-886d-e632823f4836"
+   },
+   {
+    "name": "char_oriane_v2_sun",
+    "kind": "characters",
+    "id": "217d50aa-b89f-4723-bb4d-d1725f0f12e6"
+   },
+   {
+    "name": "lev-rider",
+    "kind": "characters",
+    "id": "f11fd4fb-d32d-4663-a07b-0e59bc01611d"
+   },
+   {
+    "name": "threadwright",
+    "kind": "characters",
+    "id": "00c70af8-e0f1-4eda-90ed-c7ff87afc5f5"
+   },
+   {
+    "name": "plate-bombardment",
+    "kind": "environments",
+    "id": "389aa7b5-5de8-495f-b899-b588e51c7ab8"
+   },
+   {
+    "name": "white-temple",
+    "kind": "environments",
+    "id": "1ed6a464-2d1e-46b2-8840-e90c2175ebb8"
+   },
+   {
+    "name": "nacre-beach",
+    "kind": "environments",
+    "id": "db228a3f-576d-4fd0-91c1-1f756d85a4fd"
+   },
+   {
+    "name": "loc_sector_isle_v1",
+    "kind": "environments",
+    "id": "a8daccbb-0819-4de2-915a-d72a0374bfdc"
+   },
+   {
+    "name": "frozen-tear",
+    "kind": "props",
+    "id": "58952962-9241-4a19-aedc-031a2374e484"
+   },
+   {
+    "name": "fx-floating-mountain",
+    "kind": "props",
+    "id": "9ca46e73-1df6-41c3-8ace-7fd4c324850f"
+   },
+   {
+    "name": "iron-spears",
+    "kind": "props",
+    "id": "e1f4220b-7d1f-45bf-a6d1-4358a09061aa"
+   },
+   {
+    "name": "twelve-ships",
+    "kind": "props",
+    "id": "c661f844-e65e-4eb0-b9ff-076b9edf1746"
+   },
+   {
+    "name": "prop_leviathan_v1",
+    "kind": "props",
+    "id": "b353d96f-721a-4ea9-98e4-6adea64b4e76"
+   },
+   {
+    "name": "leviathan-plating",
+    "kind": "props",
+    "id": "cb3d6271-76d8-4a73-90c5-5165a4bde473"
+   },
+   {
+    "name": "turned-water",
+    "kind": "props",
+    "id": "40520841-e9d3-45be-852b-c24f126ad3e1"
+   },
+   {
+    "name": "prop_the-turned-ones_v1",
+    "kind": "props",
+    "id": "3328bfdf-2fd5-4e9b-a821-9b2487d39529"
+   },
+   {
+    "name": "founding-stone",
+    "kind": "props",
+    "id": "45c4d884-b89b-4694-af1f-e06eef545e30"
+   }
+  ]
+ },
+ "souls": {
+  "previous": {
+   "caedom-ascended": "453e85a7-0fef-411e-8edc-693c998b8c95",
+   "oriane": "c270c1d2-3466-4283-95cd-154dff318d76",
+   "alder": "efde8880-7bab-43fc-9100-4be64504b3e0",
+   "wren": "2d6202b6-277e-49c3-a83a-80a63d9ead1b"
+  },
+  "inherited": {
+   "_": "Episode 1's trained faces, reachable by id if a face recurs. Keyed by book name; the film-1 Soul name is marked.",
+   "torin-ascended": {
+    "soul_id": "453e85a7-0fef-411e-8edc-693c998b8c95",
+    "mol": "Matter of Light: Soul caedom-ascended"
+   },
+   "gwendolyn": {
+    "soul_id": "c270c1d2-3466-4283-95cd-154dff318d76",
+    "mol": "Matter of Light: Soul oriane"
+   },
+   "ammon-as-a-boy": {
+    "soul_id": "efde8880-7bab-43fc-9100-4be64504b3e0",
+    "mol": "Matter of Light: Soul alder — the younger brother's face, ten years before this film"
+   },
+   "mikael-as-a-boy": {
+    "soul_id": "2d6202b6-277e-49c3-a83a-80a63d9ead1b",
+    "mol": "Matter of Light: Soul wren"
+   }
+  },
+  "this": {
+   "_": "Reused by id from Episode 1, not duplicated: a Soul is one trained identity and cannot be copied. The same face plays the Episode 2 part. Souls run only on Soul 2.0 and Soul Cinematic (soul_id); every Cinema Studio shot uses the element of the same name instead. Sadie is the first Soul made for Episode 2.",
+   "ammon": {
+    "soul_id": "efde8880-7bab-43fc-9100-4be64504b3e0",
+    "was": "alder",
+    "element": "0506e54b-81d7-43ba-9d50-d68411d9f4cc"
+   },
+   "mikael": {
+    "soul_id": "2d6202b6-277e-49c3-a83a-80a63d9ead1b",
+    "was": "wren",
+    "element": "66e16226-2809-449b-85e1-fb98732942dc"
+   },
+   "sadie": {
+    "soul_id": "09ae884a-ac6d-40a5-a562-2d382ad5688c",
+    "was": null,
+    "element": "e86db463-4556-47b1-ae96-020fb04b0b40",
+    "status": "trained Oct 5 from five images: the sheet and four portraits",
+    "images": [
+     "f1908fd5-feea-44be-b106-2115689b11c7",
+     "fcf71e66-4741-4845-800c-e5cd79803b2f",
+     "892d42f5-6000-40e7-a149-3ef8066f8b28",
+     "2b89f91b-eb29-44bd-ad8d-769edd3b7515",
+     "4f670635-1ddc-43db-84f7-f42302ca1565"
+    ]
+   }
+  }
+ }
+}

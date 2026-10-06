@@ -1,17 +1,32 @@
 {
  "_": "Which desk this branch is. One desk per episode, one branch per desk; desk.py reads this for the title, the edition badge and the Editions panel.",
- "title": "Anchorframe SoM V1",
- "edition": "SoM V1",
+ "title": "Anchorframe SoM V2",
+ "edition": "SoM V2",
  "series": "Stone of Matter",
- "episode": 1,
- "current": "matter-of-light",
- "eyebrow": "Anchorframe · Stone of Matter · V1 · Episode 1",
- "description": "The Anchorframe desk that made Matter of Light, Episode 1 of Stone of Matter: the festival short, its read, and the forms it can be cut to.",
- "editions_note": "One desk per episode, one branch per desk. V1 made Matter of Light; V2 builds Darkness on the same method.",
+ "episode": 2,
+ "current": "stone-of-matter-ep2-darkness",
+ "eyebrow": "Anchorframe · Stone of Matter · V2 · Episode 2",
+ "description": "The Anchorframe desk for Stone of Matter, Episode 2: Darkness — one board in every length from a 30-second spot to a 36-minute episode.",
+ "editions_note": "One desk per episode, one branch per desk. V1 made Matter of Light; V2 is building Darkness on the same method with V1's lessons applied as rules.",
  "editions": [
-  {"edition": "SoM V1", "episode": 1, "title": "Matter of Light", "state": "delivered", "branch": "claude/anchorframe", "url": "https://claude.ai/artifact/7fRUUuQPYvDEGCU6H9txfD",
-   "note": "The festival short, delivered at 6:17. 28 shots, 27 picks, 24 scored, and the Learn stage's read of the cut."},
-  {"edition": "SoM V2", "episode": 2, "title": "Darkness", "state": "boarded", "branch": "claude/anchorframe-ep2", "url": "https://claude.ai/artifact/AB4LmdcxtuYpEWiEgGtd4y",
-   "note": "26 shots × three lanes, a :30 and :60 spot, a 3:30 music video, the trailer short, a 36-minute episode outline and six songs."}
- ]
+  {
+   "edition": "SoM V1",
+   "episode": 1,
+   "title": "Matter of Light",
+   "state": "delivered",
+   "branch": "claude/anchorframe",
+   "url": "https://claude.ai/artifact/7fRUUuQPYvDEGCU6H9txfD",
+   "note": "The festival short, delivered at 6:17. 28 shots, 27 picks, 24 scored, and the Learn stage's read of the cut."
+  },
+  {
+   "edition": "SoM V2",
+   "episode": 2,
+   "title": "Darkness",
+   "state": "boarded",
+   "branch": "claude/anchorframe-ep2",
+   "url": "https://claude.ai/artifact/AB4LmdcxtuYpEWiEgGtd4y",
+   "note": "26 shots × three lanes, a :30 and :60 spot, a 3:30 music video, the trailer short, a 36-minute episode outline and six songs. Nothing generated yet."
+  }
+ ],
+ "studio": "studio.html"
 }

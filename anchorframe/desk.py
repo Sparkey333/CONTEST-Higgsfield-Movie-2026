@@ -14,6 +14,13 @@ NOW = datetime.datetime.utcnow().strftime("%d %b %Y %H:%M UTC")
 DK = json.load(open(D / "desk.json")) if (D / "desk.json").exists() else {}
 NAME = DK.get("title", W["name"])
 if DK.get("current"): ix = sorted(ix, key=lambda r: r.get("slug") != DK["current"])
+# The desk's own project links (the folder, its Elements, its public page) come from the current
+# project's higgsfield.links, so every edition's desk opens its own episode and nothing else.
+CUR = D / "projects" / DK.get("current", "") / "project.json"
+for lid, over in (json.load(open(CUR)).get("higgsfield", {}).get("links", {}) if DK.get("current") and CUR.exists() else {}).items():
+    if lid.startswith("_"): continue
+    if lid in LINK: LINK[lid].update(over)
+    else: LINK[lid] = dict(over, id=lid); L["groups"][0]["links"].append(LINK[lid])
 
 def inline(t):
     t = esc(t); t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t); t = re.sub(r"`(.+?)`", r"<code>\1</code>", t); return re.sub(r"(?<!\*)\*(?!\*)(.+?)\*", r"<em>\1</em>", t)
@@ -67,6 +74,7 @@ code{font:12.5px/1.45 var(--mono);background:var(--surface-2);border:1px solid v
 .pill{font:600 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:5px 8px;border-radius:4px;border:1px solid var(--line);color:var(--ink-3);align-self:flex-start} .pill.built{background:var(--jade-soft);color:var(--jade);border-color:var(--jade-line)} .pill.road{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
 .steps{display:flex;flex-direction:column;border-top:1px solid var(--line)} .step{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line-soft)} .step .sn{font:600 12px/1.5 var(--mono);color:var(--ink-3);letter-spacing:.08em} .step h4{margin:0 0 5px;font:600 15.5px/1.35 var(--body)} .step p{margin:0;font-size:14px;color:var(--ink-2)} .step p+p{margin-top:5px}
 .loop{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px} .lp{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px} .lp b{display:block;font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px} .lp p{margin:0;font-size:13px;color:var(--ink-2)} .lp code{display:block;margin-top:8px;white-space:pre-wrap}
+#style .loop{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))} #style .lp p{font-size:14px} .stf{display:block;margin-top:8px;font:500 10.5px/1.5 var(--mono);color:var(--ink-3)}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:24px;box-shadow:var(--shadow);margin-bottom:18px} .panel p{margin:0 0 10px;font-size:14.5px;color:var(--ink-2)} .panel p:last-child{margin:0}
 .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px} .tg{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:18px 20px 14px} .tg h3{margin:0 0 8px;font:600 15px/1.3 var(--body)} .tg ol{margin:0;padding-left:22px;font-size:14px;color:var(--ink-2)} .tg li{margin:6px 0} .tg li b{color:var(--ink)}
 table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top} th{font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)} td a{color:var(--void);text-decoration:none;word-break:break-all} td a:hover{text-decoration:underline} .tw{overflow-x:auto} .g{font:400 22px/1.2 var(--display);margin:30px 0 6px}
@@ -132,14 +140,23 @@ for s in W["stages"]:
 <div class="foot"><span>{esc(s["mol"]["numbers"])}</span><span>{esc(s["mol"]["dates"])}</span></div></article>{gate_html}''')
 loop_html = "".join(f'<div class="lp"><b>{i+1} · {esc(x["k"])}</b><p>{esc(x["do"])}</p><code>{esc(x["cmd"])}</code></div>' for i, x in enumerate(W["loop"]["steps"]))
 expand_html = "".join(f'<div class="doc"><span class="k">{esc(k)} · unit: {esc(v["unit"])}</span><h3>{esc(v["name"])}</h3><p>{esc(v["scale"])}</p><span class="pill {"built" if v["status"].startswith("built") else "road"}">{esc(v["status"].split(" — ")[0])}</span><span class="f">{esc(v["status"].split(" — ",1)[1] if " — " in v["status"] else "")}</span></div>' for k, v in W["expand"].items() if not k.startswith("_"))
+carry_html = "".join(f'<div class="lp"><b>{i+1} · {esc(x["k"])}</b><p>{esc(x["do"])}</p><code>{esc(x["cmd"])}</code></div>' for i, x in enumerate(W.get("carry", {}).get("steps", [])))
 unique_html = "".join(f'<div class="doc"><h3>{esc(u["k"])}</h3><p>{esc(u["d"])}</p></div>' for u in W["unique"])
-NAV_W = [("Overview", "index.html"), ("The map", "#map"), ("Stages", "#s-story"), ("The loop", "#loop"), ("Scale", "#scale"), ("Links", "links.html"), ("Keys", "keys.html")]
+ST = json.load(open(D / "style.json")) if (D / "style.json").exists() else None
+def style_card(x):
+    src = " · ".join(("scene " + str(f["scene"]) + " " + f["tc"]) if f.get("scene") else (f.get("book") and "book: " + f["book"]) or f.get("grade", "") for f in x.get("from", []))
+    return (f'<div class="lp"><b>{esc(x["name"])}</b><p>{esc(x["rule"])}</p><span class="stf">Matter of Light · {esc(src)}</span><code>{esc(x["prompt"])}</code></div>')
+style_sec = (f'<section id="style" style="margin-top:54px"><div class="sec-head"><h2><span class="n">HOUSE STYLE</span>{esc(ST.get("owner",""))} · from the cut of film 1</h2><p>{esc(ST["_"])}</p></div><div class="loop">{"".join(style_card(x) for x in ST["signatures"])}</div></section>') if ST else ""
+carry_sec = (f'<section id="carry" style="margin-top:54px"><div class="sec-head"><h2><span class="n">CARRY OVER</span>From one episode to the next</h2><p>{esc(W["carry"]["_"])}</p></div><div class="loop">{carry_html}</div></section>') if W.get("carry") else ""
+NAV_W = [("Overview", "index.html"), ("The map", "#map"), ("Stages", "#s-story"), ("The loop", "#loop")] + ([("House style", "#style")] if (D / "style.json").exists() else []) + ([("Carry over", "#carry")] if W.get("carry") else []) + [("Scale", "#scale"), ("Links", "links.html"), ("Keys", "keys.html")]
 wf = head(f'{NAME} · Workflow', "Nine stages, five gates, one loop — the end-to-end workflow with its iteration points, derived from a finished film.") + f'''
 <header class="top"><div class="wrap"><span class="eyebrow"><a href="index.html">{esc(NAME)}</a> · the workflow · built {NOW}</span><h1>Nine stages. Five gates. One loop.</h1><p class="tag">{esc(W["promise"])}</p><p class="lede">{esc(W["derived_from"])}</p></div></header>
 {nav(NAV_W, "#map")}<main class="wrap">
 <section id="map"><div class="sec-head"><h2><span class="n">MAP</span>Where the loops are, and what closes them</h2><p>Every stage with a ⟲ has an <em>iterate here</em> card: what triggers the loop, what you do, what lets you out, what it costs — and what it cost on the film. Gates are the exits; nothing downstream begins until the gate above holds.</p></div>{mapstrip()}</section>
 {"".join(stages_html)}
 <section id="loop" style="margin-top:54px"><div class="sec-head"><h2><span class="n">INNER LOOP</span>Inside stages 4–6</h2><p>{esc(W["loop"]["_"])}</p></div><div class="loop">{loop_html}</div></section>
+{style_sec}
+{carry_sec}
 <section id="scale"><div class="sec-head"><h2><span class="n">SCALE</span>From short to feature to game</h2><p>{esc(W["expand"]["_"])}</p></div><div class="docs">{expand_html}</div></section>
 <section id="why"><div class="sec-head"><h2><span class="n">WHY</span>What is different about this</h2></div><div class="docs">{unique_html}</div></section>
 <footer>Built by <code>anchorframe/desk.py</code> from <code>workflow.json</code>, <code>links.json</code> and every project's <code>examples.json</code>. Regenerate, don't hand-edit.</footer></main>
@@ -174,10 +191,11 @@ tips_html = "".join(f'<div class="tg"><h3>{esc(g["h"])}</h3><ol start="{g["items
 cards = "".join(f'''<a class="doc primary" href="projects/{esc(r["slug"])}/board.html"><span class="k">{esc(r["kind"])} · {esc(r["aspect"])}</span><h3>{esc(r["title"])}</h3><p>{esc(r["logline"])}</p>
 <div class="stats"><span><b>{r["shots"]}</b> shots</span><span><b>{r["takes"]}</b> takes</span><span><b>{r["picks"]}</b> picks</span><span><b>{r["scored"]}</b> scored</span><span><b>{r["unshot"]}</b> unshot</span><span><b>{esc(r["runtime"])}</b> runtime</span></div>
 <span class="f"><span>{esc(r["byline"])}</span><span>built {esc(r["built"])}</span></span></a>''' for r in ix) or '<p class="muted">No projects yet — the first build.py run adds one here.</p>'
-toplinks = "".join(f'<a class="chip hf" href="{esc(LINK[i]["url"])}" target="_blank" rel="noopener">{esc(LINK[i]["name"])} ↗</a>' for i in ["hf_project","hf_elements","hf_cinema_studio","contest_page","festival_blog","hf_cloud_keys","hf_mcp_credits","hf_contact"] if i in LINK)
+toplinks = "".join(f'<a class="chip hf" href="{esc(LINK[i]["url"])}" target="_blank" rel="noopener">{esc(LINK[i]["name"])} ↗</a>' for i in ["hf_project","hf_elements","hf_cinema_studio","contest_page","contest_radar","festival_blog","hf_cloud_keys","hf_mcp_credits","hf_contact"] if i in LINK)
 NEX = sum(len(v) for X in EX for v in X.get("stages", {}).values())
 NAV_I = [("Workflow", "#workflow"), ("Projects", "#projects"), ("Start", "#start"), ("The loop", "#loop"), ("One folder", "#rule"), ("Scale", "#scale"), ("Why", "#why"), ("Links", "#links"), ("Keys", "keys.html"), ("Tips", "#tips")]
 EDB = (f'<span class="badge on">{esc(DK["edition"])} · Episode {esc(DK.get("episode",""))}</span>') if DK.get("edition") else ""
+if DK.get("studio"): EDB = f'<a class="badge on" href="{esc(DK["studio"])}" style="text-decoration:none">open the studio →</a>' + EDB
 def ed_card(e):
     here = e.get("edition") == DK.get("edition")
     link = ('<b>this desk</b>' if here else f'<a href="{esc(e["url"])}" target="_blank" rel="noopener">open {esc(e["edition"])} ↗</a>') if e.get("url") else ""
