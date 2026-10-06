@@ -105,6 +105,29 @@ def sections():
             items = "".join(f'<li><b>{esc(i["from"])}</b> → {esc(i["to"])}</li>' for i in b.get("links", []))
             return f'<div class="bridge"><span class="fk">{label}</span><h3>{esc(b.get("title",""))}</h3><ul>{items}</ul>' + (f'<p class="meta">{esc(b["status"])}</p>' if b.get("status") else "") + "</div>"
         out.append(f'<section class="xs" id="bridges"><h2>Bridges</h2><p class="note">{esc(br.get("note",""))}</p><div class="bridges">{bcard("in", "In · from the episode before")}{bcard("out", "Out · to the episode after")}</div>{stills_html("bridge-out")}</section>')
+    pw = P.get("power")
+    if pw:
+        nav.append(("Power", "#power"))
+        def tcard(t):
+            here = "".join(f"<li>{esc(h)}</li>" for h in t.get("here", []))
+            rungs = "".join(f'<span class="chip-t" title="{esc(v)}">{esc(k)}</span>' for k, v in (t.get("rungs") or {}).items())
+            return (f'<article class="tier" id="tier-{esc(t["id"])}"><header><span class="fk">{esc(t.get("rung",""))}</span><h3>{esc(t["name"])}</h3></header>'
+                    f'<p class="fw">{esc(t.get("look",""))}</p>' + (f'<div class="sig">{rungs}</div>' if rungs else "") +
+                    f'<dl class="fit"><dt>Book</dt><dd>{esc(t.get("book",""))}</dd><dt>Film 1</dt><dd>{esc("[" + t["mol"] + "]" if t.get("mol","").startswith("Matter") else t.get("mol",""))}</dd>'
+                    f'<dt>Prompt</dt><dd><code>{esc(t.get("prompt",""))}</code></dd></dl>' + (f'<p class="fk">In this episode</p><ul class="here">{here}</ul>' if here else "") +
+                    (f'<p class="meta">Next: {esc(t["next"])}</p>' if t.get("next") else "") + '</article>')
+        srows = "".join(f'<tr><td><b>{esc(x["stone"])}</b></td><td>{esc(x.get("order",""))}</td><td>{esc(x.get("island",""))}</td><td>{esc(x.get("bearer",""))}</td><td>{esc(x.get("colour",""))}</td><td>{esc(("[" + x["mol"] + "]") if x.get("mol") else "")}</td></tr>' for x in pw.get("stones", []))
+        en = pw.get("endings", {})
+        rules = "".join(f"<li>{esc(r)}</li>" for r in pw.get("rules", []))
+        out.append(f'<section class="xs" id="power"><h2>Power tiers</h2><p class="note">{esc(pw.get("_",""))}</p><ul class="rules">{rules}</ul><div class="tiers">{"".join(tcard(t) for t in pw.get("tiers", []))}</div>'
+                   f'<h3 class="xs-sub">The Seven Stones</h3><div class="tw"><table class="ep"><thead><tr><th>Stone</th><th>Order</th><th>Island</th><th>Bearer</th><th>Colour</th><th>Film 1</th></tr></thead><tbody>{srows}</tbody></table></div>'
+                   + (f'<h3 class="xs-sub">When a bearer dies</h3><dl class="fit"><dt>Book</dt><dd>{esc(en.get("book",""))}</dd><dt>Film 1</dt><dd>{esc(en.get("film1",""))}</dd><dt>Episode 2</dt><dd>{esc(en.get("episode2",""))}</dd></dl>' if en else "") + '</section>')
+    cw = P.get("series", {}).get("crosswalk")
+    if cw:
+        nav.append(("Names", "#names"))
+        rows = "".join(f'<tr><td><b>{esc(r["book"])}</b></td><td>[Matter of Light: {esc(r["film1"])}]</td><td>{esc(r["kind"])}</td><td>{esc(r["proof"])}</td></tr>' for r in cw["rows"])
+        out.append(f'<section class="xs" id="names"><h2>Names: the book, and film 1</h2><p class="note">{esc(P["series"].get("names",""))} {esc(cw.get("_",""))}</p>'
+                   f'<div class="tw"><table class="ep"><thead><tr><th>Book</th><th>Film 1</th><th>Kind</th><th>Proof</th></tr></thead><tbody>{rows}</tbody></table></div></section>')
     ca = P.get("carried")
     if ca:
         nav.append(("Cast", "#cast"))
@@ -146,6 +169,11 @@ XCSS = """
 .carry img,.carry .noimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--tile)}.carry .noimg{display:grid;place-items:center;font:12px var(--mono);color:var(--ink-3)}
 .carry .cb{padding:12px 16px 14px;display:grid;gap:6px}.carry h3{margin:0;font:600 16px var(--mono)}.carry .meta,.carry .fw{margin:0}.carry .jid{justify-self:start;max-width:100%;overflow-wrap:anywhere}
 #bridges .stills{padding:14px 0 0}
+.refs{padding:0 22px 12px;display:grid;gap:6px}.sig{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.sig .fk{margin-right:4px}
+.chip-s,.chip-t{font:500 11.5px var(--mono);border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--ink-2);background:var(--surface)}.chip-t{border-style:dashed}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;margin-top:14px}.tier{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 20px;min-width:0}.tier h3{font-size:19px;margin:2px 0 0}.tier .here{margin:4px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink-2)}.rules{max-width:95ch;color:var(--ink-2);padding-left:20px}.rules li{margin:4px 0}
+a.chip-t{text-decoration:none}.bk{margin:2px 0;font-size:13.5px;color:var(--ink-2);max-width:100ch}.bk .fk{margin-right:6px}
+.mol ul{margin:4px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}.mol li{margin:2px 0}.mol b{font:500 12px var(--mono);color:var(--ink)}.mol code{font-size:11px}
 .xs-sub{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:22px 0 6px}
 .bridges{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.bridge ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2)}.bridge li{margin:6px 0}
 .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;align-items:start}.theme{margin-top:0}
@@ -159,6 +187,20 @@ XCSS = """
 .lane .ln{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}.lane h4{margin:0;font-size:15px}
 .lane .lw{margin:6px 12px 0;font-size:13px;color:var(--ink-2)}.lane .prompt{margin:8px 12px;flex:1}.lane .acts{padding:0 12px 12px}.lanemeta{padding:8px 22px 18px;margin:0}
 """
+STYLE = {x["id"]: x for x in (json.load(open(pdir.parent.parent / "style.json")).get("signatures", []) if (pdir.parent.parent / "style.json").exists() else [])}
+TIERS = {t["id"]: t for t in P.get("power", {}).get("tiers", [])}
+def refs_html(s):
+    out = []
+    if s.get("style"):
+        out.append('<div class="sig"><span class="fk">House style</span>' + "".join(f'<span class="chip-s" title="{esc(STYLE[k]["rule"])}">{esc(STYLE[k]["name"])}</span>' for k in s["style"] if k in STYLE) + '</div>')
+    if s.get("tiers"):
+        out.append('<div class="sig"><span class="fk">Power</span>' + "".join(f'<a class="chip-t" href="#tier-{esc(t.rsplit(":",1)[-1])}" title="{esc(TIERS.get(t.rsplit(":",1)[-1], {}).get("look",""))}">{esc(t.rsplit(":",1)[0])} · {esc(TIERS.get(t.rsplit(":",1)[-1], {}).get("name", t.rsplit(":",1)[-1]))}</a>' for t in s["tiers"]) + '</div>')
+    if s.get("mol_refs"):
+        out.append('<div class="mol"><span class="fk">From Matter of Light (film 1)</span><ul>' + "".join(
+            f'<li><b>{esc(r.get("tc") or r.get("what",""))}</b> {esc(r.get("what","") if r.get("tc") else "")}' + (f' <code>{esc(r["element"])}</code>' if r.get("element") else "") + '</li>' for r in s["mol_refs"]) + '</ul></div>')
+    if s.get("book"): out.append(f'<p class="bk"><span class="fk">The book</span> {esc(s["book"])}</p>')
+    if s.get("echo"): out.append(f'<p class="bk"><span class="fk">Echo of film 1</span> {esc(s["echo"])}</p>')
+    return ('<div class="refs">' + "".join(out) + '</div>') if out else ""
 STILLS = {}
 for x in P.get("stills", []): STILLS.setdefault(x["shot"], []).append(x)
 def stills_html(sid):
@@ -189,14 +231,14 @@ for s in P["shots"]:
         ribbon.append(f'<b data-tone="{tone}" class="new" style="flex:{d}" title="{sid} · {d}s · not yet shot">{sid}</b>')
         body = (f'<pre class="prompt">{mark(s["prompt"])}</pre><div class="acts pad"><button type="button" class="copy" data-copy="{esc(s["prompt"])}">Copy prompt</button><span class="meta">{d}s · audio {"on" if s.get("audio") else "off"} · {esc(P["higgsfield"].get("video_model",""))} · {esc(P["format"]["aspect"])} · {esc(P["format"]["resolution"])}</span></div>') if s.get("prompt") else '<p class="why muted">No prompt written yet.</p>'
         if s.get("lanes"): body = lanes_html(s, d)
-        cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{stills_html(sid)}{body}</article>'); continue
+        cards.append(f'<article class="shot new" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s · unshot</span></header><p class="why">{esc(s.get("notes",""))}</p>{refs_html(s)}{stills_html(sid)}{body}</article>'); continue
     placed += 1; d = vids[pick].get("duration") or s.get("duration_s", 0); total += d
     ribbon.append(f'<b data-tone="{tone}" style="flex:{d}" title="{sid} · {d}s">{sid if d >= 10 else ""}</b>')
     ps = sc8.get(pick, {}).get("overall")
     if s.get("regenerate"): regen += 1
     rg = f'<div class="regen"><b>Make again.</b> {esc(s.get("notes",""))}</div>' if s.get("regenerate") else ""
     altdiv = "".join(tile(a, "alternate", ps) for a in alts) or '<p class="meta">No alternates in the ledger.</p>'
-    cards.append(f'<article class="shot" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s</span></header><p class="why">{esc(s.get("why",""))}</p>{rg}{stills_html(sid)}<div class="row"><div class="pickcol">{tile(pick, "pick")}</div><div class="altcol">{altdiv}</div></div></article>')
+    cards.append(f'<article class="shot" data-tone="{tone}" id="{sid}"><header><span class="sid">{sid}</span><h3>{esc(title)}</h3><span class="dur">{d}s</span></header><p class="why">{esc(s.get("why",""))}</p>{rg}{refs_html(s)}{stills_html(sid)}<div class="row"><div class="pickcol">{tile(pick, "pick")}</div><div class="altcol">{altdiv}</div></div></article>')
 
 mm = f"{int(total)//60}:{int(total)%60:02d}"; n = len([k for k in sc8 if k in vids]); hf = P["higgsfield"]
 legend = " ".join(f'<span><i data-tone="{a.get("tone","sun")}"></i>{esc(a["id"])} · {esc(a["name"])}</span>' for a in P["acts"])

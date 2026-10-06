@@ -73,8 +73,205 @@
   "source": "Stone of Matter — Ep. 2 Darkness (screenplay, LoL Movie Night draft); novel chapters IV and VII–X, with the prologue, dream and Outer Darkness scenes",
   "codex": "codex/Series/Ep 2 — Darkness.md (claude/codex branch → main)",
   "form": "short-film trailer music video, to be expanded to episode length later",
-  "names": "This board uses the screenplay's names. Episode 1 shipped under production names because its prompts are public on the festival page; if this film goes the same way, rename the elements before Gate A — the ids do not change, and the crosswalk stays local.",
-  "edition": "SoM V2"
+  "names": "Book names throughout (Stone of Matter, Book I). Matter of Light (film 1) shipped under production names because its prompts are public on the festival page; wherever this board takes something from it, the film-1 name is marked [Matter of Light: name]. The full table is series.crosswalk, with the chapter and the line that proves each pair. Element names on Higgsfield are not changed by this: the film-1 elements keep their names and ids (they are submitted), and the elements made for this episode already carry book names.",
+  "edition": "SoM V2",
+  "crosswalk": {
+   "_": "Film 1's production names mapped to the book's, from a read of the novel (Ch 00–14, 21, 30, 35–37) against the Matter of Light project, screenplay and final cut. 'none' means the film invented it. This table was kept local for film 1 (crosswalk.local.js); it is in this file because the book names now lead.",
+   "rows": [
+    {
+     "film1": "Caedom",
+     "book": "Torin",
+     "kind": "character",
+     "proof": "Ch 01: 'Torin and Gwendolyn. Creator and creation.'"
+    },
+    {
+     "film1": "Oriane, 'Ori of the Wind'",
+     "book": "Gwendolyn, 'Gwen of the Wind', 'Wielder of the Wind Stone'",
+     "kind": "character",
+     "proof": "Ch 01"
+    },
+    {
+     "film1": "Auren; 'Leader of the seven'; the Founder",
+     "book": "Litiguh; 'Leader, or Lehrer, of spirits'",
+     "kind": "title",
+     "proof": "Ch 01"
+    },
+    {
+     "film1": "the Vesper",
+     "book": "the Morningstar; Jinn Morningstar, 'Morning', 'Grand Wielder of Darkness'",
+     "kind": "character",
+     "proof": "Ch 00, 02; the film's voice-over says 'the release of the Vesper' where the book says 'the release of the Morningstar'"
+    },
+    {
+     "film1": "the Threadwright",
+     "book": "the unnamed 'master puppeteer', a woman with 'understanding of voids'",
+     "kind": "character",
+     "proof": "Ch 02. Not Venetia: she 'sat back from the distant chaos… watched as her pitiful brothers and sisters were decimated in the vortex' (Ch 04)"
+    },
+    {
+     "film1": "lev-rider",
+     "book": "'a wielder of animals. One who understands the Stone of Dominion', fused into the leviathan's skull; a man",
+     "kind": "character",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "the Turned",
+     "book": "the dark ones, dark wielders, dark puppets, 'lesser dark beings'",
+     "kind": "faction",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "Keepers; the Vigil",
+     "book": "Guardians; the Sector Guard",
+     "kind": "faction",
+     "proof": "Ch 03"
+    },
+    {
+     "film1": "Alder / Wren",
+     "book": "Ammon / Mikael",
+     "kind": "character",
+     "proof": "Ch 03 'Brothers'. The book makes them 8 and 'six-and-a-half'; the film made them 19 and 18"
+    },
+    {
+     "film1": "Kai (kai_alder_v1, kai_wren_v1)",
+     "book": "Delkai, the family name: 'The Delkai Family'",
+     "kind": "name",
+     "proof": "Ch 07. Collides with the father's wolf, 'call him Kai, like our family name' (Ch 35)"
+    },
+    {
+     "film1": "Machira; the Long Fire",
+     "book": "Proelum; the Great Fire",
+     "kind": "place",
+     "proof": "Ch 00"
+    },
+    {
+     "film1": "the Sun courtyard; courtyard-of-worlds",
+     "book": "'a building of solidified light-beams… courtyard patterned with worlds as garden flowers'",
+     "kind": "place",
+     "proof": "Ch 01"
+    },
+    {
+     "film1": "the Verge Isles; the Warden",
+     "book": "the seven Horizon Islands; the island's guardian",
+     "kind": "place",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "Cairn Island; Kephas",
+     "book": "Cephas Island, 'the island of matter'",
+     "kind": "place",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "Nacre Beach; the Bloom",
+     "book": "Coral Beach; the Corals",
+     "kind": "place",
+     "proof": "Ch 03"
+    },
+    {
+     "film1": "Keeper's Isle; the Vigil Temple",
+     "book": "Guardian Isle; the Sector Guard Temple",
+     "kind": "place",
+     "proof": "Ch 03"
+    },
+    {
+     "film1": "the crater-lake coda",
+     "book": "Mirror Lake: 'The fish had saved him'",
+     "kind": "place",
+     "proof": "Ch 04"
+    },
+    {
+     "film1": "the Founding Stone of Hollows (founding-stone)",
+     "book": "the Creation Stone of Voids, 'Of wind and of realms, including those of dreams'",
+     "kind": "object",
+     "proof": "Ch 01. The book never gives its colour; Ch 11 makes Venetia's light violet, and film 1 made the Stone green-white"
+    },
+    {
+     "film1": "the Anchor Stone; turned-anchor",
+     "book": "the Stone of Matter, 'of stone itself'",
+     "kind": "object",
+     "proof": "Ch 02, 13"
+    },
+    {
+     "film1": "frozen-tear",
+     "book": "the tear that 'fell to the floor, and froze'",
+     "kind": "object",
+     "proof": "Ch 01"
+    },
+    {
+     "film1": "iron-spears",
+     "book": "'bits of iron ore, taken from stone by those who understood metals'",
+     "kind": "object",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "hollow; aura-shell",
+     "book": "a void; 'A crystal formed by a Creation Stone, to protect its bearer'; 'void armor'",
+     "kind": "power",
+     "proof": "Ch 01, 02"
+    },
+    {
+     "film1": "fx-segmented-mind",
+     "book": "'her mind split into ten parts'",
+     "kind": "power",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "the eye; the vortex",
+     "book": "'opening an eye in the atmosphere to summon the void of space'",
+     "kind": "power",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "thrall; metals",
+     "book": "Dominion; metals is an understanding, not one of the Seven",
+     "kind": "power",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "leviathan; leviathan-plating",
+     "book": "the leviathan: 'plating… covered with dead coral', 'countless fins… like leather balloons', skin 'like crusted sponges'",
+     "kind": "creature",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "the dark cloud (a face and red eyes in cut scene 84)",
+     "book": "'One dark cloud watched them from afar.' No face",
+     "kind": "creature",
+     "proof": "Ch 03"
+    },
+    {
+     "film1": "the green streak (NEW-4)",
+     "book": "the Stone launched 'thousands of miles away'; 'the gleam of the Creation Stone'. No colour",
+     "kind": "object",
+     "proof": "Ch 02, 04. The film shows it over the brothers the same day; the book's Ch 03 opens 'The next day'"
+    },
+    {
+     "film1": "the skeletal dragon and the woman in red (cut scenes 52–55)",
+     "book": "none — the leviathan never flies and its rider is a man; the book's only dragon is Morningstar, 'The serpent, the devil'",
+     "kind": "creature",
+     "proof": "Ch 02, 04"
+    },
+    {
+     "film1": "hooded wielders with lightning or purple wings (cut scenes 56, 63)",
+     "book": "the energy adept who 'connected the spaces between raindrops with lightning'. No wings",
+     "kind": "character",
+     "proof": "Ch 02"
+    },
+    {
+     "film1": "Oriane's wings (cut scenes 57, 85)",
+     "book": "none — she runs ('Her feet were a blur'), and the Stone 'fell from her body'",
+     "kind": "power",
+     "proof": "Ch 02. Kept as a film-1 signature in the house style; see power.endings"
+    },
+    {
+     "film1": "the forehead light, the figure walking on air, the rainbow sleeve, the wings behind Caedom, red eyes, the metal collar",
+     "book": "none",
+     "kind": "design",
+     "proof": "film 1's own inventions"
+    }
+   ]
+  }
  },
  "inherits": {
   "_": "What a sequel takes from the previous film by id, so nothing is re-described. Elements listed here are attached with their Episode 1 ids; the Souls are reachable if a face recurs.",
@@ -87,13 +284,31 @@
    "plate-island": "527aca60-04e0-4f86-8f4d-8c1f46c0f776",
    "corals-abyss": "0ff096fa-da4b-4a12-a371-5d678fb75651",
    "fx-kill-beat": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
-   "fx-hollow": "89a74d62-615e-4e52-b745-8bb8ceab1628"
+   "fx-hollow": "89a74d62-615e-4e52-b745-8bb8ceab1628",
+   "aura-grammar": "86f7d638-b403-459f-af68-e9365a5da336",
+   "aura-shell": "b81752ae-2bda-4a57-ba83-02244d1dbeb4",
+   "ladder-attunement": "447665c3-9c7d-4d95-ad8a-89b9a82d4fe4",
+   "ladder-mind": "cd2aa79a-43ab-445a-a298-f1071884cc50",
+   "fx-segmented-mind": "99737c53-c69a-43a8-af60-8a29fcffa072"
   },
   "souls": {
-   "caedom-ascended": "453e85a7-0fef-411e-8edc-693c998b8c95",
-   "oriane": "c270c1d2-3466-4283-95cd-154dff318d76",
-   "alder": "efde8880-7bab-43fc-9100-4be64504b3e0",
-   "wren": "2d6202b6-277e-49c3-a83a-80a63d9ead1b"
+   "_": "Episode 1's trained faces, reachable by id if a face recurs. Keyed by book name; the film-1 Soul name is marked.",
+   "torin-ascended": {
+    "soul_id": "453e85a7-0fef-411e-8edc-693c998b8c95",
+    "mol": "Matter of Light: Soul caedom-ascended"
+   },
+   "gwendolyn": {
+    "soul_id": "c270c1d2-3466-4283-95cd-154dff318d76",
+    "mol": "Matter of Light: Soul oriane"
+   },
+   "ammon-as-a-boy": {
+    "soul_id": "efde8880-7bab-43fc-9100-4be64504b3e0",
+    "mol": "Matter of Light: Soul alder — the younger brother's face, ten years before this film"
+   },
+   "mikael-as-a-boy": {
+    "soul_id": "2d6202b6-277e-49c3-a83a-80a63d9ead1b",
+    "mol": "Matter of Light: Soul wren"
+   }
   },
   "read": "anchorframe/projects/matter-of-light/project.json → final, and workflow.json → stage 8 (Learn): the delivered film ran 100 scenes at 3.7s against a 23-shot board; cuts landed on lyrics; five costume states of the lead reached the jury; the Predictor refused 16s renders; two silent regenerations came back with phantom speech; a wide read adults as children.",
   "lessons_applied": [
@@ -118,6 +333,14 @@
     "Identity is attached, never described: every face is its element, every take starts from a still made on those elements; adults read as adults in every wide.",
     "High bitrate and model audio off on every take; the song is laid in the edit and the cuts land on its words."
    ]
+  },
+  "marks": {
+   "ladder-mind": "Matter of Light: ladder-oriane",
+   "aura-grammar": "Matter of Light: aura-grammar (core versus hollow)",
+   "fx-segmented-mind": "Matter of Light: Oriane's mind splitting in the last battle",
+   "fx-kill-beat": "Matter of Light: scene 67, the kill beat",
+   "plate-ocean-dark": "Matter of Light: the night ocean of the last battle",
+   "plate-sun": "Matter of Light: the Sun's gold"
   }
  },
  "music": {
@@ -177,18 +400,18 @@
  "cast": {
   "_": "Pending ids are '<element uuid>' until the sheet is generated at Stage 1; prompts reference them as @name so the board marks them. Real ids are attached in the prompts as @[name](id): the Episode 1 elements inherited as they are, and the cast carried over from Episode 1 and dressed for Episode 2 (see carried).",
   "characters": {
-   "stardust": "<element uuid>",
-   "lucille": "<element uuid>",
+   "stardust": "a08a0e35-c503-4c28-8d88-731d80271c37",
+   "lucille": "a1db1ea4-7daa-46aa-81dc-3180b357e09a",
    "ammon": "0506e54b-81d7-43ba-9d50-d68411d9f4cc",
    "mikael": "66e16226-2809-449b-85e1-fb98732942dc",
    "krystal": "99943773-c449-4250-b55b-1f8e8ecc3a6e",
    "bastion": "a4a5e315-3a10-4ac2-8dd2-b576445db34a",
    "sadie": "e86db463-4556-47b1-ae96-020fb04b0b40",
    "viola": "<element uuid>",
-   "vothek": "<element uuid>",
-   "matteo": "<element uuid>",
-   "venetia": "<element uuid>",
-   "morningstar": "<element uuid>",
+   "vothek": "436d2623-21fb-4582-8ba3-2cfcdcc22183",
+   "matteo": "5b507f2e-193f-446c-a26c-da84985652d8",
+   "venetia": "439a6ef3-6c3d-46b5-9827-3b212b468052",
+   "morningstar": "334692d9-60c8-4eb3-a86f-0f9ebe446372",
    "master-lyon": "0ca0f6f7-6519-47d3-acb5-13705407eee6",
    "guardians": "2ea82739-6aa3-4ba6-82a0-d758aab26a54",
    "drowning": "57bb92bb-f84d-4097-ab88-5bc1e2c4b01c"
@@ -233,7 +456,8 @@
    "fx-pillar-of-fire": "<element uuid>",
    "fx-kill-beat": "dda1e304-4f0b-4e44-aca4-db472c0e18a6",
    "fx-hollow": "89a74d62-615e-4e52-b745-8bb8ceab1628"
-  }
+  },
+  "_lucille": "Lucille is 'neither male nor female' (Ch 09): prompts say 'it'. The element's own description (made in pass 4 before the book check) still says 'a man's face' and 'his'; the prompts override it."
  },
  "souls": {
   "_": "Reused by id from Episode 1, not duplicated: a Soul is one trained identity and cannot be copied. The same face plays the Episode 2 part. Souls run only on Soul 2.0 and Soul Cinematic (soul_id); every Cinema Studio shot uses the element of the same name instead. Sadie is the first Soul made for Episode 2.",
@@ -273,9 +497,9 @@
    "bastion": "DONE as element bastion (sheet 3fa939e6). Ammon's best friend, big, gentle, a zoo-keeper's hands; lantern in one hand.",
    "sadie": "DONE as element sadie (sheet f1908fd5). A young woman the same age as Ammon, daughter of Guardian Iceland: blonde hair, a sassy smile, calm eyes; two states: in the crowd at the Wind Caves, in the water at the Lake of Light.",
    "viola": "The singer at the Wind Caves, hands out, lantern-lit from below.",
-   "vothek": "The storyteller: a man with a serious face and playful eyes, on a small stage by a rock wall, firelight.",
+   "vothek": "DONE as element vothek (sheet a8d1ad0c). The storyteller: a man with a serious face and playful eyes, on a small stage by a rock wall, firelight.",
    "matteo": "A young man (rendered as 18+) with long brown hair whipped by storm wind, bare feet on sacred sand; second state: kneeling in the Outer Darkness as 'Conqueror'.",
-   "venetia": "The Prison of Voids: a woman who becomes a panther with wrong angles; both states on one sheet; a smell of decay you can see in the air around her.",
+   "venetia": "DONE as element venetia (sheet 57a2d220). The Prison of Voids: a woman who becomes a panther with wrong angles; both states on one sheet; a smell of decay you can see in the air around her.",
    "morningstar": "The master of the Outer Darkness: tall, still, lit only by what others give off; no horns, no cliché — a figure whose stillness is the threat.",
    "master-lyon": "DONE as element master-lyon (sheet 156475b2). An old master of the Leviticum, a foot taller than Ammon, well-groomed silver hair brushed back on head and chin, a Levitian lantern; kind, awake at night because his dream walked here."
   },
@@ -342,7 +566,28 @@
      "why": "The poster frame of the episode: the sequel's first image at the top of its grade.",
      "prompt": "The same slow crane back, graded to its ceiling: the star's surface pushed to molten white-gold, the courtyard's shadows falling to deep violet, the blanket of stardust pure white with a thin violet fringe against absolute black. Hard contrast, no grey. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[courtyard-of-worlds](afc4fc5d-86be-4072-927c-f890966feaca); @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
     }
-   ]
+   ],
+   "style": [
+    "real-then-more",
+    "one-accent"
+   ],
+   "tiers": [
+    "Torin [Matter of Light: Caedom]:core",
+    "Stardust:source"
+   ],
+   "mol_refs": [
+    {
+     "tc": "6:02–6:17",
+     "what": "Caedom alone at the courtyard, the crane up to one point of light — the bridge this shot lifts off",
+     "element": "courtyard-of-worlds afc4fc5d"
+    },
+    {
+     "tc": "key",
+     "what": "the Sun's gold",
+     "element": "plate-sun 03dbcec8"
+    }
+   ],
+   "book": "The book sends Stardust home to 'the center of the universe', not the Sun (Ch 09); the Sun courtyard is the bridge from film 1, a design choice."
   },
   {
    "id": "S2",
@@ -351,7 +596,7 @@
    "duration_s": 12,
    "audio": false,
    "status": "unshot",
-   "prompt": "Wide, locked, then a slow push. Stardust halts and suspends herself between a young sun and a young planet, dimming herself so as not to destroy it (@[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)). A beam of particles leaves her toward the planet; as it meets the atmosphere the particles converge into a small humanoid of clear glass (@stardust), falling without hurry, unaffected by gravity or the thick air. The planet below is raw and new. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8).",
+   "prompt": "Wide, locked, then a slow push. Stardust — a blanket of the purest white light, a combination of cloak and sandstorm — halts and suspends herself between a young sun and a young planet, dimming herself so as not to destroy it (@[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)). A beam of particles leaves her toward the planet; as it meets the atmosphere the particles converge into a small humanoid of clear glass (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)), falling without hurry, unaffected by gravity or the thick air. The planet below is raw and new. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8).",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -362,21 +607,29 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Wide, locked, then a slow push. Stardust halts and suspends herself between a young sun and a young planet, dimming herself so as not to destroy it (@[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)). A beam of particles leaves her toward the planet; as it meets the atmosphere the particles converge into a small humanoid of clear glass (@stardust), falling without hurry, unaffected by gravity or the thick air. The planet below is raw and new. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+     "prompt": "Wide, locked, then a slow push. Stardust — a blanket of the purest white light, a combination of cloak and sandstorm — halts and suspends herself between a young sun and a young planet, dimming herself so as not to destroy it (@[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)). A beam of particles leaves her toward the planet; as it meets the atmosphere the particles converge into a small humanoid of clear glass (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)), falling without hurry, unaffected by gravity or the thick air. The planet below is raw and new. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
     },
     {
      "c": "B",
      "name": "The fall, close",
      "why": "Moves with her instead of watching her, so the cut can hold her face-height for a beat.",
-     "prompt": "Close, 85mm, tracking down with her: the small humanoid of clear glass falling through thick air toward a young planet, light refracting and moving inside her body, her limbs calm, untouched by gravity; the raw surface rising beneath, out of focus. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+     "prompt": "Close, 85mm, tracking down with her: the small humanoid of clear glass falling through thick air toward a young planet, light refracting and moving inside her body, her limbs calm, untouched by gravity; the raw surface rising beneath, out of focus. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
     },
     {
      "c": "C",
      "name": "Prism",
      "why": "The beam split into colour is the cleanest single image for a spot's first second.",
-     "prompt": "Wide: the beam of particles splits into a full spectrum as it meets the atmosphere, the glass figure a single refracting point at its head, violet sky below, black space above. Saturated spectrum against black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
+     "prompt": "Wide: the beam of particles splits into a full spectrum as it meets the atmosphere, the glass figure a single refracting point at its head, violet sky below, black space above. Saturated spectrum against black. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e); @[machira-orbit](e7b2e80e-59db-44be-a654-7534a042e2c8)."
     }
-   ]
+   ],
+   "style": [
+    "real-then-more",
+    "one-accent"
+   ],
+   "tiers": [
+    "Stardust:source"
+   ],
+   "book": "'a combination of cloak and sandstorm' (Ch 09)."
   },
   {
    "id": "S3",
@@ -385,7 +638,7 @@
    "duration_s": 14,
    "audio": false,
    "status": "shot",
-   "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@stardust) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust.",
+   "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole, less than a void (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37).",
    "pick": "0fee402c-0b26-4316-972a-48ff9cf0b73b",
    "alternates": [],
    "why": "First pass, Oct 5: animated from its lane-A still 7897de06 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
@@ -396,21 +649,26 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@stardust) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust."
+     "prompt": "Aerial descent, continuous, through a massive cloud of darkness (@fx-dark-cloud) into a desolate land drained of colour and nutrients, all of it centred on an abyss darker than any black hole, less than a void (@abyss-of-four-waterfalls). Four waterfalls pour endlessly into it, pure at their sources on the rim, bleak along their paths. Everything around the abyss is dead — the land, the water. Dim reflections of the sun float about aimlessly. The glass figure (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) is a speck crossing frame toward the abyss. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)."
     },
     {
      "c": "B",
      "name": "From the rim",
      "why": "Ground level gives the abyss scale against something the audience can stand on.",
-     "prompt": "Ground level at the abyss's rim, 24mm, low: one of the four waterfalls pours past camera into a black that swallows it; dead grey grass in the foreground; high in the dark sky, a small glass figure crosses toward the abyss. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust."
+     "prompt": "Ground level at the abyss's rim, 24mm, low: one of the four waterfalls pours past camera into a black that swallows it; dead grey grass in the foreground; high in the dark sky, a small glass figure crosses toward the abyss. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)."
     },
     {
      "c": "C",
      "name": "Drained",
      "why": "A near-monochrome frame makes the light in S5 land harder.",
-     "prompt": "The aerial descent graded to near-monochrome: ash greys, the abyss pure black, the only colour in frame the clean blue-white at the sources of the four waterfalls on the rim. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @stardust."
+     "prompt": "The aerial descent graded to near-monochrome: ash greys, the abyss pure black, the only colour in frame the clean blue-white at the sources of the four waterfalls on the rim. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @abyss-of-four-waterfalls; @fx-dark-cloud; @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)."
     }
-   ]
+   ],
+   "style": [
+    "real-then-more",
+    "thesis-frame"
+   ],
+   "book": "'less than a void' (Ch 09)."
   },
   {
    "id": "S4",
@@ -419,7 +677,7 @@
    "duration_s": 12,
    "audio": true,
    "status": "unshot",
-   "prompt": "Medium, handheld tremor, 50mm. The glass figure (@stardust) is stopped mid-flight before one of the waterfalls, held by a power not her own; the glass of her body creaks and moans. A demon (@lucille) appears crouched before her — four limbs and a head, distorted features in mockery of a man, hollow eyes blacker than the surrounding dark, teeth hidden. He speaks: 'Why have you come? Into the depths of my power.' Then he laughs and his face slides into the face of a spirit woman and back. Audio on; the only sound is the waterfall, the creak of glass and his voice. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls.",
+   "prompt": "Medium, handheld tremor, 50mm. The glass figure (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) is stopped mid-flight before one of the waterfalls, held by millions of hair-fine threads of dead matter that run from her glass limbs into the dark; the glass of her body creaks and moans where they pull. A demon (@[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a)) crouches before her working the threads like a puppeteer — four limbs and a head, neither male nor female, its features a mockery of a face, hollow eyes blacker than the surrounding dark, teeth hidden — and from its back a thick dark cord, like an umbilical cord, runs into the wall of the abyss. It speaks: 'Why have you come? Into the depths of my power.' Then it laughs and its face slides into the face of a spirit woman and back. Audio on; the only sound is the waterfall, the creak of glass and its voice. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a); @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @abyss-of-four-waterfalls.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -430,21 +688,44 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Medium, handheld tremor, 50mm. The glass figure (@stardust) is stopped mid-flight before one of the waterfalls, held by a power not her own; the glass of her body creaks and moans. A demon (@lucille) appears crouched before her — four limbs and a head, distorted features in mockery of a man, hollow eyes blacker than the surrounding dark, teeth hidden. He speaks: 'Why have you come? Into the depths of my power.' Then he laughs and his face slides into the face of a spirit woman and back. Audio on; the only sound is the waterfall, the creak of glass and his voice. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls."
+     "prompt": "Medium, handheld tremor, 50mm. The glass figure (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) is stopped mid-flight before one of the waterfalls, held by millions of hair-fine threads of dead matter that run from her glass limbs into the dark; the glass of her body creaks and moans where they pull. A demon (@[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a)) crouches before her working the threads like a puppeteer — four limbs and a head, neither male nor female, its features a mockery of a face, hollow eyes blacker than the surrounding dark, teeth hidden — and from its back a thick dark cord, like an umbilical cord, runs into the wall of the abyss. It speaks: 'Why have you come? Into the depths of my power.' Then it laughs and its face slides into the face of a spirit woman and back. Audio on; the only sound is the waterfall, the creak of glass and its voice. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a); @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @abyss-of-four-waterfalls."
     },
     {
      "c": "B",
-     "name": "Over his shoulder",
-     "why": "Coverage for the dialogue: the editor can cut his line onto her face.",
-     "prompt": "Over the shoulder of the crouched demon, 35mm: the glass figure held motionless in the air before the waterfall, cracks of light moving across her glass as it creaks; his head stays a shape against her light. Audio on: the waterfall, the glass creaking, and his voice: 'Why have you come?' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls."
+     "name": "Over its shoulder",
+     "why": "Coverage for the dialogue: the editor can cut its line onto her face.",
+     "prompt": "Over the shoulder of the crouched demon, 35mm: the glass figure held motionless in the air before the waterfall, cracks of light moving across her glass as it creaks; its head stays a shape against her light. Audio on: the waterfall, the glass creaking, and its voice: 'Why have you come?' 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a); @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @abyss-of-four-waterfalls."
     },
     {
      "c": "C",
      "name": "Carved by her light",
      "why": "The demon lit only by the glass figure is the image the dark cue can hit.",
-     "prompt": "Medium close: the demon lit only by the light coming off the glass figure, white light carving his distorted features out of black, hollow eyes darker than the dark around them; the waterfall a silver curtain behind. Extreme contrast. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @lucille; @stardust; @abyss-of-four-waterfalls."
+     "prompt": "Medium close: the demon lit only by the light coming off the glass figure, white light carving its distorted features out of black, hollow eyes darker than the dark around them; the waterfall a silver curtain behind. Extreme contrast. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a); @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @abyss-of-four-waterfalls."
+    },
+    {
+     "c": "D",
+     "name": "The puppeteer's threads",
+     "why": "A silent still and insert for the hold: the threads, the cord and the cracks, without the dialogue.",
+     "prompt": "Medium, 50mm, inside the abyss in near darkness: the glass figure (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) hangs stopped in mid-air before a black waterfall, held by millions of hair-fine threads of dead grey matter that run from her glass limbs back into the dark; the threads end in the long fingers of the crouched demon (@[lucille](a1db1ea4-7daa-46aa-81dc-3180b357e09a)), neither male nor female, who works them like a puppeteer; from its back a thick dark cord runs up into the wall of the abyss. Where the threads touch the glass, hairline cracks of light spread. One bright subject against true black. @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e) for key direction, colour and contrast. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "style": [
+    "real-then-more",
+    "one-accent"
+   ],
+   "tiers": [
+    "Lucille:understanding",
+    "Stardust:source"
+   ],
+   "mol_refs": [
+    {
+     "tc": "Ch 02 · film 1",
+     "what": "the master puppeteer Gwendolyn kills last, moving the dark ones 'with her own understanding of voids'",
+     "element": "threadwright 00c70af8 — not attached; the threads are the quote"
+    }
+   ],
+   "book": "Lucille is 'neither male nor female', 'controlling millions of threads of dead matter', joined by 'an umbilical cord' to the abyss walls (Ch 09). The board had 'a mockery of a man' and 'he'; fixed.",
+   "echo": "The puppeteer again: Gwendolyn's last battle ends when the puppeteer 'collapsed in on herself in the vortex' (Ch 02); Lucille ends the same way, reduced to dark matter, then to nothing (S5)."
   },
   {
    "id": "S5",
@@ -455,8 +736,10 @@
    "status": "shot",
    "prompt": "Wide to very wide, no cut. Stardust explodes in showering light (@[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6) for the burst), conquering every crevice of the abyss; the demon reduces to dark matter, then to nothing. The light rises as a great ocean wave (@fx-light-wave), crests over the lip of the abyss and pours out over the dead land; colour returns to the plants and animals as it passes; the dark cloud above collapses in on itself and vanishes. End on the renewed land under a clear sky. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6).",
    "pick": "5b9a8ffb-6d7a-4875-a008-642f67b3d7ff",
-   "alternates": [],
-   "why": "First pass, Oct 5: animated from its lane-A still 93a9d4e9 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
+   "alternates": [
+    "eb5ff2d3-c8ef-48fc-8864-654feb6659a4"
+   ],
+   "why": "First pass, Oct 5: animated from its lane-A still 93a9d4e9 as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite. Pass 4 added the fracture as a 5s insert (Predictor 52); cut it in ahead of the pick.",
    "regenerate": false,
    "notes": "The set piece of Movement I. Generate the B lane for it (a ground-level shot of the light passing over dead grass) before Gate D — the cut will want two angles here.",
    "lanes": [
@@ -477,8 +760,36 @@
      "name": "Past white",
      "why": "Clipping to pure light then resolving gives a spot its hook in one second.",
      "prompt": "The burst graded past white: the whole frame clips to pure light, then the wave resolves out of it in gold and new green against a violet sky, pouring over the lip of the abyss. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @fx-light-wave; @abyss-of-four-waterfalls; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6)."
+    },
+    {
+     "c": "D",
+     "name": "The fracture",
+     "why": "The 5s insert that opens the set piece on its peak: the crack of light in her glass, the two tears. Cut it in before the wave. Worded around the figure, not the body: the first wording was refused by the content filter.",
+     "prompt": "Close, 85mm, the peak of the moment: a single bright crack of light runs down the clear faceted glass figure @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37) from shoulder to waist, and white light streams out through the crack from inside the glass, lighting the haze around her; two bright drops roll down her glass face at once; behind her the darkness of the abyss bends away from her light, every shadow pushed outward. The light starts inside the glass and passes outward through real air and haze; no fire, no debris, no beams. @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e) for key direction, colour and contrast. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "style": [
+    "exploding-angel",
+    "cut-to-the-song",
+    "real-then-more"
+   ],
+   "tiers": [
+    "Stardust:source",
+    "Lucille:understanding"
+   ],
+   "mol_refs": [
+    {
+     "tc": "3:50–4:03",
+     "what": "scene 67, the kill beat: the shockwave that clears the shadows",
+     "element": "fx-kill-beat dda1e304"
+    },
+    {
+     "tc": "4:42–4:45",
+     "what": "scene 82, yellow light bursting from the cloud beneath her"
+    }
+   ],
+   "book": "'A fracture line shot down her glass body'; reality distorts 'for hundreds of miles'; she 'shed two tears at once' (Ch 09).",
+   "echo": "Gwendolyn's last strike: 'Sound collapsed… then expanded… as if a meteor had crashed into a lake' (Ch 02) — the same beat film 1 cut as scene 67."
   },
   {
    "id": "S6",
@@ -487,10 +798,10 @@
    "duration_s": 12,
    "audio": true,
    "status": "unshot",
-   "prompt": "Medium then tilt down, 40mm. Stardust (@stardust) ascends slowly, head hung, pauses above the surface and looks far over the renewed land; her glass form begins to fade. She says, quietly: 'What a magnificent world she is to become. Proleum.' As she goes, the camera drops to the new green soil, where one black seed lies among the roots. Hold on the seed. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e).",
-   "pick": null,
+   "prompt": "Medium then tilt down, 40mm. Stardust (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) ascends slowly, head hung, pauses above the surface and looks far over the renewed land; her glass form begins to fade. She says, quietly: 'What a magnificent world she is to become. Proelum.' As she goes, the camera drops to the new green soil, where one black seed lies among the roots. Hold on the seed. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e).",
+   "pick": "9446ae21-c98c-4b48-99ad-59d0ebee1549",
    "alternates": [],
-   "why": "",
+   "why": "Heaven after (lane D), the best score of the pass: the golden cloud and the shape under it. Predictor 56. An insert, not the shot: lane A is still to make, from the anchor stills on this card.",
    "regenerate": false,
    "notes": "The last line of the prologue and the title of the episode in one image. The seed is the only prop in Movement I; it is also the first thing the trailer's dark cue can land on.",
    "lanes": [
@@ -498,21 +809,56 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Medium then tilt down, 40mm. Stardust (@stardust) ascends slowly, head hung, pauses above the surface and looks far over the renewed land; her glass form begins to fade. She says, quietly: 'What a magnificent world she is to become. Proleum.' As she goes, the camera drops to the new green soil, where one black seed lies among the roots. Hold on the seed. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)."
+     "prompt": "Medium then tilt down, 40mm. Stardust (@[stardust](a08a0e35-c503-4c28-8d88-731d80271c37)) ascends slowly, head hung, pauses above the surface and looks far over the renewed land; her glass form begins to fade. She says, quietly: 'What a magnificent world she is to become. Proelum.' As she goes, the camera drops to the new green soil, where one black seed lies among the roots. Hold on the seed. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)."
     },
     {
      "c": "B",
      "name": "The seed alone",
      "why": "A silent insert the cut can place anywhere the dark cue needs a beat.",
-     "prompt": "Macro, locked, 100mm: one black seed among new green roots in dark soil; above it, soft and out of focus, a fading glass figure rises out of the top of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)."
+     "prompt": "Macro, locked, 100mm: one black seed among new green roots in dark soil; above it, soft and out of focus, a fading glass figure rises out of the top of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)."
     },
     {
      "c": "C",
      "name": "Black in green",
      "why": "The seed as the only black thing in a saturated world.",
-     "prompt": "The seed graded as the only black object in a saturated green world, the glass figure a white streak leaving the top of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @stardust; @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)."
+     "prompt": "The seed graded as the only black object in a saturated green world, the glass figure a white streak leaving the top of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[stardust](a08a0e35-c503-4c28-8d88-731d80271c37); @[plate-stardust](b5259d77-8ce8-4f09-9c41-d3a5badccd4e)."
+    },
+    {
+     "c": "D",
+     "name": "Heaven after",
+     "why": "The quiet after the burst, the way film 1 did it: the golden cloud sea, the round opening, one beam — and something vast and kind moving under the cloud that nobody names.",
+     "prompt": "Very wide, locked, high above the weather at first light, afterwards, in silence: an endless sea of golden cloud lit like a real morning, teal at the far edges of the sky, and in the cloud one round opening through which a single beam of white light falls to a green world far below. A small fading point of white light rises out of the opening. Far off across the cloud sea a long slow swell moves under its surface, as if something vast were swimming beneath it, and a curved dark shape breaks the gold for a moment and sinks again — gentle, unhurried, never fully seen. Almost still. @[plate-sun](03dbcec8-c65f-482c-8c11-58782c673c93) for key direction, colour and contrast. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "style": [
+    "heaven-after",
+    "possible-beast",
+    "thesis-frame",
+    "rise-to-light"
+   ],
+   "tiers": [
+    "Stardust:source"
+   ],
+   "mol_refs": [
+    {
+     "tc": "4:39–4:42",
+     "what": "scenes 80–81, on golden cloud at teal dusk; top-down through a circle in the cloud"
+    },
+    {
+     "tc": "5:18–5:19",
+     "what": "scene 95, a beam through the cloud"
+    },
+    {
+     "tc": "5:50–6:02",
+     "what": "scene 106, silver fish rise toward the light"
+    },
+    {
+     "tc": "key",
+     "what": "the Sun's gold",
+     "element": "plate-sun 03dbcec8"
+    }
+   ],
+   "book": "The spelling is Proelum (Ch 00). She ascends; the book sends her home to 'the center of the universe' (Ch 09). The shape under the cloud is not in this chapter: it is the house style's possible beast, Kokua before anyone knows him (Ch 35, 'Kokua Alone') — a design choice."
   },
   {
    "id": "S7",
@@ -683,8 +1029,28 @@
      "name": "His shadow on the wall",
      "why": "The line made literal: the shot the music video's chorus lands on.",
      "prompt": "Ammon walks through a band of lantern light so his shadow is thrown huge across the cave wall behind him as he plays; the shadow is larger than he is. Graded amber light against deep black shadow. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[sadie](e86db463-4556-47b1-ae96-020fb04b0b40); @[ammons-guitar](8a205133-5bc9-433c-b93a-e75bb58d62f7); @[wind-caves-stage](8ed82509-afbb-44f2-a491-b447f382be93)."
+    },
+    {
+     "c": "D",
+     "name": "Three minds",
+     "why": "Ammon's first split, the mind ladder's first rung in this series: three echoes of his hands in tune.",
+     "prompt": "Close, 85mm, warm amber in a dark cave: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc) plays @[ammons-guitar](8a205133-5bc9-433c-b93a-e75bb58d62f7), eyes half closed, and his hands on the strings are seen three times at once — three faint, overlapping, slightly offset echoes of the same fingers moving in tune, like three friends singing the same song; the echoes are warm and contained, translucent at their edges, and his face is calm. One bright subject on a dark ground. @[plate-high-forest](dd387448-312f-420e-bdea-b2c4d65290f1) for key direction, colour and contrast. He is an adult about twenty with a mature face. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "tiers": [
+    "Ammon:mind"
+   ],
+   "style": [
+    "cut-to-the-song"
+   ],
+   "mol_refs": [
+    {
+     "tc": "film 1",
+     "what": "Oriane's mind splitting in the last battle — the same ladder, its first rungs",
+     "element": "fx-segmented-mind 99737c53 · ladder-oriane cd2aa79a (ladder-mind here)"
+    }
+   ],
+   "book": "Ammon's mind splits into three while he plays, 'as if three great friends were singing in tune together' (Ch 09); Gwendolyn learned it the same way, ten parts as 'ten different songs' (Ch 02)."
   },
   {
    "id": "S12",
@@ -754,7 +1120,14 @@
      "why": "The vibration made visible.",
      "prompt": "Macro on the guitar neck and his fingers: the strings trembling with no one playing them, a faint blue-white light at the edges of frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @[ammons-guitar](8a205133-5bc9-433c-b93a-e75bb58d62f7)."
     }
-   ]
+   ],
+   "mol_refs": [
+    {
+     "tc": "film 1",
+     "what": "Gwendolyn [Matter of Light: Oriane], Wielder of the Wind Stone — the wind is how she is remembered"
+    }
+   ],
+   "book": "The wind Ammon calls up is 'her' (Ch 13), and Gwendolyn is 'Wielder of the Wind Stone' (Ch 01): the link is implied, #verify."
   },
   {
    "id": "S14",
@@ -870,7 +1243,7 @@
    "duration_s": 10,
    "audio": true,
    "status": "unshot",
-   "prompt": "Medium close, 50mm, firelight. A man (@vothek) stands on the small stage by the rock wall with a serious face and playful eyes; the friends gather below. He says: 'The story of the Angel Killer is the oldest of the land. To some, it is true. Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light.",
+   "prompt": "Medium close, 50mm, lit from below by three pale blue ether stones. The band's instruments have been set aside; a man (@[vothek](436d2623-21fb-4582-8ba3-2cfcdcc22183)) steps out of blue shadow onto the small stage by the rock wall — thin, wispy red hair floating about his head, a serious face and playful eyes, the subtle grin he wears before a story — and sits on the largest ether stone while the friends gather below. He says: 'The story of the Angel Killer is the oldest of the land. To some, it is true. Others call it legend.' Audio on. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[vothek](436d2623-21fb-4582-8ba3-2cfcdcc22183); @lake-of-light; @[plate-lake-of-light](c0f57d22-a688-418d-84cd-e00730a0ddba).",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -881,21 +1254,26 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Medium close, 50mm, firelight. A man (@vothek) stands on the small stage by the rock wall with a serious face and playful eyes; the friends gather below. He says: 'The story of the Angel Killer is the oldest of the land. To some, it is true. Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light."
+     "prompt": "Medium close, 50mm, lit from below by three pale blue ether stones. The band's instruments have been set aside; a man (@[vothek](436d2623-21fb-4582-8ba3-2cfcdcc22183)) steps out of blue shadow onto the small stage by the rock wall — thin, wispy red hair floating about his head, a serious face and playful eyes, the subtle grin he wears before a story — and sits on the largest ether stone while the friends gather below. He says: 'The story of the Angel Killer is the oldest of the land. To some, it is true. Others call it legend.' Audio on. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[vothek](436d2623-21fb-4582-8ba3-2cfcdcc22183); @lake-of-light; @[plate-lake-of-light](c0f57d22-a688-418d-84cd-e00730a0ddba)."
     },
     {
      "c": "B",
      "name": "The listeners",
      "why": "The reverse lets the line play over faces.",
-     "prompt": "Reverse angle: the friends' faces in firelight looking up at the stage while the storyteller's voice continues: 'Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light."
+     "prompt": "Reverse angle: the friends' faces in firelight looking up at the stage while the storyteller's voice continues: 'Others call it legend.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[vothek](436d2623-21fb-4582-8ba3-2cfcdcc22183); @lake-of-light."
     },
     {
      "c": "C",
      "name": "Firelight",
      "why": "One frame of the storyteller for the spots.",
-     "prompt": "Graded firelight orange against the black rock wall, the storyteller's playful eyes catching the light. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @vothek; @lake-of-light."
+     "prompt": "Graded firelight orange against the black rock wall, the storyteller's playful eyes catching the light. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[vothek](436d2623-21fb-4582-8ba3-2cfcdcc22183); @lake-of-light."
     }
-   ]
+   ],
+   "style": [
+    "real-then-more",
+    "one-accent"
+   ],
+   "book": "Three ether stones on the stage; he steps 'out from blue shadow'; 'His hair was red, thin and wispy, perpetually floating about his head'; 'a serious face… his eyes were always playful' (Ch 10)."
   },
   {
    "id": "S18",
@@ -904,10 +1282,12 @@
    "duration_s": 16,
    "audio": false,
    "status": "unshot",
-   "prompt": "Told, not lived: painted light, long lens, slightly slower than life. Day, the old lands of the world many years ago (@old-lands). A boy stands alone on a rock and swallows a radiant seedling. A pillar of fire descends upon the rock (@fx-pillar-of-fire). Two angels, one of light and one of dark, fall. The boy stands in the ash with light in his chest. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire.",
-   "pick": null,
-   "alternates": [],
-   "why": "",
+   "prompt": "Told, not lived: painted light, long lens, slightly slower than life, in its own warmer, softer grade. The old lands, long ago (@old-lands): darkness rises over the last land like a tsunami. A young man kneels alone on a rock with his palm flat on the dirt; a vast face forms in the shadows above him. A light comes out of the ground like a seed pulled from the soil, its young roots receding into its shell; he stands, looks back at his people, smiles, and swallows the radiant seedling. Light pours from his eyes and mouth; his body lifts and glows until no one can look at him. A pillar of fire descends upon the rock before him (@fx-pillar-of-fire); all matter around him vibrates, then fuses. Then silence. In the last frame he stands on the rock again, a normal boy. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6).",
+   "pick": "2afbfa22-379a-4b91-a3e9-52198eca2be3",
+   "alternates": [
+    "dc56310b-d11d-4ad6-ac68-2fa07117fb11"
+   ],
+   "why": "The radiant seedling (lane D) over the light from his eyes and mouth (lane E, 53): one bright subject on black. Predictor 54. An insert, not the shot: lane A is still to make, from the anchor stills on this card.",
    "regenerate": false,
    "notes": "A legend inside the film: give it its own grade (warmer, softer) so the audience knows it is being told.",
    "lanes": [
@@ -915,7 +1295,7 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Told, not lived: painted light, long lens, slightly slower than life. Day, the old lands of the world many years ago (@old-lands). A boy stands alone on a rock and swallows a radiant seedling. A pillar of fire descends upon the rock (@fx-pillar-of-fire). Two angels, one of light and one of dark, fall. The boy stands in the ash with light in his chest. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire."
+     "prompt": "Told, not lived: painted light, long lens, slightly slower than life, in its own warmer, softer grade. The old lands, long ago (@old-lands): darkness rises over the last land like a tsunami. A young man kneels alone on a rock with his palm flat on the dirt; a vast face forms in the shadows above him. A light comes out of the ground like a seed pulled from the soil, its young roots receding into its shell; he stands, looks back at his people, smiles, and swallows the radiant seedling. Light pours from his eyes and mouth; his body lifts and glows until no one can look at him. A pillar of fire descends upon the rock before him (@fx-pillar-of-fire); all matter around him vibrates, then fuses. Then silence. In the last frame he stands on the rock again, a normal boy. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire; @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6)."
     },
     {
      "c": "B",
@@ -926,10 +1306,50 @@
     {
      "c": "C",
      "name": "Ochre and gold",
-     "why": "The legend's own grade, pushed to the top.",
-     "prompt": "Painted light graded to ochre and gold, the two angels falling in two colours, one light and one dark, through the fire. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire."
+     "why": "The legend's own grade, pushed to the top. No angels in frame: in the book they are the retelling, never seen (Ch 10).",
+     "prompt": "Painted light graded to ochre and gold: the pillar of fire on the rock, and through it the boy's own light rising, brighter than the fire; at the edges the darkness breaks apart like a wave on stone. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @old-lands; @fx-pillar-of-fire."
+    },
+    {
+     "c": "D",
+     "name": "The radiant seedling",
+     "why": "A 5s insert on one bright subject: the light drawn up out of the soil.",
+     "prompt": "Macro, 100mm, the peak of the moment: a radiant seedling of pure warm light is drawn up out of dark soil between a young man's fingers, its fine young roots curling back and receding into its glowing shell as if to condense its power; the light lifts the dust and lights the creases of his hand; everything else falls to black. One bright subject on a dark ground. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
+    },
+    {
+     "c": "E",
+     "name": "Light from his eyes and mouth",
+     "why": "The exploding angel, the book's own way: the light leaves through the face.",
+     "prompt": "Close, 50mm, painted light: a young man's face tipped up, eyes open, and white-gold light pours from his eyes and his open mouth into the real dusty air around him; his hair and loose shirt blow back as his body lifts from the ground; the light has pushed every shadow out of frame at once. The face stays a human face. No fire, no debris, no beams. @[fx-kill-beat](dda1e304-4f0b-4e44-aca4-db472c0e18a6) for the shockwave. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
+    },
+    {
+     "c": "F",
+     "name": "Palm on the dirt",
+     "why": "The wide that sets the legend: the darkness as a tsunami, the face in it, one thread of light under his hand.",
+     "prompt": "Told, not lived: painted light, long lens, 135mm. An ancient plain of old stone and dry grass under a dim sky; a lean young man kneels alone on a flat rock with his palm pressed flat on the dirt, his back to camera; his people stand in a small group far behind him; ahead of him, filling the whole horizon, darkness rises like a tsunami a mile high, and in its shadows the faint shape of a vast face is forming, as if to swallow him. The one wrong thing: a single thin thread of warm light rising from the ground under his palm. No sound. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "style": [
+    "exploding-angel",
+    "thesis-frame",
+    "real-then-more"
+   ],
+   "mol_refs": [
+    {
+     "tc": "3:50–4:03",
+     "what": "scene 67, the kill beat — matter shaking as the light leaves",
+     "element": "fx-kill-beat dda1e304"
+    },
+    {
+     "tc": "4:42–4:50",
+     "what": "scenes 82–85, the light bursting and leaving her"
+    },
+    {
+     "tc": "5:35–5:42",
+     "what": "scene 101, the thesis shot: one small wrong thing in a beautiful frame"
+    }
+   ],
+   "book": "The board had 'two angels, one of light and one of dark, fall'; nobody sees angels in the book. The boy kneels, 'palm on the dirt'; 'A light came out of the ground, like a seed being pulled from the soil, its young roots receding into its shell'; 'light poured from his eyes and mouth'; 'A pillar of fire descended upon the rock'; 'All matter surrounding him then began to vibrate, then fuse'; 'Silence. Absolute silence.' The angels are the retelling: 'Both the light and the dark were angels, and he killed them' (Ch 10) — Vothek says it over the last frame.",
+   "echo": "The same act as S22: the boy swallows the light to kill the dark; Matteo swallows the heart of Ilan for the dark. And the book's other teller saw the boy as a demon 'summoning shadows from the dark center of the world' (Ch 10)."
   },
   {
    "id": "S19",
@@ -972,7 +1392,7 @@
    "duration_s": 10,
    "audio": false,
    "status": "unshot",
-   "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector.",
+   "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling; they drift as if a wind moved them, though nothing else in the room moves. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector.",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -983,7 +1403,7 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector."
+     "prompt": "Slow push, 35mm, very low light. A study room inside the Leviticum (@leviticum-study-room): foam mattresses on the floor, friends asleep, a glisc projector (@glisc-projector) throwing shifting constellations across the ceiling; they drift as if a wind moved them, though nothing else in the room moves. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) lies on his back watching them; his eyes close. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector."
     },
     {
      "c": "B",
@@ -997,7 +1417,18 @@
      "why": "Sharp stars on deep blue-black: the dream's doorway.",
      "prompt": "Graded deep blue-black with the projected stars sharp white, the sleepers' faces barely lit. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-study-room; @glisc-projector."
     }
-   ]
+   ],
+   "style": [
+    "thesis-frame",
+    "one-accent"
+   ],
+   "mol_refs": [
+    {
+     "tc": "film 1",
+     "what": "Gwendolyn [Matter of Light: Oriane] of the Wind — the Stone of Voids is 'Of wind and of realms, including those of dreams'"
+    }
+   ],
+   "book": "Dreams are the Stone of Voids' realm (Ch 01), and 'Morningstar is strong in that realm, now that he has the Stone of Voids' (Ch 06); Gwendolyn 'will be a part of the Stone of Voids forever. She will be watching' (Ch 06). The moving wind is a design choice that says so without a word."
   },
   {
    "id": "S21",
@@ -1006,7 +1437,7 @@
    "duration_s": 14,
    "audio": false,
    "status": "unshot",
-   "prompt": "Handheld, 35mm, night, wind. A hidden island (@ilan-storm) as a storm materialises from nowhere and begins to tear it apart. A young man with long brown hair whipped back (@matteo) watches a figure step from the shadows — a woman (@venetia) who, as she comes closer, becomes a PANTHER with odd shapes and angles that seem wrong. In the sky behind, a giant glowing beast screeches. Storm key from @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632). 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632).",
+   "prompt": "Handheld, 35mm, night, wind. A hidden island (@ilan-storm) as a storm materialises from nowhere and begins to tear it apart. A young man with long brown hair whipped back (@[matteo](5b507f2e-193f-446c-a26c-da84985652d8)) drives his hog away into the trees, then turns to watch a figure step from the shadows — a woman (@[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052)), plates of coloured stone on her like the scales of a winged serpent, a violet light caged in her chest — who, as she comes closer, becomes a PANTHER limping on five legs that fold backwards, odd shapes and angles that seem wrong, violets crushed under its feet. In the sky behind, a giant glowing beast screeches. Storm key from @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632). 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632).",
    "pick": null,
    "alternates": [],
    "why": "",
@@ -1017,21 +1448,41 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Handheld, 35mm, night, wind. A hidden island (@ilan-storm) as a storm materialises from nowhere and begins to tear it apart. A young man with long brown hair whipped back (@matteo) watches a figure step from the shadows — a woman (@venetia) who, as she comes closer, becomes a PANTHER with odd shapes and angles that seem wrong. In the sky behind, a giant glowing beast screeches. Storm key from @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632). 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
+     "prompt": "Handheld, 35mm, night, wind. A hidden island (@ilan-storm) as a storm materialises from nowhere and begins to tear it apart. A young man with long brown hair whipped back (@[matteo](5b507f2e-193f-446c-a26c-da84985652d8)) drives his hog away into the trees, then turns to watch a figure step from the shadows — a woman (@[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052)), plates of coloured stone on her like the scales of a winged serpent, a violet light caged in her chest — who, as she comes closer, becomes a PANTHER limping on five legs that fold backwards, odd shapes and angles that seem wrong, violets crushed under its feet. In the sky behind, a giant glowing beast screeches. Storm key from @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632). 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
     },
     {
      "c": "B",
      "name": "Matteo's face",
      "why": "Coverage for the transformation: his face as he watches it.",
-     "prompt": "Close on the young man in storm wind, rain on his face, eyes fixed on something off frame; behind him, soft, a woman's silhouette changes shape. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
+     "prompt": "Close on the young man in storm wind, rain on his face, eyes fixed on something off frame; behind him, soft, a woman's silhouette changes shape. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
     },
     {
      "c": "C",
      "name": "Storm violet",
      "why": "The dream's palette: violet storm, green eyes.",
-     "prompt": "Graded violet storm light, the panther's eyes the only green in frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
+     "prompt": "Graded violet storm light, the panther's eyes the only green in frame. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @ilan-storm; @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632)."
     }
-   ]
+   ],
+   "style": [
+    "real-then-more",
+    "one-accent"
+   ],
+   "tiers": [
+    "Venetia:prison"
+   ],
+   "mol_refs": [
+    {
+     "tc": "film 1",
+     "what": "the night ocean of Oriane's last battle — the same storm key",
+     "element": "plate-ocean-dark 398d0b9f"
+    },
+    {
+     "tc": "4:03–4:09",
+     "what": "scene 68, the storm eye under 'In the sky!'"
+    }
+   ],
+   "book": "The panther 'limped upon five backwards-folding legs. It smelled of fresh violets'; Matteo wounds his hog Tash so it will flee (Ch 11). Venetia is 'plated in sheets of colored stone, like the scales of a winged serpent', in an 'armor of voids' (Ch 04). The book meets her first in the woods and brings the storm after; the screenplay joins them — kept.",
+   "echo": "The Stone in Venetia's chest is Gwendolyn's: she 'followed its trajectory' and 'found it suspended in a place far too quiet' (Ch 04). Film 1's last battle and this storm are one story."
   },
   {
    "id": "S22",
@@ -1040,10 +1491,12 @@
    "duration_s": 16,
    "audio": true,
    "status": "shot",
-   "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@venetia) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@matteo) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm.",
+   "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052)) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@[matteo](5b507f2e-193f-446c-a26c-da84985652d8)) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @heart-of-ilan; @ilan-storm.",
    "pick": "18b25dc4-f744-4f14-ac58-478a4233544b",
-   "alternates": [],
-   "why": "First pass, Oct 5: animated from its lane-B still 46b7ce9a as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
+   "alternates": [
+    "405fab52-45a1-4614-a3e8-e1b3d0a9d9c0"
+   ],
+   "why": "First pass, Oct 5: animated from its lane-B still 46b7ce9a as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite. Pass 4 added the death in the sky as a 5s insert (Predictor 53); cut it in ahead of the pick.",
    "regenerate": false,
    "notes": "Set piece two. B lane: the stone alone in the sand, 8s, silent — the cut will want to breathe before the fist goes in.",
    "lanes": [
@@ -1051,21 +1504,57 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@venetia) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@matteo) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm."
+     "prompt": "Wide to close, no cut. Two lights in the sky, one violet and one emerald; with a thundering clap the violet consumes the green. Venetia (@[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052)) holds out a jagged, unrefined emerald stone (@heart-of-ilan) — then it is buried inches down in the sand beside a blackened tree, glowing. The voice of the storm: 'You have been chosen by Lord Morning. You are to wield the new stone.' Matteo (@[matteo](5b507f2e-193f-446c-a26c-da84985652d8)) plunges his fist into the sand, grasps the Stone, screams, and swallows its power; his hand goes to the mass in his chest. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @heart-of-ilan; @ilan-storm."
     },
     {
      "c": "B",
      "name": "The stone alone",
      "why": "The B lane the board asked for: the cut can breathe before the fist goes in.",
-     "prompt": "Macro, locked, silent: a jagged emerald stone glowing beneath an inch of sand beside a blackened tree; the sand trembles; no hand yet. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm."
+     "prompt": "Macro, locked, silent: a jagged emerald stone glowing beneath an inch of sand beside a blackened tree; the sand trembles; no hand yet. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @heart-of-ilan; @ilan-storm."
     },
     {
      "c": "C",
      "name": "Violet eats green",
      "why": "The two lights in the sky at full saturation.",
-     "prompt": "The two lights in the sky graded to full saturation, violet and emerald, the violet swallowing the green, the island black beneath them. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @matteo; @venetia; @heart-of-ilan; @ilan-storm."
+     "prompt": "The two lights in the sky graded to full saturation, violet and emerald, the violet swallowing the green, the island black beneath them. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @heart-of-ilan; @ilan-storm."
+    },
+    {
+     "c": "D",
+     "name": "The heart held out",
+     "why": "Venetia offers the Stone and Matteo kneels to it: the moment before the fist goes in, on both their elements.",
+     "prompt": "Medium, 50mm, a storm-lit beach at night beside a charred black tree: @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052) holds out a jagged, unrefined stone glowing emerald from within, with violet creeping in at its edges, shaped and lit like @[stone-language](b6ed2008-8a52-4a1e-be7a-8cd5914eb012); the violet light caged in her chest answers it through the gaps in her stone plates; before her @[matteo](5b507f2e-193f-446c-a26c-da84985652d8) kneels in the sand, looking up at it, the emerald light on his face. One bright subject on a dark ground. @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632) for key direction, colour and contrast. He is an adult about eighteen. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
+    },
+    {
+     "c": "E",
+     "name": "Violet over emerald",
+     "why": "The death in the sky as one wide: the violet closing over the emerald, the ring of light, the boy on the beach.",
+     "prompt": "Very wide, night storm over a small hidden island in a black ocean: high in the torn clouds two great lights fight, one violet and one emerald, and the violet light is closing over the emerald as the emerald bursts outward in a single ring that lights the whole storm from inside, every cloud edge white for an instant, the sea beneath flattened by the shockwave. Far below, on the pale beach beside a blackened tree, one small figure looks up. One accent against true black. @[plate-ocean-dark](398d0b9f-e0c6-4a98-b75d-5a727b604632) for key direction, colour and contrast. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "style": [
+    "exploding-angel",
+    "thesis-frame",
+    "one-accent"
+   ],
+   "tiers": [
+    "the Litiguh of Ilan:core",
+    "Venetia:prison",
+    "Matteo:prison"
+   ],
+   "mol_refs": [
+    {
+     "tc": "3:50–4:03",
+     "what": "scene 67, the kill beat's ring",
+     "element": "fx-kill-beat dda1e304"
+    },
+    {
+     "tc": "film 1",
+     "what": "Oriane dying over the sea, away from the island she guards",
+     "element": "plate-ocean-dark 398d0b9f"
+    }
+   ],
+   "book": "'two glowing lights… one violet and one emerald'; the dying Litiguh leaves 'the same green glow', and 'there was an explosion'; the Stone is caged 'in his new heart of dead-stone'; Matteo is sixteen (Ch 11).",
+   "echo": "Gwendolyn's island fell through 'the heart of one of their youth' (Ch 06); Ilan falls through Matteo. She launched her Stone so it could not be taken; this Litiguh's is taken."
   },
   {
    "id": "S23",
@@ -1074,30 +1563,56 @@
    "duration_s": 16,
    "audio": true,
    "status": "shot",
-   "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69).",
+   "prompt": "Slow orbit, 35mm, in the Gray, a place with no light except what the bodies give off, the ground dark matter, almost like frozen water (@outer-darkness). Morningstar (@[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372)) — his form made of mismatched pieces joined by faint grey seams that keep shifting, never settling, giving off no light of his own so that what light there is bends toward him — stands over a woman kneeling, shaking, at the centre of a ring of twelve kneeling figures; a wave of pulsing dark energy blasts out of the Stone of Energy in her chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)), its sparks like digitized fire made of millions of tiny marbles, and two of the weakest figures at the edge turn to dust. Venetia (@[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052)) stands at his side, the violet in her chest moving like wind though nothing else in the Gray moves; Matteo (@[matteo](5b507f2e-193f-446c-a26c-da84985652d8)) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69).",
    "pick": "26e78a8d-92b7-4406-8a43-41fc08420d3d",
    "alternates": [],
    "why": "First pass, Oct 5: animated from its lane-A still ea50daaf as the start frame — Cinema Studio 4.0, 8s, 720p, model audio off. A cheap-pass take: look at it against the still, then decide whether the final is this move at 1080p or a rewrite.",
    "regenerate": false,
-   "notes": "The antagonist's one scene. Keep him still; let the ring move. The line is the dark cue's hit.",
+   "notes": "The antagonist's one scene. He does not move from his place, but his body never settles (Ch 11) — the sheet's stillness is overridden here. The line is the dark cue's hit.",
    "lanes": [
     {
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Slow orbit, 35mm, in a place with no light except what the bodies give off (@outer-darkness). Morningstar (@morningstar) stands over a woman writhing at the centre of a ring of twelve kneeling figures; a wave of power blasts out of the Stone of Energy in her chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)), blinding, and two of the weakest figures at the edge turn to dust. Venetia (@venetia) stands at his side; Matteo (@matteo) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
+     "prompt": "Slow orbit, 35mm, in the Gray, a place with no light except what the bodies give off, the ground dark matter, almost like frozen water (@outer-darkness). Morningstar (@[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372)) — his form made of mismatched pieces joined by faint grey seams that keep shifting, never settling, giving off no light of his own so that what light there is bends toward him — stands over a woman kneeling, shaking, at the centre of a ring of twelve kneeling figures; a wave of pulsing dark energy blasts out of the Stone of Energy in her chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)), its sparks like digitized fire made of millions of tiny marbles, and two of the weakest figures at the edge turn to dust. Venetia (@[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052)) stands at his side, the violet in her chest moving like wind though nothing else in the Gray moves; Matteo (@[matteo](5b507f2e-193f-446c-a26c-da84985652d8)) kneels in the ring. Morningstar's foot comes down on the woman's chest. He says: 'Four of the Seven. Water, Voids, Dominion, and now, Energy.' Audio on. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
     },
     {
      "c": "B",
      "name": "The ring from above",
      "why": "Overhead makes the ring of twelve a shape the audience can read.",
-     "prompt": "Overhead, locked: a ring of twelve kneeling figures around a woman whose chest blazes white-violet; a wave of light ripples outward and two figures at the edge of the ring turn to dust. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
+     "prompt": "Overhead, locked: a ring of twelve kneeling figures around a woman whose chest blazes white-violet; a wave of light ripples outward and two figures at the edge of the ring turn to dust. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
     },
     {
      "c": "C",
      "name": "No light but the Stone",
      "why": "The antagonist as a silhouette: the dark cue's hit frame.",
-     "prompt": "Graded so the only light in frame is the Stone of Energy: the ring's faces lit from below, Morningstar a tall silhouette against nothing. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @morningstar; @venetia; @matteo; @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
+     "prompt": "Graded so the only light in frame is the Stone of Energy: the ring's faces lit from below, Morningstar a tall silhouette against nothing. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372); @[venetia](439a6ef3-6c3d-46b5-9827-3b212b468052); @[matteo](5b507f2e-193f-446c-a26c-da84985652d8); @outer-darkness; @[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)."
+    },
+    {
+     "c": "D",
+     "name": "Stitched",
+     "why": "A still of him with the Energy bearer: the light bending into him, the marble sparks. 'Stitched from stolen parts' and 'writhing' were refused by the content filter; 'mismatched pieces joined by shifting seams' carries the book's idea and passes.",
+     "prompt": "Medium wide, 35mm, in the Gray — a place with no light except what bodies give off, the ground smooth black and faintly glassy like frozen water: @[morningstar](334692d9-60c8-4eb3-a86f-0f9ebe446372) stands tall and dark, his form made of mismatched pieces joined by faint grey seams that keep shifting slightly, as if he never quite settles; he gives off no light of his own, and the faint light near him bends inward toward him like light at the edge of a black hole. Before him a robed figure kneels, and from a stone glowing at the centre of their chest (@[stone-of-energy](aee791f3-73d2-4604-8a88-7c9a3f45bd69)) a wave of pulsing dark energy blasts outward, its sparks like digitized fire made of millions of tiny marbles. Misty claws of darkness at the edges. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
+    }
+   ],
+   "style": [
+    "real-then-more",
+    "one-accent"
+   ],
+   "tiers": [
+    "Morningstar:morningstar",
+    "Venetia:prison",
+    "Matteo:prison",
+    "the Energy bearer:prison",
+    "the twelve:understanding",
+    "the weakest:lesser"
+   ],
+   "book": "'the Gray'; ground of 'dark-matter… Almost like frozen water'; Morning 'stitched stolen parts of other bodies'; 'pulsing dark-energy', sparks 'like digitized fire made of millions of tiny marbles'; 'misty claws of darkness' (Ch 11).",
+   "echo": "Voids is one of the four: Gwendolyn's Stone is in this ring. The violet moving like wind is her, watching (Ch 06; a design choice).",
+   "mol_refs": [
+    {
+     "tc": "film 1",
+     "what": "the Vesper, named in the voice-over and never seen — this is the first time"
     }
    ]
   },
@@ -1108,10 +1623,10 @@
    "duration_s": 14,
    "audio": true,
    "status": "unshot",
-   "prompt": "Continuous, 28mm, near dark. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator.",
-   "pick": null,
+   "prompt": "Continuous, 28mm, near dark. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall; small blue lights along the floor reach into it like a pale arm into a bear cave, and at the end of them two large eyes glow, a slow tail sways behind them, and steam pours from a mouth we cannot see. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator.",
+   "pick": "5b04fa33-4b75-4409-80b2-5f45417aa8e0",
    "alternates": [],
-   "why": "",
+   "why": "The eyes on the seventh floor (lane D). The lowest score of the pass, and kept: the beast stays unseen on purpose. Predictor 51. An insert, not the shot: lane A is still to make, from the anchor stills on this card.",
    "regenerate": false,
    "notes": "The horror beat is the glass doors opening slowly on nothing we can quite see. Do not show the thing with the eyes.",
    "lanes": [
@@ -1119,7 +1634,7 @@
      "c": "A",
      "name": "As boarded",
      "why": "The version that ships. The forms, the timing and the frame string assume this one.",
-     "prompt": "Continuous, 28mm, near dark. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall and there are eyes in it. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator."
+     "prompt": "Continuous, 28mm, near dark. Ammon (@[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc)) jerks awake in the study room; the projector is off. He walks to the elevator (@leviticum-elevator), presses the glowing green button, stumbles in and presses 1 — and the elevator goes up. Only the 1 glows. It stops on the seventh floor; the transparent glass doors creep open on a dark hall; small blue lights along the floor reach into it like a pale arm into a bear cave, and at the end of them two large eyes glow, a slow tail sways behind them, and steam pours from a mouth we cannot see. A voice: 'Leave this place. Leave. Before they follow.' The doors lurch and seal. Audio on. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator."
     },
     {
      "c": "B",
@@ -1132,8 +1647,19 @@
      "name": "Only the 1 glows",
      "why": "An insert that tells the story of the ride without a face.",
      "prompt": "Macro of the elevator panel: only the 1 glowing green, then the floor numbers lighting upward one by one to 7. No sound. 21:9, photoreal, anamorphic. No text, no captions, no logos anywhere in frame. REFERENCES — attach before generating: @[ammon](0506e54b-81d7-43ba-9d50-d68411d9f4cc); @leviticum-elevator."
+    },
+    {
+     "c": "D",
+     "name": "Eyes on the seventh floor",
+     "why": "The beast as the book keeps it: eyes, steam, a voice — never the whole animal in the light.",
+     "prompt": "Close, 35mm, near dark: the transparent glass doors of an old elevator have just crept open on a black hall; small blue lights along the floor reach out into the dark like a pale arm into a bear cave, and at the end of them two large eyes glow, low and wide apart, and steam pours slowly from an unseen mouth into the blue light. It does not move. Nothing else is seen. @[plate-leviticum](9dddfcb8-89bc-42ab-b1fd-646741d50a07) for key direction, colour and contrast. 21:9, photoreal, anamorphic, true blacks. No text, no captions, no logos anywhere in frame."
     }
-   ]
+   ],
+   "style": [
+    "possible-beast",
+    "thesis-frame"
+   ],
+   "book": "'the lights of the path, reaching out into the darkness like a pale arm in a bear cave'; 'Steam poured from its mouth'; a tail swinging; 'He had never seen the entirety of the creature in the light' — the snow leopard, whose 'warmer, yet urgent voice, like that of a concerned guardian' says 'Leave here, before they follow' and pushed him out of the Gray (Ch 11, 12). The thing with the eyes is a friend, and the film never proves it."
   },
   {
    "id": "S25",
@@ -2332,13 +2858,318 @@
     "status": "training",
     "via": "Claude · Higgsfield connector",
     "note": "Soul sadie from five images; Souls live in the workspace, not a folder"
+   },
+   {
+    "request_id": "57a2d220-31b1-497b-8c84-e45d4c2cda1b",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "cast",
+    "lane": "sheetvenetia",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "venetia sheet: crystal ear, serpent-scale stone plates, caged violet core, five-legged panther"
+   },
+   {
+    "request_id": "a8d1ad0c-159c-400b-a073-325554b7afb9",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "cast",
+    "lane": "sheetvothek",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "vothek sheet: wispy floating red hair, ether-stone light"
+   },
+   {
+    "request_id": "ee918b5d-6906-4b76-8af9-c4b9009fc0ac",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S4",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the puppeteer's threads"
+   },
+   {
+    "request_id": "61056b3b-be12-4fb2-9e39-1688255d73c8",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S5",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "refused",
+    "via": "Claude · Higgsfield connector",
+    "note": "nsfw filter: body-part wording — not charged; reworded and re-run"
+   },
+   {
+    "request_id": "014a6690-0b7a-4e18-b7e5-0cefb4e9586a",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S6",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "heaven after, and the possible beast under the cloud"
+   },
+   {
+    "request_id": "9f3ceefe-9925-45b0-bf83-239f70779667",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S18",
+    "lane": "F",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "palm on the dirt, the darkness like a tsunami"
+   },
+   {
+    "request_id": "83a80a33-9abd-4b10-b238-56f2798e384d",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S18",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the radiant seedling"
+   },
+   {
+    "request_id": "92f7e1d4-92f5-488e-9e56-c15a324f4dec",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S18",
+    "lane": "E",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "light from his eyes and mouth"
+   },
+   {
+    "request_id": "fba81814-4c82-4f63-b108-e2a7058e541a",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "E",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "violet over emerald: the Litiguh of Ilan dies in the sky"
+   },
+   {
+    "request_id": "9c4e3119-f333-4d8d-a225-0b81939e4d80",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S23",
+    "lane": "C",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "refused",
+    "via": "Claude · Higgsfield connector",
+    "note": "nsfw filter: stolen body parts, writhing — not charged; reworded and re-run"
+   },
+   {
+    "request_id": "47c67845-4c0e-44d9-a66c-5904609a7913",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S24",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "eyes on the seventh floor"
+   },
+   {
+    "request_id": "d6b60d75-2fac-4197-8e44-8157210bdce0",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S11",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "three minds: Ammon's first split"
+   },
+   {
+    "request_id": "b06060e8-e424-44b5-9a97-b9064da68d88",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S5",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the fracture: a crack of light in the glass (reworded)"
+   },
+   {
+    "request_id": "8483132c-20b0-4969-a594-12c0ef6a0fea",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S23",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "mismatched, shifting, bending the light (reworded)"
+   },
+   {
+    "request_id": "6c5a4739-98eb-4338-8807-9805e100e2fc",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S17",
+    "lane": "A",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "Vothek out of blue shadow, three ether stones"
+   },
+   {
+    "request_id": "e700f660-6188-4d0b-ade9-68b67bb16ef3",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S21",
+    "lane": "A",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the panther: five backwards-folding legs, violets"
+   },
+   {
+    "request_id": "43d995eb-5744-4dfa-a16b-f25cd3fc0739",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "D",
+    "kind": "image",
+    "model": "cinematic_studio_2_5",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "the heart of Ilan held out, emerald going violet"
+   },
+   {
+    "request_id": "9446ae21-c98c-4b48-99ad-59d0ebee1549",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S6",
+    "lane": "D",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "5s, 720p, high bitrate, audio off",
+    "start_image": "014a6690-0b7a-4e18-b7e5-0cefb4e9586a"
+   },
+   {
+    "request_id": "2afbfa22-379a-4b91-a3e9-52198eca2be3",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S18",
+    "lane": "D",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "5s, 720p, high bitrate, audio off",
+    "start_image": "83a80a33-9abd-4b10-b238-56f2798e384d"
+   },
+   {
+    "request_id": "dc56310b-d11d-4ad6-ac68-2fa07117fb11",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S18",
+    "lane": "E",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "5s, 720p, high bitrate, audio off",
+    "start_image": "92f7e1d4-92f5-488e-9e56-c15a324f4dec"
+   },
+   {
+    "request_id": "405fab52-45a1-4614-a3e8-e1b3d0a9d9c0",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S22",
+    "lane": "E",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "5s, 720p, high bitrate, audio off",
+    "start_image": "fba81814-4c82-4f63-b108-e2a7058e541a"
+   },
+   {
+    "request_id": "5b04fa33-4b75-4409-80b2-5f45417aa8e0",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S24",
+    "lane": "D",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "completed",
+    "via": "Claude · Higgsfield connector",
+    "note": "5s, 720p, high bitrate, audio off",
+    "start_image": "47c67845-4c0e-44d9-a66c-5904609a7913"
+   },
+   {
+    "request_id": "eb5ff2d3-c8ef-48fc-8864-654feb6659a4",
+    "project": "Stone of Matter — Ep. 2 Darkness",
+    "shot": "S5",
+    "lane": "D",
+    "kind": "video",
+    "model": "cinematic_studio_video_4_0",
+    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+    "submitted_at": "2026-10-06T04:45Z",
+    "status": "submitted",
+    "via": "Claude · Higgsfield connector",
+    "note": "5s, 720p, high bitrate, audio off",
+    "start_image": "b06060e8-e424-44b5-9a97-b9064da68d88"
    }
   ]
  },
  "status": {
   "submitted": false,
   "public_url": null,
-  "note": "Oct 5: three passes, all in the locked folder — the best moments (24 stills, 8 takes), the cast carried over from Episode 1, and Episode 1's vibe and pace (every principal on an element, Sadie's Soul, four movement plates, 12 stills, 10 takes, every take scored). Next: the High Forest set pieces S9-S10 and S15 as takes, Matteo, Venetia and Morningstar's sheets, then Gate A on identity."
+  "note": "Oct 6: pass 4 — book names lead (series.crosswalk marks every film-1 name), the power tiers (power), the house style (style.json), the dream and action shots rewritten from the book, Venetia and Vothek on elements, 15 stills and six inserts scored 51–56. Next: lane A takes for S6, S18 and S24 from their stills; the heart of Ilan, the Gray and the Leviticum rooms as elements; then Gate A."
  },
  "forms_note": "One shot pool, every length. Lane A ships, B is the coverage angle, C is the graded key-art take. The spots open peak-first, because the Predictor's hook score reads the first three seconds; the short film holds; the music video is cut to the main title song. The 20–60 minute episode is the next section.",
  "forms": [
@@ -2872,7 +3703,7 @@
    "status": "From the Episode 1 production screenplay and the delivered film. The last pages of the Episode 1 source screenplay are not in the codex yet; with them, this bridge is rewritten from the source.",
    "links": [
     {
-     "from": "Episode 1 ends on Caedom alone at the courtyard and a crane up to a single point of light",
+     "from": "Episode 1 ends on Torin [Matter of Light: Caedom] alone at the courtyard and a crane up to a single point of light",
      "to": "S1 lifts that point of light off the same courtyard, on the same two element ids"
     },
     {
@@ -2895,7 +3726,7 @@
     },
     {
      "from": "Morningstar: Drowning “is already in pursuit of… the very Stone of Matter”",
-     "to": "a 10–15s tag after the end card: water rising in the dark, somewhere"
+     "to": "a 10–15s tag after the end card: water rising in the dark, somewhere — and the line the tag needs: Drowning is missing."
     }
    ]
   }
@@ -3888,6 +4719,231 @@
    "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
    "at": "2026-10-05T02:50Z",
    "pass": "pace"
+  },
+  {
+   "shot": "cast",
+   "lane": "sheet",
+   "id": "57a2d220-31b1-497b-8c84-e45d4c2cda1b",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 16:9",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044221_57a2d220-31b1-497b-8c84-e45d4c2cda1b.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044221_57a2d220-31b1-497b-8c84-e45d4c2cda1b_min.webp",
+   "note": "venetia · Prison of Voids: crystal ear, serpent-scale stone plates, the violet core caged; the five-legged panther (book Ch 04, 11, 21)",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "cast",
+   "lane": "sheet",
+   "id": "a8d1ad0c-159c-400b-a073-325554b7afb9",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 16:9",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044220_a8d1ad0c-159c-400b-a073-325554b7afb9.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044220_a8d1ad0c-159c-400b-a073-325554b7afb9_min.webp",
+   "note": "vothek · the storyteller: wispy red hair always floating, ether-stone light (book Ch 10)",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S4",
+   "lane": "D",
+   "id": "ee918b5d-6906-4b76-8af9-c4b9009fc0ac",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044220_ee918b5d-6906-4b76-8af9-c4b9009fc0ac.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044220_ee918b5d-6906-4b76-8af9-c4b9009fc0ac_min.webp",
+   "note": "the puppeteer's threads",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S6",
+   "lane": "D",
+   "id": "014a6690-0b7a-4e18-b7e5-0cefb4e9586a",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044225_014a6690-0b7a-4e18-b7e5-0cefb4e9586a.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044225_014a6690-0b7a-4e18-b7e5-0cefb4e9586a_min.webp",
+   "note": "heaven after, and the possible beast under the cloud",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S18",
+   "lane": "F",
+   "id": "9f3ceefe-9925-45b0-bf83-239f70779667",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044224_9f3ceefe-9925-45b0-bf83-239f70779667.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044224_9f3ceefe-9925-45b0-bf83-239f70779667_min.webp",
+   "note": "palm on the dirt, the darkness like a tsunami",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S18",
+   "lane": "D",
+   "id": "83a80a33-9abd-4b10-b238-56f2798e384d",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044225_83a80a33-9abd-4b10-b238-56f2798e384d.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044225_83a80a33-9abd-4b10-b238-56f2798e384d_min.webp",
+   "note": "the radiant seedling",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S18",
+   "lane": "E",
+   "id": "92f7e1d4-92f5-488e-9e56-c15a324f4dec",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044223_92f7e1d4-92f5-488e-9e56-c15a324f4dec.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044223_92f7e1d4-92f5-488e-9e56-c15a324f4dec_min.webp",
+   "note": "light from his eyes and mouth",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S22",
+   "lane": "E",
+   "id": "fba81814-4c82-4f63-b108-e2a7058e541a",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044226_fba81814-4c82-4f63-b108-e2a7058e541a.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044226_fba81814-4c82-4f63-b108-e2a7058e541a_min.webp",
+   "note": "violet over emerald: the Litiguh of Ilan dies in the sky",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S24",
+   "lane": "D",
+   "id": "47c67845-4c0e-44d9-a66c-5904609a7913",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044221_47c67845-4c0e-44d9-a66c-5904609a7913.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044221_47c67845-4c0e-44d9-a66c-5904609a7913_min.webp",
+   "note": "eyes on the seventh floor",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S11",
+   "lane": "D",
+   "id": "d6b60d75-2fac-4197-8e44-8157210bdce0",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044224_d6b60d75-2fac-4197-8e44-8157210bdce0.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044224_d6b60d75-2fac-4197-8e44-8157210bdce0_min.webp",
+   "note": "three minds: Ammon's first split",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S5",
+   "lane": "D",
+   "id": "b06060e8-e424-44b5-9a97-b9064da68d88",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044913_b06060e8-e424-44b5-9a97-b9064da68d88.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044913_b06060e8-e424-44b5-9a97-b9064da68d88_min.webp",
+   "note": "the fracture: a crack of light in the glass (reworded)",
+   "animated": true,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S23",
+   "lane": "D",
+   "id": "8483132c-20b0-4969-a594-12c0ef6a0fea",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044914_8483132c-20b0-4969-a594-12c0ef6a0fea.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044914_8483132c-20b0-4969-a594-12c0ef6a0fea_min.webp",
+   "note": "mismatched, shifting, bending the light (reworded)",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S17",
+   "lane": "A",
+   "id": "6c5a4739-98eb-4338-8807-9805e100e2fc",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044913_6c5a4739-98eb-4338-8807-9805e100e2fc.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044913_6c5a4739-98eb-4338-8807-9805e100e2fc_min.webp",
+   "note": "Vothek out of blue shadow, three ether stones",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S21",
+   "lane": "A",
+   "id": "e700f660-6188-4d0b-ade9-68b67bb16ef3",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044915_e700f660-6188-4d0b-ade9-68b67bb16ef3.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044915_e700f660-6188-4d0b-ade9-68b67bb16ef3_min.webp",
+   "note": "the panther: five backwards-folding legs, violets",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
+  },
+  {
+   "shot": "S22",
+   "lane": "D",
+   "id": "43d995eb-5744-4dfa-a16b-f25cd3fc0739",
+   "model": "cinematic_studio_2_5",
+   "res": "2k · 3168×1344",
+   "credits": 2,
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044915_43d995eb-5744-4dfa-a16b-f25cd3fc0739.png",
+   "thumb": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIUur2SS2F0j4FthvKoUQ8VEFn/hf_20261006_044915_43d995eb-5744-4dfa-a16b-f25cd3fc0739_min.webp",
+   "note": "the heart of Ilan held out, emerald going violet",
+   "animated": false,
+   "folder_id": "e6e807a9-49a8-41f1-bb4c-9247468606cb",
+   "at": "2026-10-06T04:45Z",
+   "pass": "canon"
   }
  ],
  "passes": [
@@ -3950,6 +5006,30 @@
     "Soul training took five images and about 25 credits (inferred from the balance; the tool reports no price).",
     "A start frame made on the wrong id (the base, not the dressed element) costs a re-roll; check ids before animating — carry.py check now does."
    ]
+  },
+  {
+   "date": "2026-10-06",
+   "name": "The book's names, the power tiers, the house style",
+   "stills": 15,
+   "videos": 6,
+   "blocked": 2,
+   "credits": 240,
+   "how": "A read of the novel against Matter of Light gave the crosswalk (series.crosswalk), the Seven Stones and the dark ranks; film 1's aura grammar and ladders became power.tiers; the final cut's exploding angel, heaven after and the possible beast became the house style (style.json). The dream, interlude and action shots were rewritten from the book's own lines (S2–S6, S11, S17–S18, S20–S24), with every film-1 reference marked. Two new elements (Venetia, Vothek) from their sheets; 13 anchor stills; six 5s inserts on Cinema Studio 4.0 at 720p, high bitrate, model audio off, each opening on its peak; the Predictor read every take. Everything filed into the locked folder.",
+   "scores": {
+    "9446ae21-c98c-4b48-99ad-59d0ebee1549": 56,
+    "2afbfa22-379a-4b91-a3e9-52198eca2be3": 54,
+    "dc56310b-d11d-4ad6-ac68-2fa07117fb11": 53,
+    "405fab52-45a1-4614-a3e8-e1b3d0a9d9c0": 53,
+    "5b04fa33-4b75-4409-80b2-5f45417aa8e0": 51,
+    "eb5ff2d3-c8ef-48fc-8864-654feb6659a4": 52
+   },
+   "learned": [
+    "The quiet scored highest: heaven after (S6 D) 56, a bright still gold field with one slow movement. Bright and still beats dark and still — the seventh-floor eyes (S24 D), near-black and almost motionless, scored lowest at 51.",
+    "Every take still peaked at its last second (5 of 5s) and hooks stayed at 35–40, even with the peak written into the first sentence and the start frame. Cinema Studio 4.0 builds whatever the prompt says; for the hook, start the edit on the take's last two seconds, or start the take from a frame after the peak.",
+    "The exploding angel reads best close and singular: the seedling (54) and the light from the eyes (53) beat the wide ring of light in the storm (53 with a weaker hook, 36).",
+    "The content filter refuses body-part wording on a breaking or assembled figure ('collarbone to hip', 'stitched from stolen parts', 'writhing'). Rewritten around the figure, the seam and the light, both passed first time; refused jobs are not charged.",
+    "Two lanes already named C on six shots: add_lane must take the next free letter. Fixed in the record; check the lane letters before adding."
+   ]
   }
  ],
  "carried": {
@@ -3960,7 +5040,7 @@
     "name": "ammon",
     "id": "0506e54b-81d7-43ba-9d50-d68411d9f4cc",
     "base": "53f7582a-03fe-4c27-b789-a08104c95aa8",
-    "from": "Alder (kai_alder_v1, Soul alder)",
+    "from": "Ammon as a boy [Matter of Light: Alder · element kai_alder_v1 · Soul alder]",
     "sheet": "68ea4428-1b35-4a80-872b-ea87b61d47ae",
     "tweak": "Episode 2 wardrobe on the Episode 1 face: undyed linen shirt, open moss-green wool overshirt, brown canvas trousers, worn boots, cord bracelet. The guitar stays a separate prop."
    },
@@ -3968,43 +5048,43 @@
     "name": "mikael",
     "id": "66e16226-2809-449b-85e1-fb98732942dc",
     "base": "05236725-55ce-4ceb-a5df-16c67a99964a",
-    "from": "Wren (kai_wren_v1, Soul wren)",
+    "from": "Mikael as a boy [Matter of Light: Wren · element kai_wren_v1 · Soul wren]",
     "sheet": "d4f67501-cd0e-4286-bb09-ccdc54d7baa0",
     "tweak": "Episode 2 wardrobe: rust-brown wool henley, sheepskin-lined leather vest, grey-green canvas trousers, leather wrist cuff; thicker-set than Ammon, same height."
    },
    {
     "name": "cephas-town",
     "id": "bda5eff0-c2ff-48ba-bc10-e0e8710b508c",
-    "from": "the Kephas Island town and concept elements",
+    "from": "Cephas, the island of matter [Matter of Light: the Kephas Island town and concept elements]",
     "sheet": "df1d3e33-ecc8-4147-bff3-8e343d032183",
     "tweak": "The same town ten years on, at night, lanterns in every window, the Leviticum on the far hill."
    },
    {
     "name": "guardians",
     "id": "2ea82739-6aa3-4ba6-82a0-d758aab26a54",
-    "from": "keeper (8a3838aa) — the Vigil",
+    "from": "the Guardians of the Sector Guard [Matter of Light: keeper 8a3838aa — the Keepers of the Vigil]",
     "sheet": "9827e534-73cb-419d-af48-215114399a46",
     "tweak": "The Guardians at the Leviticum steps, waiting for the Trials: the Episode 3 hand-off."
    },
    {
     "name": "stone-of-energy",
     "id": "aee791f3-73d2-4604-8a88-7c9a3f45bd69",
-    "from": "turned-energy",
+    "from": "a dark adept of energy, 'He lacks the core' [Matter of Light: turned-energy]",
     "sheet": "d4ec4622-178c-4e8e-8785-dc42ed10b273",
     "tweak": "The bearer in the Outer Darkness, the Stone's light the only key: S23."
    },
    {
     "name": "drowning",
     "id": "57bb92bb-f84d-4097-ab88-5bc1e2c4b01c",
-    "from": "drowning_v1 (a886edff)",
+    "from": "Drowning, Prison of Phases [Matter of Light: drowning_v1 a886edff]",
     "sheet": "bfe048a7-59a9-4387-a049-6ea862f11e5a",
     "tweak": "Rising from black water: the Episode 3 tag. The Episode 1 reference image carries an IP flag; the still came back, but watch it on video."
    },
    {
     "name": "stone-language",
     "id": "b6ed2008-8a52-4a1e-be7a-8cd5914eb012",
-    "from": "founding-stone (45c4d884)",
-    "tweak": "Not re-rendered: it is the look reference every Stone obeys, including the heart of Ilan."
+    "from": "the Creation Stone of Voids [Matter of Light: founding-stone 45c4d884 — the Founding Stone of Hollows]",
+    "tweak": "Not re-rendered. Its crystal shape and the way its light sits are still the reference for every Stone; its green-white is not — colour belongs to each Stone (power.stones): Voids violet, Dominion emerald. The heart of Ilan is emerald going violet."
    }
   ],
   "map": {
@@ -4016,7 +5096,8 @@
    "drowning_v1": "drowning",
    "founding-stone": "stone-language"
   },
-  "process": "workflow.html#carry · python3 anchorframe/carry.py plan|link|check anchorframe/projects/stone-of-matter-ep2-darkness"
+  "process": "workflow.html#carry · python3 anchorframe/carry.py plan|link|check anchorframe/projects/stone-of-matter-ep2-darkness",
+  "map_": "carried.map is keyed by Matter of Light's cast names (film-1 references, so carry.py can find the old ids); the values are this episode's book names."
  },
  "made": {
   "_": "Elements first made for Episode 2, in the locked folder: the rest of the friends, the master, the props, the four movement plates and two places.",
@@ -4104,7 +5185,199 @@
     "kind": "environment",
     "sheet": "4af64a03-24a8-4e99-995e-0b0daefe8bee",
     "note": "Movement II key"
+   },
+   {
+    "name": "venetia",
+    "id": "439a6ef3-6c3d-46b5-9827-3b212b468052",
+    "kind": "character",
+    "sheet": "57a2d220-31b1-497b-8c84-e45d4c2cda1b",
+    "note": "Prison of Voids: crystal ear, serpent-scale stone plates, the violet core caged; the five-legged panther (book Ch 04, 11, 21)"
+   },
+   {
+    "name": "vothek",
+    "id": "436d2623-21fb-4582-8ba3-2cfcdcc22183",
+    "kind": "character",
+    "sheet": "a8d1ad0c-159c-400b-a073-325554b7afb9",
+    "note": "the storyteller: wispy red hair always floating, ether-stone light (book Ch 10)"
    }
   ]
+ },
+ "power": {
+  "_": "How power reads on screen, from below the ladder to beyond it. The rungs are Matter of Light's production grammar — its aura grammar, attunement ladder and mind ladder — read against the book, which measures power as understanding and gives no numbered levels ('the source has no levels', film 1's asset register). Book lines carry their chapter; [Matter of Light: …] marks a film-1 reference; anything neither says is marked as a design choice. A shot names its rungs in shots[].tiers as 'who:tier'.",
+  "rules": [
+   "Read the rung from the light, not from effects: where the light sits in the body, how hard its edge is, and what it costs to look at. 'Much suffering was required to reach the level capable of even looking upon one of the Seven Stones' (Ch 01).",
+   "An adept's light is bright at the rim and black at the centre; a bearer's is brightest at the centre with no edge [Matter of Light: aura-grammar]. Episode 2 adds a third: a Prison's light is a bearer's core held behind plates of dead stone.",
+   "Colour belongs to the Stone, not the rung: Voids is violet and Dominion emerald (Ch 11). Film 1 soured its adepts toward bruise violet and made the Stone of Voids green-white [Matter of Light: ladder-attunement, founding-stone]; from Episode 2 an adept's light goes cold toward steel grey-blue instead, so violet means Voids alone (design choice, from Ch 11). Stardust's light stays white; the violet of Movement I is the sky around it.",
+   "Each rung up costs something you can see. The mind buys 'perception of the present, while limiting her foresight' (Ch 02): above sixteen, every split takes colour or sound away.",
+   "States are prompt lines, not new elements: attach the character's element and add the rung's prompt line from this table.",
+   "The content filter refuses body-part wording on a breaking or assembled figure ('collarbone to hip', 'stitched from stolen parts', 'writhing'); write the figure, the seam and the light instead. Both refusals cost nothing.",
+   "The content filter refuses body-part wording on a breaking or assembled figure ('collarbone to hip', 'stitched from stolen parts', 'writhing'); write the figure, the seam and the light instead. Both refusals cost nothing."
+  ],
+  "tiers": [
+   {
+    "id": "lesser",
+    "name": "Lesser beings",
+    "rung": "below the ladder",
+    "book": "'lesser dark beings' (Ch 02); 'The others without Stones could see only outlines, and lesser beings still saw nothing at all' (Ch 04)",
+    "mol": "Matter of Light: the Turned — turned-thrall af53695f, prop_the-turned-ones 3328bfdf",
+    "look": "No light of their own: a hand's breadth of dead air around the body where light gives up. Eyes that do not track; they follow, they do not see.",
+    "prompt": "no light of its own; the light dies a hand's breadth from its body; its eyes do not track",
+    "here": [
+     "the weakest of the twelve kneeling in S23, who turn to dust"
+    ]
+   },
+   {
+    "id": "understanding",
+    "name": "Understanding",
+    "rung": "A1–A6",
+    "book": "'second strongest in his understanding' (Ch 02); six understandings among the adepts — voids, 'water and its phases', energies, gravity, metals, dominion (Ch 02). Only a Stone gives 'the core, the crux of it, the emanating essence. The fullness of it is mine alone' (Ch 02).",
+    "mol": "Matter of Light: ladder-attunement 447665c3 — six rungs, six elements, 'stops at six forever'; aura-grammar 86f7d638",
+    "look": "Bright at the rim, black at the centre. A1 a faint warm rim with a soft edge; each rung colder, the rim thinner and harder, the black at the centre deeper; A6 a hairline of steel light around a body of black.",
+    "rungs": {
+     "A1": "a faint warm rim, soft edge",
+     "A2": "the rim cools to white",
+     "A3": "the rim hardens; the centre goes dark",
+     "A4": "steel blue, a clean edge",
+     "A5": "grey-blue, sharp, the centre black",
+     "A6": "a hairline of steel light around a body of black"
+    },
+    "prompt": "its light is bright at the rim and black at the centre, the rim cold and hard-edged",
+    "here": [
+     "Lucille — the puppeteer's rung, A6: 'controlling millions of threads of dead matter' (Ch 09) [Matter of Light: the Threadwright, A6] (the rung is a design choice)",
+     "the twelve kneeling around the Energy bearer in S23, A3–A5"
+    ]
+   },
+   {
+    "id": "mind",
+    "name": "The mind",
+    "rung": "M2 → M200+",
+    "book": "Gwendolyn splits 2, 10, 11, 16, 32, 64, 128, then 200+ (Ch 02); Ammon reaches three, 'as if three great friends were singing in tune together' (Ch 09); Master Lyon reaches five, and his mind rejects a sixth focused on Matter (Ch 13).",
+    "mol": "Matter of Light: ladder-oriane cd2aa79a (inherited here as ladder-mind) — M1, M2, M10, M16, M32, M64, M128, M200+; fx-segmented-mind 99737c53",
+    "look": "M2–M5: the same motion seen two to five times at once, faint and offset, warm and contained, like voices in tune. M10–M16: the echoes part and each acts on its own; sound thins. M32: 'translucent, warping bubbles' of perception around the body (Ch 02). M64–M128: the bubbles crowd the frame and colour drains. M200+: uncontained and colourless; the body is the only still thing.",
+    "prompt": "the same motion seen three times at once, faint overlapping echoes in tune, warm and contained",
+    "here": [
+     "Ammon, M3 — S11, the Song of Stardust: his first split (Ch 09)"
+    ],
+    "next": "Master Lyon, M5, at the Trials (Episode 3)"
+   },
+   {
+    "id": "core",
+    "name": "The core",
+    "rung": "A7 · fused bearers",
+    "book": "'Wielders fuse their hearts with the Creation Stone' (Ch 06); Gwendolyn, 'amplified by the Creation Stone in her heart, she wielded the power to shape worlds' (Ch 02); 'A crystal formed by a Creation Stone, to protect its bearer' (Ch 01)",
+    "mol": "Matter of Light: A7, the core; aura-shell b81752ae — brightest at the centre, falling off with no edge",
+    "look": "Light brightest at the chest and falling off with no edge, in the Stone's own colour; under threat a thin crystal shell forms around the bearer.",
+    "prompt": "light brightest at the centre of the chest, falling off with no edge, in the Stone's own colour",
+    "here": [
+     "Torin [Matter of Light: Caedom] — the S1 bridge",
+     "the Litiguh of Ilan — Dominion, emerald; dies in the sky in S22",
+     "Gwendolyn [Matter of Light: Oriane] — remembered, not seen: 'She will be a part of the Stone of Voids forever. She will be watching' (Ch 06)"
+    ]
+   },
+   {
+    "id": "prison",
+    "name": "Prisons",
+    "rung": "the Dulkrye · dark bearers",
+    "book": "'Wielders fuse their hearts with the Creation Stone, while the dark ones… imprison the Stones' (Ch 06); 'Shackle it to yourself' (Ch 04); the Dulkrye, 'his greatest dark angels', titled Prison of Voids, of Phases, of Energy, who see 'infinite hues of gray' (Ch 04); 'The Stone had bonded with its previous wielder' and fights its 'new dark master' (Ch 04)",
+    "mol": "none — new in Episode 2",
+    "look": "A bearer's core held behind a cage: the Stone's colour shows only through the gaps between plates of dead stone over the chest, and it pulses against them as if it wants out. The light never reaches the edge of the body. Their eyes are grey.",
+    "prompt": "a core light caged behind plates of dead stone over the chest, its colour showing only through the gaps, pulsing against them; grey eyes",
+    "here": [
+     "Venetia, Prison of Voids — violet; the Stone she holds was Gwendolyn's (Ch 04) — S21, S22, S23",
+     "Matteo — Dominion, emerald going violet at its edges, caged 'in his new heart of dead-stone' (Ch 11) — S22, S23",
+     "the Energy bearer, Prison of Energy — 'pulsing dark-energy' (Ch 11) — S23 (named Reverence in the book, #verify)",
+     "Drowning, Prison of Phases — the Episode 3 tag"
+    ]
+   },
+   {
+    "id": "morningstar",
+    "name": "Beyond the ladder",
+    "rung": "Morningstar · four of the Seven",
+    "book": "'looks more like a black hole than a star' (Ch 04); he 'stitched stolen parts of other bodies', his 'bones and muscles' always 'cracking and shifting' (Ch 11); 'Four of the Seven… Water, Voids, Dominion, and now, Energy… Seek out the Stones of Matter, Gravity, and Rest' (Ch 11); 'the dragon had awoken. The serpent, the devil' (Ch 04)",
+    "mol": "Matter of Light: the Vesper — named in the voice-over, never seen",
+    "look": "No light of his own: what light there is bends inward toward him, like light at the edge of a black hole. His body never settles. The colours of the Stones he holds appear near him, never on him: sea-blue, violet, emerald, dark energy.",
+    "prompt": "he gives off no light of his own; the light near him bends inward toward him like light at the edge of a black hole; bones and muscles shifting under the skin",
+    "here": [
+     "S23",
+     "the Episode 3 tag"
+    ]
+   },
+   {
+    "id": "source",
+    "name": "The source",
+    "rung": "Stardust · the light the rest is measured against",
+    "book": "'a combination of cloak and sandstorm'; 'A fracture line shot down her glass body'; reality distorts 'for hundreds of miles'; she 'shed two tears at once' (Ch 09)",
+    "mol": "Matter of Light: the single point of light Torin watches at the end — the S1 bridge",
+    "look": "No edge, no rim, no dark centre: brightest at the core and falling off softly in every direction, the purest white there is. When she breaks, the light comes from inside the crack, never from the surface.",
+    "prompt": "the purest white light with no edge, no rim and no dark centre, brightest at the core",
+    "here": [
+     "S1–S6"
+    ]
+   }
+  ],
+  "stones": [
+   {
+    "stone": "Energy",
+    "order": "first",
+    "words": "'Wavelengths. Lightning and energy'; 'the Stone of Light'",
+    "island": "Ethera, 'burrowed thousands of feet deep under bedrock'",
+    "bearer": "its Litiguh destroyed; now a Prison of Energy (Ch 06, 11)",
+    "colour": "free: white light (design choice, from 'the Stone of Light'); imprisoned: 'pulsing dark-energy', sparks 'like digitized fire made of millions of tiny marbles' (Ch 11)",
+    "mol": "Matter of Light: turned-energy, carried as stone-of-energy; its sheet says white-violet, the book says dark energy"
+   },
+   {
+    "stone": "Voids",
+    "order": "second",
+    "words": "'Of wind and of realms, including those of dreams' (Ch 01)",
+    "island": "Gwendolyn's island, unnamed",
+    "bearer": "Gwendolyn, then Venetia, Prison of Voids (Ch 01, 04)",
+    "colour": "violet (Ch 11)",
+    "mol": "Matter of Light: the Founding Stone of Hollows, founding-stone 45c4d884, rendered green-white"
+   },
+   {
+    "stone": "Gravity",
+    "order": "fourth",
+    "island": "unknown",
+    "bearer": "sought (Ch 02, 11)",
+    "colour": "not in the book"
+   },
+   {
+    "stone": "Matter",
+    "order": "unknown",
+    "words": "'of stone itself'",
+    "island": "Cephas, 'the island of matter' (Ch 02)",
+    "bearer": "Naomi, 'The Lady of Matter' (Ch 13)",
+    "colour": "not in the book",
+    "mol": "Matter of Light: the Anchor Stone; Cairn Island, Kephas"
+   },
+   {
+    "stone": "Water, or Phases",
+    "order": "unknown",
+    "island": "unknown (#verify)",
+    "bearer": "Drowning, Prison of Phases (Ch 04, 11)",
+    "colour": "not in the book; deep sea-blue on this board (design choice)"
+   },
+   {
+    "stone": "Dominion",
+    "order": "unknown",
+    "words": "'animals and plants'",
+    "island": "Ilan",
+    "bearer": "its Litiguh, killed in the sky; then Matteo (Ch 11)",
+    "colour": "emerald (Ch 11)"
+   },
+   {
+    "stone": "Rest",
+    "order": "seventh (implied by 'the seventh stone of Peace', Ch 13; #verify)",
+    "island": "unknown",
+    "bearer": "sought (Ch 11)",
+    "colour": "not in the book"
+   }
+  ],
+  "endings": {
+   "_": "How a bearer's light ends, film 1 against the book, and what Episode 2 does.",
+   "book": "When Gwendolyn dies the Stone 'fell from her body'; she launched it 'thousands of miles away', 'fell upwards' looking to the Sun 'where she knew Torin was watching', and 'disintegrated' (Ch 02). On Ilan the dying Litiguh leaves 'the same green glow', and 'there was an explosion' (Ch 11).",
+   "film1": "Matter of Light: scene 67, the kill beat; scenes 80–85, the burst under the cloud and the golden wings — 'the Stone leaves her as wings'. The book has no wings.",
+   "episode2": "The light ends the house-style way (exploding-angel, then heaven-after); the Stone itself follows the book — it falls, is launched or is taken. Stardust leaves as a slow rising light (S6). The wings stay film 1's signature, kept for a shot that quotes film 1 on purpose."
+  }
  }
 }

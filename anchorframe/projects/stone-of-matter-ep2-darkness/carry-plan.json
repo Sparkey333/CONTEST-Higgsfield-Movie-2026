@@ -35,88 +35,78 @@
    {
     "name": "fx-hollow",
     "id": "89a74d62-615e-4e52-b745-8bb8ceab1628"
+   },
+   {
+    "name": "aura-grammar",
+    "id": "86f7d638-b403-459f-af68-e9365a5da336"
+   },
+   {
+    "name": "aura-shell",
+    "id": "b81752ae-2bda-4a57-ba83-02244d1dbeb4"
+   },
+   {
+    "name": "ladder-attunement",
+    "id": "447665c3-9c7d-4d95-ad8a-89b9a82d4fe4"
+   },
+   {
+    "name": "ladder-mind",
+    "id": "cd2aa79a-43ab-445a-a298-f1071884cc50"
+   },
+   {
+    "name": "fx-segmented-mind",
+    "id": "99737c53-c69a-43a8-af60-8a29fcffa072"
    }
   ],
   "carried": [
    {
     "name": "ammon",
     "id": "0506e54b-81d7-43ba-9d50-d68411d9f4cc",
-    "from": "Alder (kai_alder_v1, Soul alder)",
+    "from": "Ammon as a boy [Matter of Light: Alder · element kai_alder_v1 · Soul alder]",
     "tweak": "Episode 2 wardrobe on the Episode 1 face: undyed linen shirt, open moss-green wool overshirt, brown canvas trousers, worn boots, cord bracelet. The guitar stays a separate prop."
    },
    {
     "name": "mikael",
     "id": "66e16226-2809-449b-85e1-fb98732942dc",
-    "from": "Wren (kai_wren_v1, Soul wren)",
+    "from": "Mikael as a boy [Matter of Light: Wren · element kai_wren_v1 · Soul wren]",
     "tweak": "Episode 2 wardrobe: rust-brown wool henley, sheepskin-lined leather vest, grey-green canvas trousers, leather wrist cuff; thicker-set than Ammon, same height."
    },
    {
     "name": "cephas-town",
     "id": "bda5eff0-c2ff-48ba-bc10-e0e8710b508c",
-    "from": "the Kephas Island town and concept elements",
+    "from": "Cephas, the island of matter [Matter of Light: the Kephas Island town and concept elements]",
     "tweak": "The same town ten years on, at night, lanterns in every window, the Leviticum on the far hill."
    },
    {
     "name": "guardians",
     "id": "2ea82739-6aa3-4ba6-82a0-d758aab26a54",
-    "from": "keeper (8a3838aa) — the Vigil",
+    "from": "the Guardians of the Sector Guard [Matter of Light: keeper 8a3838aa — the Keepers of the Vigil]",
     "tweak": "The Guardians at the Leviticum steps, waiting for the Trials: the Episode 3 hand-off."
    },
    {
     "name": "stone-of-energy",
     "id": "aee791f3-73d2-4604-8a88-7c9a3f45bd69",
-    "from": "turned-energy",
+    "from": "a dark adept of energy, 'He lacks the core' [Matter of Light: turned-energy]",
     "tweak": "The bearer in the Outer Darkness, the Stone's light the only key: S23."
    },
    {
     "name": "drowning",
     "id": "57bb92bb-f84d-4097-ab88-5bc1e2c4b01c",
-    "from": "drowning_v1 (a886edff)",
+    "from": "Drowning, Prison of Phases [Matter of Light: drowning_v1 a886edff]",
     "tweak": "Rising from black water: the Episode 3 tag. The Episode 1 reference image carries an IP flag; the still came back, but watch it on video."
    },
    {
     "name": "stone-language",
     "id": "b6ed2008-8a52-4a1e-be7a-8cd5914eb012",
-    "from": "founding-stone (45c4d884)",
-    "tweak": "Not re-rendered: it is the look reference every Stone obeys, including the heart of Ilan."
+    "from": "the Creation Stone of Voids [Matter of Light: founding-stone 45c4d884 — the Founding Stone of Hollows]",
+    "tweak": "Not re-rendered. Its crystal shape and the way its light sits are still the reference for every Stone; its green-white is not — colour belongs to each Stone (power.stones): Voids violet, Dominion emerald. The heart of Ilan is emerald going violet."
    }
   ],
   "to_carry": [],
   "new": [
    {
-    "name": "stardust",
-    "kind": "characters",
-    "brief": "A light being in a small humanoid form of clear glass — not a woman in white; faceted, refracting, a little light moving inside; no face detail beyond the suggestion of one. Three states: blanket of light, glass figure, fading."
-   },
-   {
-    "name": "lucille",
-    "kind": "characters",
-    "brief": "A demon crouched on four limbs and a head, features a distorted mockery of a man, hollow eyes blacker than the dark, teeth hidden; second state: the same figure wearing a spirit woman's face."
-   },
-   {
     "name": "viola",
     "kind": "characters",
     "brief": "The singer at the Wind Caves, hands out, lantern-lit from below."
-   },
-   {
-    "name": "vothek",
-    "kind": "characters",
-    "brief": "The storyteller: a man with a serious face and playful eyes, on a small stage by a rock wall, firelight."
-   },
-   {
-    "name": "matteo",
-    "kind": "characters",
-    "brief": "A young man (rendered as 18+) with long brown hair whipped by storm wind, bare feet on sacred sand; second state: kneeling in the Outer Darkness as 'Conqueror'."
-   },
-   {
-    "name": "venetia",
-    "kind": "characters",
-    "brief": "The Prison of Voids: a woman who becomes a panther with wrong angles; both states on one sheet; a smell of decay you can see in the air around her."
-   },
-   {
-    "name": "morningstar",
-    "kind": "characters",
-    "brief": "The master of the Outer Darkness: tall, still, lit only by what others give off; no horns, no cliché — a figure whose stillness is the threat."
    },
    {
     "name": "abyss-of-four-waterfalls",
@@ -309,16 +299,6 @@
     "name": "founding-stone",
     "kind": "props",
     "id": "45c4d884-b89b-4694-af1f-e06eef545e30"
-   },
-   {
-    "name": "aura-shell",
-    "kind": "fx",
-    "id": "b81752ae-2bda-4a57-ba83-02244d1dbeb4"
-   },
-   {
-    "name": "fx-segmented-mind",
-    "kind": "fx",
-    "id": "99737c53-c69a-43a8-af60-8a29fcffa072"
    }
   ]
  },
@@ -330,10 +310,23 @@
    "wren": "2d6202b6-277e-49c3-a83a-80a63d9ead1b"
   },
   "inherited": {
-   "caedom-ascended": "453e85a7-0fef-411e-8edc-693c998b8c95",
-   "oriane": "c270c1d2-3466-4283-95cd-154dff318d76",
-   "alder": "efde8880-7bab-43fc-9100-4be64504b3e0",
-   "wren": "2d6202b6-277e-49c3-a83a-80a63d9ead1b"
+   "_": "Episode 1's trained faces, reachable by id if a face recurs. Keyed by book name; the film-1 Soul name is marked.",
+   "torin-ascended": {
+    "soul_id": "453e85a7-0fef-411e-8edc-693c998b8c95",
+    "mol": "Matter of Light: Soul caedom-ascended"
+   },
+   "gwendolyn": {
+    "soul_id": "c270c1d2-3466-4283-95cd-154dff318d76",
+    "mol": "Matter of Light: Soul oriane"
+   },
+   "ammon-as-a-boy": {
+    "soul_id": "efde8880-7bab-43fc-9100-4be64504b3e0",
+    "mol": "Matter of Light: Soul alder — the younger brother's face, ten years before this film"
+   },
+   "mikael-as-a-boy": {
+    "soul_id": "2d6202b6-277e-49c3-a83a-80a63d9ead1b",
+    "mol": "Matter of Light: Soul wren"
+   }
   },
   "this": {
    "_": "Reused by id from Episode 1, not duplicated: a Soul is one trained identity and cannot be copied. The same face plays the Episode 2 part. Souls run only on Soul 2.0 and Soul Cinematic (soul_id); every Cinema Studio shot uses the element of the same name instead. Sadie is the first Soul made for Episode 2.",

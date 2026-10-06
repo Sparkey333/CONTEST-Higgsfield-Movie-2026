@@ -1,0 +1,165 @@
+{
+ "_": "The house style: B. L. Barkey's direction, read off the delivered cut of Matter of Light (film 1) and carried into every episode after it. Each signature names the film-1 scene it comes from (scene numbers and timecodes from the final-cut read) and the rule it becomes. desk.py renders it on the workflow page; build.py shows the signatures a shot uses on its card. A shot names its signatures in shots[].style.",
+ "name": "House style",
+ "owner": "B. L. Barkey",
+ "from": "Matter of Light — film 1, the delivered cut (6:17, 100 scenes)",
+ "signatures": [
+  {
+   "id": "exploding-angel",
+   "name": "The exploding angel",
+   "from": [
+    {
+     "scene": 67,
+     "tc": "3:50–4:03",
+     "what": "the kill beat: fists, white-blue electricity, a shockwave that clears the shadows"
+    },
+    {
+     "scene": 82,
+     "tc": "4:42–4:45",
+     "what": "yellow light bursts from the cloud beneath her"
+    },
+    {
+     "scene": 85,
+     "tc": "4:48–4:50",
+     "what": "golden wings open from her back — the Stone leaves her as wings"
+    }
+   ],
+   "rule": "Power is released, not fired. The light starts inside the body — chest, eyes, mouth — and passes outward through real matter: haze lights up, cloth and hair blow back, water rings, dust lifts, every shadow in frame is pushed out at once. One frame may clip to white; the next resolves. No fireball, no debris spectacle, no beam weapons. The face stays a human face until the light takes it, and when a Stone leaves a body it leaves as wings or as a slow rising light, never as an explosion of parts.",
+   "prompt": "the light begins inside the body and pours outward through real air, haze and cloth; a single shockwave pushes every shadow out of frame; no fire, no debris, no beams",
+   "book": "The wings are film 1's: in the book the Stone 'fell from her body' and she launched it (Ch 02). From Episode 2 the light leaves the house-style way and the Stone follows the book; the wings stay for a shot that quotes film 1 on purpose. The book's own version is the Angel Killer: 'light poured from his eyes and mouth' (Ch 10)."
+  },
+  {
+   "id": "heaven-after",
+   "name": "Heaven after",
+   "from": [
+    {
+     "scene": 80,
+     "tc": "4:39–4:40",
+     "what": "on golden cloud, teal dusk"
+    },
+    {
+     "scene": 81,
+     "tc": "4:40–4:42",
+     "what": "top-down through a circle in the cloud"
+    },
+    {
+     "scene": 95,
+     "tc": "5:18–5:19",
+     "what": "a beam through the cloud"
+    }
+   ],
+   "rule": "After the burst, the quiet: a sea of golden cloud seen from above or from inside, a round opening in it, one beam coming through, teal at the edges of the sky. Slow, almost still, no score swell; the scale comes from emptiness. It is a place, lit like a real morning above the weather, not a painted heaven.",
+   "prompt": "afterwards, silence: an endless sea of golden cloud lit like a real morning above the weather, one round opening, a single beam, teal at the edges of the sky"
+  },
+  {
+   "id": "possible-beast",
+   "name": "The possible beast",
+   "from": [
+    {
+     "scene": 60,
+     "tc": "3:15–3:22",
+     "what": "the leviathan: scale under the surface before it lunges"
+    },
+    {
+     "scene": 106,
+     "tc": "5:50–6:02",
+     "what": "silver fish rise toward the light, the last held image"
+    },
+    {
+     "book": "Kokua Alone",
+     "what": "“shapes below the surface that could have been either Kokua and his whale family, or just his mind playing tricks”"
+    },
+    {
+     "book": "Sleepwalker",
+     "what": "the snow leopard on the seventh floor: eyes, steam, a voice 'like that of a concerned guardian' — 'He had never seen the entirety of the creature in the light'"
+    }
+   ],
+   "rule": "Something vast and kind is near, and the film never proves it. A long shadow passes under a cloud sea or under water; a fin rises far off and sinks; the light bends around a body we cannot see; once, an eye the size of a house opens in the cloud and closes. It moves slowly, it never threatens, and a viewer could believe it was a trick of the light. In this series it is the snow leopard who warns Ammon in his dreams, and Kokua, the orca who becomes his friend, before anyone knows his name.",
+   "prompt": "far below, a vast slow shape passes under the surface, glimpsed only as a long shadow and the light bending around it — gentle, unhurried, never fully seen"
+  },
+  {
+   "id": "real-then-more",
+   "name": "Real, then more",
+   "from": [
+    {
+     "scene": 9,
+     "tc": "0:09–0:24",
+     "what": "the 15-second aerial over ochre cloud and a ring of white pillars"
+    },
+    {
+     "scene": 102,
+     "tc": "5:42–5:48",
+     "what": "the coda: a mountain over forest, the crater lake, the still surface (scenes 102–104)"
+    }
+   ],
+   "rule": "Every impossible thing is lit by the same light as the real world around it. Photoreal, anamorphic, true blacks, real haze and weather, natural lens behaviour. The wonder is earned by restraint: one impossible element per frame, everything else plausible. Adults read as adults in every wide.",
+   "prompt": "photoreal, anamorphic, true blacks, real haze, the impossible lit by the same light as the real"
+  },
+  {
+   "id": "thesis-frame",
+   "name": "One wrong thing",
+   "from": [
+    {
+     "scene": 101,
+     "tc": "5:35–5:42",
+     "what": "the brothers in tall grass at sunset; one small dark cloud by the sun — the thesis shot"
+    }
+   ],
+   "rule": "The idea of a sequence lives in one small wrong thing inside a beautiful frame: a dark cloud by the sun, a black seed among green roots, a light in a window that should be dark. Hold it long enough to be noticed, never long enough to be explained.",
+   "prompt": "a beautiful still frame with one small wrong thing in it, held"
+  },
+  {
+   "id": "rise-to-light",
+   "name": "Rise to the light",
+   "from": [
+    {
+     "scene": 105,
+     "tc": "5:48–5:50",
+     "what": "under the surface; bubbles rise"
+    },
+    {
+     "scene": 106,
+     "tc": "5:50–6:02",
+     "what": "silver fish rise toward the light"
+    },
+    {
+     "scene": 108,
+     "tc": "6:07–6:17",
+     "what": "her face, a beam of light across her eyes, looking into the lens"
+    }
+   ],
+   "rule": "Endings rise. Bubbles, fish, motes, a body: things move up toward a light, and a sequence closes on a face that looks into the lens. An ending opens forward rather than looping back.",
+   "prompt": "everything drifts upward toward the light; end on a face looking into the lens"
+  },
+  {
+   "id": "cut-to-the-song",
+   "name": "Cut to the song",
+   "from": [
+    {
+     "scene": 68,
+     "tc": "4:03–4:09",
+     "what": "the storm eye under 'In the sky!'"
+    },
+    {
+     "scene": 101,
+     "tc": "5:35–5:42",
+     "what": "the brothers under 'Don't make it stop now…'"
+    }
+   ],
+   "rule": "A music film with dialogue inside it: montage at three to four seconds a cut, landing on the words of the song; holds of nine to fifteen seconds only where the writing earns them. Generate for it: 8-second takes with two beats, 5-second close inserts that open on one bright subject.",
+   "prompt": "open on the strongest image; two clear beats"
+  },
+  {
+   "id": "one-accent",
+   "name": "One accent per world",
+   "from": [
+    {
+     "grade": "final-cut read",
+     "what": "five colour worlds; the remaster note: pull the storm to one accent"
+    }
+   ],
+   "rule": "Each world gets one accent against true black: gold for the Sun, cyan for the storm, red for the island; in Episode 2, violet for Stardust, amber for the High Forest, lime-teal for the lake, candle amber for the Leviticum, emerald-into-violet for the dream of Ilan. A second accent appears only when it is the point of the shot.",
+   "prompt": "one accent colour against true black"
+  }
+ ]
+}

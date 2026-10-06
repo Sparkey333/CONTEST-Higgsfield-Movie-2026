@@ -56,7 +56,7 @@ data = {
  "project": {"slug": slug, "title": P["title"], "logline": P.get("logline", ""), "acts": acts,
              "hf": {k: hf.get(k) for k in ("project_id", "workspace_id", "folder_id", "project_url", "video_model", "image_model", "lock")}},
  "intake": I, "proposed": PR.get("proposed", {}), "shots": shots, "cast": cast, "sheets": sheets, "parity": PAR,
- "links": {"desk": "index.html", "board": f"projects/{slug}/board.html", "workflow": "workflow.html", "links": "links.html", "keys": "keys.html"},
+ "links": {"desk": "index.html", "board": f"projects/{slug}/board.html", "workflow": "workflow.html", "links": "links.html", "keys": "keys.html", "contests": next((l["url"] for g in json.load(open(D / "links.json"))["groups"] for l in g["links"] if l["id"] == "contest_radar"), "contests.html")},
  "context": "\n".join(ctx), "built": datetime.datetime.utcnow().strftime("%d %b %Y %H:%M UTC")}
 DATA = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
@@ -614,7 +614,7 @@ def body(desk_href):
 <div class="status" id="status"></div></div></header>
 <nav class="tabs" aria-label="Studio"><div class="wrap">
 <a id="nav-start" href="#start">Start</a><a id="nav-questions" href="#questions">Questions</a><a id="nav-uploads" href="#uploads">Uploads</a><a id="nav-higgsfield" href="#higgsfield">Higgsfield</a><a id="nav-generate" href="#generate">Generate</a><a id="nav-parity" href="#parity">Parity</a>
-<span class="sep"></span><a class="out" href="{esc(L["desk"])}">Desk</a><a class="out" href="{esc(L["board"])}">Board</a><a class="out" href="{esc(L["workflow"])}">Workflow</a><a class="out" href="{esc(L["links"])}">Links</a></div></nav>
+<span class="sep"></span><a class="out" href="{esc(L["desk"])}">Desk</a><a class="out" href="{esc(L["board"])}">Board</a><a class="out" href="{esc(L["workflow"])}">Workflow</a><a class="out" href="{esc(L["links"])}">Links</a><a class="out" href="{esc(L["contests"])}" target="_blank" rel="noopener">Contests ↗</a></div></nav>
 <main class="wrap">
 <div class="banner" id="banner" hidden></div>
 
